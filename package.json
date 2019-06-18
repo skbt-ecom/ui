@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "npx babel src --out-dir lib",
-    "build:remove": "rm -rf lib"
+    "build": "yarn run build:remove & npx babel src --out-dir lib",
+    "build:remove": "rimraf lib"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +28,7 @@
     "@storybook/addons": "^5.1.8",
     "@storybook/react": "^5.1.8",
     "babel-loader": "^8.0.6",
+    "rimraf": "^2.6.3",
     "storybook-addon-material-ui": "^0.9.0-alpha.19"
   }
 }
