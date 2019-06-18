@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "npx babel src/components --out-dir lib",
+    "build": "npx babel src --out-dir lib",
     "build:remove": "rm -rf lib"
   },
   "author": "",
