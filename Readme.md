@@ -39,3 +39,35 @@
   Режим разработки. Поднимает Storybook, порт указан в консоли
 - `yarn build` <br>
   сборка проекта
+
+## Пример использования в проекте
+
+```js
+import {
+  ThemeProvider, // принимает тему и прокидывает вниз с помощью контекста. Размещать в корне проекта
+  theme, // тема
+  Switch, // компонент
+} from 'ui';
+
+import SomeComponent from './components/SomeComponent';
+
+// если необходимо, то можно поменять значения темы
+let myTheme = {
+  ...theme,
+  palette: {
+    ...theme.palette,
+    secondary: {
+      main: '#1962d4',
+    },
+  },
+};
+
+const App = () => {
+  return (
+    <ThemeProvider theme={myTheme}>
+      <SomeContainer />
+      <Switch />
+    </ThemeProvider>
+  );
+};
+```
