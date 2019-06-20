@@ -11,6 +11,32 @@
 - [storybook](https://storybook.js.org)<br>
   окружения для разработки UI компонентов. Позволяет просматривать и взаимодействовать с библиотекой компонентов
 
+## Установка
+
+```
+yarn add https://gitlab-ci-token:ГИТЛАБ-ТОКЕН@gitlab.sovcombank.group/web/ecom/ui.git
+```
+
+## Доступные команды
+
+```sh
+yarn
+```
+
+Установка зависимостей
+
+```sh
+yarn start
+```
+
+Режим разработки. Поднимает Storybook, порт указан в консоли
+
+```sh
+yarn build
+```
+
+Сборка проекта
+
 ## Архитектура
 
 - `.storybook`<br>
@@ -30,15 +56,6 @@
    - `index.js` - экспорт компонента
    - `stories.js` - описание компонента для storybook [(Документация)](https://storybook.js.org/docs/basics/writing-stories/)
 1. Добавить экспорт компонета в файле `src/components/index.js`
-
-## Доступные команды
-
-- `yarn` <br>
-  установка зависимостей
-- `yarn storybook` <br>
-  Режим разработки. Поднимает Storybook, порт указан в консоли
-- `yarn build` <br>
-  сборка проекта
 
 ## Пример использования в проекте
 
