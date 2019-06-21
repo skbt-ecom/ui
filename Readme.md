@@ -57,6 +57,9 @@ yarn build
    - `stories.js` - описание компонента для storybook [(Документация)](https://storybook.js.org/docs/basics/writing-stories/)
 1. Добавить экспорт компонета в файле `src/components/index.js`
 
+В папке `src/components` имеется папка-бойлерплейт для компонентов: `_boilerplate`.<br>
+Ее можно скопировать под именем нового компонента и прописать внутри файлов нужный код.
+
 ## Пример использования в проекте
 
 ```js
