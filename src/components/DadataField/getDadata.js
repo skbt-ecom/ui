@@ -5,7 +5,7 @@
  * @param {object} options Dadata's options
  * @returns {Promise} Promise object with Dadata's response (as json if resolve)
  */
-export function getDadata(type, data, options = {}) {
+export default function getDadata(type, data, options = {}) {
   const DADATA_URL =
     'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest';
   const API_KEY = '3696edb148443072e2f9b52b5a7cbc8a77f8745f';

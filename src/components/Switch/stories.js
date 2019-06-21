@@ -12,9 +12,5 @@ import theme from '../../style/theme';
 storiesOf('Switch', module)
   .addDecorator(muiTheme([theme]))
   .add('Default', () => (
-    <Switch
-      onChange={action('onChange')}
-      value="checkedA"
-      inputProps={{ 'aria-label': 'secondary checkbox' }}
-    />
+    <Switch onChange={action('onChange')} color={'primary'} />
   ));

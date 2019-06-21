@@ -3,7 +3,7 @@
  * @param {function} fn  function which must running with debounce
  * @param {number} [delay=2000] delay, when calling fn
  */
-export function debounce(fn, delay = 2000) {
+export default function debounce(fn, delay = 2000) {
   let timerId = null;
   return function(...args) {
     const doSmth = () => {
