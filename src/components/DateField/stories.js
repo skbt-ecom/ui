@@ -5,10 +5,16 @@ import { action } from '@storybook/addon-actions';
 import { muiTheme } from 'storybook-addon-material-ui';
 
 // Import our component from this folder
-import Switch from './Switch';
+import DateField from './DateField';
 
 import theme from '../../style/theme';
 
-storiesOf('Switch', module)
+storiesOf('DateField', module)
   .addDecorator(muiTheme([theme]))
-  .add('Default', () => <Switch onChange={action('onChange')} />);
+  .add('Default', () => (
+    <DateField
+      onChange={action('onChange')}
+      label={'DateField'}
+      max={new Date()}
+    />
+  ));

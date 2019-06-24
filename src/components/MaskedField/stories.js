@@ -5,10 +5,16 @@ import { action } from '@storybook/addon-actions';
 import { muiTheme } from 'storybook-addon-material-ui';
 
 // Import our component from this folder
-import Switch from './Switch';
+import MaskedField from './MaskedField';
 
 import theme from '../../style/theme';
 
-storiesOf('Switch', module)
+storiesOf('MaskedField', module)
   .addDecorator(muiTheme([theme]))
-  .add('Default', () => <Switch onChange={action('onChange')} />);
+  .add('Default', () => (
+    <MaskedField
+      onChange={action('onChange')}
+      label={'MaskedField Number'}
+      mask={Number}
+    />
+  ));

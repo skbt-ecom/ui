@@ -5,4 +5,8 @@ const SwitchComponent = props => {
   return <Switch {...props} />;
 };
 
+SwitchComponent.defaultProps = {
+  color: 'primary',
+};
+
 export default SwitchComponent;

@@ -15,7 +15,6 @@ function renderInputComponent(inputProps) {
   return (
     <TextField
       variant={'outlined'}
-      fullWidth
       InputProps={{
         inputRef: node => {
           ref(node);
