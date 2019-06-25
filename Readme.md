@@ -17,6 +17,10 @@
 yarn add https://gitlab-ci-token:ГИТЛАБ-ТОКЕН@gitlab.sovcombank.group/web/ecom/ui.git
 ```
 
+```
+npm i git+https://gitlab-ci-token:ГИТЛАБ-ТОКЕН@gitlab.sovcombank.group/web/ecom/ui.git
+```
+
 ## Доступные команды
 
 ```sh
