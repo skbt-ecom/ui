@@ -12,7 +12,10 @@ import theme from '../../style/theme';
 storiesOf('DadataField', module)
   .addDecorator(muiTheme([theme]))
   .add('ФИО', () => (
-    <DadataField onChange={action('onChange')} type={'fio'} label={'ФИО'} />
+    <>
+      <DadataField onChange={action('onChange')} type={'fio'} label={'ФИО'} />
+      <DadataField onChange={action('onChange')} type={'fio'} label={'ФИО'} />
+    </>
   ))
   .add('Адрес', () => (
     <DadataField

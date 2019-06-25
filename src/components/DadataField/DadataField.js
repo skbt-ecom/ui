@@ -42,17 +42,13 @@ function getSuggestionValue(suggestion) {
 }
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    height: 250,
-    flexGrow: 1,
-  },
   container: {
     position: 'relative',
   },
   suggestionsContainerOpen: {
     position: 'absolute',
-    zIndex: 1,
-    marginTop: theme.spacing(1),
+    zIndex: 2,
+    marginTop: '-12px',
     left: 0,
     right: 0,
   },
