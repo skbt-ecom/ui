@@ -5,21 +5,22 @@ import { action } from '@storybook/addon-actions';
 import { muiTheme } from 'storybook-addon-material-ui';
 
 // Import our component from this folder
-import DadataField from './DadataField';
+import Autosuggest from './Autosuggest';
 
 import theme from '../../style/theme';
 
-storiesOf('DadataField', module)
+import { regions } from './regionEnums';
+
+storiesOf('Autosuggest', module)
   .addDecorator(muiTheme([theme]))
-  .add('ФИО', () => (
+  .add('Default', () => (
     <>
-      <DadataField onChange={action('onChange')} type={'fio'} label={'ФИО'} />
+      <h2>Пример с регионами</h2>
+      <Autosuggest
+        onChange={action('onChange')}
+        suggestions={regions}
+        label={'Регион'}
+        fullWidth
+      />
     </>
-  ))
-  .add('Адрес', () => (
-    <DadataField
-      onChange={action('onChange')}
-      type={'address'}
-      label={'Адрес'}
-    />
   ));

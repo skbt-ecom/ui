@@ -9,3 +9,4 @@ export { default as DadataField } from './DadataField';
 export { default as DateField } from './DateField';
 export { default as MaskedField } from './MaskedField';
 export { default as TextField } from './TextField';
+export { default as Autosuggest } from './Autosuggest';

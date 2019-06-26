@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Autosuggest from 'react-autosuggest';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 
-import { getDadataValue, getSuggestionValue } from './helpers';
-import getDadata from './getDadata';
-import debounce from '../../utils/debounce';
+import {
+  getFullSuggestionData,
+  getSuggestions,
+  getSuggestionValue,
+  shouldRenderSuggestions,
+} from './helpers';
 
 import useStyles from './styles';
 
 function renderInputComponent(inputProps) {
   const { classes, inputRef = () => {}, ref, ...other } = inputProps;
-
   return (
     <TextField
       variant={'outlined'}
@@ -38,8 +40,9 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
   );
 }
 
-let _isSuggestionSelected = false;
-let _currentSuggestion = {};
+function renderSuggestionsContainer({ containerProps, children }) {
+  return <Paper {...containerProps}>{children}</Paper>;
+}
 
 export default function IntegrationAutosuggest(props) {
   const classes = useStyles();
@@ -48,21 +51,8 @@ export default function IntegrationAutosuggest(props) {
   });
   const [stateSuggestions, setSuggestions] = useState([]);
 
-  const setDebouncedSuggestions = debounce(inputValue => {
-    const { type, dadataOptions } = props;
-
-    getDadata(type, inputValue, dadataOptions).then(({ suggestions }) => {
-      setSuggestions(suggestions);
-    });
-  }, 500);
-
-  const getSuggestions = value => {
-    const inputValue = value.toLowerCase().trim();
-    setDebouncedSuggestions(inputValue);
-  };
-
   const handleSuggestionsFetchRequested = ({ value }) => {
-    setSuggestions(getSuggestions(value));
+    setSuggestions(getSuggestions(props.suggestions, value));
   };
 
   const handleSuggestionsClearRequested = () => {
@@ -70,40 +60,16 @@ export default function IntegrationAutosuggest(props) {
   };
 
   const handleChange = (event, { newValue }) => {
-    _isSuggestionSelected = false;
     setState({
       ...state,
       single: newValue,
     });
   };
 
-  const onSuggestionSelected = (event, { suggestion }) => {
-    const { type, dadataOptions } = props;
-    _isSuggestionSelected = true;
-    // spike, because dadata not returns postal code
-    // we must do specific query for only one suggestion
-    if (type === 'address') {
-      getDadata(type, suggestion.unrestricted_value, {
-        ...dadataOptions,
-        count: 1,
-        restrict_value: true,
-      }).then(res => {
-        _currentSuggestion = res && res.suggestions && res.suggestions[0];
-      });
-    } else {
-      _currentSuggestion = suggestion;
-    }
-  };
-
   const onBlur = e => {
-    const { type } = props;
-    const value = getDadataValue(
-      type,
-      _isSuggestionSelected,
-      _currentSuggestion,
-      state.single
-    );
-    props.onChange(value);
+    const fullSuggestionData =
+      getFullSuggestionData(props.suggestions, e.target.value) || null;
+    props.onChange(fullSuggestionData);
   };
 
   const autosuggestProps = {
@@ -113,7 +79,8 @@ export default function IntegrationAutosuggest(props) {
     onSuggestionsClearRequested: handleSuggestionsClearRequested,
     getSuggestionValue,
     renderSuggestion,
-    onSuggestionSelected,
+    shouldRenderSuggestions,
+    renderSuggestionsContainer,
   };
 
   const { label, placeholder, onChange, ...otherInputProps } = props;
@@ -136,11 +103,6 @@ export default function IntegrationAutosuggest(props) {
           suggestionsList: classes.suggestionsList,
           suggestion: classes.suggestion,
         }}
-        renderSuggestionsContainer={options => (
-          <Paper {...options.containerProps} square>
-            {options.children}
-          </Paper>
-        )}
       />
     </div>
   );
