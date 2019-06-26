@@ -21,5 +21,6 @@ storiesOf('DadataField', module)
       onChange={action('onChange')}
       type={'address'}
       label={'Адрес'}
+      dadataOptions={{}}
     />
   ));

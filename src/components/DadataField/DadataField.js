@@ -116,7 +116,13 @@ export default function IntegrationAutosuggest(props) {
     onSuggestionSelected,
   };
 
-  const { label, placeholder, onChange, ...otherInputProps } = props;
+  const {
+    label,
+    placeholder,
+    onChange,
+    dadataOptions,
+    ...otherInputProps
+  } = props;
   return (
     <div className={classes.root}>
       <Autosuggest
