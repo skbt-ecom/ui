@@ -1,14 +1,24 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+  label: {
+    fontFamily: '"Bebas", "Roboto", "Helvetica", "Arial", sans-serif',
+  },
+});
 
 const ButtonComponent = ({ children, ...props }) => {
+  const classes = useStyles();
   return (
-    <Typography component="span">
-      <Button {...props} fontFamily="Bebas">
-        {children}
-      </Button>
-    </Typography>
+    <Button
+      classes={{
+        label: classes.label, // class name, e.g. `classes-nesting-label-x`
+      }}
+      {...props}
+    >
+      {children}
+    </Button>
   );
 };
 
