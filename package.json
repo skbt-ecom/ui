@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "yarn run build:remove & npx babel src --out-dir lib",
+    "build": "npm run build:remove & npx babel src --out-dir lib",
     "build:remove": "rimraf lib"
   },
   "author": "",
