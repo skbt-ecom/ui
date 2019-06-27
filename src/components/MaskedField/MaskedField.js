@@ -21,7 +21,7 @@ const TextMaskCustom = React.memo(
 
 const MaskedField = React.memo(props => {
   const { value: propsValueRaw } = props;
-  const propsValue = propsValueRaw.toString();
+  const propsValue = propsValueRaw.toString() || '';
 
   const [value, setValue] = useState(propsValue);
   const [mirroredValue, setMirroredValue] = useState(propsValue);
