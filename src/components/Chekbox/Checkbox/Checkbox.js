@@ -6,7 +6,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import Checkbox from '@material-ui/core/Checkbox';
 
 const CheckboxComponent = React.memo(props => {
-  const { label, checked, value, error, helperText, ...restProps } = props;
+  const { label, error, helperText, ...restProps } = props;
 
   const handleChange = event => {
     props.onChange(event);
@@ -16,13 +16,7 @@ const CheckboxComponent = React.memo(props => {
     <FormControl required error={error} component="fieldset">
       <FormGroup>
         <FormControlLabel
-          control={
-            <Checkbox
-              checked={checked}
-              onChange={handleChange}
-              value={props.value}
-            />
-          }
+          control={<Checkbox {...restProps} onChange={handleChange} />}
           label={label}
         />
       </FormGroup>

@@ -13,6 +13,6 @@ import theme from '../../style/theme';
 storiesOf('Chekbox', module)
   .addDecorator(muiTheme([theme]))
   .add('Checkbox', () => (
-    <Checkbox onChange={action('onChange')} label={'Label'} />
+    <Checkbox onChange={action('onChange')} label={'Label'} name={'lol'} />
   ));
 // .add('CheckboxGroup', () => <CheckboxGroup onChange={action('onChange')} />);
