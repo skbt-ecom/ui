@@ -1,7 +1,3 @@
-export function getFullSuggestionData(suggestions, value) {
-  return suggestions.find(suggestion => suggestion.value === value);
-}
-
 export function getSuggestions(suggestions = [], value = '') {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
