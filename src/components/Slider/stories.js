@@ -9,6 +9,23 @@ import Slider from './Slider';
 
 import theme from '../../style/theme';
 
+const inputProps = {
+  suffix: ' ₽',
+  label: 'Сумма кредита',
+};
+
+const sliderProps = {
+  suffix: ' ₽',
+};
+
 storiesOf('Slider', module)
   .addDecorator(muiTheme([theme]))
-  .add('Default', () => <Slider onChange={action('onChange')} />);
+  .add('Default', () => (
+    <Slider
+      onChange={action('onChange')}
+      inputProps={inputProps}
+      sliderProps={sliderProps}
+      min={0}
+      max={2000}
+    />
+  ));

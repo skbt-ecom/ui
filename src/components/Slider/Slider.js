@@ -1,102 +1,53 @@
 import React, { useState } from 'react';
 import Slider from '@material-ui/lab/Slider';
-import Input from '@material-ui/core/Input';
-import TextField from '@material-ui/core/TextField';
-import MaskedField from '../MaskedField';
-import { IMaskInput } from 'react-imask';
+import TextField from '../TextField';
+import NumberFormat from 'react-number-format'; //https://github.com/s-yadav/react-number-format
 
-const inputComponent = React.memo(
-  props => {
-    console.table(props);
-    const onChange = e => {
-      e.persist();
-      const {
-        target: { value },
-      } = e;
-      console.log('value', value);
-      props.onChange(e);
-    };
-
-    return (
-      <IMaskInput
-        {...props}
-        onChange={onChange}
-        mask={Number}
-        value={
-          console.log('props.value', props.value) || props.value
-            ? String(props.value)
-            : ''
-        }
-        thousandsSeparator={' '}
-        // onAccept={(value, mask) =>
-        //   console.log('onAccept') || props.onChange(value)
-        // }
-      />
-    );
-  },
-  (prevProps, nextProps) => {
-    return prevProps.value === nextProps.value;
-  }
-);
+import useStyles from './styles';
 
 const SliderComponent = React.memo(props => {
-  const [value, setValue] = useState(100);
+  const classes = useStyles();
+  const [value, setValue] = useState(props.value || 0);
+
+  const limit = ({ floatValue }) => {
+    const { min, max } = props;
+    return floatValue >= min && floatValue <= max;
+  };
 
   const handleSliderChange = (event, newValue) => {
     setValue(newValue);
+    props.onChange(newValue);
   };
-  const handleInputChange = value => {
-    console.log('handle value', value, typeof value);
-    setValue(value === '' ? '' : Number(event.target.value));
+  const handleInputChange = ({ floatValue }) => {
+    setValue(floatValue);
+    props.onChange(floatValue);
   };
-  // const handleInputChange = event => {
-  //   setValue(event.target.value === '' ? '' : Number(event.target.value));
-  // };
+
+  const { sliderProps, inputProps, min, max } = props;
 
   return (
-    <div style={{ width: '400px' }}>
+    <div className={classes.container}>
+      <NumberFormat
+        {...inputProps}
+        className={classes.input}
+        customInput={TextField}
+        thousandSeparator={' '}
+        value={value}
+        onValueChange={handleInputChange}
+        fullWidth
+        allowNegative={false}
+        decimalScale={0}
+        isAllowed={limit}
+      />
       <Slider
+        {...sliderProps}
+        className={classes.slider}
         value={value}
         onChange={handleSliderChange}
         aria-labelledby="slider"
-        max={2000}
+        min={min}
+        max={max}
       />
-      <br />
-      <br />
-      {/* <MaskedField
-        label={'Сумма кредита'}
-        mask={Number}
-        value={value}
-        margin="dense"
-        onChange={handleInputChange}
-        inputProps={{
-          'aria-labelledby': 'input-slider',
-        }}
-      /> */}
-      <TextField
-        value={value}
-        variant="outlined"
-        margin="dense"
-        // onChange={handleInputChange}
-        // inputProps={{
-        //   'aria-labelledby': 'input-slider',
-        // }}
-        InputProps={{
-          inputComponent,
-          inputProps: {
-            onChange: handleInputChange,
-          },
-        }}
-      />
-      {/* <Input
-        value={value}
-        variant="outlined"
-        margin="dense"
-        onChange={handleInputChange}
-        inputProps={{
-          'aria-labelledby': 'input-slider',
-        }}
-      /> */}
     </div>
   );
 });
