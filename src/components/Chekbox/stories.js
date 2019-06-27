@@ -10,9 +10,23 @@ import CheckboxGroup from './CheckboxGroup';
 
 import theme from '../../style/theme';
 
+const options = [
+  { label: 'Apple', value: 'Apple' },
+  { label: 'Pear', value: 'Pear' },
+  { label: 'Orange', value: 'Orange' },
+];
+
 storiesOf('Chekbox', module)
   .addDecorator(muiTheme([theme]))
   .add('Checkbox', () => (
-    <Checkbox onChange={action('onChange')} label={'Label'} name={'lol'} />
+    <Checkbox onChange={action('onChange')} label={'Label'} />
+  ))
+  .add('CheckboxGroup', () => (
+    <CheckboxGroup
+      onChange={action('onChange')}
+      options={options}
+      formLabel={{
+        label: 'Label',
+      }}
+    />
   ));
-// .add('CheckboxGroup', () => <CheckboxGroup onChange={action('onChange')} />);
