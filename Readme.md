@@ -14,11 +14,11 @@
 ## Установка
 
 ```
-yarn add https://gitlab-ci-token:ГИТЛАБ-ТОКЕН@gitlab.sovcombank.group/web/ecom/ui.git
+yarn add https://gitlab+deploy-token-253:3MniKPuY4zTrKUt2Wn7Z@gitlab.sovcombank.group/web/ecom/ui.git
 ```
 
 ```
-npm i git+https://gitlab-ci-token:ГИТЛАБ-ТОКЕН@gitlab.sovcombank.group/web/ecom/ui.git
+npm i git+https://gitlab+deploy-token-253:3MniKPuY4zTrKUt2Wn7Z@gitlab.sovcombank.group/web/ecom/ui.git
 ```
 
 ## Доступные команды
