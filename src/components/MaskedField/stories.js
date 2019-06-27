@@ -16,5 +16,6 @@ storiesOf('MaskedField', module)
       onChange={action('onChange')}
       label={'MaskedField Number'}
       mask={Number}
+      value={10}
     />
   ));

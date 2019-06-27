@@ -1,67 +1,103 @@
 import React, { useState } from 'react';
-import Grid from '@material-ui/core/Grid';
 import Slider from '@material-ui/lab/Slider';
 import Input from '@material-ui/core/Input';
+import TextField from '@material-ui/core/TextField';
+import MaskedField from '../MaskedField';
+import { IMaskInput } from 'react-imask';
 
-import { makeStyles } from '@material-ui/core/styles';
+const inputComponent = React.memo(
+  props => {
+    console.table(props);
+    const onChange = e => {
+      e.persist();
+      const {
+        target: { value },
+      } = e;
+      console.log('value', value);
+      props.onChange(e);
+    };
 
-const useStyles = makeStyles({
-  root: {
-    width: 250,
+    return (
+      <IMaskInput
+        {...props}
+        onChange={onChange}
+        mask={Number}
+        value={
+          console.log('props.value', props.value) || props.value
+            ? String(props.value)
+            : ''
+        }
+        thousandsSeparator={' '}
+        // onAccept={(value, mask) =>
+        //   console.log('onAccept') || props.onChange(value)
+        // }
+      />
+    );
   },
-  input: {
-    width: 42,
-  },
-});
+  (prevProps, nextProps) => {
+    return prevProps.value === nextProps.value;
+  }
+);
 
-const SliderComponent = props => {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(30);
+const SliderComponent = React.memo(props => {
+  const [value, setValue] = useState(100);
 
   const handleSliderChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  const handleInputChange = event => {
-    setValue(event.target.value === '' ? '' : Number(event.target.value));
+  const handleInputChange = value => {
+    console.log('handle value', value, typeof value);
+    setValue(value === '' ? '' : Number(event.target.value));
   };
+  // const handleInputChange = event => {
+  //   setValue(event.target.value === '' ? '' : Number(event.target.value));
+  // };
 
-  const handleBlur = () => {
-    if (value < 0) {
-      setValue(0);
-    } else if (value > 100) {
-      setValue(100);
-    }
-  };
   return (
-    <div className={classes.root}>
-      <Grid container spacing={2} alignItems="center">
-        <Grid item xs>
-          <Slider
-            value={typeof value === 'number' ? value : 0}
-            onChange={handleSliderChange}
-            aria-labelledby="input-slider"
-          />
-        </Grid>
-        <Grid item>
-          <Input
-            className={classes.input}
-            value={value}
-            margin="dense"
-            onChange={handleInputChange}
-            onBlur={handleBlur}
-            inputProps={{
-              step: 10,
-              min: 0,
-              max: 100,
-              type: 'number',
-              'aria-labelledby': 'input-slider',
-            }}
-          />
-        </Grid>
-      </Grid>
+    <div style={{ width: '400px' }}>
+      <Slider
+        value={value}
+        onChange={handleSliderChange}
+        aria-labelledby="slider"
+        max={2000}
+      />
+      <br />
+      <br />
+      {/* <MaskedField
+        label={'Сумма кредита'}
+        mask={Number}
+        value={value}
+        margin="dense"
+        onChange={handleInputChange}
+        inputProps={{
+          'aria-labelledby': 'input-slider',
+        }}
+      /> */}
+      <TextField
+        value={value}
+        variant="outlined"
+        margin="dense"
+        // onChange={handleInputChange}
+        // inputProps={{
+        //   'aria-labelledby': 'input-slider',
+        // }}
+        InputProps={{
+          inputComponent,
+          inputProps: {
+            onChange: handleInputChange,
+          },
+        }}
+      />
+      {/* <Input
+        value={value}
+        variant="outlined"
+        margin="dense"
+        onChange={handleInputChange}
+        inputProps={{
+          'aria-labelledby': 'input-slider',
+        }}
+      /> */}
     </div>
   );
-};
-
+});
 export default SliderComponent;
