@@ -9,7 +9,7 @@ const CheckboxComponent = React.memo(props => {
   const { label, checked, value, error, helperText, ...restProps } = props;
 
   const handleChange = event => {
-    props.onChange(event.target.checked);
+    props.onChange(event);
   };
 
   return (
