@@ -66,10 +66,8 @@ export default function IntegrationAutosuggest(props) {
     });
   };
 
-  const onBlur = e => {
-    const fullSuggestionData =
-      getFullSuggestionData(props.suggestions, e.target.value) || null;
-    props.onChange(fullSuggestionData);
+  const onSuggestionSelected = (event, { suggestion }) => {
+    props.onChange(suggestion);
   };
 
   const autosuggestProps = {
@@ -81,6 +79,7 @@ export default function IntegrationAutosuggest(props) {
     renderSuggestion,
     shouldRenderSuggestions,
     renderSuggestionsContainer,
+    onSuggestionSelected,
   };
 
   const { label, placeholder, onChange, ...otherInputProps } = props;
@@ -94,7 +93,6 @@ export default function IntegrationAutosuggest(props) {
           placeholder,
           value: state.single,
           onChange: handleChange,
-          onBlur,
           ...otherInputProps,
         }}
         theme={{
