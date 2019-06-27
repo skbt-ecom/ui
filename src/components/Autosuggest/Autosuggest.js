@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import Autosuggest from 'react-autosuggest';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
@@ -49,6 +49,7 @@ export default function IntegrationAutosuggest(props) {
     single: '',
   });
   const [stateSuggestions, setSuggestions] = useState([]);
+  const isSuggestionSelected = useRef(false); // need to send props.onChange() in onBlur when suggestion not selected
 
   const handleSuggestionsFetchRequested = ({ value }) => {
     setSuggestions(getSuggestions(props.suggestions, value));
@@ -59,6 +60,7 @@ export default function IntegrationAutosuggest(props) {
   };
 
   const handleChange = (event, { newValue }) => {
+    isSuggestionSelected.current = false;
     setState({
       ...state,
       single: newValue,
@@ -66,7 +68,14 @@ export default function IntegrationAutosuggest(props) {
   };
 
   const onSuggestionSelected = (event, { suggestion }) => {
+    isSuggestionSelected.current = true;
     props.onChange(suggestion);
+  };
+
+  const onBlur = e => {
+    if (!isSuggestionSelected.current) {
+      props.onChange(null);
+    }
   };
 
   const autosuggestProps = {
@@ -92,6 +101,7 @@ export default function IntegrationAutosuggest(props) {
           placeholder,
           value: state.single,
           onChange: handleChange,
+          onBlur,
           ...otherInputProps,
         }}
         theme={{
