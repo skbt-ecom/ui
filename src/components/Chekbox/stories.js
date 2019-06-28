@@ -19,7 +19,7 @@ const options = [
 storiesOf('Chekbox', module)
   .addDecorator(muiTheme([theme]))
   .add('Checkbox', () => (
-    <Checkbox onChange={action('onChange')} label={'Label'} />
+    <Checkbox onChange={action('onChange')} label={'Label'} color={'primary'} />
   ))
   .add('CheckboxGroup', () => (
     <CheckboxGroup

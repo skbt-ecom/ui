@@ -25,7 +25,9 @@ storiesOf('Slider', module)
       onChange={action('onChange')}
       inputProps={inputProps}
       sliderProps={sliderProps}
-      min={0}
+      // initialValue={300}
+      min={100} // if no initialValue using min value as initial
       max={2000}
+      // value={500}
     />
   ));

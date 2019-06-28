@@ -7,7 +7,9 @@ import useStyles from './styles';
 
 const SliderComponent = React.memo(props => {
   const classes = useStyles();
-  const [value, setValue] = useState(props.value || 0);
+  const [value, setValue] = useState(
+    props.initialValue || props.value || props.min
+  );
 
   const limit = ({ floatValue }) => {
     const { min, max } = props;
