@@ -11,12 +11,13 @@ const useStyles = makeStyles({
 
 const ButtonComponent = ({ children, ...props }) => {
   const classes = useStyles(props);
-  console.log('classes', classes);
+
   return (
     <Button
       {...props}
       classes={{
         label: classes.label,
+        root: classes.root,
       }}
     >
       {children}
