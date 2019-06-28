@@ -9,6 +9,7 @@ import Checkbox from './Checkbox';
 import CheckboxGroup from './CheckboxGroup';
 
 import theme from '../../style/theme';
+import './Checkbox/styles.css';
 
 const options = [
   { label: 'Apple', value: 'Apple' },
@@ -16,10 +17,48 @@ const options = [
   { label: 'Orange', value: 'Orange' },
 ];
 
+const classesExample = {
+  // available classes: https://material-ui.com/api/checkbox/#css
+  checkboxClasses: {},
+  // available classes: https://material-ui.com/api/form-control-label/#css
+  labelClasses: { label: 'my-checkbox-label' },
+};
+
+const Label = () => {
+  const link = (
+    <a
+      href="https://app.sovcombank.ru/policy/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Правилами
+    </a>
+  );
+  return (
+    <>
+      Даю согласие на обработку своих персональных данных в соответствии с{' '}
+      {link}
+    </>
+  );
+};
+
 storiesOf('Chekbox', module)
   .addDecorator(muiTheme([theme]))
   .add('Checkbox', () => (
-    <Checkbox onChange={action('onChange')} label={'Label'} color={'primary'} />
+    <>
+      <Checkbox
+        onChange={action('onChange')}
+        label={'Label'}
+        color={'primary'}
+      />
+      <br />
+      <Checkbox
+        onChange={action('onChange')}
+        label={<Label />}
+        color={'primary'}
+        classes={classesExample}
+      />
+    </>
   ))
   .add('CheckboxGroup', () => (
     <CheckboxGroup

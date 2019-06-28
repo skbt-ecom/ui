@@ -4,9 +4,34 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Checkbox from '@material-ui/core/Checkbox';
+import { makeStyles } from '@material-ui/core/styles';
+
+const getClassesFromProps = (props, className) => {
+  const {
+    classes: { [className]: classes },
+    ...restProps
+  } = props;
+  return { classes, ...restProps };
+};
+
+const useStylesCheckbox = makeStyles({
+  root: {},
+  checked: {},
+});
+const useStylesLabel = makeStyles({
+  root: {},
+  label: {},
+});
 
 const CheckboxComponent = React.memo(props => {
-  const { label, error, helperText, ...restProps } = props;
+  const checkboxClasses = props.classes
+    ? useStylesCheckbox(getClassesFromProps(props, 'checkboxClasses'))
+    : {};
+  const labelClasses = props.classes
+    ? useStylesLabel(getClassesFromProps(props, 'labelClasses'))
+    : {};
+
+  const { label, error, helperText, classes, ...restProps } = props;
 
   const handleChange = event => {
     props.onChange(event);
@@ -16,8 +41,21 @@ const CheckboxComponent = React.memo(props => {
     <FormControl required error={error} component="fieldset">
       <FormGroup>
         <FormControlLabel
-          control={<Checkbox {...restProps} onChange={handleChange} />}
+          control={
+            <Checkbox
+              {...restProps}
+              onChange={handleChange}
+              classes={{
+                root: checkboxClasses.root,
+                label: checkboxClasses.label,
+              }}
+            />
+          }
           label={label}
+          classes={{
+            root: labelClasses.root,
+            label: labelClasses.label,
+          }}
         />
       </FormGroup>
       {helperText && <FormHelperText>{helperText}</FormHelperText>}

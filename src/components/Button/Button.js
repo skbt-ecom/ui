@@ -16,8 +16,8 @@ const ButtonComponent = ({ children, ...props }) => {
     <Button
       {...props}
       classes={{
-        label: classes.label,
         root: classes.root,
+        label: classes.label,
       }}
     >
       {children}
