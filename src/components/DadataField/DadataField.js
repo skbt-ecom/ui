@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Autosuggest from 'react-autosuggest';
 import TextField from '@material-ui/core/TextField';
+import Popper from '@material-ui/core/Popper';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 
@@ -38,6 +39,7 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
   );
 }
 
+// TODO: switch to useRef()
 let _isSuggestionSelected = false;
 let _currentSuggestion = {};
 
@@ -47,6 +49,7 @@ export default function IntegrationAutosuggest(props) {
     single: '',
   });
   const [stateSuggestions, setSuggestions] = useState([]);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
   const setDebouncedSuggestions = debounce(inputValue => {
     const { type, dadataOptions } = props;
@@ -133,19 +136,32 @@ export default function IntegrationAutosuggest(props) {
           placeholder,
           value: state.single,
           onChange: handleChange,
+          inputRef: node => {
+            setAnchorEl(node);
+          },
+          InputLabelProps: {
+            shrink: true,
+          },
           onBlur,
           ...otherInputProps,
         }}
         theme={{
           container: classes.container,
+          suggestionsContainer: classes.suggestionsContainer,
           suggestionsContainerOpen: classes.suggestionsContainerOpen,
           suggestionsList: classes.suggestionsList,
           suggestion: classes.suggestion,
         }}
-        renderSuggestionsContainer={options => (
-          <Paper {...options.containerProps} square>
-            {options.children}
-          </Paper>
+        renderSuggestionsContainer={({ containerProps, children }) => (
+          <Popper anchorEl={anchorEl} open={Boolean(children)}>
+            <Paper
+              square
+              {...containerProps}
+              style={{ width: anchorEl ? anchorEl.clientWidth : undefined }}
+            >
+              {children}
+            </Paper>
+          </Popper>
         )}
       />
     </div>
