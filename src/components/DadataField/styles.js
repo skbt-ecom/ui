@@ -1,6 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
+  suggestionsContainer: {
+    position: 'relative',
+    zIndex: 1,
+  },
   suggestion: {
     display: 'block',
   },

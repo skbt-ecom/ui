@@ -101,13 +101,11 @@ export default function IntegrationAutosuggest(props) {
           inputRef: node => {
             setAnchorEl(node);
           },
-          InputLabelProps: {
-            shrink: true,
-          },
           onBlur,
           ...otherInputProps,
         }}
         theme={{
+          suggestionsContainer: classes.suggestionsContainer,
           suggestionsList: classes.suggestionsList,
           suggestion: classes.suggestion,
         }}

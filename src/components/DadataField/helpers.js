@@ -12,6 +12,6 @@ export function getDadataValue(
     return isSuggestionSelected ? currentSuggestion : valueInState.trim();
   } else {
     // type === 'address'
-    return isSuggestionSelected ? currentSuggestion : { data: {} };
+    return isSuggestionSelected ? currentSuggestion : null;
   }
 }
