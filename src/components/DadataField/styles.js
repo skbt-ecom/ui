@@ -1,6 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
+  popper: {
+    zIndex: 2,
+  },
   suggestionsContainer: {
     position: 'relative',
     zIndex: 1,

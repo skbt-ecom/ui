@@ -110,7 +110,11 @@ export default function IntegrationAutosuggest(props) {
           suggestion: classes.suggestion,
         }}
         renderSuggestionsContainer={({ containerProps, children }) => (
-          <Popper anchorEl={anchorEl} open={Boolean(children)}>
+          <Popper
+            anchorEl={anchorEl}
+            open={Boolean(children)}
+            className={classes.popper}
+          >
             <Paper
               square
               {...containerProps}
