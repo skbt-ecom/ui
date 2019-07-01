@@ -14,6 +14,7 @@ const Header = props => {
         <ReactSVG src={logo} />
       </a>
       <div className={classes.phoneContainer}>
+        <img src={logo} alt="logo" />
         <a rel="nofollow" href={`tel:${phone}`} className={classes.phoneNum}>
           {phone}
         </a>
