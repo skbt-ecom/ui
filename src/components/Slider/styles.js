@@ -5,7 +5,9 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     width: '100%',
   },
-  input: {},
+  input: {
+    fontWeight: 500,
+  },
   slider: {
     position: 'absolute',
     bottom: '-11px',
