@@ -19,17 +19,6 @@ const Header = props => {
         </a>
         <p className={classes.phoneHint}>Для звонков по России бесплатно</p>
       </div>
-      {/* <div class="container h100 d-flex align-items-center justify-content-between">
-        <a class="logo" href="/ipoteka/"></a>
-        <div class="d-none d-md-block">
-          <a class="phone" href="tel:8 800 100-10-20">
-            8 800 100-10-20
-          </a>
-          <p class="phone-hint">
-            Для звонков по России (круглосуточно, бесплатно)
-          </p>
-        </div>
-      </div> */}
     </div>
   );
 };
