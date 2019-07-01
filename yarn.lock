@@ -1570,6 +1570,13 @@
     "@svgr/plugin-svgo" "^4.2.0"
     loader-utils "^1.2.3"
 
+"@tanem/svg-injector@^8.0.14":
+  version "8.0.17"
+  resolved "https://registry.yarnpkg.com/@tanem/svg-injector/-/svg-injector-8.0.17.tgz#530d14a1422be6dd0ee44c80a05acf22a5d76714"
+  integrity sha512-Q3EIQg3DckUdHB5GcVY+7mTY0nGScGLLRq5GsjAe9HW36aQ4FDT/MNoBEr4h2505aisdAiVitFfaUbZc9TRo7Q==
+  dependencies:
+    "@babel/runtime" "^7.4.5"
+
 "@types/node@*":
   version "12.0.8"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.8.tgz#551466be11b2adc3f3d47156758f610bd9f6b1d8"
@@ -6808,6 +6815,15 @@ react-resize-detector@^4.0.5:
     prop-types "^15.7.2"
     raf-schd "^4.0.0"
     resize-observer-polyfill "^1.5.1"
+
+react-svg@^10.0.9:
+  version "10.0.9"
+  resolved "https://registry.yarnpkg.com/react-svg/-/react-svg-10.0.9.tgz#b8f5a3231243467799901132a2af7cd31ff7c610"
+  integrity sha512-da6qPsc+LZPBwncUZwIIpw9JOpzoThHBy64GqLYARFcWiAb8j793HGhTtamLw8hw1srulEJF2P6UOmjA0X3Uwg==
+  dependencies:
+    "@babel/runtime" "^7.4.5"
+    "@tanem/svg-injector" "^8.0.14"
+    prop-types "^15.7.2"
 
 react-syntax-highlighter@^8.0.1:
   version "8.1.0"
