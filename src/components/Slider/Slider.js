@@ -25,14 +25,14 @@ const SliderComponent = React.memo(props => {
 
   const handleSliderChangeCommitted = (event, newValue) => {
     setValue(newValue);
-    props.onChangeCommit(newValue);
+    props.onChangeCommitted(newValue);
   };
 
   const handleInputChange = ({ floatValue }) => {
     if (floatValue !== value) {
       setValue(floatValue);
-      if (props.onChangeCommit) {
-        return props.onChangeCommit(floatValue);
+      if (props.onChangeCommitted) {
+        return props.onChangeCommitted(floatValue);
       }
       props.onChange(newValue);
     }
