@@ -53,6 +53,7 @@ const SliderComponent = React.memo(props => {
         allowNegative={false}
         decimalScale={0}
         isAllowed={limit}
+        aria-labelledby="slider"
       />
       <Slider
         {...sliderProps}

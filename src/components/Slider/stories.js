@@ -20,9 +20,20 @@ const sliderProps = {
 
 storiesOf('Slider', module)
   .addDecorator(muiTheme([theme]))
-  .add('Committed', () => (
+  .add('Default', () => (
     <Slider
       onChange={action('onChange')}
+      inputProps={inputProps}
+      sliderProps={sliderProps}
+      // initialValue={300}
+      min={100} // if no initialValue using min value as initial
+      max={2000}
+      // value={500}
+      committed={true}
+    />
+  ))
+  .add('Committed', () => (
+    <Slider
       onChangeCommitted={action('onChangeCommitted')}
       inputProps={inputProps}
       sliderProps={sliderProps}

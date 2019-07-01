@@ -1,31 +1,32 @@
 import React from 'react';
 
 import logo from './logo.svg';
-import ReactSVG from 'react-svg';
 
 import useStyles from './styles';
 
-const Header = props => {
+const Header = React.memo(props => {
   const classes = useStyles(props);
-  const { logoHref, phone } = props;
+  const { logoHref, phone, phoneHint } = props;
+
   return (
     <div className={classes.container}>
       <a href={logoHref} className={classes.logoContainer}>
-        <ReactSVG src={logo} />
+        <img src={logo} alt="logo" />
       </a>
       <div className={classes.phoneContainer}>
-        <img src={logo} alt="logo" />
         <a rel="nofollow" href={`tel:${phone}`} className={classes.phoneNum}>
           {phone}
         </a>
-        <p className={classes.phoneHint}>Для звонков по России бесплатно</p>
+        <p className={classes.phoneHint}>{phoneHint}</p>
       </div>
     </div>
   );
-};
+});
 
 Header.defaultProps = {
+  logoHref: '/',
   phone: '8 800 100-10-20',
+  phoneHint: 'Для звонков по России бесплатно',
 };
 
 export default Header;

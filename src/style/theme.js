@@ -6,7 +6,7 @@ const theme = createMuiTheme({
     values: {
       xs: 0,
       sm: 767,
-      md: 991,
+      md: 992,
       lg: 1280,
       xl: 1920,
     },
@@ -14,13 +14,6 @@ const theme = createMuiTheme({
   palette: {
     primary: { main: '#003791' },
     secondary: { main: '#FF4B5F' },
-  },
-  overrides: {
-    MuiCssBaseline: {
-      '@global': {
-        '@font-face': [bebas],
-      },
-    },
   },
 });
 

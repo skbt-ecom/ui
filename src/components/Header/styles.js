@@ -7,25 +7,36 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
-      height: '64px',
+    height: '64px',
+    [theme.breakpoints.up('sm')]: {
+      height: '80px',
+      width: '665px',
     },
     [theme.breakpoints.up('md')]: {
-      height: '80px',
-    },
-    [theme.breakpoints.up('lg')]: {
       height: '104px',
+      width: '1210px',
     },
   },
-  logoContainer: {},
+  logoContainer: {
+    '& img': {
+      height: '16px',
+      [theme.breakpoints.up('sm')]: {
+        height: '20px',
+      },
+      [theme.breakpoints.up('md')]: {
+        height: '24px',
+      },
+    },
+  },
   phoneContainer: {
     fontFamily: '"Roboto", Arial, Helvetica, sans-serif',
     fontWeight: 400,
     fontSize: '9px',
     color: '#a1afbf',
     lineHeight: '12px',
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
     },
   },
   phoneNum: {
