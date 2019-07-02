@@ -37,7 +37,7 @@ const SliderComponent = React.memo(props => {
       props.onChange(newValue);
     }
   };
-
+  // TODO: вытащить label из inputProps и сделать его общим для компонента
   const { sliderProps, inputProps, min, max } = props;
 
   return (
