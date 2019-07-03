@@ -16,3 +16,4 @@ export { default as Checkbox } from './Chekbox/Checkbox';
 export { default as CheckboxGroup } from './Chekbox/CheckboxGroup';
 export { default as Header } from './Header';
 export { default as Grid } from './Grid';
+export { default as Container } from './Container';

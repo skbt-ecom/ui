@@ -13,9 +13,9 @@ storiesOf('Grid', module)
   .addDecorator(muiTheme([theme]))
   .add('Default', () => {
     return (
-      <Grid container spacing={2}>
+      <Grid container spacing={40}>
         <Grid item xs={12}>
-          <Grid container justify="center" spacing={2}>
+          <Grid item container direction="column" spacing={2}>
             {[0, 1, 2].map(value => (
               <Grid key={value} item>
                 {value}
