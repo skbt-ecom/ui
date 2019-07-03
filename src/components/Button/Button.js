@@ -1,15 +1,9 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
-  root: {},
-  label: {
-    fontFamily: '"Bebas", "Roboto", "Helvetica", "Arial", sans-serif',
-  },
-});
+import useStyles from './styles';
 
-const ButtonComponent = ({ children, ...props }) => {
+const ButtonComponent = React.memo(props => {
   const classes = useStyles(props);
 
   return (
@@ -19,11 +13,9 @@ const ButtonComponent = ({ children, ...props }) => {
         root: classes.root,
         label: classes.label,
       }}
-    >
-      {children}
-    </Button>
+    />
   );
-};
+});
 
 ButtonComponent.defaultProps = {
   variant: 'contained',
