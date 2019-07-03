@@ -11,7 +11,7 @@ import theme from '../../style/theme';
 storiesOf('Container', module)
   .addDecorator(muiTheme([theme]))
   .add('Default', () => (
-    <Container maxWidth="sm">
+    <Container>
       <div style={{ backgroundColor: '#cfe8fc', height: '50vh' }} />
     </Container>
   ));

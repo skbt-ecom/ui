@@ -10,11 +10,9 @@ const useStyles = makeStyles(theme => ({
     height: '64px',
     [theme.breakpoints.up('sm')]: {
       height: '80px',
-      width: '665px',
     },
     [theme.breakpoints.up('md')]: {
       height: '104px',
-      width: '1210px',
     },
   },
   logoContainer: {
