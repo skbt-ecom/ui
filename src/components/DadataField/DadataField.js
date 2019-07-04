@@ -43,10 +43,10 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
 let _isSuggestionSelected = false;
 let _currentSuggestion = {};
 
-export default function IntegrationAutosuggest(props) {
+export default React.memo(function IntegrationAutosuggest(props) {
   const classes = useStyles();
   const [state, setState] = useState({
-    single: '',
+    single: props.value || '',
   });
   const [stateSuggestions, setSuggestions] = useState([]);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -124,8 +124,10 @@ export default function IntegrationAutosuggest(props) {
     placeholder,
     onChange,
     dadataOptions,
+    value,
     ...otherInputProps
   } = props;
+
   return (
     <div className={classes.root}>
       <Autosuggest
@@ -165,4 +167,4 @@ export default function IntegrationAutosuggest(props) {
       />
     </div>
   );
-}
+});
