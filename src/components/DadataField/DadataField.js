@@ -70,7 +70,7 @@ export default React.memo(function IntegrationAutosuggest(props) {
   };
 
   const handleSuggestionsClearRequested = () => {
-    if (stateSuggestions.length) {
+    if (stateSuggestions && stateSuggestions.length) {
       setStateSuggestions([]);
     }
   };
