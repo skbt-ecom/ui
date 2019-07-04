@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Autosuggest from 'react-autosuggest';
 import TextField from '@material-ui/core/TextField';
 import Popper from '@material-ui/core/Popper';
@@ -48,28 +48,31 @@ export default React.memo(function IntegrationAutosuggest(props) {
   const [state, setState] = useState({
     single: props.value || '',
   });
-  const [stateSuggestions, setSuggestions] = useState([]);
+  const [stateSuggestions, setStateSuggestions] = useState([]);
   const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const setDebouncedSuggestions = debounce(inputValue => {
-    const { type, dadataOptions } = props;
-
-    getDadata(type, inputValue, dadataOptions).then(({ suggestions }) => {
-      setSuggestions(suggestions);
-    });
-  }, 500);
+  const inputValue = useRef('');
+  const setDebouncedSuggestions = useRef(
+    debounce(inputValue => {
+      const { type, dadataOptions } = props;
+      getDadata(type, inputValue, dadataOptions).then(({ suggestions }) => {
+        setStateSuggestions(suggestions);
+      });
+    }, 500)
+  );
 
   const getSuggestions = value => {
-    const inputValue = value.toLowerCase().trim();
-    setDebouncedSuggestions(inputValue);
+    inputValue.current = value.toLowerCase().trim();
+    setDebouncedSuggestions.current(inputValue.current);
   };
 
   const handleSuggestionsFetchRequested = ({ value }) => {
-    setSuggestions(getSuggestions(value));
+    setStateSuggestions(getSuggestions(value));
   };
 
   const handleSuggestionsClearRequested = () => {
-    setSuggestions([]);
+    if (stateSuggestions.length) {
+      setStateSuggestions([]);
+    }
   };
 
   const handleChange = (event, { newValue }) => {
@@ -141,8 +144,8 @@ export default React.memo(function IntegrationAutosuggest(props) {
           inputRef: node => {
             setAnchorEl(node);
           },
-          onBlur,
           ...otherInputProps,
+          onBlur,
         }}
         theme={{
           suggestionsContainer: classes.suggestionsContainer,
