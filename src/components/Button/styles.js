@@ -4,6 +4,7 @@ const useStyles = makeStyles({
   root: {},
   label: {
     fontFamily: '"Bebas", "Roboto", "Helvetica", "Arial", sans-serif',
+    letterSpacing: '1px',
   },
 });
 
