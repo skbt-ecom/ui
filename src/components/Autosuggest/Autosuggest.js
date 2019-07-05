@@ -43,7 +43,7 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
 export default function IntegrationAutosuggest(props) {
   const classes = useStyles();
   const [state, setState] = useState({
-    single: '',
+    single: props.value || '',
   });
   const [stateSuggestions, setSuggestions] = useState([]);
   const isSuggestionSelected = useRef(false); // need to send props.onChange() in onBlur when suggestion not selected
@@ -87,7 +87,7 @@ export default function IntegrationAutosuggest(props) {
     onSuggestionSelected,
   };
 
-  const { label, placeholder, onChange, ...otherInputProps } = props;
+  const { label, placeholder, onChange, value, ...otherInputProps } = props;
   return (
     <div className={classes.root}>
       <Autosuggest
