@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from 'react';
-import Slider from '@material-ui/lab/Slider';
+import React, { useState } from 'react';
+import Slider from '@material-ui/core/Slider';
 import TextField from '../TextField';
 import NumberFormat from 'react-number-format'; //https://github.com/s-yadav/react-number-format
 
@@ -68,4 +68,10 @@ const SliderComponent = React.memo(props => {
     </div>
   );
 });
+
+SliderComponent.defaultProps = {
+  onChange: () => null,
+  onChangeCommitted: () => null,
+};
+
 export default SliderComponent;
