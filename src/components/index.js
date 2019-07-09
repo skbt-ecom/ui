@@ -20,3 +20,4 @@ export { default as Container } from './Container';
 export { default as Paper } from './Paper';
 export { default as Box } from './Box';
 export { default as VerifyCode } from './VerifyCode';
+export { default as Link } from './Link';
