@@ -22,3 +22,4 @@ export { default as Paper } from './Paper';
 export { default as Box } from './Box';
 export { default as VerifyCode } from './VerifyCode';
 export { default as Link } from './Link';
+export { default as AddressField } from './AddressField';
