@@ -37,7 +37,7 @@ const AddressField = React.memo(props => {
     const sendData = addFlatToDadata(addressDadata, flat);
     // console.log('sendData', sendData);
     props.onChange(sendData);
-  });
+  }, [addressDadata, flat, isNoFlat]);
 
   const handleAddressDadataChange = useCallback(value => {
     // console.log('handleAddressDadataChange val:', value);
