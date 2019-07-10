@@ -11,6 +11,14 @@ import theme from '../../style/theme';
 
 storiesOf('AddressField', module)
   .addDecorator(muiTheme([theme]))
-  .add('Default', () => (
-    <AddressField onChange={action('onChange')} error={true} helperText={''} />
+  .add('Default', () => <AddressField onChange={action('onChange')} />)
+  .add('Errors', () => (
+    <AddressField
+      onChange={action('onChange')}
+      error={true}
+      helperText={{
+        addressDadata: 'addressDadata error txt',
+        flat: 'flat error text',
+      }}
+    />
   ));

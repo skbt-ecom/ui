@@ -13,28 +13,28 @@ const addFlatToDadata = (dadataValue, flat) => ({
 
 //TODO: use useCallback hook on handleSmth functions
 const AddressField = React.memo(props => {
-  console.log('AddressField rerendered');
+  // console.log('AddressField rerendered');
   const [addressDadata, setAddressDadata] = useState(null);
   const [flat, setFlat] = useState('');
   const [isNoFlat, setIsNoFlat] = useState(false);
 
   useEffect(() => {
-    console.log('');
-    console.log('===useEffect START===');
-    console.log({ addressDadata, flat, isNoFlat });
-    console.log('===useEffect END===');
-    console.log('');
+    // console.log('');
+    // console.log('===useEffect START===');
+    // console.log({ addressDadata, flat, isNoFlat });
+    // console.log('===useEffect END===');
+    // console.log('');
 
     if (!addressDadata || isNoFlat) {
       return props.onChange(addressDadata);
     }
     const sendData = addFlatToDadata(addressDadata, flat);
-    console.log('sendData', sendData);
+    // console.log('sendData', sendData);
     props.onChange(sendData);
   });
 
-  const handleDadataFieldChange = useCallback(value => {
-    console.log('handleDadataFieldChange val:', value);
+  const handleAddressDadataChange = useCallback(value => {
+    // console.log('handleAddressDadataChange val:', value);
     setAddressDadata(value);
   }, []);
 
@@ -43,7 +43,7 @@ const AddressField = React.memo(props => {
       target: { value },
     } = e;
     setFlat(value);
-    console.log('handleFlatChange val:', value);
+    // console.log('handleFlatChange val:', value);
   }, []);
 
   const handleNoFlatChange = useCallback(e => {
@@ -51,28 +51,45 @@ const AddressField = React.memo(props => {
       target: { checked },
     } = e;
     setIsNoFlat(checked);
-    console.log('handleNoFlatChange val:', checked);
+    // console.log('handleNoFlatChange val:', checked);
   }, []);
+
+  const addressDadataErrorProps = {
+    error: Boolean(props.helperText.addressDadata),
+    helperText: props.helperText.addressDadata,
+  };
+  const flatErrorProps = {
+    error: Boolean(props.helperText.flat),
+    helperText: props.helperText.flat,
+  };
 
   return (
     <>
       <DadataField
-        onChange={handleDadataFieldChange}
+        onChange={handleAddressDadataChange}
         type={'address'}
         label={'Адрес'}
         dadataOptions={{ to_bound: { value: 'house' } }}
         fullWidth
+        {...addressDadataErrorProps}
       />
-      <TextField onChange={handleFlatChange} value={flat} disabled={isNoFlat} />
+      <TextField
+        onChange={handleFlatChange}
+        value={flat}
+        disabled={isNoFlat}
+        {...flatErrorProps}
+      />
       <Checkbox
         onChange={handleNoFlatChange}
         label={'Нет номера квартиры'}
         color={'primary'}
         checked={isNoFlat}
       />
-      <button onClick={() => setFlat('1')}>lol</button>
     </>
   );
 });
 
+AddressField.defaultProps = {
+  helperText: { addressDadata: null, flat: null },
+};
 export default AddressField;
