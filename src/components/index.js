@@ -7,6 +7,7 @@ export { default as Button } from './Button';
 export { default as Switch } from './Switch';
 export { default as DadataField } from './DadataField';
 export { default as DateField } from './DateField';
+export { default as Footer } from './Footer';
 export { default as PhoneField } from './PhoneField';
 export { default as MaskedField } from './MaskedField';
 export { default as TextField } from './TextField';
