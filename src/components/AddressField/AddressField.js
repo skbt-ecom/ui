@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import DadataField from '../DadataField';
 import TextField from '../TextField';
 import Checkbox from '../Chekbox/Checkbox';
@@ -17,8 +17,14 @@ const AddressField = React.memo(props => {
   const [addressDadata, setAddressDadata] = useState(null);
   const [flat, setFlat] = useState('');
   const [isNoFlat, setIsNoFlat] = useState(false);
+  const isFirstRun = useRef(true);
 
   useEffect(() => {
+    if (isFirstRun.current) {
+      isFirstRun.current = false;
+      return;
+    }
+
     // console.log('');
     // console.log('===useEffect START===');
     // console.log({ addressDadata, flat, isNoFlat });
