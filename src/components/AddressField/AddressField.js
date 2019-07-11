@@ -1,7 +1,9 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
+
 import DadataField from '../DadataField';
 import TextField from '../TextField';
 import Checkbox from '../Chekbox/Checkbox';
+import getClasses from './styles';
 
 const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({
   ...dadataValue,
@@ -13,6 +15,8 @@ const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({
 });
 
 const AddressField = React.memo(props => {
+  const classes = useCallback(getClasses(props), [props.classes]);
+
   const [addressDadata, setAddressDadata] = useState(null);
   const [flat, setFlat] = useState('');
   const [isNoFlat, setIsNoFlat] = useState(false);
@@ -50,37 +54,44 @@ const AddressField = React.memo(props => {
   }, []);
 
   const addressDadataErrorProps = {
-    error: Boolean(props.helperText.addressDadata),
+    error: Boolean(props.error),
     helperText: props.helperText.addressDadata,
   };
   const flatErrorProps = {
-    error: Boolean(props.helperText.flat),
+    error: Boolean(props.error),
     helperText: props.helperText.flat,
   };
 
   return (
-    <>
-      <DadataField
-        onChange={handleAddressDadataChange}
-        type={'address'}
-        label={'Адрес'}
-        dadataOptions={{ to_bound: { value: 'house' } }}
-        fullWidth
-        {...addressDadataErrorProps}
-      />
-      <TextField
-        onChange={handleFlatChange}
-        value={flat}
-        disabled={isNoFlat}
-        {...flatErrorProps}
-      />
-      <Checkbox
-        onChange={handleNoFlatChange}
-        label={'Нет номера квартиры'}
-        color={'primary'}
-        checked={isNoFlat}
-      />
-    </>
+    <div>
+      <div className={classes.addressDadataClasses.container}>
+        <DadataField
+          onChange={handleAddressDadataChange}
+          type={'address'}
+          label={'Адрес'}
+          dadataOptions={{ to_bound: { value: 'house' } }}
+          fullWidth
+          {...addressDadataErrorProps}
+        />
+      </div>
+      <div className={classes.flatInfoClasses.container}>
+        <TextField
+          onChange={handleFlatChange}
+          value={flat}
+          disabled={isNoFlat}
+          classes={{
+            root: classes.flatInfoClasses.flatField,
+          }}
+          {...flatErrorProps}
+        />
+        <Checkbox
+          onChange={handleNoFlatChange}
+          label={'Нет номера квартиры'}
+          color={'primary'}
+          checked={isNoFlat}
+        />
+      </div>
+    </div>
   );
 });
 
