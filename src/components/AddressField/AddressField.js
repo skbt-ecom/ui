@@ -12,9 +12,7 @@ const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({
   },
 });
 
-//TODO: use useCallback hook on handleSmth functions
 const AddressField = React.memo(props => {
-  // console.log('AddressField rerendered');
   const [addressDadata, setAddressDadata] = useState(null);
   const [flat, setFlat] = useState('');
   const [isNoFlat, setIsNoFlat] = useState(false);
@@ -26,22 +24,14 @@ const AddressField = React.memo(props => {
       return;
     }
 
-    // console.log('');
-    // console.log('===useEffect START===');
-    // console.log({ addressDadata, flat, isNoFlat });
-    // console.log('===useEffect END===');
-    // console.log('');
-
-    if (!addressDadata || isNoFlat) {
-      return props.onChange(addressDadata);
+    if (!addressDadata) {
+      return props.onChange(null);
     }
     const sendData = addFlatInfoToDadata(addressDadata, flat, isNoFlat);
-    // console.log('sendData', sendData);
     props.onChange(sendData);
   }, [addressDadata, flat, isNoFlat]);
 
   const handleAddressDadataChange = useCallback(value => {
-    // console.log('handleAddressDadataChange val:', value);
     setAddressDadata(value);
   }, []);
 
@@ -50,7 +40,6 @@ const AddressField = React.memo(props => {
       target: { value },
     } = e;
     setFlat(value);
-    // console.log('handleFlatChange val:', value);
   }, []);
 
   const handleNoFlatChange = useCallback(e => {
@@ -58,7 +47,6 @@ const AddressField = React.memo(props => {
       target: { checked },
     } = e;
     setIsNoFlat(checked);
-    // console.log('handleNoFlatChange val:', checked);
   }, []);
 
   const addressDadataErrorProps = {
