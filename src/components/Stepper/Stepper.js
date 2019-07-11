@@ -7,16 +7,31 @@ import Typography from '@material-ui/core/Typography';
 
 import useStyles from './styles';
 
+function StepConnector(props) {
+  return <div className={props.className} />;
+}
+
 const StepperComponent = React.memo(props => {
   const classes = useStyles();
 
   return (
-    <Stepper activeStep={1} orientation="vertical">
+    <Stepper
+      activeStep={1}
+      orientation="vertical"
+      connector={<StepConnector className={classes.connector} />}
+    >
       {props.steps.map(({ label, content }) => (
         <Step key={label}>
-          <StepLabel>{label}</StepLabel>
-          <StepContent>
-            <Typography>{content}</Typography>
+          <StepLabel
+            classes={{
+              label: classes.label,
+              iconContainer: classes.iconContainer,
+            }}
+          >
+            {label}
+          </StepLabel>
+          <StepContent classes={{ root: classes.content }}>
+            {content}
           </StepContent>
         </Step>
       ))}
