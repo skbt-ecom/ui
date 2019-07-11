@@ -23,3 +23,4 @@ export { default as Box } from './Box';
 export { default as VerifyCode } from './VerifyCode';
 export { default as Link } from './Link';
 export { default as AddressField } from './AddressField';
+export { default as Stepper } from './Stepper';
