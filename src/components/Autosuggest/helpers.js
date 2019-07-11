@@ -1,5 +1,5 @@
 export function getSuggestions(suggestions = [], value = '') {
-  const inputValue = value.trim().toLowerCase();
+  const inputValue = value.toLowerCase();
   const inputLength = inputValue.length;
   let count = 0;
 

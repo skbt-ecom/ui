@@ -1,19 +1,20 @@
 import React, { useState, useRef } from 'react';
+import Autorenew from '@material-ui/icons/Autorenew';
+import InputAdornment from '@material-ui/core/InputAdornment';
 import Autosuggest from 'react-autosuggest';
 import TextField from '@material-ui/core/TextField';
 import Popper from '@material-ui/core/Popper';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 
-import { getDadataValue, getSuggestionValue } from './helpers';
+import { getSuggestionValue } from './helpers';
 import getDadata from './getDadata';
 import debounce from '../../utils/debounce';
 
 import useStyles from './styles';
 
 function renderInputComponent(inputProps) {
-  const { classes, inputRef = () => {}, ref, ...other } = inputProps;
-
+  const { classes, inputRef = () => {}, ref, isLoading, ...other } = inputProps;
   return (
     <TextField
       variant={'outlined'}
@@ -25,6 +26,12 @@ function renderInputComponent(inputProps) {
         classes: {
           input: classes.input,
         },
+        endAdornment: isLoading && (
+          <InputAdornment position="end">
+            <Autorenew color={'primary'} className={classes.loadingIcon} />
+          </InputAdornment>
+        ),
+        disabled: isLoading,
       }}
       {...other}
     />
@@ -39,10 +46,6 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
   );
 }
 
-// TODO: switch to useRef()
-let _isSuggestionSelected = false;
-let _currentSuggestion = {};
-
 export default React.memo(function IntegrationAutosuggest(props) {
   const classes = useStyles();
   const [state, setState] = useState({
@@ -50,6 +53,11 @@ export default React.memo(function IntegrationAutosuggest(props) {
   });
   const [stateSuggestions, setStateSuggestions] = useState([]);
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const isSuggestionSelected = useRef(false);
+
   const inputValue = useRef('');
   const setDebouncedSuggestions = useRef(
     debounce(inputValue => {
@@ -61,7 +69,7 @@ export default React.memo(function IntegrationAutosuggest(props) {
   );
 
   const getSuggestions = value => {
-    inputValue.current = value.toLowerCase().trim();
+    inputValue.current = value.toLowerCase();
     setDebouncedSuggestions.current(inputValue.current);
   };
 
@@ -76,7 +84,7 @@ export default React.memo(function IntegrationAutosuggest(props) {
   };
 
   const handleChange = (event, { newValue }) => {
-    _isSuggestionSelected = false;
+    isSuggestionSelected.current = false;
     setState({
       ...state,
       single: newValue,
@@ -85,31 +93,35 @@ export default React.memo(function IntegrationAutosuggest(props) {
 
   const onSuggestionSelected = (event, { suggestion }) => {
     const { type, dadataOptions } = props;
-    _isSuggestionSelected = true;
+    isSuggestionSelected.current = true;
     // spike, because dadata not returns postal code
     // we must do specific query for only one suggestion
     if (type === 'address') {
-      getDadata(type, suggestion.unrestricted_value, {
+      setIsLoading(true);
+      return getDadata(type, suggestion.unrestricted_value, {
         ...dadataOptions,
         count: 1,
         restrict_value: true,
       }).then(res => {
-        _currentSuggestion = res && res.suggestions && res.suggestions[0];
+        const fullSuggestion = res && res.suggestions && res.suggestions[0];
+        props.onChange(fullSuggestion);
+        setIsLoading(false);
       });
     } else {
-      _currentSuggestion = suggestion;
+      return props.onChange(suggestion);
     }
   };
 
   const onBlur = e => {
     const { type } = props;
-    const value = getDadataValue(
-      type,
-      _isSuggestionSelected,
-      _currentSuggestion,
-      state.single
-    );
-    props.onChange(value);
+    if (type === 'fio') {
+      if (!isSuggestionSelected.current) {
+        const value = state.single ? state.single.trim() : null;
+        return props.onChange(value);
+      }
+      return;
+    }
+    props.onChange(null);
   };
 
   const autosuggestProps = {
@@ -141,6 +153,7 @@ export default React.memo(function IntegrationAutosuggest(props) {
           placeholder,
           value: state.single,
           onChange: handleChange,
+          isLoading,
           inputRef: node => {
             setAnchorEl(node);
           },

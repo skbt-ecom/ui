@@ -20,5 +20,6 @@ storiesOf('DadataField', module)
       type={'address'}
       label={'Адрес'}
       dadataOptions={{}}
+      fullWidth
     />
   ));
