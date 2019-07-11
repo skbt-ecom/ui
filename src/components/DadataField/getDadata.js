@@ -1,3 +1,5 @@
+import memoizeOne from 'memoize-one';
+
 /**
  *
  * @param {string} type Dadata's type (fio|address)
@@ -5,7 +7,7 @@
  * @param {object} options Dadata's options
  * @returns {Promise} Promise object with Dadata's response (as json if resolve)
  */
-export default function getDadata(type, data, options = {}) {
+const getDadata = (type, data, options = {}) => {
   const DADATA_URL =
     'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest';
   const API_KEY = '3696edb148443072e2f9b52b5a7cbc8a77f8745f';
@@ -24,4 +26,6 @@ export default function getDadata(type, data, options = {}) {
   })
     .then(res => res.json())
     .catch(err => console.error('Dadata error', err));
-}
+};
+
+export default memoizeOne(getDadata);
