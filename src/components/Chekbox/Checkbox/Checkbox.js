@@ -6,13 +6,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import Checkbox from '@material-ui/core/Checkbox';
 import { makeStyles } from '@material-ui/core/styles';
 
-const getClassesFromProps = (props, className) => {
-  const {
-    classes: { [className]: classes },
-    ...restProps
-  } = props;
-  return { classes, ...restProps };
-};
+import { getClassesFromProps } from '../../../utils';
 
 const useStylesCheckbox = makeStyles({
   root: {},
