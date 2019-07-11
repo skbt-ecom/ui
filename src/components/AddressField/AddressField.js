@@ -3,8 +3,9 @@ import DadataField from '../DadataField';
 import TextField from '../TextField';
 import Checkbox from '../Chekbox/Checkbox';
 
-const addFlatToDadata = (dadataValue, flat) => ({
+const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({
   ...dadataValue,
+  isNoFlat,
   data: {
     ...dadataValue.data,
     flat,
@@ -34,7 +35,7 @@ const AddressField = React.memo(props => {
     if (!addressDadata || isNoFlat) {
       return props.onChange(addressDadata);
     }
-    const sendData = addFlatToDadata(addressDadata, flat);
+    const sendData = addFlatInfoToDadata(addressDadata, flat, isNoFlat);
     // console.log('sendData', sendData);
     props.onChange(sendData);
   }, [addressDadata, flat, isNoFlat]);
