@@ -7,6 +7,10 @@ function styles(theme) {
   const color = '#a1afbf';
 
   return {
+    stepper: {
+      padding: 0,
+    },
+
     iconContainer: {
       '&>svg': {
         color: color,

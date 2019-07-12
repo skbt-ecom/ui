@@ -19,6 +19,7 @@ const StepperComponent = React.memo(props => {
       activeStep={1}
       orientation="vertical"
       connector={<StepConnector className={classes.connector} />}
+      classes={{ root: classes.stepper }}
     >
       {props.steps.map(({ label, content }) => (
         <Step key={label}>
