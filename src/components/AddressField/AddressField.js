@@ -16,6 +16,7 @@ const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({
 
 const AddressField = React.memo(props => {
   const classes = useCallback(getClasses(props), [props.classes]);
+  console.log(classes);
 
   const [addressDadata, setAddressDadata] = useState(null);
   const [flat, setFlat] = useState('');
@@ -97,5 +98,6 @@ const AddressField = React.memo(props => {
 
 AddressField.defaultProps = {
   helperText: { addressDadata: null, flat: null },
+  classes: { addressDadataClasses: {}, flatInfoClasses: {} },
 };
 export default AddressField;

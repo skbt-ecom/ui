@@ -15,7 +15,10 @@ storiesOf('AddressField', module)
     <AddressField
       onChange={action('onChange')}
       helperText={{ addressDadata: 'Район, город, улица, дом' }}
-      classes={{ addressDadataClasses: { container: 'class1' } }}
+      classes={{
+        addressDadataClasses: { container: 'class1' },
+        flatInfoClasses: { container: 'class2' },
+      }}
     />
   ))
   .add('Errors', () => (
