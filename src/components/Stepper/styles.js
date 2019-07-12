@@ -12,6 +12,9 @@ function styles(theme) {
     },
 
     iconContainer: {
+      paddingRight: 0,
+      marginRight: 8,
+
       '&>svg': {
         color: color,
       },
@@ -19,7 +22,7 @@ function styles(theme) {
       [theme.breakpoints.up('sm')]: {
         width: w,
         height: w,
-        paddingRight: pr,
+        marginRight: pr,
 
         '&>svg': {
           width: '100%',
