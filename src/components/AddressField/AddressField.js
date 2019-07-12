@@ -16,7 +16,6 @@ const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({
 
 const AddressField = React.memo(props => {
   const classes = useCallback(getClasses(props), [props.classes]);
-  console.log(classes);
 
   const [addressDadata, setAddressDadata] = useState(null);
   const [flat, setFlat] = useState('');
@@ -55,11 +54,11 @@ const AddressField = React.memo(props => {
   }, []);
 
   const addressDadataErrorProps = {
-    error: Boolean(props.error),
+    error: props.error ? Boolean(props.error.addressDadata) : false,
     helperText: props.helperText.addressDadata,
   };
   const flatErrorProps = {
-    error: Boolean(props.helperText.flat),
+    error: props.error ? Boolean(props.error.flat) : false,
     helperText: props.helperText.flat,
   };
 
