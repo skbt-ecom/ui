@@ -58,7 +58,7 @@ const AddressField = React.memo(props => {
     helperText: props.helperText.addressDadata,
   };
   const flatErrorProps = {
-    error: Boolean(props.error),
+    error: Boolean(props.helperText.flat),
     helperText: props.helperText.flat,
   };
 
