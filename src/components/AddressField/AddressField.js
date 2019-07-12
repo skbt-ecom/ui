@@ -54,11 +54,11 @@ const AddressField = React.memo(props => {
   }, []);
 
   const addressDadataErrorProps = {
-    error: Boolean(props.error),
+    error: props.error ? Boolean(props.error.addressDadata) : false,
     helperText: props.helperText.addressDadata,
   };
   const flatErrorProps = {
-    error: Boolean(props.error),
+    error: props.error ? Boolean(props.error.flat) : false,
     helperText: props.helperText.flat,
   };
 
@@ -97,5 +97,6 @@ const AddressField = React.memo(props => {
 
 AddressField.defaultProps = {
   helperText: { addressDadata: null, flat: null },
+  classes: { addressDadataClasses: {}, flatInfoClasses: {} },
 };
 export default AddressField;
