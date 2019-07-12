@@ -56,11 +56,12 @@ function styles(theme) {
     connector: {
       borderLeft: '1px solid ' + color,
       marginBottom: 8,
-      minHeight: 24,
+      minHeight: 30,
       marginLeft: 12,
 
       [theme.breakpoints.up('sm')]: {
         marginLeft: ml,
+        minHeight: 50,
       },
     },
   };
