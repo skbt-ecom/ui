@@ -14,7 +14,7 @@ function StepConnector(props) {
 
 function StepperComponent(props) {
   const classes = useStyles();
-  const { orientation, steps } = props;
+  const { orientation, steps, className } = props;
   const isVertical = orientation === 'vertical';
 
   return (
@@ -27,7 +27,7 @@ function StepperComponent(props) {
           }
         />
       }
-      classes={{ root: classes.stepper }}
+      classes={{ root: cn(classes.stepper, className) }}
       orientation={orientation}
     >
       {steps.map(({ label, content }) => (
@@ -65,6 +65,7 @@ function StepperComponent(props) {
 
 StepperComponent.defaultProps = {
   orientation: 'horizontal',
+  className: '',
 };
 
 export default React.memo(StepperComponent);
