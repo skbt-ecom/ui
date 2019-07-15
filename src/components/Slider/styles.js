@@ -7,11 +7,33 @@ const useStyles = makeStyles(theme => ({
   },
   input: {
     fontWeight: 500,
+    fontSize: '18px',
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        border: 0,
+      },
+    },
+    '& .MuiInputBase-root': {
+      fontSize: 'inherit',
+    },
   },
-  slider: {
+  sliderRoot: {
     position: 'absolute',
-    bottom: '-11px',
+    bottom: props => (props.discrete ? '-31px' : '-11px'),
     left: 0,
+  },
+  sliderMarkLabel: {
+    '&:nth-child(5)': {
+      transform: 'none',
+    },
+    '&:nth-last-child(2)': {
+      transform: 'none',
+      right: '0 !important',
+      left: 'auto !important',
+    },
+  },
+  sliderMark: {
+    visibility: props => (props.discrete ? 'hidden' : 'visible'),
   },
 }));
 
