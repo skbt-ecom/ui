@@ -1,7 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  codeInput: {
     '& input[type="number"]::-webkit-outer-spin-button': {
       '-webkit-appearance': 'none',
       margin: 0,
@@ -14,7 +19,7 @@ const useStyles = makeStyles({
       '-moz-appearance': 'textfield',
     },
     '& input': {
-      fontFamily: '"Roboto", Helvetica, Arial, sans-serif',
+      fontFamily: theme.typography.fontFamily,
       fontSize: '32px',
       fontWeight: '500',
       border: 0,
@@ -24,9 +29,13 @@ const useStyles = makeStyles({
       paddingLeft: '6px',
       boxSizing: 'border-box',
       outline: 0,
-      background: props => (props.error ? 'red' : 'inherit'),
     },
   },
-});
+  errorMsg: {
+    fontFamily: theme.typography.fontFamily,
+    color: theme.palette.secondary.main,
+    textAlign: 'center',
+  },
+}));
 
 export default useStyles;

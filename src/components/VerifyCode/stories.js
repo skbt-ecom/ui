@@ -11,6 +11,11 @@ import theme from '../../style/theme';
 
 storiesOf('VerifyCode', module)
   .addDecorator(muiTheme([theme]))
-  .add('Default', () => (
-    <VerifyCode onChange={action('onChange')} error={false} />
+  .add('Default', () => <VerifyCode onChange={action('onChange')} />)
+  .add('Error', () => (
+    <VerifyCode
+      onChange={action('onChange')}
+      error={true}
+      helperText={'Неверный код'}
+    />
   ));

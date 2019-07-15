@@ -6,12 +6,15 @@ const VerifyCode = React.memo(props => {
   const classes = useStyles(props);
 
   return (
-    <ReactCodeInput
-      fields={4}
-      type="number"
-      {...props}
-      className={classes.container}
-    />
+    <div className={classes.container}>
+      <ReactCodeInput
+        fields={4}
+        type="number"
+        {...props}
+        className={classes.codeInput}
+      />
+      {props.error && <p className={classes.errorMsg}>{props.helperText}</p>}
+    </div>
   );
 });
 
