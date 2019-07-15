@@ -24,7 +24,10 @@ storiesOf('AddressField', module)
   .add('Errors', () => (
     <AddressField
       onChange={action('onChange')}
-      error={true}
+      error={{
+        addressDadata: 'addressDadata error txt',
+        flat: 'flat error text',
+      }}
       helperText={{
         addressDadata: 'addressDadata error txt',
         flat: 'flat error text',

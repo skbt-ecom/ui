@@ -6,7 +6,7 @@ import NumberFormat from 'react-number-format'; //https://github.com/s-yadav/rea
 import useStyles from './styles';
 
 const SliderComponent = React.memo(props => {
-  const classes = useStyles();
+  const classes = useStyles(props);
   const [value, setValue] = useState(
     props.initialValue || props.value || props.min
   );
@@ -17,6 +17,9 @@ const SliderComponent = React.memo(props => {
   };
 
   const handleSliderChange = (event, newValue) => {
+    if (value === newValue) {
+      return;
+    }
     setValue(newValue);
     if (props.onChange) {
       props.onChange(newValue);
@@ -38,12 +41,13 @@ const SliderComponent = React.memo(props => {
     }
   };
   // TODO: вытащить label из inputProps и сделать его общим для компонента
-  const { sliderProps, inputProps, min, max } = props;
+  const { sliderProps, inputProps, label, min, max } = props;
 
   return (
     <div className={classes.container}>
       <NumberFormat
         {...inputProps}
+        label={label}
         className={classes.input}
         customInput={TextField}
         thousandSeparator={' '}
@@ -53,15 +57,22 @@ const SliderComponent = React.memo(props => {
         allowNegative={false}
         decimalScale={0}
         isAllowed={limit}
-        aria-labelledby="slider"
+        // aria-labelledby="slider"
+        InputProps={{
+          readOnly: props.discrete,
+        }}
       />
       <Slider
         {...sliderProps}
-        className={classes.slider}
+        classes={{
+          root: classes.sliderRoot,
+          markLabel: classes.sliderMarkLabel,
+          mark: classes.sliderMark,
+        }}
         value={value}
         onChange={handleSliderChange}
         onChangeCommitted={handleSliderChangeCommitted}
-        aria-labelledby="slider"
+        // aria-labelledby="slider"
         min={min}
         max={max}
       />
