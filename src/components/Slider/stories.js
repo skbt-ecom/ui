@@ -66,9 +66,9 @@ storiesOf('Slider', module)
   .add('Default', () => (
     <Slider
       onChange={action('onChange')}
+      label={'Сумма кредита'}
       inputProps={inputProps}
       sliderProps={sliderProps}
-      label={'Сумма кредита'}
       // initialValue={300}
       min={100} // if no initialValue using min value as initial
       max={2000}
@@ -79,6 +79,7 @@ storiesOf('Slider', module)
   .add('Committed', () => (
     <Slider
       onChangeCommitted={action('onChangeCommitted')}
+      label={'Сумма кредита'}
       inputProps={inputProps}
       sliderProps={sliderProps}
       // initialValue={300}

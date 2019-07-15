@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: '18px',
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
-        border: 0,
+        borderWidth: props => (props.discrete ? '0' : '1px'),
       },
     },
     '& .MuiInputBase-root': {
