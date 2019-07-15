@@ -10,6 +10,7 @@ function styles(theme) {
     stepper: {
       padding: 0,
       fontFamily: theme.typography.fontFamily,
+      background: 'transparent',
     },
 
     iconContainer: {
