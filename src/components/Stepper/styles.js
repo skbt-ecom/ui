@@ -9,6 +9,8 @@ function styles(theme) {
   return {
     stepper: {
       padding: 0,
+      fontFamily: theme.typography.fontFamily,
+      background: 'transparent',
     },
 
     iconContainer: {
@@ -31,7 +33,19 @@ function styles(theme) {
       },
     },
 
-    label: {
+    iconContainerHorizontal: {
+      [theme.breakpoints.up('sm')]: {
+        width: 28,
+        height: 28,
+      },
+
+      [theme.breakpoints.up('md')]: {
+        width: w,
+        height: w,
+      },
+    },
+
+    labelVertical: {
       fontSize: 16,
 
       [theme.breakpoints.up('sm')]: {
@@ -39,10 +53,21 @@ function styles(theme) {
       },
     },
 
-    content: {
+    labelHorizontal: {
+      fontSize: 14,
+
+      [theme.breakpoints.up('sm')]: {
+        fontSize: 16,
+      },
+
+      [theme.breakpoints.up('md')]: {
+        fontSize: 18,
+      },
+    },
+
+    contentVertical: {
       color: '#607286',
       lineHeight: 1.5,
-      fontFamily: theme.typography.fontFamily,
       fontSize: 11,
       borderColor: color,
 
@@ -53,7 +78,17 @@ function styles(theme) {
       },
     },
 
-    connector: {
+    contentHorizontal: {
+      color: '#607286',
+      lineHeight: 1.5,
+      fontSize: 12,
+
+      [theme.breakpoints.up('md')]: {
+        fontSize: 14,
+      },
+    },
+
+    connectorVertical: {
       borderLeft: '1px solid ' + color,
       marginBottom: 8,
       minHeight: 30,
@@ -63,6 +98,12 @@ function styles(theme) {
         marginLeft: ml,
         minHeight: 50,
       },
+    },
+
+    connectorHorizontal: {
+      borderTop: '1px solid ' + color,
+      flex: '1 1 auto',
+      margin: '0 3px',
     },
   };
 }
