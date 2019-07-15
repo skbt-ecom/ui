@@ -9,7 +9,7 @@ import Stepper from './Stepper';
 
 import theme from '../../style/theme';
 
-const steps = [
+const stepsVertical = [
   {
     label: 'Ваша заявка принята',
     content: 'Загрузка',
@@ -32,6 +32,24 @@ const steps = [
   },
 ];
 
+const stepsHorizontal = [
+  {
+    label: 'Паспортные данные',
+    content: '+10% к одобрению',
+  },
+  {
+    label: 'Занятость',
+    content: '+15% к одобрению',
+  },
+  {
+    label: 'Адрес доставки',
+    content: '+20% к одобрению',
+  },
+];
+
 storiesOf('Stepper', module)
   .addDecorator(muiTheme([theme]))
-  .add('Default', () => <Stepper steps={steps} />);
+  .add('Vertical', () => (
+    <Stepper steps={stepsVertical} orientation="vertical" />
+  ))
+  .add('Horizontal', () => <Stepper steps={stepsHorizontal} />);

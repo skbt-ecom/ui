@@ -4,6 +4,7 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import StepContent from '@material-ui/core/StepContent';
 import Typography from '@material-ui/core/Typography';
+import cn from 'classnames';
 
 import useStyles from './styles';
 
@@ -11,33 +12,59 @@ function StepConnector(props) {
   return <div className={props.className} />;
 }
 
-const StepperComponent = React.memo(props => {
+function StepperComponent(props) {
   const classes = useStyles();
+  const { orientation, steps } = props;
+  const isVertical = orientation === 'vertical';
 
   return (
     <Stepper
       activeStep={1}
-      orientation="vertical"
-      connector={<StepConnector className={classes.connector} />}
+      connector={
+        <StepConnector
+          className={
+            isVertical ? classes.connectorVertical : classes.connectorHorizontal
+          }
+        />
+      }
       classes={{ root: classes.stepper }}
+      orientation={orientation}
     >
-      {props.steps.map(({ label, content }) => (
+      {steps.map(({ label, content }) => (
         <Step key={label}>
           <StepLabel
             classes={{
-              label: classes.label,
-              iconContainer: classes.iconContainer,
+              label: isVertical
+                ? classes.labelVertical
+                : classes.labelHorizontal,
+              iconContainer: cn(
+                classes.iconContainer,
+                isVertical ? '' : classes.iconContainerHorizontal
+              ),
             }}
+            optional={
+              isVertical ? null : (
+                <Typography className={classes.contentHorizontal}>
+                  {content}
+                </Typography>
+              )
+            }
           >
             {label}
           </StepLabel>
-          <StepContent classes={{ root: classes.content }}>
-            {content}
-          </StepContent>
+          {isVertical && (
+            <StepContent classes={{ root: classes.contentVertical }}>
+              {content}
+            </StepContent>
+          )}
         </Step>
       ))}
     </Stepper>
   );
-});
+}
 
-export default StepperComponent;
+StepperComponent.defaultProps = {
+  orientation: 'horizontal',
+};
+
+export default React.memo(StepperComponent);
