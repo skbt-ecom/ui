@@ -3,6 +3,7 @@ import useStyles from './styles';
 
 const VerifyCode = React.memo(props => {
   const classes = useStyles(props);
+  console.log('classes', classes);
 
   return (
     <div className={classes.verifyCodeWrapper}>
@@ -15,7 +16,7 @@ const VerifyCode = React.memo(props => {
           value={props.value}
         />
       </div>
-      {props.error && <p className={classes.errorMsg}>{props.helperText}</p>}
+      {props.error && <p className={classes.helperText}>{props.helperText}</p>}
     </div>
   );
 });

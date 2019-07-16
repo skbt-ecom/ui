@@ -17,5 +17,6 @@ storiesOf('VerifyCode', module)
       onChange={action('onChange')}
       error={true}
       helperText={'Неверный код'}
+      classes={{ helperText: '11111' }}
     />
   ));

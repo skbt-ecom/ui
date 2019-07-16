@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     fontWeight: '500',
     outline: 'none',
   },
-  errorMsg: {
+  helperText: {
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.secondary.main,
     textAlign: 'center',
