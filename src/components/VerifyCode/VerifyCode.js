@@ -9,9 +9,10 @@ const VerifyCode = React.memo(props => {
       <div className={classes.verifyCodeContainer}>
         <input
           className={classes.verifyCodeInput}
+          maxLength="4"
           pattern="\d*"
-          maxlength="4"
-          {...props}
+          onChange={props.onChange}
+          value={props.value}
         />
       </div>
       {props.error && <p className={classes.errorMsg}>{props.helperText}</p>}
