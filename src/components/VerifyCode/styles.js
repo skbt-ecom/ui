@@ -8,6 +8,7 @@ const useStyles = makeStyles(theme => ({
   verifyCodeContainer: {
     left: 0,
     position: 'sticky',
+    marginBottom: '10px',
   },
   verifyCodeInput: {
     paddingLeft: '14px',
@@ -30,6 +31,7 @@ const useStyles = makeStyles(theme => ({
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.secondary.main,
     textAlign: 'center',
+    margin: 0,
   },
 }));
 
