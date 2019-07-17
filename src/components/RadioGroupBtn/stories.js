@@ -24,5 +24,6 @@ storiesOf('RadioGroupBtn', module)
       numberType
       items={items}
       name={'prices'}
+      value={5340}
     />
   ));

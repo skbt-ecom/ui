@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import RadioBtn from './RadioBtn';
 
@@ -10,10 +10,13 @@ const RadioGroupBtn = React.memo(props => {
     props.value || props.items[0].value
   );
 
+  useEffect(() => {
+    props.onChange(selectedValue);
+  }, [selectedValue]);
+
   const onChange = e => {
     const value = props.numberType ? Number(e.target.value) : e.target.value;
     setSelectedValue(value);
-    props.onChange(value);
   };
 
   const { items, name } = props;
