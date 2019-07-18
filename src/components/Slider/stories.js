@@ -83,8 +83,8 @@ storiesOf('Slider', module)
       inputProps={inputProps}
       sliderProps={sliderProps}
       // initialValue={300}
-      min={100} // if no initialValue using min value as initial
-      max={2000}
+      min={150000} // if no initialValue using min value as initial
+      max={30000000}
       // value={500}
       committed={true}
     />
