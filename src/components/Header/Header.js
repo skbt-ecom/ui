@@ -10,8 +10,7 @@ const Header = React.memo(props => {
   const { logoHref, phone, phoneHint } = props;
 
   return (
-    // <Container className={classes.container}>
-    <>
+    <Container className={classes.container}>
       <a href={logoHref} className={classes.logoContainer}>
         <img src={logo} alt="logo" />
       </a>
@@ -21,8 +20,7 @@ const Header = React.memo(props => {
         </a>
         <p className={classes.phoneHint}>{phoneHint}</p>
       </div>
-      {/* </Container> */}
-    </>
+    </Container>
   );
 });
 
