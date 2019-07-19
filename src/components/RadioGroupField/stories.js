@@ -20,6 +20,7 @@ storiesOf('RadioGroupField', module)
       onChange={action('onChange')}
       items={items}
       label={'Ваш пол:'}
-      classes={{ formLabel: 'class1', formControl: 'class2', group: 'group' }}
+      classes={{ formLabel: 'class1', formControl: 'class2', group: 'class 3' }}
+      direction={'column'} // 'row' by default
     />
   ));

@@ -44,4 +44,7 @@ const RadioGroupField = React.memo(props => {
   );
 });
 
+RadioGroupField.defaultProps = {
+  direction: 'row',
+};
 export default RadioGroupField;
