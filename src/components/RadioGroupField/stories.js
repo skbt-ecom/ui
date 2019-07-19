@@ -22,5 +22,6 @@ storiesOf('RadioGroupField', module)
       label={'Ваш пол:'}
       classes={{ formLabel: 'class1', formControl: 'class2', group: 'class 3' }}
       direction={'column'} // 'row' by default
+      value={'m'}
     />
   ));
