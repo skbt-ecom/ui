@@ -76,6 +76,7 @@ const AddressField = React.memo(props => {
       </div>
       <div className={classes.flatInfoClasses.container}>
         <TextField
+          label={'Квартира'}
           onChange={handleFlatChange}
           value={flat}
           disabled={isNoFlat}
