@@ -12,10 +12,5 @@ import theme from '../../style/theme';
 storiesOf('Switch', module)
   .addDecorator(muiTheme([theme]))
   .add('Default', () => (
-    <Switch
-      onChange={action('onChange')}
-      label={'Label'}
-      // value={true}
-      checked={true}
-    />
+    <Switch onChange={action('onChange')} label={'Label'} checked={true} />
   ));
