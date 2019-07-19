@@ -11,8 +11,10 @@ function Uploader(props) {
   const { apiUrl, hint } = props;
 
   const fileInput = useRef(null);
+  const imgOut = useRef(null);
 
   const [progress, setProgress] = useState(0);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isLoad, setIsLoad] = useState(false);
 
@@ -31,19 +33,27 @@ function Uploader(props) {
     setIsLoad(true);
 
     xhr.onload = function() {
+      console.log(this.responseText);
+      setIsLoad(false);
+
       if (this.status == 200) {
-        console.log('Uploaded');
+        const reader = new FileReader();
+
+        setIsSuccess(true);
+        reader.readAsDataURL(file);
+
+        reader.onload = function() {
+          console.log(this.result);
+          imgOut.current.src = this.result;
+        };
+
+        reader.onerror = function(error) {
+          console.log('Reader error: ', error);
+        };
       } else {
         console.log('Error');
         setIsError(true);
       }
-
-      console.log(this.responseText);
-      setIsLoad(false);
-      // var reader = new FileReader();
-      // reader.readAsDataURL(image);
-      // reader.onload = function () { out.src = this.result; };
-      // reader.onerror = function (error) { console.log('Reader error: ', error); };
     };
 
     xhr.onerror = function() {
@@ -74,6 +84,7 @@ function Uploader(props) {
 
   function Content() {
     if (isLoad) {
+      // TODO: вынести CircularProgress
       return (
         <>
           <CircularProgress color="primary" size="44px" />
@@ -85,6 +96,8 @@ function Uploader(props) {
           />
         </>
       );
+    } else if (isSuccess) {
+      return <img alt="" src="" ref={imgOut} className={classes.imgOut} />;
     }
 
     return (

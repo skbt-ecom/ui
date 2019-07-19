@@ -68,6 +68,10 @@ function styles(theme) {
       },
     },
 
+    imgOut: {
+      maxWidth: '100%',
+    },
+
     input: {
       display: 'none',
     },
