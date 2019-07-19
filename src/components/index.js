@@ -25,3 +25,4 @@ export { default as Link } from './Link';
 export { default as AddressField } from './AddressField';
 export { default as Stepper } from './Stepper';
 export { default as RadioGroupBtn } from './RadioGroupBtn';
+export { default as RadioGroupField } from './RadioGroupField';
