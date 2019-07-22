@@ -20,7 +20,7 @@ const SelectComponent = React.memo(props => {
     props.onChange(e);
   };
 
-  const { helperText, error, items, name, value, fullWidth } = props;
+  const { helperText, error, items, name, value, fullWidth, label } = props;
 
   return (
     <FormControl
@@ -30,7 +30,7 @@ const SelectComponent = React.memo(props => {
       fullWidth={fullWidth}
     >
       <InputLabel ref={inputLabel} htmlFor={name}>
-        Name
+        {label}
       </InputLabel>
       <Select
         value={value}
@@ -44,7 +44,7 @@ const SelectComponent = React.memo(props => {
           </MenuItem>
         ))}
       </Select>
-      {helperText && <FormHelperText>Error</FormHelperText>}
+      {helperText && <FormHelperText>{helperText}</FormHelperText>}
     </FormControl>
   );
 });
