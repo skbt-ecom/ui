@@ -20,13 +20,14 @@ const SelectComponent = React.memo(props => {
     props.onChange(e);
   };
 
-  const { helperText, error, items, name, value } = props;
+  const { helperText, error, items, name, value, fullWidth } = props;
 
   return (
     <FormControl
       variant="outlined"
       className={classes.formControl}
       error={error}
+      fullWidth={fullWidth}
     >
       <InputLabel ref={inputLabel} htmlFor={name}>
         Name
