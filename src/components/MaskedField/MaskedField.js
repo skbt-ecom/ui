@@ -4,15 +4,11 @@ import TextField from '@material-ui/core/TextField';
 
 const TextMaskCustom = React.memo(
   props => {
-    const onChange = e => {
-      e.persist();
-      const {
-        target: { value },
-      } = e;
-      props.onChange(value);
+    const onAccept = (value, mask) => {
+      props.onAccept(value);
     };
 
-    return <IMaskInput {...props} onChange={onChange} />;
+    return <IMaskInput {...props} onAccept={onAccept} />;
   },
   (prevProps, nextProps) => {
     return prevProps.value === nextProps.value;
@@ -31,15 +27,16 @@ const MaskedField = React.memo(props => {
     setMirroredValue(propsValue);
   }
 
-  const onChange = value => {
+  const handleAccept = value => {
     setValue(value);
     props.onChange(value);
   };
 
-  const { mask, min, max, ...restProps } = props;
+  const { mask, min, max, unmask, onChange, ...restProps } = props;
   const inputProps = {
-    onChange,
+    onAccept: handleAccept,
     mask,
+    unmask,
     value,
     max,
   };

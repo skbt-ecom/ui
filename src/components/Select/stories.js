@@ -31,7 +31,7 @@ const SelectWrapper = props => {
       items={socialStatuses}
       name={'select'}
       value={value}
-      label={'Социальный статус'}
+      label={'Статус'}
     />
   );
 };
