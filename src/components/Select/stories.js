@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // Import the storybook libraries
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -17,13 +17,23 @@ const socialStatuses = [
   { value: 'ИП', label: 'ИП' },
 ];
 
-storiesOf('Select', module)
-  .addDecorator(muiTheme([theme]))
-  .add('Default', () => (
+const SelectWrapper = props => {
+  const [value, setValue] = useState('');
+
+  const handleChange = e => {
+    setValue(e.target.value);
+    props.onChange(e);
+  };
+
+  return (
     <Select
-      onChange={action('onChange')}
+      onChange={handleChange}
       items={socialStatuses}
       name={'select'}
-      value={socialStatuses[3].value}
+      value={value}
     />
-  ));
+  );
+};
+storiesOf('Select', module)
+  .addDecorator(muiTheme([theme]))
+  .add('Default', () => <SelectWrapper onChange={action('onChange')} />);
