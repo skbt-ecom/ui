@@ -1,9 +1,17 @@
 import React, { useRef, useState } from 'react';
+
 import ButtonBase from '@material-ui/core/ButtonBase';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
+import Close from '@material-ui/icons/Close';
+import CloudUpload from '@material-ui/icons/CloudUpload';
+
 import cn from 'classnames';
+
+import Dropzone from 'react-dropzone';
+
+import Button from '../Button';
 
 import useStyles from './styles';
 
@@ -21,18 +29,23 @@ function Uploader(props) {
   const classes = useStyles();
 
   function handleFocus() {
-    fileInput.current.click();
+    if (!isSuccess) {
+      fileInput.current.click();
+    }
   }
 
-  function proccessFile(e) {
-    const file = e.target.files[0];
+  function proccessFile(files) {
+    const file = files[0];
+
+    if (!file) return;
+
     const xhr = new XMLHttpRequest();
     const fileData = new FormData();
 
     fileData.append('document', file);
     setIsLoad(true);
 
-    xhr.onload = function() {
+    function onLoad() {
       console.log(this.responseText);
       setIsLoad(false);
 
@@ -40,10 +53,10 @@ function Uploader(props) {
         const reader = new FileReader();
 
         setIsSuccess(true);
+        setProgress(0);
         reader.readAsDataURL(file);
 
         reader.onload = function() {
-          console.log(this.result);
           imgOut.current.src = this.result;
         };
 
@@ -54,74 +67,102 @@ function Uploader(props) {
         console.log('Error');
         setIsError(true);
       }
-    };
+    }
 
-    xhr.onerror = function() {
+    function onError() {
       console.log(this.status, this.statusText);
       setIsError(true);
       setIsLoad(false);
-    };
+    }
 
-    xhr.upload.onprogress = function(e) {
+    function onProgress(e) {
       const state = parseInt((e.loaded / e.total) * 100, 10);
 
       setProgress(state);
-    };
+    }
 
-    xhr.upload.onload = function() {
+    function onUpload() {
       console.log('Данные полностью загружены на сервер!');
-    };
+    }
 
-    xhr.upload.onerror = function() {
-      setIsError(true);
-      setIsLoad(false);
-    };
-
+    xhr.onload = onLoad;
+    xhr.onerror = onError;
+    xhr.upload.onprogress = onProgress;
+    xhr.upload.onload = onUpload;
+    xhr.upload.onerror = onError;
     xhr.open('POST', apiUrl, true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(fileData);
   }
 
+  function removeImage() {
+    setIsSuccess(false);
+    setProgress(0);
+  }
+
   function Content() {
     if (isLoad) {
-      // TODO: вынести CircularProgress
       return (
-        <>
-          <CircularProgress color="primary" size="44px" />
-          <LinearProgress
-            classes={{ root: classes.linearProgress }}
-            variant="determinate"
-            color="primary"
-            value={progress}
-          />
-        </>
+        <LinearProgress
+          classes={{ root: classes.linearProgress }}
+          variant="determinate"
+          color="primary"
+          value={progress}
+        />
       );
     } else if (isSuccess) {
-      return <img alt="" src="" ref={imgOut} className={classes.imgOut} />;
+      return (
+        <img
+          alt=""
+          src="https://app.sovcombank.ru/halvadeposit/images/back_banner_mob.jpg"
+          ref={imgOut}
+          className={classes.imgOut}
+        />
+      );
     }
 
+    return <CloudUpload className={classes.uploadIcon} />;
+  }
+
+  function Upload(props) {
+    const { getRootProps, getInputProps, isDragActive } = props;
+    const active = isLoad || isSuccess || isDragActive ? classes.active : '';
+
     return (
-      <svg width="34" height="24" className={classes.icon}>
-        <path d="M21.996 13.004h-2v6.6a.4.4 0 0 1-.4.4h-5.2a.4.4 0 0 1-.4-.4v-6.6h-2a.4.4 0 0 1-.29-.68l5-5a.4.4 0 0 1 .56 0l5 5a.4.4 0 0 1-.27.68zm5-3a10.49 10.49 0 0 0-20.45-2.76 8.5 8.5 0 0 0 1.95 16.76h18.5a7 7 0 0 0 0-14z" />
-      </svg>
+      <>
+        <ButtonBase
+          {...getRootProps({ onClick: handleFocus })}
+          className={cn(classes.uploader, active)}
+          disabled={isSuccess}
+        >
+          {isLoad && <CircularProgress color="primary" size="44px" />}
+          <Content />
+        </ButtonBase>
+
+        {isSuccess && (
+          <Button
+            color="primary"
+            classes={{ root: classes.removeBtn }}
+            onClick={removeImage}
+          >
+            <Close className={classes.removeIcon} />
+          </Button>
+        )}
+        <input
+          {...getInputProps({
+            accept: 'image/*',
+            multiple: false,
+            ref: fileInput,
+          })}
+          className={classes.input}
+        />
+      </>
     );
   }
 
   return (
-    <div className={isError ? classes.fail : ''}>
-      <ButtonBase
-        onClick={handleFocus}
-        className={cn(classes.uploader, isLoad ? classes.active : '')}
-      >
-        <Content />
-      </ButtonBase>
-      <input
-        type="file"
-        accept="image/*"
-        ref={fileInput}
-        className={classes.input}
-        onChange={proccessFile}
-      />
+    <div className={cn(classes.root, isError ? classes.fail : '')}>
+      <Dropzone onDrop={proccessFile}>{Upload}</Dropzone>
       <Typography className={classes.hint}>{hint}</Typography>
     </div>
   );

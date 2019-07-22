@@ -2,12 +2,25 @@ import { makeStyles } from '@material-ui/core/styles';
 
 function styles(theme) {
   return {
+    root: {
+      position: 'relative',
+      width: 128,
+
+      [theme.breakpoints.up('sm')]: {
+        width: 153,
+      },
+
+      [theme.breakpoints.up('md')]: {
+        width: 176,
+      },
+    },
+
     fail: {
       '& $uploader': {
         borderColor: theme.palette.secondary.main,
       },
 
-      '& $icon': {
+      '& $uploadIcon': {
         fill: theme.palette.secondary.main,
       },
 
@@ -23,25 +36,23 @@ function styles(theme) {
       background: '#f9fafc',
       cursor: 'pointer',
       transition: '0.3s border-color',
-      width: 128,
-      height: 88,
       marginBottom: 8,
+      height: 88,
+      width: '100%',
 
       [theme.breakpoints.up('sm')]: {
-        width: 153,
-        height: 104,
         marginBottom: 16,
+        height: 104,
       },
 
       [theme.breakpoints.up('md')]: {
-        width: 176,
         height: 120,
       },
 
       '&:hover, &$active': {
         borderColor: '#607286',
 
-        '& $icon': {
+        '& $uploadIcon': {
           fill: '#607286',
         },
       },
@@ -49,9 +60,11 @@ function styles(theme) {
 
     active: {},
 
-    icon: {
+    uploadIcon: {
       fill: '#a1afbf',
       transition: '0.3s fill',
+      width: 40,
+      height: 36,
     },
 
     linearProgress: {
@@ -70,6 +83,33 @@ function styles(theme) {
 
     imgOut: {
       maxWidth: '100%',
+      maxHeight: '100%',
+    },
+
+    removeBtn: {
+      position: 'absolute',
+      top: 8,
+      right: 8,
+      borderRadius: '50%',
+      minWidth: 'auto',
+      padding: 0,
+      width: 20,
+      height: 20,
+
+      [theme.breakpoints.up('sm')]: {
+        width: 24,
+        height: 24,
+      },
+    },
+
+    removeIcon: {
+      width: 13,
+      height: 13,
+
+      [theme.breakpoints.up('sm')]: {
+        width: 17,
+        height: 17,
+      },
     },
 
     input: {
