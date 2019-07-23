@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Autosuggest from 'react-autosuggest';
 import TextField from '@material-ui/core/TextField';
 import Popper from '@material-ui/core/Popper';
@@ -39,15 +39,17 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
     </MenuItem>
   );
 }
-
-export default function IntegrationAutosuggest(props) {
+const EMPTY_VALUE = { value: '', label: '' };
+export default React.memo(function IntegrationAutosuggest(props) {
   const classes = useStyles();
-  const [state, setState] = useState({
-    single: props.value || '',
-  });
+  const [value, setValue] = useState(props.value || { ...EMPTY_VALUE });
   const [stateSuggestions, setSuggestions] = useState([]);
   const isSuggestionSelected = useRef(false); // need to send props.onChange() in onBlur when suggestion not selected
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  useEffect(() => {
+    setValue(props.value || { value: '', label: '' });
+  }, [props.value]);
 
   const handleSuggestionsFetchRequested = ({ value }) => {
     setSuggestions(getSuggestions(props.suggestions, value));
@@ -59,10 +61,7 @@ export default function IntegrationAutosuggest(props) {
 
   const handleChange = (event, { newValue }) => {
     isSuggestionSelected.current = false;
-    setState({
-      ...state,
-      single: newValue,
-    });
+    setValue({ label: newValue, value: '' });
   };
 
   const onSuggestionSelected = (event, { suggestion }) => {
@@ -72,7 +71,7 @@ export default function IntegrationAutosuggest(props) {
 
   const onBlur = e => {
     if (!isSuggestionSelected.current) {
-      props.onChange(null);
+      props.onChange(...EMPTY_VALUE);
     }
   };
 
@@ -87,7 +86,8 @@ export default function IntegrationAutosuggest(props) {
     onSuggestionSelected,
   };
 
-  const { label, placeholder, onChange, value, ...otherInputProps } = props;
+  const { label, placeholder, onChange, ...otherInputProps } = props;
+
   return (
     <div className={classes.root}>
       <Autosuggest
@@ -96,12 +96,12 @@ export default function IntegrationAutosuggest(props) {
           classes,
           label,
           placeholder,
-          value: state.single,
           onChange: handleChange,
           inputRef: node => {
             setAnchorEl(node);
           },
           ...otherInputProps,
+          value: value.label,
           onBlur,
         }}
         theme={{
@@ -127,4 +127,4 @@ export default function IntegrationAutosuggest(props) {
       />
     </div>
   );
-}
+});

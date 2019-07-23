@@ -1,7 +1,7 @@
 export const regions = [
   {
     kladr_id: '22',
-    value: 'Алтайский край',
+    value: 'Altai',
     label: 'Алтайский край',
   },
   {
@@ -11,7 +11,7 @@ export const regions = [
   },
   {
     kladr_id: '29',
-    value: 'Архангельская область',
+    value: 'Arhangel',
     label: 'Архангельская область',
   },
   {
