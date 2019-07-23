@@ -111,14 +111,7 @@ function Uploader(props) {
         />
       );
     } else if (isSuccess) {
-      return (
-        <img
-          alt=""
-          src="https://app.sovcombank.ru/halvadeposit/images/back_banner_mob.jpg"
-          ref={imgOut}
-          className={classes.imgOut}
-        />
-      );
+      return <img alt="" src="" ref={imgOut} className={classes.imgOut} />;
     }
 
     return <CloudUpload className={classes.uploadIcon} />;
