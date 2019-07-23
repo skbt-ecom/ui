@@ -69,7 +69,7 @@ export default React.memo(function IntegrationAutosuggest(props) {
   );
 
   useEffect(() => {
-    setState({ single: props.value });
+    setState({ single: props.value || '' });
   }, [props.value]);
 
   const getSuggestions = value => {
