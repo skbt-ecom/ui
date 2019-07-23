@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 
 import ButtonBase from '@material-ui/core/ButtonBase';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
 import Close from '@material-ui/icons/Close';
@@ -12,6 +11,7 @@ import cn from 'classnames';
 import Dropzone from 'react-dropzone';
 
 import Button from '../Button';
+import CircularProgress from '../CircularProgress';
 
 import useStyles from './styles';
 
