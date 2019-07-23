@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import Autorenew from '@material-ui/icons/Autorenew';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Autosuggest from 'react-autosuggest';
@@ -67,10 +67,6 @@ export default React.memo(function IntegrationAutosuggest(props) {
       });
     }, 500)
   );
-
-  useEffect(() => {
-    setState({ single: props.value || '' });
-  }, [props.value]);
 
   const getSuggestions = value => {
     inputValue.current = value.toLowerCase();
