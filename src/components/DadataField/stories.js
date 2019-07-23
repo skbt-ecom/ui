@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // Import the storybook libraries
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -9,10 +9,30 @@ import DadataField from './DadataField';
 
 import theme from '../../style/theme';
 
+const DadataFieldWrapper = props => {
+  const [value, setValue] = useState('');
+  const onChange = value => {
+    console.log('value', value);
+    setValue(value);
+    props.onChange(value);
+  };
+  console.log('outer value: ', value);
+  return (
+    <>
+      <button onClick={() => setValue('b b b')}>set Value</button>
+      <DadataField {...props} onChange={onChange} value={value} />
+    </>
+  );
+};
+
 storiesOf('DadataField', module)
   .addDecorator(muiTheme([theme]))
   .add('ФИО', () => (
-    <DadataField onChange={action('onChange')} type={'fio'} label={'ФИО'} />
+    <DadataFieldWrapper
+      onChange={action('onChange')}
+      type={'fio'}
+      label={'ФИО'}
+    />
   ))
   .add('Адрес', () => (
     <DadataField
