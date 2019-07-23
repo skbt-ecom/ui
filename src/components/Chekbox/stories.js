@@ -67,5 +67,8 @@ storiesOf('Chekbox', module)
       formLabel={{
         label: 'Label',
       }}
+      classes={{
+        checkboxFormControlLabelRoot: 'checkboxFormControlLabelRoot-class',
+      }}
     />
   ));
