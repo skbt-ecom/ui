@@ -16,20 +16,18 @@ import Button from '../Button';
 import useStyles from './styles';
 
 function Uploader(props) {
-  const { apiUrl, hint } = props;
+  const { apiUrl, hint, errMsg } = props;
 
   const fileInput = useRef(null);
   const imgOut = useRef(null);
 
   const [progress, setProgress] = useState(0);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const [isLoad, setIsLoad] = useState(false);
+  const [loadState, setLoadState] = useState({});
 
   const classes = useStyles();
 
   function handleFocus() {
-    if (!isSuccess) {
+    if (!loadState.isSuccess) {
       fileInput.current.click();
     }
   }
@@ -43,17 +41,16 @@ function Uploader(props) {
     const fileData = new FormData();
 
     fileData.append('document', file);
-    setIsLoad(true);
+    setLoadState({ isLoad: true });
 
     function onLoad() {
       console.log(this.responseText);
-      setIsLoad(false);
+      setProgress(0);
 
       if (this.status == 200) {
         const reader = new FileReader();
 
-        setIsSuccess(true);
-        setProgress(0);
+        setLoadState({ isSuccess: true });
         reader.readAsDataURL(file);
 
         reader.onload = function() {
@@ -65,14 +62,14 @@ function Uploader(props) {
         };
       } else {
         console.log('Error');
-        setIsError(true);
+        setLoadState({ isError: true });
       }
     }
 
     function onError() {
       console.log(this.status, this.statusText);
-      setIsError(true);
-      setIsLoad(false);
+      setLoadState({ isError: true });
+      setProgress(0);
     }
 
     function onProgress(e) {
@@ -96,12 +93,11 @@ function Uploader(props) {
   }
 
   function removeImage() {
-    setIsSuccess(false);
-    setProgress(0);
+    setLoadState({});
   }
 
   function Content() {
-    if (isLoad) {
+    if (loadState.isLoad) {
       return (
         <LinearProgress
           classes={{ root: classes.linearProgress }}
@@ -110,7 +106,7 @@ function Uploader(props) {
           value={progress}
         />
       );
-    } else if (isSuccess) {
+    } else if (loadState.isSuccess) {
       return <img alt="" src="" ref={imgOut} className={classes.imgOut} />;
     }
 
@@ -119,20 +115,23 @@ function Uploader(props) {
 
   function Upload(props) {
     const { getRootProps, getInputProps, isDragActive } = props;
-    const active = isLoad || isSuccess || isDragActive ? classes.active : '';
+    const active =
+      loadState.isLoad || loadState.isSuccess || isDragActive
+        ? classes.active
+        : '';
 
     return (
       <>
         <ButtonBase
           {...getRootProps({ onClick: handleFocus })}
           className={cn(classes.uploader, active)}
-          disabled={isSuccess}
+          disabled={loadState.isSuccess}
         >
-          {isLoad && <CircularProgress color="primary" size="44px" />}
+          {loadState.isLoad && <CircularProgress color="primary" size="44px" />}
           <Content />
         </ButtonBase>
 
-        {isSuccess && (
+        {loadState.isSuccess && (
           <Button
             color="primary"
             classes={{ root: classes.removeBtn }}
@@ -140,6 +139,9 @@ function Uploader(props) {
           >
             <Close className={classes.removeIcon} />
           </Button>
+        )}
+        {loadState.isError && (
+          <Typography className={classes.errMsg}>{errMsg}</Typography>
         )}
         <input
           {...getInputProps({
@@ -154,7 +156,7 @@ function Uploader(props) {
   }
 
   return (
-    <div className={cn(classes.root, isError ? classes.fail : '')}>
+    <div className={cn(classes.root, loadState.isError ? classes.fail : '')}>
       <Dropzone onDrop={proccessFile}>{Upload}</Dropzone>
       <Typography className={classes.hint}>{hint}</Typography>
     </div>
@@ -162,6 +164,7 @@ function Uploader(props) {
 }
 
 Uploader.defaultProps = {
+  errMsg: '',
   hint: '',
   apiUrl: '',
 };
