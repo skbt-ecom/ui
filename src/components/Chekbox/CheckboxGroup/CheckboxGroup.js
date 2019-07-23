@@ -6,18 +6,39 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Checkbox from '@material-ui/core/Checkbox';
 
-const renderCheckboxItem = ({ label, value }, handleChange, index) => {
+import useStyles from './styles';
+
+const renderCheckboxItem = (
+  { label, value },
+  handleChange,
+  index,
+  classes,
+  color
+) => {
   return (
     <FormControlLabel
+      classes={{
+        root: classes.checkboxFormControlLabelRoot,
+      }}
       key={index}
-      control={<Checkbox onChange={handleChange(value)} value={value} />}
+      control={
+        <Checkbox onChange={handleChange(value)} value={value} color={color} />
+      }
       label={label}
     />
   );
 };
 
 const CheckboxGroup = React.memo(props => {
-  const { options, error, helperText, formLabel = {}, ...restProps } = props;
+  const classes = useStyles(props);
+  const {
+    options,
+    error,
+    helperText,
+    formLabel = {},
+    color,
+    ...restProps
+  } = props;
   const [checkedOptions, setCheckedOptions] = useState([]);
 
   useEffect(() => {
@@ -42,7 +63,7 @@ const CheckboxGroup = React.memo(props => {
       )}
       <FormGroup>
         {options.map((option, index) =>
-          renderCheckboxItem(option, handleChange, index)
+          renderCheckboxItem(option, handleChange, index, classes, color)
         )}
       </FormGroup>
       {helperText && <FormHelperText>{helperText}</FormHelperText>}
