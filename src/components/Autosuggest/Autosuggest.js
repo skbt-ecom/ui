@@ -71,7 +71,7 @@ export default React.memo(function IntegrationAutosuggest(props) {
 
   const onBlur = e => {
     if (!isSuggestionSelected.current) {
-      props.onChange(...EMPTY_VALUE);
+      props.onChange({ ...EMPTY_VALUE });
     }
   };
 
