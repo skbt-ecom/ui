@@ -18,6 +18,7 @@ function styles(theme) {
     fail: {
       '& $uploader': {
         borderColor: theme.palette.secondary.main,
+        marginBottom: 4,
       },
 
       '& $uploadIcon': {
@@ -114,6 +115,12 @@ function styles(theme) {
 
     input: {
       display: 'none',
+    },
+
+    errMsg: {
+      color: theme.palette.secondary.main,
+      fontSize: 8,
+      marginBottom: 4,
     },
 
     hint: {
