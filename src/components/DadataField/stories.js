@@ -12,14 +12,12 @@ import theme from '../../style/theme';
 const DadataFieldWrapper = props => {
   const [value, setValue] = useState('');
   const onChange = value => {
-    console.log('value', value);
     setValue(value);
     props.onChange(value);
   };
-  console.log('outer value: ', value);
   return (
     <>
-      <button onClick={() => setValue('b b b')}>set Value</button>
+      {/* <button onClick={() => setValue('b b b')}>set Value</button> */}
       <DadataField {...props} onChange={onChange} value={value} />
     </>
   );

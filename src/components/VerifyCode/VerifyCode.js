@@ -3,7 +3,6 @@ import useStyles from './styles';
 
 const VerifyCode = React.memo(props => {
   const classes = useStyles(props);
-  console.log('classes', classes);
 
   return (
     <div className={classes.verifyCodeWrapper}>
