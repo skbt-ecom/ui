@@ -12,9 +12,9 @@ import theme from '../../style/theme';
 import './Checkbox/styles.css';
 
 const options = [
-  { label: 'Apple', value: 'Apple' },
-  { label: 'Pear', value: 'Pear' },
-  { label: 'Orange', value: 'Orange' },
+  { label: 'Apple', value: 'apple' },
+  { label: 'Pear', value: 'pear' },
+  { label: 'Orange', value: 'orange' },
 ];
 
 const classesExample = {
@@ -71,5 +71,6 @@ storiesOf('Chekbox', module)
       classes={{
         checkboxFormControlLabelRoot: 'checkboxFormControlLabelRoot-class',
       }}
+      checked={['pear']}
     />
   ));
