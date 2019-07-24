@@ -28,3 +28,4 @@ export { default as RadioGroupBtn } from './RadioGroupBtn';
 export { default as RadioGroupField } from './RadioGroupField';
 export { default as Select } from './Select';
 export { default as Uploader } from './Uploader';
+export { default as CircularProgress } from './CircularProgress';
