@@ -11,6 +11,7 @@ const SliderComponent = React.memo(props => {
     props.initialValue || props.value || props.min
   );
 
+  // not used, because has bad behavior with Slider component
   const limit = ({ floatValue }) => {
     const { min, max } = props;
     return floatValue >= min && floatValue <= max;
@@ -40,7 +41,6 @@ const SliderComponent = React.memo(props => {
       props.onChange(newValue);
     }
   };
-  // TODO: вытащить label из inputProps и сделать его общим для компонента
   const { sliderProps, inputProps, label, min, max } = props;
 
   return (
@@ -56,7 +56,7 @@ const SliderComponent = React.memo(props => {
         fullWidth
         allowNegative={false}
         decimalScale={0}
-        isAllowed={limit}
+        // isAllowed={limit}
         // aria-labelledby="slider"
         InputProps={{
           readOnly: props.discrete,
