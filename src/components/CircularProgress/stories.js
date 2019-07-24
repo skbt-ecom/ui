@@ -12,5 +12,5 @@ import theme from '../../style/theme';
 storiesOf('CircularProgress', module)
   .addDecorator(muiTheme([theme]))
   .add('Default', () => (
-    <CircularProgress color="primary" size={300} thickness={3} />
+    <CircularProgress color="primary" size={200} thickness={3} />
   ));
