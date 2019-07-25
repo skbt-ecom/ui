@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Autorenew from '@material-ui/icons/Autorenew';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Autosuggest from 'react-autosuggest';
@@ -67,6 +67,13 @@ export default React.memo(function IntegrationAutosuggest(props) {
       });
     }, 500)
   );
+
+  useEffect(() => {
+    // only when 'fio' type, because no tested in address type
+    if (props.type === 'fio') {
+      setState({ single: props.value || '' });
+    }
+  }, [props.value]);
 
   const getSuggestions = value => {
     inputValue.current = value.toLowerCase();
