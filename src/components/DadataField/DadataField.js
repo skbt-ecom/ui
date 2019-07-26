@@ -70,7 +70,7 @@ export default React.memo(function IntegrationAutosuggest(props) {
 
   useEffect(() => {
     // only when 'fio' type, because no tested in address type
-    if (props.type === 'fio') {
+    if (typeof props.value === 'string') {
       setState({ single: props.value || '' });
     }
   }, [props.value]);
