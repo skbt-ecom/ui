@@ -10,4 +10,5 @@ import theme from '../../style/theme';
 
 storiesOf('Header', module)
   .addDecorator(muiTheme([theme]))
-  .add('Default', () => <Header />);
+  .add('Default', () => <Header />)
+  .add('withHalvaLogo', () => <Header withHalvaLogo />);

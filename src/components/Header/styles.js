@@ -8,24 +8,43 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     height: '64px',
+
     [theme.breakpoints.up('sm')]: {
       height: '80px',
     },
+
     [theme.breakpoints.up('md')]: {
       height: '104px',
     },
-  },
-  logoContainer: {
+
     '& img': {
-      height: '16px',
-      [theme.breakpoints.up('sm')]: {
-        height: '20px',
-      },
-      [theme.breakpoints.up('md')]: {
-        height: '24px',
+      verticalAlign: 'top',
+    },
+  },
+
+  logo: {
+    height: '16px',
+
+    [theme.breakpoints.up('sm')]: {
+      height: '20px',
+    },
+
+    [theme.breakpoints.up('md')]: {
+      height: '24px',
+    },
+  },
+
+  withHalva: {
+    [theme.breakpoints.down('xs')]: {
+      width: 26,
+      overflow: 'hidden',
+
+      '& $logo': {
+        height: 24,
       },
     },
   },
+
   phoneContainer: {
     fontFamily: '"Roboto", Arial, Helvetica, sans-serif',
     fontWeight: 400,
@@ -33,10 +52,12 @@ const useStyles = makeStyles(theme => ({
     color: '#a1afbf',
     lineHeight: '12px',
     display: 'none',
+
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
   },
+
   phoneNum: {
     fontWeight: 500,
     fontSize: '20px',
@@ -44,8 +65,21 @@ const useStyles = makeStyles(theme => ({
     textDecoration: 'none',
     lineHeight: '22px',
   },
+
   phoneHint: {
     margin: 0,
+  },
+
+  halvaLogo: {
+    width: 62,
+
+    [theme.breakpoints.up('sm')]: {
+      width: 81,
+    },
+
+    [theme.breakpoints.up('md')]: {
+      width: 93,
+    },
   },
 }));
 
