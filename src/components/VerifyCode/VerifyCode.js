@@ -13,6 +13,7 @@ const VerifyCode = React.memo(props => {
           pattern="\d*"
           onChange={props.onChange}
           value={props.value}
+          autoFocus
         />
       </div>
       {props.error && <p className={classes.helperText}>{props.helperText}</p>}

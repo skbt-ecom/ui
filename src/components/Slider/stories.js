@@ -73,7 +73,6 @@ storiesOf('Slider', module)
       min={100} // if no initialValue using min value as initial
       max={2000}
       // value={500}
-      committed={true}
     />
   ))
   .add('Committed', () => (
@@ -86,7 +85,6 @@ storiesOf('Slider', module)
       min={150000} // if no initialValue using min value as initial
       max={30000000}
       // value={500}
-      committed={true}
     />
   ))
   .add('Discrete', () => (
@@ -99,6 +97,5 @@ storiesOf('Slider', module)
       min={100} // if no initialValue using min value as initial
       max={1000}
       // value={500}
-      committed={true}
     />
   ));

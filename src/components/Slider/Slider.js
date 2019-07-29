@@ -11,24 +11,19 @@ const SliderComponent = React.memo(props => {
     props.initialValue || props.value || props.min
   );
 
-  const limit = ({ floatValue }) => {
-    const { min, max } = props;
-    return floatValue >= min && floatValue <= max;
-  };
-
   const handleSliderChange = (event, newValue) => {
     if (value === newValue) {
       return;
     }
     setValue(newValue);
-    if (props.onChange) {
-      props.onChange(newValue);
-    }
+    props.onChange(newValue);
   };
 
   const handleSliderChangeCommitted = (event, newValue) => {
-    setValue(newValue);
-    props.onChangeCommitted(newValue);
+    if (props.onChangeCommitted) {
+      setValue(newValue);
+      props.onChangeCommitted(newValue);
+    }
   };
 
   const handleInputChange = ({ floatValue }) => {
@@ -37,10 +32,28 @@ const SliderComponent = React.memo(props => {
       if (props.onChangeCommitted) {
         return props.onChangeCommitted(floatValue);
       }
+      props.onChange(floatValue);
+    }
+  };
+
+  const handleInputBlur = e => {
+    const { min, max } = props;
+    let newValue = 0;
+
+    if (value <= min) {
+      newValue = min;
+    } else if (value >= max) {
+      newValue = max;
+    }
+
+    if (newValue) {
+      setValue(newValue);
+      if (props.onChangeCommitted) {
+        return props.onChangeCommitted(newValue);
+      }
       props.onChange(newValue);
     }
   };
-  // TODO: вытащить label из inputProps и сделать его общим для компонента
   const { sliderProps, inputProps, label, min, max } = props;
 
   return (
@@ -56,7 +69,7 @@ const SliderComponent = React.memo(props => {
         fullWidth
         allowNegative={false}
         decimalScale={0}
-        isAllowed={limit}
+        onBlur={handleInputBlur}
         // aria-labelledby="slider"
         InputProps={{
           readOnly: props.discrete,
@@ -82,7 +95,6 @@ const SliderComponent = React.memo(props => {
 
 SliderComponent.defaultProps = {
   onChange: () => null,
-  onChangeCommitted: () => null,
 };
 
 export default SliderComponent;

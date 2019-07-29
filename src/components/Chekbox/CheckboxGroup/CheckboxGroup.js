@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormGroup from '@material-ui/core/FormGroup';
@@ -46,8 +46,13 @@ const CheckboxGroup = React.memo(props => {
     ...restProps
   } = props;
   const [checkedOptions, setCheckedOptions] = useState(props.checked || []);
+  const isFirstRun = useRef(true);
 
   useEffect(() => {
+    if (isFirstRun.current) {
+      isFirstRun.current = false;
+      return;
+    }
     props.onChange(checkedOptions);
   }, [checkedOptions]);
 
