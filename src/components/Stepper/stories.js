@@ -52,4 +52,4 @@ storiesOf('Stepper', module)
   .add('Vertical', () => (
     <Stepper steps={stepsVertical} orientation="vertical" />
   ))
-  .add('Horizontal', () => <Stepper steps={stepsHorizontal} />);
+  .add('Horizontal', () => <Stepper steps={stepsHorizontal} activeStep={2} />);

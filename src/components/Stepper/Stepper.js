@@ -14,12 +14,12 @@ function StepConnector(props) {
 
 function StepperComponent(props) {
   const classes = useStyles();
-  const { orientation, steps, className } = props;
+  const { orientation, steps, className, activeStep } = props;
   const isVertical = orientation === 'vertical';
 
   return (
     <Stepper
-      activeStep={1}
+      activeStep={activeStep}
       connector={
         <StepConnector
           className={
