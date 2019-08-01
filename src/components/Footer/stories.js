@@ -57,4 +57,5 @@ const restText = (
 
 storiesOf('Footer', module)
   .addDecorator(muiTheme([theme]))
-  .add('Default', () => <Footer shortText={shortText} restText={restText} />);
+  .add('with text', () => <Footer shortText={shortText} restText={restText} />)
+  .add('without text', () => <Footer />);

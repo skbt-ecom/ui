@@ -15,6 +15,7 @@ import useStyles from './styles';
 function Footer(props) {
   const [isHide, setIsHide] = useState(true);
   const classes = useStyles(props);
+  const { shortText, restText } = props;
 
   function showRestLigal() {
     setIsHide(false);
@@ -96,15 +97,17 @@ function Footer(props) {
             </div>
           </Box>
         </div>
-        <div className={classes.ligal}>
-          <div>{props.shortText}</div>
-          {isHide && (
-            <span className={classes.showMore} onClick={showRestLigal}>
-              Подробные условия
-            </span>
-          )}
-          {!isHide && <div>{props.restText}</div>}
-        </div>
+        {shortText && (
+          <div className={classes.ligal}>
+            <div>{shortText}</div>
+            {isHide && (
+              <span className={classes.showMore} onClick={showRestLigal}>
+                Подробные условия
+              </span>
+            )}
+            {!isHide && <div>{restText}</div>}
+          </div>
+        )}
       </Container>
     </footer>
   );
