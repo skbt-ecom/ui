@@ -66,6 +66,7 @@ function StepperComponent(props) {
 StepperComponent.defaultProps = {
   orientation: 'horizontal',
   className: '',
+  activeStep: 0,
 };
 
 export default React.memo(StepperComponent);

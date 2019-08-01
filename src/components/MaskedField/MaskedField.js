@@ -32,13 +32,22 @@ const MaskedField = React.memo(props => {
     props.onChange(value);
   };
 
-  const { mask, min, max, unmask, onChange, ...restProps } = props;
+  const {
+    mask,
+    min,
+    max,
+    unmask,
+    onChange,
+    thousandsSeparator = '',
+    ...restProps
+  } = props;
   const inputProps = {
     onAccept: handleAccept,
     mask,
     unmask,
     value,
     max,
+    thousandsSeparator,
   };
   return (
     <TextField

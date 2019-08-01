@@ -18,4 +18,13 @@ storiesOf('MaskedField', module)
       mask={Number}
       value={10}
     />
+  ))
+  .add('Thousands Separator', () => (
+    <MaskedField
+      onChange={action('onChange')}
+      label={'MaskedField Number'}
+      mask={Number}
+      value={10}
+      thousandsSeparator={' '}
+    />
   ));
