@@ -15,6 +15,7 @@ import useStyles from './styles';
 
 function renderInputComponent(inputProps) {
   const { classes, inputRef = () => {}, ref, isLoading, ...other } = inputProps;
+
   return (
     <TextField
       variant={'outlined'}
@@ -31,8 +32,8 @@ function renderInputComponent(inputProps) {
             <Autorenew color={'primary'} className={classes.loadingIcon} />
           </InputAdornment>
         ),
-        disabled: isLoading,
       }}
+      disabled={isLoading}
       {...other}
     />
   );
@@ -57,6 +58,7 @@ export default React.memo(function IntegrationAutosuggest(props) {
   const [isLoading, setIsLoading] = useState(false);
 
   const isSuggestionSelected = useRef(false);
+  const currentSuggestion = useRef({});
 
   const inputValue = useRef('');
   const setDebouncedSuggestions = useRef(
@@ -103,30 +105,34 @@ export default React.memo(function IntegrationAutosuggest(props) {
     isSuggestionSelected.current = true;
     // spike, because dadata not returns postal code
     // we must do specific query for only one suggestion
-    if (type === 'address') {
+    if (type === 'address' && !suggestion.data.postal_code) {
       setIsLoading(true);
-      return getDadata(type, suggestion.unrestricted_value, {
+      getDadata(type, suggestion.unrestricted_value, {
         ...dadataOptions,
         count: 1,
         restrict_value: true,
       }).then(res => {
-        const fullSuggestion = res && res.suggestions && res.suggestions[0];
-        props.onChange(fullSuggestion);
+        currentSuggestion.current =
+          res && res.suggestions && res.suggestions[0];
+        props.onChange(currentSuggestion.current);
         setIsLoading(false);
       });
     } else {
-      return props.onChange(suggestion);
+      currentSuggestion.current = suggestion;
+      props.onChange(currentSuggestion.current);
     }
   };
 
   const onBlur = e => {
     const { type } = props;
-    if (type === 'fio') {
-      if (!isSuggestionSelected.current) {
-        const value = state.single ? state.single.trim() : null;
-        return props.onChange(value);
-      }
+    if (isSuggestionSelected.current) {
       return;
+    }
+    // if value not selected from list
+    if (state.single) {
+      const value =
+        type === 'fio' ? state.single.trim() : currentSuggestion.current;
+      return props.onChange(value);
     }
     props.onChange(null);
   };
