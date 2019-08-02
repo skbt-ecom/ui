@@ -4,7 +4,7 @@ const useStyles = makeStyles(theme => ({
   label: {
     marginRight: '8px',
     [theme.breakpoints.up('md')]: {
-      marginRight: '24px',
+      marginRight: '28px',
     },
     '&:last-of-type': {
       marginRight: 0,
