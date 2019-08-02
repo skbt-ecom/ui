@@ -11,5 +11,5 @@ import theme from '../../style/theme';
 
 storiesOf('PageStatus', module)
   .addDecorator(muiTheme([theme]))
-  .add('Success', () => <PageStatus isSuccess />)
+  .add('Success', () => <PageStatus success />)
   .add('Error', () => <PageStatus />);
