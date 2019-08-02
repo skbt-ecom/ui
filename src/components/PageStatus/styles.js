@@ -5,7 +5,7 @@ function styles(theme) {
     root: {
       boxSizing: 'border-box',
       margin: '0 auto',
-      boxShadow: '0 10px 34px rgba(175, 196, 208, 0.47)',
+      boxShadow: '0 10px 34px rgba(0, 0, 0, 0.2)',
       borderRadius: 8,
       backgroundColor: '#fff',
       width: 272,
