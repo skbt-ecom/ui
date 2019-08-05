@@ -5,8 +5,33 @@ const VerifyCode = React.memo(props => {
   const classes = useStyles(props);
 
   const handleKeyDown = e => {
-    const iKeyCode = e.which ? e.which : e.keyCode;
-    if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57)) {
+    const key = e.which || e.keyCode;
+    if (
+      (!e.shiftKey &&
+        !e.altKey &&
+        !e.ctrlKey &&
+        // numbers
+        key >= 48 &&
+        key <= 57) ||
+      // Numeric keypad
+      (key >= 96 && key <= 105) ||
+      // Backspace and Tab and Enter
+      key == 8 ||
+      key == 9 ||
+      key == 13 ||
+      // Home and End
+      key == 35 ||
+      key == 36 ||
+      // left and right arrows
+      key == 37 ||
+      key == 39 ||
+      // Del and Ins
+      key == 46 ||
+      key == 45
+    ) {
+      // input is VALID
+    } else {
+      // input is INVALID
       e.preventDefault();
     }
   };
