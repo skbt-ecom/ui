@@ -8,13 +8,16 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     height: '64px',
+    minHeight: '64px',
 
     [theme.breakpoints.up('sm')]: {
       height: '80px',
+      minHeight: '80px',
     },
 
     [theme.breakpoints.up('md')]: {
       height: '104px',
+      minHeight: '104px',
     },
 
     '& img': {
