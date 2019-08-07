@@ -10,11 +10,13 @@ function styles(theme) {
       backgroundColor: '#fff',
       width: 272,
       height: 304,
+      minHeight: 304,
       padding: '36px 32px',
 
       [theme.breakpoints.up('md')]: {
         width: 528,
         height: 336,
+        minHeight: 336,
         padding: '44px 42px',
       },
     },
