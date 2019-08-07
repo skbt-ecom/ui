@@ -25,7 +25,7 @@ const CheckboxComponent = React.memo(props => {
     ? useStylesLabel(getClassesFromProps(props, 'labelClasses'))
     : {};
 
-  const { label, error, helperText, classes, ...restProps } = props;
+  const { label, error, helperText, classes, value, ...restProps } = props;
 
   const handleChange = event => {
     props.onChange(event);
@@ -43,6 +43,7 @@ const CheckboxComponent = React.memo(props => {
                 root: checkboxClasses.root,
                 label: checkboxClasses.label,
               }}
+              checked={value}
             />
           }
           label={label}

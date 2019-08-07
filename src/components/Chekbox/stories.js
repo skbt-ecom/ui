@@ -50,6 +50,7 @@ storiesOf('Chekbox', module)
         onChange={action('onChange')}
         label={'Label'}
         color={'primary'}
+        value={true}
       />
       <br />
       <Checkbox
