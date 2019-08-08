@@ -11,18 +11,21 @@ const SliderComponent = React.memo(props => {
     props.initialValue || props.value || props.min
   );
 
-  const handleSliderChange = (event, newValue) => {
+  const setValueNCallCb = (value, newValue, cb) => {
     if (value === newValue) {
       return;
     }
     setValue(newValue);
-    props.onChange(newValue);
+    cb(newValue);
+  };
+
+  const handleSliderChange = (event, newValue) => {
+    setValueNCallCb(value, newValue, props.onChange);
   };
 
   const handleSliderChangeCommitted = (event, newValue) => {
     if (props.onChangeCommitted) {
-      setValue(newValue);
-      props.onChangeCommitted(newValue);
+      setValueNCallCb(value, newValue, props.onChangeCommitted);
     }
   };
 
