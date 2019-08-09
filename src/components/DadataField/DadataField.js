@@ -58,7 +58,7 @@ export default React.memo(function IntegrationAutosuggest(props) {
   const [isLoading, setIsLoading] = useState(false);
 
   const isSuggestionSelected = useRef(false);
-  const currentSuggestion = useRef({});
+  const currentSuggestion = useRef(null);
 
   const inputValue = useRef('');
   const setDebouncedSuggestions = useRef(
@@ -130,6 +130,7 @@ export default React.memo(function IntegrationAutosuggest(props) {
     }
     // if value not selected from list
     if (state.single) {
+      debugger;
       const value =
         type === 'fio' ? state.single.trim() : currentSuggestion.current;
       return props.onChange(value);

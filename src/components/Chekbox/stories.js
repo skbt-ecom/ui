@@ -73,5 +73,7 @@ storiesOf('Chekbox', module)
         checkboxFormControlLabelRoot: 'checkboxFormControlLabelRoot-class',
       }}
       checked={['pear']}
+      // error={true}
+      // helperText={'Error message'}
     />
   ));
