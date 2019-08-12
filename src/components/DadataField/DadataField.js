@@ -130,7 +130,6 @@ export default React.memo(function IntegrationAutosuggest(props) {
     }
     // if value not selected from list
     if (state.single) {
-      debugger;
       const value =
         type === 'fio' ? state.single.trim() : currentSuggestion.current;
       return props.onChange(value);
