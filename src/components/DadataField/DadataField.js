@@ -50,7 +50,7 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
 export default React.memo(function IntegrationAutosuggest(props) {
   const classes = useStyles();
   const [state, setState] = useState({
-    single: props.value || '',
+    single: typeof props.value === 'string' ? props.value : '',
   });
   const [stateSuggestions, setStateSuggestions] = useState([]);
   const [anchorEl, setAnchorEl] = React.useState(null);
