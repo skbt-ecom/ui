@@ -62,11 +62,12 @@ export default React.memo(function IntegrationAutosuggest(props) {
 
   const inputValue = useRef('');
   const setDebouncedSuggestions = useRef(
-    debounce(inputValue => {
-      const { type, dadataOptions } = props;
-      getDadata(type, inputValue, dadataOptions).then(({ suggestions }) => {
-        setStateSuggestions(suggestions);
-      });
+    debounce((inputValue, dadataOptions) => {
+      getDadata(props.type, inputValue, dadataOptions).then(
+        ({ suggestions }) => {
+          setStateSuggestions(suggestions);
+        }
+      );
     }, 500)
   );
 
@@ -79,7 +80,7 @@ export default React.memo(function IntegrationAutosuggest(props) {
 
   const getSuggestions = value => {
     inputValue.current = value.toLowerCase();
-    setDebouncedSuggestions.current(inputValue.current);
+    setDebouncedSuggestions.current(inputValue.current, props.dadataOptions);
   };
 
   const handleSuggestionsFetchRequested = ({ value }) => {
