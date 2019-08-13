@@ -26,7 +26,7 @@ const SliderComponent = React.memo(props => {
     }
   };
 
-  const handleInputChange = ({ floatValue }) => {
+  const handleInputChange = ({ floatValue = 0 }) => {
     if (floatValue !== value) {
       setValue(floatValue);
       if (props.onChangeCommitted) {
