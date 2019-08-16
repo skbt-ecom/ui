@@ -11,7 +11,6 @@ import useStyles from './styles';
 const successMsg = {
   head1: 'Спасибо!',
   head2: 'Ваша заявка отправлена',
-  desc: 'В ближайшее время с Вами свяжутся специалисты нашего Банка.',
 };
 
 const errorMsg = {
@@ -21,7 +20,7 @@ const errorMsg = {
 
 function PageStatus(props) {
   const classes = useStyles();
-  const { success } = props;
+  const { success, successDesc } = props;
 
   return (
     <div className={classes.root}>
@@ -42,7 +41,7 @@ function PageStatus(props) {
       </Typography>
       <Typography variant="h4" className={classes.desk}>
         {success ? (
-          successMsg.desc
+          successDesc
         ) : (
           <>
             <ul className={classes.errorDesc1}>
@@ -62,6 +61,7 @@ function PageStatus(props) {
 
 PageStatus.defaultProps = {
   success: false,
+  successDesc: 'В ближайшее время с Вами свяжутся специалисты нашего Банка.',
 };
 
 export default React.memo(PageStatus);

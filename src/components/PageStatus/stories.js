@@ -11,5 +11,10 @@ import theme from '../../style/theme';
 
 storiesOf('PageStatus', module)
   .addDecorator(muiTheme([theme]))
-  .add('Success', () => <PageStatus success />)
+  .add('Success', () => (
+    <PageStatus
+      success
+      successDesc="В течение часа Вам придет SMS c подтверждением регистрации в акции"
+    />
+  ))
   .add('Error', () => <PageStatus />);
