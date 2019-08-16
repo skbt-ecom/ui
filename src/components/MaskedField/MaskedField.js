@@ -16,7 +16,7 @@ const TextMaskCustom = React.memo(
 );
 
 const MaskedField = React.memo(props => {
-  const { value: propsValueRaw } = props;
+  const { value: propsValueRaw, InputProps } = props;
   const propsValue = (propsValueRaw && propsValueRaw.toString()) || '';
 
   const [value, setValue] = useState(propsValue);
@@ -55,6 +55,7 @@ const MaskedField = React.memo(props => {
       InputProps={{
         inputComponent: TextMaskCustom,
         inputProps,
+        classes: InputProps.classes,
       }}
     />
   );
@@ -62,5 +63,6 @@ const MaskedField = React.memo(props => {
 
 MaskedField.defaultProps = {
   variant: 'outlined',
+  InputProps: {},
 };
 export default MaskedField;
