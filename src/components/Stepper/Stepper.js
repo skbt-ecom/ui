@@ -17,7 +17,9 @@ function StepperComponent(props) {
   return (
     <Stepper
       activeStep={activeStep}
-      connector={<StepConnector />}
+      connector={
+        <StepConnector classes={{ active: classes.connectorActive }} />
+      }
       classes={{
         root: cn(classes.stepper, className),
         horizontal: classes.connectorHorizontal,
@@ -26,7 +28,7 @@ function StepperComponent(props) {
       orientation={orientation}
     >
       {steps.map(({ label, content }) => (
-        <Step key={label}>
+        <Step key={label} classes={{ completed: classes.hideXs }}>
           <StepLabel
             classes={{
               label: isVertical

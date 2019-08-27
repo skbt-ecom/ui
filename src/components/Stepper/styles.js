@@ -11,6 +11,11 @@ function styles(theme) {
       padding: 0,
       fontFamily: theme.typography.fontFamily,
       background: 'transparent',
+      '& > div': {
+        display: 'none',
+        [theme.breakpoints.up('sm')]: { display: 'block' },
+      },
+      '& div:first-child': { display: 'block' },
     },
 
     iconContainer: {
@@ -109,6 +114,14 @@ function styles(theme) {
         justifyContent: 'normal',
       },
     },
+    connectorActive: {
+      '& + div': { display: 'block' },
+    },
+    hideXs: {
+      display: 'none !important',
+      [theme.breakpoints.up('sm')]: { display: 'block !important' },
+    },
+    connectorDisabled: {},
   };
 }
 
