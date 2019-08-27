@@ -109,19 +109,6 @@ function styles(theme) {
         justifyContent: 'normal',
       },
     },
-    hideXs: {
-      display: 'none',
-      [theme.breakpoints.up('sm')]: { display: 'block' },
-    },
-    connectorActive: {
-      '& ~ div': {
-        display: 'none',
-        [theme.breakpoints.up('sm')]: { display: 'block' },
-      },
-      '& + div': {
-        display: 'block',
-      },
-    },
   };
 }
 
