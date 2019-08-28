@@ -18,9 +18,11 @@ const useStyles = makeStyles(() => ({
     left: 0,
     right: 0,
   },
-  suggestionsContainerOpen: {},
   suggestion: {
     display: 'block',
+    '& > div ': {
+      whiteSpace: 'normal',
+    },
   },
   suggestionsList: {
     margin: 0,
