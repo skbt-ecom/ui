@@ -30,3 +30,4 @@ export { default as Select } from './Select';
 export { default as Uploader } from './Uploader';
 export { default as CircularProgress } from './CircularProgress';
 export { default as PageStatus } from './PageStatus';
+export { default as DatePicker } from './DatePicker';
