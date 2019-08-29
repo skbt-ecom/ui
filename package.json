@@ -47,6 +47,5 @@
     "pretty-quick": "^1.11.1",
     "prop-types": "^15.7.2",
     "rimraf": "^2.6.3"
-  },
-  "sideEffects": false
+  }
 }
