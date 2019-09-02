@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect, useRef } from 'react';
 
 import DadataField from '../DadataField';
 import TextField from '../TextField';
-import Checkbox from '../Chekbox/Checkbox';
+import Checkbox from '../Checkbox/Checkbox';
 import getClasses from './styles';
 
 const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({

@@ -42,7 +42,7 @@ const Label = () => {
   );
 };
 
-storiesOf('Chekbox', module)
+storiesOf('Checkbox', module)
   .addDecorator(muiTheme([theme]))
   .add('Checkbox', () => (
     <>
