@@ -39,6 +39,7 @@ const MaskedField = React.memo(props => {
     unmask,
     onChange,
     thousandsSeparator = '',
+    dispatch,
     ...restProps
   } = props;
   const inputProps = {
@@ -48,6 +49,7 @@ const MaskedField = React.memo(props => {
     value,
     max,
     thousandsSeparator,
+    dispatch,
   };
   return (
     <TextField
