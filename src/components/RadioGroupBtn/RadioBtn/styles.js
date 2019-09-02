@@ -2,13 +2,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   label: {
-    // marginRight: '8px',
-    // [theme.breakpoints.up('md')]: {
-    //   marginRight: '28px',
-    // },
-    // '&:last-of-type': {
-    //   marginRight: 0,
-    // },
+    marginRight: '8px',
+    [theme.breakpoints.up('md')]: {
+      marginRight: '28px',
+    },
+    '&:last-of-type': {
+      marginRight: 0,
+    },
   },
   input: {
     display: 'none',
