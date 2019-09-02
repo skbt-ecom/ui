@@ -13,6 +13,7 @@ export { default as MaskedField } from './MaskedField';
 export { default as TextField } from './TextField';
 export { default as Autosuggest } from './Autosuggest';
 export { default as Slider } from './Slider';
+export { default as SliderLogarithmic } from './Slider/SliderLogarithmic';
 export { default as Checkbox } from './Chekbox/Checkbox';
 export { default as CheckboxGroup } from './Chekbox/CheckboxGroup';
 export { default as Header } from './Header';

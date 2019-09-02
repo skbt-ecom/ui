@@ -6,6 +6,7 @@ import { muiTheme } from 'storybook-addon-material-ui';
 
 // Import our component from this folder
 import Slider from './Slider';
+import SliderLogarithmic from './SliderLogarithmic';
 
 import theme from '../../style/theme';
 import { inputProps, sliderProps, discreteSliderProps } from './story.config';
@@ -84,4 +85,14 @@ storiesOf('Slider', module)
   ))
   .add('Dynamic step', () => (
     <SliderWrapper onChangeCommitted={action('onChangeCommitted')} />
+  ))
+  .add('Logarithmic', () => (
+    <SliderLogarithmic
+      // onChange={action('onChange')}
+      onChangeCommitted={action('onChangeCommitted')}
+      inputProps={inputProps}
+      sliderProps={sliderProps}
+      min={150000}
+      max={30000000}
+    />
   ));
