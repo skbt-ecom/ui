@@ -16,16 +16,18 @@ const Logo = ({ classes }) => {
   );
 };
 
-const Phone = ({ classes, phone, phoneHint, onButtonClick }) => {
+const Phone = ({ classes, phone, phoneHint, onButtonClick, withButton }) => {
   return (
     <>
-      <Button
-        onClick={onButtonClick}
-        classes={{ root: classes.buttonRoot, label: classes.buttonLabel }}
-        color={'primary'}
-      >
-        Оформить
-      </Button>
+      {withButton && (
+        <Button
+          onClick={onButtonClick}
+          classes={{ root: classes.buttonRoot, label: classes.buttonLabel }}
+          color={'primary'}
+        >
+          Оформить
+        </Button>
+      )}
       <div className={classes.phoneContainer}>
         <a rel="nofollow" href={`tel:${phone}`} className={classes.phoneNum}>
           {phone}
@@ -66,6 +68,7 @@ Header.defaultProps = {
   phoneHint: 'Для звонков по России бесплатно',
   withHalvaLogo: false,
   type: 'default',
+  withButton: false,
 };
 
 export default React.memo(Header);

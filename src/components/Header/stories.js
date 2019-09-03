@@ -11,5 +11,7 @@ import theme from '../../style/theme';
 
 storiesOf('Header', module)
   .addDecorator(muiTheme([theme]))
-  .add('Default', () => <Header onButtonClick={action('onButtonClick')} />)
+  .add('Default', () => (
+    <Header withButton onButtonClick={action('onButtonClick')} />
+  ))
   .add('withHalvaLogo', () => <Header type={'withHalvaLogo'} />);
