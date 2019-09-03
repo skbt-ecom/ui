@@ -1,0 +1,115 @@
+image: alpine:latest
+
+stages:
+  - test
+  - build
+  - review
+
+test:
+  stage: test
+  image: node:10
+  script:
+    - sed -i '/rimraf node_modules/d' ./package.json
+    - npm i || true
+    - npm run build-storybook || true
+    - npm test || true
+  only:
+    - test
+  artifacts:
+    paths:
+      - storybook-static/
+    expire_in: 1 hrs
+
+build:
+  stage: build
+  image: docker:stable
+  script:
+    - build
+  dependencies:
+    - test
+  only:
+    - test
+
+review:
+  stage: review
+  image: centos:latest
+  variables:
+    ENVRM: "dev"
+  script:
+    - set_k8s
+    - deploy
+  only:
+    - test
+
+delete:
+  stage: review
+  image: centos:latest
+  variables:
+    ENVRM: "dev"
+  script:
+    - set_k8s
+    - delete
+  when: manual
+  only:
+    - test
+
+.auto_devops: &auto_devops |
+  TRACE=
+  [[ "$TRACE" ]] && set -x
+  export CI_APPLICATION_REPOSITORY=$(echo $CI_REGISTRY | sed -r 's:^([^/]*/){2}::')/$(echo $CI_PROJECT_PATH | sed -r 's:([a-zA-Z0-9])[^/]*/:\1-:g' \
+  | sed 's/[^a-zA-Z0-9]/-/g' | awk '{print tolower($0)}')/$CI_PROJECT_NAME
+  export CI_APPLICATION_TAG="latest"
+
+  function build() {
+    echo "Создаем Docker-образ приложения. \
+    =========================================================================================="
+    docker build -t "${CI_APPLICATION_REPOSITORY}:${CI_APPLICATION_TAG}" .
+
+    echo "Загружаем Docker-образ приложения в Registry. \
+    =========================================================================================="
+    if [[ -n "$CI_REGISTRY_USER" ]]; then
+      docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY" &> /dev/null
+      echo ""
+    fi
+    docker push "${CI_APPLICATION_REPOSITORY}:${CI_APPLICATION_TAG}"
+    echo ""
+  }
+
+  function set_k8s() {
+    echo "Устанавливаем необходимые пакеты и утилиты. \
+    =========================================================================================="
+    yum install epel-release -y -q &> /dev/null
+    yum install jq -y -q &> /dev/null
+    curl -s -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.12.3/bin/linux/amd64/kubectl && chmod +x /usr/bin/kubectl &> /dev/null
+    curl -s https://storage.googleapis.com/kubernetes-helm/helm-v2.12.3-linux-amd64.tar.gz | \
+    tar -xzvf - -C /usr/bin/ --strip-components=1 && chmod +x /usr/bin/helm &> /dev/null 
+
+    echo "Настраиваем kubectl для доступа к кластеру Kubernetes. \
+    =========================================================================================="
+    kubectl config set-cluster $K8S_CLUSTER --server="$K8S_URL" --insecure-skip-tls-verify &> /dev/null
+    kubectl config set-credentials admin --token="$K8S_TOKEN" &> /dev/null
+    kubectl config set-context default-context --cluster=$K8S_CLUSTER --user=admin &> /dev/null
+    kubectl config use-context default-context &> /dev/null
+  }
+
+  function deploy() {
+    echo "Устанавливаем (или обновляем) tiller. \
+    =========================================================================================="
+    helm init --upgrade --tiller-namespace ${K8S_NAMESPACE_BASE} --history-max 10 --service-account tiller-account
+    sleep 10
+
+    echo "Устанавливаем релиз Helm. \
+    =========================================================================================="
+    helm upgrade --install ${K8S_NAMESPACE_BASE}-${ENVRM} ./helm --namespace ${K8S_NAMESPACE_BASE}-${ENVRM} \
+    --set image.repository="${CI_APPLICATION_REPOSITORY}" --set image.tag="${CI_APPLICATION_TAG}" \
+    --tiller-namespace ${K8S_NAMESPACE_BASE} --wait --timeout 300 --reset-values
+  }
+
+  function delete() {
+    echo "Удаляем релиз Helm. \
+    =========================================================================================="
+    helm delete ${K8S_NAMESPACE_BASE}-${ENVRM} --tiller-namespace ${K8S_NAMESPACE_BASE} --purge --timeout 600
+  }
+
+before_script:
+  - *auto_devops
