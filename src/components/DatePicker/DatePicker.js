@@ -105,8 +105,8 @@ const defaultMaterialTheme = createMuiTheme({
 });
 
 function DatePicker(props) {
-  const { label, onChange } = props;
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const { label, value, onChange } = props;
+  const [selectedDate, setSelectedDate] = useState(value);
 
   function handleDateChange(date) {
     onChange && onChange(date);
@@ -137,6 +137,7 @@ function DatePicker(props) {
 
 DatePicker.defaultProps = {
   label: 'Выберите дату',
+  value: new Date(),
 };
 
 export default React.memo(DatePicker);
