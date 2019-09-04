@@ -97,14 +97,13 @@ export default React.memo(function IntegrationAutosuggest(props) {
   };
 
   const onSuggestionSelected = (event, { suggestion }) => {
-    const { type, dadataOptions } = props;
+    const { type } = props;
     isSuggestionSelected.current = true;
     // spike, because dadata not returns postal code
     // we must do specific query for only one suggestion
     if (type === 'address' && !suggestion.data.postal_code) {
       setIsLoading(true);
       getDadata(type, suggestion.unrestricted_value, {
-        ...dadataOptions,
         count: 1,
         restrict_value: true,
       }).then(res => {
