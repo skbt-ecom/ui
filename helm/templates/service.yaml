@@ -7,10 +7,10 @@ metadata:
     app: {{ .Values.labels.app }}
     component: {{ .Values.labels.component }}
     release: {{ .Release.Name }}
-  annotations:
-    prometheus.io/scrape: "true"
-    prometheus.io/port: {{ .Values.service.internalPort | quote }}
-    prometheus.io/path: {{ .Values.annotations.metrics_path | quote }}
+#  annotations:
+#    prometheus.io/scrape: "true"
+#    prometheus.io/port: {{ .Values.service.internalPort | quote }}
+#    prometheus.io/path: {{ .Values.annotations.metrics_path | quote }}
 spec:
   type: ClusterIP
   ports:

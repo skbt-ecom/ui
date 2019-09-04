@@ -4,7 +4,7 @@
 templates:
   configmap: "false"
   deployment: "true"
-  ingress: "false"
+  ingress: "true"
   service: "true"
 
 #Метки объектов кластера kubernetes, связанных с приложением.

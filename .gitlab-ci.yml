@@ -8,18 +8,18 @@ stages:
 
 test:
   stage: test
-  image: maven:$MAVEN_VERSION
+  image: node:10
   script:
-    - mvn clean package
+    - sed -i '/rimraf node_modules/d' ./package.json
+    - npm i || true
+    - npm run build-storybook || true
+    - npm test || true
   only:
-    - nil
-    #- ci-cd-test
-    #- dev
-    #- test
+    - ci-cd-test
   artifacts:
     paths:
-      - target/
-    expire_in: 2 hrs
+      - storybook-static/
+    expire_in: 1 hrs
 
 build:
   stage: build
@@ -31,7 +31,7 @@ build:
   dependencies:
     - test
   only:
-    - nil
+    - ci-cd-test
     #- ci-cd-test
     #- dev
     #- test
@@ -43,7 +43,7 @@ review:
     - set_k8s
     - deploy
   only:
-    - nil
+    - ci-cd-test
     #- ci-cd-test
     #- dev
     #- test
@@ -56,7 +56,7 @@ delete:
     - delete
   when: manual
   only:
-    - nil
+    - ci-cd-test
     #- ci-cd-test
     #- dev
     #- test
@@ -67,7 +67,7 @@ hook_to_projects:
   script:
     - if [[ -n $HOOK_PRJS ]]; then send_hook; else exit 0; fi
   only:
-    - nil
+    - ci-cd-test
     #- ci-cd-test
     #- dev
     #- test
@@ -120,7 +120,7 @@ hook_to_projects:
     =========================================================================================="
     helm upgrade --install ${K8S_NAMESPACE_BASE}-${ENVRM} ./helm --namespace ${K8S_NAMESPACE_BASE}-${ENVRM} \
     --set image.repository="${CI_APPLICATION_REPOSITORY}" --set image.tag="${CI_APPLICATION_TAG}" \
-    --set ingress.host="${ENVRM}-kuber.sovcombank.group" --set ingress.location="${CI_PROJECT_NAME}" \
+    --set ingress.host="${ENVRM}-kuber.sovcombank.group" --set ingress.location="ecom-${CI_PROJECT_NAME}" \
     --tiller-namespace ${K8S_NAMESPACE_BASE} --timeout 300 --reset-values
     # вернуть параметр --wait
   }

@@ -16,8 +16,8 @@ data:
         location /test.html {
             alias  /usr/share/nginx/html/index.html;
         }
-        location /go-halvacard-ru {
-            rewrite ^/go-halvacard-ru(.*)$ /$1;
+        location /ecom-ui {
+            rewrite ^/ecom-ui(.*)$ /$1;
         }
         error_page   500 502 503 504  /50x.html;
         location = /50x.html {
