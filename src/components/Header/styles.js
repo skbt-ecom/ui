@@ -85,6 +85,16 @@ const useStyles = makeStyles(theme => ({
       width: 93,
     },
   },
+  buttonRoot: {
+    padding: '8px 20px',
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
+  },
+  buttonLabel: {
+    fontSize: 16,
+    lineHeight: '20px',
+  },
 }));
 
 export default useStyles;
