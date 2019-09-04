@@ -73,7 +73,7 @@ hook_to_projects:
     #- test
 
 .auto_devops: &auto_devops |
-  TRACE=
+  TRACE=1
   [[ "$TRACE" ]] && set -x
 
   echo "Экспортируем переменные окружения из файла .ci_env, если данные переменные не определены." \
