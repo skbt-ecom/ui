@@ -1,0 +1,23 @@
+{{ if and .Values.templates.ingress (eq .Values.templates.ingress "true") }}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ template "obj.fullname" . }}
+  annotations:
+    kubernetes.io/ingress.class: {{ .Values.ingress.class }}
+    ingress.kubernetes.io/add-base-url: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+spec:
+  rules:
+  - host: {{ .Values.ingress.host }}
+    http:
+      paths:
+      - path: "/{{ .Values.ingress.location }}"
+        backend:
+          serviceName: {{ template "obj.fullname" . }}
+          servicePort: {{ .Values.service.externalPort }}
+  tls:
+  - hosts:
+    - {{ .Values.ingress.host }}
+---
+{{ end }}

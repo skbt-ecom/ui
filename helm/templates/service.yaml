@@ -1,0 +1,25 @@
+{{ if and .Values.templates.service (eq .Values.templates.service "true") }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "obj.fullname" . }}
+  labels:
+    app: {{ .Values.labels.app }}
+    component: {{ .Values.labels.component }}
+    release: {{ .Release.Name }}
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: {{ .Values.service.internalPort | quote }}
+    prometheus.io/path: {{ .Values.annotations.metrics_path | quote }}
+spec:
+  type: ClusterIP
+  ports:
+  - port: {{ .Values.service.externalPort }}
+    protocol: TCP
+    targetPort: {{ .Values.service.internalPort }}
+  selector:
+    app: {{ .Values.labels.app }}
+    component: {{ .Values.labels.component }}
+    release: {{ .Release.Name }}
+---
+{{ end }}
