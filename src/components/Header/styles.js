@@ -71,6 +71,7 @@ const useStyles = makeStyles(theme => ({
 
   phoneHint: {
     margin: 0,
+    fontWeight: 400,
   },
 
   halvaLogo: {
