@@ -4,6 +4,7 @@ function styles(theme) {
   return {
     footer: {
       fontFamily: theme.typography.fontFamily,
+      fontWeight: 400,
       background: '#fff',
       padding: '40px 0',
 
