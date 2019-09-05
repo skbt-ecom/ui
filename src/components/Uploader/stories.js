@@ -15,6 +15,6 @@ storiesOf('Uploader', module)
     <Uploader
       errMsg="Не удалось загрузить документ"
       hint="Страница регистрации"
-      apiUrl="http://rdc-web-app1-test.bankrc.local/loadfile/index.php"
+      apiUrl="http://rdc-web-app1-test.bankrc.local/test_api/load_file.php"
     />
   ));
