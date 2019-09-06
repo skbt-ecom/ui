@@ -9,7 +9,6 @@ export const sliderProps = {
 export const discreteSliderProps = {
   suffix: ' ₽',
   step: null,
-  marks: true,
   marks: [
     {
       value: 100,
