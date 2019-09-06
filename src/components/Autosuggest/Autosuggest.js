@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Autosuggest from 'react-autosuggest';
 import TextField from '@material-ui/core/TextField';
-import Popper from '@material-ui/core/Popper';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 
@@ -14,15 +13,11 @@ import {
 import useStyles from './styles';
 
 function renderInputComponent(inputProps) {
-  const { classes, inputRef = () => {}, ref, ...other } = inputProps;
+  const { classes, ...other } = inputProps;
   return (
     <TextField
       variant={'outlined'}
       InputProps={{
-        inputRef: node => {
-          ref(node);
-          inputRef(node);
-        },
         classes: {
           input: classes.input,
         },
@@ -41,11 +36,10 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
 }
 const EMPTY_VALUE = { value: '', label: '' };
 export default React.memo(function IntegrationAutosuggest(props) {
-  const classes = useStyles();
+  const classes = useStyles(props);
   const [value, setValue] = useState(props.value || { ...EMPTY_VALUE });
   const [stateSuggestions, setSuggestions] = useState([]);
   const isSuggestionSelected = useRef(false); // need to send props.onChange() in onBlur when suggestion not selected
-  const [anchorEl, setAnchorEl] = React.useState(null);
 
   useEffect(() => {
     setValue(props.value || { value: '', label: '' });
@@ -97,9 +91,6 @@ export default React.memo(function IntegrationAutosuggest(props) {
           label,
           placeholder,
           onChange: handleChange,
-          inputRef: node => {
-            setAnchorEl(node);
-          },
           ...otherInputProps,
           value: value.label,
           onBlur,
@@ -109,20 +100,10 @@ export default React.memo(function IntegrationAutosuggest(props) {
           suggestionsList: classes.suggestionsList,
           suggestion: classes.suggestion,
         }}
-        renderSuggestionsContainer={({ containerProps, children }) => (
-          <Popper
-            anchorEl={anchorEl}
-            open={Boolean(children)}
-            className={classes.popper}
-          >
-            <Paper
-              square
-              {...containerProps}
-              style={{ width: anchorEl ? anchorEl.clientWidth : undefined }}
-            >
-              {children}
-            </Paper>
-          </Popper>
+        renderSuggestionsContainer={options => (
+          <Paper {...options.containerProps} square>
+            {options.children}
+          </Paper>
         )}
       />
     </div>
