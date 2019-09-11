@@ -120,7 +120,7 @@ hook_to_projects:
     helm upgrade --install ${K8S_NAMESPACE_BASE}-${ENVRM} ./helm --namespace ${K8S_NAMESPACE_BASE}-${ENVRM} \
     --set image.repository="${CI_APPLICATION_REPOSITORY}" --set image.tag="${CI_APPLICATION_TAG}" \
     --set ingress.host="${ENVRM}-kuber.sovcombank.group" --set ingress.location="ecom-${CI_PROJECT_NAME}" \
-    --set env.version = $CI_PIPELINE_IID \
+    --set env.version="$CI_PIPELINE_IID" \
     --tiller-namespace ${K8S_NAMESPACE_BASE} --timeout 300 --reset-values
     # вернуть параметр --wait
   }
