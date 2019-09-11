@@ -30,7 +30,7 @@ env:
  
 #Путь монтирования внутри контейнера приложения. Обсуждаем и устанавливаем совместно.
 volumeMounts:
-  path: ""
+  path: "/etc/nginx/conf.d/"
 
 #do not define these variables, do not delete thim.
 #=============================
