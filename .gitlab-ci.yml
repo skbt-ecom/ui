@@ -32,7 +32,6 @@ build:
     - test
   only:
     - ci-cd-test
-    #- ci-cd-test
     #- dev
     #- test
 
