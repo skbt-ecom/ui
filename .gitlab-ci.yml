@@ -113,8 +113,7 @@ hook_to_projects:
     echo "Устанавливаем (или обновляем) tiller. \
     =========================================================================================="
     helm init --upgrade --tiller-namespace ${K8S_NAMESPACE_BASE} --history-max 10 --service-account tiller-account
-    sleep 30
-
+    
     echo "Устанавливаем релиз Helm. \
     =========================================================================================="
     helm upgrade --install ${K8S_NAMESPACE_BASE}-${ENVRM} ./helm --namespace ${K8S_NAMESPACE_BASE}-${ENVRM} \
