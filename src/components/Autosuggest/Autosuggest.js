@@ -9,6 +9,7 @@ import {
   getSuggestionValue,
   shouldRenderSuggestions,
 } from './helpers';
+import withSpaceForHelperTxt from '../HOCs/withSpaceForHelperTxt';
 
 import useStyles from './styles';
 
@@ -27,7 +28,7 @@ function renderInputComponent(inputProps) {
   );
 }
 
-function renderSuggestion(suggestion, { query, isHighlighted }) {
+function renderSuggestion(suggestion, { isHighlighted }) {
   return (
     <MenuItem component="div" selected={isHighlighted}>
       <div>{suggestion.value}</div>
@@ -35,7 +36,8 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
   );
 }
 const EMPTY_VALUE = { value: '', label: '' };
-export default React.memo(function IntegrationAutosuggest(props) {
+
+const AutoSuggestComponent = React.memo(function IntegrationAutosuggest(props) {
   const classes = useStyles(props);
   const [value, setValue] = useState(props.value || { ...EMPTY_VALUE });
   const [stateSuggestions, setSuggestions] = useState([]);
@@ -109,3 +111,5 @@ export default React.memo(function IntegrationAutosuggest(props) {
     </div>
   );
 });
+
+export default withSpaceForHelperTxt(AutoSuggestComponent);
