@@ -9,6 +9,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { getSuggestionValue } from './helpers';
 import getDadata from './getDadata';
 import debounce from '../../utils/debounce';
+import withSpaceForHelperTxt from '../HOCs/withSpaceForHelperTxt';
 
 import useStyles from './styles';
 
@@ -35,7 +36,7 @@ function renderInputComponent(inputProps) {
   );
 }
 
-function renderSuggestion(suggestion, { query, isHighlighted }) {
+function renderSuggestion(suggestion, { isHighlighted }) {
   return (
     <MenuItem component="div" selected={isHighlighted}>
       <div>{suggestion.value}</div>
@@ -43,7 +44,7 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
   );
 }
 
-export default React.memo(function IntegrationAutosuggest(props) {
+const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
   const classes = useStyles(props);
   const [state, setState] = useState({
     single: typeof props.value === 'string' ? props.value : '',
@@ -179,3 +180,5 @@ export default React.memo(function IntegrationAutosuggest(props) {
     </div>
   );
 });
+
+export default withSpaceForHelperTxt(DadataComponent);

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IMaskInput } from 'react-imask';
 import TextField from '@material-ui/core/TextField';
+import withSpaceForHelperTxt from '../HOCs/withSpaceForHelperTxt';
 
 const TextMaskCustom = React.memo(
   props => {
@@ -65,6 +66,7 @@ const MaskedField = React.memo(props => {
 
 MaskedField.defaultProps = {
   variant: 'outlined',
+  mask: Date,
   InputProps: {},
 };
-export default MaskedField;
+export default withSpaceForHelperTxt(MaskedField);
