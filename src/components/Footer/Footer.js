@@ -105,7 +105,7 @@ function Footer(props) {
                 Подробные условия
               </span>
             )}
-            {!isHide && <div>{restText}</div>}
+            {restText && !isHide && <div>{restText}</div>}
           </div>
         )}
       </Container>
