@@ -7,6 +7,7 @@ const useStyles = makeStyles({
     fontFamily: '"Bebas", "Roboto", "Helvetica", "Arial", sans-serif',
     letterSpacing: '1px',
     fontSize: '20px',
+    boxShadow: 'none',
   },
   label: {},
 });
