@@ -94,5 +94,6 @@ storiesOf('Slider', module)
       sliderProps={sliderProps}
       min={150000}
       max={30000000}
+      value={2000000}
     />
   ));

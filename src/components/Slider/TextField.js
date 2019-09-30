@@ -1,8 +1,10 @@
 import React from 'react';
 import TextFieldMaterial from '@material-ui/core/TextField';
 
-const TextField = props => (
-  <TextFieldMaterial {...props} variant={'outlined'} />
+const TextField = (props, ref) => (
+  <TextFieldMaterial {...props} ref={ref} variant={'outlined'} />
 );
 
-export default TextField;
+const ForwardedTextFieldComponent = React.forwardRef(TextField);
+
+export default React.memo(ForwardedTextFieldComponent);
