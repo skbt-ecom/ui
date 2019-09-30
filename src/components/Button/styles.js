@@ -5,12 +5,16 @@ const useStyles = makeStyles({
     fontSize: '20px',
     fontFamily: '"Bebas", "Roboto", "Helvetica", "Arial", sans-serif',
     letterSpacing: '1px',
-    paddingTop: '11px',
-    paddingBottom: '11px',
+    paddingTop: 0,
+    paddingBottom: 0,
     boxShadow: 'none',
     alignItems: 'baseline',
+    lineHeight: 59,
+    height: 59,
   },
-  label: {},
+  label: {
+    lineHeight: 'normal',
+  },
 });
 
 export default useStyles;
