@@ -8,6 +8,7 @@ const useStyles = makeStyles({
     paddingTop: '11px',
     paddingBottom: '11px',
     boxShadow: 'none',
+    alignItems: 'baseline',
   },
   label: {},
 });
