@@ -2,14 +2,14 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   root: {
-    paddingTop: '11px',
-    paddingBottom: '11px',
-  },
-  label: {
+    fontSize: '20px',
     fontFamily: '"Bebas", "Roboto", "Helvetica", "Arial", sans-serif',
     letterSpacing: '1px',
-    fontSize: '20px',
+    paddingTop: '11px',
+    paddingBottom: '11px',
+    boxShadow: 'none',
   },
+  label: {},
 });
 
 export default useStyles;

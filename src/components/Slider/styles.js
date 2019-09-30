@@ -4,6 +4,7 @@ const useStyles = makeStyles(theme => ({
   container: {
     position: 'relative',
     width: '100%',
+    // minHeight: 76, maybe use withSpaceForHelperTxt HOC
   },
   input: {
     fontWeight: 500,
@@ -19,7 +20,7 @@ const useStyles = makeStyles(theme => ({
   },
   sliderRoot: {
     position: 'absolute',
-    bottom: props => (props.discrete ? '-31px' : '-11px'),
+    bottom: props => (props.discrete ? '-31px' : '-11px'), // -11 => 7 if minHeight === 76
     left: 0,
   },
   sliderMarkLabel: {
