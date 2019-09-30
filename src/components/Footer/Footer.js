@@ -100,12 +100,12 @@ function Footer(props) {
         {shortText && (
           <div className={classes.ligal}>
             <div>{shortText}</div>
-            {isHide && (
+            {restText && isHide && (
               <span className={classes.showMore} onClick={showRestLigal}>
                 Подробные условия
               </span>
             )}
-            {restText && !isHide && <div>{restText}</div>}
+            {!isHide && <div>{restText}</div>}
           </div>
         )}
       </Container>
