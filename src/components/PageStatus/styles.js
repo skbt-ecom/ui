@@ -58,6 +58,7 @@ function styles(theme) {
     errorDesc1: {
       margin: 0,
       paddingLeft: 15,
+      listStyleType: 'disc',
     },
 
     errorDesc2: {
