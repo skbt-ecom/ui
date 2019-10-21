@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Container from '../Container';
 import Grid from '../Grid';
 import Box from '../Box';
+import SupportPhone from '../SupportPhone';
 
 import icon_vk from './icon_vk.svg';
 import icon_fb from './icon_fb.svg';
@@ -15,7 +16,7 @@ import useStyles from './styles';
 function Footer(props) {
   const [isHide, setIsHide] = useState(true);
   const classes = useStyles(props);
-  const { shortText, restText } = props;
+  const { shortText, restText, phone } = props;
 
   function showRestLigal() {
     setIsHide(false);
@@ -26,10 +27,7 @@ function Footer(props) {
       <Container>
         <div className={classes.inner}>
           <Box flexGrow={1}>
-            <div className={classes.phone}>8 800 100-10-20</div>
-            <div className={classes.phoneHint}>
-              Для звонков по России бесплатно
-            </div>
+            <SupportPhone phone={phone} />
           </Box>
           <Box order={1} className={classes.copyright}>
             <Grid container alignItems="center" className={classes.social}>
@@ -116,6 +114,7 @@ function Footer(props) {
 Footer.defaultProps = {
   shortText: '',
   restText: '',
+  phone: ' 8 800 700 66 96',
 };
 
 export default React.memo(Footer);

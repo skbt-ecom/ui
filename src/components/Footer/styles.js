@@ -23,29 +23,6 @@ function styles(theme) {
       },
     },
 
-    phone: {
-      color: '#607289',
-      fontSize: 23,
-      fontWeight: 500,
-      lineHeight: '22px',
-      paddingBottom: 3,
-
-      [theme.breakpoints.down('xs')]: {
-        textAlign: 'center',
-      },
-    },
-
-    phoneHint: {
-      color: '#a1afbf',
-      fontSize: 10,
-      letterSpacing: 0.2,
-      lineHeight: '12px',
-
-      [theme.breakpoints.down('xs')]: {
-        textAlign: 'center',
-      },
-    },
-
     store: {
       [theme.breakpoints.down('xs')]: {
         justifyContent: 'center',
