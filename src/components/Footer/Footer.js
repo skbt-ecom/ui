@@ -114,7 +114,6 @@ function Footer(props) {
 Footer.defaultProps = {
   shortText: '',
   restText: '',
-  phone: ' 8 800 700 66 96',
 };
 
 export default React.memo(Footer);
