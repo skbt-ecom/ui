@@ -73,5 +73,6 @@ MaskedField.defaultProps = {
   variant: 'outlined',
   mask: Date,
   InputProps: {},
+  onBlur: () => null,
 };
 export default withSpaceForHelperTxt(MaskedField);
