@@ -33,6 +33,10 @@ const MaskedField = React.memo(props => {
     props.onChange(value);
   };
 
+  const handleOnBlur = () => {
+    props.onBlur(value);
+  };
+
   const {
     mask,
     min,
@@ -51,6 +55,7 @@ const MaskedField = React.memo(props => {
     max,
     thousandsSeparator,
     dispatch,
+    onBlur: handleOnBlur,
   };
   return (
     <TextField
