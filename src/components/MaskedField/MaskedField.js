@@ -43,6 +43,7 @@ const MaskedField = React.memo(props => {
     max,
     unmask,
     onChange,
+    onBlur,
     thousandsSeparator = '',
     dispatch,
     ...restProps

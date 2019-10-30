@@ -17,8 +17,9 @@ const PhoneFieldWrapper = props => {
     props.onChange(value);
   };
 
-  const handleBlur = value => {
-    props.onBlur(value);
+  const handleBlur = fieldName => valueBlur => {
+    console.log(fieldName);
+    props.onBlur(valueBlur);
   };
 
   return (
@@ -26,7 +27,7 @@ const PhoneFieldWrapper = props => {
       {...props}
       onChange={handleChange}
       value={value}
-      onBlur={handleBlur}
+      onBlur={handleBlur('phone')}
     />
   );
 };
