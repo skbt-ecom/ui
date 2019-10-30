@@ -8,6 +8,9 @@ const useStyles = makeStyles({
     letterSpacing: '1px',
     fontSize: '20px',
     boxShadow: 'none',
+    '&:hover': {
+      backgroundColor: props => (props.color === 'secondary' ? '#EC3449' : ''),
+    },
   },
   label: {},
 });

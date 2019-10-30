@@ -19,5 +19,12 @@ storiesOf('Button', module)
       >
         Button
       </Button>
+      <Button
+        color={'primary'}
+        onClick={action('clicked btn')}
+        classes={{ label: 'my-label', root: 'my-root' }}
+      >
+        Button
+      </Button>
     </>
   ));
