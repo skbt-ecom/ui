@@ -13,8 +13,10 @@ const useStylesCheckbox = makeStyles({
   checked: {},
 });
 const useStylesLabel = makeStyles({
-  root: {},
-  label: {},
+  root: {
+    alignItems: 'flex-start',
+  },
+  label: { paddingTop: 12 },
 });
 
 const CheckboxComponent = React.memo(props => {
