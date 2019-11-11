@@ -20,8 +20,11 @@ const useStyles = makeStyles(theme => ({
   },
   sliderRoot: {
     position: 'absolute',
-    bottom: props => (props.discrete ? '-31px' : '-11px'), // -11 => 7 if minHeight === 76
+    bottom: props => (props.discrete ? -31 : -11), // -11 => 7 if minHeight === 76
     left: 0,
+    '@media (pointer: coarse)': {
+      bottom: -20,
+    },
   },
   sliderMarkLabel: {
     '&:nth-child(5)': {
