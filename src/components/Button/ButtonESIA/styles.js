@@ -31,7 +31,7 @@ const useStyles = makeStyles({
     lineHeight: '12px',
     fontWeight: 300,
     color: '#607286',
-    flexBasis: 208,
+    width: 208,
     margin: 0,
   },
   secureIcon: {
