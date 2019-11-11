@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 
 import useStyles from './styles';
 
-const ButtonESIA = props => {
+const ButtonESIA = ({ withouthDescr, iconDisabled, iconDefault, ...props }) => {
   const classes = useStyles(props);
 
   return (
@@ -15,10 +15,10 @@ const ButtonESIA = props => {
           label: classes.label,
           startIcon: classes.startIcon,
         }}
-        startIcon={props.disabled ? props.iconDisabled : props.icon}
+        startIcon={props.disabled ? iconDisabled : iconDefault}
         color={'primary'}
       />
-      {!props.withouthDescr && (
+      {!withouthDescr && (
         <div className={classes.descrBlock}>
           <span className={classes.secureIcon}>
             <svg
@@ -62,7 +62,7 @@ const ButtonESIA = props => {
 ButtonESIA.defaultProps = {
   variant: 'outlined',
   withouthDescr: false,
-  icon: (
+  iconDefault: (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="30"
