@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 // Import our component from this folder
 import Button from './Button';
+import ButtonESIA from './ButtonESIA';
 
 import { muiTheme } from 'storybook-addon-material-ui';
 import theme from '../../style/theme';
@@ -27,4 +28,9 @@ storiesOf('Button', module)
         Button
       </Button>
     </>
+  ))
+  .add('ESIA', () => (
+    <ButtonESIA onClick={action('ESIA clicked')}>
+      Заполнить через Госуслуги
+    </ButtonESIA>
   ));

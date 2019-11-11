@@ -33,3 +33,4 @@ export { default as CircularProgress } from './CircularProgress';
 export { default as PageStatus } from './PageStatus';
 export { default as DatePicker } from './DatePicker';
 export { default as SupportPhone } from './SupportPhone';
+export { default as ButtonESIA } from './Button/ButtonESIA';
