@@ -30,7 +30,10 @@ storiesOf('Button', module)
     </>
   ))
   .add('ESIA', () => (
-    <ButtonESIA onClick={action('ESIA clicked')}>
+    <ButtonESIA
+      onClick={action('ESIA clicked')}
+      // withouthDescr // to remove description text
+    >
       Заполнить через Госуслуги
     </ButtonESIA>
   ));

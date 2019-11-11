@@ -1,6 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
+  container: {
+    display: 'inline-block',
+    width: props => (props.fullWidth ? '100%' : 'auto'),
+  },
   root: {
     padding: '12px 17px',
     borderRadius: 4,
@@ -17,6 +21,23 @@ const useStyles = makeStyles({
   },
   startIcon: {
     marginRight: 18,
+  },
+  descrBlock: {
+    display: 'flex',
+    marginTop: 16,
+  },
+  descrText: {
+    fontSize: 10,
+    lineHeight: '12px',
+    fontWeight: 300,
+    color: '#607286',
+    flexBasis: 208,
+    margin: 0,
+  },
+  secureIcon: {
+    paddingTop: 4,
+    paddingLeft: 16,
+    paddingRight: 24,
   },
 });
 
