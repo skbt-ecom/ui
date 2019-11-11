@@ -70,9 +70,6 @@ const SliderComponent = React.memo(props => {
         allowNegative={false}
         decimalScale={0}
         onBlur={handleInputBlur}
-        InputProps={{
-          readOnly: props.discrete,
-        }}
       />
       <Slider
         {...sliderProps}

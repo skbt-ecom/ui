@@ -9,7 +9,7 @@ import Slider from './Slider';
 import SliderLogarithmic from './SliderLogarithmic';
 
 import theme from '../../style/theme';
-import { inputProps, sliderProps, discreteSliderProps } from './story.config';
+import { inputProps, sliderProps } from './story.config';
 
 const SliderWrapper = props => {
   const [step, setStep] = React.useState(1000);
@@ -71,16 +71,6 @@ storiesOf('Slider', module)
       sliderProps={sliderProps}
       min={150000}
       max={30000000}
-    />
-  ))
-  .add('Discrete', () => (
-    <Slider
-      discrete
-      onChange={action('onChange')}
-      inputProps={inputProps}
-      sliderProps={discreteSliderProps}
-      min={100}
-      max={1000}
     />
   ))
   .add('Dynamic step', () => (

@@ -8,19 +8,14 @@ const useStyles = makeStyles(theme => ({
   },
   input: {
     fontWeight: 500,
-    fontSize: '18px',
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderWidth: props => (props.discrete ? '0' : '1px'),
-      },
-    },
+    fontSize: 18,
     '& .MuiInputBase-root': {
       fontSize: 'inherit',
     },
   },
   sliderRoot: {
     position: 'absolute',
-    bottom: props => (props.discrete ? -31 : -11), // -11 => 7 if minHeight === 76
+    bottom: -11, // -11 => if minHeight === 76
     left: 0,
     '@media (pointer: coarse)': {
       bottom: -20,
@@ -35,9 +30,6 @@ const useStyles = makeStyles(theme => ({
       right: '0 !important',
       left: 'auto !important',
     },
-  },
-  sliderMark: {
-    visibility: props => (props.discrete ? 'hidden' : 'visible'),
   },
 }));
 
