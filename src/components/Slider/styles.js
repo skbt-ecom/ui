@@ -1,10 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   container: {
     position: 'relative',
     width: '100%',
-    // minHeight: 76, maybe use withSpaceForHelperTxt HOC
+    minHeight: props => (props.withSpaceForHelperTxt ? 76 : 'auto'),
   },
   input: {
     fontWeight: 500,
@@ -15,10 +15,10 @@ const useStyles = makeStyles(theme => ({
   },
   sliderRoot: {
     position: 'absolute',
-    bottom: -11, // -11 => if minHeight === 76
+    bottom: props => (props.withSpaceForHelperTxt ? 7 : -11),
     left: 0,
     '@media (pointer: coarse)': {
-      bottom: -20,
+      bottom: props => (props.withSpaceForHelperTxt ? -2 : -20),
     },
   },
   sliderMarkLabel: {

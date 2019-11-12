@@ -85,5 +85,6 @@ storiesOf('Slider', module)
       min={150000}
       max={30000000}
       value={2000000}
+      // withSpaceForHelperTxt
     />
   ));
