@@ -1,6 +1,7 @@
 // Theme export
 export { default as theme } from '../style/theme';
-export { ThemeProvider } from '@material-ui/styles';
+export { default as ThemeProvider } from '../style/ThemeProvider';
+// export { ThemeProvider } from '@material-ui/styles';
 
 // Components export
 export { default as Button } from './Button';
