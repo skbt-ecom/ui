@@ -1,7 +1,6 @@
 // Theme export
 export { default as theme } from '../style/theme';
 export { default as ThemeProvider } from '../style/ThemeProvider';
-// export { ThemeProvider } from '@material-ui/styles';
 
 // Components export
 export { default as Button } from './Button';
@@ -35,3 +34,4 @@ export { default as PageStatus } from './PageStatus';
 export { default as DatePicker } from './DatePicker';
 export { default as SupportPhone } from './SupportPhone';
 export { default as ButtonESIA } from './Button/ButtonESIA';
+export { default as Modal } from './Modal';
