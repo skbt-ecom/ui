@@ -17,6 +17,7 @@ const useStyles = makeStyles(() => ({
     position: 'absolute',
     bottom: props => (props.withSpaceForHelperTxt ? 7 : -11),
     left: 0,
+    padding: '11px 0',
     '@media (pointer: coarse)': {
       bottom: props => (props.withSpaceForHelperTxt ? -2 : -20),
     },
