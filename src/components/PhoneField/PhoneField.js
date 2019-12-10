@@ -3,11 +3,11 @@ import MaskedField from '../MaskedField';
 
 const PHONE_MASKS = [
   {
-    mask: '+{7}(000)000-00-00',
+    mask: '+{7} (000) 000-00-00',
     lazy: false,
   },
   {
-    mask: '{8}(000)000-00-00',
+    mask: '{8} (000) 000-00-00',
     lazy: false,
   },
 ];
@@ -15,6 +15,7 @@ const PhoneField = React.memo(props => {
   return (
     <MaskedField
       {...props}
+      type="tel"
       mask={PHONE_MASKS}
       dispatch={(appended, dynamicMasked) => {
         const number = (dynamicMasked.value + appended).replace(/\D/g, '');
