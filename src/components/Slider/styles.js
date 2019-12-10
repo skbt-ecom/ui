@@ -15,12 +15,13 @@ const useStyles = makeStyles(() => ({
   },
   sliderRoot: {
     position: 'absolute',
-    bottom: props => (props.withSpaceForHelperTxt ? 7 : -11),
+    // input.height - (slider.height/2 + 1)
+    top: 58.38 - 13,
     left: 0,
     padding: '11px 0',
-    '@media (pointer: coarse)': {
-      bottom: props => (props.withSpaceForHelperTxt ? -2 : -20),
-    },
+    // '@media (pointer: coarse)': {
+    //   bottom: props => (props.withSpaceForHelperTxt ? -2 : -20),
+    // },
   },
   sliderMarkLabel: {
     '&:nth-child(5)': {

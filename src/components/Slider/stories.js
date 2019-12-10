@@ -87,4 +87,16 @@ storiesOf('Slider', module)
       value={2000000}
       // withSpaceForHelperTxt
     />
+  ))
+  .add('withSpaceForHelperTxt', () => (
+    <SliderLogarithmic
+      // onChange={action('onChange')}
+      onChangeCommitted={action('onChangeCommitted')}
+      inputProps={inputProps}
+      sliderProps={sliderProps}
+      min={150000}
+      max={30000000}
+      value={2000000}
+      withSpaceForHelperTxt
+    />
   ));
