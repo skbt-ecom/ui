@@ -36,7 +36,7 @@ const getDadata_DEPRECATED = (type, data, options = {}) => {
  * @returns {Promise} Promise object with Dadata's response (as json if resolve)
  */
 const getDadata = (type, data, options = {}) => {
-  const DADATA_URL = 'http://hq-web-app3:4005/dadata';
+  const DADATA_URL = 'https://api-app.sovcombank.ru/v1/cache/dadata';
   const query = {
     query: data,
     ...options,
