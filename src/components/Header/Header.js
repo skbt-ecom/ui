@@ -18,7 +18,22 @@ const Logo = ({ classes }) => {
 
 const Header = props => {
   const classes = useStyles(props);
-  const { logoHref, type } = props;
+  const {
+    logoHref,
+    type,
+    phone,
+    phoneHint,
+    onButtonClick,
+    withButton,
+    buttonProps,
+  } = props;
+  const supportPhoneComponentProps = {
+    phone,
+    phoneHint,
+    withButton: withButton || buttonProps,
+    onButtonClick,
+    buttonProps,
+  };
 
   return (
     <Container className={classes.container}>
@@ -33,7 +48,7 @@ const Header = props => {
           case 'withHalvaLogo':
             return <Logo classes={classes} />;
           default:
-            return <SupportPhone {...props} />;
+            return <SupportPhone {...supportPhoneComponentProps} />;
         }
       })()}
     </Container>
@@ -44,7 +59,6 @@ Header.defaultProps = {
   logoHref: '/',
   phone: '8 800 100-10-20',
   phoneHint: 'Для звонков по России бесплатно',
-  withHalvaLogo: false,
   type: 'default',
   withButton: false,
 };

@@ -7,8 +7,9 @@ import useStyles from './styles';
 const SupportPhone = React.memo(function({
   phone,
   phoneHint,
-  onButtonClick,
   withButton,
+  onButtonClick,
+  buttonProps,
 }) {
   const classes = useStyles();
 
@@ -18,9 +19,9 @@ const SupportPhone = React.memo(function({
         <Button
           onClick={onButtonClick}
           classes={{ root: classes.buttonRoot, label: classes.buttonLabel }}
-          color={'primary'}
+          color={buttonProps.color}
         >
-          Оформить
+          {buttonProps.label}
         </Button>
       )}
       <div className={classes.phoneContainer}>
@@ -37,6 +38,10 @@ SupportPhone.defaultProps = {
   phone: '8 800 100-10-20',
   phoneHint: 'Для звонков по России бесплатно',
   withButton: false,
+  buttonProps: {
+    color: 'primary',
+    label: 'Оформить',
+  },
 };
 
 export default SupportPhone;
