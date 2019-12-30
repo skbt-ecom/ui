@@ -36,22 +36,24 @@ const Header = props => {
   };
 
   return (
-    <Container className={classes.container}>
-      <a
-        href={logoHref}
-        className={type === 'withHalvaLogo' ? classes.withHalva : ''}
-      >
-        <img className={classes.logo} src={logo} alt="logo" />
-      </a>
-      {(() => {
-        switch (type) {
-          case 'withHalvaLogo':
-            return <Logo classes={classes} />;
-          default:
-            return <SupportPhone {...supportPhoneComponentProps} />;
-        }
-      })()}
-    </Container>
+    <header className={classes.header}>
+      <Container className={classes.container}>
+        <a
+          href={logoHref}
+          className={type === 'withHalvaLogo' ? classes.withHalva : ''}
+        >
+          <img className={classes.logo} src={logo} alt="logo" />
+        </a>
+        {(() => {
+          switch (type) {
+            case 'withHalvaLogo':
+              return <Logo classes={classes} />;
+            default:
+              return <SupportPhone {...supportPhoneComponentProps} />;
+          }
+        })()}
+      </Container>
+    </header>
   );
 };
 

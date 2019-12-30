@@ -1,8 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
+  header: {
+    backgroundColor: '#fff',
+  },
   container: {
-    backgroundColor: 'white',
     margin: '0 auto',
     display: 'flex',
     justifyContent: 'space-between',
