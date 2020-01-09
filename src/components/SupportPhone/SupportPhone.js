@@ -4,14 +4,9 @@ import Button from '../Button';
 
 import useStyles from './styles';
 
-const SupportPhone = React.memo(function({
-  phone,
-  phoneHint,
-  withButton,
-  onButtonClick,
-  buttonProps,
-}) {
+const SupportPhone = React.memo(function(props) {
   const classes = useStyles();
+  const { phone, phoneHint, withButton, onButtonClick, buttonProps } = props;
 
   return (
     <>
@@ -24,7 +19,7 @@ const SupportPhone = React.memo(function({
           {buttonProps.label}
         </Button>
       )}
-      <div className={classes.phoneContainer}>
+      <div className={`${classes.phoneContainer} ${props.className}`}>
         <a rel="nofollow" href={`tel:${phone}`} className={classes.phoneNum}>
           {phone}
         </a>

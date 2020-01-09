@@ -27,7 +27,7 @@ function Footer(props) {
       <Container>
         <div className={classes.inner}>
           <Box flexGrow={1}>
-            <SupportPhone phone={phone} />
+            <SupportPhone phone={phone} className={classes.supportPhone} />
           </Box>
           <Box order={1} className={classes.copyright}>
             <Grid container alignItems="center" className={classes.social}>

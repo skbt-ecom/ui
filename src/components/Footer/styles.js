@@ -22,7 +22,13 @@ function styles(theme) {
         display: 'flex',
       },
     },
+    supportPhone: {
+      textAlign: 'center',
 
+      [theme.breakpoints.up('sm')]: {
+        textAlign: 'left',
+      },
+    },
     store: {
       [theme.breakpoints.down('xs')]: {
         justifyContent: 'center',

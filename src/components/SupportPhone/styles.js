@@ -7,11 +7,6 @@ const useStyles = makeStyles(theme => ({
     fontSize: '9px',
     color: '#a1afbf',
     lineHeight: '12px',
-    display: 'none',
-
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
   },
 
   phoneNum: {

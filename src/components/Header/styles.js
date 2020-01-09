@@ -61,6 +61,13 @@ const useStyles = makeStyles(theme => ({
       width: 93,
     },
   },
+  supportPhone: {
+    display: 'none',
+
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+  },
 }));
 
 export default useStyles;
