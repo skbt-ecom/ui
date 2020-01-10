@@ -22,12 +22,15 @@ function styles(theme) {
         display: 'flex',
       },
     },
-    supportPhone: {
+    phoneContainer: {
       textAlign: 'center',
 
       [theme.breakpoints.up('sm')]: {
         textAlign: 'left',
       },
+    },
+    phoneNum: {
+      fontSize: 23,
     },
     store: {
       [theme.breakpoints.down('xs')]: {
