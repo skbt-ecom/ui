@@ -33,7 +33,7 @@ const Header = props => {
     withButton: withButton || buttonProps,
     onButtonClick,
     buttonProps,
-    className: classes.supportPhone,
+    classes: { phoneContainer: classes.phoneContainer },
   };
 
   return (

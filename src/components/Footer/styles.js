@@ -32,6 +32,10 @@ function styles(theme) {
     phoneNum: {
       fontSize: 23,
     },
+    phoneHint: {
+      fontSize: 10,
+      letterSpacing: '0.2px',
+    },
     store: {
       [theme.breakpoints.down('xs')]: {
         justifyContent: 'center',

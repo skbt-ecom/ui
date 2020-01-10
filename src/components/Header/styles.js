@@ -61,7 +61,7 @@ const useStyles = makeStyles(theme => ({
       width: 93,
     },
   },
-  supportPhone: {
+  phoneContainer: {
     display: 'none',
 
     [theme.breakpoints.up('sm')]: {

@@ -3,10 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(theme => ({
   phoneContainer: {
     fontFamily: '"Roboto", Arial, Helvetica, sans-serif',
-    fontWeight: 400,
-    fontSize: 9,
     color: '#a1afbf',
-    lineHeight: '12px',
   },
 
   phoneNum: {
@@ -22,7 +19,15 @@ const useStyles = makeStyles(theme => ({
 
   phoneHint: {
     margin: 0,
+    fontSize: 9,
     fontWeight: 400,
+    lineHeight: '12px',
+    letterSpacing: '0.05px',
+
+    [theme.breakpoints.up('md')]: {
+      letterSpacing: '0.2px',
+      fontSize: 10,
+    },
   },
 
   buttonRoot: {

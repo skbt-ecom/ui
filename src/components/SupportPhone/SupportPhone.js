@@ -35,7 +35,9 @@ const SupportPhone = props => {
         >
           {phone}
         </a>
-        <p className={classes.phoneHint}>{phoneHint}</p>
+        <p className={`${classes.phoneHint} ${propsClasses.phoneHint}`}>
+          {phoneHint}
+        </p>
       </div>
     </>
   );
