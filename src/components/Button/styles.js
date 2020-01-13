@@ -11,6 +11,14 @@ const useStyles = makeStyles({
     '&:hover': {
       backgroundColor: props => (props.color === 'secondary' ? '#EC3449' : ''),
     },
+    '& span:nth-of-type(1)': {
+      '@media not all and (min-resolution:.001dpcm)': {
+        '@media': {
+          marginTop: '1%',
+          marginBottom: '-2%',
+        },
+      },
+    },
   },
   label: {},
 });
