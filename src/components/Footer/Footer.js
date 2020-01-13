@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Container from '../Container';
 import Grid from '../Grid';
 import Box from '../Box';
-import SupportPhone from '../SupportPhone';
+import PhoneMain from '../PhoneMain';
 
 import icon_vk from './icon_vk.svg';
 import icon_fb from './icon_fb.svg';
@@ -26,7 +26,7 @@ function Footer(props) {
     <footer className={classes.footer}>
       <Container fixed={false}>
         <div className={classes.inner}>
-          <SupportPhone
+          <PhoneMain
             phone={phone}
             classes={{
               phoneContainer: classes.phoneContainer,

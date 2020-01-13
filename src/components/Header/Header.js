@@ -1,38 +1,39 @@
 import React from 'react';
 
 import Container from '../Container';
+import Logo from './Logo';
 import SupportPhone from '../SupportPhone';
 
 import logo from './logo.svg';
-import halvaLogo from './halva.svg';
 
 import useStyles from './styles';
 
-const Logo = ({ classes }) => {
-  return (
-    <div>
-      <img className={classes.halvaLogo} src={halvaLogo} alt="halva" />
-    </div>
-  );
+const renderRight = (type, { classes, supportPhoneComponentProps }) => {
+  switch (type) {
+    case 'withHalvaLogo':
+      return <Logo classes={classes} />;
+    default:
+      return <SupportPhone {...supportPhoneComponentProps} />;
+  }
 };
 
 const Header = props => {
   const classes = useStyles(props);
-  const {
-    logoHref,
-    type,
-    phone,
-    phoneHint,
-    onButtonClick,
-    withButton,
-    buttonProps,
-  } = props;
+
+  const { logoHref, type } = props;
+  const newButtonProps = props.buttonProps
+    ? {
+        ...props.buttonProps,
+        isVisible: true,
+      }
+    : undefined;
+
   const supportPhoneComponentProps = {
-    phone,
-    phoneHint,
-    withButton: withButton || buttonProps,
-    onButtonClick,
-    buttonProps,
+    phone: props.phone,
+    phoneHint: props.phoneHint,
+    withButton: props.withButton || newButtonProps, // if props.buttonProps exist we must show button
+    onButtonClick: props.onButtonClick,
+    buttonProps: newButtonProps,
     classes: { phoneContainer: classes.phoneContainer },
   };
 
@@ -45,14 +46,7 @@ const Header = props => {
         >
           <img className={classes.logo} src={logo} alt="logo" />
         </a>
-        {(() => {
-          switch (type) {
-            case 'withHalvaLogo':
-              return <Logo classes={classes} />;
-            default:
-              return <SupportPhone {...supportPhoneComponentProps} />;
-          }
-        })()}
+        {renderRight(type, { classes, supportPhoneComponentProps })}
       </Container>
     </header>
   );
@@ -64,6 +58,7 @@ Header.defaultProps = {
   phoneHint: 'Для звонков по России бесплатно',
   type: 'default',
   withButton: false,
+  buttonProps: undefined,
 };
 
 export default React.memo(Header);

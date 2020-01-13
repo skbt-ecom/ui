@@ -32,6 +32,6 @@ export { default as Uploader } from './Uploader';
 export { default as CircularProgress } from './CircularProgress';
 export { default as PageStatus } from './PageStatus';
 export { default as DatePicker } from './DatePicker';
-export { default as SupportPhone } from './SupportPhone';
 export { default as ButtonESIA } from './Button/ButtonESIA';
 export { default as Modal } from './Modal';
+export { default as HeaderNew } from './HeaderNew';
