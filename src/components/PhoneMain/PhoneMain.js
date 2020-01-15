@@ -1,23 +1,36 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import Phone from './Phone';
 
 import useStyles from './styles';
 
 const PhoneMain = props => {
   const classes = useStyles();
-  const { phone, phoneHint, classes: propsClasses = {} } = props;
+  const { phone, phoneHint, phones, classes: propsClasses = {} } = props;
+
+  const renderPhoneWithHint = () => {
+    return (
+      <>
+        <Phone number={phone} classes={{ phoneNum: propsClasses.phoneNum }} />
+        <p className={`${classes.phoneHint} ${propsClasses.phoneHint}`}>
+          {phoneHint}
+        </p>
+      </>
+    );
+  };
 
   return (
     <div className={`${classes.phoneContainer} ${propsClasses.phoneContainer}`}>
-      <a
-        rel="nofollow"
-        href={`tel:${phone}`}
-        className={`${classes.phoneNum} ${propsClasses.phoneNum}`}
-      >
-        {phone}
-      </a>
-      <p className={`${classes.phoneHint} ${propsClasses.phoneHint}`}>
-        {phoneHint}
-      </p>
+      {!phones && phone && renderPhoneWithHint()}
+      {phones &&
+        phones.map((phone, i) => (
+          <Phone
+            key={i}
+            number={phone}
+            classes={{
+              phoneNum: `${classes.phoneMultiple} ${propsClasses.phoneNum}`,
+            }}
+          />
+        ))}
     </div>
   );
 };

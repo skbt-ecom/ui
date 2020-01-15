@@ -58,4 +58,11 @@ const restText = (
 storiesOf('Footer', module)
   .addDecorator(muiTheme([theme]))
   .add('with text', () => <Footer shortText={shortText} restText={restText} />)
+  .add('with text & multi phones', () => (
+    <Footer
+      shortText={shortText}
+      restText={restText}
+      phones={['8 927 463-12-81', '8 952 031-34-20']}
+    />
+  ))
   .add('without text', () => <Footer />);

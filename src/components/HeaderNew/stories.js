@@ -21,6 +21,16 @@ storiesOf('HeaderNew', module)
       }}
     />
   ))
+  .add('Multiple phones', () => (
+    <Header
+      ButtonProps={{
+        color: 'secondary',
+        children: 'Присоединиться',
+        onClick: action('onButtonClick'),
+      }}
+      PhoneProps={{ phones: ['8 927 463-12-81', '8 952 031-34-20'] }}
+    />
+  ))
   .add('Custom content', () => (
     <Header right={<img src={halvaLogo} alt="Халва" />} />
   ));
