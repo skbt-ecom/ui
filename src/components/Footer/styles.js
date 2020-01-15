@@ -37,6 +37,7 @@ function styles(theme) {
 
     phoneNum: {
       fontSize: 23,
+      lineHeight: '23px',
     },
 
     phoneHint: {

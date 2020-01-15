@@ -11,7 +11,6 @@ const useStyles = makeStyles(theme => ({
 
     [theme.breakpoints.up('md')]: {
       fontSize: 23,
-      lineHeight: '23px',
     },
   },
 }));
