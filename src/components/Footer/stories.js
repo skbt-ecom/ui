@@ -62,6 +62,7 @@ storiesOf('Footer', module)
     <Footer
       shortText={shortText}
       restText={restText}
+      // phone={'8 927 463-12-81'} DEPRECATED, use phones=['8 927 463-12-81'] instead!
       phones={['8 927 463-12-81', '8 952 031-34-20']}
     />
   ))
