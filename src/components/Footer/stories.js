@@ -66,4 +66,4 @@ storiesOf('Footer', module)
       phones={['8 927 463-12-81', '8 952 031-34-20']}
     />
   ))
-  .add('without text', () => <Footer />);
+  .add('without text', () => <Footer phoneHint={null} />);

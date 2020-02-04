@@ -16,8 +16,7 @@ import useStyles from './styles';
 function Footer(props) {
   const [isHide, setIsHide] = useState(true);
   const classes = useStyles(props);
-  const { shortText, restText, phone, phones } = props;
-
+  const { shortText, restText, phone, phones, phoneHint } = props;
   function showRestLigal() {
     setIsHide(false);
   }
@@ -29,6 +28,7 @@ function Footer(props) {
           <PhoneMain
             phone={phone}
             phones={phones}
+            phoneHint={phoneHint}
             classes={{
               phoneContainer: classes.phoneContainer,
               phoneNum: classes.phoneNum,
