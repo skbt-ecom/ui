@@ -14,6 +14,7 @@ storiesOf('HeaderNew', module)
   .addDecorator(muiTheme([theme]))
   .add('Default', () => (
     <Header
+      classes={{ header: 'myHeader' }}
       ButtonProps={{
         color: 'secondary',
         children: 'Присоединиться',

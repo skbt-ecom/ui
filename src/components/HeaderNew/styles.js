@@ -27,40 +27,6 @@ const useStyles = makeStyles(theme => ({
     },
   },
 
-  // logo: {
-  //   height: '16px',
-
-  //   [theme.breakpoints.up('sm')]: {
-  //     height: '20px',
-  //   },
-
-  //   [theme.breakpoints.up('md')]: {
-  //     height: '24px',
-  //   },
-  // },
-
-  // withHalva: {
-  //   [theme.breakpoints.down('xs')]: {
-  //     width: 26,
-  //     overflow: 'hidden',
-
-  //     '& $logo': {
-  //       height: 24,
-  //     },
-  //   },
-  // },
-
-  // halvaLogo: {
-  //   width: 62,
-
-  //   [theme.breakpoints.up('sm')]: {
-  //     width: 81,
-  //   },
-
-  //   [theme.breakpoints.up('md')]: {
-  //     width: 93,
-  //   },
-  // },
   phoneContainer: {
     display: 'none',
 
@@ -70,9 +36,6 @@ const useStyles = makeStyles(theme => ({
   },
   buttonRoot: {
     padding: '8px 20px',
-    // visibility: props =>
-    //   props.buttonProps && props.buttonProps.isVisible ? 'visible' : 'hidden',
-
     [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
