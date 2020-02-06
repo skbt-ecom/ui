@@ -34,6 +34,6 @@ storiesOf('Button', module)
       onClick={action('ESIA clicked')}
       // withouthDescr // to remove description text
     >
-      Заполнить через Госуслуги
+      Вход через цифровой профиль
     </ButtonESIA>
   ));

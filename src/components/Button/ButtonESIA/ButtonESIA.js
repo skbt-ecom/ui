@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import ButtonWText from './ButtonWText';
 import Description from './Description';
 
 import useStyles from './styles';
@@ -9,6 +10,11 @@ const ButtonESIA = ({ withouthDescr, iconDisabled, iconDefault, ...props }) => {
 
   return (
     <div className={classes.container}>
+      <ButtonWText
+        classes={classes.bwtContainer}
+        startIcon={props.disabled ? iconDisabled : iconDefault}
+        onClick={props.onClick}
+      />
       <Button
         {...props}
         classes={{
@@ -18,6 +24,7 @@ const ButtonESIA = ({ withouthDescr, iconDisabled, iconDefault, ...props }) => {
         }}
         startIcon={props.disabled ? iconDisabled : iconDefault}
         color={'primary'}
+        disableRipple={true}
       />
       {!withouthDescr && <Description />}
     </div>
