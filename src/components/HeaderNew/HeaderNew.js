@@ -7,12 +7,12 @@ import Button from '../Button';
 
 import useStyles from './styles';
 
-const Header = props => {
+const Header = (props, ref) => {
   const classes = useStyles(props);
   const { left, right, LogoProps, ButtonProps, PhoneProps } = props;
 
   return (
-    <header className={classes.header}>
+    <header className={classes.header} ref={ref}>
       <Container className={classes.container}>
         {left ? (
           left
@@ -50,10 +50,11 @@ const Header = props => {
   );
 };
 
-Header.defaultProps = {
+const ForwardedHeader = React.forwardRef(Header);
+
+ForwardedHeader.defaultProps = {
   LogoProps: {},
   ButtonProps: {},
   PhoneProps: {},
 };
-
-export default React.memo(Header);
+export default React.memo(ForwardedHeader);
