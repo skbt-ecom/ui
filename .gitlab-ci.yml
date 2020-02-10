@@ -110,24 +110,27 @@ hook_to_projects:
   }
 
   function deploy() {
-    echo "Устанавливаем (или обновляем) tiller. \
-    =========================================================================================="
-    helm init --upgrade --tiller-namespace ${K8S_NAMESPACE_BASE} --history-max 10 --service-account tiller-account
+    #echo "Устанавливаем (или обновляем) tiller. \
+    #=========================================================================================="
+    #helm init --upgrade --tiller-namespace ${K8S_NAMESPACE_BASE} --history-max 10 --service-account tiller-account
     
     echo "Устанавливаем релиз Helm. \
     =========================================================================================="
     helm upgrade --install ${K8S_NAMESPACE_BASE}-${ENVRM} ./helm --namespace ${K8S_NAMESPACE_BASE}-${ENVRM} \
-    --set image.repository="${CI_APPLICATION_REPOSITORY}" --set image.tag="${CI_APPLICATION_TAG}" \
-    --set ingress.host="${ENVRM}-kuber.sovcombank.group" --set ingress.location="ecom-${CI_PROJECT_NAME}" \
-    --set env.version="$CI_PIPELINE_IID" \
-    --tiller-namespace ${K8S_NAMESPACE_BASE} --timeout 300 --reset-values --recreate-pods
+    --set image.repository="${CI_APPLICATION_REPOSITORY}" \
+    --set image.tag="${CI_APPLICATION_TAG}" \
+    --set ingress.host="${ENVRM}-kuber.sovcombank.group" \
+    --set ingress.location="ecom-${CI_PROJECT_NAME}" \
+    --set env.version="$CI_PIPELINE_IID"
+    #--tiller-namespace ${K8S_NAMESPACE_BASE} --timeout 300 --reset-values --recreate-pods
     # вернуть параметр --wait
   }
 
   function delete() {
     echo "Удаляем релиз Helm. \
     =========================================================================================="
-    helm delete ${K8S_NAMESPACE_BASE}-${ENVRM} --tiller-namespace ${K8S_NAMESPACE_BASE} --purge --timeout 600
+    #helm delete ${K8S_NAMESPACE_BASE}-${ENVRM} --tiller-namespace ${K8S_NAMESPACE_BASE} --purge --timeout 600
+    helm uninstall ${K8S_NAMESPACE_BASE}-${ENVRM} --namespace ${K8S_NAMESPACE_BASE}-${ENVRM}
   }
 
   function set_hook_prj_path() {
