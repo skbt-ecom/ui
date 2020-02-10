@@ -7,12 +7,22 @@ import Button from './Button';
 import ButtonESIA from './ButtonESIA';
 
 import { muiTheme } from 'storybook-addon-material-ui';
-import theme from '../../style/theme';
+// import theme from '../../style/theme';
+import theme from '../../style/themeHalva';
 
 storiesOf('Button', module)
   .addDecorator(muiTheme([theme]))
   .add('Default', () => (
     <>
+      <Button
+        color={'primary'}
+        onClick={action('clicked btn')}
+        classes={{ label: 'my-label', root: 'my-root' }}
+      >
+        Button
+      </Button>
+      <br />
+      <br />
       <Button
         color={'secondary'}
         onClick={action('clicked btn')}
@@ -20,8 +30,11 @@ storiesOf('Button', module)
       >
         Button
       </Button>
+      <br />
+      <br />
       <Button
         color={'primary'}
+        variant="outlined"
         onClick={action('clicked btn')}
         classes={{ label: 'my-label', root: 'my-root' }}
       >

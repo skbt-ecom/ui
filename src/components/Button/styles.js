@@ -7,9 +7,7 @@ const useStyles = makeStyles({
     fontFamily: '"Bebas", "Roboto", "Helvetica", "Arial", sans-serif',
     letterSpacing: '1px',
     fontSize: '20px',
-    boxShadow: 'none !important',
     '&:hover': {
-      backgroundColor: props => (props.color === 'secondary' ? '#EC3449' : ''),
       boxShadow: 'none',
     },
     '& span:nth-of-type(1)': {
