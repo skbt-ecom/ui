@@ -1,8 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
+  header: {
+    backgroundColor: '#fff',
+  },
   container: {
-    backgroundColor: 'white',
     margin: '0 auto',
     display: 'flex',
     justifyContent: 'space-between',
@@ -48,32 +50,6 @@ const useStyles = makeStyles(theme => ({
     },
   },
 
-  phoneContainer: {
-    fontFamily: '"Roboto", Arial, Helvetica, sans-serif',
-    fontWeight: 400,
-    fontSize: '9px',
-    color: '#a1afbf',
-    lineHeight: '12px',
-    display: 'none',
-
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
-  },
-
-  phoneNum: {
-    fontWeight: 500,
-    fontSize: '20px',
-    color: '#607289',
-    textDecoration: 'none',
-    lineHeight: '22px',
-  },
-
-  phoneHint: {
-    margin: 0,
-    fontWeight: 400,
-  },
-
   halvaLogo: {
     width: 62,
 
@@ -85,15 +61,12 @@ const useStyles = makeStyles(theme => ({
       width: 93,
     },
   },
-  buttonRoot: {
-    padding: '8px 20px',
+  phoneContainer: {
+    display: 'none',
+
     [theme.breakpoints.up('sm')]: {
-      display: 'none',
+      display: 'block',
     },
-  },
-  buttonLabel: {
-    fontSize: 16,
-    lineHeight: '20px',
   },
 }));
 

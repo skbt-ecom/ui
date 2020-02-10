@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Container from '../Container';
 import Grid from '../Grid';
 import Box from '../Box';
+import PhoneMain from '../PhoneMain';
 
 import icon_vk from './icon_vk.svg';
 import icon_fb from './icon_fb.svg';
@@ -15,22 +16,25 @@ import useStyles from './styles';
 function Footer(props) {
   const [isHide, setIsHide] = useState(true);
   const classes = useStyles(props);
-  const { shortText, restText } = props;
-
+  const { shortText, restText, phone, phones, phoneHint } = props;
   function showRestLigal() {
     setIsHide(false);
   }
 
   return (
     <footer className={classes.footer}>
-      <Container>
+      <Container fixed={false}>
         <div className={classes.inner}>
-          <Box flexGrow={1}>
-            <div className={classes.phone}>8 800 100-10-20</div>
-            <div className={classes.phoneHint}>
-              Для звонков по России бесплатно
-            </div>
-          </Box>
+          <PhoneMain
+            phone={phone}
+            phones={phones}
+            phoneHint={phoneHint}
+            classes={{
+              phoneContainer: classes.phoneContainer,
+              phoneNum: classes.phoneNum,
+              phoneHint: classes.phoneHint,
+            }}
+          />
           <Box order={1} className={classes.copyright}>
             <Grid container alignItems="center" className={classes.social}>
               <div className={classes.icon}>
@@ -76,9 +80,11 @@ function Footer(props) {
               Все права защищены
             </p>
             <p>Генеральная лицензия Банка России №963 от 5 декабря 2014 г.</p>
-          </Box>
-          <Box display="flex" alignItems="flex-end" className={classes.store}>
-            <div>
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              className={classes.store}
+            >
               <a
                 className={classes.appstore}
                 href="https://apps.apple.com/ru/app/halva/id1208055056"
@@ -94,13 +100,13 @@ function Footer(props) {
               >
                 <img src={icon_gplay} alt="Google Play" />
               </a>
-            </div>
+            </Box>
           </Box>
         </div>
         {shortText && (
           <div className={classes.ligal}>
             <div>{shortText}</div>
-            {isHide && (
+            {restText && isHide && (
               <span className={classes.showMore} onClick={showRestLigal}>
                 Подробные условия
               </span>

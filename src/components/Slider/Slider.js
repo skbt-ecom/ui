@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Slider from '@material-ui/core/Slider';
-import TextField from '../TextField';
+import TextField from './TextField';
 import NumberFormat from 'react-number-format'; //https://github.com/s-yadav/react-number-format
 
 import useStyles from './styles';
@@ -11,7 +11,7 @@ const SliderComponent = React.memo(props => {
     props.initialValue || props.value || props.min
   );
 
-  const handleSliderChange = (event, newValue) => {
+  const handleSliderChange = (_event, newValue) => {
     if (value === newValue) {
       return;
     }
@@ -19,7 +19,7 @@ const SliderComponent = React.memo(props => {
     props.onChange(newValue);
   };
 
-  const handleSliderChangeCommitted = (event, newValue) => {
+  const handleSliderChangeCommitted = (_event, newValue) => {
     if (props.onChangeCommitted) {
       setValue(newValue);
       props.onChangeCommitted(newValue);
@@ -70,10 +70,6 @@ const SliderComponent = React.memo(props => {
         allowNegative={false}
         decimalScale={0}
         onBlur={handleInputBlur}
-        // aria-labelledby="slider"
-        InputProps={{
-          readOnly: props.discrete,
-        }}
       />
       <Slider
         {...sliderProps}
@@ -85,7 +81,6 @@ const SliderComponent = React.memo(props => {
         value={value}
         onChange={handleSliderChange}
         onChangeCommitted={handleSliderChangeCommitted}
-        // aria-labelledby="slider"
         min={min}
         max={max}
       />
@@ -95,6 +90,7 @@ const SliderComponent = React.memo(props => {
 
 SliderComponent.defaultProps = {
   onChange: () => null,
+  withSpaceForHelperTxt: false,
 };
 
 export default SliderComponent;

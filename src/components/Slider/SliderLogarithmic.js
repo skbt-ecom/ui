@@ -4,7 +4,7 @@
 
 import React, { useState } from 'react';
 import Slider from '@material-ui/core/Slider';
-import TextField from '../TextField';
+import TextField from './TextField';
 import NumberFormat from 'react-number-format'; //https://github.com/s-yadav/react-number-format
 import { fromSlider, toSlider, round } from './utils';
 
@@ -16,7 +16,7 @@ const SliderComponent = React.memo(props => {
     props.initialValue || props.value || props.min
   );
 
-  const handleSliderChange = (event, newValue) => {
+  const handleSliderChange = (_event, newValue) => {
     const viewValue = round(fromSlider(newValue));
     if (value === viewValue) {
       return;
@@ -25,7 +25,7 @@ const SliderComponent = React.memo(props => {
     props.onChange(viewValue);
   };
 
-  const handleSliderChangeCommitted = (event, newValue) => {
+  const handleSliderChangeCommitted = (_event, newValue) => {
     const viewValue = round(fromSlider(newValue));
     if (props.onChangeCommitted) {
       setValue(viewValue);
@@ -99,6 +99,7 @@ const SliderComponent = React.memo(props => {
 
 SliderComponent.defaultProps = {
   onChange: () => null,
+  withSpaceForHelperTxt: false,
 };
 
 export default SliderComponent;

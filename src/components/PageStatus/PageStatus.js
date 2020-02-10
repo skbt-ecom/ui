@@ -1,6 +1,5 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import cn from 'classnames';
 
 import Box from '../Box';
 import icon_done from './icon_done.svg';

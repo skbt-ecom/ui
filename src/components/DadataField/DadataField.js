@@ -9,6 +9,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { getSuggestionValue } from './helpers';
 import getDadata from './getDadata';
 import debounce from '../../utils/debounce';
+import withSpaceForHelperTxt from '../HOCs/withSpaceForHelperTxt';
 
 import useStyles from './styles';
 
@@ -35,7 +36,7 @@ function renderInputComponent(inputProps) {
   );
 }
 
-function renderSuggestion(suggestion, { query, isHighlighted }) {
+function renderSuggestion(suggestion, { isHighlighted }) {
   return (
     <MenuItem component="div" selected={isHighlighted}>
       <div>{suggestion.value}</div>
@@ -43,7 +44,7 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
   );
 }
 
-export default React.memo(function IntegrationAutosuggest(props) {
+const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
   const classes = useStyles(props);
   const [state, setState] = useState({
     single: typeof props.value === 'string' ? props.value : '',
@@ -97,14 +98,13 @@ export default React.memo(function IntegrationAutosuggest(props) {
   };
 
   const onSuggestionSelected = (event, { suggestion }) => {
-    const { type, dadataOptions } = props;
+    const { type } = props;
     isSuggestionSelected.current = true;
     // spike, because dadata not returns postal code
     // we must do specific query for only one suggestion
     if (type === 'address' && !suggestion.data.postal_code) {
       setIsLoading(true);
       getDadata(type, suggestion.unrestricted_value, {
-        ...dadataOptions,
         count: 1,
         restrict_value: true,
       }).then(res => {
@@ -180,3 +180,5 @@ export default React.memo(function IntegrationAutosuggest(props) {
     </div>
   );
 });
+
+export default withSpaceForHelperTxt(DadataComponent);

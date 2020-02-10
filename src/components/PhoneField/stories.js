@@ -17,7 +17,19 @@ const PhoneFieldWrapper = props => {
     props.onChange(value);
   };
 
-  return <PhoneField {...props} onChange={handleChange} value={value} />;
+  const handleBlur = fieldName => valueBlur => {
+    console.log(fieldName);
+    props.onBlur(valueBlur);
+  };
+
+  return (
+    <PhoneField
+      {...props}
+      onChange={handleChange}
+      value={value}
+      onBlur={handleBlur('phone')}
+    />
+  );
 };
 
 storiesOf('PhoneField', module)
@@ -27,5 +39,6 @@ storiesOf('PhoneField', module)
       label={'Телефон'}
       onChange={action('onChange')}
       placeholder={'+7(000)000-00-00'}
+      onBlur={action('onBlur')}
     />
   ));

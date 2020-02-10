@@ -14,4 +14,10 @@ storiesOf('Header', module)
   .add('Default', () => (
     <Header withButton onButtonClick={action('onButtonClick')} />
   ))
-  .add('withHalvaLogo', () => <Header type={'withHalvaLogo'} />);
+  .add('withHalvaLogo', () => <Header type={'withHalvaLogo'} />)
+  .add('withButtonProps', () => (
+    <Header
+      buttonProps={{ color: 'secondary', label: 'Присоединиться' }}
+      onButtonClick={action('onButtonClick')}
+    />
+  ));

@@ -1,6 +1,6 @@
 // Theme export
 export { default as theme } from '../style/theme';
-export { ThemeProvider } from '@material-ui/styles';
+export { default as ThemeProvider } from '../style/ThemeProvider';
 
 // Components export
 export { default as Button } from './Button';
@@ -32,3 +32,6 @@ export { default as Uploader } from './Uploader';
 export { default as CircularProgress } from './CircularProgress';
 export { default as PageStatus } from './PageStatus';
 export { default as DatePicker } from './DatePicker';
+export { default as ButtonESIA } from './Button/ButtonESIA';
+export { default as Modal } from './Modal';
+export { default as HeaderNew } from './HeaderNew';

@@ -79,7 +79,6 @@ function styles(theme) {
       [theme.breakpoints.up('sm')]: {
         fontSize: 14,
         paddingLeft: w + pr - ml,
-        marginLeft: ml,
       },
     },
 
@@ -94,7 +93,8 @@ function styles(theme) {
     },
 
     connectorVertical: {
-      borderLeft: '1px solid ' + color,
+      borderLeft: 0,
+      // borderLeft: '1px solid ' + color,
       marginBottom: 8,
       minHeight: 30,
       marginLeft: 12,
