@@ -7,8 +7,7 @@ import Button from './Button';
 import ButtonESIA from './ButtonESIA';
 
 import { muiTheme } from 'storybook-addon-material-ui';
-// import theme from '../../style/theme';
-import theme from '../../style/themeHalva';
+import theme from '../../style/theme';
 
 storiesOf('Button', module)
   .addDecorator(muiTheme([theme]))

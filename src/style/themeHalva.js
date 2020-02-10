@@ -1,6 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const PRIMARY_COLOR = '#ff4e50';
+
 const theme = createMuiTheme({
   palette: {
     primary: { main: PRIMARY_COLOR },
@@ -53,6 +54,36 @@ const theme = createMuiTheme({
           backgroundColor: 'rgba(255, 255, 255, 0.12)',
           color: '#cbcbcb',
         },
+      },
+    },
+    MuiOutlinedInput: {
+      root: {
+        // '@media (hover: none)': {
+        //   '&:hover $notchedOutline': {
+        //     borderColor: '#fff',
+        //   },
+        // },
+        '&$focused $notchedOutline': {
+          borderColor: '#fce0b4',
+        },
+        '&:hover $notchedOutline': {
+          borderColor: '#757575',
+        },
+      },
+      input: {
+        color: '#292929',
+      },
+    },
+    MuiInputBase: {
+      input: {
+        '&$disabled': {
+          color: '#bbb',
+        },
+      },
+    },
+    MuiFormHelperText: {
+      root: {
+        color: '#757575',
       },
     },
   },
