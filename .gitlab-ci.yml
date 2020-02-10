@@ -37,7 +37,7 @@ build:
 
 review:
   stage: review
-  image: harbor.sovcombank.group/gitlab-runners-images/alpine-with-tools:latest
+  image: harbor.sovcombank.group/gitlab-runners-images/alpine-with-tools:0.0.4
   script:
     - set_k8s
     - deploy
@@ -49,7 +49,7 @@ review:
 
 delete:
   stage: review
-  image: harbor.sovcombank.group/gitlab-runners-images/alpine-with-tools:latest
+  image: harbor.sovcombank.group/gitlab-runners-images/alpine-with-tools:0.0.4
   script:
     - set_k8s
     - delete
