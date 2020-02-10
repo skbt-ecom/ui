@@ -121,7 +121,9 @@ hook_to_projects:
     --set image.tag="${CI_APPLICATION_TAG}" \
     --set ingress.host="${ENVRM}-kuber.sovcombank.group" \
     --set ingress.location="ecom-${CI_PROJECT_NAME}" \
-    --set env.version="$CI_PIPELINE_IID"
+    --set labels.app=${K8S_NAMESPACE_BASE}-${ENVRM} \
+    --set labels.component=${CI_PROJECT_NAMESPACE} \
+    --set env.CI_COMMIT_SHORT_SHA="${CI_COMMIT_SHORT_SHA}"
     #--tiller-namespace ${K8S_NAMESPACE_BASE} --timeout 300 --reset-values --recreate-pods
     # вернуть параметр --wait
   }
