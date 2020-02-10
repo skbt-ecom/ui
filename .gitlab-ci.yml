@@ -1,9 +1,10 @@
-image: alpine:latest
+image: centos:latest
 
 stages:
   - test
   - build
   - review
+  - hook
 
 test:
   stage: test
@@ -14,7 +15,7 @@ test:
     - npm run build-storybook || true
     - npm test || true
   only:
-    - test
+    - ci-cd-test
   artifacts:
     paths:
       - storybook-static/
@@ -25,39 +26,63 @@ build:
   image: docker:stable
   script:
     - build
+  variables:
+    DOCKER_DRIVER: overlay2
   dependencies:
     - test
   only:
-    - test
+    - ci-cd-test
+    #- dev
+    #- test
 
 review:
   stage: review
-  image: centos:latest
-  variables:
-    ENVRM: "dev"
+  image: harbor.sovcombank.group/gitlab-runners-images/alpine-with-tools:0.0.4
   script:
     - set_k8s
     - deploy
   only:
-    - test
+    - ci-cd-test
+    #- ci-cd-test
+    #- dev
+    #- test
 
 delete:
   stage: review
-  image: centos:latest
-  variables:
-    ENVRM: "dev"
+  image: harbor.sovcombank.group/gitlab-runners-images/alpine-with-tools:0.0.4
   script:
     - set_k8s
     - delete
   when: manual
   only:
-    - test
+    - ci-cd-test
+    #- ci-cd-test
+    #- dev
+    #- test
+
+hook_to_projects:
+  stage: hook
+  image: centos:latest
+  script:
+    - if [[ -n $HOOK_PRJS ]]; then send_hook; else exit 0; fi
+  only:
+    - ci-cd-test
+    #- ci-cd-test
+    #- dev
+    #- test
 
 .auto_devops: &auto_devops |
-  TRACE=
+  TRACE=1
   [[ "$TRACE" ]] && set -x
-  export CI_APPLICATION_REPOSITORY=$(echo $CI_REGISTRY | sed -r 's:^([^/]*/){2}::')/$(echo $CI_PROJECT_PATH | sed -r 's:([a-zA-Z0-9])[^/]*/:\1-:g' \
-  | sed 's/[^a-zA-Z0-9]/-/g' | awk '{print tolower($0)}')/$CI_PROJECT_NAME
+
+  echo "Экспортируем переменные окружения из файла .ci_env, если данные переменные не определены." \
+  $'\n'"=========================================================================================="$'\n'
+  [[ "$HOOK_PRJS" != "disable" ]] && echo "Переменные не определены, экспортируем..." && source .ci_env && \
+  export $(grep -v '^#' .ci_env | cut -d= -f1)
+  #export $(grep -v '^#\|HOOK_PRJS' .ci_env | xargs)
+  
+  export CI_APPLICATION_REPOSITORY=$(echo $CI_REGISTRY | sed -r 's:^([^/]*/){2}::')/$(echo $CI_PROJECT_PATH | sed -r 's:([a-zA-Z0-9])[^/]*/:\1-:g' | \
+  sed 's/[^a-zA-Z0-9]/-/g' | awk '{print tolower($0)}')/$CI_PROJECT_NAME-$ENVRM
   export CI_APPLICATION_TAG="latest"
 
   function build() {
@@ -76,14 +101,6 @@ delete:
   }
 
   function set_k8s() {
-    echo "Устанавливаем необходимые пакеты и утилиты. \
-    =========================================================================================="
-    yum install epel-release -y -q &> /dev/null
-    yum install jq -y -q &> /dev/null
-    curl -s -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.12.3/bin/linux/amd64/kubectl && chmod +x /usr/bin/kubectl &> /dev/null
-    curl -s https://storage.googleapis.com/kubernetes-helm/helm-v2.12.3-linux-amd64.tar.gz | \
-    tar -xzvf - -C /usr/bin/ --strip-components=1 && chmod +x /usr/bin/helm &> /dev/null 
-
     echo "Настраиваем kubectl для доступа к кластеру Kubernetes. \
     =========================================================================================="
     kubectl config set-cluster $K8S_CLUSTER --server="$K8S_URL" --insecure-skip-tls-verify &> /dev/null
@@ -93,22 +110,71 @@ delete:
   }
 
   function deploy() {
-    echo "Устанавливаем (или обновляем) tiller. \
-    =========================================================================================="
-    helm init --upgrade --tiller-namespace ${K8S_NAMESPACE_BASE} --history-max 10 --service-account tiller-account
-    sleep 10
-
+    #echo "Устанавливаем (или обновляем) tiller. \
+    #=========================================================================================="
+    #helm init --upgrade --tiller-namespace ${K8S_NAMESPACE_BASE} --history-max 10 --service-account tiller-account
+    
     echo "Устанавливаем релиз Helm. \
     =========================================================================================="
     helm upgrade --install ${K8S_NAMESPACE_BASE}-${ENVRM} ./helm --namespace ${K8S_NAMESPACE_BASE}-${ENVRM} \
-    --set image.repository="${CI_APPLICATION_REPOSITORY}" --set image.tag="${CI_APPLICATION_TAG}" \
-    --tiller-namespace ${K8S_NAMESPACE_BASE} --wait --timeout 300 --reset-values
+    --set image.repository="${CI_APPLICATION_REPOSITORY}" \
+    --set image.tag="${CI_APPLICATION_TAG}" \
+    --set ingress.host="${ENVRM}-kuber.sovcombank.group" \
+    --set ingress.location="ecom-${CI_PROJECT_NAME}" \
+    --set labels.app=${K8S_NAMESPACE_BASE}-${ENVRM} \
+    --set labels.component=web-ecom \
+    --set env.CI_COMMIT_SHORT_SHA="${CI_COMMIT_SHORT_SHA}"
+    #--tiller-namespace ${K8S_NAMESPACE_BASE} --timeout 300 --reset-values --recreate-pods
+    # вернуть параметр --wait
   }
 
   function delete() {
     echo "Удаляем релиз Helm. \
     =========================================================================================="
-    helm delete ${K8S_NAMESPACE_BASE}-${ENVRM} --tiller-namespace ${K8S_NAMESPACE_BASE} --purge --timeout 600
+    #helm delete ${K8S_NAMESPACE_BASE}-${ENVRM} --tiller-namespace ${K8S_NAMESPACE_BASE} --purge --timeout 600
+    helm uninstall ${K8S_NAMESPACE_BASE}-${ENVRM} --namespace ${K8S_NAMESPACE_BASE}-${ENVRM}
+  }
+
+  function set_hook_prj_path() {
+    echo "Получаем полный путь проекта, подготовленный для запросов к REST API Gitlab." \
+    $'\n'"=========================================================================================="$'\n'
+    export HOOK_PROJECT_PATH=$(echo $PROJECT_URL | sed 's:\(.*\)\(.git\)$:\1:' | sed 's:^\([^/]*/\)\{3\}::' | sed 's:\/:%2F:g')
+  }
+
+  function send_hook() {
+    echo "Устанавливаем триггер выполнения pipeline связанных проектов." \
+    $'\n'"=========================================================================================="$'\n'
+    yum install epel-release -y -q &> /dev/null
+    yum install jq -y -q &> /dev/null
+
+    for PROJECT_URL in $HOOK_PRJS
+    do
+      if [[ $(curl -k -LI $PROJECT_URL -w '%{http_code}\n' -s -o /dev/null) != 200 ]]
+      then
+        echo "Project URL $PROJECT_URL not valid"
+        exit 1
+      fi
+      set_hook_prj_path
+
+      echo "Удаляем все trigger tokens аккаунта Gitlab, если есть, и устанавливаем новый." \
+      $'\n'"=========================================================================================="$'\n'
+      curl -s -H "PRIVATE-TOKEN: $SA_TOKEN" \
+      $CI_API_V4_URL/projects/$HOOK_PROJECT_PATH/triggers | \
+      jq -c '.[] | select( .description | contains("ci-cd-trigger"))' | jq -r .id | \
+      while read line; do curl -s -X DELETE -H "PRIVATE-TOKEN: $SA_TOKEN" \
+      $CI_API_V4_URL/projects/$HOOK_PROJECT_PATH/triggers/$line; done
+      export TRIGGER_TOKEN=$(curl -s -X POST -H "PRIVATE-TOKEN: $SA_TOKEN" -F description=ci-cd-trigger \
+      $CI_API_V4_URL/projects/$HOOK_PROJECT_PATH/triggers | jq -r .token)
+
+      echo "Запускаем выполнение pipline связанных проектов." \
+      $'\n'"=========================================================================================="$'\n'
+      curl -s -X POST \
+      -F "token=$TRIGGER_TOKEN" \
+      -F "ref=$HOOK_BRANCH" \
+      -F "variables[ENVRM]=$ENVRM" \
+      -F "variables[HOOK_PRJS]=disable" \
+      $CI_API_V4_URL/projects/$HOOK_PROJECT_PATH/trigger/pipeline
+    done
   }
 
 before_script:
