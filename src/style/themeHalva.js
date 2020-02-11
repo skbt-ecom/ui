@@ -9,6 +9,10 @@ const theme = createMuiTheme({
   },
   overrides: {
     MuiButton: {
+      root: {
+        fontSize: 16,
+        padding: '11px 48px',
+      },
       contained: {
         boxShadow: 'none !important',
       },
@@ -39,6 +43,7 @@ const theme = createMuiTheme({
       },
       outlined: {
         borderWidth: '2px !important',
+        padding: '11px 48px',
       },
       outlinedPrimary: {
         borderColor: PRIMARY_COLOR,
