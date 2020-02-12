@@ -31,7 +31,8 @@ build:
   dependencies:
     - test
   only:
-    - ci-cd-test
+    - master
+    # - ci-cd-test
     #- dev
     #- test
 
@@ -80,7 +81,7 @@ hook_to_projects:
   [[ "$HOOK_PRJS" != "disable" ]] && echo "Переменные не определены, экспортируем..." && source .ci_env && \
   export $(grep -v '^#' .ci_env | cut -d= -f1)
   #export $(grep -v '^#\|HOOK_PRJS' .ci_env | xargs)
-  
+
   export CI_APPLICATION_REPOSITORY=$(echo $CI_REGISTRY | sed -r 's:^([^/]*/){2}::')/$(echo $CI_PROJECT_PATH | sed -r 's:([a-zA-Z0-9])[^/]*/:\1-:g' | \
   sed 's/[^a-zA-Z0-9]/-/g' | awk '{print tolower($0)}')/$CI_PROJECT_NAME-$ENVRM
   export CI_APPLICATION_TAG="latest"

@@ -31,13 +31,13 @@ const theme = createMuiTheme({
       containedSecondary: {
         color: PRIMARY_COLOR,
         '&:hover': {
-          backgroundColor: 'rgba(0, 0, 0, 0.04)',
+          backgroundColor: '#f5f5f5',
         },
         '&:focus': {
-          backgroundColor: 'rgba(255, 78, 80, 0.12)',
+          backgroundColor: 'ffe9ea',
         },
         '&$disabled': {
-          backgroundColor: 'rgba(255, 255, 255, 0.12)',
+          backgroundColor: '#fff',
           color: '#cbcbcb',
         },
       },
@@ -83,6 +83,13 @@ const theme = createMuiTheme({
       input: {
         '&$disabled': {
           color: '#bbb',
+        },
+      },
+    },
+    MuiFormLabel: {
+      root: {
+        '&$focused': {
+          color: '#757575',
         },
       },
     },

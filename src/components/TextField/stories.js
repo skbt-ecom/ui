@@ -11,4 +11,6 @@ import theme from '../../style/theme';
 
 storiesOf('TextField', module)
   .addDecorator(muiTheme([theme]))
-  .add('Default', () => <TextField onChange={action('onChange')} />);
+  .add('Default', () => (
+    <TextField onChange={action('onChange')} label="Label" />
+  ));
