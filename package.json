@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -c .storybook -o storybook-static",
     "build": "npm run build:remove && npx babel src --out-dir lib && npm run build:copyfiles",
     "build:remove": "rimraf lib",
     "build:copyfiles": "copyfiles -u 1 src/components/**/*.svg lib -EVs"
