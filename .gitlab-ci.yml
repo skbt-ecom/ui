@@ -15,7 +15,8 @@ test:
     - npm run build-storybook || true
     - npm test || true
   only:
-    - ci-cd-test
+    - master
+    # - ci-cd-test
   artifacts:
     paths:
       - storybook-static/
@@ -43,7 +44,7 @@ review:
     - set_k8s
     - deploy
   only:
-    - ci-cd-test
+    - master
     #- ci-cd-test
     #- dev
     #- test
@@ -56,7 +57,7 @@ delete:
     - delete
   when: manual
   only:
-    - ci-cd-test
+    - master
     #- ci-cd-test
     #- dev
     #- test
@@ -67,7 +68,7 @@ hook_to_projects:
   script:
     - if [[ -n $HOOK_PRJS ]]; then send_hook; else exit 0; fi
   only:
-    - ci-cd-test
+    - master
     #- ci-cd-test
     #- dev
     #- test
