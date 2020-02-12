@@ -14,8 +14,16 @@ spec:
         backend:
           serviceName: {{ template "obj.fullname" . }}
           servicePort: {{ .Values.service.externalPort }}
+  - host: ecom-ui.sovcombank.group
+    http:
+      paths:
+      - path: "/"
+        backend:
+          serviceName: {{ template "obj.fullname" . }}
+          servicePort: {{ .Values.service.externalPort }}
   tls:
   - hosts:
     - {{ .Values.ingress.host }}
+    - ecom-ui.sovcombank.group
 ---
 {{ end }}
