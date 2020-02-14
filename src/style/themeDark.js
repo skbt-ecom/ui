@@ -14,6 +14,16 @@ const theme = createMuiTheme({
   overrides: {
     // Style sheet name ⚛️
     MuiButton: {
+      root: {
+        paddingTop: '11px',
+        paddingBottom: '11px',
+        fontFamily: '"Bebas", "Roboto", "Helvetica", "Arial", sans-serif',
+        letterSpacing: '1px',
+        fontSize: '20px',
+      },
+      contained: {
+        boxShadow: 'none',
+      },
       // Name of the rule
       textPrimary: {
         // Some CSS
