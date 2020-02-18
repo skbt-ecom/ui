@@ -20,6 +20,9 @@ storiesOf('HeaderNew', module)
         children: 'Присоединиться',
         onClick: action('onButtonClick'),
       }}
+      PhoneProps={{
+        classes: { phoneContainer: 'my-phone' },
+      }}
     />
   ))
   .add('Multiple phones', () => (
@@ -29,7 +32,9 @@ storiesOf('HeaderNew', module)
         children: 'Присоединиться',
         onClick: action('onButtonClick'),
       }}
-      PhoneProps={{ phones: ['8 927 463-12-81', '8 952 031-34-20'] }}
+      PhoneProps={{
+        phones: ['8 927 463-12-81', '8 952 031-34-20'],
+      }}
     />
   ))
   .add('Custom content', () => (

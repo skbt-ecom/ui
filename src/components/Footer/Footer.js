@@ -32,6 +32,7 @@ function Footer(props) {
             classes={{
               phoneContainer: classes.phoneContainer,
               phoneNum: classes.phoneNum,
+              phoneMultiple: classes.phoneMultiple,
               phoneHint: classes.phoneHint,
             }}
           />

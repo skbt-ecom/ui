@@ -5,20 +5,18 @@ import PhoneWithHint from './PhoneWithHint';
 import useStyles from './styles';
 
 const PhoneMain = props => {
-  const classes = useStyles();
-  const { phone, phoneHint, phones, classes: propsClasses = {} } = props;
+  const classes = useStyles(props);
+  const { phone, phoneHint, phones } = props;
   const phonesArr = phones ? phones : [phone];
   const isSinglePhone = phonesArr.length === 1;
-
   const phoneWithHintProps = {
     phone: phonesArr[0],
     phoneHint,
-    classes,
-    propsClasses,
+    classes: { phoneHint: classes.phoneHint, phoneNum: classes.phoneNum },
   };
 
   return (
-    <div className={`${classes.phoneContainer} ${propsClasses.phoneContainer}`}>
+    <div className={classes.phoneContainer}>
       {isSinglePhone ? (
         <PhoneWithHint {...phoneWithHintProps} />
       ) : (
@@ -27,7 +25,7 @@ const PhoneMain = props => {
             key={i}
             number={phone}
             classes={{
-              phoneNum: `${classes.phoneMultiple} ${propsClasses.phoneNum}`,
+              phoneNum: classes.phoneMultiple,
             }}
           />
         ))

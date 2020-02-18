@@ -40,9 +40,16 @@ function styles(theme) {
       lineHeight: '23px',
     },
 
+    phoneMultiple: {
+      fontSize: 23,
+      lineHeight: '23px',
+      marginBottom: 8,
+    },
+
     phoneHint: {
       fontSize: 10,
       letterSpacing: '0.2px',
+      margin: 0,
     },
 
     store: {

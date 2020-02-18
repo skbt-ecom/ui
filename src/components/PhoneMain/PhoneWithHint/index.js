@@ -1,14 +1,10 @@
 import React from 'react';
 import Phone from '../Phone';
 
-const PhoneWithHint = ({ phone, phoneHint, classes, propsClasses }) => (
+const PhoneWithHint = ({ phone, phoneHint, classes }) => (
   <>
-    <Phone number={phone} classes={{ phoneNum: propsClasses.phoneNum }} />
-    {phoneHint && (
-      <p className={`${classes.phoneHint} ${propsClasses.phoneHint}`}>
-        {phoneHint}
-      </p>
-    )}
+    <Phone number={phone} classes={{ phoneNum: classes.phoneNum }} />
+    {phoneHint && <p className={classes.phoneHint}>{phoneHint}</p>}
   </>
 );
 

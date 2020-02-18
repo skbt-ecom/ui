@@ -30,7 +30,9 @@ const Header = (props, ref) => {
               {...PhoneProps}
               classes={{
                 phoneContainer: classes.phoneContainer,
-                ...PhoneProps.classes,
+                phoneMultiple: classes.phoneMultiple,
+                phoneHint: classes.phoneHint,
+                phoneNum: classes.phoneNum,
               }}
             />
             <Button
