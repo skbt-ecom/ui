@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(theme => ({
+export const useHeaderStyles = makeStyles(theme => ({
   header: {
     backgroundColor: '#fff',
   },
@@ -26,7 +26,9 @@ const useStyles = makeStyles(theme => ({
       verticalAlign: 'top',
     },
   },
+}));
 
+export const usePhoneStyles = makeStyles(theme => ({
   phoneContainer: {
     display: 'none',
 
@@ -71,18 +73,20 @@ const useStyles = makeStyles(theme => ({
       fontSize: 10,
     },
   },
+}));
 
-  buttonRoot: {
+export const useButtonStyles = makeStyles(theme => ({
+  root: {
     padding: '8px 20px',
     [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
   },
 
-  buttonLabel: {
+  label: {
     fontSize: 16,
     lineHeight: '20px',
   },
 }));
 
-export default useStyles;
+// export default useStyles;

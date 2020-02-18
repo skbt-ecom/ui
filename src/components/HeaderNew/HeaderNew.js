@@ -5,10 +5,12 @@ import Logo from './Logo';
 import PhoneMain from '../PhoneMain';
 import Button from '../Button';
 
-import useStyles from './styles';
+import { useHeaderStyles, usePhoneStyles, useButtonStyles } from './styles';
 
 const Header = (props, ref) => {
-  const classes = useStyles(props);
+  const classes = useHeaderStyles(props);
+  const phoneClasses = usePhoneStyles(props.PhoneProps);
+  const buttonClasses = useButtonStyles(props.ButtonProps);
   const { left, right, LogoProps, ButtonProps, PhoneProps } = props;
 
   return (
@@ -26,24 +28,12 @@ const Header = (props, ref) => {
           right
         ) : (
           <div className={classes.rightBlock}>
-            <PhoneMain
-              {...PhoneProps}
-              classes={{
-                phoneContainer: classes.phoneContainer,
-                phoneMultiple: classes.phoneMultiple,
-                phoneHint: classes.phoneHint,
-                phoneNum: classes.phoneNum,
-              }}
-            />
+            <PhoneMain {...PhoneProps} classes={phoneClasses} />
             <Button
               color="primary"
               children="Оформить"
               {...ButtonProps}
-              classes={{
-                root: classes.buttonRoot,
-                label: classes.buttonLabel,
-                ...ButtonProps.classes,
-              }}
+              classes={buttonClasses}
             />
           </div>
         )}

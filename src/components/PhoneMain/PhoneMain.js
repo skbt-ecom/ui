@@ -15,6 +15,8 @@ const PhoneMain = props => {
     classes: { phoneHint: classes.phoneHint, phoneNum: classes.phoneNum },
   };
 
+  // console.log('props', props);
+
   return (
     <div className={classes.phoneContainer}>
       {isSinglePhone ? (
