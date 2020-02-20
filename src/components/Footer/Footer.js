@@ -13,96 +13,105 @@ import icon_gplay from './icon_gplay.svg';
 
 import useStyles from './styles';
 
-function Footer(props) {
+const Footer = (props, ref) => {
   const [isHide, setIsHide] = useState(true);
   const classes = useStyles(props);
-  const { shortText, restText, phone, phones, phoneHint } = props;
+  const { left, right, shortText, restText, phone, phones, phoneHint } = props;
   function showRestLigal() {
     setIsHide(false);
   }
 
   return (
-    <footer className={classes.footer}>
+    <footer className={classes.footer} ref={ref}>
       <Container fixed={false}>
         <div className={classes.inner}>
-          <PhoneMain
-            phone={phone}
-            phones={phones}
-            phoneHint={phoneHint}
-            classes={{
-              phoneContainer: classes.phoneContainer,
-              phoneNum: classes.phoneNum,
-              phoneMultiple: classes.phoneMultiple,
-              phoneHint: classes.phoneHint,
-            }}
-          />
-          <Box order={1} className={classes.copyright}>
-            <Grid container alignItems="center" className={classes.social}>
-              <div className={classes.icon}>
-                <a
-                  href="https://vk.com/sovcombank"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={icon_vk} alt="vk" />
-                </a>
-              </div>
-              <div className={classes.icon}>
-                <a
-                  href="http://www.facebook.com/sovcombank"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={icon_fb} alt="fb" />
-                </a>
-              </div>
-              <div className={classes.icon}>
-                <a
-                  href="https://ok.ru/paosovcombank"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={icon_ok} alt="ok" />
-                </a>
-              </div>
-              <div className={classes.icon}>
-                <a
-                  href="https://twitter.com/sovcombank"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={icon_tw} alt="tw" />
-                </a>
-              </div>
-            </Grid>
-            <p>
-              © 2004-{new Date().getFullYear()}, ПАО «Совкомбанк»
-              <br />
-              Все права защищены
-            </p>
-            <p>Генеральная лицензия Банка России №963 от 5 декабря 2014 г.</p>
-            <Box
-              display="flex"
-              justifyContent="space-between"
-              className={classes.store}
-            >
-              <a
-                className={classes.appstore}
-                href="https://apps.apple.com/ru/app/halva/id1208055056"
-                target="_blank"
-                rel="noopener noreferrer"
+          {left ? (
+            left
+          ) : (
+            <PhoneMain
+              phone={phone}
+              phones={phones}
+              phoneHint={phoneHint}
+              classes={{
+                phoneContainer: classes.phoneContainer,
+                phoneNum: classes.phoneNum,
+                phoneMultiple: classes.phoneMultiple,
+                phoneHint: classes.phoneHint,
+              }}
+            />
+          )}
+
+          {right ? (
+            right
+          ) : (
+            <Box order={1} className={classes.copyright}>
+              <Grid container alignItems="center" className={classes.social}>
+                <div className={classes.icon}>
+                  <a
+                    href="https://vk.com/sovcombank"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={icon_vk} alt="vk" />
+                  </a>
+                </div>
+                <div className={classes.icon}>
+                  <a
+                    href="http://www.facebook.com/sovcombank"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={icon_fb} alt="fb" />
+                  </a>
+                </div>
+                <div className={classes.icon}>
+                  <a
+                    href="https://ok.ru/paosovcombank"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={icon_ok} alt="ok" />
+                  </a>
+                </div>
+                <div className={classes.icon}>
+                  <a
+                    href="https://twitter.com/sovcombank"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={icon_tw} alt="tw" />
+                  </a>
+                </div>
+              </Grid>
+              <p>
+                © 2004-{new Date().getFullYear()}, ПАО «Совкомбанк»
+                <br />
+                Все права защищены
+              </p>
+              <p>Генеральная лицензия Банка России №963 от 5 декабря 2014 г.</p>
+              <Box
+                display="flex"
+                justifyContent="space-between"
+                className={classes.store}
               >
-                <img src={icon_appstore} alt="App Store" />
-              </a>
-              <a
-                href="https://play.google.com/store/apps/details?id=ru.sovcomcard.halva.v1"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={icon_gplay} alt="Google Play" />
-              </a>
+                <a
+                  className={classes.appstore}
+                  href="https://apps.apple.com/ru/app/halva/id1208055056"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={icon_appstore} alt="App Store" />
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=ru.sovcomcard.halva.v1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={icon_gplay} alt="Google Play" />
+                </a>
+              </Box>
             </Box>
-          </Box>
+          )}
         </div>
         {shortText && (
           <div className={classes.ligal}>
@@ -118,11 +127,13 @@ function Footer(props) {
       </Container>
     </footer>
   );
-}
+};
 
-Footer.defaultProps = {
+const ForwardedFooter = React.forwardRef(Footer);
+
+ForwardedFooter.defaultProps = {
   shortText: '',
   restText: '',
 };
 
-export default React.memo(Footer);
+export default React.memo(ForwardedFooter);
