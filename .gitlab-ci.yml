@@ -175,6 +175,3 @@ hook_to_projects:
       $CI_API_V4_URL/projects/$HOOK_PROJECT_PATH/trigger/pipeline
     done
   }
-
-before_script:
-  - *auto_devops
