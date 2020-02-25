@@ -2,9 +2,6 @@ image: centos:latest
 
 stages:
   - test
-  - build
-  - review
-  - hook
 
 test:
   stage: test
