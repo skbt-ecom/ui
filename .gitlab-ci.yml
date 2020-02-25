@@ -2,6 +2,7 @@ image: centos:latest
 
 stages:
   - test
+  - build
 
 test:
   stage: test
@@ -21,9 +22,10 @@ test:
 
 build:
   stage: build
-  image: docker:stable
+  image: node:10
   script:
-    - build
+    - npm i
+    - npm run build
   variables:
     DOCKER_DRIVER: overlay2
   dependencies:
