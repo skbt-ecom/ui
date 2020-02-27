@@ -7,18 +7,18 @@ export const checkUnTouchedFields = fields => {
     const field = fields[fieldKey];
 
     fieldsToSubmit[fieldKey] = field.value;
-    if (!field.touched) {
-      const error = field.validate(field.value);
+    // if (!field.touched) {
+    const error = field.validate(field.value);
 
-      if (error) {
-        validForm = false;
-        fieldsWithError[fieldKey] = {
-          ...field,
-          error,
-          helperText: error,
-        };
-      }
+    if (error) {
+      validForm = false;
+      fieldsWithError[fieldKey] = {
+        ...field,
+        error,
+        helperText: error,
+      };
     }
+    // }
 
     return;
   });
@@ -47,6 +47,24 @@ export const updateFieldsValues = (values, fields) => {
 
   return nextFields;
 };
+
+export const getRequiredFields = fields => {
+  const requiredFields = {};
+  const optionalKeys = [];
+
+  Object.keys(fields).forEach(fieldKey => {
+    const field = fields[fieldKey];
+    if (field.isRequired) {
+      requiredFields[fieldKey] = field;
+    } else {
+      optionalKeys.push(fieldKey);
+    }
+  });
+  return { requiredFields, optionalKeys };
+};
+
+export const checkOptionalKeysInInvalidFields = (optionalKeys, invalidFields) =>
+  optionalKeys.some(key => invalidFields.has(key));
 
 const getFieldErrors = errorsObj =>
   Object.keys(errorsObj).reduce((prev, cur) => {

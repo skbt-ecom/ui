@@ -6,6 +6,7 @@ import {
   updateFieldsErrors,
   updateFieldsValues,
   getHelperTextFromError,
+  getRequiredFields,
 } from './helpers';
 
 export const FormContext = React.createContext({});
@@ -43,10 +44,7 @@ export class Form extends React.Component {
     return nextState;
   }
 
-  initialHelperText = ''; //needs to store original helperText value and set it when setFieldsValue calls
-
-  registerField = ({ fieldKey, value, validate, helperText }) => {
-    this.initialHelperText = helperText;
+  registerField = ({ fieldKey, value, validate, helperText, isRequired }) => {
     this.setState(state => ({
       fields: {
         ...state.fields,
@@ -55,27 +53,45 @@ export class Form extends React.Component {
           validate,
           touched: false,
           helperText,
+          isRequired,
+          initialHelperText: helperText, //needs to store original helperText value and set it when setFieldsValue calls
         },
       },
     }));
   };
 
-  setFieldsValue = updates => {
-    const nextFields = { ...this.state.fields };
+  setField = (fieldKey, data) => {
+    const newField = { ...this.state.fields[fieldKey], ...data };
+    this.setState(state => ({
+      fields: {
+        ...state.fields,
+        [fieldKey]: newField,
+      },
+    }));
+  };
 
-    Object.keys(updates).forEach(fieldKey => {
-      const error = nextFields[fieldKey].validate(updates[fieldKey]);
+  setFields = updates => {
+    this.setState(prevState => {
+      const prevFields = { ...prevState.fields };
+      const nextFields = { ...prevFields };
 
-      nextFields[fieldKey] = {
-        ...nextFields[fieldKey],
-        value: updates[fieldKey],
-        error,
-        helperText: getHelperTextFromError(error, this.initialHelperText),
-      };
-    });
+      Object.keys(updates).forEach(fieldKey => {
+        const prevField = prevFields[fieldKey];
+        const nextField = updates[fieldKey];
 
-    this.setState({
-      fields: nextFields,
+        if ('value' in nextField) {
+          nextField.error = prevField.validate(nextField.value);
+          nextField.helperText = getHelperTextFromError(
+            nextField.error,
+            prevField.initialHelperText
+          );
+        }
+        nextFields[fieldKey] = {
+          ...prevField,
+          ...nextField,
+        };
+      });
+      return { fields: nextFields };
     });
   };
 
@@ -119,31 +135,42 @@ export class Form extends React.Component {
   };
 
   onSubmit = () => {
-    const { fields, valid } = this.state;
+    const { fields } = this.state;
+    const { requiredFields } = getRequiredFields(fields);
 
-    if (valid) {
-      this.toggleSubmitting(true);
-      const {
-        fieldsToSubmit,
-        fieldsWithError,
-        validForm,
-      } = checkUnTouchedFields(fields);
+    this.toggleSubmitting(true);
+    const { fieldsToSubmit, fieldsWithError, validForm } = checkUnTouchedFields(
+      requiredFields
+    );
 
-      if (!validForm) {
-        return this.setState({
-          valid: validForm,
-          fields: {
-            ...this.state.fields,
-            ...fieldsWithError,
-          },
-          submitting: false,
-        });
+    const nextFields = {
+      ...this.state.fields,
+    };
+
+    Object.keys(this.state.fields).forEach(fieldKey => {
+      const stateField = this.state.fields[fieldKey];
+      if (fieldKey in fieldsWithError) {
+        nextFields[fieldKey] = { ...fieldsWithError[fieldKey] };
+      } else {
+        nextFields[fieldKey] = {
+          ...stateField,
+          error: false,
+          helperText: stateField.initialHelperText,
+        };
       }
+    });
 
-      const promise = this.props.onSubmit(fieldsToSubmit);
-
-      return promise && promise.finally(() => this.toggleSubmitting(false));
+    if (!validForm) {
+      return this.setState({
+        valid: validForm,
+        fields: nextFields,
+        submitting: false,
+      });
     }
+
+    const promise = this.props.onSubmit(fieldsToSubmit);
+
+    return promise && promise.finally(() => this.toggleSubmitting(false));
   };
 
   toggleSubmitting = submitting => this.setState({ submitting });

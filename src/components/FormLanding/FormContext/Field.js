@@ -16,6 +16,7 @@ export class Field extends React.PureComponent {
   static defaultProps = {
     validate: () => undefined,
     validateOnBlur: true,
+    isRequired: true,
   };
 
   _prevValue = undefined; // needs to prevent calling onValidateItem if value does not changed (ex. onBlur)
@@ -28,6 +29,7 @@ export class Field extends React.PureComponent {
       value: field.value || this.initialValue,
       validate: this.props.validate,
       helperText: this.props.helperText,
+      isRequired: this.props.isRequired,
     });
   }
 
@@ -44,17 +46,18 @@ export class Field extends React.PureComponent {
     return this.onValidateItem({
       fieldKey: this.props.name,
       value,
+      isRequired: this.props.isRequired,
     });
   };
 
   onValidateItem = props => {
-    const { value } = props;
+    const { value, isRequired } = props;
     // return when value has not been changed
-    if (value === this._prevValue) {
-      return;
-    }
+    // if (value === this._prevValue) {
+    //   return;
+    // }
     this._prevValue = value;
-    const error = this.props.validate(value);
+    const error = isRequired ? this.props.validate(value) : false;
     const helperText = getHelperTextFromError(error, this.props.helperText);
 
     this.context.onChange({
@@ -69,6 +72,7 @@ export class Field extends React.PureComponent {
     this.onValidateItem({
       fieldKey: this.props.name,
       value: this.context.fields[this.props.name].value,
+      isRequired: this.context.fields[this.props.name].isRequired,
     });
   };
 
@@ -79,6 +83,7 @@ export class Field extends React.PureComponent {
       component: Component,
       defaultValue,
       validateOnBlur,
+      isRequired,
       ...props
     } = this.props;
 
