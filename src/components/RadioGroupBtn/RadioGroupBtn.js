@@ -22,6 +22,7 @@ const RadioGroupBtn = React.memo(props => {
           name={name}
           onChange={onChange}
           selectedValue={props.value}
+          className={classes.item}
         />
       ))}
     </div>

@@ -6,59 +6,47 @@ import { muiTheme } from 'storybook-addon-material-ui';
 
 // Import our component from this folder
 import Slider from './Slider';
+import SliderLogarithmic from './SliderLogarithmic';
 
 import theme from '../../style/theme';
+import { inputProps, sliderProps } from './story.config';
 
-const marks = [
-  {
-    value: 0,
-    label: '0°C',
-  },
-  {
-    value: 25,
-    label: '25°C',
-  },
-  {
-    value: 50,
-    label: '50°C',
-  },
-  {
-    value: 75,
-    label: '75°C',
-  },
-  {
-    value: 100,
-    label: '100°C',
-  },
-];
-const marks3 = [
-  {
-    value: 100,
-    label: '0°C',
-  },
-  {
-    value: 500,
-    label: '50°C',
-  },
-  {
-    value: 1000,
-    label: '100°C',
-  },
-];
+const SliderWrapper = props => {
+  const [step, setStep] = React.useState(1000);
 
-const inputProps = {
-  suffix: ' ₽',
-};
+  const getStepValue = sliderVal => {
+    if (sliderVal < 300000) {
+      return 1000;
+    }
+    if (sliderVal < 1000000) {
+      return 5000;
+    }
+    return 100000;
+  };
 
-const sliderProps = {
-  suffix: ' ₽',
-};
+  const handleOnChangeCommitted = value => {
+    props.onChangeCommitted(value);
+  };
+  const handleOnChange = value => {
+    setStep(getStepValue(value));
+  };
 
-const discreteSliderProps = {
-  suffix: ' ₽',
-  step: null,
-  marks: true,
-  marks: marks3,
+  const dynamicStepSliderProps = {
+    step: step,
+  };
+
+  return (
+    <>
+      <Slider
+        onChange={handleOnChange}
+        onChangeCommitted={handleOnChangeCommitted}
+        inputProps={inputProps}
+        sliderProps={dynamicStepSliderProps}
+        min={150000} // if no initialValue using min value as initial
+        max={30000000}
+      />
+    </>
+  );
 };
 
 storiesOf('Slider', module)
@@ -81,21 +69,34 @@ storiesOf('Slider', module)
       label={'Сумма кредита'}
       inputProps={inputProps}
       sliderProps={sliderProps}
-      // initialValue={300}
-      min={150000} // if no initialValue using min value as initial
+      min={150000}
       max={30000000}
-      // value={500}
     />
   ))
-  .add('Discrete', () => (
-    <Slider
-      discrete
-      onChange={action('onChange')}
+  .add('Dynamic step', () => (
+    <SliderWrapper onChangeCommitted={action('onChangeCommitted')} />
+  ))
+  .add('Logarithmic', () => (
+    <SliderLogarithmic
+      // onChange={action('onChange')}
+      onChangeCommitted={action('onChangeCommitted')}
       inputProps={inputProps}
-      sliderProps={discreteSliderProps}
-      // initialValue={300}
-      min={100} // if no initialValue using min value as initial
-      max={1000}
-      // value={500}
+      sliderProps={sliderProps}
+      min={150000}
+      max={30000000}
+      value={2000000}
+      // withSpaceForHelperTxt
+    />
+  ))
+  .add('withSpaceForHelperTxt', () => (
+    <SliderLogarithmic
+      // onChange={action('onChange')}
+      onChangeCommitted={action('onChangeCommitted')}
+      inputProps={inputProps}
+      sliderProps={sliderProps}
+      min={150000}
+      max={30000000}
+      value={2000000}
+      withSpaceForHelperTxt
     />
   ));

@@ -5,6 +5,9 @@ import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
+
+import withSpaceForHelperTxt from '../HOCs/withSpaceForHelperTxt';
+
 import useStyles from './styles';
 
 const SelectComponent = React.memo(props => {
@@ -58,4 +61,4 @@ SelectComponent.defaultProps = {
   ],
 };
 
-export default SelectComponent;
+export default withSpaceForHelperTxt(SelectComponent);

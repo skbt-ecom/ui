@@ -11,15 +11,18 @@ const useStyles = makeStyles(() => ({
     width: '100%',
     height: '100%',
   },
-  popper: {
-    zIndex: 2,
-  },
   suggestionsContainer: {
-    position: 'relative',
-    zIndex: 1,
+    position: 'absolute',
+    zIndex: 2,
+    marginTop: props => (props.helperText ? -20 : 0),
+    left: 0,
+    right: 0,
   },
   suggestion: {
     display: 'block',
+    '& > div ': {
+      whiteSpace: 'normal',
+    },
   },
   suggestionsList: {
     margin: 0,

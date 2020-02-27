@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 function styles(theme) {
   return {
     root: {
+      textAlign: 'left',
       boxSizing: 'border-box',
       margin: '0 auto',
       boxShadow: '0 10px 34px rgba(0, 0, 0, 0.2)',
@@ -58,6 +59,7 @@ function styles(theme) {
     errorDesc1: {
       margin: 0,
       paddingLeft: 15,
+      listStyleType: 'disc',
     },
 
     errorDesc2: {

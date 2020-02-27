@@ -1,26 +1,27 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   container: {
     position: 'relative',
     width: '100%',
+    minHeight: props => (props.withSpaceForHelperTxt ? 76 : 'auto'),
   },
   input: {
     fontWeight: 500,
-    fontSize: '18px',
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderWidth: props => (props.discrete ? '0' : '1px'),
-      },
-    },
+    fontSize: 18,
     '& .MuiInputBase-root': {
       fontSize: 'inherit',
     },
   },
   sliderRoot: {
     position: 'absolute',
-    bottom: props => (props.discrete ? '-31px' : '-11px'),
+    // input.height - (slider.height/2 + 1)
+    top: 58.38 - 13,
     left: 0,
+    padding: '11px 0',
+    // '@media (pointer: coarse)': {
+    //   bottom: props => (props.withSpaceForHelperTxt ? -2 : -20),
+    // },
   },
   sliderMarkLabel: {
     '&:nth-child(5)': {
@@ -31,9 +32,6 @@ const useStyles = makeStyles(theme => ({
       right: '0 !important',
       left: 'auto !important',
     },
-  },
-  sliderMark: {
-    visibility: props => (props.discrete ? 'hidden' : 'visible'),
   },
 }));
 

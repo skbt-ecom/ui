@@ -25,5 +25,6 @@ storiesOf('RadioGroupBtn', module)
       items={items}
       name={'prices'}
       value={5340}
+      classes={{ container: 'container-class', item: 'item-class' }}
     />
   ));

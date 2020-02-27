@@ -1,0 +1,26 @@
+image: node:10-alpine
+
+stages:
+  - install
+  - build
+
+cache:
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: install
+  script:
+    - apk add --no-cache git
+    - yarn
+  artifacts:
+    paths:
+      - node_modules/
+
+building:
+  stage: build
+  script:
+    - yarn build
+  artifacts:
+    paths:
+      - build/

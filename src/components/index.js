@@ -1,6 +1,6 @@
 // Theme export
 export { default as theme } from '../style/theme';
-export { ThemeProvider } from '@material-ui/styles';
+export { default as ThemeProvider } from '../style/ThemeProvider';
 
 // Components export
 export { default as Button } from './Button';
@@ -13,8 +13,9 @@ export { default as MaskedField } from './MaskedField';
 export { default as TextField } from './TextField';
 export { default as Autosuggest } from './Autosuggest';
 export { default as Slider } from './Slider';
-export { default as Checkbox } from './Chekbox/Checkbox';
-export { default as CheckboxGroup } from './Chekbox/CheckboxGroup';
+export { default as SliderLogarithmic } from './Slider/SliderLogarithmic';
+export { default as Checkbox } from './Checkbox/Checkbox';
+export { default as CheckboxGroup } from './Checkbox/CheckboxGroup';
 export { default as Header } from './Header';
 export { default as Grid } from './Grid';
 export { default as Container } from './Container';
@@ -31,3 +32,7 @@ export { default as Uploader } from './Uploader';
 export { default as CircularProgress } from './CircularProgress';
 export { default as PageStatus } from './PageStatus';
 export { default as FormLanding } from './FormLanding';
+export { default as DatePicker } from './DatePicker';
+export { default as ButtonESIA } from './Button/ButtonESIA';
+export { default as Modal } from './Modal';
+export { default as HeaderNew } from './HeaderNew';

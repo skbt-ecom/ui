@@ -4,11 +4,12 @@ function styles(theme) {
   return {
     footer: {
       fontFamily: theme.typography.fontFamily,
+      fontWeight: 400,
       background: '#fff',
-      padding: '40px 0',
+      padding: '40px 8px',
 
       [theme.breakpoints.up('sm')]: {
-        padding: '64px 0',
+        padding: '64px 24px',
       },
 
       '& img': {
@@ -17,64 +18,50 @@ function styles(theme) {
     },
 
     inner: {
-      [theme.breakpoints.up('md')]: {
+      [theme.breakpoints.up('sm')]: {
         display: 'flex',
+        justifyContent: 'space-between',
       },
     },
 
-    phone: {
-      color: '#607289',
-      fontSize: 23,
-      fontWeight: 500,
-      lineHeight: '22px',
-      paddingBottom: 3,
+    phoneContainer: {
+      flexGrow: 1,
+      textAlign: 'center',
+      marginBottom: 43,
 
-      [theme.breakpoints.down('xs')]: {
-        textAlign: 'center',
+      [theme.breakpoints.up('sm')]: {
+        textAlign: 'left',
+        marginBottom: 0,
       },
+    },
+
+    phoneNum: {
+      fontSize: 23,
+      lineHeight: '23px',
+    },
+
+    phoneMultiple: {
+      fontSize: 23,
+      lineHeight: '23px',
+      marginBottom: 8,
     },
 
     phoneHint: {
-      color: '#a1afbf',
       fontSize: 10,
-      letterSpacing: 0.2,
-      lineHeight: '12px',
-
-      [theme.breakpoints.down('xs')]: {
-        textAlign: 'center',
-      },
+      letterSpacing: '0.2px',
+      margin: 0,
     },
 
     store: {
+      padding: '24px 0',
+
       [theme.breakpoints.down('xs')]: {
-        justifyContent: 'center',
-      },
-
-      [theme.breakpoints.up('md')]: {
-        paddingRight: 32,
-      },
-
-      '& a': {
-        display: 'inline-block',
-
-        [theme.breakpoints.up('md')]: {
-          display: 'block',
-        },
-      },
-    },
-
-    appstore: {
-      marginRight: 8,
-
-      [theme.breakpoints.up('md')]: {
-        marginRight: 0,
-        marginBottom: 8,
+        justifyContent: 'space-between',
       },
     },
 
     copyright: {
-      paddingBottom: 24,
-      width: 296,
+      maxWidth: 272,
 
       [theme.breakpoints.down('xs')]: {
         margin: '0 auto',
@@ -98,18 +85,14 @@ function styles(theme) {
     },
 
     social: {
-      margin: '44px 0',
+      marginBottom: 43,
 
       [theme.breakpoints.down('xs')]: {
         justifyContent: 'center',
       },
 
       [theme.breakpoints.up('sm')]: {
-        margin: '32px 0 35px',
-      },
-
-      [theme.breakpoints.up('md')]: {
-        margin: '0 0 30px',
+        marginBottom: 29,
       },
     },
 
@@ -140,17 +123,10 @@ function styles(theme) {
       color: '#a1afbf',
       fontSize: 11,
       lineHeight: '18px',
-      paddingTop: 24,
 
       [theme.breakpoints.up('sm')]: {
         fontSize: 12,
-        paddingTop: 48,
-      },
-
-      [theme.breakpoints.up('md')]: {
-        fontSize: 14,
-        lineHeight: '20px',
-        paddingTop: 40,
+        paddingTop: 16,
       },
     },
 

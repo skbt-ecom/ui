@@ -1,12 +1,11 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
+import withSpaceForHelperTxt from '../HOCs/withSpaceForHelperTxt';
 
-const TextFieldComponent = React.memo(props => {
-  return <TextField {...props} />;
-});
-
-TextFieldComponent.defaultProps = {
-  variant: 'outlined',
+const TextFieldComponent = (props, ref) => {
+  return <TextField {...props} ref={ref} variant={'outlined'} />;
 };
 
-export default TextFieldComponent;
+const ForwardedTextFieldComponent = React.forwardRef(TextFieldComponent);
+
+export default React.memo(withSpaceForHelperTxt(ForwardedTextFieldComponent));

@@ -11,6 +11,11 @@ function styles(theme) {
       padding: 0,
       fontFamily: theme.typography.fontFamily,
       background: 'transparent',
+      '& > div': {
+        display: 'none',
+        [theme.breakpoints.up('sm')]: { display: 'block' },
+      },
+      '& div:first-child': { display: 'block' },
     },
 
     iconContainer: {
@@ -54,14 +59,14 @@ function styles(theme) {
     },
 
     labelHorizontal: {
-      fontSize: 14,
+      fontSize: 16,
 
       [theme.breakpoints.up('sm')]: {
-        fontSize: 16,
+        fontSize: 11,
       },
 
       [theme.breakpoints.up('md')]: {
-        fontSize: 18,
+        fontSize: 20,
       },
     },
 
@@ -74,7 +79,6 @@ function styles(theme) {
       [theme.breakpoints.up('sm')]: {
         fontSize: 14,
         paddingLeft: w + pr - ml,
-        marginLeft: ml,
       },
     },
 
@@ -89,7 +93,8 @@ function styles(theme) {
     },
 
     connectorVertical: {
-      borderLeft: '1px solid ' + color,
+      borderLeft: 0,
+      // borderLeft: '1px solid ' + color,
       marginBottom: 8,
       minHeight: 30,
       marginLeft: 12,
@@ -101,10 +106,22 @@ function styles(theme) {
     },
 
     connectorHorizontal: {
-      borderTop: '1px solid ' + color,
+      // borderTop: '1px solid ' + color,
+      justifyContent: 'center',
       flex: '1 1 auto',
       margin: '0 3px',
+      [theme.breakpoints.up('sm')]: {
+        justifyContent: 'normal',
+      },
     },
+    connectorActive: {
+      '& + div': { display: 'block' },
+    },
+    hideXs: {
+      display: 'none !important',
+      [theme.breakpoints.up('sm')]: { display: 'block !important' },
+    },
+    connectorDisabled: {},
   };
 }
 

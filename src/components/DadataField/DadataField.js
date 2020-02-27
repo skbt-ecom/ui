@@ -3,27 +3,24 @@ import Autorenew from '@material-ui/icons/Autorenew';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Autosuggest from 'react-autosuggest';
 import TextField from '@material-ui/core/TextField';
-import Popper from '@material-ui/core/Popper';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 
 import { getSuggestionValue } from './helpers';
 import getDadata from './getDadata';
 import debounce from '../../utils/debounce';
+import withSpaceForHelperTxt from '../HOCs/withSpaceForHelperTxt';
 
 import useStyles from './styles';
 
 function renderInputComponent(inputProps) {
-  const { classes, inputRef = () => {}, ref, isLoading, ...other } = inputProps;
+  const { classes, isLoading, ...other } = inputProps;
 
   return (
     <TextField
       variant={'outlined'}
+      multiline
       InputProps={{
-        inputRef: node => {
-          ref(node);
-          inputRef(node);
-        },
         classes: {
           input: classes.input,
         },
@@ -39,7 +36,7 @@ function renderInputComponent(inputProps) {
   );
 }
 
-function renderSuggestion(suggestion, { query, isHighlighted }) {
+function renderSuggestion(suggestion, { isHighlighted }) {
   return (
     <MenuItem component="div" selected={isHighlighted}>
       <div>{suggestion.value}</div>
@@ -47,26 +44,26 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
   );
 }
 
-export default React.memo(function IntegrationAutosuggest(props) {
-  const classes = useStyles();
+const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
+  const classes = useStyles(props);
   const [state, setState] = useState({
-    single: props.value || '',
+    single: typeof props.value === 'string' ? props.value : '',
   });
   const [stateSuggestions, setStateSuggestions] = useState([]);
-  const [anchorEl, setAnchorEl] = React.useState(null);
 
   const [isLoading, setIsLoading] = useState(false);
 
   const isSuggestionSelected = useRef(false);
-  const currentSuggestion = useRef({});
+  const currentSuggestion = useRef(null);
 
   const inputValue = useRef('');
   const setDebouncedSuggestions = useRef(
-    debounce(inputValue => {
-      const { type, dadataOptions } = props;
-      getDadata(type, inputValue, dadataOptions).then(({ suggestions }) => {
-        setStateSuggestions(suggestions);
-      });
+    debounce((inputValue, dadataOptions) => {
+      getDadata(props.type, inputValue, dadataOptions).then(
+        ({ suggestions }) => {
+          setStateSuggestions(suggestions);
+        }
+      );
     }, 500)
   );
 
@@ -79,7 +76,7 @@ export default React.memo(function IntegrationAutosuggest(props) {
 
   const getSuggestions = value => {
     inputValue.current = value.toLowerCase();
-    setDebouncedSuggestions.current(inputValue.current);
+    setDebouncedSuggestions.current(inputValue.current, props.dadataOptions);
   };
 
   const handleSuggestionsFetchRequested = ({ value }) => {
@@ -101,14 +98,13 @@ export default React.memo(function IntegrationAutosuggest(props) {
   };
 
   const onSuggestionSelected = (event, { suggestion }) => {
-    const { type, dadataOptions } = props;
+    const { type } = props;
     isSuggestionSelected.current = true;
     // spike, because dadata not returns postal code
     // we must do specific query for only one suggestion
     if (type === 'address' && !suggestion.data.postal_code) {
       setIsLoading(true);
       getDadata(type, suggestion.unrestricted_value, {
-        ...dadataOptions,
         count: 1,
         restrict_value: true,
       }).then(res => {
@@ -167,9 +163,6 @@ export default React.memo(function IntegrationAutosuggest(props) {
           value: state.single,
           onChange: handleChange,
           isLoading,
-          inputRef: node => {
-            setAnchorEl(node);
-          },
           ...otherInputProps,
           onBlur,
         }}
@@ -178,22 +171,14 @@ export default React.memo(function IntegrationAutosuggest(props) {
           suggestionsList: classes.suggestionsList,
           suggestion: classes.suggestion,
         }}
-        renderSuggestionsContainer={({ containerProps, children }) => (
-          <Popper
-            anchorEl={anchorEl}
-            open={Boolean(children)}
-            className={classes.popper}
-          >
-            <Paper
-              square
-              {...containerProps}
-              style={{ width: anchorEl ? anchorEl.clientWidth : undefined }}
-            >
-              {children}
-            </Paper>
-          </Popper>
+        renderSuggestionsContainer={options => (
+          <Paper {...options.containerProps} square>
+            {options.children}
+          </Paper>
         )}
       />
     </div>
   );
 });
+
+export default withSpaceForHelperTxt(DadataComponent);

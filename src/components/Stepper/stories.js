@@ -1,7 +1,6 @@
 import React from 'react';
 // Import the storybook libraries
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { muiTheme } from 'storybook-addon-material-ui';
 
 // Import our component from this folder
@@ -52,4 +51,4 @@ storiesOf('Stepper', module)
   .add('Vertical', () => (
     <Stepper steps={stepsVertical} orientation="vertical" />
   ))
-  .add('Horizontal', () => <Stepper steps={stepsHorizontal} activeStep={2} />);
+  .add('Horizontal', () => <Stepper steps={stepsHorizontal} activeStep={1} />);
