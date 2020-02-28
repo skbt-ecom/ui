@@ -25,6 +25,7 @@ const WrappedField = props => {
   return <Field {...propsByType} {...props} />;
 };
 
+WrappedField.displayName = 'DadataField';
 WrappedField.defaultProps = {
   component: DadataField,
   defaultValue: '',

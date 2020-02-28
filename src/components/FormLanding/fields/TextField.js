@@ -11,5 +11,6 @@ const TextField = React.memo(props => {
 });
 
 const WrappedField = props => <Field {...props} component={TextField} />;
+WrappedField.displayName = 'TextField';
 
 export default WrappedField;

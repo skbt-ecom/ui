@@ -18,6 +18,9 @@ const useStylesLabel = makeStyles({
   },
   label: { paddingTop: 12 },
 });
+const useStylesHelperText = makeStyles({
+  root: {},
+});
 
 const CheckboxComponent = React.memo(props => {
   const checkboxClasses = props.classes
@@ -25,6 +28,9 @@ const CheckboxComponent = React.memo(props => {
     : {};
   const labelClasses = props.classes
     ? useStylesLabel(getClassesFromProps(props, 'labelClasses'))
+    : {};
+  const helperTextClasses = props.classes
+    ? useStylesHelperText(getClassesFromProps(props, 'helperTextClasses'))
     : {};
 
   const { label, error, helperText, classes, value, ...restProps } = props;
@@ -55,7 +61,11 @@ const CheckboxComponent = React.memo(props => {
           }}
         />
       </FormGroup>
-      {helperText && <FormHelperText>{helperText}</FormHelperText>}
+      {helperText && (
+        <FormHelperText classes={helperTextClasses}>
+          {helperText}
+        </FormHelperText>
+      )}
     </FormControl>
   );
 });

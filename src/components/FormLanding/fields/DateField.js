@@ -15,6 +15,7 @@ const WrappedField = ({ validAge, ...props }) => {
   return <Field validate={validator} {...props} />;
 };
 
+WrappedField.displayName = 'DateField';
 WrappedField.defaultProps = {
   component: DateField,
   defaultValue: '',

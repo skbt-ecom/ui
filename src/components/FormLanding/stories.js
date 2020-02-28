@@ -13,6 +13,7 @@ import DadataField from './fields/DadataField';
 import AddressField from './fields/AddressField';
 import MaskedField from './fields/MaskedField';
 import SelectField from './fields/SelectField';
+import AcceptmentField from './fields/AcceptmentField';
 import SubmitButton from './fields/SubmitButton';
 
 import theme from '../../style/theme';
@@ -43,6 +44,7 @@ storiesOf('FormLanding', module)
       />
       <AddressField name={'address'} />
       <SelectField name={'select'} items={SELECT_ITEMS} />
+      <AcceptmentField name={'agree'} />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>
   ));

@@ -3,7 +3,7 @@ import MaterialSelect from '../../Select';
 
 import { Field } from '../FormContext/Field';
 
-const Select = React.memo(props => {
+const SelectField = React.memo(props => {
   const onChange = e => {
     props.onChange(e.target.value);
   };
@@ -13,8 +13,9 @@ const Select = React.memo(props => {
 
 const WrappedField = props => <Field {...props} />;
 
+WrappedField.displayName = 'SelectField';
 WrappedField.defaultProps = {
-  component: Select,
+  component: SelectField,
   fullWidth: true,
 };
 

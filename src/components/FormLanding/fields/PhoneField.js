@@ -3,10 +3,16 @@ import MaterialPhoneField from '../../PhoneField';
 import { Field } from '../FormContext/Field';
 import { phoneValidator } from '../validators/phoneValidator';
 
+import useStyles from './styles';
+
 const PhoneField = React.memo(props => <MaterialPhoneField {...props} />);
 
-const WrappedField = props => <Field {...props} />;
+const WrappedField = props => {
+  const classes = useStyles(props);
+  return <Field {...props} />;
+};
 
+WrappedField.displayName = 'PhoneField';
 WrappedField.defaultProps = {
   component: PhoneField,
   label: 'Телефон',

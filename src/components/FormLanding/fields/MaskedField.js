@@ -9,6 +9,7 @@ const MaskedField = React.memo(props => {
 
 const WrappedField = props => <Field {...props} />;
 
+WrappedField.displayName = 'MaskedField';
 WrappedField.defaultProps = {
   component: MaskedField,
   validate: requiredValidator,

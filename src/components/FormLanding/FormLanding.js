@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Container from '../Container';
 import { Form } from './FormContext/Form';
 
+import useStyles from './styles';
+
 const FormLanding = React.memo(props => {
+  const classes = useStyles(props);
+
   const onChangeFields = updates => {
     console.log('updates', updates);
     props.onChangeFields(updates);
@@ -15,11 +18,21 @@ const FormLanding = React.memo(props => {
   };
 
   return (
-    <Container>
+    <div className={classes.container}>
       <Form onSubmit={onSubmit} onChangeFields={onChangeFields}>
-        {props.children}
+        {React.Children.map(props.children, child => (
+          <div
+            className={`${classes.fieldWrapper} ${
+              child.type.displayName === 'Acceptment'
+                ? classes.fieldWrapperAcceptment
+                : ''
+            }`}
+          >
+            {child}
+          </div>
+        ))}
       </Form>
-    </Container>
+    </div>
   );
 });
 

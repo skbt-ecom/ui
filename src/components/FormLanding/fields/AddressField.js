@@ -16,5 +16,6 @@ WrappedField.defaultProps = {
   defaultValue: null,
   helperText: { addressDadata: 'Район, город, улица, дом' },
 };
+WrappedField.displayName = 'AddressField';
 
 export default WrappedField;
