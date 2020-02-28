@@ -43,7 +43,7 @@ storiesOf('FormLanding', module)
         name={'fio'}
       />
       <AddressField name={'address'} />
-      <SelectField name={'select'} items={SELECT_ITEMS} />
+      <SelectField name={'select'} items={SELECT_ITEMS} defaultValue={''} />
       <AcceptmentField name={'agree'} />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>

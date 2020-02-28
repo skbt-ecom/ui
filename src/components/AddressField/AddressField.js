@@ -3,7 +3,7 @@ import React, { useState, useCallback, useEffect, useRef } from 'react';
 import DadataField from '../DadataField';
 import TextField from '../TextField';
 import Checkbox from '../Checkbox/Checkbox';
-import getClasses from './styles';
+import { useStylesAddressDadata, useStylesFlatInfo } from './styles';
 
 const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({
   ...dadataValue,
@@ -15,7 +15,10 @@ const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({
 });
 
 const AddressField = React.memo(props => {
-  const classes = useCallback(getClasses(props), [props.classes]);
+  const addressDadataClasses = useStylesAddressDadata(
+    props.classes.addressDadataClasses
+  );
+  const flatInfoClasses = useStylesFlatInfo(props.classes.flatInfoClasses);
 
   const [addressDadata, setAddressDadata] = useState(null);
   const [flat, setFlat] = useState('');
@@ -64,7 +67,7 @@ const AddressField = React.memo(props => {
 
   return (
     <div>
-      <div className={classes.addressDadataClasses.container}>
+      <div className={addressDadataClasses.container}>
         <DadataField
           onChange={handleAddressDadataChange}
           type={'address'}
@@ -74,14 +77,14 @@ const AddressField = React.memo(props => {
           {...addressDadataErrorProps}
         />
       </div>
-      <div className={classes.flatInfoClasses.container}>
+      <div className={flatInfoClasses.container}>
         <TextField
           label={'Квартира'}
           onChange={handleFlatChange}
           value={flat}
           disabled={isNoFlat}
           classes={{
-            root: classes.flatInfoClasses.flatField,
+            root: flatInfoClasses.flatField,
           }}
           {...flatErrorProps}
         />
@@ -90,6 +93,7 @@ const AddressField = React.memo(props => {
           label={'Нет номера квартиры'}
           color={'primary'}
           checked={isNoFlat}
+          classes={{ labelClasses: { root: flatInfoClasses.checkbox } }}
         />
       </div>
     </div>
