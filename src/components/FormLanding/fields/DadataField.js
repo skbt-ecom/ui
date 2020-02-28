@@ -6,36 +6,30 @@ import { addressValidator } from '../validators/addressValidator';
 
 const fioDefaultProps = {
   label: 'Фамилия Имя Отчество',
-  name: 'fio',
-  defaultValue: '',
   validate: fioValidator,
-  validateOnBlur: false,
-  fullWidth,
 };
 
 const addressDefaultProps = {
   label: 'Адрес',
   name: 'address',
-  defaultValue: '',
   validate: addressValidator,
-  validateOnBlur: false,
-  fullWidth,
 };
 
-const DadataField = React.memo(props => {
-  const onChange = data => {
-    props.onChange(data);
-  };
+const DadataField = React.memo(props => <MaterialDadataField {...props} />);
 
-  return <MaterialDadataField {...props} onChange={onChange} />;
-});
-
-const WrappedDadataField = props => {
+const WrappedField = props => {
   const { type } = props;
   const propsByType =
     type === 'fio' ? { ...fioDefaultProps } : { ...addressDefaultProps };
 
-  return <Field {...propsByType} {...props} component={DadataField} />;
+  return <Field {...propsByType} {...props} />;
 };
 
-export default WrappedDadataField;
+WrappedField.defaultProps = {
+  component: DadataField,
+  defaultValue: '',
+  validateOnBlur: false,
+  fullWidth: true,
+};
+
+export default WrappedField;

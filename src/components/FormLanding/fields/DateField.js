@@ -7,19 +7,19 @@ import { birthdateValidator } from '../validators/birthdateValidator';
 
 const DateField = React.memo(props => <MaterialDateField {...props} />);
 
-const WrappedDateField = ({ validAge, ...props }) => {
+const WrappedField = ({ validAge, ...props }) => {
   const validator = validAge
     ? value => birthdateValidator(value, validAge)
     : dateValidator;
 
-  return (
-    <Field
-      validate={validator}
-      defaultValue={''}
-      {...props}
-      component={DateField}
-    />
-  );
+  return <Field validate={validator} {...props} />;
 };
 
-export default WrappedDateField;
+WrappedField.defaultProps = {
+  component: DateField,
+  defaultValue: '',
+  validAge: false,
+  fullWidth: true,
+};
+
+export default WrappedField;

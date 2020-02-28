@@ -10,9 +10,18 @@ import FormLanding from './FormLanding';
 import PhoneField from './fields/PhoneField';
 import DateField from './fields/DateField';
 import DadataField from './fields/DadataField';
+import AddressField from './fields/AddressField';
+import MaskedField from './fields/MaskedField';
+import SelectField from './fields/SelectField';
 import SubmitButton from './fields/SubmitButton';
 
 import theme from '../../style/theme';
+
+const SELECT_ITEMS = [
+  { value: 1, label: 'one' },
+  { value: 2, label: 'two' },
+  { value: 3, label: 'three' },
+];
 
 storiesOf('FormLanding', module)
   .addDecorator(muiTheme([theme]))
@@ -21,14 +30,19 @@ storiesOf('FormLanding', module)
       onChangeFields={action('onChangeFields')}
       onSubmit={action('onSubmit')}
     >
-      <PhoneField value={123} />
+      <PhoneField name={'phone'} value={123} />
       <DateField
         name={'birthdate'}
+        label={'Date'}
         // validAge={20} // if required birthdateValidator
       />
+      <MaskedField name={'masked'} label={'Masked'} />
       <DadataField
         type={'fio'} // or address
+        name={'fio'}
       />
+      <AddressField name={'address'} />
+      <SelectField name={'select'} items={SELECT_ITEMS} />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>
   ));
