@@ -9,7 +9,7 @@ import useStyles from './styles';
 
 const RadioGroupField = React.memo(props => {
   const classes = useStyles(props);
-  const { label, items, name, value } = props;
+  const { label, items, name, value, defaultValue } = props;
 
   const handleChange = e => {
     const { value } = e.target;
@@ -29,6 +29,7 @@ const RadioGroupField = React.memo(props => {
         name={name}
         className={classes.group}
         value={value}
+        defaultValue={defaultValue}
         onChange={handleChange}
       >
         {items.map(({ value, label }, i) => (
