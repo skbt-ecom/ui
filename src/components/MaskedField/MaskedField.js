@@ -46,9 +46,12 @@ const MaskedField = React.memo(props => {
     onBlur,
     thousandsSeparator = '',
     dispatch,
+    lazy,
+    placeholderChar,
     InputProps,
     ...restProps
   } = props;
+
   const inputProps = {
     onAccept: handleAccept,
     mask,
@@ -57,6 +60,8 @@ const MaskedField = React.memo(props => {
     max,
     thousandsSeparator,
     dispatch,
+    lazy,
+    placeholderChar,
     onBlur: handleOnBlur,
   };
   return (

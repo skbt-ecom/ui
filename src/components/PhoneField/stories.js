@@ -38,7 +38,8 @@ storiesOf('PhoneField', module)
     <PhoneFieldWrapper
       label={'Телефон'}
       onChange={action('onChange')}
-      placeholder={'+7(000)000-00-00'}
       onBlur={action('onBlur')}
+      // lazy={false}
+      // placeholderChar={' '}
     />
   ));
