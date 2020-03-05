@@ -46,7 +46,7 @@ storiesOf('FormLanding', module)
       <AddressField name={'address'} />
       <SelectField name={'select'} items={SELECT_ITEMS} />
       <EmailField name={'email'} label={'email'} />
-      <AcceptmentField name={'agree'} />
+      <AcceptmentField name={'agree'} color="secondary" />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>
   ));

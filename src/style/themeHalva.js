@@ -1,11 +1,12 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const PRIMARY_COLOR = '#ff4e50';
+const SECONDARY_COLOR = '#9e9e9e';
 
 const theme = createMuiTheme({
   palette: {
     primary: { main: PRIMARY_COLOR },
-    secondary: { main: '#fff' },
+    secondary: { main: SECONDARY_COLOR },
   },
   overrides: {
     MuiButton: {

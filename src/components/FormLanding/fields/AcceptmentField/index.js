@@ -14,8 +14,8 @@ const Acceptment = React.memo(props => {
 
   return (
     <Checkbox
-      {...props}
       color="primary"
+      {...props}
       classes={{
         labelClasses: { label: classes.personalLabel },
         helperTextClasses: { root: classes.helperTextRoot },
