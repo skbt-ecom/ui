@@ -14,7 +14,6 @@ const PHONE_MASKS = [
 const PhoneField = React.memo(props => {
   return (
     <MaskedField
-      {...props}
       type="tel"
       mask={PHONE_MASKS}
       dispatch={(appended, dynamicMasked) => {
@@ -26,6 +25,7 @@ const PhoneField = React.memo(props => {
             : dynamicMasked.compiledMasks[1];
         }
       }}
+      {...props}
     />
   );
 });
