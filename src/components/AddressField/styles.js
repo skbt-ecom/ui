@@ -1,28 +1,21 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { getClassesFromProps } from '../../utils';
 
-const useStylesAddressDadata = makeStyles({
-  container: { marginBottom: '45px' },
+export const useStylesAddressDadata = makeStyles({
+  container: { marginBottom: 10 },
 });
-const useStylesFlatInfo = makeStyles({
-  flatField: { marginRight: '30px' },
-  container: {
-    display: 'flex',
-    alignItems: 'center',
+
+export const useStylesFlatInfo = makeStyles(
+  {
+    checkbox: {
+      marginTop: 8,
+    },
+    flatField: {
+      marginRight: 30,
+    },
+    container: {
+      display: 'flex',
+      alignItems: 'flex-start',
+    },
   },
-});
-
-const getClasses = props => {
-  return {
-    addressDadataClasses: props.classes
-      ? useStylesAddressDadata(
-          getClassesFromProps(props, 'addressDadataClasses')
-        )
-      : {},
-    flatInfoClasses: props.classes
-      ? useStylesFlatInfo(getClassesFromProps(props, 'flatInfoClasses'))
-      : {},
-  };
-};
-
-export default getClasses;
+  { index: 0 }
+);

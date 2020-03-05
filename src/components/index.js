@@ -31,6 +31,7 @@ export { default as Select } from './Select';
 export { default as Uploader } from './Uploader';
 export { default as CircularProgress } from './CircularProgress';
 export { default as PageStatus } from './PageStatus';
+export { default as FormLanding } from './FormLanding';
 export { default as DatePicker } from './DatePicker';
 export { default as ButtonESIA } from './Button/ButtonESIA';
 export { default as Modal } from './Modal';
