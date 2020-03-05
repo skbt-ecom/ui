@@ -15,6 +15,7 @@ import MaskedField from './fields/MaskedField';
 import SelectField from './fields/SelectField';
 import EmailField from './fields/EmailField';
 import AcceptmentField from './fields/AcceptmentField';
+import AutosuggestField from './fields/AutosuggestField';
 import SubmitButton from './fields/SubmitButton';
 
 import theme from '../../style/theme';
@@ -24,7 +25,23 @@ const SELECT_ITEMS = [
   { value: 2, label: 'two' },
   { value: 3, label: 'three' },
 ];
-
+const AUTOSUGGEST_ITEMS = [
+  {
+    kladr_id: '22',
+    value: 'Алтайский край',
+    label: 'Алтайский край',
+  },
+  {
+    kladr_id: '28',
+    value: 'Амурская область',
+    label: 'Амурская область',
+  },
+  {
+    kladr_id: '29',
+    value: 'Архангельская область',
+    label: 'Архангельская область',
+  },
+];
 storiesOf('FormLanding', module)
   .addDecorator(muiTheme([theme]))
   .add('Default', () => (
@@ -46,6 +63,7 @@ storiesOf('FormLanding', module)
       <AddressField name={'address'} />
       <SelectField name={'select'} items={SELECT_ITEMS} />
       <EmailField name={'email'} label={'email'} />
+      <AutosuggestField name={'autosuggest'} suggestions={AUTOSUGGEST_ITEMS} />
       <AcceptmentField name={'agree'} color="secondary" />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>
