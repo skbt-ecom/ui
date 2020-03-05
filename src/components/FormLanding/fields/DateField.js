@@ -2,8 +2,7 @@ import React from 'react';
 import MaterialDateField from '../../DateField';
 import { Field } from '../FormContext/Field';
 
-import { dateValidator } from '../validators/dateValidator';
-import { birthdateValidator } from '../validators/birthdateValidator';
+import { dateValidator, birthdateValidator } from '../validators';
 
 const DateField = React.memo(props => <MaterialDateField {...props} />);
 

@@ -17,6 +17,7 @@ WrappedField.displayName = 'SelectField';
 WrappedField.defaultProps = {
   component: SelectField,
   fullWidth: true,
+  defaultValue: '',
 };
 
 export default WrappedField;

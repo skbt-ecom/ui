@@ -13,6 +13,7 @@ import DadataField from './fields/DadataField';
 import AddressField from './fields/AddressField';
 import MaskedField from './fields/MaskedField';
 import SelectField from './fields/SelectField';
+import EmailField from './fields/EmailField';
 import AcceptmentField from './fields/AcceptmentField';
 import SubmitButton from './fields/SubmitButton';
 
@@ -43,7 +44,8 @@ storiesOf('FormLanding', module)
         name={'fio'}
       />
       <AddressField name={'address'} />
-      <SelectField name={'select'} items={SELECT_ITEMS} defaultValue={''} />
+      <SelectField name={'select'} items={SELECT_ITEMS} />
+      <EmailField name={'email'} label={'email'} />
       <AcceptmentField name={'agree'} />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>

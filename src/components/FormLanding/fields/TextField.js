@@ -10,7 +10,12 @@ const TextField = React.memo(props => {
   return <MaterialTexteField {...props} onChange={onChange} />;
 });
 
-const WrappedField = props => <Field {...props} component={TextField} />;
+const WrappedField = props => <Field {...props} />;
 WrappedField.displayName = 'TextField';
+WrappedField.defaultProps = {
+  component: TextField,
+  defaultValue: '',
+  fullWidth: true,
+};
 
 export default WrappedField;
