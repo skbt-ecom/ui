@@ -5,6 +5,10 @@ const useStyles = makeStyles({
     minHeight: 78,
     marginBottom: 10,
   },
+  fieldWrapperAcceptment: {
+    minHeight: 'auto',
+    marginBottom: 10,
+  },
 });
 
 export default useStyles;

@@ -15,17 +15,7 @@ const FormLanding = (props, ref) => {
         onChangeFields={props.onChangeFields}
         ref={ref}
       >
-        {React.Children.map(props.children, child => (
-          <div
-            className={`${classes.fieldWrapper} ${
-              child.type.displayName === 'Acceptment'
-                ? classes.fieldWrapperAcceptment
-                : ''
-            }`}
-          >
-            {child}
-          </div>
-        ))}
+        {props.children}
       </Form>
     </div>
   );

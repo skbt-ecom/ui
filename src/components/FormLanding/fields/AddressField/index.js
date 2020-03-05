@@ -3,6 +3,7 @@ import MaterialAddressField from '../../../AddressField';
 import { Field } from '../../FormContext/Field';
 import { addressWithFlatValidator } from '../../validators';
 
+import useStyles from '../styles';
 import { useAddressDadataStyles, useFlatInfoStyles } from './styles';
 
 const AddressField = React.memo(props => {
@@ -21,7 +22,12 @@ const AddressField = React.memo(props => {
 });
 
 const WrappedField = props => {
-  return <Field {...props} />;
+  const classes = useStyles(props);
+  return (
+    <div className={classes.fieldWrapper}>
+      <Field {...props} />
+    </div>
+  );
 };
 
 WrappedField.defaultProps = {

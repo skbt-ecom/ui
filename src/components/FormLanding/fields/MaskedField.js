@@ -3,11 +3,20 @@ import MaterialMaskedField from '../../MaskedField';
 import { Field } from '../FormContext/Field';
 import { requiredValidator } from '../validators/requiredValidator';
 
+import useStyles from './styles';
+
 const MaskedField = React.memo(props => {
   return <MaterialMaskedField {...props} />;
 });
 
-const WrappedField = props => <Field {...props} />;
+const WrappedField = props => {
+  const classes = useStyles(props);
+  return (
+    <div className={classes.fieldWrapper}>
+      <Field {...props} />
+    </div>
+  );
+};
 
 WrappedField.displayName = 'MaskedField';
 WrappedField.defaultProps = {

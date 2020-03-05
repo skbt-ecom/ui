@@ -9,7 +9,11 @@ const PhoneField = React.memo(props => <MaterialPhoneField {...props} />);
 
 const WrappedField = props => {
   const classes = useStyles(props);
-  return <Field {...props} />;
+  return (
+    <div className={classes.fieldWrapper}>
+      <Field {...props} />
+    </div>
+  );
 };
 
 WrappedField.displayName = 'PhoneField';

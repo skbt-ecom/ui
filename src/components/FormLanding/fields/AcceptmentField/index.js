@@ -3,10 +3,11 @@ import Checkbox from '../../../Checkbox/Checkbox';
 import { Field } from '../../FormContext/Field';
 import Link from '../../../Link';
 
-import useStyles from './styles';
+import useAcceptmentStyles from './styles';
+import useStyles from '../styles';
 
 const Acceptment = React.memo(props => {
-  const classes = useStyles(props);
+  const classes = useAcceptmentStyles(props);
 
   const onChange = e => {
     props.onChange(e.target.checked);
@@ -40,7 +41,14 @@ const Acceptment = React.memo(props => {
   );
 });
 
-const WrappedField = props => <Field {...props} />;
+const WrappedField = props => {
+  const classes = useStyles(props);
+  return (
+    <div className={classes.fieldWrapperAcceptment}>
+      <Field {...props} />
+    </div>
+  );
+};
 
 WrappedField.displayName = 'Acceptment';
 WrappedField.defaultProps = {
