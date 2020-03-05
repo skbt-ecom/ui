@@ -30,6 +30,7 @@ const theme = createMuiTheme({
         },
       },
       containedSecondary: {
+        backgroundColor: '#fff',
         color: PRIMARY_COLOR,
         '&:hover': {
           backgroundColor: '#f5f5f5',
