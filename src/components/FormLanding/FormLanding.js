@@ -8,8 +8,7 @@ import useStyles from './styles';
 const FormLanding = React.memo(props => {
   const classes = useStyles(props);
 
-  const onChangeFields = updates => {
-    console.log('updates', updates);
+  const onChangeFields = (updates, fieldKey) => {
     props.onChangeFields(updates);
   };
 
