@@ -8,17 +8,9 @@ import useStyles from './styles';
 const FormLanding = React.memo(props => {
   const classes = useStyles(props);
 
-  const onChangeFields = (updates, fieldKey) => {
-    props.onChangeFields(updates);
-  };
-
-  const onSubmit = values => {
-    props.onSubmit(values);
-  };
-
   return (
     <div className={classes.container}>
-      <Form onSubmit={onSubmit} onChangeFields={onChangeFields}>
+      <Form onSubmit={props.onSubmit} onChangeFields={props.onChangeFields}>
         {React.Children.map(props.children, child => (
           <div
             className={`${classes.fieldWrapper} ${
