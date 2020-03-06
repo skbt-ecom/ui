@@ -7,7 +7,7 @@ import useStyles from './styles';
 
 const DateField = React.memo(props => <MaterialDateField {...props} />);
 
-const WrappedField = ({ validAge, ...props }) => {
+const WrappedField = ({ validAge, classsesComponent, ...props }) => {
   const classes = useStyles(props);
   const validator = validAge
     ? value => birthdateValidator(value, validAge)
@@ -15,7 +15,7 @@ const WrappedField = ({ validAge, ...props }) => {
 
   return (
     <div className={classes.fieldWrapper}>
-      <Field validate={validator} {...props} />
+      <Field validate={validator} {...props} classes={classsesComponent} />
     </div>
   );
 };

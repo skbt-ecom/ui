@@ -9,11 +9,11 @@ const AutosuggestField = React.memo(props => {
   return <MaterialAutosuggest {...props} />;
 });
 
-const WrappedField = props => {
+const WrappedField = ({ classsesComponent, ...props }) => {
   const classes = useStyles(props);
   return (
     <div className={classes.fieldWrapper}>
-      <Field {...props} />
+      <Field {...props} classes={classsesComponent} />
     </div>
   );
 };

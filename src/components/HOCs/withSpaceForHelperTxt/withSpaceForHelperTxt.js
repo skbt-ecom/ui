@@ -2,7 +2,7 @@ import React from 'react';
 import useStyles from './styles';
 
 const withSpaceForHelperTxt = (WrappedComponent, styles = {}) => {
-  return props => {
+  const WithSpace = props => {
     const classes = useStyles({ ...styles, ...props });
     return (
       <div className={classes.root}>
@@ -10,6 +10,10 @@ const withSpaceForHelperTxt = (WrappedComponent, styles = {}) => {
       </div>
     );
   };
+
+  WithSpace.dispalyName = 'WithSpaceForHelperTxt';
+
+  return WithSpace;
 };
 
 export default withSpaceForHelperTxt;

@@ -157,13 +157,13 @@ const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
       <Autosuggest
         {...autosuggestProps}
         inputProps={{
-          classes,
           label,
           placeholder,
           value: state.single,
           onChange: handleChange,
           isLoading,
           ...otherInputProps,
+          classes,
           onBlur,
         }}
         theme={{

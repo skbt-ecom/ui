@@ -18,7 +18,7 @@ const addressDefaultProps = {
 
 const DadataField = React.memo(props => <MaterialDadataField {...props} />);
 
-const WrappedField = props => {
+const WrappedField = ({ classsesComponent, ...props }) => {
   const classes = useStyles(props);
   const { type } = props;
   const propsByType =
@@ -26,7 +26,7 @@ const WrappedField = props => {
 
   return (
     <div className={classes.fieldWrapper}>
-      <Field {...propsByType} {...props} />
+      <Field {...propsByType} {...props} classes={classsesComponent} />
     </div>
   );
 };

@@ -89,11 +89,11 @@ const AutoSuggestComponent = React.memo(function IntegrationAutosuggest(props) {
       <Autosuggest
         {...autosuggestProps}
         inputProps={{
-          classes,
           label,
           placeholder,
           onChange: handleChange,
           ...otherInputProps,
+          classes,
           value: value.label,
           onBlur,
         }}

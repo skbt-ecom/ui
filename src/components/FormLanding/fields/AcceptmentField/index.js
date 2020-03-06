@@ -41,11 +41,11 @@ const Acceptment = React.memo(props => {
   );
 });
 
-const WrappedField = props => {
+const WrappedField = ({ classsesComponent, ...props }) => {
   const classes = useStyles(props);
   return (
     <div className={classes.fieldWrapperAcceptment}>
-      <Field {...props} />
+      <Field {...props} classes={classsesComponent} />
     </div>
   );
 };

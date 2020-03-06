@@ -16,6 +16,7 @@ import SelectField from './fields/SelectField';
 import EmailField from './fields/EmailField';
 import AcceptmentField from './fields/AcceptmentField';
 import AutosuggestField from './fields/AutosuggestField';
+import TextField from './fields/TextField';
 import SubmitButton from './fields/SubmitButton';
 
 import theme from '../../style/theme';
@@ -64,7 +65,20 @@ storiesOf('FormLanding', module)
       <SelectField name={'select'} items={SELECT_ITEMS} />
       <EmailField name={'email'} label={'email'} />
       <AutosuggestField name={'autosuggest'} suggestions={AUTOSUGGEST_ITEMS} />
-      <AcceptmentField name={'agree'} color="secondary" />
-      <SubmitButton>Отправить</SubmitButton>
+      <AcceptmentField
+        name={'agree'}
+        color="secondary"
+        // classes={{ fieldWrapperAcceptment: 'styles.fieldWrapperAcceptment' }}
+      />
+      <TextField
+        name={'text'}
+        // classes={{ fieldWrapper: 'ololo' }} //if required pass classes to wrapper component
+        // classsesComponent={{ root: 'rololo' }} //if required pass classes to wrapped component
+      />
+      <SubmitButton
+      // classes={{ container: 'styles.buttonWrapper' }}
+      >
+        Отправить
+      </SubmitButton>
     </FormLanding>
   ));

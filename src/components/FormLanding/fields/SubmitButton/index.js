@@ -4,21 +4,20 @@ import { FormContext } from '../../FormContext/Form';
 
 import useStyles from './styles';
 
-const Button = props => {
+const Button = ({ classsesComponent, ...props }) => {
   const context = useContext(FormContext);
-  const classes = useStyles(props);
-
+  const classesWrapper = useStyles(props);
   const onClick = () => {
     context.onSubmit();
   };
 
   return (
-    <div className={classes.container}>
+    <div className={classesWrapper.container}>
       <MaterialButton
         color={'primary'}
         fullWidth
         {...props}
-        {...classes}
+        classes={classsesComponent}
         onClick={onClick}
       />
     </div>

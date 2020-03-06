@@ -12,11 +12,11 @@ const SelectField = React.memo(props => {
   return <MaterialSelect {...props} onChange={onChange} />;
 });
 
-const WrappedField = props => {
+const WrappedField = ({ classsesComponent, ...props }) => {
   const classes = useStyles(props);
   return (
     <div className={classes.fieldWrapper}>
-      <Field {...props} />
+      <Field {...props} classes={classsesComponent} />
     </div>
   );
 };
