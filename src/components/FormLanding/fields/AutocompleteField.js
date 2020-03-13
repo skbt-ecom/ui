@@ -1,12 +1,16 @@
 import React from 'react';
-import MaterialAutosuggest from '../../Autosuggest';
+import MaterialAutocompleteField from '../../AutocompleteField';
 import { Field } from '../FormContext/Field';
-import { autosuggestValidator } from '../validators';
+import { autocompleteValidator } from '../validators';
 
 import useStyles from './styles';
 
-const AutosuggestField = React.memo(props => {
-  return <MaterialAutosuggest {...props} />;
+const AutocompleteField = React.memo(props => {
+  const onChange = (_, value) => {
+    props.onChange(value);
+  };
+
+  return <MaterialAutocompleteField {...props} onChange={onChange} />;
 });
 
 const WrappedField = ({ classsesComponent, ...props }) => {
@@ -18,11 +22,11 @@ const WrappedField = ({ classsesComponent, ...props }) => {
   );
 };
 
-WrappedField.dislayName = 'AutosuggestField';
+WrappedField.dislayName = 'AutocompleteField';
 WrappedField.defaultProps = {
-  component: AutosuggestField,
-  validate: autosuggestValidator,
-  defaultValue: '',
+  component: AutocompleteField,
+  validate: autocompleteValidator,
+  defaultValue: null,
   suggestions: [],
   validateOnBlur: false,
   fullWidth: true,
