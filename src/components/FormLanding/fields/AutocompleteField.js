@@ -27,7 +27,7 @@ WrappedField.defaultProps = {
   component: AutocompleteField,
   validate: autocompleteValidator,
   defaultValue: null,
-  suggestions: [],
+  options: [],
   validateOnBlur: false,
   fullWidth: true,
 };
