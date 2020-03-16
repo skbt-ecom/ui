@@ -7,12 +7,18 @@ import { muiTheme } from 'storybook-addon-material-ui';
 // Import our component from this folder
 import Link from './Link';
 
-import theme from '../../style/theme';
+import theme from '../../style/themeHalva';
 
 storiesOf('Link', module)
   .addDecorator(muiTheme([theme]))
   .add('Default', () => (
-    <Link onClick={action('onClick')} component="button">
-      Button Link
-    </Link>
+    <>
+      <Link onClick={action('onClick')} component="button">
+        Button Link
+      </Link>
+      <br />
+      <Link onClick={action('onClick')} component="button" color="textPrimary">
+        Button Link
+      </Link>
+    </>
   ));

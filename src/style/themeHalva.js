@@ -100,6 +100,9 @@ const theme = createMuiTheme({
         color: '#757575',
       },
     },
+    MuiTypography: {
+      colorTextPrimary: { color: '#2b2e42' },
+    },
   },
 });
 
