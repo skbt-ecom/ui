@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(
-  theme => ({
+  {
     verifyCodeWrapper: {
       width: '180px',
       overflow: 'hidden',
@@ -28,21 +28,19 @@ const useStyles = makeStyles(
       fontWeight: '500',
       outline: 'none',
     },
-    helperTextRoot: {
-      fontFamily: theme.typography.fontFamily,
-      // color: theme.palette.secondary.main,
-      textAlign: 'center',
-      margin: 0,
-      position: 'sticky',
-      left: 0,
-    },
     formControlRoot: {
       width: '100%',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
     },
-  }),
+    errorTextRoot: {
+      textAlign: 'center',
+      marginBottom: 8,
+      position: 'sticky',
+      left: 0,
+    },
+  },
   { index: 0 }
 );
 

@@ -20,7 +20,7 @@ const acceptedKeys = [
   46,
 ];
 
-const VerifyCode = React.memo(props => {
+const VerifyCode = props => {
   const classes = useStyles(props);
   const { onChange, value, error, helperText } = props;
 
@@ -58,13 +58,14 @@ const VerifyCode = React.memo(props => {
           />
         </div>
       </div>
-      {helperText && (
-        <FormHelperText classes={{ root: classes.helperTextRoot }}>
-          {helperText}
+      {error && (
+        <FormHelperText classes={{ root: classes.errorTextRoot }}>
+          Неверный код
         </FormHelperText>
       )}
+      {helperText}
     </FormControl>
   );
-});
+};
 
-export default VerifyCode;
+export default React.memo(VerifyCode);
