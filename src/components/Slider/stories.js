@@ -42,7 +42,7 @@ const SliderWrapper = props => {
         onChangeCommitted={handleOnChangeCommitted}
         inputProps={inputProps}
         sliderProps={dynamicStepSliderProps}
-        min={150000} // if no initialValue using min value as initial
+        min={150000} // if no defaultValue using min value as initial
         max={30000000}
       />
     </>
@@ -57,8 +57,8 @@ storiesOf('Slider', module)
       label={'Сумма кредита'}
       inputProps={inputProps}
       sliderProps={sliderProps}
-      // initialValue={300}
-      min={100} // if no initialValue using min value as initial
+      // defaultValue={300}
+      min={100} // if no defaultValue using min value as initial
       max={2000}
       // value={500}
     />
@@ -84,7 +84,7 @@ storiesOf('Slider', module)
       sliderProps={sliderProps}
       min={150000}
       max={30000000}
-      value={2000000}
+      defaultValue={2000000}
       // withSpaceForHelperTxt
     />
   ))

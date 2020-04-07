@@ -13,7 +13,7 @@ import useStyles from './styles';
 const SliderComponent = React.memo(props => {
   const classes = useStyles(props);
   const [value, setValue] = useState(
-    props.initialValue || props.value || props.min
+    props.defaultValue || props.value || props.min
   );
 
   const handleSliderChange = (_event, newValue) => {
@@ -61,7 +61,7 @@ const SliderComponent = React.memo(props => {
       props.onChange(newValue);
     }
   };
-  const { sliderProps, inputProps, label, min, max } = props;
+  const { sliderProps, inputProps, label, min, max, defaultValue } = props;
 
   return (
     <div className={classes.container}>
@@ -85,7 +85,7 @@ const SliderComponent = React.memo(props => {
           markLabel: classes.sliderMarkLabel,
           mark: classes.sliderMark,
         }}
-        defaultValue={value}
+        defaultValue={defaultValue}
         value={toSlider(value)}
         onChange={handleSliderChange}
         onChangeCommitted={handleSliderChangeCommitted}

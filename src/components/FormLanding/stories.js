@@ -46,7 +46,8 @@ storiesOf('FormLanding', module)
       <DateField
         name={'birthdate'}
         label={'Date'}
-        // validAge={20} // if required birthdateValidator
+        // validAgeMin={20} // if required birthdateValidator
+        // validAgeMax={30} // if required birthdateValidator
       />
       <MaskedField name={'masked'} label={'Masked'} />
       <DadataField

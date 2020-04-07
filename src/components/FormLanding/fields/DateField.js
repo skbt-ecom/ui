@@ -7,10 +7,16 @@ import useStyles from './styles';
 
 const DateField = React.memo(props => <MaterialDateField {...props} />);
 
-const WrappedField = ({ validAge, classsesComponent, ...props }) => {
+const WrappedField = ({
+  validAgeMin,
+  validAgeMax,
+  classsesComponent,
+  ...props
+}) => {
   const classes = useStyles(props);
-  const validator = validAge
-    ? value => birthdateValidator(value, validAge)
+  const isAgeValidationRequred = validAgeMin || validAgeMax;
+  const validator = isAgeValidationRequred
+    ? value => birthdateValidator(value, { validAgeMin, validAgeMax })
     : dateValidator;
 
   return (
@@ -24,7 +30,6 @@ WrappedField.displayName = 'DateField';
 WrappedField.defaultProps = {
   component: DateField,
   defaultValue: '',
-  validAge: false,
   fullWidth: true,
 };
 

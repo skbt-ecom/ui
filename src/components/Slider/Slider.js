@@ -8,7 +8,7 @@ import useStyles from './styles';
 const SliderComponent = React.memo(props => {
   const classes = useStyles(props);
   const [value, setValue] = useState(
-    props.initialValue || props.value || props.min
+    props.defaultValue || props.value || props.min
   );
 
   const handleSliderChange = (_event, newValue) => {
