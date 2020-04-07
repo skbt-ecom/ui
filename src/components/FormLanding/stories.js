@@ -7,6 +7,7 @@ import { muiTheme } from 'storybook-addon-material-ui';
 //form
 import FormLanding from './FormLanding';
 //fields
+import SliderLogarithmic from './fields/SliderLogarithmic';
 import PhoneField from './fields/PhoneField';
 import DateField from './fields/DateField';
 import DadataField from './fields/DadataField';
@@ -35,6 +36,12 @@ storiesOf('FormLanding', module)
       onChangeFields={action('onChangeFields')}
       onSubmit={action('onSubmit')}
     >
+      <SliderLogarithmic
+        name={'sum'}
+        label={'Сумма кредита'}
+        min={150000}
+        max={30000000}
+      />
       <PhoneField name={'phone'} value={123} />
       <DateField
         name={'birthdate'}
