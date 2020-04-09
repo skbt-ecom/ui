@@ -1,3 +1,4 @@
+import './globalThis.polyfill';
 import React, { useState } from 'react';
 import { IMaskInput } from 'react-imask';
 import TextField from '@material-ui/core/TextField';
