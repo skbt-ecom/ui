@@ -1,6 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import withSpaceForHelperTxt from '../HOCs/withSpaceForHelperTxt';
 
 const AutocompleteField = ({
   label,
@@ -29,4 +30,4 @@ const AutocompleteField = ({
   );
 };
 
-export default React.memo(AutocompleteField);
+export default React.memo(withSpaceForHelperTxt(AutocompleteField));
