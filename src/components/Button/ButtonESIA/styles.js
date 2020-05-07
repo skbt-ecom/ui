@@ -76,6 +76,7 @@ const useStyles = makeStyles(theme => ({
   descrBlock: {
     display: 'flex',
     marginTop: 16,
+    alignItems: 'center',
   },
   descrText: {
     fontSize: 10,
