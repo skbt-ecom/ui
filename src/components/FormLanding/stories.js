@@ -18,6 +18,9 @@ import EmailField from './fields/EmailField';
 import AcceptmentField from './fields/AcceptmentField';
 import AutocompleteField from './fields/AutocompleteField';
 import TextField from './fields/TextField';
+import DadataAddress from './fields/DadataFields/DadataAddress';
+import DadataFio from './fields/DadataFields/DadataFio';
+import DadataAddressFlat from './fields/DadataFields/DadataAddressFlat';
 import SubmitButton from './fields/SubmitButton';
 import { regions } from '../AutocompleteField/regionEnums';
 
@@ -31,6 +34,21 @@ const SELECT_ITEMS = [
 
 storiesOf('FormLanding', module)
   .addDecorator(muiTheme([theme]))
+  .add('Dadata', () => (
+    <FormLanding
+      onChangeFields={action('onChangeFields')}
+      onSubmit={action('onSubmit')}
+    >
+      <DadataAddress name="address2" label="Адрес" />
+      <DadataFio name="fio" label="ФИО" />
+      <DadataAddressFlat name="addressWithFlat" label="Адрес новый" />
+      <SubmitButton
+      // classes={{ container: 'styles.buttonWrapper' }}
+      >
+        Отправить
+      </SubmitButton>
+    </FormLanding>
+  ))
   .add('Default', () => (
     <FormLanding
       onChangeFields={action('onChangeFields')}

@@ -1,4 +1,9 @@
 export { addressValidator, addressWithFlatValidator } from './addressValidator';
+export {
+  addressDadataValidator,
+  addressFlatDadataValidator,
+} from './dadataAddressValidator';
+export { fioDadataValidator } from './dadataFioValidator';
 export { birthdateValidator } from './birthdateValidator';
 export { dateValidator } from './dateValidator';
 export { emailValidator } from './emailValidator';
