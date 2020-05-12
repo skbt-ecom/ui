@@ -4,7 +4,6 @@ const useStyles = makeStyles(() => ({
   container: {
     position: 'relative',
     width: '100%',
-    minHeight: props => (props.withSpaceForHelperTxt ? 76 : 'auto'),
   },
   input: {
     fontWeight: 500,

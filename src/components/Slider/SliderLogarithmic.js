@@ -7,6 +7,7 @@ import Slider from '@material-ui/core/Slider';
 import TextField from './TextField';
 import NumberFormat from 'react-number-format'; //https://github.com/s-yadav/react-number-format
 import { fromSlider, toSlider, round } from './utils';
+import withSpaceForHelperTxt from '../HOCs/withSpaceForHelperTxt';
 
 import useStyles from './styles';
 
@@ -99,7 +100,6 @@ const SliderComponent = React.memo(props => {
 
 SliderComponent.defaultProps = {
   onChange: () => null,
-  withSpaceForHelperTxt: false,
 };
 
-export default SliderComponent;
+export default withSpaceForHelperTxt(SliderComponent);

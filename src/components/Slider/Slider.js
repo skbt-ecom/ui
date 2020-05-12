@@ -90,7 +90,6 @@ const SliderComponent = React.memo(props => {
 
 SliderComponent.defaultProps = {
   onChange: () => null,
-  withSpaceForHelperTxt: false,
 };
 
 export default SliderComponent;
