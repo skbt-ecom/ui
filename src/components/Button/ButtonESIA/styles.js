@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-  container: {
+  buttonContainer: {
     display: 'inline-block',
   },
   bwtContainer: {

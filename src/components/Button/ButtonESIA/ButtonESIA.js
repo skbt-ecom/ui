@@ -9,7 +9,7 @@ const ButtonESIA = ({ withouthDescr, iconDisabled, iconDefault, ...props }) => {
   const classes = useStyles(props);
 
   return (
-    <div className={classes.container}>
+    <div className={classes.buttonContainer}>
       <ButtonWText
         classes={classes.bwtContainer}
         startIcon={props.disabled ? iconDisabled : iconDefault}
