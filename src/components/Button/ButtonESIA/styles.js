@@ -64,9 +64,10 @@ const useStyles = makeStyles(theme => ({
     },
   },
   label: {
-    textTransform: 'none',
+    fontFamily: '"Roboto", Arial, Helvetica, sans-serif',
     fontSize: 12,
     fontWeight: 400,
+    textTransform: 'none',
     color: '#0a40b3',
     // color: props => (props.disabled ? '#a1afbf' : '#607286'),
   },
