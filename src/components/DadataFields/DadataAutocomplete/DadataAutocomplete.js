@@ -82,7 +82,9 @@ const DadataAutocomplete = ({
   }, [incomingValue]);
 
   const handleBlur = e => {
-    const isDadataValueActual = dadataValue && dadataValue.value === inputValue;
+    const isDadataValueActual = Boolean(
+      dadataValue && dadataValue.value === inputValue
+    );
     onBlur(e, { dadataValue, inputValue, isDadataValueActual });
   };
 

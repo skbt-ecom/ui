@@ -17,7 +17,9 @@ const validateFioStrValue = value => {
 };
 
 const validateFioDadataValue = dadataObj => {
-  const { name, surname } = dadataObj;
+  const {
+    data: { name, surname },
+  } = dadataObj;
 
   if (!name || !surname) {
     return FIO_ERROR_TXT;

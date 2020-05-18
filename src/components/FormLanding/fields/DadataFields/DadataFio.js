@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import MaterialDadataFio from '../../../DadataFields/DadataFio';
 import { Field } from '../../FormContext/Field';
 import { fioDadataValidator } from './../../validators';
 
 import useStyles from '../styles';
 
-const DadataFio = React.memo(props => {
-  const handleBlur = (e, values) => {
-    props.onChange(values);
-  };
+const DadataFio = React.memo(({ onChange, ...props }) => {
+  const handleBlur = useCallback(
+    (e, values) => {
+      onChange(values);
+    },
+    [onChange]
+  );
 
   return <MaterialDadataFio {...props} onBlur={handleBlur} />;
 });
