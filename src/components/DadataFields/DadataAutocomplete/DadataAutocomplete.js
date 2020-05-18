@@ -103,6 +103,11 @@ const DadataAutocomplete = ({
       inputValue={inputValue}
       onInputChange={(_, newInputValue) => setInputValue(newInputValue)}
       onBlur={handleBlur}
+      clearText={'Очистить'}
+      closeText={'Закрыть'}
+      loadingText={'Загрузка...'}
+      noOptionsText={'Нет вариантов'}
+      openText={'Открыть'}
       renderInput={params => (
         <TextField
           {...props}

@@ -25,12 +25,43 @@ import SubmitButton from './fields/SubmitButton';
 import { regions } from '../AutocompleteField/regionEnums';
 
 import theme from '../../style/theme';
+import { requiredValidator } from './validators';
 
 const SELECT_ITEMS = [
   { value: 1, label: 'one' },
   { value: 2, label: 'two' },
   { value: 3, label: 'three' },
 ];
+
+const FormWrapper = () => {
+  const formRef = React.useRef(null);
+  const onSubmit = values => {
+    console.log('values', values);
+  };
+
+  return (
+    <FormLanding
+      onChangeFields={action('onChangeFields')}
+      onSubmit={onSubmit}
+      ref={formRef}
+    >
+      <button
+        onClick={() => formRef.current.setFields({ text: { value: 1234 } })}
+      >
+        setValue
+      </button>
+      <button onClick={() => console.log(formRef.current.getFieldsValue())}>
+        getValue
+      </button>
+      <TextField name={'text'} validate={requiredValidator} />
+      <SubmitButton
+      // classes={{ container: 'styles.buttonWrapper' }}
+      >
+        Отправить
+      </SubmitButton>
+    </FormLanding>
+  );
+};
 
 storiesOf('FormLanding', module)
   .addDecorator(muiTheme([theme]))
@@ -92,4 +123,5 @@ storiesOf('FormLanding', module)
         Отправить
       </SubmitButton>
     </FormLanding>
-  ));
+  ))
+  .add('test', () => <FormWrapper />);

@@ -95,11 +95,18 @@ export class Form extends React.Component {
     });
   };
 
-  getFieldsValue = () =>
-    Object.keys(this.state.fields).reduce((acc, fieldKey) => {
-      acc[fieldKey] = this.state.fields[fieldKey].value;
-      return acc;
-    }, {});
+  getFieldsValue = fieldKey => {
+    const { fields } = this.state;
+
+    if (fieldKey) {
+      return fields[fieldKey] && fields[fieldKey].value;
+    }
+
+    const values = {};
+    Object.keys(fields).forEach(name => (values[name] = fields[name].value));
+
+    return values;
+  };
 
   onChange = ({ fieldKey, ...updates }) => {
     const prevField = this.state.fields[fieldKey];
