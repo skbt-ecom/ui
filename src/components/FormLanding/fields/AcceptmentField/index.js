@@ -18,7 +18,10 @@ const Acceptment = React.memo(props => {
       color="primary"
       {...props}
       classes={{
-        labelClasses: { label: classes.personalLabel },
+        labelClasses: {
+          label: classes.labelLabel,
+          root: classes.labelRoot,
+        },
         helperTextClasses: { root: classes.helperTextRoot },
       }}
       label={
