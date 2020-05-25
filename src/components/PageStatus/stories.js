@@ -1,7 +1,6 @@
 import React from 'react';
 // Import the storybook libraries
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { muiTheme } from 'storybook-addon-material-ui';
 
 // Import our component from this folder
@@ -11,10 +10,17 @@ import theme from '../../style/theme';
 
 storiesOf('PageStatus', module)
   .addDecorator(muiTheme([theme]))
-  .add('Success', () => (
+  .add('Success: no description', () => <PageStatus success />)
+  .add('Success: with description', () => (
     <PageStatus
       success
       successDesc="В течение часа Вам придет SMS c подтверждением регистрации в акции"
     />
   ))
-  .add('Error', () => <PageStatus />);
+  .add('Success: with content', () => (
+    <PageStatus success content={<h3>Some content</h3>} />
+  ))
+  .add('Error: default', () => <PageStatus />)
+  .add('Error: with content', () => (
+    <PageStatus content={<h3>Some content</h3>} />
+  ));

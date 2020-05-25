@@ -49,7 +49,7 @@ function styles(theme) {
       padding: '38px 0 18px',
     },
 
-    desk: {
+    desc: {
       color: '#607289',
       fontSize: 14,
       lineHeight: '21px',

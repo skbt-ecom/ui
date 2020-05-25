@@ -19,7 +19,7 @@ const errorMsg = {
 
 function PageStatus(props) {
   const classes = useStyles();
-  const { success, successDesc } = props;
+  const { success, successDesc, content } = props;
 
   return (
     <div className={classes.root}>
@@ -35,25 +35,30 @@ function PageStatus(props) {
           />
         </div>
       </Box>
-      <Typography variant="h3" className={classes.head2}>
-        {success ? successMsg.head2 : errorMsg.head2}
-      </Typography>
-      <Typography variant="h4" className={classes.desk}>
-        {success ? (
-          successDesc
-        ) : (
-          <>
-            <ul className={classes.errorDesc1}>
-              <li>Вы уже оставили заявку*</li>
-              <li>Сервер занят</li>
-              <li>Ведутся технические работы</li>
-            </ul>
-            <div className={classes.errorDesc2}>
-              * в сутки можно оставлять одну заявку
-            </div>
-          </>
-        )}
-      </Typography>
+      {content}
+      {!content && (
+        <>
+          <Typography variant="h3" className={classes.head2}>
+            {success ? successMsg.head2 : errorMsg.head2}
+          </Typography>
+          <Typography variant="h4" className={classes.desc}>
+            {success ? (
+              successDesc
+            ) : (
+              <>
+                <ul className={classes.errorDesc1}>
+                  <li>Вы уже оставили заявку*</li>
+                  <li>Сервер занят</li>
+                  <li>Ведутся технические работы</li>
+                </ul>
+                <div className={classes.errorDesc2}>
+                  * в сутки можно оставлять одну заявку
+                </div>
+              </>
+            )}
+          </Typography>
+        </>
+      )}
     </div>
   );
 }
