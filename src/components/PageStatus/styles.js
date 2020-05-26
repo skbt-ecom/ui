@@ -24,6 +24,7 @@ function styles(theme) {
     },
 
     head: {
+      paddingRight: 15,
       color: '#000',
       fontWeight: 700,
       letterSpacing: 0.5,
