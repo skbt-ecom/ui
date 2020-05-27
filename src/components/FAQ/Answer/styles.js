@@ -6,6 +6,8 @@ const useStyles = makeStyles({
   },
   text: {
     margin: 0,
+    fontSize: 14,
+    lineHeight: '22px',
   },
 });
 
