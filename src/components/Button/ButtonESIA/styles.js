@@ -2,14 +2,15 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   buttonContainer: {
-    display: 'inline-block',
+    // display: 'inline-block',
   },
   bwtContainer: {
     display: 'none',
+    boxSizing: 'border-box',
     borderRadius: 4,
     backgroundColor: '#f2f8fc',
     padding: '12px 16px',
-    width: 504,
+    width: '100%',
     [theme.breakpoints.up('sm')]: {
       display: 'flex',
       justifyContent: 'space-between',
