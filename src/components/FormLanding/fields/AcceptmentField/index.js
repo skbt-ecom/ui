@@ -16,14 +16,6 @@ const Acceptment = React.memo(props => {
   return (
     <Checkbox
       color="primary"
-      {...props}
-      classes={{
-        labelClasses: {
-          label: classes.labelLabel,
-          root: classes.labelRoot,
-        },
-        helperTextClasses: { root: classes.helperTextRoot },
-      }}
       label={
         <>
           Даю согласие на&nbsp;обработку своих персональных данных
@@ -38,6 +30,14 @@ const Acceptment = React.memo(props => {
           </Link>
         </>
       }
+      {...props}
+      classes={{
+        labelClasses: {
+          label: classes.labelLabel,
+          root: classes.labelRoot,
+        },
+        helperTextClasses: { root: classes.helperTextRoot },
+      }}
       onChange={onChange}
       checked={props.value}
     />
