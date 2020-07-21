@@ -4,6 +4,7 @@ const PRIMARY_COLOR = '#ff4e50';
 const SECONDARY_COLOR = '#9e9e9e';
 
 const theme = createMuiTheme({
+  name: 'halva',
   palette: {
     primary: { main: PRIMARY_COLOR },
     secondary: { main: SECONDARY_COLOR },

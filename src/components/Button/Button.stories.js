@@ -1,17 +1,21 @@
 import React from 'react';
-// Import the storybook libraries
-import { storiesOf } from '@storybook/react';
+
 import { action } from '@storybook/addon-actions';
-// Import our component from this folder
+
+import { muiTheme } from 'storybook-addon-material-ui';
+
 import Button from './Button';
 import ButtonESIA from './ButtonESIA';
 
-import { muiTheme } from 'storybook-addon-material-ui';
 import theme from '../../style/theme';
 
-storiesOf('Button', module)
-  .addDecorator(muiTheme([theme]))
-  .add('Default', () => (
+export default {
+  title: 'Button',
+  decorators: [muiTheme([theme])],
+};
+
+export function Default() {
+  return (
     <>
       <Button
         color={'primary'}
@@ -40,12 +44,16 @@ storiesOf('Button', module)
         Button
       </Button>
     </>
-  ))
-  .add('ESIA', () => (
+  );
+}
+
+export function ESIA() {
+  return (
     <ButtonESIA
       onClick={action('ESIA clicked')}
       // withouthDescr // to remove description text
     >
       Вход через цифровой профиль
     </ButtonESIA>
-  ));
+  );
+}

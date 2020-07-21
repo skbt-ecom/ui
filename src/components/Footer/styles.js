@@ -1,11 +1,16 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 function styles(theme) {
+  const isHalva = theme.name === 'halva';
+  const color = isHalva ? '#fff' : '#a1afbf';
+
   return {
     footer: {
       fontFamily: theme.typography.fontFamily,
       fontWeight: 400,
-      background: '#fff',
+      background: isHalva
+        ? 'linear-gradient(180deg, #fb795b, #ef4c58)'
+        : '#fff',
       padding: '40px 8px',
 
       [theme.breakpoints.up('sm')]: {
@@ -25,6 +30,7 @@ function styles(theme) {
     },
 
     phoneContainer: {
+      color,
       flexGrow: 1,
       textAlign: 'center',
       marginBottom: 43,
@@ -36,6 +42,7 @@ function styles(theme) {
     },
 
     phoneNum: {
+      color: isHalva ? '#fff' : '#607289',
       fontSize: 23,
       lineHeight: '23px',
     },
@@ -52,14 +59,6 @@ function styles(theme) {
       margin: 0,
     },
 
-    store: {
-      padding: '24px 0',
-
-      [theme.breakpoints.down('xs')]: {
-        justifyContent: 'space-between',
-      },
-    },
-
     copyright: {
       maxWidth: 272,
 
@@ -73,7 +72,7 @@ function styles(theme) {
 
       '& p': {
         margin: 0,
-        color: '#a1afbf',
+        color,
         fontSize: 14,
         lineHeight: '20px',
         paddingBottom: 8,
@@ -84,43 +83,11 @@ function styles(theme) {
       },
     },
 
-    social: {
-      marginBottom: 43,
-
-      [theme.breakpoints.down('xs')]: {
-        justifyContent: 'center',
-      },
-
-      [theme.breakpoints.up('sm')]: {
-        marginBottom: 29,
-      },
-    },
-
-    icon: {
-      textAlign: 'center',
-      marginRight: 53,
-
-      [theme.breakpoints.up('sm')]: {
-        marginRight: 32,
-      },
-
-      '&:last-of-type': {
-        marginRight: 0,
-      },
-
-      '& img': {
-        [theme.breakpoints.up('sm')]: {
-          maxWidth: 16,
-          maxHeight: 14,
-        },
-      },
-    },
-
     /**
      * Лигал
      */
     ligal: {
-      color: '#a1afbf',
+      color,
       fontSize: 11,
       lineHeight: '18px',
 
@@ -132,8 +99,8 @@ function styles(theme) {
 
     showMore: {
       display: 'inline-block',
-      borderBottom: '1px solid #607286',
-      color: '#607286',
+      borderBottom: '1px solid ' + (isHalva ? '#fff' : '#607286'),
+      color: isHalva ? '#fff' : '#607286',
       fontSize: 12,
       paddingTop: 8,
       lineHeight: '20px',

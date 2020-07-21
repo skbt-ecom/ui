@@ -1,12 +1,11 @@
 import React from 'react';
-// Import the storybook libraries
-import { storiesOf } from '@storybook/react';
+
 import { muiTheme } from 'storybook-addon-material-ui';
 
-// Import our component from this folder
 import Footer from './Footer';
 
 import theme from '../../style/theme';
+import themeHalva from '../../style/themeHalva';
 
 const shortText = (
   <>
@@ -55,15 +54,37 @@ const restText = (
   </>
 );
 
-storiesOf('Footer', module)
-  .addDecorator(muiTheme([theme]))
-  .add('with text', () => <Footer shortText={shortText} restText={restText} />)
-  .add('with text & multi phones', () => (
+export default {
+  title: 'Footer',
+  decorators: [muiTheme([theme])],
+};
+
+export function withText() {
+  return <Footer shortText={shortText} restText={restText} />;
+}
+
+export function withTextAndMultiPhones() {
+  return (
     <Footer
       shortText={shortText}
       restText={restText}
       // phone={'8 927 463-12-81'} DEPRECATED, use phones=['8 927 463-12-81'] instead!
       phones={['8 927 463-12-81', '8 952 031-34-20']}
     />
-  ))
-  .add('without text', () => <Footer phoneHint={null} />);
+  );
+}
+
+export function withoutText() {
+  return <Footer phoneHint={null} />;
+}
+
+/**
+ * Footer in Halva theme
+ */
+export function halvaFooter() {
+  return <Footer shortText={shortText} restText={restText} />;
+}
+
+halvaFooter.story = {
+  decorators: [muiTheme([themeHalva])],
+};
