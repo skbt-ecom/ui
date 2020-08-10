@@ -1,7 +1,7 @@
 image: node:lts-alpine
 
 variables:
-  PORT: 3040
+  PORT: 3047
 
 stages:
   - lint
@@ -29,7 +29,6 @@ deploy to test:
     - docker-compose down
     - docker-compose build --build-arg HTTPS_PROXY=$PROXY ui
     - docker-compose up -d
-    - docker system prune -af
     - docker stats --no-stream
   after_script:
     - docker logout $CI_REGISTRY
