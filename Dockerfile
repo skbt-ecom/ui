@@ -13,4 +13,4 @@ COPY . .
 RUN npm run build-storybook
 
 EXPOSE 8080
-CMD [ "pm2", "serve", "./storybook-static", "8080"]
+CMD [ "pm2", "serve", "storybook-static"]

@@ -1,7 +1,7 @@
 image: node:lts-alpine
 
 variables:
-  PORT: 3047
+  PORT: 3040
 
 stages:
   - lint
