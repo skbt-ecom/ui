@@ -1,21 +1,40 @@
-image: node:10-alpine
+image: node:lts-alpine
+
+variables:
+  PORT: 3047
 
 stages:
-  - install
-  - build
+  - lint
+  - deploy
 
-cache:
-  paths:
-    - node_modules/
-
-install_dependencies:
-  stage: install
+lint:
+  stage: lint
   script:
-    - apk add --no-cache git
-    - yarn
-  artifacts:
-    paths:
-      - node_modules/
+    - npm i
+    - npm run lint
+  only:
+    - merge_requests
+
+deploy to test:
+  stage: deploy
+  tags:
+    - urt-web-app1-for-web-gr
+  variables:
+    HOST: $TEST_HOST
+    NODE_ENV: test
+  before_script:
+    - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
+  script:
+    - docker-compose down
+    - docker-compose build --build-arg HTTPS_PROXY=$PROXY ui
+    - docker-compose up -d
+    - docker system prune -af
+    - docker stats --no-stream
+  after_script:
+    - docker logout $CI_REGISTRY
+  only:
+    - test
+
 
 building:
   stage: build
@@ -24,3 +43,5 @@ building:
   artifacts:
     paths:
       - build/
+  only:
+    - master
