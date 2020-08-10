@@ -5,7 +5,7 @@ variables:
 
 stages:
   - lint
-  - building
+  - build
   - deploy
 
 lint:
