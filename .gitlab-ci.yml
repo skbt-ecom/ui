@@ -5,13 +5,14 @@ variables:
 
 stages:
   - lint
+  - building
   - deploy
 
 lint:
   stage: lint
   script:
     - npm i
-    - npm run lint
+    - npm run build
   only:
     - merge_requests
 
@@ -34,7 +35,6 @@ deploy to test:
     - docker logout $CI_REGISTRY
   only:
     - test
-
 
 building:
   stage: build
