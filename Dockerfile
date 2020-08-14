@@ -11,6 +11,5 @@ COPY . .
 
 RUN npm run build-storybook
 
-CMD [ "npx", "http-server", "./storybook-static", "&"]
-
 EXPOSE 8080
+CMD [ "node", "storybook-serve.js"]
