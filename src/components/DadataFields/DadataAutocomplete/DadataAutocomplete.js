@@ -110,9 +110,10 @@ const DadataAutocomplete = ({
       openText={'Открыть'}
       renderInput={params => (
         <TextField
+          variant="outlined" // TODO: удалить по окончании https://sovcombank.myjetbrains.com/youtrack/issue/HALVA-986
           {...props}
           {...params}
-          variant="outlined"
+          // variant="outlined" // TODO: раскомментировать по окончании https://sovcombank.myjetbrains.com/youtrack/issue/HALVA-986
           InputProps={{
             ...params.InputProps,
             endAdornment: (
