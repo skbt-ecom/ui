@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Typography from '@material-ui/core/Typography';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 
 import useStyles from './styles';
@@ -8,7 +10,9 @@ const Answer = props => {
 
   return (
     <AccordionDetails classes={{ root: classes.root }}>
-      <p className={classes.text}>{props.children}</p>
+      <Typography component="body2" className={classes.text}>
+        {props.children}
+      </Typography>
     </AccordionDetails>
   );
 };
