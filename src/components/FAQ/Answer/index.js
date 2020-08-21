@@ -10,7 +10,7 @@ const Answer = props => {
 
   return (
     <AccordionDetails classes={{ root: classes.root }}>
-      <Typography component="body2" className={classes.text}>
+      <Typography component="h5" className={classes.text}>
         {props.children}
       </Typography>
     </AccordionDetails>
