@@ -2,15 +2,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 function styles(theme) {
   const isHalva = theme.name === 'halva';
-  const color = isHalva ? '#fff' : '#a1afbf';
+  const color = isHalva ? '#979797' : '#a1afbf';
 
   return {
     footer: {
       fontFamily: theme.typography.fontFamily,
       fontWeight: 400,
-      background: isHalva
-        ? 'linear-gradient(180deg, #fb795b, #ef4c58)'
-        : '#fff',
+      background: '#fff',
       padding: '40px 8px',
 
       [theme.breakpoints.up('sm')]: {
@@ -42,7 +40,7 @@ function styles(theme) {
     },
 
     phoneNum: {
-      color: isHalva ? '#fff' : '#607289',
+      color: isHalva ? '#757575' : '#607289',
       fontSize: 23,
       lineHeight: '23px',
     },
@@ -99,8 +97,8 @@ function styles(theme) {
 
     showMore: {
       display: 'inline-block',
-      borderBottom: '1px solid ' + (isHalva ? '#fff' : '#607286'),
-      color: isHalva ? '#fff' : '#607286',
+      borderBottom: '1px solid ' + (isHalva ? color : '#607286'),
+      color: isHalva ? '#757575' : '#607286',
       fontSize: 12,
       paddingTop: 8,
       lineHeight: '20px',
