@@ -19,7 +19,7 @@ const AutocompleteField = ({
         console.log(params),
         (
           <TextField
-            variant={props.variant} // TODO: удалить по окончании https://sovcombank.myjetbrains.com/youtrack/issue/HALVA-986
+            variant={props.variant || 'outlined'} // TODO: удалить по окончании https://sovcombank.myjetbrains.com/youtrack/issue/HALVA-986
             {...params}
             // variant="outlined" // TODO: раскомментировать по окончании https://sovcombank.myjetbrains.com/youtrack/issue/HALVA-986
             label={label}
