@@ -19,7 +19,6 @@ const Footer = (props, ref) => {
     phones,
     phoneHint,
     socialLinks,
-    storeLinks,
   } = props;
   function showRestLigal() {
     setIsHide(false);
@@ -56,7 +55,7 @@ const Footer = (props, ref) => {
                 Все права защищены
               </p>
               <p>Генеральная лицензия Банка России №963 от 5 декабря 2014 г.</p>
-              <StoreLinks storeLinks={storeLinks} />
+              <StoreLinks />
             </div>
           )}
         </div>
