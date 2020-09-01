@@ -34,13 +34,3 @@ deploy to test:
     - docker logout $CI_REGISTRY
   only:
     - test
-
-building:
-  stage: build
-  script:
-    - yarn build
-  artifacts:
-    paths:
-      - build/
-  only:
-    - master
