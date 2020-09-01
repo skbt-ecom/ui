@@ -7,6 +7,9 @@ import Footer from './Footer';
 import theme from '../../style/theme';
 import themeHalva from '../../style/themeHalva';
 
+import IconVK from './SocialLinks/IconVK';
+import IconFacebook from './SocialLinks/IconFacebook';
+
 const shortText = (
   <>
     Воспользуйтесь возможностью пересчитать Ваш кредит по ставке 7,9%:
@@ -54,6 +57,33 @@ const restText = (
   </>
 );
 
+const customSocialLinks = [
+  {
+    href: 'https://vk.com/',
+    Icon: IconVK,
+  },
+  {
+    href: 'https://facebook.com/',
+    Icon: IconFacebook,
+  },
+  {
+    href: 'https://vk.com/',
+    Icon: IconVK,
+  },
+  {
+    href: 'https://facebook.com/',
+    Icon: IconFacebook,
+  },
+  {
+    href: 'https://vk.com/',
+    Icon: IconVK,
+  },
+  {
+    href: 'https://facebook.com/',
+    Icon: IconFacebook,
+  },
+];
+
 export default {
   title: 'Footer',
   decorators: [muiTheme([theme])],
@@ -83,6 +113,16 @@ export function withoutText() {
  */
 export function halvaFooter() {
   return <Footer shortText={shortText} restText={restText} />;
+}
+
+export function withCustomSocialLinks() {
+  return (
+    <Footer
+      shortText={shortText}
+      restText={restText}
+      socialLinks={customSocialLinks}
+    />
+  );
 }
 
 halvaFooter.story = {

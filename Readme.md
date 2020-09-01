@@ -4,7 +4,7 @@
 
 База стандартных компонентов департамента коммуникаций Совкомбанка. <br>
 
-[storybook](https://dev-kuber.sovcombank.group/ecom-ui/) <br>
+[storybook](http://urt-web-app1:3047/) <br>
 
 ## В проекте используются
 
