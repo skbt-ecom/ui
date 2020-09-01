@@ -22,7 +22,7 @@ function styles(theme) {
 
       '& svg': {
         display: 'inline-block',
-        fill: theme.name === 'halva' ? '#fff' : '#a1afbf',
+        fill: theme.name === 'halva' ? '#979797' : '#a1afbf',
         width: 27,
         height: 25,
       },

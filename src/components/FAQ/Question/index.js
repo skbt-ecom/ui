@@ -1,5 +1,8 @@
 import React from 'react';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+
+import Typography from '@material-ui/core/Typography';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import useStyles from './styles';
@@ -8,7 +11,7 @@ const Question = props => {
   const classes = useStyles(props);
 
   return (
-    <ExpansionPanelSummary
+    <AccordionSummary
       expandIcon={<ExpandMoreIcon />}
       aria-controls="panel1a-content"
       classes={{
@@ -18,8 +21,10 @@ const Question = props => {
         expandIcon: classes.expandIcon,
       }}
     >
-      <p className={classes.text}>{props.children}</p>
-    </ExpansionPanelSummary>
+      <Typography variant="h4" className={classes.text}>
+        {props.children}
+      </Typography>
+    </AccordionSummary>
   );
 };
 

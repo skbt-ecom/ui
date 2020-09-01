@@ -10,7 +10,17 @@ import useStyles from './styles';
 const Footer = (props, ref) => {
   const [isHide, setIsHide] = useState(true);
   const classes = useStyles(props);
-  const { left, right, shortText, restText, phone, phones, phoneHint } = props;
+  const {
+    left,
+    right,
+    shortText,
+    restText,
+    phone,
+    phones,
+    phoneHint,
+    socialLinks,
+    storeLinks,
+  } = props;
   function showRestLigal() {
     setIsHide(false);
   }
@@ -39,14 +49,14 @@ const Footer = (props, ref) => {
             right
           ) : (
             <div className={classes.copyright}>
-              <SocialLinks />
+              <SocialLinks items={socialLinks} />
               <p>
                 © 2004-{new Date().getFullYear()}, ПАО «Совкомбанк»
                 <br />
                 Все права защищены
               </p>
               <p>Генеральная лицензия Банка России №963 от 5 декабря 2014 г.</p>
-              <StoreLinks />
+              <StoreLinks storeLinks={storeLinks} />
             </div>
           )}
         </div>

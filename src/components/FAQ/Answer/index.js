@@ -1,5 +1,7 @@
 import React from 'react';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+
+import Typography from '@material-ui/core/Typography';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
 
 import useStyles from './styles';
 
@@ -7,9 +9,11 @@ const Answer = props => {
   const classes = useStyles(props);
 
   return (
-    <ExpansionPanelDetails classes={{ root: classes.root }}>
-      <p className={classes.text}>{props.children}</p>
-    </ExpansionPanelDetails>
+    <AccordionDetails classes={{ root: classes.root }}>
+      <Typography component="h5" className={classes.text}>
+        {props.children}
+      </Typography>
+    </AccordionDetails>
   );
 };
 

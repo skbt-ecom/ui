@@ -7,7 +7,7 @@ import IconTwitter from './IconTwitter';
 
 import useStyles from './styles';
 
-const items = [
+const defaultItems = [
   {
     href: 'https://vk.com/sovcombank',
     Icon: IconVK,
@@ -26,8 +26,13 @@ const items = [
   },
 ];
 
-export default function SocialLinks() {
+export default function SocialLinks(props) {
   const classes = useStyles();
+
+  let { items } = props;
+  if (!items) {
+    items = defaultItems;
+  }
 
   return (
     <div className={classes.social}>

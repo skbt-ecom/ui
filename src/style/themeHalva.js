@@ -9,7 +9,17 @@ const theme = createMuiTheme({
     primary: { main: PRIMARY_COLOR },
     secondary: { main: SECONDARY_COLOR },
   },
+  props: {
+    MuiButton: {
+      color: 'primary',
+    },
+  },
   overrides: {
+    // MuiTextField: {
+    //   root: {
+    //     minHeight: 79,
+    //   },
+    // },
     MuiButton: {
       root: {
         fontSize: 16,
@@ -66,11 +76,6 @@ const theme = createMuiTheme({
     },
     MuiOutlinedInput: {
       root: {
-        // '@media (hover: none)': {
-        //   '&:hover $notchedOutline': {
-        //     borderColor: '#fff',
-        //   },
-        // },
         '&$focused $notchedOutline': {
           borderColor: '#fce0b4',
         },

@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 function styles(theme) {
-  const color = theme.name === 'halva' ? '#fff' : '#a1afbf';
+  const color = theme.name === 'halva' ? '#979797' : '#a1afbf';
   return {
     store: {
       display: 'flex',
