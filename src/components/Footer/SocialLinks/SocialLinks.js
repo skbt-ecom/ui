@@ -27,12 +27,12 @@ const defaultItems = [
 ];
 
 export default function SocialLinks(props) {
-  const classes = useStyles();
-
   let { items } = props;
   if (!items) {
     items = defaultItems;
   }
+
+  const classes = useStyles({ paddingRight: 112 - 52 * (items.length - 4) });
 
   return (
     <div className={classes.social}>
