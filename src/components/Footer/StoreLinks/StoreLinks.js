@@ -5,7 +5,7 @@ import IconGPlay from './IconGPlay';
 
 import useStyles from './styles';
 
-const items = [
+const defaultItems = [
   {
     href: 'https://apps.apple.com/ru/app/halva/id1208055056',
     text: 'App Store',
@@ -19,8 +19,21 @@ const items = [
   },
 ];
 
-export default function StoreLinks() {
+export default function StoreLinks(props) {
   const classes = useStyles();
+
+  const { links } = props;
+  const items = [{ ...defaultItems[0] }, { ...defaultItems[1] }];
+
+  if (links) {
+    if (links.appStore) {
+      items[0].href = links.appStore;
+    }
+
+    if (links.googlePlay) {
+      items[1].href = links.googlePlay;
+    }
+  }
 
   return (
     <div className={classes.store}>

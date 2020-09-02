@@ -78,11 +78,12 @@ const customSocialLinks = [
     href: 'https://vk.com/',
     Icon: IconVK,
   },
-  {
-    href: 'https://facebook.com/',
-    Icon: IconFacebook,
-  },
 ];
+
+const customStoreLinks = {
+  appStore: 'https://ru.wikipedia.org/wiki/App_Store',
+  googlePlay: 'https://ru.wikipedia.org/wiki/Google_Play',
+};
 
 export default {
   title: 'Footer',
@@ -121,6 +122,16 @@ export function withCustomSocialLinks() {
       shortText={shortText}
       restText={restText}
       socialLinks={customSocialLinks}
+    />
+  );
+}
+
+export function withCustomStoreLinks() {
+  return (
+    <Footer
+      shortText={shortText}
+      restText={restText}
+      storeLinks={customStoreLinks}
     />
   );
 }
