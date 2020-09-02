@@ -80,6 +80,11 @@ const customSocialLinks = [
   },
 ];
 
+const customStoreLinks = {
+  appStore: 'https://ru.wikipedia.org/wiki/App_Store',
+  googlePlay: 'https://ru.wikipedia.org/wiki/Google_Play',
+};
+
 export default {
   title: 'Footer',
   decorators: [muiTheme([theme])],
@@ -117,6 +122,16 @@ export function withCustomSocialLinks() {
       shortText={shortText}
       restText={restText}
       socialLinks={customSocialLinks}
+    />
+  );
+}
+
+export function withCustomStoreLinks() {
+  return (
+    <Footer
+      shortText={shortText}
+      restText={restText}
+      storeLinks={customStoreLinks}
     />
   );
 }
