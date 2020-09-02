@@ -58,10 +58,14 @@ function styles(theme) {
     },
 
     copyright: {
-      maxWidth: 272,
+      maxWidth: 312,
 
       [theme.breakpoints.down('xs')]: {
         margin: '0 auto',
+      },
+
+      [theme.breakpoints.up('sm')]: {
+        maxWidth: 272,
       },
 
       [theme.breakpoints.up('md')]: {

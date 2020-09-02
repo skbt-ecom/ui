@@ -78,10 +78,6 @@ const customSocialLinks = [
     href: 'https://vk.com/',
     Icon: IconVK,
   },
-  {
-    href: 'https://facebook.com/',
-    Icon: IconFacebook,
-  },
 ];
 
 export default {
