@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from '@material-ui/core/Slider';
 import TextField from './TextField';
 import NumberFormat from 'react-number-format'; //https://github.com/s-yadav/react-number-format
@@ -10,6 +10,25 @@ const SliderComponent = React.memo(props => {
   const [value, setValue] = useState(
     props.defaultValue || props.value || props.min
   );
+
+  useEffect(() => {
+    if (value > max) {
+      setValue(max);
+      if (props.onChangeCommitted) {
+        return props.onChangeCommitted(max);
+      }
+      props.onChange(max);
+      return;
+    }
+
+    if (value < min) {
+      setValue(min);
+      if (props.onChangeCommitted) {
+        return props.onChangeCommitted(min);
+      }
+      props.onChange(min);
+    }
+  });
 
   const handleSliderChange = (_event, newValue) => {
     if (value === newValue) {
