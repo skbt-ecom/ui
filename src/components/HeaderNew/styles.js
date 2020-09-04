@@ -3,6 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 export const useHeaderStyles = makeStyles(theme => ({
   header: {
     backgroundColor: '#fff',
+    position: 'sticky',
+    top: 0,
+    zIndex: 10,
+    [theme.breakpoints.up('sm')]: {
+      position: 'static',
+    },
   },
   container: {
     margin: '0 auto',
