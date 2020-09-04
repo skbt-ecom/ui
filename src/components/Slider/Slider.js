@@ -12,21 +12,22 @@ const SliderComponent = React.memo(props => {
   );
 
   useEffect(() => {
-    if (value > max) {
-      setValue(max);
+    if (value > props.max) {
+      setValue(props.max);
       if (props.onChangeCommitted) {
-        return props.onChangeCommitted(max);
+        props.onChangeCommitted(props.max);
+      } else {
+        props.onChange(props.max);
       }
-      props.onChange(max);
-      return;
     }
 
-    if (value < min) {
-      setValue(min);
+    if (value < props.min) {
+      setValue(props.min);
       if (props.onChangeCommitted) {
-        return props.onChangeCommitted(min);
+        props.onChangeCommitted(props.min);
+      } else {
+        props.onChange(props.min);
       }
-      props.onChange(min);
     }
   }, [props.max, props.min, value]);
 
