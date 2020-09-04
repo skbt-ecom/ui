@@ -2,7 +2,7 @@
  * BASED ON https://noteskeeper.ru/607/
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from '@material-ui/core/Slider';
 import TextField from './TextField';
 import NumberFormat from 'react-number-format'; //https://github.com/s-yadav/react-number-format
@@ -16,6 +16,26 @@ const SliderComponent = React.memo(props => {
   const [value, setValue] = useState(
     props.defaultValue || props.value || props.min
   );
+
+  useEffect(() => {
+    if (value > props.max) {
+      setValue(props.max);
+      if (props.onChangeCommitted) {
+        props.onChangeCommitted(props.max);
+      } else {
+        props.onChange(props.max);
+      }
+    }
+
+    if (value < props.min) {
+      setValue(props.min);
+      if (props.onChangeCommitted) {
+        props.onChangeCommitted(props.min);
+      } else {
+        props.onChange(props.min);
+      }
+    }
+  }, [props.max, props.min, value]);
 
   const handleSliderChange = (_event, newValue) => {
     const viewValue = round(fromSlider(newValue));
