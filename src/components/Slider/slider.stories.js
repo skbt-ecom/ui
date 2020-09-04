@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // Import the storybook libraries
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -86,4 +86,46 @@ storiesOf('Slider', module)
       max={30000000}
       defaultValue={2000000}
     />
-  ));
+  ))
+  .add('Dynamic restriction', () => {
+    const [min, setMin] = useState(150000);
+    const [max, setMax] = useState(30000000);
+    const [sum, SetSum] = useState(150000);
+
+    return (
+      <>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-around',
+            margin: '20px',
+          }}
+        >
+          <span>Sum = {sum}</span>
+          <button
+            onClick={() => {
+              setMin(200000);
+            }}
+          >
+            Set min = 200000
+          </button>
+          <button
+            onClick={() => {
+              setMax(1000000);
+            }}
+          >
+            Set max = 1000000
+          </button>
+        </div>
+        <Slider
+          // onChange={action('onChange')}
+          onChangeCommitted={SetSum}
+          inputProps={inputProps}
+          sliderProps={sliderProps}
+          min={min}
+          max={max}
+          value={sum}
+        />
+      </>
+    );
+  });
