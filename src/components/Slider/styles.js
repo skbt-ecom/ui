@@ -14,10 +14,9 @@ const useStyles = makeStyles(() => ({
   },
   sliderRoot: {
     position: 'absolute',
-    // input.height - (slider.height/2 + 1)
-    top: 58.38 - 13,
     left: 0,
-    padding: '11px 0',
+    bottom: -1,
+    padding: 0,
     // '@media (pointer: coarse)': {
     //   bottom: props => (props.withSpaceForHelperTxt ? -2 : -20),
     // },
