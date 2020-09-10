@@ -14,9 +14,9 @@ const useStylesCheckbox = makeStyles({
 });
 const useStylesLabel = makeStyles({
   root: {
-    alignItems: 'flex-start',
+    alignItems: 'center',
   },
-  label: { paddingTop: 12 },
+  label: {},
 });
 const useStylesHelperText = makeStyles({
   root: {},
