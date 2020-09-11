@@ -9,10 +9,10 @@ function styles(theme) {
       fontFamily: theme.typography.fontFamily,
       fontWeight: 400,
       background: '#fff',
-      padding: '40px 8px',
+      padding: '40px 0',
 
       [theme.breakpoints.up('sm')]: {
-        padding: '64px 24px',
+        padding: '64px 0',
       },
 
       '& img': {

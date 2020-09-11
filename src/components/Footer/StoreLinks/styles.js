@@ -25,7 +25,7 @@ function styles(theme) {
         width: 152,
       },
 
-      '@media screen and (min-width: 600px)': {
+      [theme.breakpoints.up('sm')]: {
         width: 128,
       },
 
