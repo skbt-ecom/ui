@@ -10,8 +10,6 @@ import FormLanding from './FormLanding';
 import SliderLogarithmic from './fields/SliderLogarithmic';
 import PhoneField from './fields/PhoneField';
 import DateField from './fields/DateField';
-import DadataField from './fields/DadataField';
-import AddressField from './fields/AddressField';
 import MaskedField from './fields/MaskedField';
 import SelectField from './fields/SelectField';
 import EmailField from './fields/EmailField';
@@ -25,7 +23,7 @@ import SubmitButton from './fields/SubmitButton';
 import { regions } from '../AutocompleteField/regionEnums';
 
 import theme from '../../style/theme';
-import { requiredValidator } from './validators';
+import { requiredValidator } from './validators/requiredValidator';
 
 const SELECT_ITEMS = [
   { value: 1, label: 'one' },
@@ -99,11 +97,6 @@ storiesOf('FormLanding', module)
         // validAgeMax={30} // if required birthdateValidator
       />
       <MaskedField name={'masked'} label={'Masked'} />
-      <DadataField
-        type={'fio'} // or address
-        name={'fio'}
-      />
-      <AddressField name={'address'} />
       <SelectField name={'select'} items={SELECT_ITEMS} />
       <EmailField name={'email'} label={'email'} />
       <AutocompleteField name={'autosuggest'} options={regions} />
