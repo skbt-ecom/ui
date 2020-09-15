@@ -6,7 +6,7 @@ import { muiTheme } from 'storybook-addon-material-ui';
 
 // Import our component from this folder
 import AutocompleteField from './AutocompleteField';
-import { regions } from './regionEnums';
+import REGIONS from '../../enums/regions';
 
 import theme from '../../style/theme';
 
@@ -35,7 +35,6 @@ const AutosuggestFieldWrapper = props => {
         onChange={onChange}
         value={value}
         label={'Регион'}
-        classes={{ root: 'ROOT', inputRoot: 'INPUT_ROOOT' }}
         fullWidth
       />
     </>
@@ -45,5 +44,5 @@ const AutosuggestFieldWrapper = props => {
 storiesOf('AutocompleteField', module)
   .addDecorator(muiTheme([theme]))
   .add('Default', () => (
-    <AutosuggestFieldWrapper onChange={action('onChange')} options={regions} />
+    <AutosuggestFieldWrapper onChange={action('onChange')} options={REGIONS} />
   ));
