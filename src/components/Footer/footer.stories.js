@@ -109,13 +109,6 @@ export function withoutText() {
   return <Footer phoneHint={null} />;
 }
 
-/**
- * Footer in Halva theme
- */
-export function halvaFooter() {
-  return <Footer shortText={shortText} restText={restText} />;
-}
-
 export function withCustomSocialLinks() {
   return (
     <Footer
@@ -134,6 +127,13 @@ export function withCustomStoreLinks() {
       storeLinks={customStoreLinks}
     />
   );
+}
+
+/**
+ * Footer in Halva theme
+ */
+export function halvaFooter() {
+  return <Footer shortText={shortText} restText={restText} />;
 }
 
 halvaFooter.story = {

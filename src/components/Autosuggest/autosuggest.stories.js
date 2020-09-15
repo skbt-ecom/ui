@@ -9,7 +9,7 @@ import Autosuggest from './Autosuggest';
 
 import theme from '../../style/theme';
 
-import { regions } from './regionEnums';
+import REGIONS from '../../enums/regions';
 
 const AutosuggestFieldWrapper = props => {
   const [value, setValue] = useState(props.value || '');
@@ -43,10 +43,10 @@ storiesOf('Autosuggest', module)
       <h2>Пример с регионами</h2>
       <AutosuggestFieldWrapper
         onChange={action('onChange')}
-        suggestions={regions}
+        suggestions={REGIONS}
         label={'Регион'}
         fullWidth
-        value={regions[0]}
+        value={REGIONS[0]}
       />
     </>
   ));

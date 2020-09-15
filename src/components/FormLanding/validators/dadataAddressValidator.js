@@ -26,7 +26,7 @@ const addressValidator = dadataValue => {
  * @param {object} dadataAddressFlat DadataAddressFlat value
  */
 export const addressFlatDadataValidator = dadataAddressFlat => {
-  const { dadataValue } = dadataAddressFlat;
+  const { dadataValue = {} } = dadataAddressFlat;
   const { inputFlat, isNoFlat, value } = dadataValue;
 
   if (requiredValidator(value)) {
