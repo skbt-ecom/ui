@@ -29,7 +29,7 @@ const SliderComponent = React.memo(props => {
         props.onChange(props.min);
       }
     }
-  }, [props.max, props.min, value]);
+  }, [props.max, props.min]);
 
   const handleSliderChange = (_event, newValue) => {
     if (value === newValue) {
