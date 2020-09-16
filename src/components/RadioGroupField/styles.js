@@ -1,11 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   formControl: {},
   formLabel: {},
-  group: {
-    flexDirection: props => props.direction,
-  },
+  formControlLabel: {},
 }));
 
 export default useStyles;

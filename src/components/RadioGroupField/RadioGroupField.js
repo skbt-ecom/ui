@@ -7,9 +7,9 @@ import FormLabel from '@material-ui/core/FormLabel';
 
 import useStyles from './styles';
 
-const RadioGroupField = React.memo(props => {
+export default function RadioGroupField(props) {
   const classes = useStyles(props);
-  const { label, items, name, value, defaultValue } = props;
+  const { label, items, name, value, defaultValue, row } = props;
 
   const handleChange = e => {
     const { value } = e.target;
@@ -25,9 +25,9 @@ const RadioGroupField = React.memo(props => {
         </FormLabel>
       )}
       <RadioGroup
+        row={row}
         aria-label={label}
         name={name}
-        className={classes.group}
         value={value}
         defaultValue={defaultValue}
         onChange={handleChange}
@@ -38,14 +38,14 @@ const RadioGroupField = React.memo(props => {
             value={value}
             control={<Radio color="primary" />}
             label={label}
+            className={classes.formControlLabel}
           />
         ))}
       </RadioGroup>
     </FormControl>
   );
-});
+}
 
 RadioGroupField.defaultProps = {
-  direction: 'row',
+  row: true,
 };
-export default RadioGroupField;
