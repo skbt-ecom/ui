@@ -9,7 +9,11 @@ import Switch from './Switch';
 import theme from '../../style/theme';
 
 const useStyles = makeStyles(() => ({
-  labelText: {
+  root: {
+    marginRight: 0,
+  },
+
+  label: {
     fontSize: 16,
   },
 }));
@@ -26,7 +30,7 @@ export function Default() {
     <Switch
       onChange={action('onChange')}
       label={'Label'}
-      classes={{ label: classes.labelText }}
+      classes={{ root: classes.root, label: classes.label }}
     />
   );
 }
