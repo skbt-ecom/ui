@@ -19,7 +19,7 @@ export default function SwitchComponent(props) {
       <FormControlLabel
         control={<Switch {...switchProps} checked={value} />}
         label={label}
-        classes={{ label: classes.label }}
+        classes={{ root: classes.root, label: classes.label }}
       />
     </FormGroup>
   );

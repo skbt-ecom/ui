@@ -92,7 +92,12 @@ const DadataAddressFlat = React.memo(
             label={'Нет номера квартиры'}
             color={'primary'}
             checked={isNoFlat}
-            classes={{ labelClasses: { root: flatInfoClasses.checkbox } }}
+            classes={{
+              labelClasses: {
+                root: flatInfoClasses.checkbox,
+                label: flatInfoClasses.checkboxLabel,
+              },
+            }}
           />
         </div>
       </div>
@@ -103,6 +108,6 @@ const DadataAddressFlat = React.memo(
 DadataAddressFlat.defaultProps = {
   helperText: { addressDadata: null, flat: null },
   classes: { addressDadataClasses: {}, flatInfoClasses: {} },
-  regexp: /(.*?)\s*кв (\d+(?:[/-]\d+)?)?$/,
+  regexp: /(.*?)\s*, кв (\d+(?:[/-]\d+)?)?$/,
 };
 export default DadataAddressFlat;

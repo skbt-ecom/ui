@@ -5,7 +5,7 @@ const withSpaceForHelperTxt = (WrappedComponent, styles = {}) => {
   const WithSpace = props => {
     const classes = useStyles({ ...styles, ...props });
     return (
-      <div className={classes.root}>
+      <div className={classes.withSpaceForHelperTxt}>
         <WrappedComponent {...props} />
       </div>
     );

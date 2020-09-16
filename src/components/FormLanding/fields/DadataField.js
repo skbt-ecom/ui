@@ -5,10 +5,11 @@ import { fioValidator, addressValidator } from '../validators';
 
 import useStyles from './styles';
 
-/**
- * Component is deprecated
- * use DadataFields/Dadata*.js instead
- */
+if (process.env.NODE_ENV !== 'production') {
+  console.error(
+    '⚠️ Deprecation component "DadataField" ⚠️\n ⚠️ Use the "DadataFields/Dadata*.js" instead ⚠️'
+  );
+}
 
 const fioDefaultProps = {
   label: 'Фамилия Имя Отчество',
