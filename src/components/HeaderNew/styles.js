@@ -6,9 +6,6 @@ export const useHeaderStyles = makeStyles(theme => ({
     position: 'sticky',
     top: 0,
     zIndex: 10,
-    [theme.breakpoints.up('sm')]: {
-      position: 'static',
-    },
   },
   container: {
     margin: '0 auto',
@@ -32,14 +29,19 @@ export const useHeaderStyles = makeStyles(theme => ({
       verticalAlign: 'top',
     },
   },
+  rightBlock: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
 }));
 
 export const usePhoneStyles = makeStyles(theme => ({
   phoneContainer: {
     display: 'none',
 
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       display: 'block',
+      marginRight: '40px',
     },
   },
 
@@ -84,9 +86,6 @@ export const usePhoneStyles = makeStyles(theme => ({
 export const useButtonStyles = makeStyles(theme => ({
   root: {
     padding: '8px 20px',
-    [theme.breakpoints.up('sm')]: {
-      display: 'none',
-    },
   },
 
   label: {
