@@ -40,7 +40,7 @@ storiesOf('HeaderNew', module)
   .add('Custom content', () => (
     <Header right={<img src={halvaLogo} alt="Халва" />} />
   ))
-  .add('Sticky mobile header', () => {
+  .add('Sticky header', () => {
     const lorem = `Voluptate duis minim esse voluptate in minim culpa id magna pariatur 
     sunt enim cillum. Amet magna consequat minim quis consectetur consectetur in labore 
     occaecat adipisicing. Mollit anim amet cillum deserunt voluptate deserunt do id irure 
@@ -48,7 +48,7 @@ storiesOf('HeaderNew', module)
     veniam amet esse.`;
 
     const loremlist = [];
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 50; i++) {
       loremlist.push(lorem);
     }
     return (
