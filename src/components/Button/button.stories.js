@@ -8,6 +8,7 @@ import Button from './Button';
 import ButtonESIA from './ButtonESIA';
 
 import theme from '../../style/theme';
+import themeHalva from '../../style/themeHalva';
 
 export default {
   title: 'Button',
@@ -18,7 +19,6 @@ export function Default() {
   return (
     <>
       <Button
-        color={'primary'}
         onClick={action('clicked btn')}
         classes={{ label: 'my-label', root: 'my-root' }}
       >
@@ -27,7 +27,7 @@ export function Default() {
       <br />
       <br />
       <Button
-        color={'secondary'}
+        color="secondary"
         onClick={action('clicked btn')}
         classes={{ label: 'my-label', root: 'my-root' }}
       >
@@ -36,16 +36,31 @@ export function Default() {
       <br />
       <br />
       <Button
-        color={'primary'}
         variant="outlined"
         onClick={action('clicked btn')}
         classes={{ label: 'my-label', root: 'my-root' }}
       >
         Button
       </Button>
+      <br />
+      <br />
+      <Button disabled color="secondary" onClick={action('clicked btn')}>
+        Button
+      </Button>
     </>
   );
 }
+
+/**
+ * Footer in Halva theme
+ */
+export function Halva() {
+  return <Button onClick={action('clicked btn')}>Button</Button>;
+}
+
+Halva.story = {
+  decorators: [muiTheme([themeHalva])],
+};
 
 export function ESIA() {
   return (

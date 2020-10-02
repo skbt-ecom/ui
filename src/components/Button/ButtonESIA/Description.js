@@ -6,12 +6,7 @@ const Description = props => {
   return (
     <div className={classes.descrBlock}>
       <span className={classes.secureIcon}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="32"
-          viewBox="0 0 24 32"
-        >
+        <svg width="24" height="32" viewBox="0 0 24 32">
           <g>
             <g>
               <g />

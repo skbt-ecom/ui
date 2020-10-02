@@ -23,7 +23,6 @@ const ButtonESIA = ({ withouthDescr, iconDisabled, iconDefault, ...props }) => {
           startIcon: classes.startIcon,
         }}
         startIcon={props.disabled ? iconDisabled : iconDefault}
-        color={'primary'}
         disableRipple={true}
       />
       {!withouthDescr && <Description />}
@@ -35,12 +34,7 @@ ButtonESIA.defaultProps = {
   variant: 'outlined',
   withouthDescr: false,
   iconDefault: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="33"
-      viewBox="0 0 30 33"
-    >
+    <svg width="30" height="33" viewBox="0 0 30 33">
       <defs>
         <linearGradient
           id="ho4wa"
@@ -79,12 +73,7 @@ ButtonESIA.defaultProps = {
     </svg>
   ),
   iconDisabled: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="33"
-      viewBox="0 0 30 33"
-    >
+    <svg width="30" height="33" viewBox="0 0 30 33">
       <g>
         <g>
           <g>
