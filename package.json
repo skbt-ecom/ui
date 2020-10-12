@@ -1,17 +1,17 @@
 {
-  "name": "ui",
-  "version": "1.0.0",
+  "name": "@ecom/ui",
+  "version": "2.0.0",
   "description": "",
-  "main": "./lib/components/index.js",
   "scripts": {
+    "publish-ui": "npm run build && node prepublish.js && npm publish lib",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -c .storybook -o storybook-static --loglevel error",
+    "start": "start-storybook",
+    "build-storybook": "build-storybook -c .storybook -o storybook-static",
     "build": "npm run build:remove && npx babel src --out-dir lib && npm run build:copyfiles",
     "build:remove": "rimraf lib",
     "build:copyfiles": "copyfiles -u 1 src/components/**/*.svg lib -EVs"
   },
-  "author": "",
+  "author": "I",
   "license": "ISC",
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.10.0",
