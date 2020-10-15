@@ -38,8 +38,8 @@ const SliderComponent = React.memo(props => {
   }, [props.max, props.min, value])
 
   useEffect(() => {
-    if (props.value) {
-      if (props.max || props.min) {
+    if (props.value !== undefined) {
+      if (props.max !== undefined || props.min !== undefined) {
         let newValue = props.value
 
         if (props.max < props.value) {
