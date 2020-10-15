@@ -16,6 +16,16 @@ lint:
   only:
     - merge_requests
 
+publish:
+  stage: build
+  script:
+    - npm i
+    - npm config set $NPM_INTERNAL_REGISTRY_CONFIG
+    - npm config set @ecom:registry $NPM_REGISTRY/npm-internal/
+    - npm run publish-ui
+  only:
+    - master
+
 deploy to test:
   stage: deploy
   tags:
