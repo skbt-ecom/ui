@@ -26,9 +26,11 @@ export default function DatePicker({ onChange, ...restProps }) {
       // variant="inline"
       value={selectedValue}
       onChange={handleChange}
-      label="Выберите дату"
       inputVariant="outlined"
       className={classes.input}
+      label="Выберите дату"
+      okLabel="Выбрать"
+      cancelLabel="Отмена"
       DialogProps={{
         classes: {
           dialog: classes.paper

@@ -26,9 +26,11 @@ export default function TimePicker({ onChange, ...restProps }) {
       // variant="inline"
       value={selectedValue}
       onChange={handleChange}
-      label="Выберите время"
       inputVariant="outlined"
       className={classes.input}
+      label="Выберите время"
+      okLabel="Выбрать"
+      cancelLabel="Отмена"
       DialogProps={{
         classes: {
           dialog: classes.paper
