@@ -22,6 +22,7 @@ export default function TimePicker({ onChange, ...restProps }) {
       autoOk
       fullWidth
       // disableToolbar
+      format="hh:mm"
       // variant="inline"
       value={selectedValue}
       onChange={handleChange}
