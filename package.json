@@ -3,9 +3,9 @@
   "version": "2.0.0",
   "description": "",
   "scripts": {
-    "publish-ui": "npm run build && node prepublish.js && npm publish lib",
+    "publish-ui": "npm run build && cp package.json lib && npm publish lib",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "start-storybook",
+    "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o storybook-static",
     "build": "npm run build:remove && npx babel src --out-dir lib && npm run build:copyfiles",
     "build:remove": "rimraf lib",

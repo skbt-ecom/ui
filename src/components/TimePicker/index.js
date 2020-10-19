@@ -1,32 +1,31 @@
 import React, { useState } from "react"
 
-import { KeyboardDatePicker } from "@material-ui/pickers"
+import { KeyboardTimePicker } from "@material-ui/pickers"
 
 import useStyles from "./styles"
 
-export default function DatePicker({ onChange, ...restProps }) {
+export default function TimePicker({ onChange, ...restProps }) {
   const classes = useStyles()
   const [selectedValue, setSelectedValue] = useState(null)
 
   function handleChange(value) {
-    const date = new Date(value.ts).toLocaleDateString("ru-RU")
-    onChange && onChange(date)
+    const time = new Date(value.ts).toLocaleTimeString("ru-RU")
+    onChange && onChange(time)
 
     setSelectedValue(value)
   }
 
   return (
-    <KeyboardDatePicker
+    <KeyboardTimePicker
       {...restProps}
+      ampm={false}
       autoOk
       fullWidth
-      disablePast
-      disableToolbar
-      format="dd.MM.yyyy"
+      // disableToolbar
       // variant="inline"
       value={selectedValue}
       onChange={handleChange}
-      label="Выберите дату"
+      label="Выберите время"
       inputVariant="outlined"
       className={classes.input}
       DialogProps={{
@@ -35,7 +34,7 @@ export default function DatePicker({ onChange, ...restProps }) {
         }
       }}
       KeyboardButtonProps={{
-        "aria-label": "Выбрать дату"
+        "aria-label": "Выбрать время"
       }}
     />
   )
