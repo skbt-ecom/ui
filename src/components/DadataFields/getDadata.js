@@ -16,7 +16,7 @@ export const getDadata = (type, data, options = {}) => {
   if (type !== "auto") {
     url = `${DADATA_URL}/${type}`
   } else {
-    url = "http://urt-web-app1:4000/constants/auto"
+    url = "https://api-app.sovcombank.ru/constants/auto"
   }
 
   return fetch(url, {
