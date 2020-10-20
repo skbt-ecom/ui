@@ -1,139 +1,116 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef } from "react"
 
-import { action } from '@storybook/addon-actions';
-import { muiTheme } from 'storybook-addon-material-ui';
+import { action } from "@storybook/addon-actions"
+import { muiTheme } from "storybook-addon-material-ui"
 
-import theme from '../../style/theme';
-import Grid from '../Grid';
+import theme from "../../style/theme"
+import Grid from "../Grid"
 
-import FormLanding from './FormLanding';
+import FormLanding from "./FormLanding"
 
 // import AcceptmentField from './fields/AcceptmentField';
 // import AutocompleteField from './fields/AutocompleteField';
-import CheckboxField from './fields/CheckboxField';
-import DadataAddress from './fields/DadataFields/DadataAddress';
-import DadataAddressFlat from './fields/DadataFields/DadataAddressFlat';
-import DadataFio from './fields/DadataFields/DadataFio';
-import DateField from './fields/DateField';
+import CheckboxField from "./fields/CheckboxField"
+import DadataAddress from "./fields/DadataFields/DadataAddress"
+import DadataAddressFlat from "./fields/DadataFields/DadataAddressFlat"
+import DadataFio from "./fields/DadataFields/DadataFio"
+import DadataAuto from "./fields/DadataFields/DadataAuto"
+import DateField from "./fields/DateField"
 // import EmailField from './fields/EmailField';
-import MaskedField from './fields/MaskedField';
+import MaskedField from "./fields/MaskedField"
 // import PhoneField from './fields/PhoneField';
-import RadioGroupField from './fields/RadioGroupField';
+import RadioGroupField from "./fields/RadioGroupField"
 // import SelectField from './fields/SelectField';
-import SliderLogarithmic from './fields/SliderLogarithmic';
-import SubmitButton from './fields/SubmitButton';
-import SwitchField from './fields/SwitchField';
-import TextField from './fields/TextField';
+import SliderLogarithmic from "./fields/SliderLogarithmic"
+import SubmitButton from "./fields/SubmitButton"
+import SwitchField from "./fields/SwitchField"
+import TextField from "./fields/TextField"
 
 // import REGIONS from '../../enums/regions';
 
-import { requiredValidator } from './validators/requiredValidator';
-import lengthValidator from './validators/lengthValidator';
+import { requiredValidator } from "./validators/requiredValidator"
+import lengthValidator from "./validators/lengthValidator"
 
-const DADATA_ADDRESS_FLAT_REGEXP = /(.*?)\s*, кв (\d+(?:[/-]\d+)?)?$/;
+const DADATA_ADDRESS_FLAT_REGEXP = /(.*?)\s*, кв (\d+(?:[/-]\d+)?)?$/
 const GENDERS = [
-  { value: 'm', label: 'Мужской' },
-  { value: 'f', label: 'Женский' },
-];
+  { value: "m", label: "Мужской" },
+  { value: "f", label: "Женский" }
+]
 
 function validateByLength(len) {
-  return value => lengthValidator(value, len);
+  return value => lengthValidator(value, len)
 }
 
 export default {
-  title: 'FormLanding',
-  decorators: [muiTheme([theme])],
-};
+  title: "FormLanding",
+  decorators: [muiTheme([theme])]
+}
 
 export function CreditAmountSlider() {
   return (
-    <FormLanding
-      onChangeFields={action('onChangeFields')}
-      onSubmit={action('onSubmit')}
-    >
-      <SliderLogarithmic
-        name={'sum'}
-        label={'Сумма кредита'}
-        min={150000}
-        max={30000000}
-      />
+    <FormLanding onChangeFields={action("onChangeFields")} onSubmit={action("onSubmit")}>
+      <SliderLogarithmic name={"sum"} label={"Сумма кредита"} min={150000} max={30000000} />
       <SubmitButton
       // classes={{ container: 'styles.buttonWrapper' }}
       >
         Отправить
       </SubmitButton>
     </FormLanding>
-  );
+  )
 }
 
 export function DadataFields() {
   return (
-    <FormLanding
-      onChangeFields={action('onChangeFields')}
-      onSubmit={action('onSubmit')}
-    >
+    <FormLanding onChangeFields={action("onChangeFields")} onSubmit={action("onSubmit")}>
       <DadataAddress name="address2" label="Адрес" />
       <DadataFio name="fio" label="ФИО" />
       <DadataAddressFlat name="addressWithFlat" label="Адрес новый" />
+      <DadataAuto name="auto" label="Модель машины" />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>
-  );
+  )
 }
 
 export function FormWrapper() {
-  const formRef = React.useRef(null);
+  const formRef = React.useRef(null)
   const onSubmit = values => {
-    console.log('values', values);
-  };
-
-  return (
-    <FormLanding
-      onChangeFields={action('onChangeFields')}
-      onSubmit={onSubmit}
-      ref={formRef}
-    >
-      <button
-        onClick={() => formRef.current.setFields({ text: { value: 1234 } })}
-      >
-        setValue
-      </button>
-      <button onClick={() => console.log(formRef.current.getFieldsValue())}>
-        getValue
-      </button>
-      <TextField name={'text'} validate={requiredValidator} />
-      <SubmitButton>Отправить</SubmitButton>
-    </FormLanding>
-  );
-}
-
-export function FormPassport() {
-  const [isChangedCredentials, setIsChangedCredentials] = useState(false);
-  const [isDifferentAddress, setIsDifferentAddress] = useState(false);
-  const refForm = useRef(null);
-
-  const onChangeFields = {
-    changedCredentials: fieldData => {
-      const { value } = fieldData;
-      refForm.current.setField('oldFio', { isRequired: value });
-      setIsChangedCredentials(value);
-    },
-    differentAddress: fieldData => {
-      const { value } = fieldData;
-      refForm.current.setField('lifeAddress', { isRequired: !value });
-      setIsDifferentAddress(!value);
-    },
-  };
-
-  function onSubmit(values) {
-    console.log('values', values);
+    console.log("values", values)
   }
 
   return (
-    <FormLanding
-      onSubmit={onSubmit}
-      onChangeFields={onChangeFields}
-      ref={refForm}
-    >
+    <FormLanding onChangeFields={action("onChangeFields")} onSubmit={onSubmit} ref={formRef}>
+      <button onClick={() => formRef.current.setFields({ text: { value: 1234 } })}>setValue</button>
+      <button onClick={() => console.log(formRef.current.getFieldsValue())}>getValue</button>
+      <TextField name={"text"} validate={requiredValidator} />
+      <SubmitButton>Отправить</SubmitButton>
+    </FormLanding>
+  )
+}
+
+export function FormPassport() {
+  const [isChangedCredentials, setIsChangedCredentials] = useState(false)
+  const [isDifferentAddress, setIsDifferentAddress] = useState(false)
+  const refForm = useRef(null)
+
+  const onChangeFields = {
+    changedCredentials: fieldData => {
+      const { value } = fieldData
+      refForm.current.setField("oldFio", { isRequired: value })
+      setIsChangedCredentials(value)
+    },
+    differentAddress: fieldData => {
+      const { value } = fieldData
+      refForm.current.setField("lifeAddress", { isRequired: !value })
+      setIsDifferentAddress(!value)
+    }
+  }
+
+  function onSubmit(values) {
+    console.log("values", values)
+  }
+
+  return (
+    <FormLanding onSubmit={onSubmit} onChangeFields={onChangeFields} ref={refForm}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <h2>Паспортные данные</h2>
@@ -189,20 +166,10 @@ export function FormPassport() {
           />
         </Grid>
         <Grid item xs={12}>
-          <DateField
-            label="Дата выдачи"
-            name="passportDate"
-            defaultValue=""
-            fullWidth
-          />
+          <DateField label="Дата выдачи" name="passportDate" defaultValue="" fullWidth />
         </Grid>
         <Grid item xs={12}>
-          <RadioGroupField
-            items={GENDERS}
-            label="Ваш пол:"
-            name="gender"
-            defaultValue="m"
-          />
+          <RadioGroupField items={GENDERS} label="Ваш пол:" name="gender" defaultValue="m" />
         </Grid>
         <Grid item xs={12}>
           <SwitchField
@@ -214,11 +181,7 @@ export function FormPassport() {
         </Grid>
         {isChangedCredentials && (
           <Grid item xs={12}>
-            <DadataFio
-              label="Фамилия Имя Отчество"
-              name="oldFio"
-              helperText="Предыдущие ФИО"
-            />
+            <DadataFio label="Фамилия Имя Отчество" name="oldFio" helperText="Предыдущие ФИО" />
           </Grid>
         )}
       </Grid>
@@ -259,5 +222,5 @@ export function FormPassport() {
         </Grid>
       </Grid>
     </FormLanding>
-  );
+  )
 }
