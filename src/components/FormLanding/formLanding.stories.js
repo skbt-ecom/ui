@@ -15,6 +15,7 @@ import CheckboxField from "./fields/CheckboxField"
 import DadataAddress from "./fields/DadataFields/DadataAddress"
 import DadataAddressFlat from "./fields/DadataFields/DadataAddressFlat"
 import DadataFio from "./fields/DadataFields/DadataFio"
+import DadataAuto from "./fields/DadataFields/DadataAuto"
 import DateField from "./fields/DateField"
 // import EmailField from './fields/EmailField';
 import MaskedField from "./fields/MaskedField"
@@ -72,6 +73,7 @@ export function DadataFields() {
       <DadataAddress name="address2" label="Адрес" />
       <DadataFio name="fio" label="ФИО" />
       <DadataAddressFlat name="addressWithFlat" label="Адрес новый" />
+      <DadataAuto name="auto" label="Модель машины" />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>
   )
