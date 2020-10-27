@@ -9,7 +9,10 @@
     "build-storybook": "build-storybook -c .storybook -o storybook-static",
     "build": "npm run build:remove && npx babel src --out-dir lib && npm run build:copyfiles",
     "build:remove": "rimraf lib",
-    "build:copyfiles": "copyfiles -u 1 src/components/**/*.svg lib -EVs"
+    "build:copyfiles": "copyfiles -u 1 src/components/**/*.svg lib -EVs",
+    "semantic-release": "semantic-release",
+    "semantic-release1": "semantic-release pre && npm publish && semantic-release post",
+    "commit": "cz"
   },
   "author": "I",
   "license": "ISC",
@@ -23,6 +26,7 @@
     "@material-ui/lab": "^4.0.0-alpha.45",
     "@material-ui/pickers": "^3.2.8",
     "@material-ui/styles": "^4.7.1",
+    "classnames": "^2.2.6",
     "luxon": "^1.21.3",
     "memoize-one": "^5.1.1",
     "react": "^16.12.0",
@@ -32,7 +36,7 @@
     "react-dropzone": "^10.2.1",
     "react-imask": "^6.0.3",
     "react-number-format": "^4.3.1",
-    "classnames": "^2.2.6"
+    "semantic-release": "^17.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.5",
@@ -44,7 +48,9 @@
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8",
     "babel-loader": "^8.0.6",
+    "commitizen": "^4.2.2",
     "copyfiles": "^2.1.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^6.7.2",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
@@ -54,5 +60,14 @@
     "prop-types": "^15.7.2",
     "rimraf": "^3.0.0",
     "storybook-addon-material-ui": "^0.9.0-alpha.20"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://npm:kPX_4_bppaZdpHxcyDQs@gitlab.sovcombank.group/web/ecom/ui.git"
   }
 }

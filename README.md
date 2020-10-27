@@ -4,6 +4,8 @@
 
 База стандартных компонентов департамента коммуникаций Совкомбанка. <br>
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 [storybook](http://urt-web-app1:3047/) <br>
 
 ## В проекте используются
@@ -72,10 +74,10 @@ yarn build
 import {
   ThemeProvider, // принимает тему и прокидывает вниз с помощью контекста. Размещать в корне проекта
   theme, // тема
-  Switch, // компонент
-} from 'ui';
+  Switch // компонент
+} from "ui"
 
-import SomeComponent from './components/SomeComponent';
+import SomeComponent from "./components/SomeComponent"
 
 // если необходимо, то можно поменять значения темы
 let myTheme = {
@@ -83,10 +85,10 @@ let myTheme = {
   palette: {
     ...theme.palette,
     secondary: {
-      main: '#1962d4',
-    },
-  },
-};
+      main: "#1962d4"
+    }
+  }
+}
 
 const App = () => {
   return (
@@ -94,6 +96,6 @@ const App = () => {
       <SomeContainer />
       <Switch />
     </ThemeProvider>
-  );
-};
+  )
+}
 ```
