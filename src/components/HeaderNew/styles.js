@@ -34,7 +34,8 @@ export const useHeaderStyles = makeStyles(theme => ({
   },
   rightBlock: {
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "row",
+    alignItems: "center"
   }
 }))
 
@@ -88,7 +89,8 @@ export const usePhoneStyles = makeStyles(theme => ({
 
 export const useButtonStyles = makeStyles(theme => ({
   root: {
-    padding: "8px 20px"
+    padding: "8px 20px",
+    maxHeight: 36
   },
 
   label: {
