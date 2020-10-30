@@ -1,21 +1,19 @@
-import React from 'react';
-import Phone from './Phone';
-import PhoneWithHint from './PhoneWithHint';
+import React from "react"
+import Phone from "./Phone"
+import PhoneWithHint from "./PhoneWithHint"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
 const PhoneMain = props => {
-  const classes = useStyles(props);
-  const { phone, phoneHint, phones } = props;
-  const phonesArr = phones ? phones : [phone];
-  const isSinglePhone = phonesArr.length === 1;
+  const classes = useStyles(props)
+  const { phone, phoneHint, phones } = props
+  const phonesArr = phones ? phones : [phone]
+  const isSinglePhone = phonesArr.length === 1
   const phoneWithHintProps = {
     phone: phonesArr[0],
     phoneHint,
-    classes: { phoneHint: classes.phoneHint, phoneNum: classes.phoneNum },
-  };
-
-  // console.log('props', props);
+    classes: { phoneHint: classes.phoneHint, phoneNum: classes.phoneNum }
+  }
 
   return (
     <div className={classes.phoneContainer}>
@@ -27,18 +25,18 @@ const PhoneMain = props => {
             key={i}
             number={phone}
             classes={{
-              phoneNum: classes.phoneMultiple,
+              phoneNum: classes.phoneMultiple
             }}
           />
         ))
       )}
     </div>
-  );
-};
+  )
+}
 
 PhoneMain.defaultProps = {
-  phone: '8 800 100-10-20',
-  phoneHint: 'Для звонков по России бесплатно',
-};
+  phone: "8 800 100-10-20",
+  phoneHint: "Для звонков по России бесплатно"
+}
 
-export default React.memo(PhoneMain);
+export default React.memo(PhoneMain)
