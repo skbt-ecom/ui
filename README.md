@@ -1,5 +1,11 @@
 # База компонетов на React.js + Material-ui
 
+## Как делать коммиты
+
+Вместо `git commit` запускаем команду `npm run cz`
+
+Вот <a href="https://medium.com/@schalkneethling/automate-package-releases-with-semantic-release-and-commitizen-d7d4c337f04f#85a3">тут</a> подробно описано, что делать дальше
+
 ## Описание
 
 База стандартных компонентов департамента коммуникаций Совкомбанка. <br>
