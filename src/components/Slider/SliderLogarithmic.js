@@ -14,48 +14,42 @@ import useStyles from "./styles"
 const SliderComponent = React.memo(props => {
   const classes = useStyles(props)
   const [value, setValue] = useState(props.defaultValue || props.value || props.min)
+  const [min, setMin] = useState(props.min)
+  const [max, setMax] = useState(props.max)
 
   useEffect(() => {
-    if (props.max > props.min) {
-      if (value > props.max) {
-        setValue(props.max)
-        if (props.onChangeCommitted) {
-          props.onChangeCommitted(props.max)
-        } else {
-          props.onChange(props.max)
-        }
-      }
+    if (props.value) {
+      setValue(props.value)
+    }
+  }, [props.value])
 
-      if (value < props.min) {
+  useEffect(() => {
+    if (props.min !== min) {
+      if (props.min > value) {
         setValue(props.min)
-        if (props.onChangeCommitted) {
-          props.onChangeCommitted(props.min)
-        } else {
-          props.onChange(props.min)
-        }
+        // if (props.onChangeCommitted) {
+        //   props.onChangeCommitted(props.min)
+        // } else {
+        //   props.onChange(props.min)
+        // }
       }
+      setMin(props.min)
     }
-  }, [props.max, props.min, value])
+  }, [props.min, min, value])
 
   useEffect(() => {
-    if (props.value !== undefined) {
-      if (props.max !== undefined || props.min !== undefined) {
-        let newValue = props.value
-
-        if (props.max < props.value) {
-          newValue = props.max
-        }
-
-        if (props.min > props.value) {
-          newValue = props.min
-        }
-
-        setValue(newValue)
-      } else {
-        setValue(props.value)
+    if (props.max !== max) {
+      if (props.max < value) {
+        setValue(props.max)
+        // if (props.onChangeCommitted) {
+        //   props.onChangeCommitted(props.max)
+        // } else {
+        //   props.onChange(props.max)
+        // }
       }
+      setMax(props.max)
     }
-  }, [props.max, props.min, props.value])
+  }, [props.max, max, value])
 
   const handleSliderChange = (_event, newValue) => {
     const viewValue = round(fromSlider(newValue))
@@ -102,7 +96,7 @@ const SliderComponent = React.memo(props => {
       props.onChange(newValue)
     }
   }
-  const { sliderProps, inputProps, label, min, max, defaultValue } = props
+  const { sliderProps, inputProps, label } = props
 
   return (
     <div className={classes.container}>
@@ -126,7 +120,6 @@ const SliderComponent = React.memo(props => {
           markLabel: classes.sliderMarkLabel,
           mark: classes.sliderMark
         }}
-        defaultValue={defaultValue}
         value={toSlider(value)}
         onChange={handleSliderChange}
         onChangeCommitted={handleSliderChangeCommitted}
