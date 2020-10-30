@@ -1,6 +1,6 @@
 {
   "name": "@ecom/ui",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "",
   "scripts": {
     "publish-ui": "npm run build && node prepublish.js && npm publish lib",
