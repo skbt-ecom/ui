@@ -18,9 +18,13 @@ lint:
 
 publish:
   stage: build
+  variables:
+    GITLAB_TOKEN: $GITLAB_TOKEN
+    NPM_TOKEN: $NPM_TOKEN
+  before_script:
+    - apk update && apk upgrade && apk add --no-cache bash git
   script:
     - npm i
-    - npm config set $NPM_INTERNAL_REGISTRY_CONFIG
     - npm config set @ecom:registry $NPM_REGISTRY/npm-internal/
     - npm run publish-ui
   only:

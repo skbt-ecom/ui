@@ -4,6 +4,7 @@ import { action } from "@storybook/addon-actions"
 import { muiTheme } from "storybook-addon-material-ui"
 
 import theme from "../../style/theme"
+import themeHalva from "../../style/themeHalva"
 import Grid from "../Grid"
 
 import FormLanding from "./FormLanding"
@@ -25,6 +26,9 @@ import SliderLogarithmic from "./fields/SliderLogarithmic"
 import SubmitButton from "./fields/SubmitButton"
 import SwitchField from "./fields/SwitchField"
 import TextField from "./fields/TextField"
+import PickersProvider from "../PickersProvider"
+import DatePicker from "./fields/DatePicker"
+import TimePicker from "./fields/TimePicker"
 
 // import REGIONS from '../../enums/regions';
 
@@ -37,6 +41,10 @@ const GENDERS = [
   { value: "f", label: "Женский" }
 ]
 
+function onSubmit(values) {
+  console.log("values", values)
+}
+
 function validateByLength(len) {
   return value => lengthValidator(value, len)
 }
@@ -48,7 +56,7 @@ export default {
 
 export function CreditAmountSlider() {
   return (
-    <FormLanding onChangeFields={action("onChangeFields")} onSubmit={action("onSubmit")}>
+    <FormLanding onChangeFields={action("onChangeFields")} onSubmit={onSubmit}>
       <SliderLogarithmic name={"sum"} label={"Сумма кредита"} min={150000} max={30000000} />
       <SubmitButton
       // classes={{ container: 'styles.buttonWrapper' }}
@@ -61,7 +69,7 @@ export function CreditAmountSlider() {
 
 export function DadataFields() {
   return (
-    <FormLanding onChangeFields={action("onChangeFields")} onSubmit={action("onSubmit")}>
+    <FormLanding onChangeFields={action("onChangeFields")} onSubmit={onSubmit}>
       <DadataAddress name="address2" label="Адрес" />
       <DadataFio name="fio" label="ФИО" />
       <DadataAddressFlat name="addressWithFlat" label="Адрес новый" />
@@ -73,9 +81,6 @@ export function DadataFields() {
 
 export function FormWrapper() {
   const formRef = React.useRef(null)
-  const onSubmit = values => {
-    console.log("values", values)
-  }
 
   return (
     <FormLanding onChangeFields={action("onChangeFields")} onSubmit={onSubmit} ref={formRef}>
@@ -103,10 +108,6 @@ export function FormPassport() {
       refForm.current.setField("lifeAddress", { isRequired: !value })
       setIsDifferentAddress(!value)
     }
-  }
-
-  function onSubmit(values) {
-    console.log("values", values)
   }
 
   return (
@@ -223,4 +224,32 @@ export function FormPassport() {
       </Grid>
     </FormLanding>
   )
+}
+
+export function Pickers() {
+  return (
+    <FormLanding onSubmit={onSubmit} onChangeFields={action("onChangeFields")}>
+      <PickersProvider>
+        <DatePicker name="date" />
+        <TimePicker name="time" />
+      </PickersProvider>
+      <SubmitButton>Отправить</SubmitButton>
+    </FormLanding>
+  )
+}
+
+export function PickersHalva() {
+  return (
+    <FormLanding onSubmit={onSubmit} onChangeFields={action("onChangeFields")}>
+      <PickersProvider>
+        <DatePicker name="date" />
+        <TimePicker name="time" />
+      </PickersProvider>
+      <SubmitButton>Отправить</SubmitButton>
+    </FormLanding>
+  )
+}
+
+PickersHalva.story = {
+  decorators: [muiTheme([themeHalva])]
 }

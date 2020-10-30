@@ -1,26 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react"
 
-import { Form } from './FormContext/Form';
+import { Form } from "./FormContext/Form"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
 const FormLanding = (props, ref) => {
-  const classes = useStyles(props);
+  const classes = useStyles(props)
 
   return (
     <div className={classes.container}>
-      <Form
-        onSubmit={props.onSubmit}
-        onChangeFields={props.onChangeFields}
-        ref={ref}
-      >
+      <Form onSubmit={props.onSubmit} onChangeFields={props.onChangeFields} ref={ref}>
         {props.children}
       </Form>
     </div>
-  );
-};
+  )
+}
 
-const ForwardedComponent = React.forwardRef(FormLanding);
+const ForwardedComponent = React.forwardRef(FormLanding)
 
-export default React.memo(ForwardedComponent);
+export default React.memo(ForwardedComponent)

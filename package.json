@@ -1,15 +1,17 @@
 {
   "name": "@ecom/ui",
-  "version": "2.1.3",
+  "version": "0.0.0-development",
   "description": "",
   "scripts": {
-    "publish-ui": "npm run build && node prepublish.js && npm publish lib",
+    "publish-ui": "npm run build && cp package.json lib && npm run semantic-release",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "start-storybook",
+    "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o storybook-static",
     "build": "npm run build:remove && npx babel src --out-dir lib && npm run build:copyfiles",
     "build:remove": "rimraf lib",
-    "build:copyfiles": "copyfiles -u 1 src/components/**/*.svg lib -EVs"
+    "build:copyfiles": "copyfiles -u 1 src/components/**/*.svg lib -EVs",
+    "semantic-release": "semantic-release",
+    "cz": "cz"
   },
   "author": "I",
   "license": "ISC",
@@ -23,6 +25,7 @@
     "@material-ui/lab": "^4.0.0-alpha.45",
     "@material-ui/pickers": "^3.2.8",
     "@material-ui/styles": "^4.7.1",
+    "classnames": "^2.2.6",
     "luxon": "^1.21.3",
     "memoize-one": "^5.1.1",
     "react": "^16.12.0",
@@ -31,20 +34,25 @@
     "react-dom": "^16.12.0",
     "react-dropzone": "^10.2.1",
     "react-imask": "^6.0.3",
-    "react-number-format": "^4.3.1",
-    "classnames": "^2.2.6"
+    "react-number-format": "^4.3.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.5",
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/gitlab": "^6.0.5",
     "@storybook/addon-actions": "^5.2.8",
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8",
+    "semantic-release": "^17.2.1",
     "babel-loader": "^8.0.6",
+    "commitizen": "^4.2.2",
     "copyfiles": "^2.1.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^6.7.2",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
@@ -54,5 +62,10 @@
     "prop-types": "^15.7.2",
     "rimraf": "^3.0.0",
     "storybook-addon-material-ui": "^0.9.0-alpha.20"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
