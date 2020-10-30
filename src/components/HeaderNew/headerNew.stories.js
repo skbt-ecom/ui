@@ -33,7 +33,7 @@ storiesOf("HeaderNew", module)
         onClick: action("onButtonClick")
       }}
       PhoneProps={{
-        phones: ["8 927 463-12-81", "8 952 031-34-20"]
+        phones: ["8 927 463-12-81", "8 952 031-34-20", "8 952 031-34-21"]
       }}
     />
   ))
