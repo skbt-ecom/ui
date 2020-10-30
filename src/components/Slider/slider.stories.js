@@ -90,6 +90,10 @@ storiesOf("Slider", module)
     const [max, setMax] = useState(1000000)
     const [sum, SetSum] = useState(100000)
 
+    const onChange = value => {
+      SetSum(value)
+    }
+
     return (
       <>
         <div
@@ -134,7 +138,7 @@ storiesOf("Slider", module)
         </div>
         <Slider
           // onChange={action('onChange')}
-          onChangeCommitted={SetSum}
+          onChangeCommitted={onChange}
           inputProps={inputProps}
           sliderProps={sliderProps}
           min={min}

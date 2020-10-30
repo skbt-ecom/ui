@@ -5,10 +5,12 @@ export const useHeaderStyles = makeStyles(theme => ({
     backgroundColor: "#fff",
     position: "sticky",
     top: 0,
-    zIndex: 10
+    zIndex: 10,
+    transitionProperty: "top",
+    transitionDuration: "2s"
   },
   headerStatic: {
-    position: "static"
+    top: "-400px"
   },
   container: {
     margin: "0 auto",
@@ -34,7 +36,8 @@ export const useHeaderStyles = makeStyles(theme => ({
   },
   rightBlock: {
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "row",
+    alignItems: "center"
   }
 }))
 
@@ -88,7 +91,8 @@ export const usePhoneStyles = makeStyles(theme => ({
 
 export const useButtonStyles = makeStyles(theme => ({
   root: {
-    padding: "8px 20px"
+    padding: "8px 20px",
+    maxHeight: 36
   },
 
   label: {
