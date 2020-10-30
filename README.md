@@ -1,8 +1,16 @@
 # База компонетов на React.js + Material-ui
 
+## Как делать коммиты
+
+Вместо `git commit` запускаем команду `npm run cz`
+
+Вот <a href="https://medium.com/@schalkneethling/automate-package-releases-with-semantic-release-and-commitizen-d7d4c337f04f#85a3">тут</a> подробно описано, что делать дальше
+
 ## Описание
 
 База стандартных компонентов департамента коммуникаций Совкомбанка. <br>
+
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 [storybook](http://urt-web-app1:3047/) <br>
 
@@ -72,10 +80,10 @@ yarn build
 import {
   ThemeProvider, // принимает тему и прокидывает вниз с помощью контекста. Размещать в корне проекта
   theme, // тема
-  Switch, // компонент
-} from 'ui';
+  Switch // компонент
+} from "ui"
 
-import SomeComponent from './components/SomeComponent';
+import SomeComponent from "./components/SomeComponent"
 
 // если необходимо, то можно поменять значения темы
 let myTheme = {
@@ -83,10 +91,10 @@ let myTheme = {
   palette: {
     ...theme.palette,
     secondary: {
-      main: '#1962d4',
-    },
-  },
-};
+      main: "#1962d4"
+    }
+  }
+}
 
 const App = () => {
   return (
@@ -94,6 +102,6 @@ const App = () => {
       <SomeContainer />
       <Switch />
     </ThemeProvider>
-  );
-};
+  )
+}
 ```
