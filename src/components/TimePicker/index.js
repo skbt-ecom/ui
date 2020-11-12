@@ -17,7 +17,6 @@ export default function TimePicker({ onChange, ...restProps }) {
 
   return (
     <KeyboardTimePicker
-      {...restProps}
       ampm={false}
       autoOk
       fullWidth
@@ -39,6 +38,7 @@ export default function TimePicker({ onChange, ...restProps }) {
       KeyboardButtonProps={{
         "aria-label": "Выбрать время"
       }}
+      {...restProps}
     />
   )
 }
