@@ -24,11 +24,11 @@
 ## Установка
 
 ```
-yarn add https://gitlab+deploy-token-253:3MniKPuY4zTrKUt2Wn7Z@gitlab.sovcombank.group/web/ecom/ui.git
+yarn add https://npm:kPX_4_bppaZdpHxcyDQs@gitlab.sovcombank.group/web/ecom/ui.git
 ```
 
 ```
-npm i git+https://gitlab+deploy-token-253:3MniKPuY4zTrKUt2Wn7Z@gitlab.sovcombank.group/web/ecom/ui.git
+npm i git+https://npm:kPX_4_bppaZdpHxcyDQs@gitlab.sovcombank.group/web/ecom/ui.git
 ```
 
 ## Доступные команды
