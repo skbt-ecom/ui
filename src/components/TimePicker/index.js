@@ -28,7 +28,6 @@ export default function TimePicker({ onChange, ...restProps }) {
       inputVariant="outlined"
       // variant="inline"
       onChange={handleChange}
-      inputVariant="outlined"
       className={classes.input}
       label="Выберите время"
       okLabel="Выбрать"
