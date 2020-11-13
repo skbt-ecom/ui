@@ -1,16 +1,27 @@
 # База компонетов на React.js + Material-ui
 
-## Как делать коммиты
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-Вместо `git commit` запускаем команду `npm run cz`
+## Публикация в nexus repository
 
-Вот <a href="https://medium.com/@schalkneethling/automate-package-releases-with-semantic-release-and-commitizen-d7d4c337f04f#85a3">тут</a> подробно описано, что делать дальше
+- Добавляем все изменения в отслеживание
+- Вместо `git commit` запускаем команду `npm run cz` или `yarn cz`
+- Далее [commitizen](https://github.com/commitizen/cz-cli) предложит выбрать [тип изменений](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type) где перечисленные ниже меняют версию пакета:
+
+  | Commit with     | Release type                         |
+  | --------------- | ------------------------------------ |
+  | breaking change | Major - Breaking release (**1**.1.1) |
+  | feat            | Minor - Feature release (1.**1**.1)  |
+  | fix             | Patch release (1.1.**1**)            |
+  | perf            | Patch release (1.1.**1**)            |
+
+  <br/>
+
+- фывфыв
 
 ## Описание
 
 База стандартных компонентов департамента коммуникаций Совкомбанка. <br>
-
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 [storybook](http://urt-web-app1:3047/) <br>
 
