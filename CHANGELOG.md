@@ -1,3 +1,15 @@
+# [2.0.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v1.0.1...v2.0.0) (2020-11-13)
+
+
+### Bug Fixes
+
+* bump version ([af01809](https://gitlab.sovcombank.group/web/ecom/ui/commit/af01809778b24e2d9c1781940e4b8b7be71bc2fb))
+
+
+### BREAKING CHANGES
+
+* bump version
+
 ## [1.0.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v1.0.0...v1.0.1) (2020-11-13)
 
 ### Bug Fixes
