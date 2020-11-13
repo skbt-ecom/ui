@@ -4,9 +4,11 @@
 
 ## Публикация в nexus repository
 
+Хорошая [статья](https://habr.com/ru/company/yandex/blog/431432/) про правильные коммиты
+
 - Добавляем все изменения в отслеживание
 - Вместо `git commit` запускаем команду `npm run cz` или `yarn cz`
-- Далее [commitizen](https://github.com/commitizen/cz-cli) предложит выбрать [тип изменений](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type) где перечисленные ниже меняют версию пакета:
+- [Commitizen](https://github.com/commitizen/cz-cli) предложит выбрать [тип изменений](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type), где перечисленные ниже меняют версию пакета:
 
   | Commit with     | Release type                         |
   | --------------- | ------------------------------------ |
@@ -17,7 +19,14 @@
 
   <br/>
 
-- фывфыв
+- Вводим область коммита (scope). Она характеризует фрагмент кода, которую затронули изменения. Примеры областей: component, file name и т.д. (можно пропустить)
+- Вводим описание коммита
+- Вводим тело коммита. Может быть использовано для детализации изменений. (можно пропустить)
+- Are there any breaking changes? - пропускаем
+- Если коммит закрывает [issue](https://gitlab.sovcombank.group/web/ecom/ui/-/issues), то пишем `closes #issue_id`, иначе пропускаем
+- Запускаем `git push`
+
+Как только коммит попадет в `master`, [semantic-release](https://github.com/semantic-release/semantic-release#documentation) спарсит его сообщение, обновит версию пакета и опубликует в nexus registry.
 
 ## Описание
 
