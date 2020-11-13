@@ -9,22 +9,24 @@ export default function TimePicker({ onChange, ...restProps }) {
   const [selectedValue, setSelectedValue] = useState(null)
 
   function handleChange(value) {
-    const time = new Date(value.ts).toLocaleTimeString("ru-RU")
-    onChange && onChange(time)
-
+    if (value && !value.invalid) {
+      const time = new Date(value.ts).toLocaleTimeString("ru-RU")
+      onChange && onChange(time)
+    } else {
+      onChange && onChange(null)
+    }
     setSelectedValue(value)
   }
 
   return (
     <KeyboardTimePicker
-      {...restProps}
       ampm={false}
       autoOk
       fullWidth
       // disableToolbar
-      format="hh:mm"
+      format="HH:mm"
+      inputVariant="outlined"
       // variant="inline"
-      value={selectedValue}
       onChange={handleChange}
       inputVariant="outlined"
       className={classes.input}
@@ -36,9 +38,11 @@ export default function TimePicker({ onChange, ...restProps }) {
           dialog: classes.paper
         }
       }}
-      KeyboardButtonProps={{
-        "aria-label": "Выбрать время"
+      InputProps={{
+        placeholder: "чч.мм"
       }}
+      {...restProps}
+      value={selectedValue}
     />
   )
 }
