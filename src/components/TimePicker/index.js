@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 
-// 2.1.0
 import { KeyboardTimePicker } from "@material-ui/pickers"
 
 import useStyles from "./styles"
