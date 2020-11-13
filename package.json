@@ -11,7 +11,7 @@
     "build:remove": "rimraf lib",
     "build:copyfiles": "copyfiles -u 1 src/components/**/*.svg lib -EVs",
     "semantic-release": "semantic-release",
-    "cz": "cz"
+    "cz": "cz -a"
   },
   "author": "I",
   "license": "ISC",
