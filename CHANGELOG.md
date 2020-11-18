@@ -1,3 +1,10 @@
+# [2.3.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.2.0...v2.3.0) (2020-11-18)
+
+
+### Features
+
+* add AutocompleteRegionByPhoneField ([5fc5760](https://gitlab.sovcombank.group/web/ecom/ui/commit/5fc57602efc5cdca20fbdda4edcc9bc20a08d2ce))
+
 # [2.2.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.1.0...v2.2.0) (2020-11-13)
 
 
