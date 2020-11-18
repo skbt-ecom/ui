@@ -10,7 +10,8 @@ import Grid from "../Grid"
 import FormLanding from "./FormLanding"
 
 // import AcceptmentField from './fields/AcceptmentField';
-// import AutocompleteField from './fields/AutocompleteField';
+import AutocompleteField from "./fields/AutocompleteField"
+import AutocompleteRegionByPhoneField from "./fields/AutocompleteRegionByPhoneField"
 import CheckboxField from "./fields/CheckboxField"
 import DadataAddress from "./fields/DadataFields/DadataAddress"
 import DadataAddressFlat from "./fields/DadataFields/DadataAddressFlat"
@@ -19,7 +20,7 @@ import DadataAuto from "./fields/DadataFields/DadataAuto"
 import DateField from "./fields/DateField"
 // import EmailField from './fields/EmailField';
 import MaskedField from "./fields/MaskedField"
-// import PhoneField from './fields/PhoneField';
+import PhoneField from "./fields/PhoneField"
 import RadioGroupField from "./fields/RadioGroupField"
 // import SelectField from './fields/SelectField';
 import SliderLogarithmic from "./fields/SliderLogarithmic"
@@ -30,7 +31,7 @@ import PickersProvider from "../PickersProvider"
 import DatePicker from "./fields/DatePicker"
 import TimePicker from "./fields/TimePicker"
 
-// import REGIONS from '../../enums/regions';
+import REGIONS from "../../enums/regions"
 
 import { requiredValidator } from "./validators/requiredValidator"
 import lengthValidator from "./validators/lengthValidator"
@@ -252,4 +253,28 @@ export function PickersHalva() {
 
 PickersHalva.story = {
   decorators: [muiTheme([themeHalva])]
+}
+
+export function RegionByPhone() {
+  const formRef = React.useRef(null)
+  const [phone, setPhone] = React.useState("")
+
+  const onChangeFields = (data, fieldKey) => {
+    if (fieldKey === "phone") {
+      setPhone(data["phone"].value)
+    }
+  }
+
+  return (
+    <FormLanding onChangeFields={onChangeFields} onSubmit={onSubmit} ref={formRef}>
+      <PhoneField name={"phone"} label={"Телефон"} placeholder={"+7 (000) 000-00-00"} fullWidth />
+      <AutocompleteRegionByPhoneField
+        name={"region"}
+        label={"Регион"}
+        phone={phone}
+        api_url={"http://urt-web-app1:4000"}
+      />
+      <SubmitButton>Отправить</SubmitButton>
+    </FormLanding>
+  )
 }
