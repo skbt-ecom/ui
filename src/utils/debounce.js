@@ -4,15 +4,15 @@
  * @param {number} [delay=2000] delay, when calling fn
  */
 export default function debounce(fn, delay = 2000) {
-  let timerId = null;
+  let timerId = null
   return function(...args) {
     const doSmth = () => {
-      fn.apply(this, args);
-      timerId = null;
-    };
-    if (timerId) {
-      clearTimeout(timerId);
+      fn.apply(this, args)
+      timerId = null
     }
-    timerId = setTimeout(doSmth, delay);
-  };
+    if (timerId) {
+      clearTimeout(timerId)
+    }
+    timerId = setTimeout(doSmth, delay)
+  }
 }

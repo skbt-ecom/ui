@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState } from "react"
 
-import Container from '../Container';
-import PhoneMain from '../PhoneMain';
-import SocialLinks from './SocialLinks';
-import StoreLinks from './StoreLinks';
+import Container from "../Container"
+import PhoneMain from "../PhoneMain"
+import SocialLinks from "./SocialLinks"
+import StoreLinks from "./StoreLinks"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
 const Footer = (props, ref) => {
-  const [isHide, setIsHide] = useState(true);
-  const classes = useStyles(props);
+  const [isHide, setIsHide] = useState(true)
+  const classes = useStyles(props)
   const {
     left,
     right,
@@ -20,9 +20,9 @@ const Footer = (props, ref) => {
     phoneHint,
     socialLinks,
     storeLinks,
-  } = props;
+  } = props
   function showRestLigal() {
-    setIsHide(false);
+    setIsHide(false)
   }
 
   return (
@@ -73,14 +73,14 @@ const Footer = (props, ref) => {
         )}
       </Container>
     </footer>
-  );
-};
+  )
+}
 
-const ForwardedFooter = React.forwardRef(Footer);
+const ForwardedFooter = React.forwardRef(Footer)
 
 ForwardedFooter.defaultProps = {
-  shortText: '',
-  restText: '',
-};
+  shortText: "",
+  restText: "",
+}
 
-export default React.memo(ForwardedFooter);
+export default React.memo(ForwardedFooter)

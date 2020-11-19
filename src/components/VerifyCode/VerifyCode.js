@@ -1,8 +1,8 @@
-import React from 'react';
-import FormControl from '@material-ui/core/FormControl';
-import FormHelperText from '@material-ui/core/FormHelperText';
+import React from "react"
+import FormControl from "@material-ui/core/FormControl"
+import FormHelperText from "@material-ui/core/FormHelperText"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
 const acceptedKeys = [
   // Backspace and Tab and Enter
@@ -18,14 +18,14 @@ const acceptedKeys = [
   // Ins and Del
   45,
   46,
-];
+]
 
 const VerifyCode = props => {
-  const classes = useStyles(props);
-  const { onChange, value, error, helperText } = props;
+  const classes = useStyles(props)
+  const { onChange, value, error, helperText } = props
 
   const handleKeyDown = e => {
-    const key = e.which || e.keyCode;
+    const key = e.which || e.keyCode
     if (
       !(
         (!e.shiftKey &&
@@ -39,9 +39,9 @@ const VerifyCode = props => {
         acceptedKeys.includes(key)
       )
     ) {
-      e.preventDefault();
+      e.preventDefault()
     }
-  };
+  }
 
   return (
     <FormControl classes={{ root: classes.formControlRoot }} error={error}>
@@ -59,13 +59,11 @@ const VerifyCode = props => {
         </div>
       </div>
       {error && (
-        <FormHelperText classes={{ root: classes.errorTextRoot }}>
-          Неверный код
-        </FormHelperText>
+        <FormHelperText classes={{ root: classes.errorTextRoot }}>Неверный код</FormHelperText>
       )}
       {helperText}
     </FormControl>
-  );
-};
+  )
+}
 
-export default React.memo(VerifyCode);
+export default React.memo(VerifyCode)

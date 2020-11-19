@@ -47,7 +47,7 @@ WrappedField.defaultProps = {
   validateOnBlur: false,
   fullWidth: true,
   phone: "",
-  api_url: "https://api-app.sovcokbank.ru"
+  api_url: "https://api-app.sovcokbank.ru",
 }
 
 export default WrappedField

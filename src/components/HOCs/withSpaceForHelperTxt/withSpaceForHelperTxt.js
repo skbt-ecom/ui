@@ -1,19 +1,19 @@
-import React from 'react';
-import useStyles from './styles';
+import React from "react"
+import useStyles from "./styles"
 
 const withSpaceForHelperTxt = (WrappedComponent, styles = {}) => {
   const WithSpace = props => {
-    const classes = useStyles({ ...styles, ...props });
+    const classes = useStyles({ ...styles, ...props })
     return (
       <div className={classes.withSpaceForHelperTxt}>
         <WrappedComponent {...props} />
       </div>
-    );
-  };
+    )
+  }
 
-  WithSpace.dispalyName = 'WithSpaceForHelperTxt';
+  WithSpace.dispalyName = "WithSpaceForHelperTxt"
 
-  return WithSpace;
-};
+  return WithSpace
+}
 
-export default withSpaceForHelperTxt;
+export default withSpaceForHelperTxt

@@ -6,8 +6,8 @@ function styles(theme) {
       [theme.breakpoints.up("sm")]: {
         display: "flex",
         alignItems: "center",
-        justifyContent: "center"
-      }
+        justifyContent: "center",
+      },
     },
 
     wrapper: {
@@ -28,21 +28,21 @@ function styles(theme) {
         height: 452,
         height: "auto",
 
-        borderRadius: 8
+        borderRadius: 8,
       },
 
       [theme.breakpoints.up("md")]: {
         width: 624,
-        height: 496
-      }
+        height: 496,
+      },
     },
 
     container: {
       padding: "88px 22px 88px",
 
       [theme.breakpoints.up("sm")]: {
-        padding: "64px 56px 56px"
-      }
+        padding: "64px 56px 56px",
+      },
     },
 
     closeButton: {
@@ -54,7 +54,7 @@ function styles(theme) {
       height: 16,
       border: 0,
       outline: 0,
-      cursor: "pointer"
+      cursor: "pointer",
     },
 
     title: {
@@ -67,8 +67,8 @@ function styles(theme) {
 
       [theme.breakpoints.up("md")]: {
         fontSize: 32,
-        lineHeight: "36px"
-      }
+        lineHeight: "36px",
+      },
     },
 
     subTitle: {
@@ -79,25 +79,25 @@ function styles(theme) {
 
       [theme.breakpoints.up("md")]: {
         fontSize: 18,
-        marginBottom: 40
-      }
+        marginBottom: 40,
+      },
     },
 
     fieldWrapperAcceptment: {
-      minHeight: 62
+      minHeight: 62,
     },
 
     buttonWrapper: {
       display: "flex",
       flexDirection: "column",
-      alignItems: "center"
+      alignItems: "center",
     },
 
     buttonWidth: {
       [theme.breakpoints.up("sm")]: {
-        width: 224
-      }
-    }
+        width: 224,
+      },
+    },
   }
 }
 

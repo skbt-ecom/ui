@@ -1,12 +1,12 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import ButtonWText from './ButtonWText';
-import Description from './Description';
+import React from "react"
+import Button from "@material-ui/core/Button"
+import ButtonWText from "./ButtonWText"
+import Description from "./Description"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
 const ButtonESIA = ({ withouthDescr, iconDisabled, iconDefault, ...props }) => {
-  const classes = useStyles(props);
+  const classes = useStyles(props)
 
   return (
     <div className={classes.buttonContainer}>
@@ -27,11 +27,10 @@ const ButtonESIA = ({ withouthDescr, iconDisabled, iconDefault, ...props }) => {
       />
       {!withouthDescr && <Description />}
     </div>
-  );
-};
+  )
+}
 
 ButtonESIA.defaultProps = {
-  variant: 'outlined',
   withouthDescr: false,
   iconDefault: (
     <svg width="30" height="33" viewBox="0 0 30 33">
@@ -98,6 +97,6 @@ ButtonESIA.defaultProps = {
       </g>
     </svg>
   ),
-};
+}
 
-export default React.memo(ButtonESIA);
+export default React.memo(ButtonESIA)

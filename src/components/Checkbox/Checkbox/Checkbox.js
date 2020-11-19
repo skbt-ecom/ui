@@ -1,43 +1,43 @@
-import React from 'react';
-import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import Checkbox from '@material-ui/core/Checkbox';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react"
+import FormControl from "@material-ui/core/FormControl"
+import FormGroup from "@material-ui/core/FormGroup"
+import FormControlLabel from "@material-ui/core/FormControlLabel"
+import FormHelperText from "@material-ui/core/FormHelperText"
+import Checkbox from "@material-ui/core/Checkbox"
+import { makeStyles } from "@material-ui/core/styles"
 
-import { getClassesFromProps } from '../../../utils';
+import { getClassesFromProps } from "../../../utils"
 
 const useStylesCheckbox = makeStyles({
   root: {},
   checked: {},
-});
+})
 const useStylesLabel = makeStyles({
   root: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   label: {},
-});
+})
 const useStylesHelperText = makeStyles({
   root: {},
-});
+})
 
 const CheckboxComponent = React.memo(props => {
   const checkboxClasses = props.classes
-    ? useStylesCheckbox(getClassesFromProps(props, 'checkboxClasses'))
-    : {};
+    ? useStylesCheckbox(getClassesFromProps(props, "checkboxClasses"))
+    : {}
   const labelClasses = props.classes
-    ? useStylesLabel(getClassesFromProps(props, 'labelClasses'))
-    : {};
+    ? useStylesLabel(getClassesFromProps(props, "labelClasses"))
+    : {}
   const helperTextClasses = props.classes
-    ? useStylesHelperText(getClassesFromProps(props, 'helperTextClasses'))
-    : {};
+    ? useStylesHelperText(getClassesFromProps(props, "helperTextClasses"))
+    : {}
 
-  const { label, error, helperText, classes, value, ...restProps } = props;
+  const { label, error, helperText, classes, value, ...restProps } = props
 
   const handleChange = event => {
-    props.onChange(event);
-  };
+    props.onChange(event)
+  }
 
   return (
     <FormControl required error={error} component="fieldset">
@@ -61,13 +61,9 @@ const CheckboxComponent = React.memo(props => {
           }}
         />
       </FormGroup>
-      {helperText && (
-        <FormHelperText classes={helperTextClasses}>
-          {helperText}
-        </FormHelperText>
-      )}
+      {helperText && <FormHelperText classes={helperTextClasses}>{helperText}</FormHelperText>}
     </FormControl>
-  );
-});
+  )
+})
 
-export default CheckboxComponent;
+export default CheckboxComponent

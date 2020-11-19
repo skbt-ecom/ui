@@ -1,3 +1,3 @@
-import PhoneMain from './PhoneMain';
+import PhoneMain from "./PhoneMain"
 
-export default PhoneMain;
+export default PhoneMain

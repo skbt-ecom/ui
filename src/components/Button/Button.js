@@ -1,10 +1,10 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
+import React from "react"
+import Button from "@material-ui/core/Button"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
-const ButtonComponent = React.memo(props => {
-  const classes = useStyles(props);
+export default function ButtonComponent(props) {
+  const classes = useStyles(props)
 
   return (
     <Button
@@ -14,11 +14,5 @@ const ButtonComponent = React.memo(props => {
         label: classes.label,
       }}
     />
-  );
-});
-
-ButtonComponent.defaultProps = {
-  variant: 'contained',
-};
-
-export default ButtonComponent;
+  )
+}

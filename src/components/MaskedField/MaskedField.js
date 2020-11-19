@@ -76,7 +76,7 @@ const MaskedField = React.memo(props => {
     dispatch,
     lazy,
     placeholderChar,
-    onBlur: handleOnBlur
+    onBlur: handleOnBlur,
   }
   return (
     <TextField
@@ -85,16 +85,15 @@ const MaskedField = React.memo(props => {
         ...InputProps,
         inputComponent: TextMaskCustom,
         inputProps,
-        classes: InputProps.classes
+        classes: InputProps.classes,
       }}
     />
   )
 })
 
 MaskedField.defaultProps = {
-  variant: "outlined",
   mask: Date,
   InputProps: {},
-  onBlur: () => null
+  onBlur: () => null,
 }
 export default withSpaceForHelperTxt(MaskedField)

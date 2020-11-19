@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react"
 
-import MaterialSwitch from '../../Switch';
+import MaterialSwitch from "../../Switch"
 
-import { Field } from '../FormContext/Field';
+import { Field } from "../FormContext/Field"
 
 function Switch(props) {
   function handleChange(e) {
-    props.onChange(e.target.checked);
+    props.onChange(e.target.checked)
   }
 
-  return <MaterialSwitch {...props} onChange={handleChange} />;
+  return <MaterialSwitch {...props} onChange={handleChange} />
 }
 
 export default function WrappedField(props) {
-  return <Field {...props} component={Switch} />;
+  return <Field {...props} component={Switch} />
 }

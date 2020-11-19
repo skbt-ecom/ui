@@ -110,7 +110,7 @@ const SliderComponent = React.memo(props => {
         classes={{
           root: classes.sliderRoot,
           markLabel: classes.sliderMarkLabel,
-          mark: classes.sliderMark
+          mark: classes.sliderMark,
         }}
         value={value}
         onChange={handleSliderChange}
@@ -123,7 +123,7 @@ const SliderComponent = React.memo(props => {
 })
 
 SliderComponent.defaultProps = {
-  onChange: () => null
+  onChange: () => null,
 }
 
 export default SliderComponent

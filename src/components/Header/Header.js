@@ -1,32 +1,32 @@
-import React from 'react';
+import React from "react"
 
-import Container from '../Container';
-import Logo from './Logo';
-import SupportPhone from '../SupportPhone';
+import Container from "../Container"
+import Logo from "./Logo"
+import SupportPhone from "../SupportPhone"
 
-import logo from './logo.svg';
+import logo from "./logo.svg"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
 const renderRight = (type, { classes, supportPhoneComponentProps }) => {
   switch (type) {
-    case 'withHalvaLogo':
-      return <Logo classes={classes} />;
+    case "withHalvaLogo":
+      return <Logo classes={classes} />
     default:
-      return <SupportPhone {...supportPhoneComponentProps} />;
+      return <SupportPhone {...supportPhoneComponentProps} />
   }
-};
+}
 
 const Header = props => {
-  const classes = useStyles(props);
+  const classes = useStyles(props)
 
-  const { logoHref, type } = props;
+  const { logoHref, type } = props
   const newButtonProps = props.buttonProps
     ? {
         ...props.buttonProps,
         isVisible: true,
       }
-    : undefined;
+    : undefined
 
   const supportPhoneComponentProps = {
     phone: props.phone,
@@ -35,30 +35,27 @@ const Header = props => {
     onButtonClick: props.onButtonClick,
     buttonProps: newButtonProps,
     classes: { phoneContainer: classes.phoneContainer },
-  };
+  }
 
   return (
     <header className={classes.header}>
       <Container className={classes.container}>
-        <a
-          href={logoHref}
-          className={type === 'withHalvaLogo' ? classes.withHalva : ''}
-        >
+        <a href={logoHref} className={type === "withHalvaLogo" ? classes.withHalva : ""}>
           <img className={classes.logo} src={logo} alt="logo" />
         </a>
         {renderRight(type, { classes, supportPhoneComponentProps })}
       </Container>
     </header>
-  );
-};
+  )
+}
 
 Header.defaultProps = {
-  logoHref: '/',
-  phone: '8 800 100-10-20',
-  phoneHint: 'Для звонков по России бесплатно',
-  type: 'default',
+  logoHref: "/",
+  phone: "8 800 100-10-20",
+  phoneHint: "Для звонков по России бесплатно",
+  type: "default",
   withButton: false,
   buttonProps: undefined,
-};
+}
 
-export default React.memo(Header);
+export default React.memo(Header)

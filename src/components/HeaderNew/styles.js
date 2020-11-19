@@ -7,10 +7,10 @@ export const useHeaderStyles = makeStyles(theme => ({
     top: 0,
     zIndex: 10,
     transitionProperty: "top",
-    transitionDuration: "2s"
+    transitionDuration: "2s",
   },
   headerStatic: {
-    top: "-400px"
+    top: "-400px",
   },
   container: {
     margin: "0 auto",
@@ -22,23 +22,23 @@ export const useHeaderStyles = makeStyles(theme => ({
 
     [theme.breakpoints.up("sm")]: {
       height: "80px",
-      minHeight: "80px"
+      minHeight: "80px",
     },
 
     [theme.breakpoints.up("md")]: {
       height: "104px",
-      minHeight: "104px"
+      minHeight: "104px",
     },
 
     "& img": {
-      verticalAlign: "top"
-    }
+      verticalAlign: "top",
+    },
   },
   rightBlock: {
     display: "flex",
     flexDirection: "row",
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 }))
 
 export const usePhoneStyles = makeStyles(theme => ({
@@ -47,8 +47,8 @@ export const usePhoneStyles = makeStyles(theme => ({
 
     [theme.breakpoints.up("md")]: {
       display: "block",
-      marginRight: "40px"
-    }
+      marginRight: "40px",
+    },
   },
 
   phoneMultiple: {
@@ -58,8 +58,8 @@ export const usePhoneStyles = makeStyles(theme => ({
 
     [theme.breakpoints.up("md")]: {
       fontSize: 20,
-      lineHeight: "20px"
-    }
+      lineHeight: "20px",
+    },
   },
 
   phoneNum: {
@@ -71,8 +71,8 @@ export const usePhoneStyles = makeStyles(theme => ({
     display: "block",
 
     [theme.breakpoints.up("md")]: {
-      fontSize: 23
-    }
+      fontSize: 23,
+    },
   },
 
   phoneHint: {
@@ -84,21 +84,21 @@ export const usePhoneStyles = makeStyles(theme => ({
 
     [theme.breakpoints.up("md")]: {
       letterSpacing: "0.2px",
-      fontSize: 10
-    }
-  }
+      fontSize: 10,
+    },
+  },
 }))
 
 export const useButtonStyles = makeStyles(theme => ({
   root: {
     padding: "8px 20px",
-    maxHeight: 36
+    maxHeight: 36,
   },
 
   label: {
     fontSize: 16,
-    lineHeight: "20px"
-  }
+    lineHeight: "20px",
+  },
 }))
 
 // export default useStyles;

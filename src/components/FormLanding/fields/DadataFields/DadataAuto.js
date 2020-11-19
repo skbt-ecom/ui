@@ -31,7 +31,7 @@ WrappedField.defaultProps = {
   validate: autoDadataValidator,
   defaultValue: {},
   validateOnBlur: false,
-  fullWidth: true
+  fullWidth: true,
 }
 
 export default WrappedField

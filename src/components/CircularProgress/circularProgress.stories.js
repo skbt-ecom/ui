@@ -1,16 +1,14 @@
-import React from 'react';
+import React from "react"
 // Import the storybook libraries
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { muiTheme } from 'storybook-addon-material-ui';
+import { storiesOf } from "@storybook/react"
+import { action } from "@storybook/addon-actions"
+import { muiTheme } from "storybook-addon-material-ui"
 
 // Import our component from this folder
-import CircularProgress from './CircularProgress';
+import CircularProgress from "./CircularProgress"
 
-import theme from '../../style/theme';
+import theme from "../../style/theme"
 
-storiesOf('CircularProgress', module)
+storiesOf("CircularProgress", module)
   .addDecorator(muiTheme([theme]))
-  .add('Default', () => (
-    <CircularProgress color="primary" size={200} thickness={3} />
-  ));
+  .add("Default", () => <CircularProgress color="primary" size={200} thickness={3} />)

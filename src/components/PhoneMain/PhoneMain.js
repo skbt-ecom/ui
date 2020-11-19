@@ -12,7 +12,7 @@ const PhoneMain = props => {
   const phoneWithHintProps = {
     phone: phonesArr[0],
     phoneHint,
-    classes: { phoneHint: classes.phoneHint, phoneNum: classes.phoneNum }
+    classes: { phoneHint: classes.phoneHint, phoneNum: classes.phoneNum },
   }
 
   return (
@@ -25,7 +25,7 @@ const PhoneMain = props => {
             key={i}
             number={phone}
             classes={{
-              phoneNum: classes.phoneMultiple
+              phoneNum: classes.phoneMultiple,
             }}
           />
         ))
@@ -36,7 +36,7 @@ const PhoneMain = props => {
 
 PhoneMain.defaultProps = {
   phone: "8 800 100-10-20",
-  phoneHint: "Для звонков по России бесплатно"
+  phoneHint: "Для звонков по России бесплатно",
 }
 
 export default React.memo(PhoneMain)

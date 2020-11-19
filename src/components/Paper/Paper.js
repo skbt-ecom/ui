@@ -1,10 +1,10 @@
-import React from 'react';
-import Paper from '@material-ui/core/Paper';
+import React from "react"
+import Paper from "@material-ui/core/Paper"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
 const PaperComponent = React.memo(props => {
-  const classes = useStyles(props);
+  const classes = useStyles(props)
 
   return (
     <Paper
@@ -13,7 +13,7 @@ const PaperComponent = React.memo(props => {
         root: classes.root,
       }}
     />
-  );
-});
+  )
+})
 
-export default PaperComponent;
+export default PaperComponent

@@ -1,8 +1,8 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles"
 
 export const useStylesAddressDadata = makeStyles({
   container: { marginBottom: 10 },
-});
+})
 
 export const useStylesFlatInfo = makeStyles(
   {
@@ -13,9 +13,9 @@ export const useStylesFlatInfo = makeStyles(
       marginRight: 30,
     },
     container: {
-      display: 'flex',
-      alignItems: 'flex-start',
+      display: "flex",
+      alignItems: "flex-start",
     },
   },
   { index: 0 }
-);
+)
