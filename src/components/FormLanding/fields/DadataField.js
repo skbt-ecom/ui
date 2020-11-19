@@ -1,48 +1,47 @@
-import React from 'react';
-import MaterialDadataField from '../../DadataField';
-import { Field } from '../FormContext/Field';
-import { fioValidator, addressValidator } from '../validators';
+import React from "react"
+import MaterialDadataField from "../../DadataField"
+import { Field } from "../FormContext/Field"
+import { fioValidator, addressValidator } from "../validators"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== "production") {
   console.error(
     '⚠️ Deprecation component "DadataField" ⚠️\n ⚠️ Use the "DadataFields/Dadata*.js" instead ⚠️'
-  );
+  )
 }
 
 const fioDefaultProps = {
-  label: 'Фамилия Имя Отчество',
+  label: "Фамилия Имя Отчество",
   validate: fioValidator,
-};
+}
 
 const addressDefaultProps = {
-  label: 'Адрес',
-  name: 'address',
+  label: "Адрес",
+  name: "address",
   validate: addressValidator,
-};
+}
 
-const DadataField = React.memo(props => <MaterialDadataField {...props} />);
+const DadataField = React.memo(props => <MaterialDadataField {...props} />)
 
 const WrappedField = ({ classsesComponent, ...props }) => {
-  const classes = useStyles(props);
-  const { type } = props;
-  const propsByType =
-    type === 'fio' ? { ...fioDefaultProps } : { ...addressDefaultProps };
+  const classes = useStyles(props)
+  const { type } = props
+  const propsByType = type === "fio" ? { ...fioDefaultProps } : { ...addressDefaultProps }
 
   return (
     <div className={classes.fieldWrapper}>
       <Field {...propsByType} {...props} classes={classsesComponent} />
     </div>
-  );
-};
+  )
+}
 
-WrappedField.displayName = 'DadataField';
+WrappedField.displayName = "DadataField"
 WrappedField.defaultProps = {
   component: DadataField,
-  defaultValue: '',
+  defaultValue: "",
   validateOnBlur: false,
   fullWidth: true,
-};
+}
 
-export default WrappedField;
+export default WrappedField

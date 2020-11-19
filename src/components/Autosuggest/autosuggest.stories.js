@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState } from "react"
 // Import the storybook libraries
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { muiTheme } from 'storybook-addon-material-ui';
+import { storiesOf } from "@storybook/react"
+import { action } from "@storybook/addon-actions"
+import { muiTheme } from "storybook-addon-material-ui"
 
 // Import our component from this folder
-import Autosuggest from './Autosuggest';
+import Autosuggest from "./Autosuggest"
 
-import theme from '../../style/theme';
+import theme from "../../style/theme"
 
-import REGIONS from '../../enums/regions';
+import REGIONS from "../../enums/regions"
 
 const AutosuggestFieldWrapper = props => {
-  const [value, setValue] = useState(props.value || '');
+  const [value, setValue] = useState(props.value || "")
 
   const onChange = value => {
-    setValue(value);
-    props.onChange(value);
-  };
+    setValue(value)
+    props.onChange(value)
+  }
   return (
     <>
       {/* <button
@@ -33,20 +33,20 @@ const AutosuggestFieldWrapper = props => {
       </button> */}
       <Autosuggest {...props} onChange={onChange} value={value} />
     </>
-  );
-};
+  )
+}
 
-storiesOf('Autosuggest', module)
+storiesOf("Autosuggest", module)
   .addDecorator(muiTheme([theme]))
-  .add('Default', () => (
+  .add("Default", () => (
     <>
       <h2>Пример с регионами</h2>
       <AutosuggestFieldWrapper
-        onChange={action('onChange')}
+        onChange={action("onChange")}
         suggestions={REGIONS}
-        label={'Регион'}
+        label={"Регион"}
         fullWidth
         value={REGIONS[0]}
       />
     </>
-  ));
+  ))

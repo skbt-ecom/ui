@@ -1,3 +1,3 @@
-import RadioGroupField from './RadioGroupField';
+import RadioGroupField from "./RadioGroupField"
 
-export default RadioGroupField;
+export default RadioGroupField

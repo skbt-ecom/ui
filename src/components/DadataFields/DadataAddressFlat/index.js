@@ -1,1 +1,1 @@
-export { default } from './DadataAddressFlat';
+export { default } from "./DadataAddressFlat"

@@ -9,7 +9,7 @@ export const getDadata = (type, data, options = {}) => {
   const DADATA_URL = "https://api-app.sovcombank.ru/v1/cache/dadata"
   const query = {
     query: data,
-    ...options
+    ...options,
   }
 
   let url
@@ -23,9 +23,9 @@ export const getDadata = (type, data, options = {}) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Accept: "application/json"
+      Accept: "application/json",
     },
-    body: JSON.stringify(query)
+    body: JSON.stringify(query),
   })
     .then(res => res.json())
     .catch(err => console.error("Dadata error", err))

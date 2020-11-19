@@ -1,8 +1,8 @@
-import React from 'react';
-import Grid from '@material-ui/core/Grid';
+import React from "react"
+import Grid from "@material-ui/core/Grid"
 
 const GridComponent = React.memo(props => {
-  return <Grid {...props} />;
-});
+  return <Grid {...props} />
+})
 
-export default GridComponent;
+export default GridComponent

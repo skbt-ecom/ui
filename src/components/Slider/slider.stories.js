@@ -32,7 +32,7 @@ const SliderWrapper = props => {
   }
 
   const dynamicStepSliderProps = {
-    step: step
+    step: step,
   }
 
   return (
@@ -100,7 +100,7 @@ storiesOf("Slider", module)
           style={{
             display: "flex",
             justifyContent: "space-around",
-            margin: "20px"
+            margin: "20px",
           }}
         >
           <span>Sum = {sum}</span>

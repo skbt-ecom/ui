@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles({
   fieldWrapper: {
@@ -6,9 +6,9 @@ const useStyles = makeStyles({
     marginBottom: 10,
   },
   fieldWrapperAcceptment: {
-    minHeight: 'auto',
+    minHeight: "auto",
     marginBottom: 10,
   },
-});
+})
 
-export default useStyles;
+export default useStyles

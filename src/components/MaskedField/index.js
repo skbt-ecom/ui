@@ -1,3 +1,3 @@
-import MaskedField from './MaskedField';
+import MaskedField from "./MaskedField"
 
-export default MaskedField;
+export default MaskedField

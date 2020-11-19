@@ -1,19 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react"
 
 //https://habr.com/ru/post/492248/
 
 // Наш хук
 export default function useDebounce(value, delay = 1000) {
   // Состояние и сеттер для отложенного значения
-  const [debouncedValue, setDebouncedValue] = useState(value);
+  const [debouncedValue, setDebouncedValue] = useState(value)
 
   useEffect(
     () => {
       // Выставить debouncedValue равным value (переданное значение)
       // после заданной задержки
       const handler = setTimeout(() => {
-        setDebouncedValue(value);
-      }, delay);
+        setDebouncedValue(value)
+      }, delay)
 
       // Вернуть функцию очистки, которая будет вызываться каждый раз, когда ...
       // ... useEffect вызван снова. useEffect будет вызван снова, только если ...
@@ -25,14 +25,14 @@ export default function useDebounce(value, delay = 1000) {
       // ... нашего приложения в поле поиска, мы не хотим, чтобы debouncedValue...
       // ... не менялось до тех пор, пока он не прекратит печатать дольше, чем 500ms.
       return () => {
-        clearTimeout(handler);
-      };
+        clearTimeout(handler)
+      }
     },
     // Вызывается снова, только если значение изменится
     // мы так же можем добавить переменную "delay" в массива зависимостей ...
     // ... если вы собираетесь менять ее динамически.
     [value, delay]
-  );
+  )
 
-  return debouncedValue;
+  return debouncedValue
 }

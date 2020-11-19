@@ -1,15 +1,15 @@
-import React from 'react';
-import useStyles from './styles';
+import React from "react"
+import useStyles from "./styles"
 
 const Phone = props => {
-  const classes = useStyles(props);
-  const { number } = props;
+  const classes = useStyles(props)
+  const { number } = props
 
   return (
     <a rel="nofollow" href={`tel:${number}`} className={classes.phoneNum}>
       {number}
     </a>
-  );
-};
+  )
+}
 
-export default Phone;
+export default Phone

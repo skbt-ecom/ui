@@ -1,7 +1,7 @@
 export const inputProps = {
-  suffix: ' ₽',
-};
+  suffix: " ₽",
+}
 
 export const sliderProps = {
-  suffix: ' ₽',
-};
+  suffix: " ₽",
+}

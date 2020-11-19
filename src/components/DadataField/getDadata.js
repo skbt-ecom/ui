@@ -1,4 +1,4 @@
-import memoizeOne from 'memoize-one';
+import memoizeOne from "memoize-one"
 
 /**
  * УДАЛИТЬ ПОСЛЕ ЯНВАРЯ 2020
@@ -8,25 +8,24 @@ import memoizeOne from 'memoize-one';
  * @returns {Promise} Promise object with Dadata's response (as json if resolve)
  */
 const getDadata_DEPRECATED = (type, data, options = {}) => {
-  const DADATA_URL =
-    'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest';
-  const API_KEY = '3696edb148443072e2f9b52b5a7cbc8a77f8745f';
+  const DADATA_URL = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest"
+  const API_KEY = "3696edb148443072e2f9b52b5a7cbc8a77f8745f"
   const query = {
     query: data,
     ...options,
-  };
+  }
   return fetch(`${DADATA_URL}/${type}`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
+      "Content-Type": "application/json",
+      Accept: "application/json",
       Authorization: `Token ${API_KEY}`,
     },
     body: JSON.stringify(query),
   })
     .then(res => res.json())
-    .catch(err => console.error('Dadata error', err));
-};
+    .catch(err => console.error("Dadata error", err))
+}
 
 /**
  *
@@ -36,21 +35,21 @@ const getDadata_DEPRECATED = (type, data, options = {}) => {
  * @returns {Promise} Promise object with Dadata's response (as json if resolve)
  */
 const getDadata = (type, data, options = {}) => {
-  const DADATA_URL = 'https://api-app.sovcombank.ru/v1/cache/dadata';
+  const DADATA_URL = "https://api-app.sovcombank.ru/v1/cache/dadata"
   const query = {
     query: data,
     ...options,
-  };
+  }
   return fetch(`${DADATA_URL}/${type}`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
+      "Content-Type": "application/json",
+      Accept: "application/json",
     },
     body: JSON.stringify(query),
   })
     .then(res => res.json())
-    .catch(err => console.error('Dadata error', err));
-};
+    .catch(err => console.error("Dadata error", err))
+}
 
-export default memoizeOne(getDadata);
+export default memoizeOne(getDadata)

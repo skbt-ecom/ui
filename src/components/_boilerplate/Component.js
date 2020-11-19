@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react"
 
 const ComponentComponent = React.memo(props => {
-  return <input {...props} />;
-});
+  return <input {...props} />
+})
 
-export default ComponentComponent;
+export default ComponentComponent

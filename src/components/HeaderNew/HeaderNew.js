@@ -45,6 +45,6 @@ ForwardedHeader.defaultProps = {
   LogoProps: {},
   ButtonProps: {},
   PhoneProps: {},
-  static: false
+  static: false,
 }
 export default React.memo(ForwardedHeader)

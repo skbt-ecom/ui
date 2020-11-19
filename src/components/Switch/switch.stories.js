@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react"
 
-import { action } from '@storybook/addon-actions';
-import { muiTheme } from 'storybook-addon-material-ui';
-import { makeStyles } from '@material-ui/core/styles';
+import { action } from "@storybook/addon-actions"
+import { muiTheme } from "storybook-addon-material-ui"
+import { makeStyles } from "@material-ui/core/styles"
 
-import Switch from './Switch';
+import Switch from "./Switch"
 
-import theme from '../../style/theme';
+import theme from "../../style/theme"
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -16,21 +16,21 @@ const useStyles = makeStyles(() => ({
   label: {
     fontSize: 16,
   },
-}));
+}))
 
 export default {
-  title: 'Switch',
+  title: "Switch",
   decorators: [muiTheme([theme])],
-};
+}
 
 export function Default() {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <Switch
-      onChange={action('onChange')}
-      label={'Label'}
+      onChange={action("onChange")}
+      label={"Label"}
       classes={{ root: classes.root, label: classes.label }}
     />
-  );
+  )
 }
