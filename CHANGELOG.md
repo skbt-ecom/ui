@@ -1,3 +1,10 @@
+## [2.3.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.3.0...v2.3.1) (2020-11-19)
+
+
+### Bug Fixes
+
+* fix props name and api url ([dca9c4c](https://gitlab.sovcombank.group/web/ecom/ui/commit/dca9c4c789546438364c684f3edb0110b655fdb2))
+
 # [2.3.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.2.0...v2.3.0) (2020-11-18)
 
 
