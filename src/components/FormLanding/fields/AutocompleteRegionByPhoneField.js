@@ -13,7 +13,7 @@ const AutocompleteRegionByPhoneField = React.memo(props => {
 
   useEffect(() => {
     const getRegionByPhone = phone =>
-      fetch(`${props.api_url}/v1/region-detect?phone=${phone}`)
+      fetch(`${props.apiUrl}v1/region-detect?phone=${phone}`)
         .then(response => response.json())
         .then(data => data.region)
 
@@ -47,7 +47,7 @@ WrappedField.defaultProps = {
   validateOnBlur: false,
   fullWidth: true,
   phone: "",
-  api_url: "https://api-app.sovcokbank.ru",
+  apiUrl: "https://api-app.sovcombank.ru/"
 }
 
 export default WrappedField

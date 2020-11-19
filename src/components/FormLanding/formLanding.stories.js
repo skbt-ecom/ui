@@ -272,7 +272,7 @@ export function RegionByPhone() {
         name={"region"}
         label={"Регион"}
         phone={phone}
-        api_url={"http://urt-web-app1:4000"}
+        apiUrl={"http://urt-web-app1:4000/"}
       />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>
