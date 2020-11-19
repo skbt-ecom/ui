@@ -1,4 +1,4 @@
-import { requiredValidator } from './requiredValidator';
+import { requiredValidator } from "./requiredValidator"
 
 /**
  *
@@ -6,55 +6,55 @@ import { requiredValidator } from './requiredValidator';
  */
 const addressValidator = dadataValue => {
   if (requiredValidator(dadataValue)) {
-    return 'Выберите значение из списка';
+    return "Выберите значение из списка"
   }
   const {
     data: { city, settlement, house },
-  } = dadataValue;
+  } = dadataValue
 
   if (!(city || settlement)) {
-    return 'Укажите город или населенный пункт';
+    return "Укажите город или населенный пункт"
   }
   if (!house) {
-    return 'Укажите дом';
+    return "Укажите дом"
   }
-  return null;
-};
+  return null
+}
 
 /**
  *
  * @param {object} dadataAddressFlat DadataAddressFlat value
  */
 export const addressFlatDadataValidator = dadataAddressFlat => {
-  const { dadataValue = {} } = dadataAddressFlat;
-  const { inputFlat, isNoFlat, value } = dadataValue;
+  const { dadataValue = {} } = dadataAddressFlat
+  const { inputFlat, isNoFlat, value } = dadataValue
 
   if (requiredValidator(value)) {
-    return { addressDadata: 'Выберите значение из списка' };
+    return { addressDadata: "Выберите значение из списка" }
   }
 
-  const addressValidatorResult = addressValidator(dadataValue);
+  const addressValidatorResult = addressValidator(dadataValue)
 
   if (addressValidatorResult) {
-    return { addressDadata: addressValidatorResult };
+    return { addressDadata: addressValidatorResult }
   }
 
   if (!inputFlat && !isNoFlat) {
-    return { flat: 'Укажите квартиру' };
+    return { flat: "Укажите квартиру" }
   }
 
-  return null;
-};
+  return null
+}
 
 /**
  *
  * @param {object} dadataAddress DadataAddress value
  */
 export const addressDadataValidator = dadataAddress => {
-  const { dadataValue } = dadataAddress;
+  const { dadataValue } = dadataAddress
 
   if (requiredValidator(dadataValue)) {
-    return 'Выберите значение из списка';
+    return "Выберите значение из списка"
   }
-  return addressValidator(dadataValue);
-};
+  return addressValidator(dadataValue)
+}

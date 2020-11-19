@@ -1,23 +1,23 @@
-import React, { useContext } from 'react';
-import MaterialButton from '../../../Button';
-import { FormContext } from '../../FormContext/Form';
+import React, { useContext } from "react"
+import MaterialButton from "../../../Button"
+import { FormContext } from "../../FormContext/Form"
 
 const Button = ({ classsesComponent, ...props }) => {
-  const context = useContext(FormContext);
+  const context = useContext(FormContext)
 
   const onClick = () => {
-    context.onSubmit();
-  };
+    context.onSubmit()
+  }
 
   return (
     <MaterialButton
-      color={'primary'}
+      color={"primary"}
       fullWidth
       {...props}
       classes={classsesComponent}
       onClick={onClick}
     />
-  );
-};
+  )
+}
 
-export default React.memo(Button);
+export default React.memo(Button)

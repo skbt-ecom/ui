@@ -1,22 +1,22 @@
-import React from 'react';
-import Typography from '@material-ui/core/Typography';
+import React from "react"
+import Typography from "@material-ui/core/Typography"
 
-import Container from '../Container';
-import Box from '../Box';
-import icon_done from './icon_done.svg';
-import icon_error from './icon_error.svg';
+import Container from "../Container"
+import Box from "../Box"
+import icon_done from "./icon_done.svg"
+import icon_error from "./icon_error.svg"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
 const successMsg = {
-  head: 'Спасибо!',
-  title: 'Ваша заявка отправлена',
-  description: 'В ближайшее время с Вами свяжутся специалисты нашего Банка.',
-};
+  head: "Спасибо!",
+  title: "Ваша заявка отправлена",
+  description: "В ближайшее время с Вами свяжутся специалисты нашего Банка.",
+}
 
 const errorMsg = {
-  head: 'Произошла ошибка',
-  title: 'Возможно:',
+  head: "Произошла ошибка",
+  title: "Возможно:",
   description: (
     <>
       <ul className="errorMsg">
@@ -27,33 +27,33 @@ const errorMsg = {
       <div className="errorHint">* в сутки можно оставлять одну заявку</div>
     </>
   ),
-};
+}
 
 function getText(isSuccess, key, paramFromProps) {
   if (paramFromProps) {
-    return paramFromProps;
+    return paramFromProps
   }
 
-  const defVariant = isSuccess ? successMsg[key] : errorMsg[key];
-  return defVariant;
+  const defVariant = isSuccess ? successMsg[key] : errorMsg[key]
+  return defVariant
 }
 
 function PageStatus(props) {
-  const classes = useStyles();
-  const { success, head, title, successDesc, description, content } = props;
-  const headValue = getText(success, 'head', head);
-  const titleValue = getText(success, 'title', title);
-  let descriptionValue = successDesc;
+  const classes = useStyles()
+  const { success, head, title, successDesc, description, content } = props
+  const headValue = getText(success, "head", head)
+  const titleValue = getText(success, "title", title)
+  let descriptionValue = successDesc
 
   if (!descriptionValue) {
-    descriptionValue = getText(success, 'description', description);
+    descriptionValue = getText(success, "description", description)
   }
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV !== "production") {
     if (successDesc) {
       console.error(
         '⚠️ Deprecation props "successDesc" ⚠️\n ⚠️ Use the "desc" parameter instead ⚠️'
-      );
+      )
     }
   }
 
@@ -65,11 +65,7 @@ function PageStatus(props) {
             {headValue}
           </Typography>
           <div>
-            <img
-              alt="icon"
-              src={success ? icon_done : icon_error}
-              className={classes.icon}
-            />
+            <img alt="icon" src={success ? icon_done : icon_error} className={classes.icon} />
           </div>
         </Box>
         {content}
@@ -85,11 +81,11 @@ function PageStatus(props) {
         )}
       </div>
     </Container>
-  );
+  )
 }
 
 PageStatus.defaultProps = {
   success: false,
-};
+}
 
-export default React.memo(PageStatus);
+export default React.memo(PageStatus)

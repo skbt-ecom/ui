@@ -1,10 +1,10 @@
-import React from 'react';
-import Button from '../Button';
+import React from "react"
+import Button from "../Button"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
 const SupportPhone = props => {
-  const classes = useStyles();
+  const classes = useStyles()
   const {
     phone,
     phoneHint,
@@ -12,7 +12,7 @@ const SupportPhone = props => {
     onButtonClick,
     buttonProps,
     classes: propsClasses = {},
-  } = props;
+  } = props
 
   return (
     <>
@@ -25,9 +25,7 @@ const SupportPhone = props => {
           {buttonProps.label}
         </Button>
       )}
-      <div
-        className={`${classes.phoneContainer} ${propsClasses.phoneContainer}`}
-      >
+      <div className={`${classes.phoneContainer} ${propsClasses.phoneContainer}`}>
         <a
           rel="nofollow"
           href={`tel:${phone}`}
@@ -35,22 +33,20 @@ const SupportPhone = props => {
         >
           {phone}
         </a>
-        <p className={`${classes.phoneHint} ${propsClasses.phoneHint}`}>
-          {phoneHint}
-        </p>
+        <p className={`${classes.phoneHint} ${propsClasses.phoneHint}`}>{phoneHint}</p>
       </div>
     </>
-  );
-};
+  )
+}
 
 SupportPhone.defaultProps = {
-  phone: '8 800 100-10-20',
-  phoneHint: 'Для звонков по России бесплатно',
+  phone: "8 800 100-10-20",
+  phoneHint: "Для звонков по России бесплатно",
   withButton: false,
   buttonProps: {
-    color: 'primary',
-    label: 'Оформить',
+    color: "primary",
+    label: "Оформить",
   },
-};
+}
 
-export default React.memo(SupportPhone);
+export default React.memo(SupportPhone)

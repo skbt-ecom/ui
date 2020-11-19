@@ -1,29 +1,29 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
-import Select from '@material-ui/core/Select';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
+import React, { useState, useRef, useLayoutEffect } from "react"
+import Select from "@material-ui/core/Select"
+import FormControl from "@material-ui/core/FormControl"
+import InputLabel from "@material-ui/core/InputLabel"
+import OutlinedInput from "@material-ui/core/OutlinedInput"
+import MenuItem from "@material-ui/core/MenuItem"
+import FormHelperText from "@material-ui/core/FormHelperText"
 
-import withSpaceForHelperTxt from '../HOCs/withSpaceForHelperTxt';
+import withSpaceForHelperTxt from "../HOCs/withSpaceForHelperTxt"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
 const SelectComponent = React.memo(props => {
-  const classes = useStyles(props);
-  const [labelWidth, setLabelWidth] = useState(0);
-  const inputLabel = React.useRef(null);
+  const classes = useStyles(props)
+  const [labelWidth, setLabelWidth] = useState(0)
+  const inputLabel = React.useRef(null)
 
   useLayoutEffect(() => {
-    setLabelWidth(inputLabel.current.offsetWidth);
-  }, []);
+    setLabelWidth(inputLabel.current.offsetWidth)
+  }, [])
 
   const handleChange = e => {
-    props.onChange(e);
-  };
+    props.onChange(e)
+  }
 
-  const { helperText, error, items, name, value, fullWidth, label } = props;
+  const { helperText, error, items, name, value, fullWidth, label } = props
 
   return (
     <FormControl
@@ -49,16 +49,16 @@ const SelectComponent = React.memo(props => {
       </Select>
       {helperText && <FormHelperText>{helperText}</FormHelperText>}
     </FormControl>
-  );
-});
+  )
+})
 
 SelectComponent.defaultProps = {
   items: [
     {
-      value: '',
-      label: '',
+      value: "",
+      label: "",
     },
   ],
-};
+}
 
-export default withSpaceForHelperTxt(SelectComponent);
+export default withSpaceForHelperTxt(SelectComponent)

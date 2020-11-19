@@ -1,27 +1,27 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles({
   root: {
-    boxShadow: 'none',
+    boxShadow: "none",
     borderLeft: 0,
     borderRight: 0,
-    borderBottom: '1px solid #E1E7EC',
-    '&:first-child': {
-      borderTop: '1px solid #E1E7EC',
+    borderBottom: "1px solid #E1E7EC",
+    "&:first-child": {
+      borderTop: "1px solid #E1E7EC",
       borderRadius: 0,
     },
-    '&:last-child': {
+    "&:last-child": {
       borderRadius: 0,
     },
-    '&:before': {
-      display: 'none',
+    "&:before": {
+      display: "none",
     },
-    '&$expanded': {
+    "&$expanded": {
       marginBottom: 0,
       marginTop: 0,
     },
   },
   expanded: {},
-});
+})
 
-export default useStyles;
+export default useStyles

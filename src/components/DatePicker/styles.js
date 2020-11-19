@@ -4,8 +4,8 @@ function styles(theme) {
   return {
     input: {
       '& [class*="MuiOutlinedInput-adornedEnd"]': {
-        paddingRight: 0
-      }
+        paddingRight: 0,
+      },
     },
 
     paper: {
@@ -13,17 +13,17 @@ function styles(theme) {
         fontSize: 14,
         fontWeight: 500,
         lineHeight: "23px",
-        textTransform: "capitalize"
+        textTransform: "capitalize",
       },
 
       '& [class*="MuiTypography-body2"]': {
-        fontSize: 12
+        fontSize: 12,
       },
 
       '& [class*="MuiPickersDay-current"]': {
-        borderColor: theme.palette.primary.main
-      }
-    }
+        borderColor: theme.palette.primary.main,
+      },
+    },
   }
 }
 

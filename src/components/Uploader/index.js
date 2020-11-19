@@ -1,3 +1,3 @@
-import Uploader from './Uploader';
+import Uploader from "./Uploader"
 
-export default Uploader;
+export default Uploader

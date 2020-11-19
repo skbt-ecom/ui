@@ -29,7 +29,7 @@ const ModalPhoneForm = ({ isModalOpen, onClose, onSubmit, ...props }) => {
       closeAfterTransition
       BackdropComponent={Backdrop}
       BackdropProps={{
-        timeout: 500
+        timeout: 500,
       }}
     >
       <Fade in={isModalOpen}>

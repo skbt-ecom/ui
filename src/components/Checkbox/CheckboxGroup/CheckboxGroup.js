@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import Checkbox from '@material-ui/core/Checkbox';
+import React, { useState, useEffect, useRef } from "react"
+import FormControl from "@material-ui/core/FormControl"
+import FormLabel from "@material-ui/core/FormLabel"
+import FormGroup from "@material-ui/core/FormGroup"
+import FormControlLabel from "@material-ui/core/FormControlLabel"
+import FormHelperText from "@material-ui/core/FormHelperText"
+import Checkbox from "@material-ui/core/Checkbox"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
 const renderCheckboxItem = ({
   option: { label, value },
@@ -23,48 +23,34 @@ const renderCheckboxItem = ({
       }}
       key={index}
       control={
-        <Checkbox
-          onChange={handleChange(value)}
-          value={value}
-          color={color}
-          checked={checked}
-        />
+        <Checkbox onChange={handleChange(value)} value={value} color={color} checked={checked} />
       }
       label={label}
     />
-  );
-};
+  )
+}
 
 const CheckboxGroup = React.memo(props => {
-  const classes = useStyles(props);
-  const {
-    options,
-    error,
-    helperText,
-    formLabel = {},
-    color,
-    ...restProps
-  } = props;
-  const [checkedOptions, setCheckedOptions] = useState(props.checked || []);
-  const isFirstRun = useRef(true);
+  const classes = useStyles(props)
+  const { options, error, helperText, formLabel = {}, color, ...restProps } = props
+  const [checkedOptions, setCheckedOptions] = useState(props.checked || [])
+  const isFirstRun = useRef(true)
 
   useEffect(() => {
     if (isFirstRun.current) {
-      isFirstRun.current = false;
-      return;
+      isFirstRun.current = false
+      return
     }
-    props.onChange(checkedOptions);
-  }, [checkedOptions]);
+    props.onChange(checkedOptions)
+  }, [checkedOptions])
 
   const handleChange = name => e => {
     if (e.target.checked) {
-      setCheckedOptions(prevCheckedOptions => [...prevCheckedOptions, name]);
+      setCheckedOptions(prevCheckedOptions => [...prevCheckedOptions, name])
     } else {
-      setCheckedOptions(prevCheckedOptions =>
-        prevCheckedOptions.filter(el => el !== name)
-      );
+      setCheckedOptions(prevCheckedOptions => prevCheckedOptions.filter(el => el !== name))
     }
-  };
+  }
   return (
     <FormControl error={error} component="fieldset">
       {formLabel.label && (
@@ -86,7 +72,7 @@ const CheckboxGroup = React.memo(props => {
       </FormGroup>
       {helperText && <FormHelperText>{helperText}</FormHelperText>}
     </FormControl>
-  );
-});
+  )
+})
 
-export default CheckboxGroup;
+export default CheckboxGroup

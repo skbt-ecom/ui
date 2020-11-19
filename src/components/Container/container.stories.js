@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react"
 // Import the storybook libraries
-import { storiesOf } from '@storybook/react';
-import { muiTheme } from 'storybook-addon-material-ui';
+import { storiesOf } from "@storybook/react"
+import { muiTheme } from "storybook-addon-material-ui"
 
 // Import our component from this folder
-import Container from './Container';
+import Container from "./Container"
 
-import theme from '../../style/theme';
+import theme from "../../style/theme"
 
-storiesOf('Container', module)
+storiesOf("Container", module)
   .addDecorator(muiTheme([theme]))
-  .add('Default', () => (
+  .add("Default", () => (
     <Container>
-      <div style={{ backgroundColor: '#cfe8fc', height: '50vh' }} />
+      <div style={{ backgroundColor: "#cfe8fc", height: "50vh" }} />
     </Container>
-  ));
+  ))

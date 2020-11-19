@@ -1,23 +1,18 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Autosuggest from 'react-autosuggest';
-import TextField from '@material-ui/core/TextField';
-import Paper from '@material-ui/core/Paper';
-import MenuItem from '@material-ui/core/MenuItem';
+import React, { useState, useRef, useEffect } from "react"
+import Autosuggest from "react-autosuggest"
+import TextField from "@material-ui/core/TextField"
+import Paper from "@material-ui/core/Paper"
+import MenuItem from "@material-ui/core/MenuItem"
 
-import {
-  getSuggestions,
-  getSuggestionValue,
-  shouldRenderSuggestions,
-} from './helpers';
-import withSpaceForHelperTxt from '../HOCs/withSpaceForHelperTxt';
+import { getSuggestions, getSuggestionValue, shouldRenderSuggestions } from "./helpers"
+import withSpaceForHelperTxt from "../HOCs/withSpaceForHelperTxt"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
 function renderInputComponent(inputProps) {
-  const { classes, ...other } = inputProps;
+  const { classes, ...other } = inputProps
   return (
     <TextField
-      variant={'outlined'}
       InputProps={{
         classes: {
           input: classes.input,
@@ -25,7 +20,7 @@ function renderInputComponent(inputProps) {
       }}
       {...other}
     />
-  );
+  )
 }
 
 function renderSuggestion(suggestion, { isHighlighted }) {
@@ -33,43 +28,43 @@ function renderSuggestion(suggestion, { isHighlighted }) {
     <MenuItem component="div" selected={isHighlighted}>
       <div>{suggestion.value}</div>
     </MenuItem>
-  );
+  )
 }
-const EMPTY_VALUE = { value: '', label: '' };
+const EMPTY_VALUE = { value: "", label: "" }
 
 const AutoSuggestComponent = React.memo(function IntegrationAutosuggest(props) {
-  const classes = useStyles(props);
-  const [value, setValue] = useState(props.value || { ...EMPTY_VALUE });
-  const [stateSuggestions, setSuggestions] = useState([]);
-  const isSuggestionSelected = useRef(false); // need to send props.onChange() in onBlur when suggestion not selected
+  const classes = useStyles(props)
+  const [value, setValue] = useState(props.value || { ...EMPTY_VALUE })
+  const [stateSuggestions, setSuggestions] = useState([])
+  const isSuggestionSelected = useRef(false) // need to send props.onChange() in onBlur when suggestion not selected
 
   useEffect(() => {
-    setValue(props.value || { value: '', label: '' });
-  }, [props.value]);
+    setValue(props.value || { value: "", label: "" })
+  }, [props.value])
 
   const handleSuggestionsFetchRequested = ({ value }) => {
-    setSuggestions(getSuggestions(props.suggestions, value));
-  };
+    setSuggestions(getSuggestions(props.suggestions, value))
+  }
 
   const handleSuggestionsClearRequested = () => {
-    setSuggestions([]);
-  };
+    setSuggestions([])
+  }
 
   const handleChange = (event, { newValue }) => {
-    isSuggestionSelected.current = false;
-    setValue({ label: newValue, value: '' });
-  };
+    isSuggestionSelected.current = false
+    setValue({ label: newValue, value: "" })
+  }
 
   const onSuggestionSelected = (event, { suggestion }) => {
-    isSuggestionSelected.current = true;
-    props.onChange(suggestion);
-  };
+    isSuggestionSelected.current = true
+    props.onChange(suggestion)
+  }
 
   const onBlur = e => {
     if (!isSuggestionSelected.current) {
-      props.onChange({ ...EMPTY_VALUE });
+      props.onChange({ ...EMPTY_VALUE })
     }
-  };
+  }
 
   const autosuggestProps = {
     renderInputComponent,
@@ -80,9 +75,9 @@ const AutoSuggestComponent = React.memo(function IntegrationAutosuggest(props) {
     renderSuggestion,
     shouldRenderSuggestions,
     onSuggestionSelected,
-  };
+  }
 
-  const { label, placeholder, onChange, ...otherInputProps } = props;
+  const { label, placeholder, onChange, ...otherInputProps } = props
 
   return (
     <div className={classes.root}>
@@ -109,7 +104,7 @@ const AutoSuggestComponent = React.memo(function IntegrationAutosuggest(props) {
         )}
       />
     </div>
-  );
-});
+  )
+})
 
-export default withSpaceForHelperTxt(AutoSuggestComponent);
+export default withSpaceForHelperTxt(AutoSuggestComponent)

@@ -1,1 +1,1 @@
-export { default } from './DadataAutocomplete';
+export { default } from "./DadataAutocomplete"

@@ -43,7 +43,7 @@ storiesOf("MaskedField", module)
           style={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "50px"
+            margin: "50px",
           }}
         >
           <span>value={value} min=0 max=100</span>

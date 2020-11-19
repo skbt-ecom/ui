@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react"
 
-import Typography from '@material-ui/core/Typography';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
+import Typography from "@material-ui/core/Typography"
+import AccordionSummary from "@material-ui/core/AccordionSummary"
 
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
 const Question = props => {
-  const classes = useStyles(props);
+  const classes = useStyles(props)
 
   return (
     <AccordionSummary
@@ -25,7 +25,7 @@ const Question = props => {
         {props.children}
       </Typography>
     </AccordionSummary>
-  );
-};
+  )
+}
 
-export default Question;
+export default Question

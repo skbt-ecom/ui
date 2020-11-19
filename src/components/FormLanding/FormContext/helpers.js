@@ -1,88 +1,86 @@
 export const checkUnTouchedFields = fields => {
-  const fieldsToSubmit = {};
-  const fieldsWithError = {};
-  let validForm = true;
+  const fieldsToSubmit = {}
+  const fieldsWithError = {}
+  let validForm = true
 
   Object.keys(fields).forEach(fieldKey => {
-    const field = fields[fieldKey];
+    const field = fields[fieldKey]
 
-    fieldsToSubmit[fieldKey] = field.value;
+    fieldsToSubmit[fieldKey] = field.value
     // if (!field.touched) {
-    const error = field.validate(field.value);
+    const error = field.validate(field.value)
 
     if (error) {
-      validForm = false;
+      validForm = false
       fieldsWithError[fieldKey] = {
         ...field,
         error,
         helperText: error,
-      };
+      }
     }
     // }
 
-    return;
-  });
+    return
+  })
 
-  return { fieldsToSubmit, fieldsWithError, validForm };
-};
+  return { fieldsToSubmit, fieldsWithError, validForm }
+}
 
 export const updateFieldsErrors = (errors, fields) => {
-  const nextFields = { ...fields };
+  const nextFields = { ...fields }
   Object.keys(errors).forEach(fieldKey => {
     nextFields[fieldKey] = {
       ...fields[fieldKey],
       error: !!errors[fieldKey],
       helperText: errors[fieldKey],
-    };
-  });
-  return nextFields;
-};
+    }
+  })
+  return nextFields
+}
 
 export const updateFieldsValues = (values, fields) => {
-  const nextFields = { ...fields };
+  const nextFields = { ...fields }
 
   Object.keys(values).forEach(fieldKey => {
-    nextFields[fieldKey] = { ...fields[fieldKey], value: values[fieldKey] };
-  });
+    nextFields[fieldKey] = { ...fields[fieldKey], value: values[fieldKey] }
+  })
 
-  return nextFields;
-};
+  return nextFields
+}
 
 export const getRequiredFields = fields => {
-  const requiredFields = {};
-  const optionalKeys = [];
+  const requiredFields = {}
+  const optionalKeys = []
 
   Object.keys(fields).forEach(fieldKey => {
-    const field = fields[fieldKey];
+    const field = fields[fieldKey]
     if (field.isRequired) {
-      requiredFields[fieldKey] = field;
+      requiredFields[fieldKey] = field
     } else {
-      optionalKeys.push(fieldKey);
+      optionalKeys.push(fieldKey)
     }
-  });
-  return { requiredFields, optionalKeys };
-};
+  })
+  return { requiredFields, optionalKeys }
+}
 
 export const checkOptionalKeysInInvalidFields = (optionalKeys, invalidFields) =>
-  optionalKeys.some(key => invalidFields.has(key));
+  optionalKeys.some(key => invalidFields.has(key))
 
 const getFieldErrors = errorsObj =>
   Object.keys(errorsObj).reduce((prev, cur) => {
-    prev[cur] = Boolean(errorsObj[cur]);
-    return prev;
-  }, {});
+    prev[cur] = Boolean(errorsObj[cur])
+    return prev
+  }, {})
 
 export const getErrorProp = fieldError => {
-  return typeof fieldError === 'object' && fieldError !== null
+  return typeof fieldError === "object" && fieldError !== null
     ? getFieldErrors(fieldError)
-    : Boolean(fieldError);
-};
+    : Boolean(fieldError)
+}
 
-export const getHelperTextFromError = (error, prevHelperText = '') => {
-  if (typeof error === 'object' && error !== null) {
-    return Object.keys(error).length
-      ? { ...prevHelperText, ...error }
-      : prevHelperText;
+export const getHelperTextFromError = (error, prevHelperText = "") => {
+  if (typeof error === "object" && error !== null) {
+    return Object.keys(error).length ? { ...prevHelperText, ...error } : prevHelperText
   }
-  return error ? error : prevHelperText;
-};
+  return error ? error : prevHelperText
+}

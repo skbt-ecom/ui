@@ -18,10 +18,10 @@ storiesOf("HeaderNew", module)
       ButtonProps={{
         color: "secondary",
         children: "Присоединиться",
-        onClick: action("onButtonClick")
+        onClick: action("onButtonClick"),
       }}
       PhoneProps={{
-        classes: { phoneContainer: "my-phone" }
+        classes: { phoneContainer: "my-phone" },
       }}
     />
   ))
@@ -30,10 +30,10 @@ storiesOf("HeaderNew", module)
       ButtonProps={{
         color: "secondary",
         children: "Присоединиться",
-        onClick: action("onButtonClick")
+        onClick: action("onButtonClick"),
       }}
       PhoneProps={{
-        phones: ["8 927 463-12-81", "8 952 031-34-20", "8 952 031-34-21"]
+        phones: ["8 927 463-12-81", "8 952 031-34-20", "8 952 031-34-21"],
       }}
     />
   ))

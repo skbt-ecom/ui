@@ -21,7 +21,7 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
       const dataToOnBlur = {
         dadataValue: null,
         inputValue: debouncedInputValue,
-        isDadataValueActual: false
+        isDadataValueActual: false,
       }
 
       if (suggestions.length) {
@@ -111,7 +111,6 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
         <TextField
           {...props}
           {...params}
-          variant="outlined"
           InputProps={{
             ...params.InputProps,
             endAdornment: (
@@ -119,7 +118,7 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
                 {isLoading ? <CircularProgress color="inherit" size={20} /> : null}
                 {params.InputProps.endAdornment}
               </>
-            )
+            ),
           }}
         />
       )}

@@ -1,3 +1,3 @@
-import SupportPhone from './SupportPhone';
+import SupportPhone from "./SupportPhone"
 
-export default SupportPhone;
+export default SupportPhone

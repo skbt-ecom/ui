@@ -1,21 +1,21 @@
-import React from 'react';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
+import React from "react"
+import Radio from "@material-ui/core/Radio"
+import RadioGroup from "@material-ui/core/RadioGroup"
+import FormControlLabel from "@material-ui/core/FormControlLabel"
+import FormControl from "@material-ui/core/FormControl"
+import FormLabel from "@material-ui/core/FormLabel"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
 export default function RadioGroupField(props) {
-  const classes = useStyles(props);
-  const { label, items, name, value, defaultValue, row } = props;
+  const classes = useStyles(props)
+  const { label, items, name, value, defaultValue, row } = props
 
   const handleChange = e => {
-    const { value } = e.target;
+    const { value } = e.target
 
-    props.onChange(value);
-  };
+    props.onChange(value)
+  }
 
   return (
     <FormControl component="fieldset" className={classes.formControl} fullWidth>
@@ -43,9 +43,9 @@ export default function RadioGroupField(props) {
         ))}
       </RadioGroup>
     </FormControl>
-  );
+  )
 }
 
 RadioGroupField.defaultProps = {
   row: true,
-};
+}

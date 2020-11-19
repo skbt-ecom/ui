@@ -39,7 +39,7 @@ import lengthValidator from "./validators/lengthValidator"
 const DADATA_ADDRESS_FLAT_REGEXP = /(.*?)\s*, кв (\d+(?:[/-]\d+)?)?$/
 const GENDERS = [
   { value: "m", label: "Мужской" },
-  { value: "f", label: "Женский" }
+  { value: "f", label: "Женский" },
 ]
 
 function onSubmit(values) {
@@ -52,7 +52,7 @@ function validateByLength(len) {
 
 export default {
   title: "FormLanding",
-  decorators: [muiTheme([theme])]
+  decorators: [muiTheme([theme])],
 }
 
 export function CreditAmountSlider() {
@@ -108,7 +108,7 @@ export function FormPassport() {
       const { value } = fieldData
       refForm.current.setField("lifeAddress", { isRequired: !value })
       setIsDifferentAddress(!value)
-    }
+    },
   }
 
   return (
@@ -252,7 +252,7 @@ export function PickersHalva() {
 }
 
 PickersHalva.story = {
-  decorators: [muiTheme([themeHalva])]
+  decorators: [muiTheme([themeHalva])],
 }
 
 export function RegionByPhone() {

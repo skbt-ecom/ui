@@ -1,3 +1,3 @@
-import FormLanding from './FormLanding';
+import FormLanding from "./FormLanding"
 
-export default FormLanding;
+export default FormLanding

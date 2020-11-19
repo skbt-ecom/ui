@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles({
   labelLabel: {
@@ -12,6 +12,6 @@ const useStyles = makeStyles({
   helperTextRoot: {
     marginTop: -10,
   },
-});
+})
 
-export default useStyles;
+export default useStyles
