@@ -19,9 +19,13 @@ const AutocompleteRegionByPhoneField = React.memo(props => {
 
     if (props.phone && props.phone.length === 11) {
       getRegionByPhone(props.phone).then(data => {
-        props.onChange(
-          REGIONS.filter(obj => Object.keys(obj).some(key => obj[key].includes(data)))[0]
-        )
+        if (data) {
+          props.onChange(
+            REGIONS.filter(obj => Object.keys(obj).some(key => obj[key].includes(data)))[0]
+          )
+        } else {
+          props.onChange(null)
+        }
       })
     }
   }, [props.phone])
@@ -47,7 +51,7 @@ WrappedField.defaultProps = {
   validateOnBlur: false,
   fullWidth: true,
   phone: "",
-  apiUrl: "https://api-app.sovcombank.ru/"
+  apiUrl: "https://api-app.sovcombank.ru/",
 }
 
 export default WrappedField
