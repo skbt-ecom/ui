@@ -1,3 +1,10 @@
+## [2.3.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.3.1...v2.3.2) (2020-11-23)
+
+
+### Bug Fixes
+
+* fix AutocompleteRegionByPhoneField ([26189a3](https://gitlab.sovcombank.group/web/ecom/ui/commit/26189a32cd2bda80763225334868d2b1d267adf7))
+
 ## [2.3.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.3.0...v2.3.1) (2020-11-19)
 
 
