@@ -1,8 +1,8 @@
-import React from "react"
-import useStyles from "./styles"
+import React from 'react';
+import useStyles from './styles';
 
 const Description = props => {
-  const classes = useStyles(props)
+  const classes = useStyles(props);
   return (
     <div className={classes.descrBlock}>
       <span className={classes.secureIcon}>
@@ -27,12 +27,12 @@ const Description = props => {
         </svg>
       </span>
       <p className={classes.descrText}>
-        Мы загрузим данные из&nbsp;Госуслуг
+        <span className={classes.descrTitle}>Это надежно и совершенно безопасно.</span>
         <br />
-        и&nbsp;сможем быстрее одобрить ваш кредит.
+        Перед выдачей кредита мы дополнительно позвоним вам и запросим подтверждение
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default React.memo(Description)
+export default React.memo(Description);

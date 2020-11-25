@@ -1,12 +1,13 @@
-import React from "react"
-import Button from "@material-ui/core/Button"
-import ButtonWText from "./ButtonWText"
-import Description from "./Description"
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import ButtonWText from './ButtonWText';
+import ButtonSteps from './ButtonSteps';
+import Description from './Description';
 
-import useStyles from "./styles"
+import useStyles from './styles';
 
 const ButtonESIA = ({ withouthDescr, iconDisabled, iconDefault, ...props }) => {
-  const classes = useStyles(props)
+  const classes = useStyles(props);
 
   return (
     <div className={classes.buttonContainer}>
@@ -25,24 +26,18 @@ const ButtonESIA = ({ withouthDescr, iconDisabled, iconDefault, ...props }) => {
         startIcon={props.disabled ? iconDisabled : iconDefault}
         disableRipple={true}
       />
+      <ButtonSteps />
       {!withouthDescr && <Description />}
     </div>
-  )
-}
+  );
+};
 
 ButtonESIA.defaultProps = {
   withouthDescr: false,
   iconDefault: (
     <svg width="30" height="33" viewBox="0 0 30 33">
       <defs>
-        <linearGradient
-          id="ho4wa"
-          x1="15.52"
-          x2="15.52"
-          y1=".15"
-          y2="33"
-          gradientUnits="userSpaceOnUse"
-        >
+        <linearGradient id="ho4wa" x1="15.52" x2="15.52" y1=".15" y2="33" gradientUnits="userSpaceOnUse">
           <stop offset=".4" stopColor="#1466ac" />
           <stop offset=".66" stopColor="#ef4058" />
         </linearGradient>
@@ -97,6 +92,6 @@ ButtonESIA.defaultProps = {
       </g>
     </svg>
   ),
-}
+};
 
-export default React.memo(ButtonESIA)
+export default React.memo(ButtonESIA);
