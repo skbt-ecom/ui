@@ -6,11 +6,9 @@ const ButtonWText = ({ startIcon: StartIcon, ...props }) => {
   return (
     <div className={classes.bwtContainer}>
       <div className={classes.bwtLeft}>
-        {StartIcon}
+        <span className={classes.iconESIA}>{StartIcon}</span>
         <p className={classes.bwtText}>
-          <strong>Использовать данные цифрового профиля</strong>
-          <br />
-          Заполнить с помощью Госуслуг
+          <strong>Используете Госуслуги? Получите решение быстрее.</strong>
         </p>
       </div>
       <button onClick={props.onClick} className={classes.bwtButton} type="button">

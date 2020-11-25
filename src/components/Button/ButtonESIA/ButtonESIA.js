@@ -1,6 +1,7 @@
 import React from "react"
 import Button from "@material-ui/core/Button"
 import ButtonWText from "./ButtonWText"
+import ButtonSteps from "./ButtonSteps"
 import Description from "./Description"
 
 import useStyles from "./styles"
@@ -25,6 +26,7 @@ const ButtonESIA = ({ withouthDescr, iconDisabled, iconDefault, ...props }) => {
         startIcon={props.disabled ? iconDisabled : iconDefault}
         disableRipple={true}
       />
+      <ButtonSteps />
       {!withouthDescr && <Description />}
     </div>
   )
