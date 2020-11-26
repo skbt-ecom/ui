@@ -1,8 +1,8 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import ButtonWText from './ButtonWText';
-import ButtonSteps from './ButtonSteps';
-import Description from './Description';
+import React from "react"
+import Button from "@material-ui/core/Button"
+import ButtonWText from "./ButtonWText"
+import ButtonSteps from "./ButtonSteps"
+import Description from "./Description"
 
 import useStyles from './styles';
 
