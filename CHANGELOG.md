@@ -1,3 +1,15 @@
+# [2.4.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.3.2...v2.4.0) (2020-11-26)
+
+
+### Bug Fixes
+
+* **buttonesia:** fix esia description ([789ad96](https://gitlab.sovcombank.group/web/ecom/ui/commit/789ad96e6ce7387b15bb2177718f2b946462f7ed))
+
+
+### Features
+
+* **buttonesia:** restyle ButtonESIA ([54fff29](https://gitlab.sovcombank.group/web/ecom/ui/commit/54fff2993e3009124890fff0d0c6fbc759a5b378))
+
 ## [2.3.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.3.1...v2.3.2) (2020-11-23)
 
 
