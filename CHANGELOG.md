@@ -1,3 +1,10 @@
+## [2.4.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.4.0...v2.4.1) (2020-11-27)
+
+
+### Bug Fixes
+
+* add props name in DadataAddressFlat ([30496d4](https://gitlab.sovcombank.group/web/ecom/ui/commit/30496d4de631c54f25daaf96e71c9b51fc4c51f5))
+
 # [2.4.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.3.2...v2.4.0) (2020-11-26)
 
 
