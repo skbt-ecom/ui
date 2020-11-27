@@ -12,7 +12,7 @@ const parseIncomingValue = (regexp, incomingValue) => {
 
 const dadataOptions = { to_bound: { value: "house" } }
 
-const DadataAddressFlat = React.memo(({ regexp, incomingValue, onBlur, ...props }) => {
+const DadataAddressFlat = React.memo(({ regexp, incomingValue, onBlur, name, ...props }) => {
   const addressDadataClasses = useStylesAddressDadata(props.classes.addressDadataClasses)
   const flatInfoClasses = useStylesFlatInfo(props.classes.flatInfoClasses)
 
@@ -67,6 +67,7 @@ const DadataAddressFlat = React.memo(({ regexp, incomingValue, onBlur, ...props 
           onBlur={handleAddressDadataBlur}
           type={"address"}
           label={"Адрес"}
+          name={name}
           dadataOptions={dadataOptions}
           incomingValue={incomingValueWOFlat}
           fullWidth
