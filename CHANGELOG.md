@@ -1,3 +1,10 @@
+## [2.4.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.4.1...v2.4.2) (2020-11-30)
+
+
+### Bug Fixes
+
+* поправить лишние отступы при разрешении < 600 ([f6d0abf](https://gitlab.sovcombank.group/web/ecom/ui/commit/f6d0abf0079691346e61f8effcfd76d16e94b86b))
+
 ## [2.4.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.4.0...v2.4.1) (2020-11-27)
 
 
