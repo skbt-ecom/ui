@@ -88,7 +88,6 @@ const useStyles = makeStyles(theme => ({
     fontSize: "12px",
     lineHeight: "14px",
     position: "relative",
-    width: 184,
     [theme.breakpoints.up("sm")]: {
       paddingBottom: "8px",
       width: "auto",
