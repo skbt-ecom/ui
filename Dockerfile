@@ -17,7 +17,7 @@ RUN npm ci
 
 COPY . .
 
-RUN npm start
+CMD ["npm", "start"]
 
 EXPOSE 8080
 
