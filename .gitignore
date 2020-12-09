@@ -3,6 +3,5 @@ node_modules
 *.log
 temp
 .eslintcache
-package-lock.json
 lib
 storybook-static
