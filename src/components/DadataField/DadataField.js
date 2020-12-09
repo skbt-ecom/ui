@@ -8,7 +8,6 @@ import MenuItem from "@material-ui/core/MenuItem"
 
 import { getSuggestionValue } from "./helpers"
 import getDadata from "./getDadata"
-import debounce from "../../utils/debounce"
 import withSpaceForHelperTxt from "../HOCs/withSpaceForHelperTxt"
 
 import useStyles from "./styles"
@@ -56,13 +55,11 @@ const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
   const currentSuggestion = useRef(null)
 
   const inputValue = useRef("")
-  const setDebouncedSuggestions = useRef(
-    debounce((inputValue, dadataOptions) => {
-      getDadata(props.type, inputValue, dadataOptions).then(({ suggestions }) => {
-        setStateSuggestions(suggestions)
-      })
-    }, 500)
-  )
+  const setSuggestions = useRef((inputValue, dadataOptions) => {
+    getDadata(props.type, inputValue, dadataOptions).then(({ suggestions }) => {
+      setStateSuggestions(suggestions)
+    })
+  })
 
   useEffect(() => {
     // only when 'fio' type, because no tested in address type
@@ -73,7 +70,7 @@ const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
 
   const getSuggestions = value => {
     inputValue.current = value.toLowerCase()
-    setDebouncedSuggestions.current(inputValue.current, props.dadataOptions)
+    setSuggestions.current(inputValue.current, props.dadataOptions)
   }
 
   const handleSuggestionsFetchRequested = ({ value }) => {
