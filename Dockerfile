@@ -17,20 +17,7 @@ RUN npm ci
 
 COPY . .
 
-RUN npm run build-storybook
-
-FROM node:lts-alpine
-
-ARG NPM_REGISTRY
-
-COPY --from=build /usr/src/app/storybook-static ./storybook-static
-
-COPY storybook-serve.js ./storybook-serve.js
-COPY package*.json ./
-
-RUN ls ./storybook-static
-
-RUN npm i express
+RUN npm start
 
 EXPOSE 8080
-CMD [ "node", "storybook-serve.js"]
+
