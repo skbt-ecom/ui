@@ -28,6 +28,8 @@ COPY --from=build /usr/src/app/storybook-static ./storybook-static
 COPY storybook-serve.js ./storybook-serve.js
 COPY package*.json ./
 
+RUN ls ./storybook-static
+
 RUN npm i express
 
 EXPOSE 8080
