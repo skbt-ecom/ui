@@ -5,6 +5,8 @@ services:
       context: .
       args:
         - NPM_REGISTRY
+        - PROXY
+        - NO_PROXY
     environment:
       - HOST
       - NODE_ENV
