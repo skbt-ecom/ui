@@ -1,6 +1,6 @@
 FROM node:lts-alpine as build
 
-ARG $NPM_REGISTRY
+ARG NPM_REGISTRY
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -16,7 +16,7 @@ RUN npm run build-storybook
 
 FROM node:lts-alpine
 
-ARG $NPM_REGISTRY
+ARG NPM_REGISTRY
 
 COPY --from=build /usr/src/app/storybook-static ./storybook-static
 
