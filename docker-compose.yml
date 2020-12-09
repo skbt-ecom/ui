@@ -1,11 +1,13 @@
 version: "2"
 services:
   ui:
-    build: .
+    build:
+      context: .
+      args:
+        - NPM_REGISTRY
     environment:
       - HOST
       - NODE_ENV
-      - NPM_REGISTRY
     ports:
       - $PORT:8080
     logging:
