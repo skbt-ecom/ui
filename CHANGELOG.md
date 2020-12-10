@@ -1,3 +1,11 @@
+## [2.4.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.4.2...v2.4.3) (2020-12-10)
+
+
+### Bug Fixes
+
+* **acceptmentfield:** change text of agreement ([a8277b6](https://gitlab.sovcombank.group/web/ecom/ui/commit/a8277b6fcf2c171348f4fbd471845dd7715cb883))
+* **dadatafields:** ускорить выдачу подсказок dadata ([ee1eddd](https://gitlab.sovcombank.group/web/ecom/ui/commit/ee1eddd145cad7b2335560275d2f2c4a87cdba8d))
+
 ## [2.4.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.4.1...v2.4.2) (2020-11-30)
 
 
