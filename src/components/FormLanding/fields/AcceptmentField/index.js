@@ -18,15 +18,25 @@ const Acceptment = React.memo(props => {
       color="primary"
       label={
         <>
-          Даю согласие на&nbsp;обработку своих персональных данных в&nbsp;соответствии&nbsp;с&nbsp;
+          Выражаю{" "}
           <Link
             href="https://app.sovcombank.ru/policy/"
             target="_blank"
             rel="noopener noreferrer"
             underline={"always"}
           >
-            Правилами
-          </Link>
+            согласие
+          </Link>{" "}
+          на&nbsp;обработку персональных данных и подтверждаю, что ознакомлен с&nbsp;
+          <Link
+            href="https://app.sovcombank.ru/politika-konfidencialnosti/"
+            target="_blank"
+            rel="noopener noreferrer"
+            underline={"always"}
+          >
+            Политикой
+          </Link>{" "}
+          обработки персональных данных
         </>
       }
       {...props}
