@@ -16,8 +16,10 @@ const ButtonSteps = () => {
         Используете Госуслуги? Получите решение быстрее.
       </strong>
       <ol className={classes.stepsList}>
-        {steps.map(step => (
-          <li className={classes.step}>{step}</li>
+        {steps.map((step, i) => (
+          <li className={classes.step} key={i}>
+            {step}
+          </li>
         ))}
       </ol>
     </div>
