@@ -1,3 +1,11 @@
+## [2.4.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.4.3...v2.4.4) (2020-12-10)
+
+
+### Bug Fixes
+
+* **dadatafield:** устранить исчезновение/появление подсказки при вводе ([0bfca63](https://gitlab.sovcombank.group/web/ecom/ui/commit/0bfca6371b30772651821e747c44408887e335e8))
+* **esiabutton:** добавить key каждому эл. списка ([85480fa](https://gitlab.sovcombank.group/web/ecom/ui/commit/85480fa131bf077bac756d8351dd746e20239560))
+
 ## [2.4.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.4.2...v2.4.3) (2020-12-10)
 
 
