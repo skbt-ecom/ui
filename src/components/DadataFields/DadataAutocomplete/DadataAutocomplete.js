@@ -3,7 +3,6 @@ import TextField from "@material-ui/core/TextField"
 import Autocomplete from "@material-ui/lab/Autocomplete"
 import CircularProgress from "@material-ui/core/CircularProgress"
 import { getDadata } from "../getDadata"
-import useDebounce from "../useDebounce"
 import withSpaceForHelperTxt from "../../HOCs/withSpaceForHelperTxt"
 
 const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...props }) => {
@@ -11,7 +10,6 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
   const [isLoading, setIsLoading] = useState(false)
   const [dadataValue, setDadataValue] = useState(null)
   const [inputValue, setInputValue] = useState("")
-  const debouncedInputValue = useDebounce(inputValue, 500)
   const isIncameValue = useRef(false)
 
   useEffect(() => {
@@ -20,7 +18,7 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
     const makeIncameValueActions = suggestions => {
       const dataToOnBlur = {
         dadataValue: null,
-        inputValue: debouncedInputValue,
+        inputValue: inputValue,
         isDadataValueActual: false,
       }
 
@@ -31,7 +29,7 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
         dataToOnBlur.dadataValue = suggestion
         dataToOnBlur.isDadataValueActual = true
       } else {
-        setInputValue(debouncedInputValue)
+        setInputValue(inputValue)
       }
 
       // reset to "false" to prevent useEffect run
@@ -43,7 +41,7 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
     async function fetchData() {
       setIsLoading(true)
 
-      const response = await getDadata(type, debouncedInputValue, dadataOptions)
+      const response = await getDadata(type, inputValue, dadataOptions)
 
       let suggestions = []
       if (response.suggestions) {
@@ -66,14 +64,14 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
       setIsLoading(false)
     }
 
-    if (debouncedInputValue) {
+    if (inputValue) {
       fetchData()
     }
 
     return () => {
       active = false
     }
-  }, [debouncedInputValue, type, dadataOptions, onBlur])
+  }, [inputValue, type, dadataOptions, onBlur])
 
   useEffect(() => {
     if (incomingValue) {

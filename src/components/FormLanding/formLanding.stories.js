@@ -30,6 +30,7 @@ import TextField from "./fields/TextField"
 import PickersProvider from "../PickersProvider"
 import DatePicker from "./fields/DatePicker"
 import TimePicker from "./fields/TimePicker"
+import AcceptmentField from "./fields/AcceptmentField"
 
 import REGIONS from "../../enums/regions"
 
@@ -53,6 +54,15 @@ function validateByLength(len) {
 export default {
   title: "FormLanding",
   decorators: [muiTheme([theme])],
+}
+
+export function Acceptment() {
+  return (
+    <FormLanding onChangeFields={action("onChangeFields")} onSubmit={onSubmit}>
+      <AcceptmentField name="agree" color="primary" />
+      <SubmitButton>Отправить</SubmitButton>
+    </FormLanding>
+  )
 }
 
 export function CreditAmountSlider() {

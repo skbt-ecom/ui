@@ -6,14 +6,14 @@ import { autocompleteValidator } from "../validators"
 import useStyles from "./styles"
 import REGIONS from "../../../enums/regions"
 
-const AutocompleteRegionByPhoneField = React.memo(props => {
+const AutocompleteRegionByPhoneField = React.memo(({ apiUrl, ...props }) => {
   const onChange = (_, value) => {
     props.onChange(value)
   }
 
   useEffect(() => {
     const getRegionByPhone = phone =>
-      fetch(`${props.apiUrl}v1/region-detect?phone=${phone}`)
+      fetch(`${apiUrl}v1/region-detect?phone=${phone}`)
         .then(response => response.json())
         .then(data => data.region)
 

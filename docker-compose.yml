@@ -1,15 +1,19 @@
-
-version: '2'
+version: "2"
 services:
   ui:
-    build: .
+    build:
+      context: .
+      args:
+        - NPM_REGISTRY
+        - PROXY
+        - NO_PROXY
     environment:
       - HOST
       - NODE_ENV
     ports:
       - $PORT:8080
     logging:
-      driver: 'fluentd'
+      driver: "fluentd"
       options:
         fluentd-address: $HOST:24224
         tag: docker.ui
