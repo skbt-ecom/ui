@@ -74,7 +74,7 @@ const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
   }
 
   const handleSuggestionsFetchRequested = ({ value }) => {
-    setStateSuggestions(getSuggestions(value))
+    setStateSuggestions(prev => getSuggestions(value) || prev)
   }
 
   const handleSuggestionsClearRequested = () => {
