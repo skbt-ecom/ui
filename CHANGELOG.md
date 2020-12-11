@@ -1,3 +1,10 @@
+# [2.5.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.4.4...v2.5.0) (2020-12-11)
+
+
+### Features
+
+* **header:** add Halva header ([0505986](https://gitlab.sovcombank.group/web/ecom/ui/commit/0505986e1836216a56f614822cf34482826e9580))
+
 ## [2.4.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.4.3...v2.4.4) (2020-12-10)
 
 
