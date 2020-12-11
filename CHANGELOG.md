@@ -1,3 +1,10 @@
+## [2.5.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.5.0...v2.5.1) (2020-12-11)
+
+
+### Bug Fixes
+
+* bundler missed file ([cd20050](https://gitlab.sovcombank.group/web/ecom/ui/commit/cd20050db536f5e49306cfcd256a844391eeea06))
+
 # [2.5.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.4.4...v2.5.0) (2020-12-11)
 
 
