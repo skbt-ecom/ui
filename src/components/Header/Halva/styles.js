@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/styles"
 
-import logo from "./logo.svg"
+import logo from "./img/logo.svg"
 
 function styles(theme) {
   return {
