@@ -1,3 +1,10 @@
+## [2.5.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.5.1...v2.5.2) (2020-12-14)
+
+
+### Bug Fixes
+
+* update babel version, build command ([9a23982](https://gitlab.sovcombank.group/web/ecom/ui/commit/9a23982715226bb557f1960127cd8577d611549b))
+
 ## [2.5.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.5.0...v2.5.1) (2020-12-11)
 
 
