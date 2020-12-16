@@ -1,3 +1,10 @@
+## [2.5.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.5.2...v2.5.3) (2020-12-16)
+
+
+### Bug Fixes
+
+* **maskedfield:** get defaultValue ([0d721bf](https://gitlab.sovcombank.group/web/ecom/ui/commit/0d721bfa8a206e1396b3869fced83d546cf723b9))
+
 ## [2.5.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.5.1...v2.5.2) (2020-12-14)
 
 
