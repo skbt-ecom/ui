@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useEffect, useRef } from "react"
 
 import { action } from "@storybook/addon-actions"
 import { muiTheme } from "storybook-addon-material-ui"
@@ -18,7 +18,7 @@ import DadataAddressFlat from "./fields/DadataFields/DadataAddressFlat"
 import DadataFio from "./fields/DadataFields/DadataFio"
 import DadataAuto from "./fields/DadataFields/DadataAuto"
 import DateField from "./fields/DateField"
-// import EmailField from './fields/EmailField';
+import EmailField from "./fields/EmailField"
 import MaskedField from "./fields/MaskedField"
 import PhoneField from "./fields/PhoneField"
 import RadioGroupField from "./fields/RadioGroupField"
@@ -141,7 +141,6 @@ export function FormPassport() {
             label="Серия"
             name="passportSeries"
             mask="0000"
-            defaultValue="1111"
             validate={validateByLength(4)}
           />
         </Grid>
@@ -283,6 +282,33 @@ export function RegionByPhone() {
         label={"Регион"}
         phone={phone}
         apiUrl={"http://urt-web-app1:4000/"}
+      />
+      <SubmitButton>Отправить</SubmitButton>
+    </FormLanding>
+  )
+}
+
+export function MaskedFields() {
+  const [valueMask, setValueMask] = useState("")
+  const [valuePhone, setValuePhone] = useState("")
+  const [valueEmail, setValueEmail] = useState("")
+
+  useEffect(() => {
+    setTimeout(() => setValueEmail("asdasdasd@asd.asd"), 1000)
+    setTimeout(() => setValuePhone("89272342314"), 1000)
+    setTimeout(() => setValueMask("1111"), 1000)
+  }, [])
+
+  return (
+    <FormLanding onSubmit={onSubmit}>
+      <EmailField name={"email"} label={"Email"} incomingValue={valueEmail || ""} />
+      <PhoneField name={"phone"} label={"Телефон"} incomingValue={valuePhone || ""} />
+      <MaskedField
+        label="Серия"
+        name="passportSeries"
+        mask="0000"
+        incomingValue={valueMask || ""}
+        validate={validateByLength(4)}
       />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>

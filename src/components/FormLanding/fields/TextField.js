@@ -1,19 +1,27 @@
-import React from "react"
-import MaterialTexteField from "../../TextField"
+import React, { useEffect } from "react"
+
+import MUITexteField from "@material-ui/core/TextField"
 import { Field } from "../FormContext/Field"
 
 import useStyles from "./styles"
 
-const TextField = React.memo(props => {
-  const onChange = e => {
-    props.onChange(e.target.value)
+function TextField({ incomingValue, onChange, ...props }) {
+  useEffect(() => {
+    if (incomingValue) {
+      onChange(incomingValue)
+    }
+  }, [incomingValue, onChange])
+
+  function handleChange(e) {
+    onChange(e.target.value)
   }
 
-  return <MaterialTexteField {...props} onChange={onChange} />
-})
+  return <MUITexteField {...props} onChange={handleChange} />
+}
 
 const WrappedField = ({ classsesComponent, ...props }) => {
   const classes = useStyles(props)
+
   return (
     <div className={classes.fieldWrapper}>
       <Field {...props} classes={classsesComponent} />
