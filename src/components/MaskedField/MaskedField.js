@@ -1,6 +1,6 @@
 import "./globalThis.polyfill"
 
-import React from "react"
+import React, { useEffect } from "react"
 
 import { IMaskInput } from "react-imask"
 
@@ -8,7 +8,14 @@ import TextField from "@material-ui/core/TextField"
 
 import splitProps from "./helpers/splitProps"
 
-function CustomMaskInput({ onChange, ...props }) {
+function CustomMaskInput({ incomingValue, onChange, ...props }) {
+  useEffect(() => {
+    if (incomingValue) {
+      onAccept(incomingValue)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [incomingValue])
+
   function onAccept(value) {
     const name = props.id || props.name
     const e = {
