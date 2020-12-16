@@ -8,7 +8,6 @@ export default function splitProps(props) {
     dispatch,
     lazy,
     placeholderChar,
-    incomingValue,
     ...textFieldProps
   } = props
 
@@ -21,7 +20,6 @@ export default function splitProps(props) {
     dispatch,
     lazy,
     placeholderChar,
-    incomingValue,
   }
 
   return [textFieldProps, imaskProps]

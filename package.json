@@ -5,7 +5,7 @@
   "scripts": {
     "publish-ui": "npm run build && cp package.json lib && npm run semantic-release",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "start-storybook -p 8000",
+    "start": "start-storybook -p 3000",
     "start:ci": "start-storybook -p 8080 --ci --quiet",
     "build-storybook": "build-storybook -c .storybook -o storybook-static --loglevel warn --quiet",
     "compile": "babel src --out-dir lib --ignore \"**/*.stories.js\" --copy-files --no-copy-ignored",
