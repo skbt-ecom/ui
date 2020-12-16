@@ -1,102 +1,49 @@
 import "./globalThis.polyfill"
-import React, { useState, useEffect } from "react"
+
+import React from "react"
+
 import { IMaskInput } from "react-imask"
+
 import TextField from "@material-ui/core/TextField"
-import withSpaceForHelperTxt from "../HOCs/withSpaceForHelperTxt"
 
-const TextMaskCustom = React.memo(
-  (props) => {
-    const onAccept = (value, mask) => {
-      props.onAccept(value)
+import splitProps from "./helpers/splitProps"
+
+function CustomMaskInput({ onChange, ...props }) {
+  function onAccept(value) {
+    const name = props.id || props.name
+    const e = {
+      target: {
+        value,
+      },
     }
 
-    return <IMaskInput {...props} onAccept={onAccept} />
-  },
-  (prevProps, nextProps) => {
-    return prevProps.value === nextProps.value
-  }
-)
-
-const MaskedField = React.memo((props) => {
-  const { value: propsValueRaw, defaultValue } = props
-  const propsValue =
-    (propsValueRaw && propsValueRaw.toString()) || (defaultValue && defaultValue.toString()) || ""
-
-  const [value, setValue] = useState(propsValue)
-
-  useEffect(() => {
-    if (props.value !== undefined) {
-      let newValue = props.value
-      if (props.max !== undefined || props.min !== undefined) {
-        if (props.max < props.value) {
-          newValue = props.max
-        }
-
-        if (props.min > props.value) {
-          newValue = props.min
-        }
-      }
-      if (newValue === 0) {
-        newValue = ""
-      }
-      setValue(newValue.toString() || "")
+    if (name) {
+      e.target.name = name
     }
-  }, [props.max, props.min, props.value])
 
-  const handleAccept = (value) => {
-    setValue(value)
-    props.onChange(value)
+    onChange(e)
   }
 
-  const handleOnBlur = (value) => {
-    props.onBlur(value)
-  }
+  return <IMaskInput {...props} onAccept={onAccept} />
+}
 
-  const {
-    mask,
-    min,
-    max,
-    unmask,
-    onChange,
-    onBlur,
-    thousandsSeparator = "",
-    dispatch,
-    lazy = true,
-    placeholderChar = "_",
-    InputProps,
-    ...restProps
-  } = props
+export default function MaskedField({ InputProps, ...props }) {
+  const [textFieldProps, inputProps] = splitProps(props)
 
-  console.log(restProps, InputProps)
-
-  const inputProps = {
-    onAccept: handleAccept,
-    mask,
-    unmask,
-    value,
-    max,
-    thousandsSeparator,
-    dispatch,
-    lazy,
-    placeholderChar,
-    onBlur: handleOnBlur,
-  }
   return (
     <TextField
-      {...restProps}
+      {...textFieldProps}
       InputProps={{
         ...InputProps,
-        inputComponent: TextMaskCustom,
         inputProps,
-        classes: InputProps.classes,
+        inputComponent: CustomMaskInput,
       }}
     />
   )
-})
+}
 
 MaskedField.defaultProps = {
-  mask: Date,
-  InputProps: {},
-  onBlur: () => null,
+  placeholderChar: "_",
+  thousandsSeparator: "",
+  lazy: true,
 }
-export default withSpaceForHelperTxt(MaskedField)

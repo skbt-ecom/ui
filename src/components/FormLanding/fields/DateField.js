@@ -5,13 +5,19 @@ import { dateValidator, birthdateValidator } from "../validators"
 
 import useStyles from "./styles"
 
-const DateField = React.memo(props => <MaterialDateField {...props} />)
+function DateField({ onChange, ...props }) {
+  function handleChange(e) {
+    onChange(e.target.value)
+  }
+
+  return <MaterialDateField {...props} onChange={handleChange} />
+}
 
 const WrappedField = ({ validAgeMin, validAgeMax, classsesComponent, ...props }) => {
   const classes = useStyles(props)
   const isAgeValidationRequred = validAgeMin || validAgeMax
   const validator = isAgeValidationRequred
-    ? value => birthdateValidator(value, { validAgeMin, validAgeMax })
+    ? (value) => birthdateValidator(value, { validAgeMin, validAgeMax })
     : dateValidator
 
   return (

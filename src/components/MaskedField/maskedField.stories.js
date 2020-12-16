@@ -1,87 +1,113 @@
 import React, { useState } from "react"
-// Import the storybook libraries
-import { storiesOf } from "@storybook/react"
-import { action } from "@storybook/addon-actions"
+
 import { muiTheme } from "storybook-addon-material-ui"
 
-// Import our component from this folder
+import InputAdornment from "@material-ui/core/InputAdornment"
+import AccountCircle from "@material-ui/icons/AccountCircle"
+
 import MaskedField from "./MaskedField"
 
 import theme from "../../style/theme"
 
-storiesOf("MaskedField", module)
-  .addDecorator(muiTheme([theme]))
-  .add("Default", () => (
+export default {
+  title: "MaskedField",
+  decorators: [muiTheme([theme])],
+}
+
+export function Default() {
+  const [value, setValue] = useState("15")
+
+  function handleChange(e) {
+    setValue(e.target.value)
+  }
+
+  return (
     <MaskedField
-      onChange={action("onChange")}
-      label={"MaskedField Number"}
+      onChange={handleChange}
+      label="MaskedField Number"
       mask={Number}
-      value={10}
-      // InputProps={{
-      //   startAdornment: (
-      //     <InputAdornment position="start">
-      //       <AccountCircle />
-      //     </InputAdornment>
-      //   ),
-      // }}
+      value={value}
+      InputProps={{
+        startAdornment: (
+          <InputAdornment position="start">
+            <AccountCircle />
+          </InputAdornment>
+        ),
+      }}
     />
-  ))
-  .add("Thousands Separator", () => (
+  )
+}
+
+export function ThousandsSeparator() {
+  const [value, setValue] = useState("15")
+
+  function handleChange(e) {
+    setValue(e.target.value)
+  }
+
+  return (
     <MaskedField
-      onChange={action("onChange")}
-      label={"MaskedField Number"}
+      onChange={handleChange}
+      label="MaskedField Number"
       mask={Number}
-      value={10}
-      thousandsSeparator={" "}
+      value={value}
+      thousandsSeparator=" "
     />
-  ))
-  .add("Dynamic value", () => {
-    const [value, setValue] = useState(15)
-    return (
-      <>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            margin: "50px",
+  )
+}
+
+export function DynamicValue() {
+  const [value, setValue] = useState("15")
+
+  function handleChange(e) {
+    setValue(e.target.value)
+  }
+
+  return (
+    <>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          margin: "50px",
+        }}
+      >
+        <span>value={value} min=0 max=100</span>
+
+        <button
+          onClick={() => {
+            setValue("-100")
           }}
         >
-          <span>value={value} min=0 max=100</span>
+          Set value = -100
+        </button>
 
-          <button
-            onClick={() => {
-              setValue(-100)
-            }}
-          >
-            Set value = -100
-          </button>
+        <button
+          onClick={() => {
+            setValue("10")
+          }}
+        >
+          Set value = 10
+        </button>
 
-          <button
-            onClick={() => {
-              setValue(10)
-            }}
-          >
-            Set value = 10
-          </button>
+        <button
+          onClick={() => {
+            setValue("200")
+          }}
+        >
+          Set value = 200
+        </button>
+      </div>
 
-          <button
-            onClick={() => {
-              setValue(200)
-            }}
-          >
-            Set value = 200
-          </button>
-        </div>
-
-        <MaskedField
-          onChange={setValue}
-          label={"MaskedField Number"}
-          mask={Number}
-          value={value}
-          thousandsSeparator={" "}
-          min={0}
-          max={100}
-        />
-      </>
-    )
-  })
+      <MaskedField
+        onChange={handleChange}
+        label="MaskedField Number"
+        mask={Number}
+        value={value}
+        thousandsSeparator=" "
+        min={0}
+        max={100}
+      />
+    </>
+  )
+}

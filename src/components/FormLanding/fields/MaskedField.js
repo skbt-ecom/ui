@@ -5,9 +5,13 @@ import { requiredValidator } from "../validators/requiredValidator"
 
 import useStyles from "./styles"
 
-const MaskedField = React.memo(props => {
-  return <MaterialMaskedField {...props} />
-})
+function MaskedField({ onChange, ...props }) {
+  function handleChange(e) {
+    onChange(e.target.value)
+  }
+
+  return <MaterialMaskedField {...props} onChange={handleChange} />
+}
 
 const WrappedField = ({ classsesComponent, ...props }) => {
   const classes = useStyles(props)
