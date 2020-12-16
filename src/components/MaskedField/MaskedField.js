@@ -5,7 +5,7 @@ import TextField from "@material-ui/core/TextField"
 import withSpaceForHelperTxt from "../HOCs/withSpaceForHelperTxt"
 
 const TextMaskCustom = React.memo(
-  props => {
+  (props) => {
     const onAccept = (value, mask) => {
       props.onAccept(value)
     }
@@ -17,9 +17,10 @@ const TextMaskCustom = React.memo(
   }
 )
 
-const MaskedField = React.memo(props => {
-  const { value: propsValueRaw } = props
-  const propsValue = (propsValueRaw && propsValueRaw.toString()) || ""
+const MaskedField = React.memo((props) => {
+  const { value: propsValueRaw, defaultValue } = props
+  const propsValue =
+    (propsValueRaw && propsValueRaw.toString()) || (defaultValue && defaultValue.toString()) || ""
 
   const [value, setValue] = useState(propsValue)
 
@@ -42,12 +43,12 @@ const MaskedField = React.memo(props => {
     }
   }, [props.max, props.min, props.value])
 
-  const handleAccept = value => {
+  const handleAccept = (value) => {
     setValue(value)
     props.onChange(value)
   }
 
-  const handleOnBlur = value => {
+  const handleOnBlur = (value) => {
     props.onBlur(value)
   }
 
@@ -65,6 +66,8 @@ const MaskedField = React.memo(props => {
     InputProps,
     ...restProps
   } = props
+
+  console.log(restProps, InputProps)
 
   const inputProps = {
     onAccept: handleAccept,
