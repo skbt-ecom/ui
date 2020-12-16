@@ -1,8 +1,7 @@
 import React from "react"
+
 import MaskedField from "../MaskedField"
 
-const DateField = React.memo(props => {
+export default function DateField(props) {
   return <MaskedField {...props} mask={Date} />
-})
-
-export default DateField
+}
