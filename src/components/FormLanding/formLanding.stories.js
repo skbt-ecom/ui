@@ -289,27 +289,21 @@ export function RegionByPhone() {
 }
 
 export function MaskedFields() {
-  const [valueMask, setValueMask] = useState("")
   const [valuePhone, setValuePhone] = useState("")
   const [valueEmail, setValueEmail] = useState("")
+  const [valueBirthdate, setValueBirthdate] = useState("")
 
   useEffect(() => {
     setTimeout(() => setValueEmail("asdasdasd@asd.asd"), 1000)
     setTimeout(() => setValuePhone("89272342314"), 1000)
-    setTimeout(() => setValueMask("1111"), 1000)
+    setTimeout(() => setValueBirthdate("11111992"), 1000)
   }, [])
 
   return (
     <FormLanding onSubmit={onSubmit}>
-      <EmailField name={"email"} label={"Email"} incomingValue={valueEmail || ""} />
-      <PhoneField name={"phone"} label={"Телефон"} incomingValue={valuePhone || ""} />
-      <MaskedField
-        label="Серия"
-        name="passportSeries"
-        mask="0000"
-        incomingValue={valueMask || ""}
-        validate={validateByLength(4)}
-      />
+      <EmailField name="email" label="Email" incomingValue={valueEmail || ""} />
+      <PhoneField name="phone" label="Телефон" incomingValue={valuePhone || ""} />
+      <DateField name="birthdate" label="Дата рождения" incomingValue={valueBirthdate || ""} />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>
   )

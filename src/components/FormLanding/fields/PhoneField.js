@@ -1,11 +1,18 @@
-import React from "react"
+import React, { useEffect } from "react"
+
 import MaterialPhoneField from "../../PhoneField"
 import { Field } from "../FormContext/Field"
 import { phoneValidator } from "../validators/phoneValidator"
 
 import useStyles from "./styles"
 
-function PhoneField({ onChange, ...props }) {
+function PhoneField({ incomingValue, onChange, ...props }) {
+  useEffect(() => {
+    if (incomingValue) {
+      onChange(incomingValue)
+    }
+  }, [incomingValue, onChange])
+
   function handleChange(e) {
     onChange(e.target.value)
   }

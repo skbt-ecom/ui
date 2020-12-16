@@ -1,11 +1,18 @@
-import React from "react"
+import React, { useEffect } from "react"
+
 import MaterialDateField from "../../DateField"
 import { Field } from "../FormContext/Field"
 import { dateValidator, birthdateValidator } from "../validators"
 
 import useStyles from "./styles"
 
-function DateField({ onChange, ...props }) {
+function DateField({ incomingValue, onChange, ...props }) {
+  useEffect(() => {
+    if (incomingValue) {
+      onChange(incomingValue)
+    }
+  }, [incomingValue, onChange])
+
   function handleChange(e) {
     onChange(e.target.value)
   }
