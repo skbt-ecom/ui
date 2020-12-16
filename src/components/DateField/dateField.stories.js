@@ -12,5 +12,10 @@ import theme from "../../style/theme"
 storiesOf("DateField", module)
   .addDecorator(muiTheme([theme]))
   .add("Default", () => (
-    <DateField onChange={action("onChange")} label={"DateField"} max={new Date()} />
+    <DateField
+      onChange={action("onChange")}
+      label={"DateField"}
+      max={new Date()}
+      defaultValue={"10.10.2010"}
+    />
   ))

@@ -9,15 +9,15 @@ import PhoneField from "./PhoneField"
 
 import theme from "../../style/theme"
 
-const PhoneFieldWrapper = props => {
+const PhoneFieldWrapper = (props) => {
   const [value, setValue] = useState("")
 
-  const handleChange = value => {
+  const handleChange = (value) => {
     setValue(value)
     props.onChange(value)
   }
 
-  const handleBlur = fieldName => valueBlur => {
+  const handleBlur = (fieldName) => (valueBlur) => {
     console.log(fieldName)
     props.onBlur(valueBlur)
   }
@@ -32,6 +32,17 @@ storiesOf("PhoneField", module)
   .add("Default", () => (
     <PhoneFieldWrapper
       label={"Телефон"}
+      onChange={action("onChange")}
+      onBlur={action("onBlur")}
+      defaultValue={"8"}
+      // lazy={false}
+      // placeholderChar={' '}
+    />
+  ))
+  .add("defaultValue", () => (
+    <PhoneField
+      label={"Телефон"}
+      defaultValue={"8"}
       onChange={action("onChange")}
       onBlur={action("onBlur")}
       // lazy={false}
