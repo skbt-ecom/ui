@@ -1,3 +1,10 @@
+## [2.5.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.5.4...v2.5.5) (2020-12-16)
+
+
+### Bug Fixes
+
+* get incomingValue ([bf0cae0](https://gitlab.sovcombank.group/web/ecom/ui/commit/bf0cae07c4f9d5edbd06a9b60e0e8942a34360d6))
+
 ## [2.5.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.5.3...v2.5.4) (2020-12-16)
 
 
