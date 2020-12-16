@@ -48,7 +48,7 @@ function onSubmit(values) {
 }
 
 function validateByLength(len) {
-  return value => lengthValidator(value, len)
+  return (value) => lengthValidator(value, len)
 }
 
 export default {
@@ -109,12 +109,12 @@ export function FormPassport() {
   const refForm = useRef(null)
 
   const onChangeFields = {
-    changedCredentials: fieldData => {
+    changedCredentials: (fieldData) => {
       const { value } = fieldData
       refForm.current.setField("oldFio", { isRequired: value })
       setIsChangedCredentials(value)
     },
-    differentAddress: fieldData => {
+    differentAddress: (fieldData) => {
       const { value } = fieldData
       refForm.current.setField("lifeAddress", { isRequired: !value })
       setIsDifferentAddress(!value)
@@ -141,7 +141,7 @@ export function FormPassport() {
             label="Серия"
             name="passportSeries"
             mask="0000"
-            defaultValue=""
+            defaultValue="1111"
             validate={validateByLength(4)}
           />
         </Grid>

@@ -11,7 +11,8 @@ const PHONE_MASKS = [
     lazy: false,
   },
 ]
-const PhoneField = React.memo(props => {
+
+export default function PhoneField(props) {
   return (
     <MaskedField
       type="tel"
@@ -28,6 +29,4 @@ const PhoneField = React.memo(props => {
       {...props}
     />
   )
-})
-
-export default PhoneField
+}

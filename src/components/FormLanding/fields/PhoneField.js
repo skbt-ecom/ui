@@ -5,7 +5,13 @@ import { phoneValidator } from "../validators/phoneValidator"
 
 import useStyles from "./styles"
 
-const PhoneField = React.memo(props => <MaterialPhoneField {...props} />)
+function PhoneField({ onChange, ...props }) {
+  function handleChange(e) {
+    onChange(e.target.value)
+  }
+
+  return <MaterialPhoneField {...props} onChange={handleChange} />
+}
 
 const WrappedField = ({ classsesComponent, ...props }) => {
   const classes = useStyles(props)
