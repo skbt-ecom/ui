@@ -1,3 +1,10 @@
+## [2.5.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.5.3...v2.5.4) (2020-12-16)
+
+
+### Bug Fixes
+
+* **maskedfield:** change state managment ([5dde4e4](https://gitlab.sovcombank.group/web/ecom/ui/commit/5dde4e4b47a04f6ee74fbc30fe8b97e33c35f3e5))
+
 ## [2.5.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.5.2...v2.5.3) (2020-12-16)
 
 
