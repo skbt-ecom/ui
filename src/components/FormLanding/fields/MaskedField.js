@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 
 import MaterialMaskedField from "../../MaskedField"
 import { Field } from "../FormContext/Field"
@@ -6,13 +6,7 @@ import { requiredValidator } from "../validators/requiredValidator"
 
 import useStyles from "./styles"
 
-function MaskedField({ incomingValue, onChange, ...props }) {
-  useEffect(() => {
-    if (incomingValue) {
-      onChange(incomingValue)
-    }
-  }, [incomingValue, onChange])
-
+function MaskedField({ onChange, ...props }) {
   function handleChange(e) {
     onChange(e.target.value)
   }
