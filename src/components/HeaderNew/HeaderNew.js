@@ -13,7 +13,7 @@ const Header = (props, ref) => {
   const classes = useHeaderStyles(props)
   const phoneClasses = usePhoneStyles(props.PhoneProps)
   const buttonClasses = useButtonStyles(props.ButtonProps)
-  const { left, right, LogoProps, ButtonProps, PhoneProps } = props
+  const { left, right, LogoProps, withButton, ButtonProps, PhoneProps } = props
 
   return (
     <header className={cn(classes.header, { [classes.headerStatic]: props.static })} ref={ref}>
@@ -31,7 +31,14 @@ const Header = (props, ref) => {
         ) : (
           <div className={classes.rightBlock}>
             <PhoneMain {...PhoneProps} classes={phoneClasses} />
-            <Button color="primary" children="Оформить" {...ButtonProps} classes={buttonClasses} />
+            {withButton && (
+              <Button
+                color="primary"
+                children="Оформить"
+                {...ButtonProps}
+                classes={buttonClasses}
+              />
+            )}
           </div>
         )}
       </Container>
