@@ -1,3 +1,10 @@
+# [2.6.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.5.6...v2.6.0) (2020-12-22)
+
+
+### Features
+
+* **headernew:** add withButton to props ([deee0b7](https://gitlab.sovcombank.group/web/ecom/ui/commit/deee0b7c8deec3fec63217c8604eabaadd668907))
+
 ## [2.5.6](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.5.5...v2.5.6) (2020-12-16)
 
 
