@@ -1,17 +1,11 @@
-import React, { useEffect } from "react"
+import React from "react"
 
 import MUITexteField from "@material-ui/core/TextField"
 import { Field } from "../FormContext/Field"
 
 import useStyles from "./styles"
 
-function TextField({ incomingValue, onChange, ...props }) {
-  useEffect(() => {
-    if (incomingValue) {
-      onChange(incomingValue)
-    }
-  }, [incomingValue, onChange])
-
+function TextField({ onChange, ...props }) {
   function handleChange(e) {
     onChange(e.target.value)
   }
