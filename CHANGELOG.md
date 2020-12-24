@@ -1,3 +1,11 @@
+## [2.6.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.6.0...v2.6.1) (2020-12-24)
+
+
+### Bug Fixes
+
+* **uploader:** make customizable uploader ([f97ae11](https://gitlab.sovcombank.group/web/ecom/ui/commit/f97ae113cc7668542333fd91456f71c535ac25f7))
+* remove incomingValue attribute ([8a6dc62](https://gitlab.sovcombank.group/web/ecom/ui/commit/8a6dc62f17f8d1d7f25f81c614ef928505b0f1ff))
+
 # [2.6.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.5.6...v2.6.0) (2020-12-22)
 
 
