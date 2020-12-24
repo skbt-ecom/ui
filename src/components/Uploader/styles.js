@@ -1,60 +1,31 @@
-import { makeStyles } from "@material-ui/core/styles"
+import makeStyles from "@material-ui/core/styles/makeStyles"
+import { lighten } from "@material-ui/core/styles/colorManipulator"
 
 function styles(theme) {
+  const lightenColor = lighten(theme.palette.primary.main, 0.4)
+
   return {
     root: {
       position: "relative",
-      width: 128,
-
-      [theme.breakpoints.up("sm")]: {
-        width: 153,
-      },
-
-      [theme.breakpoints.up("md")]: {
-        width: 176,
-      },
-    },
-
-    fail: {
-      "& $uploader": {
-        borderColor: theme.palette.secondary.main,
-        marginBottom: 4,
-      },
-
-      "& $uploadIcon": {
-        fill: theme.palette.secondary.main,
-      },
-
-      "& $hint": {
-        color: theme.palette.secondary.main,
-      },
+      maxWidth: 200,
     },
 
     uploader: {
-      position: "relative",
+      padding: 10,
+      flexDirection: "column",
       borderRadius: 4,
-      border: "1px dashed #d2dce3",
-      background: "#f9fafc",
+      border: "2px dashed",
+      borderColor: lightenColor,
       cursor: "pointer",
       transition: "0.3s border-color",
-      marginBottom: 8,
-      height: 88,
       width: "100%",
-
-      [theme.breakpoints.up("sm")]: {
-        marginBottom: 16,
-        height: 104,
-      },
-
-      [theme.breakpoints.up("md")]: {
-        height: 120,
-      },
+      minHeight: 100,
 
       "&:hover, &$active": {
-        borderColor: "#607286",
+        borderColor: theme.palette.primary.main,
 
         "& $uploadIcon": {
-          fill: "#607286",
+          fill: theme.palette.primary.main,
         },
       },
     },
@@ -62,29 +33,17 @@ function styles(theme) {
     active: {},
 
     uploadIcon: {
-      fill: "#a1afbf",
+      fill: lightenColor,
       transition: "0.3s fill",
       width: 40,
       height: 36,
     },
 
-    linearProgress: {
-      position: "absolute",
-      right: -1,
-      bottom: -1,
-      left: -1,
-      borderRadius: "0 0 4px 4px",
-      backgroundColor: "#bfcee5",
-      height: 6,
-
-      [theme.breakpoints.up("sm")]: {
-        height: 8,
-      },
-    },
-
     imgOut: {
-      maxWidth: "100%",
-      maxHeight: "100%",
+      objectFit: "cover",
+      objectPosition: "center",
+      width: "100%",
+      height: "100%",
     },
 
     removeBtn: {
@@ -117,23 +76,10 @@ function styles(theme) {
       display: "none",
     },
 
-    errMsg: {
-      color: theme.palette.secondary.main,
-      fontSize: 8,
-      marginBottom: 4,
-    },
-
-    hint: {
-      fontSize: 10,
+    helperText: {
+      fontWeight: 400,
+      fontSize: 14,
       lineHeight: "22px",
-
-      [theme.breakpoints.up("sm")]: {
-        fontSize: 14,
-      },
-
-      [theme.breakpoints.up("md")]: {
-        fontSize: 16,
-      },
     },
   }
 }
