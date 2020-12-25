@@ -9,7 +9,6 @@ import Grid from "../Grid"
 
 import FormLanding from "./FormLanding"
 
-// import AcceptmentField from './fields/AcceptmentField';
 import AutocompleteField from "./fields/AutocompleteField"
 import AutocompleteRegionByPhoneField from "./fields/AutocompleteRegionByPhoneField"
 import CheckboxField from "./fields/CheckboxField"

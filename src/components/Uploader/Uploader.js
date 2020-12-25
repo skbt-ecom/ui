@@ -48,15 +48,13 @@ export default function Uploader({ onLoad, helperText, ...props }) {
           <CloudUpload className={classes.uploadIcon} />
         )}
         {!isLoaded && <h4 className={classes.helperText}>{helperText}</h4>}
+        <input {...getInputProps()} />
       </ButtonBase>
       {isLoaded && (
         <Button className={classes.removeBtn} onClick={removeImage}>
           <Close className={classes.removeIcon} />
         </Button>
       )}
-      <input {...getInputProps()} className={classes.input} />
     </div>
   )
 }
-
-Uploader.defaultProps = {}

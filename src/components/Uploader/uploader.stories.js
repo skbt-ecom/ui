@@ -14,7 +14,11 @@ export default {
 
 export function Default() {
   return (
-    <Uploader helperText="Для загрузки выберите файл на Вашем устройстве" onLoad={console.log} />
+    <Uploader
+      helperText="Для загрузки выберите файл на Вашем устройстве"
+      onLoad={console.log}
+      classes={{ root: "root" }}
+    />
   )
 }
 

@@ -6,20 +6,19 @@ function styles(theme) {
 
   return {
     root: {
+      display: "flex",
       position: "relative",
-      maxWidth: 200,
+      width: 200,
+      minHeight: 150,
     },
 
     uploader: {
+      width: "100%",
       padding: 10,
       flexDirection: "column",
       borderRadius: 4,
-      border: "2px dashed",
-      borderColor: lightenColor,
-      cursor: "pointer",
+      border: `2px dashed ${lightenColor}`,
       transition: "0.3s border-color",
-      width: "100%",
-      minHeight: 100,
 
       "&:hover, &$active": {
         borderColor: theme.palette.primary.main,
@@ -70,10 +69,6 @@ function styles(theme) {
         width: 17,
         height: 17,
       },
-    },
-
-    input: {
-      display: "none",
     },
 
     helperText: {
