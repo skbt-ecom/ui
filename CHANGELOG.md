@@ -1,3 +1,10 @@
+## [2.6.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.6.1...v2.6.2) (2020-12-25)
+
+
+### Bug Fixes
+
+* **uploader, acceptmentfield:** styles ([bae9ff6](https://gitlab.sovcombank.group/web/ecom/ui/commit/bae9ff644bc248c0c257517a80f8805fb7035937))
+
 ## [2.6.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.6.0...v2.6.1) (2020-12-24)
 
 
