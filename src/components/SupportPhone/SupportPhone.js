@@ -1,9 +1,10 @@
 import React from "react"
-import Button from "../Button"
+
+import Button from "@material-ui/core/Button"
 
 import useStyles from "./styles"
 
-const SupportPhone = props => {
+const SupportPhone = (props) => {
   const classes = useStyles()
   const {
     phone,

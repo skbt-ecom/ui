@@ -3,9 +3,10 @@ import React, { useState, useEffect, useRef } from "react"
 import { action } from "@storybook/addon-actions"
 import { muiTheme } from "storybook-addon-material-ui"
 
+import Grid from "@material-ui/core/Grid"
+
 import theme from "../../style/theme"
 import themeHalva from "../../style/themeHalva"
-import Grid from "../Grid"
 
 import FormLanding from "./FormLanding"
 

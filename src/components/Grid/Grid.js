@@ -1,8 +1,6 @@
 import React from "react"
-import Grid from "@material-ui/core/Grid"
+import MUIGrid from "@material-ui/core/Grid"
 
-const GridComponent = React.memo(props => {
-  return <Grid {...props} />
-})
-
-export default GridComponent
+export default function GridComponent(props) {
+  return <MUIGrid {...props} />
+}

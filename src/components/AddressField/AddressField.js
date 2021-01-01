@@ -14,7 +14,7 @@ const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({
   },
 })
 
-const AddressField = React.memo(props => {
+const AddressField = React.memo((props) => {
   const addressDadataClasses = useStylesAddressDadata(props.classes.addressDadataClasses)
   const flatInfoClasses = useStylesFlatInfo(props.classes.flatInfoClasses)
 
@@ -36,18 +36,18 @@ const AddressField = React.memo(props => {
     props.onChange(sendData)
   }, [addressDadata, flat, isNoFlat])
 
-  const handleAddressDadataChange = useCallback(value => {
+  const handleAddressDadataChange = useCallback((value) => {
     setAddressDadata(value)
   }, [])
 
-  const handleFlatChange = useCallback(e => {
+  const handleFlatChange = useCallback((e) => {
     const {
       target: { value },
     } = e
     setFlat(value)
   }, [])
 
-  const handleNoFlatChange = useCallback(e => {
+  const handleNoFlatChange = useCallback((e) => {
     const {
       target: { checked },
     } = e

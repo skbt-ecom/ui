@@ -1,8 +1,9 @@
 import React from "react"
+
 import Typography from "@material-ui/core/Typography"
+import Box from "@material-ui/core/Box"
 
 import Container from "../Container"
-import Box from "../Box"
 import icon_done from "./icon_done.svg"
 import icon_error from "./icon_error.svg"
 

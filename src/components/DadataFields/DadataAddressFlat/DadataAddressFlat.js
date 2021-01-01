@@ -77,7 +77,7 @@ const DadataAddressFlat = React.memo(({ regexp, incomingValue, onBlur, name, ...
       <div className={flatInfoClasses.container}>
         <TextField
           label={"Квартира"}
-          onChange={e => setFlat(e.target.value)}
+          onChange={(e) => setFlat(e.target.value)}
           value={flat}
           disabled={isNoFlat}
           classes={{
@@ -86,7 +86,7 @@ const DadataAddressFlat = React.memo(({ regexp, incomingValue, onBlur, name, ...
           {...flatErrorProps}
         />
         <Checkbox
-          onChange={e => setIsNoFlat(e.target.checked)}
+          onChange={(e) => setIsNoFlat(e.target.checked)}
           label={"Нет номера квартиры"}
           color={"primary"}
           checked={isNoFlat}
