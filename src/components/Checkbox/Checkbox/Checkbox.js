@@ -22,20 +22,23 @@ const useStylesHelperText = makeStyles({
   root: {},
 })
 
-const CheckboxComponent = React.memo(props => {
+const CheckboxComponent = React.memo((props) => {
   const checkboxClasses = props.classes
-    ? useStylesCheckbox(getClassesFromProps(props, "checkboxClasses"))
+    ? // eslint-disable-next-line
+      useStylesCheckbox(getClassesFromProps(props, "checkboxClasses"))
     : {}
   const labelClasses = props.classes
-    ? useStylesLabel(getClassesFromProps(props, "labelClasses"))
+    ? // eslint-disable-next-line
+      useStylesLabel(getClassesFromProps(props, "labelClasses"))
     : {}
   const helperTextClasses = props.classes
-    ? useStylesHelperText(getClassesFromProps(props, "helperTextClasses"))
+    ? // eslint-disable-next-line
+      useStylesHelperText(getClassesFromProps(props, "helperTextClasses"))
     : {}
 
   const { label, error, helperText, classes, value, ...restProps } = props
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     props.onChange(event)
   }
 

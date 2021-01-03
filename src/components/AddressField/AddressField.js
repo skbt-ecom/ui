@@ -14,7 +14,7 @@ const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({
   },
 })
 
-const AddressField = React.memo((props) => {
+const AddressField = React.memo(({ onChange, ...props }) => {
   const addressDadataClasses = useStylesAddressDadata(props.classes.addressDadataClasses)
   const flatInfoClasses = useStylesFlatInfo(props.classes.flatInfoClasses)
 
@@ -30,10 +30,12 @@ const AddressField = React.memo((props) => {
     }
 
     if (!addressDadata) {
-      return props.onChange(null)
+      onChange(null)
+      return
     }
     const sendData = addFlatInfoToDadata(addressDadata, flat, isNoFlat)
-    props.onChange(sendData)
+    onChange(sendData)
+    // eslint-disable-next-line
   }, [addressDadata, flat, isNoFlat])
 
   const handleAddressDadataChange = useCallback((value) => {

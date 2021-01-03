@@ -30,7 +30,7 @@ const renderCheckboxItem = ({
   )
 }
 
-const CheckboxGroup = React.memo(props => {
+const CheckboxGroup = React.memo((props) => {
   const classes = useStyles(props)
   const { options, error, helperText, formLabel = {}, color, ...restProps } = props
   const [checkedOptions, setCheckedOptions] = useState(props.checked || [])
@@ -42,13 +42,14 @@ const CheckboxGroup = React.memo(props => {
       return
     }
     props.onChange(checkedOptions)
+    // eslint-disable-next-line
   }, [checkedOptions])
 
-  const handleChange = name => e => {
+  const handleChange = (name) => (e) => {
     if (e.target.checked) {
-      setCheckedOptions(prevCheckedOptions => [...prevCheckedOptions, name])
+      setCheckedOptions((prevCheckedOptions) => [...prevCheckedOptions, name])
     } else {
-      setCheckedOptions(prevCheckedOptions => prevCheckedOptions.filter(el => el !== name))
+      setCheckedOptions((prevCheckedOptions) => prevCheckedOptions.filter((el) => el !== name))
     }
   }
   return (
@@ -66,7 +67,7 @@ const CheckboxGroup = React.memo(props => {
             index,
             classes,
             color,
-            checked: checkedOptions.findIndex(op => op === option.value) !== -1,
+            checked: checkedOptions.findIndex((op) => op === option.value) !== -1,
           })
         )}
       </FormGroup>

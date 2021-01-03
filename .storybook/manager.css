@@ -1,0 +1,11 @@
+button[title="Global theme for components"] path[d$="0z"] {
+  color: #00f;
+}
+
+button[title="Global theme for components"] path[d$="153.4z"] {
+  color: #f00;
+}
+
+button[title="Global theme for components"] path[d$="142z"] {
+  color: #222;
+}

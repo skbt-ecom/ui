@@ -3,6 +3,7 @@ import React from "react"
 import { action } from "@storybook/addon-actions"
 
 import { muiTheme } from "storybook-addon-material-ui"
+// import icons from "@storybook/components/dist/icon/icons"
 
 import Button from "./Button"
 import ButtonESIA from "./ButtonESIA"
@@ -69,3 +70,19 @@ export function ESIA() {
     </ButtonESIA>
   )
 }
+
+// export function StorybookIcons() {
+//   console.log(icons)
+//   return (
+//     <ul>
+//       {Object.entries(icons).map(([type, icon], i) => (
+//         <li key={i}>
+//           <svg viewBox="0 0 1024 1024" width="15" height="15" style={{ marginRight: 10 }}>
+//             <path fill="#333" d={icon} />
+//           </svg>{" "}
+//           {type}
+//         </li>
+//       ))}
+//     </ul>
+//   )
+// }

@@ -25,7 +25,7 @@ function styles(theme) {
       [theme.breakpoints.up("sm")]: {
         display: "block",
         width: 504,
-        height: 452,
+        // height: 452,
         height: "auto",
 
         borderRadius: 8,

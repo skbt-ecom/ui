@@ -33,12 +33,9 @@ const Header = (props, ref) => {
           <div className={classes.rightBlock}>
             <PhoneMain {...PhoneProps} classes={phoneClasses} />
             {withButton && (
-              <Button
-                color="primary"
-                children="Оформить"
-                {...ButtonProps}
-                classes={buttonClasses}
-              />
+              <Button {...ButtonProps} classes={buttonClasses}>
+                Оформить
+              </Button>
             )}
           </div>
         )}
