@@ -15,22 +15,9 @@ const themes = {
   dark: themeDark,
 }
 
-export const globalTypes = {
-  theme: {
-    name: "Theme",
-    description: "Global theme for components",
-    defaultValue: "blue",
-    toolbar: {
-      items: [
-        { value: "blue", title: "Blue light theme", icon: "circle" },
-        { value: "red", title: "Red light theme", icon: "accessibilityalt" },
-        { value: "dark", title: "Dark theme", icon: "chromatic" },
-      ],
-    },
-  },
-}
-
 function storyWrapper(Story, { globals }) {
+  const theme = themes[globals.theme || "blue"]
+
   return (
     <>
       <Helmet>
@@ -40,7 +27,7 @@ function storyWrapper(Story, { globals }) {
         />
         <link href="https://api-app.sovcombank.ru/cdn/fonts/bebas/bebas.css" rel="stylesheet" />
       </Helmet>
-      <ThemeProvider theme={themes[globals.theme]}>
+      <ThemeProvider theme={theme}>
         <Story />
       </ThemeProvider>
     </>
