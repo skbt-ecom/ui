@@ -1,10 +1,13 @@
 import React, { useState, useCallback, useEffect, useRef } from "react"
 
+import MUITextField from "@material-ui/core/TextField"
+import withSpaceForHelperTxt from "../HOCs/withSpaceForHelperTxt"
+
 import DadataField from "../DadataField"
-import TextField from "../TextField"
 import Checkbox from "../Checkbox/Checkbox"
 import { useStylesAddressDadata, useStylesFlatInfo } from "./styles"
 
+const TextField = withSpaceForHelperTxt(MUITextField)
 const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({
   ...dadataValue,
   isNoFlat,

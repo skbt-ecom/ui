@@ -1,10 +1,12 @@
 import React, { useState, useCallback, useEffect } from "react"
 
+import MUITextField from "@material-ui/core/TextField"
+import withSpaceForHelperTxt from "../../HOCs/withSpaceForHelperTxt"
 import DadataAddress from "../../DadataFields/DadataAddress"
-import TextField from "../../TextField"
 import Checkbox from "../../Checkbox/Checkbox"
 import { useStylesAddressDadata, useStylesFlatInfo } from "./styles"
 
+const TextField = withSpaceForHelperTxt(MUITextField)
 const parseIncomingValue = (regexp, incomingValue) => {
   const match = regexp.exec(incomingValue)
   return match
