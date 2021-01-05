@@ -9,10 +9,11 @@ import MaskedField from "./MaskedField"
 
 import theme from "../../style/theme"
 
-export default {
+const story = {
   title: "MaskedField",
   decorators: [muiTheme([theme])],
 }
+export default story
 
 export function Default() {
   const [value, setValue] = useState("15")

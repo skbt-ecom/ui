@@ -12,21 +12,14 @@ const PHONE_MASKS = [
   },
 ]
 
-export default function PhoneField(props) {
-  return (
-    <MaskedField
-      type="tel"
-      mask={PHONE_MASKS}
-      dispatch={(appended, dynamicMasked) => {
-        const number = (dynamicMasked.value + appended).replace(/\D/g, "")
+function dispatch(appended, dynamicMasked) {
+  const number = (dynamicMasked.value + appended).replace(/\D/g, "")
 
-        if (number) {
-          return number.startsWith("7")
-            ? dynamicMasked.compiledMasks[0]
-            : dynamicMasked.compiledMasks[1]
-        }
-      }}
-      {...props}
-    />
-  )
+  if (number) {
+    return number.startsWith("7") ? dynamicMasked.compiledMasks[0] : dynamicMasked.compiledMasks[1]
+  }
+}
+
+export default function PhoneField(props) {
+  return <MaskedField type="tel" mask={PHONE_MASKS} dispatch={dispatch} {...props} />
 }

@@ -1,11 +1,6 @@
 import React from "react"
 
-import { muiTheme } from "storybook-addon-material-ui"
-
 import Footer from "./Footer"
-
-import theme from "../../style/theme"
-import themeHalva from "../../style/themeHalva"
 
 import IconVK from "./SocialLinks/IconVK"
 import IconFacebook from "./SocialLinks/IconFacebook"
@@ -78,10 +73,10 @@ const customStoreLinks = {
   googlePlay: "https://ru.wikipedia.org/wiki/Google_Play",
 }
 
-export default {
+const story = {
   title: "Footer",
-  decorators: [muiTheme([theme])],
 }
+export default story
 
 export function withText() {
   return <Footer shortText={shortText} restText={restText} />
@@ -108,15 +103,4 @@ export function withCustomSocialLinks() {
 
 export function withCustomStoreLinks() {
   return <Footer shortText={shortText} restText={restText} storeLinks={customStoreLinks} />
-}
-
-/**
- * Footer in Halva theme
- */
-export function halvaFooter() {
-  return <Footer shortText={shortText} restText={restText} />
-}
-
-halvaFooter.story = {
-  decorators: [muiTheme([themeHalva])],
 }

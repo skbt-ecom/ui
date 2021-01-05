@@ -83,4 +83,4 @@ ForwardedFooter.defaultProps = {
   restText: "",
 }
 
-export default React.memo(ForwardedFooter)
+export default ForwardedFooter

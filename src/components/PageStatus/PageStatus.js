@@ -4,8 +4,8 @@ import Typography from "@material-ui/core/Typography"
 import Box from "@material-ui/core/Box"
 
 import Container from "../Container"
-import icon_done from "./icon_done.svg"
-import icon_error from "./icon_error.svg"
+import icon_done from "./img/icon_done.svg"
+import icon_error from "./img/icon_error.svg"
 
 import useStyles from "./styles"
 
@@ -39,24 +39,12 @@ function getText(isSuccess, key, paramFromProps) {
   return defVariant
 }
 
-function PageStatus(props) {
-  const classes = useStyles()
-  const { success, head, title, successDesc, description, content } = props
+export default function PageStatus(props) {
+  const classes = useStyles(props)
+  const { success, head, title, description, content } = props
   const headValue = getText(success, "head", head)
   const titleValue = getText(success, "title", title)
-  let descriptionValue = successDesc
-
-  if (!descriptionValue) {
-    descriptionValue = getText(success, "description", description)
-  }
-
-  if (process.env.NODE_ENV !== "production") {
-    if (successDesc) {
-      console.error(
-        '⚠️ Deprecation props "successDesc" ⚠️\n ⚠️ Use the "desc" parameter instead ⚠️'
-      )
-    }
-  }
+  const descriptionValue = getText(success, "description", description)
 
   return (
     <Container>
@@ -88,5 +76,3 @@ function PageStatus(props) {
 PageStatus.defaultProps = {
   success: false,
 }
-
-export default React.memo(PageStatus)

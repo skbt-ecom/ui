@@ -1,18 +1,16 @@
 import React from "react"
-// Import the storybook libraries
-import { storiesOf } from "@storybook/react"
-import { muiTheme } from "storybook-addon-material-ui"
 
-// Import our component from this folder
 import FAQBlock from "./Block"
 import FAQQuestion from "./Question"
 import FAQAnswer from "./Answer"
 
-import theme from "../../style/theme"
+const story = {
+  title: "FAQ",
+}
+export default story
 
-storiesOf("FAQ", module)
-  .addDecorator(muiTheme([theme]))
-  .add("Default", () => (
+export function Default() {
+  return (
     <>
       <FAQBlock>
         <FAQQuestion>
@@ -35,4 +33,5 @@ storiesOf("FAQ", module)
         <FAQAnswer>Answer here</FAQAnswer>
       </FAQBlock>
     </>
-  ))
+  )
+}

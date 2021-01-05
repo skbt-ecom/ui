@@ -4,7 +4,7 @@ import PhoneWithHint from "./PhoneWithHint"
 
 import useStyles from "./styles"
 
-const PhoneMain = props => {
+export default function PhoneMain(props) {
   const classes = useStyles(props)
   const { phone, phoneHint, phones } = props
   const phonesArr = phones ? phones : [phone]
@@ -38,5 +38,3 @@ PhoneMain.defaultProps = {
   phone: "8 800 100-10-20",
   phoneHint: "Для звонков по России бесплатно",
 }
-
-export default React.memo(PhoneMain)

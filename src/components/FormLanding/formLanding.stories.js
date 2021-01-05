@@ -1,16 +1,12 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useRef } from "react"
 
 import { action } from "@storybook/addon-actions"
-import { muiTheme } from "storybook-addon-material-ui"
 
 import Grid from "@material-ui/core/Grid"
 
-import theme from "../../style/theme"
-import themeHalva from "../../style/themeHalva"
-
 import FormLanding from "./FormLanding"
 
-import AutocompleteField from "./fields/AutocompleteField"
+// import AutocompleteField from "./fields/AutocompleteField"
 import AutocompleteRegionByPhoneField from "./fields/AutocompleteRegionByPhoneField"
 import CheckboxField from "./fields/CheckboxField"
 import DadataAddress from "./fields/DadataFields/DadataAddress"
@@ -32,7 +28,7 @@ import DatePicker from "./fields/DatePicker"
 import TimePicker from "./fields/TimePicker"
 import AcceptmentField from "./fields/AcceptmentField"
 
-import REGIONS from "../../enums/regions"
+// import REGIONS from "../../enums/regions"
 
 import { requiredValidator } from "./validators/requiredValidator"
 import lengthValidator from "./validators/lengthValidator"
@@ -51,10 +47,10 @@ function validateByLength(len) {
   return (value) => lengthValidator(value, len)
 }
 
-export default {
+const story = {
   title: "FormLanding",
-  decorators: [muiTheme([theme])],
 }
+export default story
 
 export function Acceptment() {
   return (
@@ -246,22 +242,6 @@ export function Pickers() {
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>
   )
-}
-
-export function PickersHalva() {
-  return (
-    <FormLanding onSubmit={onSubmit} onChangeFields={action("onChangeFields")}>
-      <PickersProvider>
-        <DatePicker name="date" />
-        <TimePicker name="time" />
-      </PickersProvider>
-      <SubmitButton>Отправить</SubmitButton>
-    </FormLanding>
-  )
-}
-
-PickersHalva.story = {
-  decorators: [muiTheme([themeHalva])],
 }
 
 export function RegionByPhone() {

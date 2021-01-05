@@ -1,3 +1,1 @@
-import RadioGroupBtn from "./RadioGroupBtn"
-
-export default RadioGroupBtn
+export { default } from "./RadioGroupBtn"

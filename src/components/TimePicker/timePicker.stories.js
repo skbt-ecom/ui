@@ -1,16 +1,12 @@
 import React from "react"
 
-import { muiTheme } from "storybook-addon-material-ui"
-
 import PickersProvider from "../PickersProvider"
 import TimePicker from "./TimePicker"
 
-import theme from "../../style/theme"
-
-export default {
+const story = {
   title: "TimePicker",
-  decorators: [muiTheme([theme])],
 }
+export default story
 
 export function Default() {
   return (

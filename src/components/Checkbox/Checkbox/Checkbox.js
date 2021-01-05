@@ -36,7 +36,7 @@ const CheckboxComponent = React.memo((props) => {
       useStylesHelperText(getClassesFromProps(props, "helperTextClasses"))
     : {}
 
-  const { label, error, helperText, classes, value, ...restProps } = props
+  const { label, error, helperText, value, ...restProps } = props
 
   const handleChange = (event) => {
     props.onChange(event)

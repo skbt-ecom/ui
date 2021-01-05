@@ -32,7 +32,7 @@ const renderCheckboxItem = ({
 
 const CheckboxGroup = React.memo((props) => {
   const classes = useStyles(props)
-  const { options, error, helperText, formLabel = {}, color, ...restProps } = props
+  const { options, error, helperText, formLabel = {}, color } = props
   const [checkedOptions, setCheckedOptions] = useState(props.checked || [])
   const isFirstRun = useRef(true)
 

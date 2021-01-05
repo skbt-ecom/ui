@@ -5,7 +5,7 @@
 import React, { useState, useEffect } from "react"
 
 import Slider from "@material-ui/core/Slider"
-import TextField from "./TextField"
+import TextField from "@material-ui/core/TextField"
 
 import NumberFormat from "react-number-format" //https://github.com/s-yadav/react-number-format
 import { fromSlider, toSlider, round } from "./utils"
@@ -13,6 +13,7 @@ import withSpaceForHelperTxt from "../HOCs/withSpaceForHelperTxt"
 
 import useStyles from "./styles"
 
+// TODO: use debounce in onChange
 const SliderComponent = React.memo((props) => {
   const classes = useStyles(props)
   const [value, setValue] = useState(props.defaultValue || props.value || props.min)
@@ -80,7 +81,7 @@ const SliderComponent = React.memo((props) => {
     }
   }
 
-  const handleInputBlur = (e) => {
+  const handleInputBlur = () => {
     const { min, max } = props
     let newValue = 0
 

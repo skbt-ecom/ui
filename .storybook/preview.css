@@ -5,24 +5,10 @@
 }
 
 body {
-  height: 100vh;
   font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-body,
 #root {
-  display: flex;
-  flex-direction: column;
-}
-
-#root {
-  flex: 1 0 auto;
-  justify-content: center;
-  align-items: center;
-}
-
-#root > div {
-  width: 100%;
   padding: 24px;
 }

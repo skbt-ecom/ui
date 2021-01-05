@@ -1,3 +1,1 @@
-import Autosuggest from "./Autosuggest"
-
-export default Autosuggest
+export { default } from "./Autosuggest"

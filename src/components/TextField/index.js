@@ -1,3 +1,4 @@
-import TextField from "./TextField"
+import TextField from "@material-ui/core/TextField"
+import withSpaceForHelperTxt from "../HOCs/withSpaceForHelperTxt"
 
-export default TextField
+export default withSpaceForHelperTxt(TextField)
