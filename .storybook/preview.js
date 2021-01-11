@@ -35,3 +35,7 @@ function storyWrapper(Story, { globals }) {
 }
 
 export const decorators = [storyWrapper]
+
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+}
