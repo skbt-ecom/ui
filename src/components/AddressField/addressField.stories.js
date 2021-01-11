@@ -1,17 +1,16 @@
 import React from "react"
-// Import the storybook libraries
-import { storiesOf } from "@storybook/react"
-import { action } from "@storybook/addon-actions"
-import { muiTheme } from "storybook-addon-material-ui"
 
-// Import our component from this folder
+import { action } from "@storybook/addon-actions"
+
 import AddressField from "./AddressField"
 
-import theme from "../../style/theme"
+const story = {
+  title: "AddressField",
+}
+export default story
 
-storiesOf("AddressField", module)
-  .addDecorator(muiTheme([theme]))
-  .add("Default", () => (
+export function Default() {
+  return (
     <AddressField
       onChange={action("onChange")}
       helperText={{ addressDadata: "Район, город, улица, дом" }}
@@ -20,8 +19,11 @@ storiesOf("AddressField", module)
         flatInfoClasses: { container: "class2" },
       }}
     />
-  ))
-  .add("Errors", () => (
+  )
+}
+
+export function Errors() {
+  return (
     <AddressField
       onChange={action("onChange")}
       error={{
@@ -33,4 +35,5 @@ storiesOf("AddressField", module)
         flat: "flat error text",
       }}
     />
-  ))
+  )
+}

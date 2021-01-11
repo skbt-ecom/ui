@@ -33,6 +33,7 @@ function renderSuggestion(suggestion, { isHighlighted }) {
 const EMPTY_VALUE = { value: "", label: "" }
 
 const AutoSuggestComponent = React.memo(function IntegrationAutosuggest(props) {
+  const { label, placeholder, onChange, ...otherInputProps } = props
   const classes = useStyles(props)
   const [value, setValue] = useState(props.value || { ...EMPTY_VALUE })
   const [stateSuggestions, setSuggestions] = useState([])
@@ -50,19 +51,19 @@ const AutoSuggestComponent = React.memo(function IntegrationAutosuggest(props) {
     setSuggestions([])
   }
 
-  const handleChange = (event, { newValue }) => {
+  const handleChange = (_, { newValue }) => {
     isSuggestionSelected.current = false
     setValue({ label: newValue, value: "" })
   }
 
-  const onSuggestionSelected = (event, { suggestion }) => {
+  const onSuggestionSelected = (_, { suggestion }) => {
     isSuggestionSelected.current = true
-    props.onChange(suggestion)
+    onChange(suggestion)
   }
 
-  const onBlur = e => {
+  const onBlur = () => {
     if (!isSuggestionSelected.current) {
-      props.onChange({ ...EMPTY_VALUE })
+      onChange({ ...EMPTY_VALUE })
     }
   }
 
@@ -77,8 +78,6 @@ const AutoSuggestComponent = React.memo(function IntegrationAutosuggest(props) {
     onSuggestionSelected,
   }
 
-  const { label, placeholder, onChange, ...otherInputProps } = props
-
   return (
     <div className={classes.root}>
       <Autosuggest
@@ -86,8 +85,8 @@ const AutoSuggestComponent = React.memo(function IntegrationAutosuggest(props) {
         inputProps={{
           label,
           placeholder,
-          onChange: handleChange,
           ...otherInputProps,
+          onChange: handleChange,
           classes,
           value: value.label,
           onBlur,
@@ -97,7 +96,7 @@ const AutoSuggestComponent = React.memo(function IntegrationAutosuggest(props) {
           suggestionsList: classes.suggestionsList,
           suggestion: classes.suggestion,
         }}
-        renderSuggestionsContainer={options => (
+        renderSuggestionsContainer={(options) => (
           <Paper {...options.containerProps} square>
             {options.children}
           </Paper>

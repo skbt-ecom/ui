@@ -2,19 +2,17 @@ import React from "react"
 import Link from "@material-ui/core/Link"
 import Typography from "@material-ui/core/Typography"
 
-// Import the storybook libraries
-import { storiesOf } from "@storybook/react"
 import { action } from "@storybook/addon-actions"
-import { muiTheme } from "storybook-addon-material-ui"
 
-// Import our component from this folder
 import VerifyCode from "./VerifyCode"
 
-import theme from "../../style/themeHalva"
+const story = {
+  title: "VerifyCode",
+}
+export default story
 
-storiesOf("VerifyCode", module)
-  .addDecorator(muiTheme([theme]))
-  .add("Timer", () => (
+export function Timer() {
+  return (
     <VerifyCode
       onChange={action("onChange")}
       error={true}
@@ -24,8 +22,11 @@ storiesOf("VerifyCode", module)
         </Typography>
       }
     />
-  ))
-  .add("Link", () => (
+  )
+}
+
+export function link() {
+  return (
     <VerifyCode
       onChange={action("onChange")}
       error={true}
@@ -40,7 +41,11 @@ storiesOf("VerifyCode", module)
         </Link>
       }
     />
-  ))
-  .add("Error", () => (
+  )
+}
+
+export function Error() {
+  return (
     <VerifyCode onChange={action("onChange")} error={true} classes={{ errorTextRoot: "11111" }} />
-  ))
+  )
+}

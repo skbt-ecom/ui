@@ -1,10 +1,13 @@
 import React, { useState, useCallback, useEffect, useRef } from "react"
 
+import MUITextField from "@material-ui/core/TextField"
+import withSpaceForHelperTxt from "../HOCs/withSpaceForHelperTxt"
+
 import DadataField from "../DadataField"
-import TextField from "../TextField"
 import Checkbox from "../Checkbox/Checkbox"
 import { useStylesAddressDadata, useStylesFlatInfo } from "./styles"
 
+const TextField = withSpaceForHelperTxt(MUITextField)
 const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({
   ...dadataValue,
   isNoFlat,
@@ -14,7 +17,7 @@ const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({
   },
 })
 
-const AddressField = React.memo(props => {
+const AddressField = React.memo(({ onChange, ...props }) => {
   const addressDadataClasses = useStylesAddressDadata(props.classes.addressDadataClasses)
   const flatInfoClasses = useStylesFlatInfo(props.classes.flatInfoClasses)
 
@@ -30,24 +33,26 @@ const AddressField = React.memo(props => {
     }
 
     if (!addressDadata) {
-      return props.onChange(null)
+      onChange(null)
+      return
     }
     const sendData = addFlatInfoToDadata(addressDadata, flat, isNoFlat)
-    props.onChange(sendData)
+    onChange(sendData)
+    // eslint-disable-next-line
   }, [addressDadata, flat, isNoFlat])
 
-  const handleAddressDadataChange = useCallback(value => {
+  const handleAddressDadataChange = useCallback((value) => {
     setAddressDadata(value)
   }, [])
 
-  const handleFlatChange = useCallback(e => {
+  const handleFlatChange = useCallback((e) => {
     const {
       target: { value },
     } = e
     setFlat(value)
   }, [])
 
-  const handleNoFlatChange = useCallback(e => {
+  const handleNoFlatChange = useCallback((e) => {
     const {
       target: { checked },
     } = e

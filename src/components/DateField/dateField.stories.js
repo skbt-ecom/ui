@@ -1,15 +1,11 @@
 import React, { useState } from "react"
 
-import { muiTheme } from "storybook-addon-material-ui"
-
 import DateField from "./DateField"
 
-import theme from "../../style/theme"
-
-export default {
+const story = {
   title: "DateField",
-  decorators: [muiTheme([theme])],
 }
+export default story
 
 export function Default() {
   const [value, setValue] = useState("")

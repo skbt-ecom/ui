@@ -2,10 +2,11 @@ import React from "react"
 
 import cn from "classnames"
 
+import Button from "@material-ui/core/Button"
+
 import Container from "../Container"
 import Logo from "./Logo"
 import PhoneMain from "../PhoneMain"
-import Button from "../Button"
 
 import { useHeaderStyles, usePhoneStyles, useButtonStyles } from "./styles"
 
@@ -32,12 +33,9 @@ const Header = (props, ref) => {
           <div className={classes.rightBlock}>
             <PhoneMain {...PhoneProps} classes={phoneClasses} />
             {withButton && (
-              <Button
-                color="primary"
-                children="Оформить"
-                {...ButtonProps}
-                classes={buttonClasses}
-              />
+              <Button {...ButtonProps} classes={buttonClasses}>
+                Оформить
+              </Button>
             )}
           </div>
         )}

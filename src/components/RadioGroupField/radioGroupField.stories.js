@@ -1,12 +1,9 @@
 import React from "react"
 
 import { action } from "@storybook/addon-actions"
-import { muiTheme } from "storybook-addon-material-ui"
 import { makeStyles } from "@material-ui/core/styles"
 
 import RadioGroupField from "./RadioGroupField"
-
-import theme from "../../style/theme"
 
 const useStyles = makeStyles(() => ({
   formControlLabel: {
@@ -19,10 +16,10 @@ const items = [
   { value: "f", label: "Женский" },
 ]
 
-export default {
+const story = {
   title: "RadioGroupField",
-  decorators: [muiTheme([theme])],
 }
+export default story
 
 export function Default() {
   const classes = useStyles()

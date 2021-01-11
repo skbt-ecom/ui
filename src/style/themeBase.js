@@ -31,6 +31,14 @@ const theme = {
       },
       contained: {
         boxShadow: "none",
+
+        "&:hover": {
+          boxShadow: "none",
+        },
+
+        "&:active": {
+          boxShadow: "none",
+        },
       },
     },
 

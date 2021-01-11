@@ -1,13 +1,8 @@
 import React, { useState } from "react"
-// Import the storybook libraries
-import { storiesOf } from "@storybook/react"
+
 import { action } from "@storybook/addon-actions"
-import { muiTheme } from "storybook-addon-material-ui"
 
-// Import our component from this folder
 import PhoneField from "./PhoneField"
-
-import theme from "../../style/theme"
 
 const PhoneFieldWrapper = (props) => {
   const [value, setValue] = useState("")
@@ -27,9 +22,13 @@ const PhoneFieldWrapper = (props) => {
   )
 }
 
-storiesOf("PhoneField", module)
-  .addDecorator(muiTheme([theme]))
-  .add("Default", () => (
+const story = {
+  title: "PhoneField",
+}
+export default story
+
+export function Default() {
+  return (
     <PhoneFieldWrapper
       label={"Телефон"}
       onChange={action("onChange")}
@@ -38,14 +37,5 @@ storiesOf("PhoneField", module)
       // lazy={false}
       // placeholderChar={' '}
     />
-  ))
-  .add("defaultValue", () => (
-    <PhoneField
-      label={"Телефон"}
-      defaultValue={"8"}
-      onChange={action("onChange")}
-      onBlur={action("onBlur")}
-      // lazy={false}
-      // placeholderChar={' '}
-    />
-  ))
+  )
+}

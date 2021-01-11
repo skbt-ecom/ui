@@ -42,10 +42,17 @@ function renderSuggestion(suggestion, { isHighlighted }) {
   )
 }
 
+if (process.env.NODE_ENV !== "production") {
+  console.error('⚠️ Deprecation component "DadataField". Use the "DadataFields/Dadata*.js" instead')
+}
+/**
+ * @deprecated use DadataFields/Dadata*.js instead
+ */
 const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
+  const { label, placeholder, onChange, dadataOptions, value, ...otherInputProps } = props
   const classes = useStyles(props)
   const [state, setState] = useState({
-    single: typeof props.value === "string" ? props.value : "",
+    single: typeof value === "string" ? value : "",
   })
   const [stateSuggestions, setStateSuggestions] = useState([])
 
@@ -63,18 +70,18 @@ const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
 
   useEffect(() => {
     // only when 'fio' type, because no tested in address type
-    if (typeof props.value === "string") {
-      setState({ single: props.value || "" })
+    if (typeof value === "string") {
+      setState({ single: value || "" })
     }
-  }, [props.value])
+  }, [value])
 
-  const getSuggestions = value => {
+  const getSuggestions = (value) => {
     inputValue.current = value.toLowerCase()
-    setSuggestions.current(inputValue.current, props.dadataOptions)
+    setSuggestions.current(inputValue.current, dadataOptions)
   }
 
   const handleSuggestionsFetchRequested = ({ value }) => {
-    setStateSuggestions(prev => getSuggestions(value) || prev)
+    setStateSuggestions((prev) => getSuggestions(value) || prev)
   }
 
   const handleSuggestionsClearRequested = () => {
@@ -101,18 +108,18 @@ const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
       getDadata(type, suggestion.unrestricted_value, {
         count: 1,
         restrict_value: true,
-      }).then(res => {
+      }).then((res) => {
         currentSuggestion.current = res && res.suggestions && res.suggestions[0]
-        props.onChange(currentSuggestion.current)
+        onChange(currentSuggestion.current)
         setIsLoading(false)
       })
     } else {
       currentSuggestion.current = suggestion
-      props.onChange(currentSuggestion.current)
+      onChange(currentSuggestion.current)
     }
   }
 
-  const onBlur = e => {
+  const onBlur = () => {
     const { type } = props
     if (isSuggestionSelected.current) {
       return
@@ -120,9 +127,9 @@ const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
     // if value not selected from list
     if (state.single) {
       const value = type === "fio" ? state.single.trim() : currentSuggestion.current
-      return props.onChange(value)
+      return onChange(value)
     }
-    props.onChange(null)
+    onChange(null)
   }
 
   const autosuggestProps = {
@@ -135,8 +142,6 @@ const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
     onSuggestionSelected,
   }
 
-  const { label, placeholder, onChange, dadataOptions, value, ...otherInputProps } = props
-
   return (
     <div className={classes.root}>
       <Autosuggest
@@ -144,10 +149,10 @@ const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
         inputProps={{
           label,
           placeholder,
-          value: state.single,
-          onChange: handleChange,
           isLoading,
           ...otherInputProps,
+          value: state.single,
+          onChange: handleChange,
           classes,
           onBlur,
         }}
@@ -156,7 +161,7 @@ const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
           suggestionsList: classes.suggestionsList,
           suggestion: classes.suggestion,
         }}
-        renderSuggestionsContainer={options => (
+        renderSuggestionsContainer={(options) => (
           <Paper {...options.containerProps} square>
             {options.children}
           </Paper>

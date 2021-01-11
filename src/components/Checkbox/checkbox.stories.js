@@ -1,14 +1,10 @@
 import React from "react"
-// Import the storybook libraries
-import { storiesOf } from "@storybook/react"
-import { action } from "@storybook/addon-actions"
-import { muiTheme } from "storybook-addon-material-ui"
 
-// Import our component from this folder
+import { action } from "@storybook/addon-actions"
+
 import Checkbox from "./Checkbox"
 import CheckboxGroup from "./CheckboxGroup"
 
-import theme from "../../style/theme"
 import "./Checkbox/styles.css"
 
 const options = [
@@ -33,9 +29,13 @@ const Label = () => {
   return <>Даю согласие на обработку своих персональных данных в соответствии с {link}</>
 }
 
-storiesOf("Checkbox", module)
-  .addDecorator(muiTheme([theme]))
-  .add("Checkbox", () => (
+const story = {
+  title: "Checkbox",
+}
+export default story
+
+export function checkbox() {
+  return (
     <>
       <Checkbox onChange={action("onChange")} label={"Label"} color={"primary"} value={true} />
       <br />
@@ -46,8 +46,11 @@ storiesOf("Checkbox", module)
         classes={classesExample}
       />
     </>
-  ))
-  .add("CheckboxGroup", () => (
+  )
+}
+
+export function checkboxGroup() {
+  return (
     <CheckboxGroup
       onChange={action("onChange")}
       options={options}
@@ -62,4 +65,5 @@ storiesOf("Checkbox", module)
       // error={true}
       // helperText={'Error message'}
     />
-  ))
+  )
+}

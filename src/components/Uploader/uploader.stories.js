@@ -1,16 +1,11 @@
 import React from "react"
 
-import { muiTheme } from "storybook-addon-material-ui"
-
 import Uploader from "./Uploader"
 
-import theme from "../../style/theme"
-import themeHalva from "../../style/themeHalva"
-
-export default {
+const story = {
   title: "Uploader",
-  decorators: [muiTheme([theme])],
 }
+export default story
 
 export function Default() {
   return (
@@ -20,12 +15,4 @@ export function Default() {
       classes={{ root: "root" }}
     />
   )
-}
-
-export function redTheme() {
-  return <Uploader />
-}
-
-redTheme.story = {
-  decorators: [muiTheme([themeHalva])],
 }

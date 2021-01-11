@@ -1,3 +1,1 @@
-import DadataField from "./DadataField"
-
-export default DadataField
+export { default } from "./DadataField"

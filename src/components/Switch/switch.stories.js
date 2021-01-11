@@ -1,12 +1,9 @@
 import React from "react"
 
 import { action } from "@storybook/addon-actions"
-import { muiTheme } from "storybook-addon-material-ui"
 import { makeStyles } from "@material-ui/core/styles"
 
 import Switch from "./Switch"
-
-import theme from "../../style/theme"
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -18,10 +15,10 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-export default {
+const story = {
   title: "Switch",
-  decorators: [muiTheme([theme])],
 }
+export default story
 
 export function Default() {
   const classes = useStyles()

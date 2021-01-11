@@ -2,61 +2,43 @@ import React from "react"
 
 import { action } from "@storybook/addon-actions"
 
-import { muiTheme } from "storybook-addon-material-ui"
-
-import Button from "./Button"
+import Button from "../Button"
 import ButtonESIA from "./ButtonESIA"
 
-import theme from "../../style/theme"
-import themeHalva from "../../style/themeHalva"
-
-export default {
+const story = {
   title: "Button",
-  decorators: [muiTheme([theme])],
+}
+export default story
+
+const Template = (args) => (
+  <Button {...args} onClick={action("clicked btn")}>
+    Button
+  </Button>
+)
+
+export const Primary = Template.bind({})
+
+Primary.args = {
+  classes: { label: "my-label", root: "my-root" },
 }
 
-export function Default() {
-  return (
-    <>
-      <Button onClick={action("clicked btn")} classes={{ label: "my-label", root: "my-root" }}>
-        Button
-      </Button>
-      <br />
-      <br />
-      <Button
-        color="secondary"
-        onClick={action("clicked btn")}
-        classes={{ label: "my-label", root: "my-root" }}
-      >
-        Button
-      </Button>
-      <br />
-      <br />
-      <Button
-        variant="outlined"
-        onClick={action("clicked btn")}
-        classes={{ label: "my-label", root: "my-root" }}
-      >
-        Button
-      </Button>
-      <br />
-      <br />
-      <Button disabled color="secondary" onClick={action("clicked btn")}>
-        Button
-      </Button>
-    </>
-  )
+export const Secondary = Template.bind({})
+
+Secondary.args = {
+  color: "secondary",
 }
 
-/**
- * Footer in Halva theme
- */
-export function Halva() {
-  return <Button onClick={action("clicked btn")}>Button</Button>
+export const Outlined = Template.bind({})
+
+Outlined.args = {
+  variant: "outlined",
 }
 
-Halva.story = {
-  decorators: [muiTheme([themeHalva])],
+export const SecondaryDisabled = Template.bind({})
+
+SecondaryDisabled.args = {
+  color: "secondary",
+  disabled: true,
 }
 
 export function ESIA() {

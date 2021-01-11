@@ -1,7 +1,13 @@
-!(function(t) {
-  function e() {
-    ;(this.globalThis = this), delete t.prototype._T_
-  }
-  "object" != typeof globalThis &&
-    (this ? e() : (t.defineProperty(t.prototype, "_T_", { configurable: !0, get: e }), _T_))
-})(Object)
+/* eslint-disable */
+!(function () {
+  if (typeof globalThis === "object") return
+
+  Object.defineProperty(Object.prototype, "_T_", {
+    get: function () {
+      return this
+    },
+    configurable: true,
+  })
+  _T_.globalThis = _T_
+  delete Object.prototype._T_
+})()

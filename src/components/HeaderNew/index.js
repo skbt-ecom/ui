@@ -1,3 +1,1 @@
-import HeaderNew from "./HeaderNew"
-
-export default HeaderNew
+export { default } from "./HeaderNew"

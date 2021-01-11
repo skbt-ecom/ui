@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from "react"
+import React, { useState, useLayoutEffect } from "react"
 import Select from "@material-ui/core/Select"
 import FormControl from "@material-ui/core/FormControl"
 import InputLabel from "@material-ui/core/InputLabel"
@@ -10,7 +10,7 @@ import withSpaceForHelperTxt from "../HOCs/withSpaceForHelperTxt"
 
 import useStyles from "./styles"
 
-const SelectComponent = React.memo(props => {
+const SelectComponent = React.memo((props) => {
   const classes = useStyles(props)
   const [labelWidth, setLabelWidth] = useState(0)
   const inputLabel = React.useRef(null)
@@ -19,7 +19,7 @@ const SelectComponent = React.memo(props => {
     setLabelWidth(inputLabel.current.offsetWidth)
   }, [])
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     props.onChange(e)
   }
 

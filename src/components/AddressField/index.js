@@ -1,3 +1,1 @@
-import AddressField from "./AddressField"
-
-export default AddressField
+export { default } from "./AddressField"

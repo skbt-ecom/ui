@@ -1,17 +1,16 @@
 import React from "react"
-// Import the storybook libraries
-import { storiesOf } from "@storybook/react"
+
 import { action } from "@storybook/addon-actions"
-import { muiTheme } from "storybook-addon-material-ui"
 
-// Import our component from this folder
-import Link from "./Link"
+import Link from "../Link"
 
-import theme from "../../style/themeHalva"
+const story = {
+  title: "Link",
+}
+export default story
 
-storiesOf("Link", module)
-  .addDecorator(muiTheme([theme]))
-  .add("Default", () => (
+export function Default() {
+  return (
     <>
       <Link onClick={action("onClick")} component="button">
         Button Link
@@ -21,4 +20,5 @@ storiesOf("Link", module)
         Button Link
       </Link>
     </>
-  ))
+  )
+}

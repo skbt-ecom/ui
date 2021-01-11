@@ -44,32 +44,26 @@
 ## Установка
 
 ```
-yarn add https://npm:kPX_4_bppaZdpHxcyDQs@gitlab.sovcombank.group/web/ecom/ui.git
+yarn add @ecom/ui
 ```
 
 ```
-npm i git+https://npm:kPX_4_bppaZdpHxcyDQs@gitlab.sovcombank.group/web/ecom/ui.git
+npm i @ecom/ui
 ```
 
 ## Доступные команды
 
-```sh
+```
 yarn
 ```
 
 Установка зависимостей
 
-```sh
+```
 yarn start
 ```
 
 Режим разработки. Поднимает Storybook, порт указан в консоли
-
-```sh
-yarn build
-```
-
-Сборка проекта
 
 ## Архитектура
 
@@ -89,39 +83,3 @@ yarn build
    - `[ComponentName].js` - код компонента
    - `index.js` - экспорт компонента
    - `stories.js` - описание компонента для storybook [(Документация)](https://storybook.js.org/docs/basics/writing-stories/)
-1. Добавить экспорт компонета в файле `src/components/index.js`
-
-В папке `src/components` имеется папка-бойлерплейт для компонентов: `_boilerplate`.<br>
-Ее можно скопировать под именем нового компонента и прописать внутри файлов нужный код.
-
-## Пример использования в проекте
-
-```js
-import {
-  ThemeProvider, // принимает тему и прокидывает вниз с помощью контекста. Размещать в корне проекта
-  theme, // тема
-  Switch // компонент
-} from "ui"
-
-import SomeComponent from "./components/SomeComponent"
-
-// если необходимо, то можно поменять значения темы
-let myTheme = {
-  ...theme,
-  palette: {
-    ...theme.palette,
-    secondary: {
-      main: "#1962d4"
-    }
-  }
-}
-
-const App = () => {
-  return (
-    <ThemeProvider theme={myTheme}>
-      <SomeContainer />
-      <Switch />
-    </ThemeProvider>
-  )
-}
-```

@@ -1,19 +1,17 @@
 import React from "react"
-import Container from "@material-ui/core/Container"
+import MUIContainer from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
 
-const useStyles = makeStyles(theme => ({
-  root: {
+const useStyles = makeStyles((theme) => ({
+  fixed: {
     [theme.breakpoints.down("xs")]: {
       maxWidth: 425,
     },
   },
 }))
 
-const ContainerComponent = React.memo(props => {
-  const classes = useStyles()
+export default function Container(props) {
+  const classes = useStyles(props)
 
-  return <Container classes={{ fixed: classes.root }} fixed {...props} />
-})
-
-export default ContainerComponent
+  return <MUIContainer fixed {...props} classes={classes} />
+}
