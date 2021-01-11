@@ -2,6 +2,7 @@ import React from "react"
 import addons, { types } from "@storybook/addons"
 import { useGlobals } from "@storybook/api"
 import { Icons, IconButton, WithTooltip, TooltipLinkList } from "@storybook/components"
+import { PARAM_KEY as BACKGROUNDS_PARAM_KEY } from "@storybook/addon-backgrounds/dist/constants"
 
 const ADDON_ID = "theme-switcher"
 const PARAM_KEY = "theme"
@@ -37,7 +38,16 @@ function ThemeSwitcher() {
       e.preventDefault()
 
       if (currentTheme !== id) {
-        updateGlobals({ [PARAM_KEY]: id })
+        let bgColor = "transparent"
+
+        if (id === "dark") {
+          bgColor = "#333333"
+        }
+
+        updateGlobals({
+          [PARAM_KEY]: id,
+          [BACKGROUNDS_PARAM_KEY]: { ...globals[BACKGROUNDS_PARAM_KEY], value: bgColor },
+        })
       }
 
       onHide()

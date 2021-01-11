@@ -1,17 +1,12 @@
 import React, { useState } from "react"
 
-import { muiTheme } from "storybook-addon-material-ui"
-
 import InputAdornment from "@material-ui/core/InputAdornment"
 import AccountCircle from "@material-ui/icons/AccountCircle"
 
 import MaskedField from "./MaskedField"
 
-import theme from "../../style/theme"
-
 const story = {
   title: "MaskedField",
-  decorators: [muiTheme([theme])],
 }
 export default story
 
