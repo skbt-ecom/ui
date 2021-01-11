@@ -47,13 +47,14 @@
     "@storybook/node-logger": "^6.1.11",
     "@storybook/preset-create-react-app": "^3.1.5",
     "@storybook/react": "^6.1.11",
+    "babel-loader": "8.1.0",
     "commitizen": "^4.2.2",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^4.3.6",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
     "react-helmet": "^6.1.0",
-    "react-scripts": "4.0.1",
+    "react-scripts": "3.4.4",
     "semantic-release": "^17.3.0"
   },
   "eslintConfig": {
