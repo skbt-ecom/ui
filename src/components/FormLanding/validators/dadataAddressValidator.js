@@ -4,8 +4,8 @@ import { requiredValidator } from "./requiredValidator"
  *
  * @param {object} dadataValue DadataField's value
  */
-const addressValidator = dadataValue => {
-  if (requiredValidator(dadataValue)) {
+const addressValidator = (dadataValue) => {
+  if (!dadataValue || !dadataValue.data) {
     return "Выберите значение из списка"
   }
   const {
@@ -25,7 +25,7 @@ const addressValidator = dadataValue => {
  *
  * @param {object} dadataAddressFlat DadataAddressFlat value
  */
-export const addressFlatDadataValidator = dadataAddressFlat => {
+export const addressFlatDadataValidator = (dadataAddressFlat) => {
   const { dadataValue = {} } = dadataAddressFlat
   const { inputFlat, isNoFlat, value } = dadataValue
 
@@ -50,7 +50,7 @@ export const addressFlatDadataValidator = dadataAddressFlat => {
  *
  * @param {object} dadataAddress DadataAddress value
  */
-export const addressDadataValidator = dadataAddress => {
+export const addressDadataValidator = (dadataAddress) => {
   const { dadataValue } = dadataAddress
 
   if (requiredValidator(dadataValue)) {

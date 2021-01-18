@@ -15,7 +15,7 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
   useEffect(() => {
     let active = true
 
-    const makeIncameValueActions = suggestions => {
+    const makeIncameValueActions = (suggestions) => {
       const dataToOnBlur = {
         dadataValue: null,
         inputValue: inputValue,
@@ -49,7 +49,7 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
       }
 
       if (response.matches) {
-        suggestions = response.matches.map(i => {
+        suggestions = response.matches.map((i) => {
           return { value: i.model_mark }
         })
       }
@@ -80,15 +80,23 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
     }
   }, [incomingValue])
 
-  const handleBlur = e => {
+  useEffect(() => {
+    if (inputValue && dadataValue && dadataValue.value) {
+      if (inputValue !== dadataValue.value) {
+        setDadataValue({ value: inputValue, data: null, isDadataValueActual: true })
+      }
+    }
+  }, [inputValue, dadataValue])
+
+  const handleBlur = (e) => {
     const isDadataValueActual = Boolean(dadataValue && dadataValue.value === inputValue)
     onBlur(e, { dadataValue, inputValue, isDadataValueActual })
   }
 
   return (
     <Autocomplete
-      getOptionLabel={option => option.value || ""}
-      filterOptions={x => x}
+      getOptionLabel={(option) => option.value || ""}
+      filterOptions={(x) => x}
       freeSolo
       autoComplete
       disableClearable
@@ -105,7 +113,7 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
       loadingText={"Загрузка..."}
       noOptionsText={"Нет вариантов"}
       openText={"Открыть"}
-      renderInput={params => (
+      renderInput={(params) => (
         <TextField
           {...props}
           {...params}
