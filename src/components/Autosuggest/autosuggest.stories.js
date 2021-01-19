@@ -1,20 +1,15 @@
 import React, { useState } from "react"
-// Import the storybook libraries
-import { storiesOf } from "@storybook/react"
+
 import { action } from "@storybook/addon-actions"
-import { muiTheme } from "storybook-addon-material-ui"
 
-// Import our component from this folder
 import Autosuggest from "./Autosuggest"
-
-import theme from "../../style/theme"
 
 import REGIONS from "../../enums/regions"
 
-const AutosuggestFieldWrapper = props => {
+const AutosuggestFieldWrapper = (props) => {
   const [value, setValue] = useState(props.value || "")
 
-  const onChange = value => {
+  const onChange = (value) => {
     setValue(value)
     props.onChange(value)
   }
@@ -36,9 +31,13 @@ const AutosuggestFieldWrapper = props => {
   )
 }
 
-storiesOf("Autosuggest", module)
-  .addDecorator(muiTheme([theme]))
-  .add("Default", () => (
+const story = {
+  title: "Autosuggest",
+}
+export default story
+
+export function Default() {
+  return (
     <>
       <h2>Пример с регионами</h2>
       <AutosuggestFieldWrapper
@@ -49,4 +48,5 @@ storiesOf("Autosuggest", module)
         value={REGIONS[0]}
       />
     </>
-  ))
+  )
+}

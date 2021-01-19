@@ -1,3 +1,1 @@
-import PhoneField from "./PhoneField"
-
-export default PhoneField
+export { default } from "./PhoneField"

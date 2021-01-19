@@ -1,17 +1,16 @@
 import React from "react"
-// Import the storybook libraries
-import { storiesOf } from "@storybook/react"
-import { muiTheme } from "storybook-addon-material-ui"
 
-// Import our component from this folder
 import Container from "./Container"
 
-import theme from "../../style/theme"
+const story = {
+  title: "Container",
+}
+export default story
 
-storiesOf("Container", module)
-  .addDecorator(muiTheme([theme]))
-  .add("Default", () => (
-    <Container>
-      <div style={{ backgroundColor: "#cfe8fc", height: "50vh" }} />
+export function Default() {
+  return (
+    <Container style={{ backgroundColor: "#C3DEB7" }}>
+      <div style={{ backgroundColor: "#90BDE7", height: "50vh" }} />
     </Container>
-  ))
+  )
+}

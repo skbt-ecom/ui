@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles"
 
-export const useHeaderStyles = makeStyles(theme => ({
+export const useHeaderStyles = makeStyles((theme) => ({
   header: {
     backgroundColor: "#fff",
     position: "sticky",
@@ -41,7 +41,7 @@ export const useHeaderStyles = makeStyles(theme => ({
   },
 }))
 
-export const usePhoneStyles = makeStyles(theme => ({
+export const usePhoneStyles = makeStyles((theme) => ({
   phoneContainer: {
     display: "none",
 
@@ -89,7 +89,7 @@ export const usePhoneStyles = makeStyles(theme => ({
   },
 }))
 
-export const useButtonStyles = makeStyles(theme => ({
+export const useButtonStyles = makeStyles({
   root: {
     padding: "8px 20px",
     maxHeight: 36,
@@ -99,6 +99,6 @@ export const useButtonStyles = makeStyles(theme => ({
     fontSize: 16,
     lineHeight: "20px",
   },
-}))
+})
 
 // export default useStyles;

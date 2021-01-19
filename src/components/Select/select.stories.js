@@ -1,13 +1,8 @@
 import React, { useState } from "react"
-// Import the storybook libraries
-import { storiesOf } from "@storybook/react"
+
 import { action } from "@storybook/addon-actions"
-import { muiTheme } from "storybook-addon-material-ui"
 
-// Import our component from this folder
 import Select from "./Select"
-
-import theme from "../../style/theme"
 
 const socialStatuses = [
   { value: "Работодатель", label: "Работодатель" },
@@ -17,10 +12,10 @@ const socialStatuses = [
   { value: "ИП", label: "ИП" },
 ]
 
-const SelectWrapper = props => {
+const SelectWrapper = (props) => {
   const [value, setValue] = useState("")
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setValue(e.target.value)
     props.onChange(e)
   }
@@ -35,6 +30,12 @@ const SelectWrapper = props => {
     />
   )
 }
-storiesOf("Select", module)
-  .addDecorator(muiTheme([theme]))
-  .add("Default", () => <SelectWrapper onChange={action("onChange")} />)
+
+const story = {
+  title: "Select",
+}
+export default story
+
+export function Default() {
+  return <SelectWrapper onChange={action("onChange")} />
+}

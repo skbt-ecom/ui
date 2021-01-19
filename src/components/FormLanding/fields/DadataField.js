@@ -5,12 +5,6 @@ import { fioValidator, addressValidator } from "../validators"
 
 import useStyles from "./styles"
 
-if (process.env.NODE_ENV !== "production") {
-  console.error(
-    '⚠️ Deprecation component "DadataField" ⚠️\n ⚠️ Use the "DadataFields/Dadata*.js" instead ⚠️'
-  )
-}
-
 const fioDefaultProps = {
   label: "Фамилия Имя Отчество",
   validate: fioValidator,
@@ -22,8 +16,16 @@ const addressDefaultProps = {
   validate: addressValidator,
 }
 
-const DadataField = React.memo(props => <MaterialDadataField {...props} />)
+const DadataField = React.memo((props) => <MaterialDadataField {...props} />)
 
+if (process.env.NODE_ENV !== "production") {
+  console.error(
+    '⚠️ Deprecation component "DadataField". Use the "fields/DadataFields/Dadata*.js" instead'
+  )
+}
+/**
+ * @deprecated use fields/DadataFields/Dadata*.js instead
+ */
 const WrappedField = ({ classsesComponent, ...props }) => {
   const classes = useStyles(props)
   const { type } = props

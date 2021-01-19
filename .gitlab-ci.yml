@@ -36,7 +36,7 @@ deploy to test:
     - urt-web-app1-for-web-gr
   variables:
     HOST: $TEST_HOST
-    NODE_ENV: test
+    NODE_ENV: production
   before_script:
     - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
   script:

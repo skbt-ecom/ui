@@ -1,9 +1,9 @@
 import React from "react"
-import logo from "../logo.svg"
+import logo from "./img/logo.svg"
 
 import useStyles from "./styles"
 
-const Logo = props => {
+const Logo = (props) => {
   const { src, href, classes: propsClasses } = props
   const classes = useStyles()
 

@@ -1,3 +1,1 @@
-import PageStatus from "./PageStatus"
-
-export default PageStatus
+export { default } from "./PageStatus"

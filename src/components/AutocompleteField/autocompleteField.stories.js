@@ -1,16 +1,11 @@
 import React, { useState } from "react"
-// Import the storybook libraries
-import { storiesOf } from "@storybook/react"
-import { action } from "@storybook/addon-actions"
-import { muiTheme } from "storybook-addon-material-ui"
 
-// Import our component from this folder
+import { action } from "@storybook/addon-actions"
+
 import AutocompleteField from "./AutocompleteField"
 import REGIONS from "../../enums/regions"
 
-import theme from "../../style/theme"
-
-const AutosuggestFieldWrapper = props => {
+const AutosuggestFieldWrapper = (props) => {
   const [value, setValue] = useState(props.value || null)
 
   const onChange = (event, value) => {
@@ -35,6 +30,11 @@ const AutosuggestFieldWrapper = props => {
   )
 }
 
-storiesOf("AutocompleteField", module)
-  .addDecorator(muiTheme([theme]))
-  .add("Default", () => <AutosuggestFieldWrapper onChange={action("onChange")} options={REGIONS} />)
+const story = {
+  title: "AutocompleteField",
+}
+export default story
+
+export function Default() {
+  return <AutosuggestFieldWrapper onChange={action("onChange")} options={REGIONS} />
+}

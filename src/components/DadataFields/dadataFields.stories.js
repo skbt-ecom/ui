@@ -1,18 +1,13 @@
 import React from "react"
-// Import the storybook libraries
-import { storiesOf } from "@storybook/react"
-import { action } from "@storybook/addon-actions"
-import { muiTheme } from "storybook-addon-material-ui"
 
-// Import our component from this folder
+import { action } from "@storybook/addon-actions"
+
 import DadataAddress from "./DadataAddress"
 import DadataAddressFlat from "./DadataAddressFlat"
 import DadataFio from "./DadataFio"
 import DadataAuto from "./DadataAuto"
 
-import theme from "../../style/theme"
-
-const DadataAddressFlatWrapper = props => {
+const DadataAddressFlatWrapper = () => {
   const [incomingValue, setIncomingValue] = React.useState("")
 
   setTimeout(() => {
@@ -24,11 +19,23 @@ const DadataAddressFlatWrapper = props => {
   )
 }
 
-storiesOf("DadataFields", module)
-  .addDecorator(muiTheme([theme]))
-  .add("Адрес", () => (
-    <DadataAddress onBlur={action("onBlur")} label={"Адрес"} dadataOptions={{}} fullWidth />
-  ))
-  .add("ФИО", () => <DadataFio onBlur={action("onBlur")} label={"ФИО"} fullWidth />)
-  .add("Адрес с кв", () => <DadataAddressFlatWrapper />)
-  .add("Выбор авто", () => <DadataAuto onBlur={action("onBlur")} label={"Модель"} fullWidth />)
+const story = {
+  title: "DadataFields",
+}
+export default story
+
+export function dadataAddress() {
+  return <DadataAddress onBlur={action("onBlur")} label={"Адрес"} dadataOptions={{}} fullWidth />
+}
+
+export function dadataFio() {
+  return <DadataFio onBlur={action("onBlur")} label={"ФИО"} fullWidth />
+}
+
+export function dadataAddressFlat() {
+  return <DadataAddressFlatWrapper />
+}
+
+export function dadataAuto() {
+  return <DadataAuto onBlur={action("onBlur")} label={"Модель"} fullWidth />
+}

@@ -1,3 +1,1 @@
-import ModalPhoneForm from "./ModalPhoneForm"
-
-export default ModalPhoneForm
+export { default } from "./ModalPhoneForm"

@@ -33,7 +33,7 @@ export class Field extends React.PureComponent {
     })
   }
 
-  onChange = value => {
+  onChange = (value) => {
     if (this.props.validateOnBlur) {
       // reset error state from field
       return this.context.onChange({
@@ -50,7 +50,7 @@ export class Field extends React.PureComponent {
     })
   }
 
-  onValidateItem = props => {
+  onValidateItem = (props) => {
     const { value, isRequired } = props
     // return when value has not been changed
     // if (value === this._prevValue) {

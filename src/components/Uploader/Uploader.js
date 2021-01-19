@@ -14,7 +14,7 @@ export default function Uploader({ onLoad, helperText, ...props }) {
   const classes = useStyles(props)
   const [isLoaded, setIsLoaded] = useState(false)
   const [imgSrc, setImgSrc] = useState("")
-  const onDrop = useCallback(handleLoad, [])
+  const onDrop = useCallback(handleLoad, [onLoad])
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: "image/*",

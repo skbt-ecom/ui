@@ -1,15 +1,11 @@
 import React from "react"
 
-import { muiTheme } from "storybook-addon-material-ui"
-
 import HeaderHalva from "./Halva"
 
-import theme from "../../style/theme"
-
-export default {
+const story = {
   title: "Header",
-  decorators: [muiTheme([theme])],
 }
+export default story
 
 export function Halva() {
   return (

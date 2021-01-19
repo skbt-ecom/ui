@@ -1,3 +1,1 @@
-import Uploader from "./Uploader"
-
-export default Uploader
+export { default } from "./Uploader"

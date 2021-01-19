@@ -1,12 +1,6 @@
 import React from "react"
-// Import the storybook libraries
-import { storiesOf } from "@storybook/react"
-import { muiTheme } from "storybook-addon-material-ui"
 
-// Import our component from this folder
 import Stepper from "./Stepper"
-
-import theme from "../../style/theme"
 
 const stepsVertical = [
   {
@@ -46,7 +40,15 @@ const stepsHorizontal = [
   },
 ]
 
-storiesOf("Stepper", module)
-  .addDecorator(muiTheme([theme]))
-  .add("Vertical", () => <Stepper steps={stepsVertical} orientation="vertical" />)
-  .add("Horizontal", () => <Stepper steps={stepsHorizontal} activeStep={1} />)
+const story = {
+  title: "Stepper",
+}
+export default story
+
+export function Vertical() {
+  return <Stepper steps={stepsVertical} orientation="vertical" />
+}
+
+export function Horizontal() {
+  return <Stepper steps={stepsHorizontal} activeStep={1} />
+}

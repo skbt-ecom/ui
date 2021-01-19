@@ -3,11 +3,13 @@
   "version": "0.0.0-development",
   "description": "",
   "scripts": {
-    "publish-ui": "npm run build && cp package.json lib && npm run semantic-release",
+    "publish-ui": "npm run publish:prepare && npm run semantic-release",
+    "pack-ui": "npm run publish:prepare && cd lib && nano package.json && npm pack",
+    "publish:prepare": "npm run build && cp package.json lib",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 3000",
-    "start:ci": "start-storybook -p 8080 --ci --quiet",
-    "build-storybook": "build-storybook -c .storybook -o storybook-static --loglevel warn --quiet",
+    "start:ci": "start-storybook -p 8080 --ci",
+    "build-storybook": "build-storybook",
     "compile": "babel src --out-dir lib --ignore \"**/*.stories.js\" --copy-files --no-copy-ignored",
     "build": "npm run build:prepare && npm run compile",
     "build:prepare": "rm -rf lib",
@@ -29,10 +31,9 @@
     "classnames": "^2.2.6",
     "luxon": "^1.21.3",
     "memoize-one": "^5.1.1",
-    "react": "^16.12.0",
+    "react": "^16.14.0",
     "react-autosuggest": "^9.4.3",
-    "react-code-input": "^3.8.1",
-    "react-dom": "^16.12.0",
+    "react-dom": "^16.14.0",
     "react-dropzone": "^11.2.4",
     "react-imask": "^6.0.5",
     "react-number-format": "^4.3.1"
@@ -40,29 +41,35 @@
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.10",
-    "@babel/preset-react": "^7.12.10",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
     "@semantic-release/gitlab": "^6.0.8",
-    "@storybook/addon-actions": "^5.2.8",
-    "@storybook/addon-links": "^5.2.8",
-    "@storybook/addons": "^5.2.8",
-    "@storybook/react": "^5.2.8",
+    "@storybook/addon-actions": "^6.1.11",
+    "@storybook/addon-essentials": "^6.1.11",
+    "@storybook/addon-links": "^6.1.11",
+    "@storybook/react": "^6.1.11",
     "babel-loader": "^8.2.2",
     "commitizen": "^4.2.2",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-hooks": "^2.3.0",
     "husky": "^4.3.6",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
-    "prop-types": "^15.7.2",
-    "semantic-release": "^17.3.0",
-    "storybook-addon-material-ui": "^0.9.0-alpha.21"
+    "react-helmet": "^6.1.0",
+    "semantic-release": "^17.3.0"
   },
-  "browserslist": ">0.25%, not dead, not op_mini all, not ie 11",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "not ie 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"

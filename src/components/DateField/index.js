@@ -1,3 +1,1 @@
-import DateField from "./DateField"
-
-export default DateField
+export { default } from "./DateField"
