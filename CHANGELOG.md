@@ -1,3 +1,12 @@
+## [2.6.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.6.2...v2.6.3) (2021-01-19)
+
+
+### Bug Fixes
+
+* fix bug with dadataValue in DadataFields ([c3b8332](https://gitlab.sovcombank.group/web/ecom/ui/commit/c3b8332cb1dbe2360fb632b920540b967b649e33))
+* imports ([6c24117](https://gitlab.sovcombank.group/web/ecom/ui/commit/6c24117c4df5ed50f2050f4096fd7c2e4c5f54be))
+* remove unused files, old stories format, ([172f5ae](https://gitlab.sovcombank.group/web/ecom/ui/commit/172f5ae4cd403c3fa60c728c8aad9526c513cce4))
+
 ## [2.6.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.6.1...v2.6.2) (2020-12-25)
 
 
