@@ -9,9 +9,9 @@ import useStyles from "./styles"
 
 export default function RadioGroupField(props) {
   const classes = useStyles(props)
-  const { label, items, name, value, defaultValue, row } = props
+  const { label, items, name, value, defaultValue, row, color } = props
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const { value } = e.target
 
     props.onChange(value)
@@ -36,7 +36,7 @@ export default function RadioGroupField(props) {
           <FormControlLabel
             key={i}
             value={value}
-            control={<Radio color="primary" />}
+            control={<Radio color={color} />}
             label={label}
             className={classes.formControlLabel}
           />
@@ -48,4 +48,5 @@ export default function RadioGroupField(props) {
 
 RadioGroupField.defaultProps = {
   row: true,
+  color: "primary",
 }
