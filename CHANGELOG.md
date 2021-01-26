@@ -1,3 +1,10 @@
+# [2.7.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.6.3...v2.7.0) (2021-01-26)
+
+
+### Features
+
+* add color props in RadioGroupField ([9044e60](https://gitlab.sovcombank.group/web/ecom/ui/commit/9044e608b7865395c15acc266ffe6b7d216a37e5))
+
 ## [2.6.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.6.2...v2.6.3) (2021-01-19)
 
 
