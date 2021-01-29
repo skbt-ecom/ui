@@ -26,8 +26,8 @@ RUN npm config set registry $NPM_REGISTRY/npm-all/
 
 COPY --from=build /usr/src/app/storybook-static ./storybook-static
 
-RUN npm install pm2 -g
+RUN npm i express 
 
-CMD ["pm2-runtime", "serve", "./storybook-static"]
+CMD [ "node", "serve.js"]
 
 EXPOSE 8080
