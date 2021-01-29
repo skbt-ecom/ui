@@ -17,7 +17,17 @@ RUN npm i
 
 COPY . .
 
-CMD ["npm", "run", "start:ci"]
+RUN npm run build-storybook
+
+FROM node:lts-alpine
+
+ARG NPM_REGISTRY
+RUN npm config set registry $NPM_REGISTRY/npm-all/
+
+COPY --from=build /usr/src/app/storybook-static ./storybook-static
+
+RUN npm install pm2 -g
+
+CMD ["pm2", "serve", "./storybook-static"]
 
 EXPOSE 8080
-
