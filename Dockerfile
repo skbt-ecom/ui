@@ -28,6 +28,6 @@ COPY --from=build /usr/src/app/storybook-static ./storybook-static
 
 RUN npm install pm2 -g
 
-CMD ["pm2", "serve", "./storybook-static"]
+CMD ["pm2-runtime", "serve", "./storybook-static"]
 
 EXPOSE 8080
