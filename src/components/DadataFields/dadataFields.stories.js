@@ -11,7 +11,7 @@ const DadataAddressFlatWrapper = () => {
   const [incomingValue, setIncomingValue] = React.useState("")
 
   setTimeout(() => {
-    setIncomingValue("г Саратов, ул им Чернышевского Н.Г. д.80 кв. 867")
+    setIncomingValue("г Саратов, ул им Чернышевского Н.Г., д 80, кв 867")
   }, 1000)
 
   return (

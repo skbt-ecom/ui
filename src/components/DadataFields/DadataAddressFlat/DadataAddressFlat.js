@@ -27,7 +27,7 @@ const DadataAddressFlat = React.memo(({ regexp, incomingValue, onBlur, name, ...
   useEffect(() => {
     if (incomingValue) {
       const parsedIncomingValue = parseIncomingValue(regexp, incomingValue)
-      const [, addressWOFlat, flat] = parsedIncomingValue
+      const [, addressWOFlat, flat] = parsedIncomingValue || []
 
       setIncomingValueWOFlat(addressWOFlat)
       if (flat) {
