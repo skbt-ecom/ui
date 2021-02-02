@@ -24,9 +24,12 @@ function styles(theme) {
       height: 80,
 
       "& svg": {
-        fill: color,
         width: 24,
         height: 24,
+
+        "& :first-child": {
+          fill: color,
+        },
       },
     },
   }
