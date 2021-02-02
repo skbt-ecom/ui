@@ -1,3 +1,10 @@
+## [2.8.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.8.0...v2.8.1) (2021-02-02)
+
+
+### Bug Fixes
+
+* fix selector in StoreLinks in Footer ([c9a09f2](https://gitlab.sovcombank.group/web/ecom/ui/commit/c9a09f264e5c3240371d9dac5684e010e353c8ef))
+
 # [2.8.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.7.0...v2.8.0) (2021-02-02)
 
 
