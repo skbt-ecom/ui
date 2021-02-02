@@ -1,8 +1,8 @@
-import React from 'react';
-import useStyles from './styles';
+import React from "react"
+import useStyles from "./styles"
 
-const ButtonWText = ({ startIcon: StartIcon, ...props }) => {
-  const classes = useStyles();
+const ButtonWText = ({ startIcon: StartIcon, onClick }) => {
+  const classes = useStyles()
   return (
     <div className={classes.bwtContainer}>
       <div className={classes.bwtLeft}>
@@ -11,11 +11,11 @@ const ButtonWText = ({ startIcon: StartIcon, ...props }) => {
           <strong>Используете Госуслуги? Получите решение быстрее.</strong>
         </p>
       </div>
-      <button onClick={props.onClick} className={classes.bwtButton} type="button">
+      <button onClick={onClick} className={classes.bwtButton} type="button">
         Войти
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default ButtonWText;
+export default ButtonWText

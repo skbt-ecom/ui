@@ -52,18 +52,17 @@ export function StickyHeader() {
     excepteur aliqua. Sunt duis sunt ex tempor deserunt cillum incididunt eiusmod do ad 
     veniam amet esse.`
 
-  const loremlist = []
-  for (let i = 0; i < 50; i++) {
-    loremlist.push(lorem)
-  }
-  const [staticHeader, setStatic] = useState(false)
+  const loremlist = Array(50).fill(lorem)
+  const [staticHeader, setStatic] = useState(true)
   return (
     <>
-      <Header static={staticHeader} />
-      {loremlist.map((lorem, i) => (
-        <p key={i}>{lorem}</p>
+      <Header sticky={staticHeader} />
+      {loremlist.map((lorem1, i) => (
+        <p key={i}>{lorem1}</p>
       ))}
-      <button onClick={() => setStatic(!staticHeader)}>Static/Sticky</button>
+      <button type="button" onClick={() => setStatic(!staticHeader)}>
+        Static/Sticky
+      </button>
     </>
   )
 }

@@ -64,7 +64,7 @@ export function Acceptment() {
 export function CreditAmountSlider() {
   return (
     <FormLanding onChangeFields={action("onChangeFields")} onSubmit={onSubmit}>
-      <SliderLogarithmic name={"sum"} label={"Сумма кредита"} min={150000} max={30000000} />
+      <SliderLogarithmic name="sum" label="Сумма кредита" min={150000} max={30000000} />
       <SubmitButton
       // classes={{ container: 'styles.buttonWrapper' }}
       >
@@ -91,9 +91,13 @@ export function FormWrapper() {
 
   return (
     <FormLanding onChangeFields={action("onChangeFields")} onSubmit={onSubmit} ref={formRef}>
-      <button onClick={() => formRef.current.setFields({ text: { value: 1234 } })}>setValue</button>
-      <button onClick={() => console.log(formRef.current.getFieldsValue())}>getValue</button>
-      <TextField name={"text"} validate={requiredValidator} />
+      <button type="button" onClick={() => formRef.current.setFields({ text: { value: 1234 } })}>
+        setValue
+      </button>
+      <button type="button" onClick={() => console.log(formRef.current.getFieldsValue())}>
+        getValue
+      </button>
+      <TextField name="text" validate={requiredValidator} />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>
   )
@@ -250,18 +254,18 @@ export function RegionByPhone() {
 
   const onChangeFields = (data, fieldKey) => {
     if (fieldKey === "phone") {
-      setPhone(data["phone"].value)
+      setPhone(data.phone.value)
     }
   }
 
   return (
     <FormLanding onChangeFields={onChangeFields} onSubmit={onSubmit} ref={formRef}>
-      <PhoneField name={"phone"} label={"Телефон"} placeholder={"+7 (000) 000-00-00"} fullWidth />
+      <PhoneField name="phone" label="Телефон" placeholder="+7 (000) 000-00-00" fullWidth />
       <AutocompleteRegionByPhoneField
-        name={"region"}
-        label={"Регион"}
+        name="region"
+        label="Регион"
         phone={phone}
-        apiUrl={"http://urt-web-app1:4000/"}
+        apiUrl="http://urt-web-app1:4000/"
       />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>

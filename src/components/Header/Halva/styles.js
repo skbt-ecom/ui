@@ -5,6 +5,9 @@ import logo from "./img/logo.svg"
 function styles(theme) {
   return {
     logo: {
+      border: "0",
+      color: "transparent",
+      outline: "none",
       background: `url(${logo}) center/contain no-repeat`,
       width: 72,
       height: 25,

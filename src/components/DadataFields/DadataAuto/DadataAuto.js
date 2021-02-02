@@ -1,6 +1,4 @@
 import React from "react"
 import DadataAutocomplete from "../DadataAutocomplete"
 
-export default React.memo(props => {
-  return <DadataAutocomplete {...props} type={"auto"} />
-})
+export default React.memo((props) => <DadataAutocomplete {...props} type="auto" />)

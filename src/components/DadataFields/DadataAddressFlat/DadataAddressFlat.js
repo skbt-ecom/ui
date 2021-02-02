@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from "react"
 
 import MUITextField from "@material-ui/core/TextField"
 import withSpaceForHelperTxt from "../../HOCs/withSpaceForHelperTxt"
-import DadataAddress from "../../DadataFields/DadataAddress"
+import DadataAddress from "../DadataAddress"
 import Checkbox from "../../Checkbox/Checkbox"
 import { useStylesAddressDadata, useStylesFlatInfo } from "./styles"
 
@@ -27,11 +27,11 @@ const DadataAddressFlat = React.memo(({ regexp, incomingValue, onBlur, name, ...
   useEffect(() => {
     if (incomingValue) {
       const parsedIncomingValue = parseIncomingValue(regexp, incomingValue)
-      const [, addressWOFlat, flat] = parsedIncomingValue
+      const [, addressWOFlat, flat1] = parsedIncomingValue || []
 
       setIncomingValueWOFlat(addressWOFlat)
-      if (flat) {
-        setFlat(flat)
+      if (flat1) {
+        setFlat(flat1)
       }
     }
   }, [regexp, incomingValue])
@@ -67,8 +67,8 @@ const DadataAddressFlat = React.memo(({ regexp, incomingValue, onBlur, name, ...
       <div className={addressDadataClasses.container}>
         <DadataAddress
           onBlur={handleAddressDadataBlur}
-          type={"address"}
-          label={"Адрес"}
+          type="address"
+          label="Адрес"
           name={name}
           dadataOptions={dadataOptions}
           incomingValue={incomingValueWOFlat}
@@ -78,7 +78,7 @@ const DadataAddressFlat = React.memo(({ regexp, incomingValue, onBlur, name, ...
       </div>
       <div className={flatInfoClasses.container}>
         <TextField
-          label={"Квартира"}
+          label="Квартира"
           onChange={(e) => setFlat(e.target.value)}
           value={flat}
           disabled={isNoFlat}
@@ -89,8 +89,8 @@ const DadataAddressFlat = React.memo(({ regexp, incomingValue, onBlur, name, ...
         />
         <Checkbox
           onChange={(e) => setIsNoFlat(e.target.checked)}
-          label={"Нет номера квартиры"}
-          color={"primary"}
+          label="Нет номера квартиры"
+          color="primary"
           checked={isNoFlat}
           classes={{
             labelClasses: {

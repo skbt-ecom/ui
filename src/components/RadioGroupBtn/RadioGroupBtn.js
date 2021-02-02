@@ -4,10 +4,10 @@ import RadioBtn from "./RadioBtn"
 
 import useStyles from "./styles"
 
-const RadioGroupBtn = React.memo(props => {
+const RadioGroupBtn = React.memo((props) => {
   const classes = useStyles(props)
 
-  const onChange = e => {
+  const onChange = (e) => {
     const value = props.numberType ? Number(e.target.value) : e.target.value
     props.onChange(value)
   }
@@ -31,14 +31,18 @@ const RadioGroupBtn = React.memo(props => {
 
 RadioGroupBtn.defaultProps = {
   items: [{ value: "", label: "" }],
-  onChange: () => ({}),
   numberType: false,
 }
 
 RadioGroupBtn.propTypes = {
   onChange: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
-  items: PropTypes.array.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string,
+      label: PropTypes.number,
+    })
+  ),
   numberType: PropTypes.bool,
 }
 export default RadioGroupBtn

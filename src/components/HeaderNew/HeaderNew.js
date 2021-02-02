@@ -11,25 +11,21 @@ import PhoneMain from "../PhoneMain"
 import { useHeaderStyles, usePhoneStyles, useButtonStyles } from "./styles"
 
 const Header = (props, ref) => {
+  const { left, right, LogoProps, withButton, ButtonProps, PhoneProps, sticky } = props
   const classes = useHeaderStyles(props)
-  const phoneClasses = usePhoneStyles(props.PhoneProps)
-  const buttonClasses = useButtonStyles(props.ButtonProps)
-  const { left, right, LogoProps, withButton, ButtonProps, PhoneProps } = props
+  const phoneClasses = usePhoneStyles(PhoneProps)
+  const buttonClasses = useButtonStyles(ButtonProps)
 
   return (
-    <header className={cn(classes.header, { [classes.headerStatic]: props.static })} ref={ref}>
+    <header className={cn(classes.header, { [classes.headerStatic]: !sticky })} ref={ref}>
       <Container className={classes.container}>
-        {left ? (
-          left
-        ) : (
+        {left || (
           <div className={classes.leftBlock}>
             <Logo {...LogoProps} />
           </div>
         )}
 
-        {right ? (
-          right
-        ) : (
+        {right || (
           <div className={classes.rightBlock}>
             <PhoneMain {...PhoneProps} classes={phoneClasses} />
             {withButton && (

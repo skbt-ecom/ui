@@ -1,6 +1,6 @@
 import React from "react"
 
-import Box from "../Box"
+import Box from "."
 
 const story = {
   title: "Box",

@@ -4,14 +4,16 @@ import DadataAutocomplete from "../DadataAutocomplete"
 const FioDadata = ({ onBlur, ...props }) => {
   const handleBlur = useCallback(
     (e, { dadataValue, inputValue, isDadataValueActual }) => {
+      const dadataVal = dadataValue || {}
+
       if (!dadataValue || !dadataValue.data) {
         const [surname, name, patronymic] = inputValue.split(" ")
-        dadataValue = {}
-        dadataValue.data = { surname, name, patronymic }
-        dadataValue.unrestricted_value = inputValue
-        dadataValue.value = inputValue
+        dadataVal.data = { surname, name, patronymic }
+        dadataVal.unrestricted_value = inputValue
+        dadataVal.value = inputValue
       }
-      onBlur(e, { dadataValue, inputValue, isDadataValueActual })
+
+      onBlur(e, { dadataValue: dadataVal, inputValue, isDadataValueActual })
     },
     [onBlur]
   )
@@ -19,7 +21,7 @@ const FioDadata = ({ onBlur, ...props }) => {
   return (
     <DadataAutocomplete
       {...props}
-      type={"fio"}
+      type="fio"
       onBlur={handleBlur}
       // incameValue={props.incameValue}
       // error={props.error}

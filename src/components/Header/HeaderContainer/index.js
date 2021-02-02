@@ -7,6 +7,7 @@ import useStyles from "./styles"
 
 export default function HeaderContainer(props) {
   const classes = useStyles(props)
+  const { children } = props
 
   return (
     <header className={classes.header}>
@@ -18,7 +19,7 @@ export default function HeaderContainer(props) {
             alignItems="center"
             className={classes.navigation}
           >
-            {props.children}
+            {children}
           </Box>
         </nav>
       </Container>

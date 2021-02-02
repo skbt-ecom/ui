@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-//https://habr.com/ru/post/492248/
+// https://habr.com/ru/post/492248/
 
 // Наш хук
 export default function useDebounce(value, delay = 1000) {

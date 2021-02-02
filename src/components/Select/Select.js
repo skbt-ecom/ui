@@ -41,9 +41,9 @@ const SelectComponent = React.memo((props) => {
         name={name}
         input={<OutlinedInput labelWidth={labelWidth} id={name} />}
       >
-        {items.map(({ value, label }, i) => (
-          <MenuItem key={i} value={value}>
-            {label}
+        {items.map(({ value: v, label: l }, i) => (
+          <MenuItem key={i} value={v}>
+            {l}
           </MenuItem>
         ))}
       </Select>

@@ -11,12 +11,10 @@ const DadataAddressFlatWrapper = () => {
   const [incomingValue, setIncomingValue] = React.useState("")
 
   setTimeout(() => {
-    setIncomingValue("г Саратов, ул им Чернышевского Н.Г. д.80 кв. 867")
+    setIncomingValue("г Саратов, ул им Чернышевского Н.Г., д 80, кв 867")
   }, 1000)
 
-  return (
-    <DadataAddressFlat onBlur={action("onBlur")} label={"Адрес"} incomingValue={incomingValue} />
-  )
+  return <DadataAddressFlat onBlur={action("onBlur")} label="Адрес" incomingValue={incomingValue} />
 }
 
 const story = {
@@ -25,11 +23,11 @@ const story = {
 export default story
 
 export function dadataAddress() {
-  return <DadataAddress onBlur={action("onBlur")} label={"Адрес"} dadataOptions={{}} fullWidth />
+  return <DadataAddress onBlur={action("onBlur")} label="Адрес" dadataOptions={{}} fullWidth />
 }
 
 export function dadataFio() {
-  return <DadataFio onBlur={action("onBlur")} label={"ФИО"} fullWidth />
+  return <DadataFio onBlur={action("onBlur")} label="ФИО" fullWidth />
 }
 
 export function dadataAddressFlat() {
@@ -37,5 +35,5 @@ export function dadataAddressFlat() {
 }
 
 export function dadataAuto() {
-  return <DadataAuto onBlur={action("onBlur")} label={"Модель"} fullWidth />
+  return <DadataAuto onBlur={action("onBlur")} label="Модель" fullWidth />
 }

@@ -37,12 +37,12 @@ export default story
 export function checkbox() {
   return (
     <>
-      <Checkbox onChange={action("onChange")} label={"Label"} color={"primary"} value={true} />
+      <Checkbox onChange={action("onChange")} label="Label" color="primary" value />
       <br />
       <Checkbox
         onChange={action("onChange")}
         label={<Label />}
-        color={"primary"}
+        color="primary"
         classes={classesExample}
       />
     </>
@@ -57,7 +57,7 @@ export function checkboxGroup() {
       formLabel={{
         label: "Label",
       }}
-      color={"primary"}
+      color="primary"
       classes={{
         checkboxFormControlLabelRoot: "checkboxFormControlLabelRoot-class",
       }}

@@ -5,21 +5,21 @@ import { specifySuggestion } from "./helpers"
 
 const DadataAddress = ({ onBlur, ...props }) => {
   const handleBlur = useCallback(
-    async (e, values) => {
-      // e.persist();
+    (e, values) => {
       const { dadataValue } = values
 
-      if (dadataValue && dadataValue.data && !dadataValue.data.postal_code) {
+      if (!dadataValue?.data?.postal_code) {
         // spike, because sometimes dadata not returns postal code
         // we must do specific query for only one suggestion
-        const specifiedSuggestion = await specifySuggestion(dadataValue)
-        if (specifiedSuggestion) {
-          onBlur(e, {
-            ...values,
-            dadataValue: specifiedSuggestion,
-            isDadataValueActual: true,
-          })
-        }
+        specifySuggestion(dadataValue).then((specifiedSuggestion) => {
+          if (specifiedSuggestion) {
+            onBlur(e, {
+              ...values,
+              dadataValue: specifiedSuggestion,
+              isDadataValueActual: true,
+            })
+          }
+        })
       } else {
         onBlur(e, values)
       }

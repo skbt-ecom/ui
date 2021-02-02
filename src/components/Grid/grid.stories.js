@@ -1,6 +1,6 @@
 import React from "react"
 
-import Grid from "../Grid"
+import Grid from "."
 
 const story = {
   title: "Grid",

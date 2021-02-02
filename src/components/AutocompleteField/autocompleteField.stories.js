@@ -8,9 +8,9 @@ import REGIONS from "../../enums/regions"
 const AutosuggestFieldWrapper = (props) => {
   const [value, setValue] = useState(props.value || null)
 
-  const onChange = (event, value) => {
-    setValue(value)
-    props.onChange(event, value)
+  const onChange = (event, v) => {
+    setValue(v)
+    props.onChange(event, v)
   }
   return (
     <>
@@ -25,7 +25,7 @@ const AutosuggestFieldWrapper = (props) => {
       >
         set Value
       </button> */}
-      <AutocompleteField {...props} onChange={onChange} value={value} label={"Регион"} fullWidth />
+      <AutocompleteField {...props} onChange={onChange} value={value} label="Регион" fullWidth />
     </>
   )
 }

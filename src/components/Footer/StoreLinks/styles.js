@@ -10,7 +10,7 @@ function styles(theme) {
     },
 
     link: {
-      border: "1px solid " + color,
+      border: `1px solid ${color}`,
       borderRadius: 4,
       display: "flex",
       flexDirection: "column",

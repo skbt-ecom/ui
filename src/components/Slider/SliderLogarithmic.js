@@ -7,7 +7,8 @@ import React, { useState, useEffect } from "react"
 import Slider from "@material-ui/core/Slider"
 import TextField from "@material-ui/core/TextField"
 
-import NumberFormat from "react-number-format" //https://github.com/s-yadav/react-number-format
+// https://github.com/s-yadav/react-number-format
+import NumberFormat from "react-number-format"
 import { fromSlider, toSlider, round } from "./utils"
 import withSpaceForHelperTxt from "../HOCs/withSpaceForHelperTxt"
 
@@ -75,26 +76,28 @@ const SliderComponent = React.memo((props) => {
     if (floatValue !== value) {
       setValue(floatValue)
       if (props.onChangeCommitted) {
-        return props.onChangeCommitted(floatValue)
+        props.onChangeCommitted(floatValue)
+        return
       }
       props.onChange(floatValue)
     }
   }
 
   const handleInputBlur = () => {
-    const { min, max } = props
+    const { min: min1, max: max1 } = props
     let newValue = 0
 
-    if (value <= min) {
-      newValue = min
-    } else if (value >= max) {
-      newValue = max
+    if (value <= min1) {
+      newValue = min1
+    } else if (value >= max1) {
+      newValue = max1
     }
 
     if (newValue) {
       setValue(newValue)
       if (props.onChangeCommitted) {
-        return props.onChangeCommitted(newValue)
+        props.onChangeCommitted(newValue)
+        return
       }
       props.onChange(newValue)
     }

@@ -1,9 +1,9 @@
-export const checkUnTouchedFields = fields => {
+export const checkUnTouchedFields = (fields) => {
   const fieldsToSubmit = {}
   const fieldsWithError = {}
   let validForm = true
 
-  Object.keys(fields).forEach(fieldKey => {
+  Object.keys(fields).forEach((fieldKey) => {
     const field = fields[fieldKey]
 
     fieldsToSubmit[fieldKey] = field.value
@@ -19,8 +19,6 @@ export const checkUnTouchedFields = fields => {
       }
     }
     // }
-
-    return
   })
 
   return { fieldsToSubmit, fieldsWithError, validForm }
@@ -28,7 +26,7 @@ export const checkUnTouchedFields = fields => {
 
 export const updateFieldsErrors = (errors, fields) => {
   const nextFields = { ...fields }
-  Object.keys(errors).forEach(fieldKey => {
+  Object.keys(errors).forEach((fieldKey) => {
     nextFields[fieldKey] = {
       ...fields[fieldKey],
       error: !!errors[fieldKey],
@@ -41,18 +39,18 @@ export const updateFieldsErrors = (errors, fields) => {
 export const updateFieldsValues = (values, fields) => {
   const nextFields = { ...fields }
 
-  Object.keys(values).forEach(fieldKey => {
+  Object.keys(values).forEach((fieldKey) => {
     nextFields[fieldKey] = { ...fields[fieldKey], value: values[fieldKey] }
   })
 
   return nextFields
 }
 
-export const getRequiredFields = fields => {
+export const getRequiredFields = (fields) => {
   const requiredFields = {}
   const optionalKeys = []
 
-  Object.keys(fields).forEach(fieldKey => {
+  Object.keys(fields).forEach((fieldKey) => {
     const field = fields[fieldKey]
     if (field.isRequired) {
       requiredFields[fieldKey] = field
@@ -64,23 +62,22 @@ export const getRequiredFields = fields => {
 }
 
 export const checkOptionalKeysInInvalidFields = (optionalKeys, invalidFields) =>
-  optionalKeys.some(key => invalidFields.has(key))
+  optionalKeys.some((key) => invalidFields.has(key))
 
-const getFieldErrors = errorsObj =>
+const getFieldErrors = (errorsObj) =>
   Object.keys(errorsObj).reduce((prev, cur) => {
     prev[cur] = Boolean(errorsObj[cur])
     return prev
   }, {})
 
-export const getErrorProp = fieldError => {
-  return typeof fieldError === "object" && fieldError !== null
+export const getErrorProp = (fieldError) =>
+  typeof fieldError === "object" && fieldError !== null
     ? getFieldErrors(fieldError)
     : Boolean(fieldError)
-}
 
 export const getHelperTextFromError = (error, prevHelperText = "") => {
   if (typeof error === "object" && error !== null) {
     return Object.keys(error).length ? { ...prevHelperText, ...error } : prevHelperText
   }
-  return error ? error : prevHelperText
+  return error || prevHelperText
 }

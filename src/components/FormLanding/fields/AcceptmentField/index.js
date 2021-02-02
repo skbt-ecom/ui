@@ -6,10 +6,10 @@ import Link from "../../../Link"
 import useAcceptmentStyles from "./styles"
 import useStyles from "../styles"
 
-const Acceptment = React.memo(props => {
+const Acceptment = React.memo((props) => {
   const classes = useAcceptmentStyles(props)
 
-  const onChange = e => {
+  const onChange = (e) => {
     props.onChange(e.target.checked)
   }
 
@@ -23,7 +23,7 @@ const Acceptment = React.memo(props => {
             href="https://app.sovcombank.ru/policy/"
             target="_blank"
             rel="noopener noreferrer"
-            underline={"always"}
+            underline="always"
           >
             согласие
           </Link>{" "}
@@ -32,7 +32,7 @@ const Acceptment = React.memo(props => {
             href="https://app.sovcombank.ru/politika-konfidencialnosti/"
             target="_blank"
             rel="noopener noreferrer"
-            underline={"always"}
+            underline="always"
           >
             Политикой
           </Link>{" "}
@@ -67,7 +67,7 @@ WrappedField.defaultProps = {
   component: Acceptment,
   defaultValue: true,
   validateOnBlur: false,
-  validate: value => (value ? null : "Необходимо согласие с условиями"),
+  validate: (value) => (value ? null : "Необходимо согласие с условиями"),
 }
 
 export default WrappedField

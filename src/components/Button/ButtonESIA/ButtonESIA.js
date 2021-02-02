@@ -4,40 +4,46 @@ import ButtonWText from "./ButtonWText"
 import ButtonSteps from "./ButtonSteps"
 import Description from "./Description"
 
-import useStyles from './styles';
+import useStyles from "./styles"
 
-const ButtonESIA = ({ withouthDescr, iconDisabled, iconDefault, ...props }) => {
-  const classes = useStyles(props);
+const ButtonESIA = ({ withouthDescr, iconDisabled, iconDefault, onClick, disabled, ...props }) => {
+  const classes = useStyles(props)
+  const startIcon = disabled ? iconDisabled : iconDefault
 
   return (
     <div className={classes.buttonContainer}>
-      <ButtonWText
-        classes={classes.bwtContainer}
-        startIcon={props.disabled ? iconDisabled : iconDefault}
-        onClick={props.onClick}
-      />
+      <ButtonWText classes={classes.bwtContainer} startIcon={startIcon} onClick={onClick} />
       <Button
         {...props}
+        disabled={disabled}
+        onClick={onClick}
         classes={{
           root: classes.root,
           label: classes.label,
           startIcon: classes.startIcon,
         }}
-        startIcon={props.disabled ? iconDisabled : iconDefault}
-        disableRipple={true}
+        startIcon={startIcon}
+        disableRipple
       />
       <ButtonSteps />
       {!withouthDescr && <Description />}
     </div>
-  );
-};
+  )
+}
 
 ButtonESIA.defaultProps = {
   withouthDescr: false,
   iconDefault: (
     <svg width="30" height="33" viewBox="0 0 30 33">
       <defs>
-        <linearGradient id="ho4wa" x1="15.52" x2="15.52" y1=".15" y2="33" gradientUnits="userSpaceOnUse">
+        <linearGradient
+          id="ho4wa"
+          x1="15.52"
+          x2="15.52"
+          y1=".15"
+          y2="33"
+          gradientUnits="userSpaceOnUse"
+        >
           <stop offset=".4" stopColor="#1466ac" />
           <stop offset=".66" stopColor="#ef4058" />
         </linearGradient>
@@ -92,6 +98,6 @@ ButtonESIA.defaultProps = {
       </g>
     </svg>
   ),
-};
+}
 
-export default React.memo(ButtonESIA);
+export default React.memo(ButtonESIA)

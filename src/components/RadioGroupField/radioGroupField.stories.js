@@ -28,12 +28,12 @@ export function Default() {
     <RadioGroupField
       onChange={action("onChange")}
       items={items}
-      label={"Ваш пол:"}
+      label="Ваш пол:"
       classes={{
         formControlLabel: classes.formControlLabel,
       }}
       // row={false}
-      defaultValue={"m"}
+      defaultValue="m"
       // value={'m'}
       // color={"secondary"}
     />
