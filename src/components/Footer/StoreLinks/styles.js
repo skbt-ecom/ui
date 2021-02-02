@@ -13,30 +13,20 @@ function styles(theme) {
       border: "1px solid " + color,
       borderRadius: 4,
       display: "flex",
+      flexDirection: "column",
       alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
       color,
       textDecoration: "none",
-      fontSize: 13,
-      width: 128,
-      height: 40,
-      paddingLeft: 10,
-
-      "@media screen and (min-width: 360px)": {
-        width: 152,
-      },
-
-      [theme.breakpoints.up("sm")]: {
-        width: 128,
-      },
+      fontSize: 11,
+      width: 80,
+      height: 80,
 
       "& svg": {
         fill: color,
-        width: 22,
-        height: 22,
-      },
-
-      "& span": {
-        paddingLeft: 7,
+        width: 24,
+        height: 24,
       },
     },
   }

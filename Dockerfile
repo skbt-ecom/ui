@@ -17,7 +17,18 @@ RUN npm i
 
 COPY . .
 
-CMD ["npm", "run", "start:ci"]
+RUN npm run build-storybook
+
+FROM node:lts-alpine
+
+ARG NPM_REGISTRY
+RUN npm config set registry $NPM_REGISTRY/npm-all/
+
+COPY --from=build /usr/src/app/storybook-static ./storybook-static
+COPY serve.js ./
+
+RUN npm i express 
+
+CMD [ "node", "serve.js"]
 
 EXPOSE 8080
-
