@@ -1,3 +1,10 @@
+# [2.8.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.7.0...v2.8.0) (2021-02-02)
+
+
+### Features
+
+* add AppGallery bage in footer ([70bbc7e](https://gitlab.sovcombank.group/web/ecom/ui/commit/70bbc7ee893f69ab0b48c1e6e2691310e451d5c6))
+
 # [2.7.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.6.3...v2.7.0) (2021-01-26)
 
 
