@@ -10,7 +10,7 @@
     "start": "start-storybook -p 3000",
     "start:ci": "start-storybook -p 8080 --ci",
     "build-storybook": "build-storybook",
-    "compile": "NODE_ENV=production babel src --out-dir lib --ignore \"**/*.stories.js\" --copy-files --no-copy-ignored",
+    "compile": "NODE_ENV=production babel src --out-dir lib --copy-files --no-copy-ignored --config-file ./babelConfig.js",
     "build": "npm run build:prepare && npm run compile",
     "build:prepare": "rm -rf lib",
     "semantic-release": "semantic-release",
