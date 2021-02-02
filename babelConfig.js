@@ -10,6 +10,7 @@ module.exports = {
   ],
   plugins: [
     "@babel/plugin-transform-runtime",
+    "@babel/plugin-transform-exponentiation-operator",
     ["@babel/plugin-proposal-class-properties", { loose: true }],
     ["@babel/plugin-proposal-object-rest-spread", { loose: true }],
     "@babel/plugin-transform-react-constant-elements",
@@ -23,4 +24,5 @@ module.exports = {
 date-fns вместо luxon
 clsx вместо classnames, babel-plugin-optimize-clsx
 alias вместо импорта напрямую
+HeaderNew static={false} -> sticky={true}
 */

@@ -15,20 +15,18 @@ const renderCheckboxItem = ({
   classes,
   color,
   checked,
-}) => {
-  return (
-    <FormControlLabel
-      classes={{
-        root: classes.checkboxFormControlLabelRoot,
-      }}
-      key={index}
-      control={
-        <Checkbox onChange={handleChange(value)} value={value} color={color} checked={checked} />
-      }
-      label={label}
-    />
-  )
-}
+}) => (
+  <FormControlLabel
+    classes={{
+      root: classes.checkboxFormControlLabelRoot,
+    }}
+    key={index}
+    control={
+      <Checkbox onChange={handleChange(value)} value={value} color={color} checked={checked} />
+    }
+    label={label}
+  />
+)
 
 const CheckboxGroup = React.memo((props) => {
   const classes = useStyles(props)

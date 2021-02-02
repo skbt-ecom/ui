@@ -71,6 +71,7 @@ export function DynamicValue() {
         <span>value={value} min=0 max=100</span>
 
         <button
+          type="button"
           onClick={() => {
             setValue("-100")
           }}
@@ -79,6 +80,7 @@ export function DynamicValue() {
         </button>
 
         <button
+          type="button"
           onClick={() => {
             setValue("10")
           }}
@@ -87,6 +89,7 @@ export function DynamicValue() {
         </button>
 
         <button
+          type="button"
           onClick={() => {
             setValue("200")
           }}

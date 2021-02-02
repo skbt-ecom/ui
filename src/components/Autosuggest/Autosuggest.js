@@ -32,7 +32,7 @@ function renderSuggestion(suggestion, { isHighlighted }) {
 }
 const EMPTY_VALUE = { value: "", label: "" }
 
-const AutoSuggestComponent = React.memo(function IntegrationAutosuggest(props) {
+const AutoSuggestComponent = React.memo((props) => {
   const { label, placeholder, onChange, ...otherInputProps } = props
   const classes = useStyles(props)
   const [value, setValue] = useState(props.value || { ...EMPTY_VALUE })
@@ -43,8 +43,8 @@ const AutoSuggestComponent = React.memo(function IntegrationAutosuggest(props) {
     setValue(props.value || { value: "", label: "" })
   }, [props.value])
 
-  const handleSuggestionsFetchRequested = ({ value }) => {
-    setSuggestions(getSuggestions(props.suggestions, value))
+  const handleSuggestionsFetchRequested = ({ value: v }) => {
+    setSuggestions(getSuggestions(props.suggestions, v))
   }
 
   const handleSuggestionsClearRequested = () => {

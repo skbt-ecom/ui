@@ -14,7 +14,7 @@ const ModalPhoneForm = ({ isModalOpen, onClose, onSubmit, ...props }) => {
   const styles = useStyles(props)
   const [isLoading, setIsLoading] = useState(false)
 
-  const submitHandler = value => {
+  const submitHandler = (value) => {
     onSubmit(value)
     setIsLoading(true)
   }
@@ -34,9 +34,9 @@ const ModalPhoneForm = ({ isModalOpen, onClose, onSubmit, ...props }) => {
     >
       <Fade in={isModalOpen}>
         <div className={styles.wrapper}>
-          <div className={styles.closeButton} onClick={onClose}>
+          <button type="button" className={styles.closeButton} onClick={onClose}>
             <CloseIcon />
-          </div>
+          </button>
           <div className={styles.container}>
             <h2 className={styles.title}>
               Мы одобрим ваш кредит
@@ -45,17 +45,13 @@ const ModalPhoneForm = ({ isModalOpen, onClose, onSubmit, ...props }) => {
             </h2>
             <p className={styles.subTitle}>Нужен только ваш номер телефона</p>
             <Form onSubmit={submitHandler}>
-              <PhoneField label={"Телефон"} name={"phone"} />
+              <PhoneField label="Телефон" name="phone" />
               <AcceptmentField
-                name={"agree"}
+                name="agree"
                 classes={{ fieldWrapperAcceptment: styles.fieldWrapperAcceptment }}
               />
               <div className={styles.buttonWrapper}>
-                <SubmitButton
-                  color={"secondary"}
-                  disabled={isLoading}
-                  className={styles.buttonWidth}
-                >
+                <SubmitButton color="secondary" disabled={isLoading} className={styles.buttonWidth}>
                   Отправить заявку
                 </SubmitButton>
               </div>

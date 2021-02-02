@@ -2,7 +2,7 @@ import React from "react"
 
 import { action } from "@storybook/addon-actions"
 
-import Button from "../Button"
+import Button from "."
 import ButtonESIA from "./ButtonESIA"
 
 const story = {

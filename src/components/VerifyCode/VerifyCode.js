@@ -20,11 +20,11 @@ const acceptedKeys = [
   46,
 ]
 
-const VerifyCode = props => {
+const VerifyCode = (props) => {
   const classes = useStyles(props)
   const { onChange, value, error, helperText } = props
 
-  const handleKeyDown = e => {
+  const handleKeyDown = (e) => {
     const key = e.which || e.keyCode
     if (
       !(
@@ -54,7 +54,6 @@ const VerifyCode = props => {
             pattern="\d*"
             onChange={onChange}
             value={value}
-            autoFocus
           />
         </div>
       </div>

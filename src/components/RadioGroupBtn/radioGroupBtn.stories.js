@@ -23,7 +23,7 @@ export function Default() {
       onChange={action("onChange")}
       numberType
       items={items}
-      name={"prices"}
+      name="prices"
       value={5340}
       classes={{ container: "container-class", item: "item-class" }}
     />

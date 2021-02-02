@@ -1,5 +1,4 @@
 import React from "react"
-import Link from "@material-ui/core/Link"
 import Typography from "@material-ui/core/Typography"
 
 import { action } from "@storybook/addon-actions"
@@ -15,7 +14,7 @@ export function Timer() {
   return (
     <VerifyCode
       onChange={action("onChange")}
-      error={true}
+      error
       helperText={
         <Typography variant="caption">
           Отправить код повторно через <strong>25 сек</strong>
@@ -29,23 +28,16 @@ export function link() {
   return (
     <VerifyCode
       onChange={action("onChange")}
-      error={true}
+      error
       helperText={
-        <Link
-          onClick={() => undefined}
-          component={"button"}
-          underline={"always"}
-          color={"textPrimary"}
-        >
+        <button onClick={() => undefined} type="button">
           Отправить код повторно
-        </Link>
+        </button>
       }
     />
   )
 }
 
 export function Error() {
-  return (
-    <VerifyCode onChange={action("onChange")} error={true} classes={{ errorTextRoot: "11111" }} />
-  )
+  return <VerifyCode onChange={action("onChange")} error classes={{ errorTextRoot: "11111" }} />
 }

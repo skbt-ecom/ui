@@ -12,9 +12,7 @@ export default function RadioGroupField(props) {
   const { label, items, name, value, defaultValue, row, color } = props
 
   const handleChange = (e) => {
-    const { value } = e.target
-
-    props.onChange(value)
+    props.onChange(e.target.value)
   }
 
   return (
@@ -32,12 +30,12 @@ export default function RadioGroupField(props) {
         defaultValue={defaultValue}
         onChange={handleChange}
       >
-        {items.map(({ value, label }, i) => (
+        {items.map(({ value: v, label: l }, i) => (
           <FormControlLabel
             key={i}
-            value={value}
+            value={v}
             control={<Radio color={color} />}
-            label={label}
+            label={l}
             className={classes.formControlLabel}
           />
         ))}

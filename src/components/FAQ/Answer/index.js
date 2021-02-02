@@ -5,13 +5,14 @@ import AccordionDetails from "@material-ui/core/AccordionDetails"
 
 import useStyles from "./styles"
 
-const Answer = props => {
+const Answer = (props) => {
   const classes = useStyles(props)
+  const { children } = props
 
   return (
     <AccordionDetails classes={{ root: classes.root }}>
       <Typography component="h5" className={classes.text}>
-        {props.children}
+        {children}
       </Typography>
     </AccordionDetails>
   )

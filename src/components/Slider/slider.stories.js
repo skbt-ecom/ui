@@ -34,7 +34,7 @@ const SliderWrapper = (props) => {
   }
 
   const dynamicStepSliderProps = {
-    step: step,
+    step,
   }
 
   return (
@@ -60,7 +60,7 @@ export function Default() {
   return (
     <Slider
       onChange={action("onChange")}
-      label={"Сумма кредита"}
+      label="Сумма кредита"
       inputProps={inputProps}
       sliderProps={sliderProps}
       // defaultValue={300}
@@ -75,7 +75,7 @@ export function Committed() {
   return (
     <Slider
       onChangeCommitted={action("onChangeCommitted")}
-      label={"Сумма кредита"}
+      label="Сумма кредита"
       inputProps={inputProps}
       sliderProps={sliderProps}
       min={150000}
@@ -122,6 +122,7 @@ export function DynamicValues() {
       >
         <span>Sum = {sum}</span>
         <button
+          type="button"
           onClick={() => {
             SetSum(200000)
           }}
@@ -130,6 +131,7 @@ export function DynamicValues() {
         </button>
 
         <button
+          type="button"
           onClick={() => {
             setMin(200000)
           }}
@@ -137,6 +139,7 @@ export function DynamicValues() {
           Set min = 200000
         </button>
         <button
+          type="button"
           onClick={() => {
             setMax(500000)
           }}
@@ -144,6 +147,7 @@ export function DynamicValues() {
           Set max = 500000
         </button>
         <button
+          type="button"
           onClick={() => {
             SetSum(100000)
             setMin(100000)

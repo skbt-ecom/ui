@@ -7,8 +7,9 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 
 import useStyles from "./styles"
 
-const Question = props => {
+const Question = (props) => {
   const classes = useStyles(props)
+  const { children } = props
 
   return (
     <AccordionSummary
@@ -22,7 +23,7 @@ const Question = props => {
       }}
     >
       <Typography variant="h4" className={classes.text}>
-        {props.children}
+        {children}
       </Typography>
     </AccordionSummary>
   )

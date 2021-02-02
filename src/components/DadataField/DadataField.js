@@ -24,7 +24,7 @@ function renderInputComponent(inputProps) {
         },
         endAdornment: isLoading && (
           <InputAdornment position="end">
-            <Autorenew color={"primary"} className={classes.loadingIcon} />
+            <Autorenew color="primary" className={classes.loadingIcon} />
           </InputAdornment>
         ),
       }}
@@ -48,7 +48,7 @@ if (process.env.NODE_ENV !== "production") {
 /**
  * @deprecated use DadataFields/Dadata*.js instead
  */
-const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
+const DadataComponent = React.memo((props) => {
   const { label, placeholder, onChange, dadataOptions, value, ...otherInputProps } = props
   const classes = useStyles(props)
   const [state, setState] = useState({
@@ -62,8 +62,8 @@ const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
   const currentSuggestion = useRef(null)
 
   const inputValue = useRef("")
-  const setSuggestions = useRef((inputValue, dadataOptions) => {
-    getDadata(props.type, inputValue, dadataOptions).then(({ suggestions }) => {
+  const setSuggestions = useRef((inputValue1, dadataOptions1) => {
+    getDadata(props.type, inputValue1, dadataOptions1).then(({ suggestions }) => {
       setStateSuggestions(suggestions)
     })
   })
@@ -75,13 +75,13 @@ const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
     }
   }, [value])
 
-  const getSuggestions = (value) => {
-    inputValue.current = value.toLowerCase()
+  const getSuggestions = (value1) => {
+    inputValue.current = value1.toLowerCase()
     setSuggestions.current(inputValue.current, dadataOptions)
   }
 
-  const handleSuggestionsFetchRequested = ({ value }) => {
-    setStateSuggestions((prev) => getSuggestions(value) || prev)
+  const handleSuggestionsFetchRequested = ({ value: v }) => {
+    setStateSuggestions((prev) => getSuggestions(v) || prev)
   }
 
   const handleSuggestionsClearRequested = () => {
@@ -126,8 +126,9 @@ const DadataComponent = React.memo(function IntegrationAutosuggest(props) {
     }
     // if value not selected from list
     if (state.single) {
-      const value = type === "fio" ? state.single.trim() : currentSuggestion.current
-      return onChange(value)
+      const value1 = type === "fio" ? state.single.trim() : currentSuggestion.current
+      onChange(value1)
+      return
     }
     onChange(null)
   }

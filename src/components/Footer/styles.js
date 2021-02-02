@@ -101,7 +101,9 @@ function styles(theme) {
 
     showMore: {
       display: "inline-block",
-      borderBottom: "1px solid " + (isHalva ? color : "#607286"),
+      background: "transparent",
+      border: 0,
+      borderBottom: `1px solid ${isHalva ? color : "#607286"}`,
       color: isHalva ? "#757575" : "#607286",
       fontSize: 12,
       paddingTop: 8,

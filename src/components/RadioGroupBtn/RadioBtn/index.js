@@ -1,9 +1,8 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 import useStyles from "./styles"
 
-const RadioBtn = React.memo(props => {
+const RadioBtn = React.memo((props) => {
   const classes = useStyles(props)
   const { item, name, selectedValue } = props
 
@@ -23,11 +22,5 @@ const RadioBtn = React.memo(props => {
     </label>
   )
 })
-
-RadioBtn.propTypes = {
-  item: PropTypes.object.isRequired,
-  name: PropTypes.string.isRequired,
-  selectedValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-}
 
 export default RadioBtn
