@@ -1,3 +1,10 @@
+## [2.8.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.8.2...v2.8.3) (2021-02-03)
+
+
+### Bug Fixes
+
+* fix warning in StoreLinks ([91cb3f6](https://gitlab.sovcombank.group/web/ecom/ui/commit/91cb3f692d9a1e0f3547f77e8ec139b7bcd623ab))
+
 ## [2.8.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.8.1...v2.8.2) (2021-02-03)
 
 
