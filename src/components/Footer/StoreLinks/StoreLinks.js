@@ -31,7 +31,7 @@ const defaultItems = [
     href: "https://appgallery.huawei.com/#/app/C101305485",
     text: (
       <div style={{ marginTop: 8 }}>
-        Доступно в <br />
+        Откройте в <br />
         <span style={{ fontSize: 13, fontWeight: 500 }}>AppGallery</span>
       </div>
     ),
