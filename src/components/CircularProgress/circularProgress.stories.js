@@ -1,6 +1,6 @@
 import React from "react"
 
-import CircularProgress from "../CircularProgress"
+import CircularProgress from "."
 
 const story = {
   title: "CircularProgress",

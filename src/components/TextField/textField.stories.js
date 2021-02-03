@@ -2,7 +2,7 @@ import React from "react"
 
 import { action } from "@storybook/addon-actions"
 
-import TextField from "../TextField"
+import TextField from "."
 
 const story = {
   title: "TextField",

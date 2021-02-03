@@ -14,6 +14,19 @@ export default function Uploader({ onLoad, helperText, ...props }) {
   const classes = useStyles(props)
   const [isLoaded, setIsLoaded] = useState(false)
   const [imgSrc, setImgSrc] = useState("")
+  const handleLoad = (files) => {
+    const file = files[0]
+
+    if (!file) return
+
+    const url = URL.createObjectURL(file)
+    setIsLoaded(true)
+    setImgSrc(url)
+
+    if (onLoad) {
+      onLoad(url)
+    }
+  }
   const onDrop = useCallback(handleLoad, [onLoad])
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
@@ -22,17 +35,6 @@ export default function Uploader({ onLoad, helperText, ...props }) {
   })
 
   const active = isLoaded || isDragActive ? classes.active : ""
-
-  function handleLoad(files) {
-    const file = files[0]
-
-    if (!file) return
-
-    const url = URL.createObjectURL(file)
-    setIsLoaded(true)
-    setImgSrc(url)
-    onLoad && onLoad(url)
-  }
 
   function removeImage() {
     setIsLoaded(false)

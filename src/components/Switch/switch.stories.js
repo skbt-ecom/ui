@@ -26,7 +26,7 @@ export function Default() {
   return (
     <Switch
       onChange={action("onChange")}
-      label={"Label"}
+      label="Label"
       classes={{ root: classes.root, label: classes.label }}
     />
   )

@@ -29,9 +29,7 @@ const Footer = (props, ref) => {
     <footer className={classes.footer} ref={ref}>
       <Container fixed={false}>
         <div className={classes.inner}>
-          {left ? (
-            left
-          ) : (
+          {left || (
             <PhoneMain
               phone={phone}
               phones={phones}
@@ -45,9 +43,7 @@ const Footer = (props, ref) => {
             />
           )}
 
-          {right ? (
-            right
-          ) : (
+          {right || (
             <div className={classes.copyright}>
               <SocialLinks items={socialLinks} />
               <p>
@@ -64,9 +60,9 @@ const Footer = (props, ref) => {
           <div className={classes.ligal}>
             <div>{shortText}</div>
             {restText && isHide && (
-              <span className={classes.showMore} onClick={showRestLigal}>
+              <button type="button" className={classes.showMore} onClick={showRestLigal}>
                 Подробные условия
-              </span>
+              </button>
             )}
             {!isHide && <div>{restText}</div>}
           </div>

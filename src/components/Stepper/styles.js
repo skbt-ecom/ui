@@ -23,7 +23,7 @@ function styles(theme) {
       marginRight: 8,
 
       "&>svg": {
-        color: color,
+        color,
       },
 
       [theme.breakpoints.up("sm")]: {

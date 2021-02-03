@@ -9,9 +9,9 @@ import REGIONS from "../../enums/regions"
 const AutosuggestFieldWrapper = (props) => {
   const [value, setValue] = useState(props.value || "")
 
-  const onChange = (value) => {
-    setValue(value)
-    props.onChange(value)
+  const onChange = (v) => {
+    setValue(v)
+    props.onChange(v)
   }
   return (
     <>
@@ -43,7 +43,7 @@ export function Default() {
       <AutosuggestFieldWrapper
         onChange={action("onChange")}
         suggestions={REGIONS}
-        label={"Регион"}
+        label="Регион"
         fullWidth
         value={REGIONS[0]}
       />

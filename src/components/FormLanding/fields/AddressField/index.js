@@ -6,7 +6,7 @@ import { addressWithFlatValidator } from "../../validators"
 import useStyles from "../styles"
 import { useAddressDadataStyles, useFlatInfoStyles } from "./styles"
 
-const AddressField = React.memo(props => {
+const AddressField = React.memo((props) => {
   const addressDadataClasses = useAddressDadataStyles(props)
   const flatInfoClasses = useFlatInfoStyles(props)
 
@@ -21,7 +21,7 @@ const AddressField = React.memo(props => {
   )
 })
 
-const WrappedField = props => {
+const WrappedField = (props) => {
   const classes = useStyles(props)
   return (
     <div className={classes.fieldWrapper}>

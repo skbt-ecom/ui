@@ -6,11 +6,12 @@ import useStyles from "./styles"
 
 const FormLanding = (props, ref) => {
   const classes = useStyles(props)
+  const { onSubmit, onChangeFields, children } = props
 
   return (
     <div className={classes.container}>
-      <Form onSubmit={props.onSubmit} onChangeFields={props.onChangeFields} ref={ref}>
-        {props.children}
+      <Form onSubmit={onSubmit} onChangeFields={onChangeFields} ref={ref}>
+        {children}
       </Form>
     </div>
   )

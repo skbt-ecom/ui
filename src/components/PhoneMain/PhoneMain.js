@@ -7,7 +7,7 @@ import useStyles from "./styles"
 export default function PhoneMain(props) {
   const classes = useStyles(props)
   const { phone, phoneHint, phones } = props
-  const phonesArr = phones ? phones : [phone]
+  const phonesArr = phones || [phone]
   const isSinglePhone = phonesArr.length === 1
   const phoneWithHintProps = {
     phone: phonesArr[0],
@@ -20,10 +20,10 @@ export default function PhoneMain(props) {
       {isSinglePhone ? (
         <PhoneWithHint {...phoneWithHintProps} />
       ) : (
-        phonesArr.map((phone, i) => (
+        phonesArr.map((phone1, i) => (
           <Phone
             key={i}
-            number={phone}
+            number={phone1}
             classes={{
               phoneNum: classes.phoneMultiple,
             }}

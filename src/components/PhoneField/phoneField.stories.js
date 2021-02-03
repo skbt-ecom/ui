@@ -7,9 +7,10 @@ import PhoneField from "./PhoneField"
 const PhoneFieldWrapper = (props) => {
   const [value, setValue] = useState("")
 
-  const handleChange = (value) => {
-    setValue(value)
-    props.onChange(value)
+  const handleChange = (e) => {
+    const val = e.target.value
+    setValue(val)
+    props.onChange(val)
   }
 
   const handleBlur = (fieldName) => (valueBlur) => {
@@ -30,10 +31,10 @@ export default story
 export function Default() {
   return (
     <PhoneFieldWrapper
-      label={"Телефон"}
+      label="Телефон"
       onChange={action("onChange")}
       onBlur={action("onBlur")}
-      defaultValue={"8"}
+      defaultValue="8"
       // lazy={false}
       // placeholderChar={' '}
     />

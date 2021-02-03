@@ -73,8 +73,8 @@ const AddressField = React.memo(({ onChange, ...props }) => {
       <div className={addressDadataClasses.container}>
         <DadataField
           onChange={handleAddressDadataChange}
-          type={"address"}
-          label={"Адрес"}
+          type="address"
+          label="Адрес"
           dadataOptions={{ to_bound: { value: "house" } }}
           fullWidth
           {...addressDadataErrorProps}
@@ -82,7 +82,7 @@ const AddressField = React.memo(({ onChange, ...props }) => {
       </div>
       <div className={flatInfoClasses.container}>
         <TextField
-          label={"Квартира"}
+          label="Квартира"
           onChange={handleFlatChange}
           value={flat}
           disabled={isNoFlat}
@@ -93,8 +93,8 @@ const AddressField = React.memo(({ onChange, ...props }) => {
         />
         <Checkbox
           onChange={handleNoFlatChange}
-          label={"Нет номера квартиры"}
-          color={"primary"}
+          label="Нет номера квартиры"
+          color="primary"
           checked={isNoFlat}
           classes={{ labelClasses: { root: flatInfoClasses.checkbox } }}
         />

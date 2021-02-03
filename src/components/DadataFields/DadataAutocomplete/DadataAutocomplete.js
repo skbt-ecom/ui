@@ -18,7 +18,7 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
     const makeIncameValueActions = (suggestions) => {
       const dataToOnBlur = {
         dadataValue: null,
-        inputValue: inputValue,
+        inputValue,
         isDadataValueActual: false,
       }
 
@@ -38,30 +38,28 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
       onBlur(null, dataToOnBlur)
     }
 
-    async function fetchData() {
+    function fetchData() {
       setIsLoading(true)
 
-      const response = await getDadata(type, inputValue, dadataOptions)
-
-      let suggestions = []
-      if (response.suggestions) {
-        suggestions = response.suggestions
-      }
-
-      if (response.matches) {
-        suggestions = response.matches.map((i) => {
-          return { value: i.model_mark }
-        })
-      }
-
-      if (active) {
-        setOptions(suggestions)
-        if (isIncameValue.current) {
-          makeIncameValueActions(suggestions)
+      getDadata(type, inputValue, dadataOptions).then((response) => {
+        let suggestions = []
+        if (response.suggestions) {
+          suggestions = response.suggestions
         }
-      }
 
-      setIsLoading(false)
+        if (response.matches) {
+          suggestions = response.matches.map((i) => ({ value: i.model_mark }))
+        }
+
+        if (active) {
+          setOptions(suggestions)
+          if (isIncameValue.current) {
+            makeIncameValueActions(suggestions)
+          }
+        }
+
+        setIsLoading(false)
+      })
     }
 
     if (inputValue) {
@@ -108,11 +106,11 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
       inputValue={inputValue}
       onInputChange={(_, newInputValue) => setInputValue(newInputValue)}
       onBlur={handleBlur}
-      clearText={"Очистить"}
-      closeText={"Закрыть"}
-      loadingText={"Загрузка..."}
-      noOptionsText={"Нет вариантов"}
-      openText={"Открыть"}
+      clearText="Очистить"
+      closeText="Закрыть"
+      loadingText="Загрузка..."
+      noOptionsText="Нет вариантов"
+      openText="Открыть"
       renderInput={(params) => (
         <TextField
           {...props}

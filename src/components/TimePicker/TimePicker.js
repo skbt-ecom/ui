@@ -11,9 +11,11 @@ export default function TimePicker({ onChange, ...restProps }) {
   function handleChange(value) {
     if (value && !value.invalid) {
       const time = new Date(value.ts).toLocaleTimeString("ru-RU")
-      onChange && onChange(time)
-    } else {
-      onChange && onChange(null)
+      if (onChange) {
+        onChange(time)
+      }
+    } else if (onChange) {
+      onChange(null)
     }
     setSelectedValue(value)
   }

@@ -11,11 +11,13 @@ export default function Halva({ children, classes, onClick }) {
 
   return (
     <HeaderContainer classes={other}>
-      <div
-        role="button"
+      <button
+        type="button"
         className={cn(currentClasses.logo, onClick ? currentClasses.btn : "")}
         onClick={onClick}
-      />
+      >
+        -
+      </button>
       {children}
     </HeaderContainer>
   )

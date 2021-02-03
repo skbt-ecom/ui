@@ -1,11 +1,8 @@
 import { getDadata } from "../getDadata"
-export const specifySuggestion = async dadataValue => {
-  const getDadataResult = await getDadata("address", dadataValue.unrestricted_value, {
+
+export function specifySuggestion(dadataValue) {
+  return getDadata("address", dadataValue.unrestricted_value, {
     count: 1,
     restrict_value: true,
-  })
-  const specifiedSuggestion =
-    getDadataResult && getDadataResult.suggestions && getDadataResult.suggestions[0]
-
-  return specifiedSuggestion
+  }).then((getDadataResult) => getDadataResult?.suggestions?.[0])
 }

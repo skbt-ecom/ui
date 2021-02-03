@@ -18,6 +18,8 @@ function dispatch(appended, dynamicMasked) {
   if (number) {
     return number.startsWith("7") ? dynamicMasked.compiledMasks[0] : dynamicMasked.compiledMasks[1]
   }
+
+  return null
 }
 
 export default function PhoneField(props) {

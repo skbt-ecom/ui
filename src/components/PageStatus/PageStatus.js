@@ -4,8 +4,8 @@ import Typography from "@material-ui/core/Typography"
 import Box from "@material-ui/core/Box"
 
 import Container from "../Container"
-import icon_done from "./img/icon_done.svg"
-import icon_error from "./img/icon_error.svg"
+import iconDone from "./img/icon_done.svg"
+import iconError from "./img/icon_error.svg"
 
 import useStyles from "./styles"
 
@@ -54,7 +54,7 @@ export default function PageStatus(props) {
             {headValue}
           </Typography>
           <div>
-            <img alt="icon" src={success ? icon_done : icon_error} className={classes.icon} />
+            <img alt="icon" src={success ? iconDone : iconError} className={classes.icon} />
           </div>
         </Box>
         {content}

@@ -24,9 +24,9 @@ const SelectWrapper = (props) => {
     <Select
       onChange={handleChange}
       items={socialStatuses}
-      name={"select"}
+      name="select"
       value={value}
-      label={"Статус"}
+      label="Статус"
     />
   )
 }

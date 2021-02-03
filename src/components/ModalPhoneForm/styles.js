@@ -46,6 +46,7 @@ function styles(theme) {
     },
 
     closeButton: {
+      backgroundColor: "transparent",
       position: "absolute",
       top: 32,
       right: 32,

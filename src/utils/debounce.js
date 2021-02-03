@@ -5,7 +5,7 @@
  */
 export default function debounce(fn, delay = 2000) {
   let timerId = null
-  return function(...args) {
+  return function a(...args) {
     const doSmth = () => {
       fn.apply(this, args)
       timerId = null

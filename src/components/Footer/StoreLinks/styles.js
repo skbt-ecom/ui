@@ -10,7 +10,7 @@ function styles(theme) {
     },
 
     link: {
-      border: "1px solid " + color,
+      border: `1px solid ${color}`,
       borderRadius: 4,
       display: "flex",
       flexDirection: "column",
@@ -19,7 +19,7 @@ function styles(theme) {
       textAlign: "center",
       color,
       textDecoration: "none",
-      fontSize: 11,
+      fontSize: 10,
       width: 80,
       height: 80,
 
