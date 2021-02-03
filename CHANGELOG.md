@@ -1,3 +1,11 @@
+## [2.8.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.8.1...v2.8.2) (2021-02-03)
+
+
+### Bug Fixes
+
+* eslint fixes ([426d1c3](https://gitlab.sovcombank.group/web/ecom/ui/commit/426d1c37f2e57ed89797372c6f2dec3e9f759da3))
+* fix text in AppGallery badge  in footer ([ac31beb](https://gitlab.sovcombank.group/web/ecom/ui/commit/ac31bebd4b85b3514a094c81ba6227bc1146189c))
+
 ## [2.8.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.8.0...v2.8.1) (2021-02-02)
 
 
