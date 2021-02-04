@@ -64,6 +64,8 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
 
     if (inputValue) {
       fetchData()
+    } else {
+      setDadataValue(null)
     }
 
     return () => {

@@ -3,6 +3,7 @@ import React from "react"
 import { action } from "@storybook/addon-actions"
 
 import DadataAddress from "./DadataAddress"
+import DadataOrganisation from "./DadataOrganisation"
 import DadataAddressFlat from "./DadataAddressFlat"
 import DadataFio from "./DadataFio"
 import DadataAuto from "./DadataAuto"
@@ -24,6 +25,17 @@ export default story
 
 export function dadataAddress() {
   return <DadataAddress onBlur={action("onBlur")} label="Адрес" dadataOptions={{}} fullWidth />
+}
+
+export function dadataOrganisation() {
+  return (
+    <DadataOrganisation
+      onBlur={action("onBlur")}
+      label="Организация"
+      dadataOptions={{}}
+      fullWidth
+    />
+  )
 }
 
 export function dadataFio() {
