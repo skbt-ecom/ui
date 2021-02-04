@@ -2,8 +2,8 @@ import { requiredValidator } from "./requiredValidator"
 
 const ERROR_TXT = "Выберите значение из списка"
 
-export const organisationValidator = (dadataOrganisation) => {
-  const { dadataValue } = dadataOrganisation
+export const organizationValidator = (dadataOrganization) => {
+  const { dadataValue } = dadataOrganization
 
   if (!dadataValue || !dadataValue.data) {
     return ERROR_TXT

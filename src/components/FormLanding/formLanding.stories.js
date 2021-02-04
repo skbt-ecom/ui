@@ -10,7 +10,7 @@ import FormLanding from "./FormLanding"
 import AutocompleteRegionByPhoneField from "./fields/AutocompleteRegionByPhoneField"
 import CheckboxField from "./fields/CheckboxField"
 import DadataAddress from "./fields/DadataFields/DadataAddress"
-import DadataOrganisation from "./fields/DadataFields/DadataOrganisation"
+import DadataOrganization from "./fields/DadataFields/DadataOrganization"
 import DadataAddressFlat from "./fields/DadataFields/DadataAddressFlat"
 import DadataFio from "./fields/DadataFields/DadataFio"
 import DadataAuto from "./fields/DadataFields/DadataAuto"
@@ -79,7 +79,7 @@ export function DadataFields() {
   return (
     <FormLanding onChangeFields={action("onChangeFields")} onSubmit={onSubmit}>
       <DadataAddress name="address2" label="Адрес" />
-      <DadataOrganisation name="organisation" label="Организация" isRequired />
+      <DadataOrganization name="organization" label="Организация" isRequired />
       <DadataFio name="fio" label="ФИО" />
       <DadataAddressFlat name="addressWithFlat" label="Адрес новый" />
       <DadataAuto name="auto" label="Модель машины" />

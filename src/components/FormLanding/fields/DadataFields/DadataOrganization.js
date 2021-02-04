@@ -1,11 +1,11 @@
 import React, { useCallback } from "react"
-import MaterialDadataOrganisation from "../../../DadataFields/DadataOrganisation"
+import MaterialDadataOrganization from "../../../DadataFields/DadataOrganization"
 import { Field } from "../../FormContext/Field"
-import { organisationValidator } from "../../validators"
+import { organizationValidator } from "../../validators"
 
 import useStyles from "../styles"
 
-const DadataOrganisation = React.memo(({ onChange, ...props }) => {
+const DadataOrganization = React.memo(({ onChange, ...props }) => {
   const handleBlur = useCallback(
     (e, values) => {
       onChange(values)
@@ -13,7 +13,7 @@ const DadataOrganisation = React.memo(({ onChange, ...props }) => {
     [onChange]
   )
 
-  return <MaterialDadataOrganisation {...props} onBlur={handleBlur} />
+  return <MaterialDadataOrganization {...props} onBlur={handleBlur} />
 })
 
 const WrappedField = ({ classsesComponent, ...props }) => {
@@ -25,10 +25,10 @@ const WrappedField = ({ classsesComponent, ...props }) => {
   )
 }
 
-WrappedField.dislayName = "DadataOrganisation"
+WrappedField.dislayName = "DadataOrganization"
 WrappedField.defaultProps = {
-  component: DadataOrganisation,
-  validate: organisationValidator,
+  component: DadataOrganization,
+  validate: organizationValidator,
   defaultValue: {},
   validateOnBlur: false,
   fullWidth: true,
