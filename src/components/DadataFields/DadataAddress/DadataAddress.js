@@ -8,7 +8,7 @@ const DadataAddress = ({ onBlur, ...props }) => {
     (e, values) => {
       const { dadataValue } = values
 
-      if (!dadataValue?.data?.postal_code) {
+      if (dadataValue && !dadataValue?.data?.postal_code) {
         // spike, because sometimes dadata not returns postal code
         // we must do specific query for only one suggestion
         specifySuggestion(dadataValue).then((specifiedSuggestion) => {
