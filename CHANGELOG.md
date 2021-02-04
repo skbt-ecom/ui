@@ -1,3 +1,10 @@
+# [2.9.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.8.3...v2.9.0) (2021-02-04)
+
+
+### Features
+
+* **dadataorganisation:** добавить DadataOrganisation ([b25aa94](https://gitlab.sovcombank.group/web/ecom/ui/commit/b25aa94e25b6faea2c67248dcd9a66fd10b2e624))
+
 ## [2.8.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.8.2...v2.8.3) (2021-02-03)
 
 
