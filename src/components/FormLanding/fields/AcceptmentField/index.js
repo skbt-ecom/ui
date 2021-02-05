@@ -1,7 +1,7 @@
 import React from "react"
+import Link from "@material-ui/core/Link"
 import Checkbox from "../../../Checkbox/Checkbox"
 import { Field } from "../../FormContext/Field"
-import Link from "../../../Link"
 
 import useAcceptmentStyles from "./styles"
 import useStyles from "../styles"

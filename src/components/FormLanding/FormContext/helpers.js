@@ -66,6 +66,7 @@ export const checkOptionalKeysInInvalidFields = (optionalKeys, invalidFields) =>
 
 const getFieldErrors = (errorsObj) =>
   Object.keys(errorsObj).reduce((prev, cur) => {
+    // eslint-disable-next-line
     prev[cur] = Boolean(errorsObj[cur])
     return prev
   }, {})

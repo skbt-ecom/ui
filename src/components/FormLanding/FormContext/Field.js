@@ -1,3 +1,4 @@
+/* eslint react/destructuring-assignment: 0 */
 import React from "react"
 import PropTypes from "prop-types"
 
@@ -5,31 +6,20 @@ import { FormContext } from "./Form"
 import { getErrorProp, getHelperTextFromError } from "./helpers"
 
 export class Field extends React.PureComponent {
-  static contextType = FormContext
-
-  static propTypes = {
-    validate: PropTypes.func,
-    name: PropTypes.string.isRequired,
-    validateOnBlur: PropTypes.bool,
-  }
-
-  static defaultProps = {
-    validate: () => undefined,
-    validateOnBlur: true,
-    isRequired: true,
-  }
-
-  _prevValue = undefined // needs to prevent calling onValidateItem if value does not changed (ex. onBlur)
+  prevValue = undefined // needs to prevent calling onValidateItem if value does not changed (ex. onBlur)
 
   initialValue = this.props.value || this.props.defaultValue
+
   componentDidMount() {
     const field = this.context.fields[this.props.name] || {}
+    const { validate, helperText, isRequired } = this.props
+
     this.context.registerField({
       fieldKey: this.props.name,
       value: field.value || this.initialValue,
-      validate: this.props.validate,
-      helperText: this.props.helperText,
-      isRequired: this.props.isRequired,
+      validate,
+      helperText,
+      isRequired,
     })
   }
 
@@ -53,10 +43,10 @@ export class Field extends React.PureComponent {
   onValidateItem = (props) => {
     const { value, isRequired } = props
     // return when value has not been changed
-    // if (value === this._prevValue) {
+    // if (value === this.prevValue) {
     //   return;
     // }
-    this._prevValue = value
+    this.prevValue = value
     const error = isRequired ? this.props.validate(value) : false
     const helperText = getHelperTextFromError(error, this.props.helperText)
 
@@ -105,4 +95,19 @@ export class Field extends React.PureComponent {
       />
     )
   }
+}
+
+Field.contextType = FormContext
+
+Field.defaultProps = {
+  validate: () => undefined,
+  validateOnBlur: true,
+  isRequired: true,
+}
+
+Field.propTypes = {
+  validate: PropTypes.func,
+  name: PropTypes.string.isRequired,
+  validateOnBlur: PropTypes.bool,
+  isRequired: PropTypes.bool,
 }

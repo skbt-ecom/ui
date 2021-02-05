@@ -9,7 +9,7 @@ const DadataOrganization = ({ onBlur, ...props }) => {
     [onBlur]
   )
 
-  return <DadataAutocomplete {...props} type={"party"} onBlur={handleBlur} />
+  return <DadataAutocomplete {...props} type="party" onBlur={handleBlur} />
 }
 
 export default DadataOrganization

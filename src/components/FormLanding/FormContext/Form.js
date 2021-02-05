@@ -1,3 +1,4 @@
+/* eslint react/destructuring-assignment: 0 */
 import React from "react"
 import PropTypes from "prop-types"
 
@@ -12,14 +13,17 @@ import {
 export const FormContext = React.createContext({})
 
 export class Form extends React.Component {
-  static propTypes = {
-    submitting: PropTypes.bool,
-    onChangeFields: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+  constructor(props) {
+    super(props)
+    this.state = {
+      fields: {},
+      onChange: this.onChange, // eslint-disable-line
+      onSubmit: this.onSubmit, // eslint-disable-line
+      registerField: this.registerField, // eslint-disable-line
+      invalidFields: new Set(),
+    }
   }
-  static defaultProps = {
-    submitting: false,
-    onChangeFields: undefined,
-  }
+
   static getDerivedStateFromProps(props, state) {
     const nextState = {}
 
@@ -42,7 +46,7 @@ export class Form extends React.Component {
   }
 
   registerField = ({ fieldKey, value, validate, helperText, isRequired }) => {
-    this.setState(state => ({
+    this.setState((state) => ({
       fields: {
         ...state.fields,
         [fieldKey]: {
@@ -51,7 +55,7 @@ export class Form extends React.Component {
           touched: false,
           helperText,
           isRequired,
-          initialHelperText: helperText, //needs to store original helperText value and set it when setFieldsValue calls
+          initialHelperText: helperText, // needs to store original helperText value and set it when setFieldsValue calls
         },
       },
     }))
@@ -59,7 +63,7 @@ export class Form extends React.Component {
 
   setField = (fieldKey, data) => {
     const newField = { ...this.state.fields[fieldKey], ...data }
-    this.setState(state => ({
+    this.setState((state) => ({
       fields: {
         ...state.fields,
         [fieldKey]: newField,
@@ -67,12 +71,12 @@ export class Form extends React.Component {
     }))
   }
 
-  setFields = updates => {
-    this.setState(prevState => {
+  setFields = (updates) => {
+    this.setState((prevState) => {
       const prevFields = { ...prevState.fields }
       const nextFields = { ...prevFields }
 
-      Object.keys(updates).forEach(fieldKey => {
+      Object.keys(updates).forEach((fieldKey) => {
         const prevField = prevFields[fieldKey]
         const nextField = updates[fieldKey]
 
@@ -92,7 +96,7 @@ export class Form extends React.Component {
     })
   }
 
-  getFieldsValue = fieldKey => {
+  getFieldsValue = (fieldKey) => {
     const { fields } = this.state
 
     if (fieldKey) {
@@ -100,7 +104,9 @@ export class Form extends React.Component {
     }
 
     const values = {}
-    Object.keys(fields).forEach(name => (values[name] = fields[name].value))
+    Object.keys(fields).forEach((name) => {
+      values[name] = fields[name].value
+    })
 
     return values
   }
@@ -113,7 +119,7 @@ export class Form extends React.Component {
       [fieldKey]: nextField,
     }
 
-    this.setState(state => {
+    this.setState((state) => {
       const nextInvalidFields = new Set(state.invalidFields)
 
       if (updates.error) nextInvalidFields.add(fieldKey)
@@ -122,7 +128,6 @@ export class Form extends React.Component {
       return {
         fields: nextFields,
         invalidFields: nextInvalidFields,
-        valid: !nextInvalidFields.size,
       }
     })
 
@@ -133,7 +138,10 @@ export class Form extends React.Component {
         onChangeFields(nextFields, fieldKey)
       } else {
         const onChangeCallback = onChangeFields[fieldKey]
-        onChangeCallback && onChangeCallback(nextField)
+
+        if (onChangeCallback) {
+          onChangeCallback(nextField)
+        }
       }
     }
   }
@@ -141,15 +149,13 @@ export class Form extends React.Component {
   onSubmit = () => {
     const { fields } = this.state
     const { requiredFields } = getRequiredFields(fields)
-
-    this.toggleSubmitting(true)
     const { fieldsToSubmit, fieldsWithError, validForm } = checkUnTouchedFields(requiredFields)
 
     const nextFields = {
       ...this.state.fields,
     }
 
-    Object.keys(this.state.fields).forEach(fieldKey => {
+    Object.keys(this.state.fields).forEach((fieldKey) => {
       const stateField = this.state.fields[fieldKey]
       if (fieldKey in fieldsWithError) {
         nextFields[fieldKey] = { ...fieldsWithError[fieldKey] }
@@ -163,32 +169,26 @@ export class Form extends React.Component {
     })
 
     if (!validForm) {
-      return this.setState({
-        valid: validForm,
+      this.setState({
         fields: nextFields,
-        submitting: false,
       })
+      return
     }
 
-    const promise = this.props.onSubmit(fieldsToSubmit)
-
-    return promise && promise.finally(() => this.toggleSubmitting(false))
-  }
-
-  toggleSubmitting = submitting => this.setState({ submitting })
-
-  state = {
-    fields: {},
-    onChange: this.onChange,
-    onSubmit: this.onSubmit,
-    submitting: this.props.submitting,
-    valid: true,
-    registerField: this.registerField,
-    onChangeFields: this.props.onChangeFields,
-    invalidFields: new Set(),
+    this.props.onSubmit(fieldsToSubmit)
   }
 
   render() {
     return <FormContext.Provider value={this.state}>{this.props.children}</FormContext.Provider>
   }
+}
+
+Form.propTypes = {
+  submitting: PropTypes.bool,
+  onChangeFields: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+}
+
+Form.defaultProps = {
+  submitting: false,
+  onChangeFields: undefined,
 }

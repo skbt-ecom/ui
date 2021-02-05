@@ -106,4 +106,10 @@ const AutoSuggestComponent = React.memo((props) => {
   )
 })
 
+if (process.env.NODE_ENV !== "production") {
+  console.error('⚠️ Deprecation component "AutoSuggest". Use the "AutocompleteField.js" instead')
+}
+/**
+ * @deprecated use AutocompleteField.js instead
+ */
 export default withSpaceForHelperTxt(AutoSuggestComponent)

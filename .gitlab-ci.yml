@@ -12,6 +12,7 @@ lint:
   stage: lint
   script:
     - npm i
+    - npm run lint
     - npm run build
   only:
     - merge_requests

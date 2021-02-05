@@ -17,6 +17,14 @@ const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({
   },
 })
 
+if (process.env.NODE_ENV !== "production") {
+  console.error(
+    '⚠️ Deprecation component "AddressField". Use the "DadataFields/DadataAddressFlat.js" instead'
+  )
+}
+/**
+ * @deprecated use DadataFields/DadataAddressFlat.js instead
+ */
 const AddressField = React.memo(({ onChange, ...props }) => {
   const addressDadataClasses = useStylesAddressDadata(props.classes.addressDadataClasses)
   const flatInfoClasses = useStylesFlatInfo(props.classes.flatInfoClasses)

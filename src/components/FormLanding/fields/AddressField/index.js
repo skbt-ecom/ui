@@ -21,6 +21,14 @@ const AddressField = React.memo((props) => {
   )
 })
 
+if (process.env.NODE_ENV !== "production") {
+  console.error(
+    '⚠️ Deprecation component "AddressField". Use the "fields/DadataFields/DadataAddressFlat.js" instead'
+  )
+}
+/**
+ * @deprecated use fields/DadataFields/DadataAddressFlat.js instead
+ */
 const WrappedField = (props) => {
   const classes = useStyles(props)
   return (

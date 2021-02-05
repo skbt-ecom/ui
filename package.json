@@ -10,10 +10,10 @@
     "start": "start-storybook -p 3000",
     "start:ci": "start-storybook -p 8080 --ci",
     "build-storybook": "build-storybook",
-    "compile": "NODE_ENV=production babel src --out-dir lib --copy-files --no-copy-ignored --config-file ./babelConfig.js",
+    "compile": "NODE_ENV=production babel src --out-dir lib --copy-files --ignore \"**/*.stories.js\" --no-copy-ignored --config-file ./babelConfig.js",
     "build": "npm run build:prepare && npm run compile",
     "build:prepare": "rm -rf lib",
-    "lint": "eslint src --ext .jsx,.js",
+    "lint": "eslint src --ext .js --max-warnings 0",
     "semantic-release": "semantic-release",
     "cz": "cz -a"
   },
@@ -41,6 +41,7 @@
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
+    "@babel/eslint-parser": "^7.12.13",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
     "@babel/plugin-transform-exponentiation-operator": "^7.12.1",
@@ -62,15 +63,26 @@
     "eslint": "7.4.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "^7.1.0",
+    "eslint-import-resolver-node": "^0.3.4",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "4.0.0",
     "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
     "react-helmet": "^6.1.0",
     "semantic-release": "^17.3.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,scss}": "pretty-quick --staged",
+    "*.js": "eslint --fix --max-warnings 0"
   },
   "browserslist": {
     "production": [
