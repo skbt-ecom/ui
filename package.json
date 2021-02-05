@@ -81,8 +81,10 @@
     }
   },
   "lint-staged": {
-    "*.{js,scss}": "pretty-quick --staged",
-    "*.js": "eslint --fix --max-warnings 0"
+    "*.js": [
+      "pretty-quick --staged",
+      "eslint --fix --max-warnings 0"
+    ]
   },
   "browserslist": {
     "production": [
