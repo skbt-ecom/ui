@@ -28,11 +28,7 @@ const Header = (props, ref) => {
         {right || (
           <div className={classes.rightBlock}>
             <PhoneMain {...PhoneProps} classes={phoneClasses} />
-            {withButton && (
-              <Button {...ButtonProps} classes={buttonClasses}>
-                Оформить
-              </Button>
-            )}
+            {withButton && <Button {...ButtonProps} classes={buttonClasses} />}
           </div>
         )}
       </Container>
@@ -44,8 +40,9 @@ const ForwardedHeader = React.forwardRef(Header)
 
 ForwardedHeader.defaultProps = {
   LogoProps: {},
-  ButtonProps: {},
+  ButtonProps: { children: "Оформить" },
   PhoneProps: {},
-  static: false,
+  sticky: true,
 }
-export default React.memo(ForwardedHeader)
+
+export default ForwardedHeader
