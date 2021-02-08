@@ -27,7 +27,7 @@ const DadataAddress = ({ onBlur, ...props }) => {
     [onBlur]
   )
 
-  return <DadataAutocomplete {...props} type={"address"} onBlur={handleBlur} />
+  return <DadataAutocomplete {...props} type="address" onBlur={handleBlur} />
 }
 
 export default DadataAddress

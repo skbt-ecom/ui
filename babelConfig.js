@@ -16,13 +16,11 @@ module.exports = {
     "@babel/plugin-transform-react-constant-elements",
     ["babel-plugin-transform-react-remove-prop-types", { removeImport: true }],
   ],
-  ignore: ["**/*.stories.js"],
 }
 
 /* 
 использовать:
 date-fns вместо luxon
 clsx вместо classnames, babel-plugin-optimize-clsx
-alias вместо импорта напрямую
 HeaderNew static={false} -> sticky={true}
 */

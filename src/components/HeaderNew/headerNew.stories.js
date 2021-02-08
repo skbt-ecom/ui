@@ -66,3 +66,7 @@ export function StickyHeader() {
     </>
   )
 }
+
+export function ButtonProps() {
+  return <Header ButtonProps={{ children: "asd" }} withButton />
+}

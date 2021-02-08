@@ -143,6 +143,7 @@ export function FormPassport() {
             label="Серия"
             name="passportSeries"
             mask="0000"
+            defaultValue=""
             validate={validateByLength(4)}
           />
         </Grid>

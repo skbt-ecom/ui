@@ -9,7 +9,7 @@ const Logo = (props) => {
 
   return (
     <a href={href} className={propsClasses.link}>
-      <img className={`${classes.logo}  ${propsClasses.logo}`} src={src} alt="logo" />
+      <img className={`${classes.logo} ${propsClasses.logo}`} src={src} alt="logo" />
     </a>
   )
 }

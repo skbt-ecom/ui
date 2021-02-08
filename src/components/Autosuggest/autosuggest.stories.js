@@ -7,7 +7,7 @@ import Autosuggest from "./Autosuggest"
 import REGIONS from "../../enums/regions"
 
 const AutosuggestFieldWrapper = (props) => {
-  const [value, setValue] = useState(props.value || "")
+  const [value, setValue] = useState(props.value || "") // eslint-disable-line
 
   const onChange = (v) => {
     setValue(v)

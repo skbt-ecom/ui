@@ -5,7 +5,7 @@ import { autocompleteValidator } from "../validators"
 
 import useStyles from "./styles"
 
-const AutocompleteField = React.memo(props => {
+const AutocompleteField = React.memo((props) => {
   const onChange = (_, value) => {
     props.onChange(value)
   }
