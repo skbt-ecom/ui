@@ -1,3 +1,10 @@
+## [2.9.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.9.0...v2.9.1) (2021-02-08)
+
+
+### Bug Fixes
+
+* **headernew:** pass btn children from def props ([b118358](https://gitlab.sovcombank.group/web/ecom/ui/commit/b118358744891534bb92587ef6ac61e4661a68e2))
+
 # [2.9.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.8.3...v2.9.0) (2021-02-04)
 
 
