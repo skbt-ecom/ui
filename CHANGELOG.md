@@ -1,3 +1,10 @@
+# [2.10.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.9.1...v2.10.0) (2021-02-09)
+
+
+### Features
+
+* **dadataorganization:** иНН в DadataOrganization ([0184d21](https://gitlab.sovcombank.group/web/ecom/ui/commit/0184d214aba920477f1ab310f3dd1fe591145cf2))
+
 ## [2.9.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.9.0...v2.9.1) (2021-02-08)
 
 
