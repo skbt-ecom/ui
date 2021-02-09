@@ -5,7 +5,14 @@ import CircularProgress from "@material-ui/core/CircularProgress"
 import { getDadata } from "../getDadata"
 import withSpaceForHelperTxt from "../../HOCs/withSpaceForHelperTxt"
 
-const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...props }) => {
+const DadataAutocomplete = ({
+  type,
+  incomingValue,
+  dadataOptions,
+  renderOption,
+  onBlur,
+  ...props
+}) => {
   const [options, setOptions] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [dadataValue, setDadataValue] = useState(null)
@@ -113,6 +120,7 @@ const DadataAutocomplete = ({ type, incomingValue, dadataOptions, onBlur, ...pro
       loadingText="Загрузка..."
       noOptionsText="Нет вариантов"
       openText="Открыть"
+      renderOption={renderOption}
       renderInput={(params) => (
         <TextField
           {...props}
