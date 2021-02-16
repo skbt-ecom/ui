@@ -1,3 +1,10 @@
+# [2.11.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.10.0...v2.11.0) (2021-02-16)
+
+
+### Features
+
+* add field formatters, other utilities ([83d7326](https://gitlab.sovcombank.group/web/ecom/ui/commit/83d7326ca4c1b01275ed636ee2297b956f3b7195))
+
 # [2.10.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.9.1...v2.10.0) (2021-02-09)
 
 
