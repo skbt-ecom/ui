@@ -30,6 +30,7 @@ import TimePicker from "./fields/TimePicker"
 import AcceptmentField from "./fields/AcceptmentField"
 
 // import REGIONS from "../../enums/regions"
+import formatToRequest from "../../helpers/formatToRequest"
 
 import { requiredValidator } from "./validators/requiredValidator"
 import lengthValidator from "./validators/lengthValidator"
@@ -76,8 +77,17 @@ export function CreditAmountSlider() {
 }
 
 export function DadataFields() {
+  function handleSubmit(values) {
+    console.log(values)
+    const fieldsType = {
+      fio: "fio",
+    }
+    const fromattedValues = formatToRequest(values, fieldsType)
+    console.log(fromattedValues)
+  }
+
   return (
-    <FormLanding onChangeFields={action("onChangeFields")} onSubmit={onSubmit}>
+    <FormLanding onChangeFields={action("onChangeFields")} onSubmit={handleSubmit}>
       <DadataAddress name="address2" label="Адрес" />
       <DadataOrganization name="organization" label="Организация" isRequired />
       <DadataFio name="fio" label="ФИО" />
@@ -276,8 +286,18 @@ export function RegionByPhone() {
 }
 
 export function MaskedFields() {
+  function handleSubmit(values) {
+    console.log(values)
+    const fieldsType = {
+      birthdate: "date",
+      phone: "phone",
+    }
+    const fromattedValues = formatToRequest(values, fieldsType)
+    console.log(fromattedValues)
+  }
+
   return (
-    <FormLanding onSubmit={onSubmit}>
+    <FormLanding onSubmit={handleSubmit}>
       <EmailField name="email" label="Email" />
       <PhoneField name="phone" label="Телефон" />
       <DateField name="birthdate" label="Дата рождения" />
