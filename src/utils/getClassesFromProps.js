@@ -1,4 +1,4 @@
-export const getClassesFromProps = (props, className) => {
+export default function getClassesFromProps(props, className) {
   const {
     classes: { [className]: classes },
     ...restProps
