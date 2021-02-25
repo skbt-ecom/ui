@@ -1,3 +1,10 @@
+## [2.11.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.11.0...v2.11.1) (2021-02-25)
+
+
+### Bug Fixes
+
+* **datepicker:** исправить удаление нажатием backspace ([712405b](https://gitlab.sovcombank.group/web/ecom/ui/commit/712405b8b022db1010292e26e386e4f692ac9ff2))
+
 # [2.11.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.10.0...v2.11.0) (2021-02-16)
 
 
