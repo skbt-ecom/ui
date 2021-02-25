@@ -1,3 +1,10 @@
+# [2.13.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.12.0...v2.13.0) (2021-02-25)
+
+
+### Features
+
+* **verifycode:** add autofocus prop ([8406124](https://gitlab.sovcombank.group/web/ecom/ui/commit/8406124cd3baecab6109caef2488fdd3f806a4f2))
+
 # [2.12.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.11.2...v2.12.0) (2021-02-25)
 
 
