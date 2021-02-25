@@ -20,9 +20,9 @@ const acceptedKeys = [
   46,
 ]
 
-const VerifyCode = (props) => {
+export default function VerifyCode(props) {
   const classes = useStyles(props)
-  const { onChange, value, error, helperText } = props
+  const { onChange, value, error, helperText, autoFocus = false } = props
 
   const handleKeyDown = (e) => {
     const key = e.which || e.keyCode
@@ -48,6 +48,7 @@ const VerifyCode = (props) => {
       <div className={classes.verifyCodeWrapper}>
         <div className={classes.verifyCodeContainer}>
           <input
+            autoFocus={autoFocus} // eslint-disable-line jsx-a11y/no-autofocus
             className={classes.verifyCodeInput}
             onKeyDown={handleKeyDown}
             maxLength="4"
@@ -64,5 +65,3 @@ const VerifyCode = (props) => {
     </FormControl>
   )
 }
-
-export default React.memo(VerifyCode)
