@@ -7,37 +7,31 @@ import VerifyCode from "./VerifyCode"
 
 const story = {
   title: "VerifyCode",
+  args: {
+    autoFocus: false,
+    error: false,
+    onChange: action("onChange"),
+  },
+  argTypes: {
+    value: { type: "string" },
+    classes: { type: "object" },
+    helperText: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 }
 export default story
 
-export function Timer() {
-  return (
-    <VerifyCode
-      onChange={action("onChange")}
-      error
-      helperText={
-        <Typography variant="caption">
-          Отправить код повторно через <strong>25 сек</strong>
-        </Typography>
-      }
-    />
-  )
-}
+const Template = (args) => <VerifyCode {...args} />
 
-export function link() {
-  return (
-    <VerifyCode
-      onChange={action("onChange")}
-      error
-      helperText={
-        <button onClick={() => undefined} type="button">
-          Отправить код повторно
-        </button>
-      }
-    />
-  )
-}
+export const Timer = Template.bind({})
 
-export function Error() {
-  return <VerifyCode onChange={action("onChange")} error classes={{ errorTextRoot: "11111" }} />
+Timer.args = {
+  helperText: (
+    <Typography variant="caption">
+      Отправить код повторно через <strong>25 сек</strong>
+    </Typography>
+  ),
 }
