@@ -12,7 +12,7 @@ const RadioGroupBtn = React.memo((props) => {
     props.onChange(value)
   }
 
-  const { items, name } = props
+  const { items, name, radioBtnClasses } = props
   return (
     <div className={classes.container}>
       {items.map((item, i) => (
@@ -23,7 +23,7 @@ const RadioGroupBtn = React.memo((props) => {
           onChange={onChange}
           selectedValue={props.value}
           className={classes.item}
-          classes={classes}
+          classes={radioBtnClasses}
         />
       ))}
     </div>
