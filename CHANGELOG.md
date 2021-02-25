@@ -1,3 +1,10 @@
+# [2.12.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.11.2...v2.12.0) (2021-02-25)
+
+
+### Features
+
+* **radiogroupbtn:** добавить RadioGroupBtn для FormLanding ([017488a](https://gitlab.sovcombank.group/web/ecom/ui/commit/017488a8681655c6505ee365f08573cf7eec3e69))
+
 ## [2.11.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.11.1...v2.11.2) (2021-02-25)
 
 
