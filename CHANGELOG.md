@@ -1,3 +1,10 @@
+## [2.11.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.11.1...v2.11.2) (2021-02-25)
+
+
+### Bug Fixes
+
+* **radiogroupbtn:** добавить возможность менять стили кнопкам RadioGroupBtn ([cb6b863](https://gitlab.sovcombank.group/web/ecom/ui/commit/cb6b8634316e6a211fca11a9921ec6d4a7351d61))
+
 ## [2.11.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.11.0...v2.11.1) (2021-02-25)
 
 
