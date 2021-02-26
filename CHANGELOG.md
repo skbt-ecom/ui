@@ -1,3 +1,10 @@
+## [2.14.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.14.0...v2.14.1) (2021-02-26)
+
+
+### Bug Fixes
+
+* **datepicker:** пофиксить баги с валидацией даты ([d11a8ad](https://gitlab.sovcombank.group/web/ecom/ui/commit/d11a8ad14f0d0194a0408a542f58ead537e37e6e))
+
 # [2.14.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.13.0...v2.14.0) (2021-02-26)
 
 
