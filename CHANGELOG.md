@@ -1,3 +1,10 @@
+# [2.14.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.13.0...v2.14.0) (2021-02-26)
+
+
+### Features
+
+* **verifycode:** add errorMsg prop ([256fedc](https://gitlab.sovcombank.group/web/ecom/ui/commit/256fedcc319c3e8965c6c3d9e2feaddf1f49ee82))
+
 # [2.13.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.12.0...v2.13.0) (2021-02-25)
 
 
