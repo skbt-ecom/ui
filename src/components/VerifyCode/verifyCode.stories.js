@@ -8,13 +8,15 @@ import VerifyCode from "./VerifyCode"
 const story = {
   title: "VerifyCode",
   args: {
-    autoFocus: false,
-    error: false,
     onChange: action("onChange"),
   },
+  // https://storybook.js.org/docs/react/essentials/controls#annotation
   argTypes: {
+    autoFocus: { type: "boolean" },
+    error: { type: "boolean" },
     value: { type: "string" },
     classes: { type: "object" },
+    errorMsg: { type: "string" },
     helperText: {
       table: {
         disable: true,
