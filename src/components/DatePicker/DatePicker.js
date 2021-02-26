@@ -9,15 +9,15 @@ export default function DatePicker({ onChange, ...restProps }) {
   const [selectedValue, setSelectedValue] = useState(null)
 
   function handleChange(value) {
-    if (value) {
+    if (value && !value.invalid) {
       const date = new Date(value.ts).toLocaleDateString("ru-RU")
-
       if (onChange) {
         onChange(date)
       }
-
-      setSelectedValue(value)
+    } else if (onChange) {
+      onChange(null)
     }
+    setSelectedValue(value)
   }
 
   return (
