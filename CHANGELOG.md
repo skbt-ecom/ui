@@ -1,3 +1,10 @@
+## [2.14.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.14.1...v2.14.2) (2021-03-02)
+
+
+### Bug Fixes
+
+* **buttonesia:** add disabled prop from component to button ([e5cbf9d](https://gitlab.sovcombank.group/web/ecom/ui/commit/e5cbf9d35f6783ab2da6100fa19ae7b726e6d34c))
+
 ## [2.14.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.14.0...v2.14.1) (2021-02-26)
 
 
