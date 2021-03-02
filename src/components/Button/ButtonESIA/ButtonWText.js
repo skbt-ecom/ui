@@ -1,7 +1,7 @@
 import React from "react"
 import useStyles from "./styles"
 
-const ButtonWText = ({ startIcon: StartIcon, onClick }) => {
+const ButtonWText = ({ startIcon: StartIcon, onClick, disabled }) => {
   const classes = useStyles()
   return (
     <div className={classes.bwtContainer}>
@@ -11,7 +11,7 @@ const ButtonWText = ({ startIcon: StartIcon, onClick }) => {
           <strong>Используете Госуслуги? Получите решение быстрее.</strong>
         </p>
       </div>
-      <button onClick={onClick} className={classes.bwtButton} type="button">
+      <button onClick={onClick} className={classes.bwtButton} disabled={disabled} type="button">
         Войти
       </button>
     </div>

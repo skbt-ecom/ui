@@ -12,7 +12,12 @@ const ButtonESIA = ({ withouthDescr, iconDisabled, iconDefault, onClick, disable
 
   return (
     <div className={classes.buttonContainer}>
-      <ButtonWText classes={classes.bwtContainer} startIcon={startIcon} onClick={onClick} />
+      <ButtonWText
+        classes={classes.bwtContainer}
+        startIcon={startIcon}
+        onClick={onClick}
+        disabled={disabled}
+      />
       <Button
         {...props}
         disabled={disabled}
