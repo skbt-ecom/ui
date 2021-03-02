@@ -10,7 +10,7 @@ import SubmitButton from "../FormLanding/fields/SubmitButton"
 import CloseIcon from "./CloseIcon"
 import useStyles from "./styles"
 
-const ModalPhoneForm = ({ isModalOpen, onClose, onSubmit, ...props }) => {
+const ModalPhoneForm = ({ isModalOpen, onClose, onSubmit, title, subtitle, ...props }) => {
   const styles = useStyles(props)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -39,11 +39,15 @@ const ModalPhoneForm = ({ isModalOpen, onClose, onSubmit, ...props }) => {
           </button>
           <div className={styles.container}>
             <h2 className={styles.title}>
-              Мы одобрим ваш кредит
-              <br />
-              всего за 5 минут
+              {title || (
+                <>
+                  Мы одобрим ваш кредит
+                  <br />
+                  всего за 5 минут
+                </>
+              )}
             </h2>
-            <p className={styles.subTitle}>Нужен только ваш номер телефона</p>
+            <p className={styles.subTitle}>{subtitle || "Нужен только ваш номер телефона"}</p>
             <Form onSubmit={submitHandler}>
               <PhoneField label="Телефон" name="phone" />
               <AcceptmentField
