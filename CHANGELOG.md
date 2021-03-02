@@ -1,3 +1,10 @@
+# [2.15.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.14.2...v2.15.0) (2021-03-02)
+
+
+### Features
+
+* add title and subtitle props to ModalPhoneForm ([ffff6c2](https://gitlab.sovcombank.group/web/ecom/ui/commit/ffff6c2ed49c21113c07630bc3a2c2c67e6e0839))
+
 ## [2.14.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.14.1...v2.14.2) (2021-03-02)
 
 
