@@ -1,7 +1,7 @@
 import React, { useCallback } from "react"
 import MaterialDadataFio from "../../../DadataFields/DadataFio"
 import { Field } from "../../FormContext/Field"
-import { fioDadataValidator } from "../../validators"
+import { fioDadataValidator } from "../../validators/dadataFioValidator"
 
 import useStyles from "../styles"
 

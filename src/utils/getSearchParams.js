@@ -1,7 +1,7 @@
-import isGatsbyBuildTime from "./isGatsbyBuildTime"
+import canUseDom from "./canUseDom"
 
-export function getQueryStringParams() {
-  const search = isGatsbyBuildTime ? "" : window.location.search
+export default function getQueryStringParams() {
+  const search = canUseDom ? "" : window.location.search
   const searchParams = new URLSearchParams(search)
   const params = {}
 

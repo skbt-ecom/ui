@@ -32,7 +32,7 @@ import AcceptmentField from "./fields/AcceptmentField"
 // import REGIONS from "../../enums/regions"
 import formatToRequest from "../../helpers/formatToRequest"
 
-import { requiredValidator } from "./validators/requiredValidator"
+import requiredValidator from "./validators/required"
 import lengthValidator from "./validators/lengthValidator"
 
 const DADATA_ADDRESS_FLAT_REGEXP = /(.*?)\s*, кв (\d+(?:[/-]\d+)?)?$/

@@ -1,4 +1,4 @@
-const formatFIO = (dadataFieldValue) => {
+export default function formatFIO(dadataFieldValue) {
   const { dadataValue, inputValue, isDadataValueActual } = dadataFieldValue
 
   if (isDadataValueActual) {
@@ -9,5 +9,3 @@ const formatFIO = (dadataFieldValue) => {
   const [surname, name, patronymic] = inputValue.split(" ")
   return { surname, name, patronymic }
 }
-
-export default formatFIO

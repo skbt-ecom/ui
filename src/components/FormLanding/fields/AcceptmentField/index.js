@@ -46,6 +46,7 @@ const Acceptment = React.memo((props) => {
           root: classes.labelRoot,
         },
         helperTextClasses: { root: classes.helperTextRoot },
+        checkboxClasses: { root: classes.checkboxRoot },
       }}
       onChange={onChange}
       checked={props.value}

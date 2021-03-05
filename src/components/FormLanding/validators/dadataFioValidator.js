@@ -1,8 +1,8 @@
-import { requiredValidator } from "./requiredValidator"
+import requiredValidator from "./required"
 
 const FIO_ERROR_TXT = "Введите фамилию, имя (и отчество, если есть)"
 
-const validateFioStrValue = value => {
+const validateFioStrValue = (value) => {
   const trimmedValue = value.trim()
 
   if (trimmedValue.split(" ").length < 2) {
@@ -16,7 +16,7 @@ const validateFioStrValue = value => {
   return null
 }
 
-const validateFioDadataValue = dadataObj => {
+const validateFioDadataValue = (dadataObj) => {
   const {
     data: { name, surname },
   } = dadataObj
@@ -32,7 +32,7 @@ const validateFioDadataValue = dadataObj => {
  *
  * @param {object | string} dadataFio DadataFio value
  */
-export const fioDadataValidator = dadataFio => {
+export const fioDadataValidator = (dadataFio) => {
   const { dadataValue, inputValue, isDadataValueActual } = dadataFio
 
   if (requiredValidator(inputValue)) {

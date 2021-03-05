@@ -1,4 +1,4 @@
-import { requiredValidator } from "./requiredValidator"
+import requiredValidator from "./required"
 
 const AUTO_ERROR_TXT = "Введите модель автомобиля"
 

@@ -10,8 +10,8 @@ import Close from "@material-ui/icons/Close"
 
 import useStyles from "./styles"
 
-export default function Uploader({ onLoad, helperText, ...props }) {
-  const classes = useStyles(props)
+export default function Uploader({ onLoad, helperText, classes, disabled = false }) {
+  const upClasses = useStyles({ classes })
   const [isLoaded, setIsLoaded] = useState(false)
   const [imgSrc, setImgSrc] = useState("")
   const handleLoad = (files) => {
@@ -19,13 +19,19 @@ export default function Uploader({ onLoad, helperText, ...props }) {
 
     if (!file) return
 
-    const url = URL.createObjectURL(file)
-    setIsLoaded(true)
-    setImgSrc(url)
+    const reader = new FileReader()
 
-    if (onLoad) {
-      onLoad(url)
+    reader.onload = (e) => {
+      const { result } = e.target
+      setIsLoaded(true)
+      setImgSrc(result)
+
+      if (onLoad) {
+        onLoad(result)
+      }
     }
+
+    reader.readAsDataURL(file)
   }
   const onDrop = useCallback(handleLoad, [onLoad])
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -33,8 +39,11 @@ export default function Uploader({ onLoad, helperText, ...props }) {
     accept: "image/*",
     multiple: false,
   })
-
-  const active = isLoaded || isDragActive ? classes.active : ""
+  const active = isLoaded || isDragActive ? upClasses.active : ""
+  const btnBaseClasses = {
+    root: cn(upClasses.uploader, active),
+    disabled: upClasses.disabled,
+  }
 
   function removeImage() {
     setIsLoaded(false)
@@ -42,19 +51,19 @@ export default function Uploader({ onLoad, helperText, ...props }) {
   }
 
   return (
-    <div className={classes.root}>
-      <ButtonBase {...getRootProps()} className={cn(classes.uploader, active)} disabled={isLoaded}>
+    <div className={upClasses.root}>
+      <ButtonBase {...getRootProps()} disabled={disabled || isLoaded} classes={btnBaseClasses}>
         {isLoaded ? (
-          <img alt="" src={imgSrc} className={classes.imgOut} />
+          <img alt="" src={imgSrc} className={upClasses.imgOut} />
         ) : (
-          <CloudUpload className={classes.uploadIcon} />
+          <CloudUpload className={upClasses.uploadIcon} />
         )}
-        {!isLoaded && <h4 className={classes.helperText}>{helperText}</h4>}
+        {!isLoaded && <h4 className={upClasses.helperText}>{helperText}</h4>}
         <input {...getInputProps()} />
       </ButtonBase>
       {isLoaded && (
-        <Button className={classes.removeBtn} onClick={removeImage}>
-          <Close className={classes.removeIcon} />
+        <Button className={upClasses.removeBtn} onClick={removeImage}>
+          <Close className={upClasses.removeIcon} />
         </Button>
       )}
     </div>
