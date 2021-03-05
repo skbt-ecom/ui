@@ -1,4 +1,4 @@
-import { requiredValidator } from "./requiredValidator"
+import requiredValidator from "./required"
 
 /**
  *

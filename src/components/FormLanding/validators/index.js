@@ -10,3 +10,7 @@ export { requiredValidator } from "./requiredValidator"
 export { autocompleteValidator } from "./autocompleteValidator"
 export { autoDadataValidator } from "./dadataAutoValidator"
 export { organizationValidator } from "./organizationValidator"
+
+if (process.env.NODE_ENV !== "production") {
+  console.error('⚠️ Use the "validators/{validator}.js" instead. ')
+}

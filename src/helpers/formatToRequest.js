@@ -16,7 +16,7 @@ const formattersByFieldKey = {
   dadataAddressFlat: formatDadataAddressFlat,
 }
 
-export default function formatFieldsToRequest(values = {}, fieldsType = {}) {
+export default function formatToRequest(values = {}, fieldsType = {}) {
   const result = {}
 
   Object.keys(values).forEach((fieldKey) => {
