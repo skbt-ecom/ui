@@ -1,3 +1,16 @@
+# [2.16.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.15.0...v2.16.0) (2021-03-05)
+
+
+### Bug Fixes
+
+* formatToRequest name ([9cb2fdb](https://gitlab.sovcombank.group/web/ecom/ui/commit/9cb2fdbffd61ab4e40e6119a185bad9a23d30150))
+
+
+### Features
+
+* split validators, add utils, Uploader fixes ([ae8e224](https://gitlab.sovcombank.group/web/ecom/ui/commit/ae8e22428063619f6c8d84e6e964f0ae53ca350d))
+* **getcladrids:** add ([898972b](https://gitlab.sovcombank.group/web/ecom/ui/commit/898972bfb13901353d4bea65ada2d5d89870428d))
+
 # [2.15.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.14.2...v2.15.0) (2021-03-02)
 
 
