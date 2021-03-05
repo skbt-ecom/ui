@@ -1,8 +1,8 @@
-import { requiredValidator } from "./requiredValidator"
+import requiredValidator from "./required"
 
 const FIO_ERROR_TXT = "Введите фамилию, имя (и отчество, если есть)"
 
-const validateFioStrValue = value => {
+const validateFioStrValue = (value) => {
   const trimmedValue = value.trim()
 
   if (trimmedValue.split(" ").length < 2) {
@@ -16,7 +16,7 @@ const validateFioStrValue = value => {
   return null
 }
 
-const validateFioDadataValue = dadataObj => {
+const validateFioDadataValue = (dadataObj) => {
   const { name, surname } = dadataObj
 
   if (!name || !surname) {
@@ -30,7 +30,7 @@ const validateFioDadataValue = dadataObj => {
  *
  * @param {object | string} value DadataField's value
  */
-export const fioValidator = value => {
+export const fioValidator = (value) => {
   // const isDadataFIOHasEmptyFields = ({ name, surname }) => name && surname;
 
   if (requiredValidator(value)) {

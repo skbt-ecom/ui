@@ -1,10 +1,10 @@
-import { requiredValidator } from "./requiredValidator"
+import requiredValidator from "./required"
 
 /**
  *
  * @param {object} dadataValue DadataField's value
  */
-export const addressValidator = dadataValue => {
+export const addressValidator = (dadataValue) => {
   if (requiredValidator(dadataValue)) {
     return "Выберите значение из списка"
   }
@@ -25,7 +25,7 @@ export const addressValidator = dadataValue => {
  *
  * @param {object} dadataValue DadataField's value
  */
-export const addressWithFlatValidator = dadataValue => {
+export const addressWithFlatValidator = (dadataValue) => {
   const addressValidatorResult = addressValidator(dadataValue)
 
   if (addressValidatorResult) {

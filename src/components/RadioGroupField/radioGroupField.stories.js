@@ -9,6 +9,9 @@ const useStyles = makeStyles(() => ({
   formControlLabel: {
     marginRight: 30,
   },
+  formControlLabelText: {
+    fontSize: 14,
+  },
 }))
 
 const items = [
@@ -29,9 +32,7 @@ export function Default() {
       onChange={action("onChange")}
       items={items}
       label="Ваш пол:"
-      classes={{
-        formControlLabel: classes.formControlLabel,
-      }}
+      classes={classes}
       // row={false}
       defaultValue="m"
       // value={'m'}

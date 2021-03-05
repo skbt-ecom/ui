@@ -5,6 +5,7 @@ import logo from "./img/logo.svg"
 function styles(theme) {
   return {
     logo: {
+      cursor: "default",
       border: "0",
       color: "transparent",
       outline: "none",

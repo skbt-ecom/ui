@@ -1,4 +1,4 @@
-const formatDadataAddressFlat = (dadataAddressFlatValue) => {
+export default function formatDadataAddressFlat(dadataAddressFlatValue) {
   const { isNoFlat, inputFlat, ...dadataValues } = dadataAddressFlatValue.dadataValue
 
   return {
@@ -6,5 +6,3 @@ const formatDadataAddressFlat = (dadataAddressFlatValue) => {
     data: { ...dadataValues.data, flat: inputFlat },
   }
 }
-
-export default formatDadataAddressFlat

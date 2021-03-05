@@ -1,7 +1,7 @@
 import React from "react"
 import MaterialAddressField from "../../../AddressField"
 import { Field } from "../../FormContext/Field"
-import { addressWithFlatValidator } from "../../validators"
+import { addressWithFlatValidator } from "../../validators/addressValidator"
 
 import useStyles from "../styles"
 import { useAddressDadataStyles, useFlatInfoStyles } from "./styles"

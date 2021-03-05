@@ -1,5 +1,7 @@
-/**
- *
- * @param {number|string|boolean|} value
- */
-export const requiredValidator = value => (value || value === 0 ? null : "Заполните поле")
+import requiredValidator from "./required"
+
+if (process.env.NODE_ENV !== "production") {
+  console.error('⚠️ Deprecation "requiredValidator". Use the "validators/required.js" instead')
+}
+
+export { requiredValidator }

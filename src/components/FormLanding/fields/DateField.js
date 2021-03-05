@@ -2,7 +2,8 @@ import React from "react"
 
 import MaterialDateField from "../../DateField"
 import { Field } from "../FormContext/Field"
-import { dateValidator, birthdateValidator } from "../validators"
+import { dateValidator } from "../validators/dateValidator"
+import { birthdateValidator } from "../validators/birthdateValidator"
 
 import useStyles from "./styles"
 

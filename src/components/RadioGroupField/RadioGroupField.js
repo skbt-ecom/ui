@@ -36,7 +36,10 @@ export default function RadioGroupField(props) {
             value={v}
             control={<Radio color={color} />}
             label={l}
-            className={classes.formControlLabel}
+            classes={{
+              root: classes.formControlLabel,
+              label: classes.formControlLabelText,
+            }}
           />
         ))}
       </RadioGroup>

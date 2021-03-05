@@ -1,7 +1,7 @@
 import React, { useCallback } from "react"
 import MateriaDadataAddressFlat from "../../../DadataFields/DadataAddressFlat"
 import { Field } from "../../FormContext/Field"
-import { addressFlatDadataValidator } from "../../validators"
+import { addressFlatDadataValidator } from "../../validators/dadataAddressValidator"
 
 import useStyles from "../styles"
 import { useAddressDadataStyles, useFlatInfoStyles } from "./styles"
@@ -28,7 +28,7 @@ const DadataAddressFlat = React.memo(({ onChange, ...props }) => {
   )
 })
 
-const WrappedField = props => {
+const WrappedField = (props) => {
   const classes = useStyles(props)
   return (
     <div className={classes.fieldWrapper}>
