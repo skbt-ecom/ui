@@ -2,7 +2,7 @@ import React from "react"
 
 import MaterialMaskedField from "../../MaskedField"
 import { Field } from "../FormContext/Field"
-import { requiredValidator } from "../validators/requiredValidator"
+import requiredValidator from "../validators/required"
 
 import useStyles from "./styles"
 

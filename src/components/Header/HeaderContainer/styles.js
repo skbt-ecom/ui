@@ -5,6 +5,9 @@ function styles(theme) {
     header: {
       width: "100%",
       backgroundColor: "#fff",
+      boxShadow: "-1px 2px 4px rgba(0, 0, 0, 0.05)",
+      position: "relative",
+      zIndex: 10,
     },
 
     navigation: {

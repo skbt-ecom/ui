@@ -31,6 +31,14 @@ function styles(theme) {
 
     active: {},
 
+    disabled: {
+      borderColor: "#E8E8E8",
+
+      "& $uploadIcon": {
+        fill: "#E8E8E8",
+      },
+    },
+
     uploadIcon: {
       fill: lightenColor,
       transition: "0.3s fill",

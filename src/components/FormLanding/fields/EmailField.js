@@ -2,7 +2,7 @@ import React from "react"
 
 import TextField from "./TextField"
 
-import { emailValidator } from "../validators"
+import { emailValidator } from "../validators/emailValidator"
 
 const EmailField = (props) => <TextField {...props} />
 

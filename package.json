@@ -7,7 +7,7 @@
     "pack-ui": "npm run publish:prepare && cd lib && nano package.json && npm pack",
     "publish:prepare": "npm run build && cp package.json lib",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "start-storybook -p 3000",
+    "start": "start-storybook -p 8080",
     "start:ci": "start-storybook -p 8080 --ci",
     "build-storybook": "build-storybook",
     "compile": "NODE_ENV=production babel src --out-dir lib --copy-files --ignore \"**/*.stories.js\" --no-copy-ignored --config-file ./babelConfig.js",

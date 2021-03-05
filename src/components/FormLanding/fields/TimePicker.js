@@ -2,7 +2,7 @@ import React from "react"
 import MUITimePicker from "../../TimePicker"
 import { Field } from "../FormContext/Field"
 
-import { requiredValidator } from "../validators/requiredValidator"
+import requiredValidator from "../validators/required"
 
 import useStyles from "./styles"
 
