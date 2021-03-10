@@ -27,7 +27,7 @@ const Footer = (props, ref) => {
 
   return (
     <footer className={classes.footer} ref={ref}>
-      <Container fixed={false}>
+      <Container className={classes.root} fixed={false}>
         <div className={classes.inner}>
           {left || (
             <PhoneMain
