@@ -20,6 +20,7 @@ const Footer = (props, ref) => {
     phoneHint,
     socialLinks,
     storeLinks,
+    withStore,
   } = props
   function showRestLigal() {
     setIsHide(false)
@@ -52,7 +53,11 @@ const Footer = (props, ref) => {
                 Все права защищены
               </p>
               <p>Генеральная лицензия Банка России №963 от 5 декабря 2014 г.</p>
-              <StoreLinks links={storeLinks} />
+              {withStore ? (
+                <StoreLinks links={storeLinks} />
+              ) : (
+                <div style={{ width: "100%", height: 80 }} />
+              )}
             </div>
           )}
         </div>
@@ -77,6 +82,7 @@ const ForwardedFooter = React.forwardRef(Footer)
 ForwardedFooter.defaultProps = {
   shortText: "",
   restText: "",
+  withStore: true,
 }
 
 export default ForwardedFooter
