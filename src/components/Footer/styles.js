@@ -20,6 +20,8 @@ function styles(theme) {
       },
     },
 
+    root: {},
+
     inner: {
       [theme.breakpoints.up("sm")]: {
         display: "flex",
