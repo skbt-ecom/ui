@@ -1,3 +1,11 @@
+# [2.17.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.16.0...v2.17.0) (2021-03-11)
+
+
+### Features
+
+* add withStore prop in Footer ([e967a3f](https://gitlab.sovcombank.group/web/ecom/ui/commit/e967a3f49f78e1f12fe053bce566fab84b517ce7))
+* **footer:** add root className to footer's container ([2c087eb](https://gitlab.sovcombank.group/web/ecom/ui/commit/2c087eb9eecfebddbaef3b426dd1b9d9d1f05ea0))
+
 # [2.16.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.15.0...v2.16.0) (2021-03-05)
 
 
