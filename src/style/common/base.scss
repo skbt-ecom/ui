@@ -1,0 +1,25 @@
+html,
+body {
+  font: 400 16px Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.167;
+}
+
+.bebas {
+  font-family: Bebas, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#___gatsby {
+  height: 100vh;
+}
+
+#___gatsby,
+#gatsby-focus-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#gatsby-focus-wrapper {
+  flex: 1 0 auto;
+}
