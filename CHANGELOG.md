@@ -1,3 +1,10 @@
+# [2.19.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.18.0...v2.19.0) (2021-03-15)
+
+
+### Features
+
+* **header:** add Main header ([7f902f2](https://gitlab.sovcombank.group/web/ecom/ui/commit/7f902f23711675082d265036b2fdf8e5d9b41218))
+
 # [2.18.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.17.0...v2.18.0) (2021-03-15)
 
 
