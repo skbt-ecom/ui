@@ -1,6 +1,9 @@
 import { makeStyles } from "@material-ui/core/styles"
 
 function styles(theme) {
+  const isHalva = theme.name === "halva"
+  const isBlack = theme.name === "black"
+
   return {
     social: {
       display: "flex",
@@ -10,7 +13,7 @@ function styles(theme) {
 
       [theme.breakpoints.up("sm")]: {
         marginBottom: 29,
-        paddingRight: props => props.paddingRight,
+        paddingRight: (props) => props.paddingRight,
       },
     },
 
@@ -19,7 +22,7 @@ function styles(theme) {
 
       "& svg": {
         display: "inline-block",
-        fill: theme.name === "halva" ? "#979797" : "#a1afbf",
+        fill: isHalva ? "#979797" : isBlack ? "#fff" : "#a1afbf", // eslint-disable-line
         width: 27,
         height: 25,
       },
