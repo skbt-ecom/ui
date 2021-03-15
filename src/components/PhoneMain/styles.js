@@ -1,13 +1,15 @@
 import { makeStyles } from "@material-ui/core/styles"
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   phoneContainer: {
-    fontFamily: '"Roboto", Arial, Helvetica, sans-serif',
     color: "#a1afbf",
   },
+
   phoneMultiple: {},
 
-  phoneHint: {},
+  phoneHint: {
+    fontSize: 12,
+  },
 
   phoneNum: {},
 
