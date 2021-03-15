@@ -1,3 +1,10 @@
+# [2.20.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.19.0...v2.20.0) (2021-03-15)
+
+
+### Features
+
+* add common page styles ([91ab1f5](https://gitlab.sovcombank.group/web/ecom/ui/commit/91ab1f530733ae98486999fc1b31e9a9b2862be6))
+
 # [2.19.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.18.0...v2.19.0) (2021-03-15)
 
 
