@@ -1,3 +1,10 @@
+# [2.18.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.17.0...v2.18.0) (2021-03-15)
+
+
+### Features
+
+* add new black theme ([ef6c979](https://gitlab.sovcombank.group/web/ecom/ui/commit/ef6c979c6662cf35d14661f64ba9d9cfc5641b83))
+
 # [2.17.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.16.0...v2.17.0) (2021-03-11)
 
 
