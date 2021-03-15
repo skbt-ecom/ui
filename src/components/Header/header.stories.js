@@ -1,24 +1,55 @@
 import React from "react"
 
+import { action } from "@storybook/addon-actions"
+
+import HeaderMain from "./Main"
 import HeaderHalva from "./Halva"
 
 const story = {
   title: "Header",
+  args: {
+    classes: { logo: "asdasd", header: "asd" },
+    onLogoClick: action("onChange"),
+  },
+  // https://storybook.js.org/docs/react/essentials/controls#annotation
+  argTypes: {
+    sticky: { type: "boolean" },
+  },
 }
 export default story
 
-export function Halva() {
+function Wrapper({ children }) {
   return (
-    <div style={{ border: "1px solid #000" }}>
-      <HeaderHalva classes={{ logo: "asdasd", other: { header: "asd" } }} />
-    </div>
+    <>
+      {children}
+      <div style={{ height: 1000 }} />
+    </>
   )
 }
 
-export function withRightBlock() {
+function TemplateMain(args) {
   return (
-    <div style={{ border: "1px solid #000" }}>
-      <HeaderHalva classes={{ logo: "asdasd", other: { header: "asd" } }}>right</HeaderHalva>
-    </div>
+    <Wrapper>
+      <HeaderMain {...args} />
+    </Wrapper>
   )
+}
+
+function TemplateHalva(args) {
+  return (
+    <Wrapper>
+      <HeaderHalva {...args} />
+    </Wrapper>
+  )
+}
+
+export const Main = TemplateMain.bind({})
+Main.args = {
+  withButton: true,
+  right: null,
+}
+
+export const Halva = TemplateHalva.bind({})
+Halva.args = {
+  right: null,
 }

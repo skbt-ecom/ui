@@ -29,7 +29,6 @@ export default story
 const Template = (args) => <VerifyCode {...args} />
 
 export const Timer = Template.bind({})
-
 Timer.args = {
   helperText: (
     <Typography variant="caption">

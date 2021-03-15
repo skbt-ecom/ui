@@ -5,20 +5,20 @@ import HeaderContainer from "../HeaderContainer"
 
 import useStyles from "./styles"
 
-export default function Halva({ children, classes, onClick }) {
-  const { other, ...rest } = classes || {}
-  const currentClasses = useStyles({ classes: rest })
+export default function Halva({ right, classes = {}, onLogoClick }) {
+  const { logo, ...rest } = classes
+  const btnClasses = useStyles({ classes: { logo } })
 
   return (
-    <HeaderContainer classes={other}>
+    <HeaderContainer classes={rest}>
       <button
         type="button"
-        className={cn(currentClasses.logo, onClick ? currentClasses.btn : "")}
-        onClick={onClick}
+        className={cn(btnClasses.logo, onLogoClick && btnClasses.btn)}
+        onClick={onLogoClick}
       >
         -
       </button>
-      {children}
+      {right}
     </HeaderContainer>
   )
 }
