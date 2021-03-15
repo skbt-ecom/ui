@@ -20,6 +20,7 @@ const Acceptment = React.memo((props) => {
         <>
           Выражаю{" "}
           <Link
+            className={classes.link}
             href="https://app.sovcombank.ru/policy/"
             target="_blank"
             rel="noopener noreferrer"
@@ -29,6 +30,7 @@ const Acceptment = React.memo((props) => {
           </Link>{" "}
           на&nbsp;обработку персональных данных и подтверждаю, что ознакомлен с&nbsp;
           <Link
+            className={classes.link}
             href="https://app.sovcombank.ru/politika-konfidencialnosti/"
             target="_blank"
             rel="noopener noreferrer"

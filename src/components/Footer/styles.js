@@ -2,13 +2,14 @@ import { makeStyles } from "@material-ui/core/styles"
 
 function styles(theme) {
   const isHalva = theme.name === "halva"
-  const color = isHalva ? "#979797" : "#a1afbf"
+  const isBlack = theme.name === "black"
+  const color = isHalva ? "#979797" : isBlack ? "#fff" : "#a1afbf" // eslint-disable-line
 
   return {
     footer: {
       fontFamily: theme.typography.fontFamily,
       fontWeight: 400,
-      background: "#fff",
+      background: isBlack ? theme.palette.primary.main : "#fff",
       padding: "40px 0",
 
       [theme.breakpoints.up("sm")]: {
@@ -42,7 +43,7 @@ function styles(theme) {
     },
 
     phoneNum: {
-      color: isHalva ? "#757575" : "#607289",
+      color: isHalva ? "#757575" : isBlack ? "#fff" : "#607289", // eslint-disable-line
       fontSize: 23,
       lineHeight: "23px",
     },
@@ -105,12 +106,13 @@ function styles(theme) {
       display: "inline-block",
       background: "transparent",
       border: 0,
-      borderBottom: `1px solid ${isHalva ? color : "#607286"}`,
-      color: isHalva ? "#757575" : "#607286",
+      borderBottom: `1px solid ${isHalva ? color : isBlack ? "#fff" : "#607286"}`, // eslint-disable-line
+      color: isHalva ? "#757575" : isBlack ? "#fff" : "#607286", // eslint-disable-line
       fontSize: 12,
       paddingTop: 8,
-      lineHeight: "20px",
+      lineHeight: isBlack ? 1 : "20px",
       cursor: "pointer",
+      fontWeight: isBlack ? "bold" : "normal",
     },
   }
 }
