@@ -44,20 +44,10 @@ function styles(theme) {
 
     phoneNum: {
       color: isHalva ? "#757575" : isBlack ? "#fff" : "#607289", // eslint-disable-line
-      fontSize: 23,
-      lineHeight: "23px",
     },
 
     phoneMultiple: {
-      fontSize: 23,
-      lineHeight: "23px",
       marginBottom: 8,
-    },
-
-    phoneHint: {
-      fontSize: 10,
-      letterSpacing: "0.2px",
-      margin: 0,
     },
 
     copyright: {
@@ -110,7 +100,7 @@ function styles(theme) {
       color: isHalva ? "#757575" : isBlack ? "#fff" : "#607286", // eslint-disable-line
       fontSize: 12,
       paddingTop: 8,
-      lineHeight: isBlack ? 1 : "20px",
+      lineHeight: 1.2,
       cursor: "pointer",
       fontWeight: isBlack ? "bold" : "normal",
     },

@@ -35,11 +35,10 @@ export const usePhoneStyles = makeStyles((theme) => ({
   phoneMultiple: {
     marginBottom: 4,
     fontSize: 16,
-    lineHeight: "16px",
+    lineHeight: 1,
 
     [theme.breakpoints.up("md")]: {
       fontSize: 20,
-      lineHeight: "20px",
     },
   },
 }))
