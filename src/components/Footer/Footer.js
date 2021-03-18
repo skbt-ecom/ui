@@ -39,7 +39,6 @@ const Footer = (props, ref) => {
                 phoneContainer: classes.phoneContainer,
                 phoneNum: classes.phoneNum,
                 phoneMultiple: classes.phoneMultiple,
-                phoneHint: classes.phoneHint,
               }}
             />
           )}

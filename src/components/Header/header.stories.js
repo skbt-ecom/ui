@@ -35,18 +35,23 @@ function TemplateMain(args) {
   )
 }
 
+export const Main = TemplateMain.bind({})
+Main.args = {
+  withButton: true,
+  right: null,
+  PhoneProps: {
+    phone: "8 800 100-10-20",
+    phoneHint: "Для звонков по России (бесплатно)",
+    phones: ["8 800 100-10-20"],
+  },
+}
+
 function TemplateHalva(args) {
   return (
     <Wrapper>
       <HeaderHalva {...args} />
     </Wrapper>
   )
-}
-
-export const Main = TemplateMain.bind({})
-Main.args = {
-  withButton: true,
-  right: null,
 }
 
 export const Halva = TemplateHalva.bind({})
