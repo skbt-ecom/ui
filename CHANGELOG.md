@@ -1,3 +1,10 @@
+## [2.20.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.20.1...v2.20.2) (2021-03-18)
+
+
+### Bug Fixes
+
+* acceptmentField, PhoneMain styles ([50bbeec](https://gitlab.sovcombank.group/web/ecom/ui/commit/50bbeec6b817d580015ea36bedb216d12c4cd398))
+
 ## [2.20.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.20.0...v2.20.1) (2021-03-18)
 
 
