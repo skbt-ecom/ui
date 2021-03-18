@@ -1,18 +1,14 @@
 import { makeStyles } from "@material-ui/core/styles"
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   phoneNum: {
     fontWeight: 500,
-    fontSize: 20,
+    fontSize: 22,
     color: "#607289",
     textDecoration: "none",
-    lineHeight: "22px",
+    lineHeight: 1,
     display: "block",
-
-    [theme.breakpoints.up("md")]: {
-      fontSize: 23,
-    },
   },
-}))
+})
 
 export default useStyles

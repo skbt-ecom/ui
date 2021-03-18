@@ -9,15 +9,11 @@ export const useStyles = makeStyles((theme) => ({
     color: "transparent",
     outline: "none",
     background: `url(${logo}) center/contain no-repeat`,
-    width: 128,
+    width: 118,
     height: 24,
 
     [theme.breakpoints.up("sm")]: {
-      width: 160,
-    },
-
-    [theme.breakpoints.up("lg")]: {
-      width: 192,
+      width: 176,
     },
   },
 
@@ -48,13 +44,22 @@ export const usePhoneStyles = makeStyles((theme) => ({
   },
 }))
 
-export const useButtonStyles = makeStyles({
+export const useButtonStyles = makeStyles((theme) => ({
   root: {
-    padding: "8px 20px",
-    maxHeight: 36,
+    padding: "0 13px",
+    height: 41,
+
+    [theme.breakpoints.up("sm")]: {
+      padding: "0 27px",
+      height: 48,
+    },
   },
 
   label: {
     fontSize: 16,
+
+    [theme.breakpoints.up("md")]: {
+      fontSize: 18,
+    },
   },
-})
+}))
