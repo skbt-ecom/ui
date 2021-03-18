@@ -6,7 +6,11 @@ import useStyles from "./styles"
 
 export default function PhoneMain(props) {
   const classes = useStyles(props)
-  const { phone, phoneHint, phones } = props
+  const {
+    phone = "8 800 100-10-20",
+    phoneHint = "Для звонков по России (бесплатно)",
+    phones,
+  } = props
   const phonesArr = phones || [phone]
   const isSinglePhone = phonesArr.length === 1
   const phoneWithHintProps = {
@@ -32,9 +36,4 @@ export default function PhoneMain(props) {
       )}
     </div>
   )
-}
-
-PhoneMain.defaultProps = {
-  phone: "8 800 100-10-20",
-  phoneHint: "Для звонков по России бесплатно",
 }

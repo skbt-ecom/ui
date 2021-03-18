@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
   phoneMultiple: {},
 
   phoneHint: {
+    marginTop: 4,
     fontSize: 12,
   },
 

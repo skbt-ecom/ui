@@ -18,7 +18,7 @@ function styles(theme) {
       },
 
       [theme.breakpoints.up("md")]: {
-        height: 104,
+        height: 88,
       },
     },
 
