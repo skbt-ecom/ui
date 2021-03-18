@@ -1,3 +1,10 @@
+## [2.20.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.20.0...v2.20.1) (2021-03-18)
+
+
+### Bug Fixes
+
+* **header:** styles ([b85044d](https://gitlab.sovcombank.group/web/ecom/ui/commit/b85044d3b2f8a43e797bab7ee6fffe846b0acf39))
+
 # [2.20.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.19.0...v2.20.0) (2021-03-15)
 
 
