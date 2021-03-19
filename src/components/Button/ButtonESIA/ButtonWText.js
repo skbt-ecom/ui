@@ -1,8 +1,9 @@
 import React from "react"
 import useStyles from "./styles"
 
-const ButtonWText = ({ startIcon: StartIcon, onClick, disabled }) => {
+export default function ButtonWText({ StartIcon, onClick, disabled }) {
   const classes = useStyles()
+
   return (
     <div className={classes.bwtContainer}>
       <div className={classes.bwtLeft}>
@@ -17,5 +18,3 @@ const ButtonWText = ({ startIcon: StartIcon, onClick, disabled }) => {
     </div>
   )
 }
-
-export default ButtonWText
