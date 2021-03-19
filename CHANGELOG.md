@@ -1,3 +1,10 @@
+## [2.21.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.21.0...v2.21.1) (2021-03-19)
+
+
+### Bug Fixes
+
+* validate latin "Ё" in DadataFio ([b5dfa56](https://gitlab.sovcombank.group/web/ecom/ui/commit/b5dfa564d72007ce4a8fd4e333e835d133df4066))
+
 # [2.21.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.20.2...v2.21.0) (2021-03-19)
 
 
