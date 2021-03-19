@@ -9,7 +9,7 @@ const validateFioStrValue = (value) => {
     return FIO_ERROR_TXT
   }
 
-  const re = /^[\u0400-\u04FF -]+$/
+  const re = /^[\u0400-\u04FF\u00CB\u00EB -]+$/
   if (!re.test(trimmedValue)) {
     return "Поле должно содержать только кириллицу"
   }
