@@ -22,7 +22,15 @@ const acceptedKeys = [
 
 export default function VerifyCode(props) {
   const classes = useStyles(props)
-  const { onChange, value, error, errorMsg = "Неверный код", helperText, autoFocus = false } = props
+  const {
+    onChange,
+    value,
+    error,
+    errorMsg = "Неверный код",
+    helperText,
+    autoFocus = false,
+    disabled = false,
+  } = props
 
   const handleKeyDown = (e) => {
     const key = e.which || e.keyCode
@@ -55,6 +63,7 @@ export default function VerifyCode(props) {
             pattern="\d*"
             onChange={onChange}
             value={value}
+            disabled={disabled}
           />
         </div>
       </div>
