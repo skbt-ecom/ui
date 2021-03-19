@@ -1,3 +1,10 @@
+# [2.21.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.20.2...v2.21.0) (2021-03-19)
+
+
+### Features
+
+* add disable prop in VerifyCode ([bdde433](https://gitlab.sovcombank.group/web/ecom/ui/commit/bdde43392bfda2d619dcb4daf5aef016b8fe1f04))
+
 ## [2.20.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.20.1...v2.20.2) (2021-03-18)
 
 
