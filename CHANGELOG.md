@@ -1,3 +1,10 @@
+## [2.21.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.21.1...v2.21.2) (2021-03-19)
+
+
+### Bug Fixes
+
+* **helpers:** additionalData.url ([12164a8](https://gitlab.sovcombank.group/web/ecom/ui/commit/12164a8a407b527eded30542cee6ea365664b035))
+
 ## [2.21.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.21.0...v2.21.1) (2021-03-19)
 
 
