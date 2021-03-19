@@ -17,6 +17,7 @@ const story = {
     value: { type: "string" },
     classes: { type: "object" },
     errorMsg: { type: "string" },
+    disabled: { type: "boolean" },
     helperText: {
       table: {
         disable: true,
