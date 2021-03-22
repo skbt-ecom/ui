@@ -15,6 +15,7 @@ const themes = {
   red: themeRed,
   dark: themeDark,
 }
+// asd
 
 function storyWrapper(Story, { globals }) {
   const theme = themes[globals.theme || "blue"]
