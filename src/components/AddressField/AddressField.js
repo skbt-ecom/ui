@@ -16,7 +16,6 @@ const addFlatInfoToDadata = (dadataValue, flat, isNoFlat) => ({
     flat,
   },
 })
-// ''
 
 if (process.env.NODE_ENV !== "production") {
   console.error(
