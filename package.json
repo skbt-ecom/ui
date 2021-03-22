@@ -81,7 +81,7 @@
     }
   },
   "lint-staged": {
-    "src/*.js": [
+    "src/**/*.js": [
       "pretty-quick --staged",
       "eslint --fix --max-warnings 0"
     ]
