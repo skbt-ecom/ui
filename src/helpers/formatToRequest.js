@@ -2,7 +2,6 @@ import formatFIO from "../utils/formatters/fio"
 import formatPhone from "../utils/formatters/phone"
 import formatRegion from "../utils/formatters/region"
 import formatDate from "../utils/formatters/date"
-import formatLocalityAddress from "../utils/formatters/localityAddress"
 import formatDadataAddress from "../utils/formatters/dadataAddress"
 import formatDadataAddressFlat from "../utils/formatters/dadataAddressFlat"
 
@@ -11,7 +10,6 @@ const formattersByFieldKey = {
   phone: formatPhone,
   region: formatRegion,
   date: formatDate,
-  localityAddress: formatLocalityAddress,
   dadataAddress: formatDadataAddress,
   dadataAddressFlat: formatDadataAddressFlat,
 }

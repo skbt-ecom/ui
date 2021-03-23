@@ -80,7 +80,9 @@ export function DadataFields() {
   function handleSubmit(values) {
     console.log(values)
     const fieldsType = {
+      address2: "dadataAddress",
       fio: "fio",
+      addressWithFlat: "dadataAddressFlat",
     }
     const fromattedValues = formatToRequest(values, fieldsType)
     console.log(fromattedValues)
