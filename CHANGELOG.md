@@ -1,3 +1,15 @@
+# [2.22.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.21.2...v2.22.0) (2021-03-24)
+
+
+### Bug Fixes
+
+* remove unused formatter ([c676630](https://gitlab.sovcombank.group/web/ecom/ui/commit/c67663021902b9cf7ed1ccf7d1b03e61d8495319))
+
+
+### Features
+
+* add gender, soc status, work sector enums ([f22e896](https://gitlab.sovcombank.group/web/ecom/ui/commit/f22e896d2a855967deaf68dd2de1ac579f471003))
+
 ## [2.21.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.21.1...v2.21.2) (2021-03-19)
 
 
