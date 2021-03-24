@@ -6,6 +6,7 @@ import ThemeProvider from "@material-ui/styles/ThemeProvider"
 import themeBlue from "../src/style/theme"
 import themeRed from "../src/style/themeHalva"
 import themeDark from "../src/style/themeDark"
+import Container from "../src/components/Container"
 
 import "./preview.css"
 
@@ -28,7 +29,9 @@ function storyWrapper(Story, { globals }) {
         <link href="https://api-app.sovcombank.ru/cdn/fonts/bebas/bebas.css" rel="stylesheet" />
       </Helmet>
       <ThemeProvider theme={theme}>
-        <Story />
+        <Container>
+          <Story />
+        </Container>
       </ThemeProvider>
     </>
   )

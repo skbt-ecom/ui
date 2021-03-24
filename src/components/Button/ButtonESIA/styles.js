@@ -55,68 +55,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
-  buttonSteps: {
-    background: "#F2F8FC",
-    padding: "24px 24px 24px 72px",
-    borderRadius: "0 0 4px 4px",
-    [theme.breakpoints.up("sm")]: {
-      padding: "16px 24px 16px 80px",
-    },
-  },
-
-  buttonStepsTitle: {
-    fontSize: 12,
-    marginBottom: 24,
-    width: 184,
-    display: "inline-block",
-
-    [theme.breakpoints.up("sm")]: {
-      display: "none",
-      width: "auto",
-    },
-  },
-
-  stepsList: {
-    counterReset: "num",
-  },
-
-  step: {
-    display: "flex",
-    alignItems: "center",
-    paddingBottom: "16px",
-    color: "#607286",
-    fontSize: "12px",
-    lineHeight: "14px",
-    position: "relative",
-    [theme.breakpoints.up("sm")]: {
-      paddingBottom: "8px",
-      width: "auto",
-    },
-    "&:before": {
-      position: "absolute",
-      left: -21 - 24,
-      content: "counter(num)",
-      counterIncrement: "num",
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      borderRadius: 12,
-      fontSize: 12,
-      color: "#fff",
-      background: "#9FAFC1",
-      marginRight: 12,
-      height: 24,
-      width: 24,
-      [theme.breakpoints.up("sm")]: {
-        position: "static",
-        height: 16,
-        width: 16,
-        borderRadius: 8,
-        fontSize: 8,
-      },
-    },
-  },
-
   root: {
     [theme.breakpoints.up("sm")]: {
       display: "none",
@@ -149,36 +87,6 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     top: 16,
     left: 24,
-  },
-  descrBlock: {
-    display: "flex",
-    padding: "24px 24px 24px 72px",
-    alignItems: "center",
-    position: "relative",
-    [theme.breakpoints.up("sm")]: {
-      padding: "16px 24px 32px 80px",
-    },
-  },
-  descrTitle: {
-    color: "#000",
-    fontWeight: "bold",
-    lineHeight: "14px",
-    display: "inline-block",
-    marginBottom: 4,
-  },
-  secureIcon: {
-    position: "absolute",
-    left: 24,
-  },
-  descrText: {
-    fontSize: 12,
-    lineHeight: "15px",
-    color: "#607286",
-    fontWeight: 400,
-    width: 184,
-    [theme.breakpoints.up("sm")]: {
-      width: 314,
-    },
   },
 }))
 

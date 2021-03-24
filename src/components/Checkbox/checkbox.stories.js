@@ -5,8 +5,6 @@ import { action } from "@storybook/addon-actions"
 import Checkbox from "./Checkbox"
 import CheckboxGroup from "./CheckboxGroup"
 
-import "./Checkbox/styles.css"
-
 const options = [
   { label: "Apple", value: "apple" },
   { label: "Pear", value: "pear" },
