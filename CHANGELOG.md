@@ -1,3 +1,10 @@
+# [2.23.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.22.0...v2.23.0) (2021-03-26)
+
+
+### Features
+
+* update DatePicker props order ([3ee40ad](https://gitlab.sovcombank.group/web/ecom/ui/commit/3ee40ad0e3e8a9daa8904e8322d1049be8ca2407))
+
 # [2.22.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.21.2...v2.22.0) (2021-03-24)
 
 
