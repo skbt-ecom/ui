@@ -1,9 +1,11 @@
-import formatFIO from "../utils/formatters/fio"
-import formatPhone from "../utils/formatters/phone"
-import formatRegion from "../utils/formatters/region"
-import formatDate from "../utils/formatters/date"
-import formatDadataAddress from "../utils/formatters/dadataAddress"
-import formatDadataAddressFlat from "../utils/formatters/dadataAddressFlat"
+import {
+  formatFIO,
+  formatPhone,
+  formatRegion,
+  formatDate,
+  formatDadataAddress,
+  formatDadataAddressFlat,
+} from "../utils/formatters"
 
 const formattersByFieldKey = {
   fio: formatFIO,
