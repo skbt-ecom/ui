@@ -22,26 +22,26 @@ export default function DatePicker({ onChange, ...restProps }) {
 
   return (
     <KeyboardDatePicker
-      {...restProps}
       autoOk
       fullWidth
       disablePast
       disableToolbar
+      label="Выберите дату"
+      okLabel="Выбрать"
+      cancelLabel="Отмена"
+      KeyboardButtonProps={{
+        "aria-label": "Выбрать дату",
+      }}
+      {...restProps}
       format="dd.MM.yyyy"
       // variant="inline"
       value={selectedValue}
       onChange={handleChange}
       className={classes.input}
-      label="Выберите дату"
-      okLabel="Выбрать"
-      cancelLabel="Отмена"
       DialogProps={{
         classes: {
           dialog: classes.paper,
         },
-      }}
-      KeyboardButtonProps={{
-        "aria-label": "Выбрать дату",
       }}
     />
   )
