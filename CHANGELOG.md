@@ -1,3 +1,10 @@
+# [2.24.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.23.0...v2.24.0) (2021-03-30)
+
+
+### Features
+
+* update mobile button esia ([f2270e0](https://gitlab.sovcombank.group/web/ecom/ui/commit/f2270e09d52dc2cd2ba5ca600d69d583847fbd7e))
+
 # [2.23.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.22.0...v2.23.0) (2021-03-26)
 
 
