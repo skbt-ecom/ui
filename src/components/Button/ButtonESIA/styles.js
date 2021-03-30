@@ -5,7 +5,6 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
   },
   bwtContainer: {
-    display: "none",
     alignItems: "center",
     boxSizing: "border-box",
     borderRadius: "4px 4px 0px 0px",
@@ -13,10 +12,10 @@ const useStyles = makeStyles((theme) => ({
     padding: "16px 24px 16px 72px",
     width: "100%",
     height: "64px",
+    display: "flex",
+    justifyContent: "space-between",
     [theme.breakpoints.up("sm")]: {
       padding: "16px 24px 16px 80px",
-      display: "flex",
-      justifyContent: "space-between",
     },
   },
   bwtLeft: {
@@ -36,7 +35,32 @@ const useStyles = makeStyles((theme) => ({
       width: 176,
     },
   },
+  bwtTextShort: {
+    display: "flex",
+    width: 113,
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
+  },
+  bwtTextLong: {
+    display: "none",
+    [theme.breakpoints.up("sm")]: {
+      display: "flex",
+    },
+  },
+  bwtButtonMob: {
+    display: "flex",
+    border: "none",
+    width: 20,
+    height: 24,
+    outline: "none",
+    backgroundColor: "#D9E6EF",
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
+  },
   bwtButton: {
+    display: "none",
     fontFamily: '"Roboto", Arial, Helvetica, sans-serif',
     fontSize: 12,
     lineHeight: "14px",
@@ -53,35 +77,10 @@ const useStyles = makeStyles((theme) => ({
       color: "#fff",
       borderColor: "#0a40b3",
     },
-  },
 
-  root: {
     [theme.breakpoints.up("sm")]: {
-      display: "none",
+      display: "flex",
     },
-    padding: "12px 24px 12px 17px",
-    borderRadius: "4px 4px 0 0",
-    border: "1px solid transparent",
-    width: "100%",
-    backgroundColor: "#D9E6EF",
-    "&:hover": {
-      backgroundColor: "#f2f8fc",
-      borderColor: "transparent",
-    },
-    "&:active": {
-      border: "1px solid #b6ccdb",
-      backgroundColor: "#e7f0f6",
-    },
-  },
-  label: {
-    fontFamily: '"Roboto", Arial, Helvetica, sans-serif',
-    fontSize: 12,
-    fontWeight: 400,
-    textTransform: "none",
-    color: "#0a40b3",
-  },
-  startIcon: {
-    marginRight: 18,
   },
   iconESIA: {
     position: "absolute",

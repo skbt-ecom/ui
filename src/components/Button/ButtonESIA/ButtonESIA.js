@@ -1,5 +1,4 @@
 import React from "react"
-import Button from "@material-ui/core/Button"
 import ButtonWText from "./ButtonWText"
 import Steps from "./Steps"
 import Description from "./Description"
@@ -18,18 +17,6 @@ export default function ButtonESIA({ withouthDescr = false, onClick, disabled, .
         StartIcon={StartIcon}
         onClick={onClick}
         disabled={disabled}
-      />
-      <Button
-        {...props}
-        disabled={disabled}
-        onClick={onClick}
-        classes={{
-          root: classes.root,
-          label: classes.label,
-          startIcon: classes.startIcon,
-        }}
-        startIcon={StartIcon}
-        disableRipple
       />
       <Steps />
       {!withouthDescr && <Description />}
