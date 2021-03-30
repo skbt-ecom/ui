@@ -22,7 +22,7 @@ export default function ButtonWText({ StartIcon, onClick, disabled }) {
         </p>
       </div>
       <button onClick={onClick} className={classes.bwtButtonMob} disabled={disabled} type="button">
-        <IconEntrance />
+        <IconEntrance disabled={disabled} />
       </button>
       <button onClick={onClick} className={classes.bwtButton} disabled={disabled} type="button">
         Войти
