@@ -10,6 +10,8 @@ import PhoneMain from "../../PhoneMain"
 
 import { useStyles, usePhoneStyles, useButtonStyles } from "./styles"
 
+const defBtnProps = { children: "Оформить" }
+
 export default function Header({
   right,
   sticky,
@@ -17,7 +19,7 @@ export default function Header({
   onLogoClick,
   PhoneProps,
   withButton,
-  ButtonProps = { children: "Оформить" },
+  ButtonProps,
 }) {
   const { logo, ...rest } = classes
   const ownClasses = useStyles({ classes: { logo } })
@@ -36,7 +38,7 @@ export default function Header({
       {right || (
         <Box display="flex" alignItems="center">
           <PhoneMain {...PhoneProps} classes={phoneClasses} />
-          {withButton && <Button {...ButtonProps} classes={buttonClasses} />}
+          {withButton && <Button {...defBtnProps} {...ButtonProps} classes={buttonClasses} />}
         </Box>
       )}
     </HeaderContainer>
