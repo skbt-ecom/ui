@@ -1,3 +1,10 @@
+## [2.24.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.24.0...v2.24.1) (2021-03-31)
+
+
+### Bug Fixes
+
+* fix EsiaButton IconEntrance, add "+30% chance" label ([09df046](https://gitlab.sovcombank.group/web/ecom/ui/commit/09df046e0e73e281fbb5786b263783f2a64b3df9))
+
 # [2.24.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.23.0...v2.24.0) (2021-03-30)
 
 
