@@ -66,6 +66,24 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
+
+  label: {
+    width: 44,
+    minWidth: 44,
+    height: 24,
+    marginLeft: 10,
+    boxSizing: "border-box",
+    background: "#73CE09",
+    borderRadius: 2,
+    color: "#fff",
+    fontWeight: "bold",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: 12,
+    lineHeight: "12px",
+    letterSpacing: 0.1125,
+  },
 }))
 
 export default useStyles
