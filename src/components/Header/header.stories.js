@@ -44,6 +44,9 @@ Main.args = {
     phoneHint: "Для звонков по России (бесплатно)",
     phones: ["8 800 100-10-20"],
   },
+  ButtonProps: {
+    onClick: action("onClick"),
+  },
 }
 
 function TemplateHalva(args) {
