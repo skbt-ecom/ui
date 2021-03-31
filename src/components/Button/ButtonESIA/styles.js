@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
     height: 24,
     outline: "none",
     backgroundColor: "#D9E6EF",
+    padding: 0,
     [theme.breakpoints.up("sm")]: {
       display: "none",
     },
@@ -76,6 +77,12 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#0a40b3",
       color: "#fff",
       borderColor: "#0a40b3",
+    },
+    "&:disabled": {
+      borderColor: "#a1afbf",
+      color: "#a1afbf",
+      backgroundColor: "#fff",
+      cursor: "auto",
     },
 
     [theme.breakpoints.up("sm")]: {
