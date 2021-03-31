@@ -1,3 +1,10 @@
+## [2.24.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.24.1...v2.24.2) (2021-03-31)
+
+
+### Bug Fixes
+
+* **header/main:** buttonprops ([a6078c2](https://gitlab.sovcombank.group/web/ecom/ui/commit/a6078c252bcd8ffc601763d6a578d459dc805d0f))
+
 ## [2.24.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.24.0...v2.24.1) (2021-03-31)
 
 
