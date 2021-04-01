@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
   bwtTextShort: {
     display: "flex",
-    width: 113,
+    width: 114,
     [theme.breakpoints.up("sm")]: {
       display: "none",
     },
