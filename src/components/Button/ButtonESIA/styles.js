@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   bwtLeft: {
     display: "flex",
-    width: 114,
+    minWidth: 114,
   },
   bwtText: {
     display: "flex",
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
   bwtTextShort: {
     display: "flex",
-    width: 114,
+    width: "100%",
     [theme.breakpoints.up("sm")]: {
       display: "none",
     },
