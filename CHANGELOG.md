@@ -1,3 +1,10 @@
+## [2.24.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.24.2...v2.24.3) (2021-04-01)
+
+
+### Bug Fixes
+
+* **esiabutton:** fix title ([f02fd0d](https://gitlab.sovcombank.group/web/ecom/ui/commit/f02fd0d5d259fd5253af8ae0b0d18ae8996015b5))
+
 ## [2.24.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.24.1...v2.24.2) (2021-03-31)
 
 
