@@ -1,3 +1,10 @@
+# [2.26.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.25.0...v2.26.0) (2021-04-02)
+
+
+### Features
+
+* more enums ([1d9d4e1](https://gitlab.sovcombank.group/web/ecom/ui/commit/1d9d4e162e1d24d1ccdea79b1f99aae415d3abcd))
+
 # [2.25.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.24.4...v2.25.0) (2021-04-02)
 
 
