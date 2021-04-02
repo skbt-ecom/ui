@@ -80,9 +80,10 @@ export function DadataFields() {
   function handleSubmit(values) {
     console.log(values)
     const fieldsType = {
-      address2: "dadataAddress",
       fio: "fio",
-      addressWithFlat: "dadataAddressFlat",
+      oldFio: "fio",
+      // address2: "dadataAddress",
+      // addressWithFlat: "dadataAddressFlat",
     }
     const fromattedValues = formatToRequest(values, fieldsType)
     console.log(fromattedValues)
@@ -90,9 +91,10 @@ export function DadataFields() {
 
   return (
     <FormLanding onChangeFields={action("onChangeFields")} onSubmit={handleSubmit}>
+      <DadataFio name="fio" label="ФИО" />
+      <DadataFio name="oldFio" label="Предыдущий ФИО" />
       <DadataAddress name="address2" label="Адрес" />
       <DadataOrganization name="organization" label="Организация" isRequired />
-      <DadataFio name="fio" label="ФИО" />
       <DadataAddressFlat name="addressWithFlat" label="Адрес новый" />
       <DadataAuto name="auto" label="Модель машины" />
       <SubmitButton>Отправить</SubmitButton>
