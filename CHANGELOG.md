@@ -1,3 +1,10 @@
+# [2.25.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.24.4...v2.25.0) (2021-04-02)
+
+
+### Features
+
+* update material pickers version ([1a4e37b](https://gitlab.sovcombank.group/web/ecom/ui/commit/1a4e37b0737e833092165429561faec4d0e4d5fb))
+
 ## [2.24.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.24.3...v2.24.4) (2021-04-01)
 
 
