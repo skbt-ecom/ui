@@ -1,3 +1,10 @@
+## [2.27.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.27.0...v2.27.1) (2021-04-06)
+
+
+### Bug Fixes
+
+* fix value checking in date/time pickers ([4ebd36f](https://gitlab.sovcombank.group/web/ecom/ui/commit/4ebd36f1b2af92aa06fe5567a3e8bca960f9d103))
+
 # [2.27.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.26.0...v2.27.0) (2021-04-06)
 
 
