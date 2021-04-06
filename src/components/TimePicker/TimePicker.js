@@ -9,8 +9,8 @@ export default function TimePicker({ onChange, ...restProps }) {
   const [selectedValue, setSelectedValue] = useState(null)
 
   function handleChange(value) {
-    if (value && !value.invalid) {
-      const time = new Date(value.ts).toLocaleTimeString("ru-RU")
+    if (value && value instanceof Date && !Number.isNaN(value.valueOf())) {
+      const time = value.toLocaleTimeString("ru-RU")
       if (onChange) {
         onChange(time)
       }
