@@ -1,3 +1,10 @@
+# [2.27.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.26.0...v2.27.0) (2021-04-06)
+
+
+### Features
+
+* replace luxon with date-fns ([dc84fdd](https://gitlab.sovcombank.group/web/ecom/ui/commit/dc84fdd5f0c6aeb0ebea02f22a5b5b8682aba253))
+
 # [2.26.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.25.0...v2.26.0) (2021-04-02)
 
 
