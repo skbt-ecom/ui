@@ -1,3 +1,10 @@
+## [2.27.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.27.1...v2.27.2) (2021-04-07)
+
+
+### Bug Fixes
+
+* fix formatPhone ([f09daed](https://gitlab.sovcombank.group/web/ecom/ui/commit/f09daed9d4f83e8957c7502cd0dd7aa08a322db1))
+
 ## [2.27.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.27.0...v2.27.1) (2021-04-06)
 
 
