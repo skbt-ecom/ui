@@ -23,6 +23,6 @@ export function formatFIO(dadataFieldValue) {
   return { surname, name, patronymic }
 }
 
-export const formatPhone = (phone) => phone.replace("7", "8")
+export const formatPhone = (phone) => phone.replace(/^\+?7/, "8")
 
 export const formatRegion = (regionObj) => regionObj.value
