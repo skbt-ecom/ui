@@ -11,6 +11,7 @@ const DadataAutocomplete = ({
   dadataOptions,
   renderOption,
   onBlur,
+  value,
   ...props
 }) => {
   const [options, setOptions] = useState([])
@@ -18,6 +19,13 @@ const DadataAutocomplete = ({
   const [dadataValue, setDadataValue] = useState(null)
   const [inputValue, setInputValue] = useState("")
   const isIncameValue = useRef(false)
+
+  useEffect(() => {
+    if (!value) {
+      setDadataValue(null)
+      setInputValue("")
+    }
+  }, [value])
 
   useEffect(() => {
     let active = true
