@@ -107,13 +107,29 @@ export function FormWrapper() {
 
   return (
     <FormLanding onChangeFields={action("onChangeFields")} onSubmit={onSubmit} ref={formRef}>
-      <button type="button" onClick={() => formRef.current.setFields({ text: { value: 1234 } })}>
+      <button
+        type="button"
+        onClick={() => formRef.current.setFields({ text: { value: 1234 } })}
+        style={{ marginBottom: 10 }}
+      >
         setValue
       </button>
-      <button type="button" onClick={() => console.log(formRef.current.getFieldsValue())}>
+      <button
+        type="button"
+        onClick={() => console.log(formRef.current.getFieldsValue())}
+        style={{ marginBottom: 10 }}
+      >
         getValue
       </button>
       <TextField name="text" validate={requiredValidator} />
+      <button
+        type="button"
+        onClick={() => formRef.current.setFields({ address2: { value: "" } })}
+        style={{ marginBottom: 10 }}
+      >
+        resetValue
+      </button>
+      <DadataAddress name="address2" label="Адрес" />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>
   )
