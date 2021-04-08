@@ -1,3 +1,10 @@
+## [2.27.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.27.3...v2.27.4) (2021-04-08)
+
+
+### Bug Fixes
+
+* **buttonesia:** add "+" to label in conditions ([a55675d](https://gitlab.sovcombank.group/web/ecom/ui/commit/a55675d2ac4c9cdc06eb4a908ccc6c65fe5c727e))
+
 ## [2.27.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.27.2...v2.27.3) (2021-04-08)
 
 
