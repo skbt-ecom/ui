@@ -1,3 +1,10 @@
+## [2.27.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.27.4...v2.27.5) (2021-04-09)
+
+
+### Bug Fixes
+
+* fix handleBlur in DadataAddress ([03b1398](https://gitlab.sovcombank.group/web/ecom/ui/commit/03b13984cfd6ae73dfc88d288131c52133206059))
+
 ## [2.27.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.27.3...v2.27.4) (2021-04-08)
 
 
