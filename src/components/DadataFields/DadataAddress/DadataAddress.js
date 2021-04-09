@@ -18,6 +18,8 @@ const DadataAddress = ({ onBlur, ...props }) => {
               dadataValue: specifiedSuggestion,
               isDadataValueActual: true,
             })
+          } else {
+            onBlur(e, values)
           }
         })
       } else {
