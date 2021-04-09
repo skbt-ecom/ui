@@ -24,6 +24,7 @@ const DadataAutocomplete = ({
     if (!value) {
       setDadataValue(null)
       setInputValue("")
+      setOptions([])
     }
   }, [value])
 
@@ -80,6 +81,7 @@ const DadataAutocomplete = ({
     if (inputValue) {
       fetchData()
     } else {
+      setOptions([])
       setDadataValue(null)
     }
 
