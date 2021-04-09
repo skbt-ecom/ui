@@ -1,3 +1,10 @@
+## [2.27.6](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.27.5...v2.27.6) (2021-04-09)
+
+
+### Bug Fixes
+
+* add reset options in DadataAutocomplete when value is empty ([03ffc3b](https://gitlab.sovcombank.group/web/ecom/ui/commit/03ffc3b739ae5efe5f239d96a2ff043e4922fc3c))
+
 ## [2.27.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.27.4...v2.27.5) (2021-04-09)
 
 
