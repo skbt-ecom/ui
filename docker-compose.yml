@@ -12,6 +12,7 @@ services:
       - NODE_ENV
     ports:
       - $PORT:8080
+    mem_limit: 1g
     logging:
       driver: "fluentd"
       options:
