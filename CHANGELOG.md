@@ -1,3 +1,10 @@
+# [2.28.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.27.6...v2.28.0) (2021-04-15)
+
+
+### Features
+
+* **autocompletefield:** pass "variant" prop to TextField ([b21279d](https://gitlab.sovcombank.group/web/ecom/ui/commit/b21279d411f23c2a00c97f7e7761960efaa1e6d8))
+
 ## [2.27.6](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.27.5...v2.27.6) (2021-04-09)
 
 
