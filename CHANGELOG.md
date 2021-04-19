@@ -1,3 +1,10 @@
+## [2.28.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.28.0...v2.28.1) (2021-04-19)
+
+
+### Bug Fixes
+
+* lighthouse accessibility ([2d06ad0](https://gitlab.sovcombank.group/web/ecom/ui/commit/2d06ad0df67d302f3909aefba71af9f825232136))
+
 # [2.28.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.27.6...v2.28.0) (2021-04-15)
 
 
