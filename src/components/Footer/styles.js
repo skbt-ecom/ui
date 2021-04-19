@@ -83,11 +83,10 @@ function styles(theme) {
      */
     ligal: {
       color,
-      fontSize: 11,
+      fontSize: 12,
       lineHeight: "18px",
 
       [theme.breakpoints.up("sm")]: {
-        fontSize: 12,
         paddingTop: 16,
       },
     },

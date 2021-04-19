@@ -34,11 +34,13 @@ export default function SocialLinks(props) {
 
   const classes = useStyles({ paddingRight: 112 - 52 * (items.length - 4) })
 
+  // add "text" - https://web.dev/link-name/
   return (
     <div className={classes.social}>
       {items.map(({ href, Icon }, i) => (
         <a key={i} href={href} target="_blank" rel="noopener noreferrer" className={classes.link}>
           <Icon />
+          text
         </a>
       ))}
     </div>
