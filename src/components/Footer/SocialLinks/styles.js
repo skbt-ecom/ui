@@ -19,6 +19,8 @@ function styles(theme) {
 
     link: {
       textAlign: "center",
+      fontSize: 0,
+      color: "transparent",
 
       "& svg": {
         display: "inline-block",

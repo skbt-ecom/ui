@@ -57,6 +57,9 @@ const useStyles = makeStyles((theme) => ({
     outline: "none",
     backgroundColor: "#D9E6EF",
     padding: 0,
+    fontSize: 0,
+    color: "transparent",
+
     [theme.breakpoints.up("sm")]: {
       display: "none",
     },
