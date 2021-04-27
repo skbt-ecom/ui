@@ -1,23 +1,23 @@
 import React, { useState } from "react"
 
+import isValid from "date-fns/isValid"
+
 import { KeyboardTimePicker } from "@material-ui/pickers"
 
 import useStyles from "./styles"
 
-export default function TimePicker({ onChange, ...restProps }) {
+export default function TimePicker({ onChange, value = null, ...restProps }) {
   const classes = useStyles()
-  const [selectedValue, setSelectedValue] = useState(null)
+  const [selectedValue, setSelectedValue] = useState(value)
 
-  function handleChange(value) {
-    if (value && value instanceof Date && !Number.isNaN(value.valueOf())) {
-      const time = value.toLocaleTimeString("ru-RU")
-      if (onChange) {
-        onChange(time)
-      }
+  function handleChange(val) {
+    if (isValid(val) && onChange) {
+      onChange(val)
     } else if (onChange) {
       onChange(null)
     }
-    setSelectedValue(value)
+
+    setSelectedValue(val)
   }
 
   return (

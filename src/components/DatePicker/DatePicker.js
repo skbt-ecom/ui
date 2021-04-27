@@ -1,23 +1,23 @@
 import React, { useState } from "react"
 
+import isValid from "date-fns/isValid"
+
 import { KeyboardDatePicker } from "@material-ui/pickers"
 
 import useStyles from "./styles"
 
-export default function DatePicker({ onChange, ...restProps }) {
+export default function DatePicker({ onChange, value = null, ...restProps }) {
   const classes = useStyles()
-  const [selectedValue, setSelectedValue] = useState(null)
+  const [selectedValue, setSelectedValue] = useState(value)
 
-  function handleChange(value) {
-    if (value && value instanceof Date && !Number.isNaN(value.valueOf())) {
-      const date = value.toLocaleDateString("ru-RU")
-      if (onChange) {
-        onChange(date)
-      }
+  function handleChange(val) {
+    if (isValid(val) && onChange) {
+      onChange(val)
     } else if (onChange) {
       onChange(null)
     }
-    setSelectedValue(value)
+
+    setSelectedValue(val)
   }
 
   return (
