@@ -1,3 +1,10 @@
+## [2.28.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.28.1...v2.28.2) (2021-04-27)
+
+
+### Bug Fixes
+
+* **pickers:** get defaultValue from props ([4b4e358](https://gitlab.sovcombank.group/web/ecom/ui/commit/4b4e3588983efe982d026662bdd74839138af8e5))
+
 ## [2.28.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.28.0...v2.28.1) (2021-04-19)
 
 
