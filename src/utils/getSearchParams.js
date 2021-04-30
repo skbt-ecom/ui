@@ -1,7 +1,7 @@
 import canUseDom from "./canUseDom"
 
 export default function getQueryStringParams() {
-  const search = canUseDom ? "" : window.location.search
+  const search = canUseDom ? window.location.search : ""
   const searchParams = new URLSearchParams(search)
   const params = {}
 
