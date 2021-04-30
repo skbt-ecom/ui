@@ -1,3 +1,10 @@
+## [2.28.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.28.2...v2.28.3) (2021-04-30)
+
+
+### Bug Fixes
+
+* canUseDom ([8d6653d](https://gitlab.sovcombank.group/web/ecom/ui/commit/8d6653d4a76be7e20f07e85cfd32adbdc528c8db))
+
 ## [2.28.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.28.1...v2.28.2) (2021-04-27)
 
 
