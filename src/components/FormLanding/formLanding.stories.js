@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react"
 
 import { action } from "@storybook/addon-actions"
 
+import { subYears, parse } from "date-fns"
+
 import Grid from "@material-ui/core/Grid"
 
 import FormLanding from "./FormLanding"
@@ -270,10 +272,24 @@ export function FormPassport() {
 }
 
 export function Pickers() {
+  const MAX_DATE = subYears(Date.now(), 20)
+  const MIN_DATE = subYears(Date.now(), 85)
+  const datePickerDefValue = parse("19.09.1992", "dd.MM.yyyy", new Date())
+
   return (
     <FormLanding onSubmit={onSubmit} onChangeFields={action("onChangeFields")}>
       <PickersProvider>
-        <DatePicker name="date" />
+        <DatePicker
+          name="birthDate"
+          label="Дата рождения"
+          maxDate={MAX_DATE}
+          minDate={MIN_DATE}
+          initialFocusedDate={datePickerDefValue}
+          disablePast={false}
+          openTo="year"
+          views={["year", "date"]}
+          defaultValue={datePickerDefValue}
+        />
         <TimePicker name="time" />
       </PickersProvider>
       <SubmitButton>Отправить</SubmitButton>

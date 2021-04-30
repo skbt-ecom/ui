@@ -1,7 +1,5 @@
 import React from "react"
 
-// import parse from "date-fns/parse"
-
 import DatePicker from "../../DatePicker"
 import { Field } from "../FormContext/Field"
 
@@ -14,12 +12,7 @@ export default function WrappedField(props) {
 
   return (
     <div className={classes.fieldWrapper}>
-      <Field
-        validate={requiredValidator}
-        {...props}
-        component={DatePicker}
-        // defaultValue={parse("19.09.1992", "dd.MM.yyyy", new Date())}
-      />
+      <Field validate={requiredValidator} {...props} component={DatePicker} />
     </div>
   )
 }
