@@ -1,3 +1,10 @@
+## [2.28.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.28.4...v2.28.5) (2021-05-25)
+
+
+### Bug Fixes
+
+* **acceptmentfield:** fix url ([0548e44](https://gitlab.sovcombank.group/web/ecom/ui/commit/0548e448beb68bbcf31a72105c4ba5d263249611))
+
 ## [2.28.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.28.3...v2.28.4) (2021-04-30)
 
 
