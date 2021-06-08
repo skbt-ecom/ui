@@ -1,3 +1,10 @@
+# [2.29.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.28.5...v2.29.0) (2021-06-08)
+
+
+### Features
+
+* update halva logo ([99312e8](https://gitlab.sovcombank.group/web/ecom/ui/commit/99312e858b47187b8cb84e1a7f2bdb5094a8426f))
+
 ## [2.28.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.28.4...v2.28.5) (2021-05-25)
 
 
