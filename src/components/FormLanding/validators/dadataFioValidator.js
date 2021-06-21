@@ -18,11 +18,16 @@ const validateFioStrValue = (value) => {
 
 const validateFioDadataValue = (dadataObj) => {
   const {
-    data: { name, surname },
+    data: { name, surname, patronymic },
   } = dadataObj
 
   if (!name || !surname) {
     return FIO_ERROR_TXT
+  }
+
+  const re = /^[\u0400-\u04FF\u00CB\u00EB -]+$/
+  if (!re.test(patronymic ? name + surname + patronymic : name + surname)) {
+    return "Поле должно содержать только кириллицу"
   }
 
   return null
