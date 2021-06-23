@@ -17,7 +17,7 @@ const theme = createMuiTheme({
       root: {
         paddingTop: "11px",
         paddingBottom: "11px",
-        fontFamily: '"Bebas", "Roboto", "Helvetica", "Arial", sans-serif',
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
         letterSpacing: "1px",
         fontSize: "20px",
       },

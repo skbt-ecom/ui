@@ -18,7 +18,7 @@ export default story
 
 const ButtonTemplate = (args) => (
   <UIButton {...args} onClick={action("clicked btn")}>
-    Button
+    текст
   </UIButton>
 )
 
@@ -27,8 +27,15 @@ Button.args = {
   classes: { label: "my-label", root: "my-root" },
   color: "primary",
   variant: "contained",
+  size: "large",
 }
 Button.argTypes = {
+  size: {
+    control: {
+      type: "inline-radio",
+      options: ["large", "medium", "small"],
+    },
+  },
   color: {
     control: {
       type: "inline-radio",
@@ -44,7 +51,7 @@ Button.argTypes = {
 }
 
 function ESIATemplate(args) {
-  return <ButtonESIA {...args}>Вход через цифровой профиль</ButtonESIA>
+  return <ButtonESIA {...args} />
 }
 
 export const ESIA = ESIATemplate.bind({})

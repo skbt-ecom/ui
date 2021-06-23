@@ -1,14 +1,27 @@
 import React from "react"
 import cn from "classnames"
 
+import Button from "@material-ui/core/Button"
 import Box from "@material-ui/core/Box"
 import Container from "../../Container"
+import PhoneMain from "../../PhoneMain"
 
-import useStyles from "./styles"
+import { useStyles, usePhoneStyles, useButtonStyles } from "./styles"
 
 export default function HeaderContainer(props) {
+  const {
+    children,
+    right,
+    Logo,
+    sticky = false,
+    onLogoClick,
+    withButton,
+    PhoneProps,
+    ButtonProps,
+  } = props
   const classes = useStyles(props)
-  const { children, sticky = false } = props
+  const phoneClasses = usePhoneStyles(PhoneProps)
+  const buttonClasses = useButtonStyles(ButtonProps)
 
   return (
     <header className={cn(classes.header, sticky && classes.stickyHeader)}>
@@ -20,7 +33,24 @@ export default function HeaderContainer(props) {
             alignItems="center"
             className={classes.navigation}
           >
+            <button
+              type="button"
+              className={cn(classes.logo, onLogoClick && classes.btn)}
+              onClick={onLogoClick}
+            >
+              <Logo />
+            </button>
             {children}
+            {right || (
+              <Box display="flex" alignItems="center">
+                <PhoneMain {...PhoneProps} classes={phoneClasses} />
+                {withButton && (
+                  <Button {...ButtonProps} classes={buttonClasses}>
+                    оформить
+                  </Button>
+                )}
+              </Box>
+            )}
           </Box>
         </nav>
       </Container>

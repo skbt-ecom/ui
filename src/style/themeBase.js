@@ -1,8 +1,9 @@
-const theme = {
+export const themeBase = {
   props: {
     MuiButton: {
       color: "primary",
       variant: "contained",
+      size: "large",
     },
 
     MuiTextField: {
@@ -18,16 +19,31 @@ const theme = {
 
     MuiButton: {
       root: {
-        paddingTop: 10.5,
-        paddingBottom: 10.5,
         fontFamily:
-          'Bebas, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-        letterSpacing: 1,
-        fontSize: 20,
+          'Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+        padding: "12px 16px",
+      },
+
+      sizeLarge: {
+        fontSize: "1rem",
+      },
+
+      sizeSmall: {
+        fontSize: "0.75rem",
+      },
+
+      outlinedSizeLarge: {
+        padding: "13px 16px",
       },
       outlined: {
-        paddingTop: 11,
-        paddingBottom: 11,
+        padding: "11px 16px",
+      },
+      outlinedSizeSmall: {
+        padding: "8.5px 16px",
+      },
+
+      containedSizeLarge: {
+        padding: "14px 16px",
       },
       contained: {
         boxShadow: "none",
@@ -39,6 +55,9 @@ const theme = {
         "&:active": {
           boxShadow: "none",
         },
+      },
+      containedSizeSmall: {
+        padding: "9.5px 16px",
       },
     },
 
@@ -106,5 +125,3 @@ const theme = {
     },
   },
 }
-
-export default theme

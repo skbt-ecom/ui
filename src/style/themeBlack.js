@@ -1,5 +1,5 @@
 import { createMuiTheme } from "@material-ui/core/styles"
-import themeBase from "./themeBase"
+import { themeBase } from "./themeBase"
 
 const PRIMARY_COLOR = "#0A0A0A"
 
