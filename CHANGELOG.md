@@ -1,3 +1,15 @@
+# [2.30.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.29.0...v2.30.0) (2021-06-23)
+
+
+### Bug Fixes
+
+* fix validateFioDadataValue ([95d80bc](https://gitlab.sovcombank.group/web/ecom/ui/commit/95d80bceb909dfd0d5a864ecc7c5a3f14006c93e))
+
+
+### Features
+
+* **header:** edit header, remove bebas ([e397ec5](https://gitlab.sovcombank.group/web/ecom/ui/commit/e397ec54d3db1b58dfd1145a6a7922fdfc2795bb))
+
 # [2.29.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.28.5...v2.29.0) (2021-06-08)
 
 
