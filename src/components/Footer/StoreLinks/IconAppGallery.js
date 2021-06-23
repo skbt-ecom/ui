@@ -5,7 +5,7 @@ export default function IconAppGallery() {
   const classes = useStyles()
 
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="24" height="24" viewBox="0 0 24 24">
       <path
         d="M18.8308 0H5.16915C2.31431 0 0 2.31431 0 5.16916V18.8308C0 21.6857 2.31431 24 5.16915 24H18.8308C21.6857 24 24 21.6857 24 18.8308V5.16916C24 2.31431 21.6857 0 18.8308 0Z"
         fill="#C1C9D2"

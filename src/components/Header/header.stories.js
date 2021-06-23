@@ -8,12 +8,21 @@ import HeaderHalva from "./Halva"
 const story = {
   title: "Header",
   args: {
+    PhoneProps: {
+      phone: "8 800 100-10-20",
+      phoneHint: "Для звонков по России (бесплатно)",
+      phones: ["8 800 100-10-20"],
+    },
+    ButtonProps: {
+      onClick: action("onClick"),
+    },
     classes: { logo: "asdasd", header: "asd" },
     onLogoClick: action("onChange"),
   },
   // https://storybook.js.org/docs/react/essentials/controls#annotation
   argTypes: {
     sticky: { type: "boolean" },
+    withButton: { type: "boolean" },
   },
 }
 export default story
@@ -34,20 +43,7 @@ function TemplateMain(args) {
     </Wrapper>
   )
 }
-
-export const Main = TemplateMain.bind({})
-Main.args = {
-  withButton: true,
-  right: null,
-  PhoneProps: {
-    phone: "8 800 100-10-20",
-    phoneHint: "Для звонков по России (бесплатно)",
-    phones: ["8 800 100-10-20"],
-  },
-  ButtonProps: {
-    onClick: action("onClick"),
-  },
-}
+export const Blue = TemplateMain.bind({})
 
 function TemplateHalva(args) {
   return (
@@ -56,8 +52,4 @@ function TemplateHalva(args) {
     </Wrapper>
   )
 }
-
-export const Halva = TemplateHalva.bind({})
-Halva.args = {
-  right: null,
-}
+export const Red = TemplateHalva.bind({})

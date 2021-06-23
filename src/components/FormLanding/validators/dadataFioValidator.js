@@ -1,6 +1,7 @@
 import requiredValidator from "./required"
 
 const FIO_ERROR_TXT = "Введите фамилию, имя (и отчество, если есть)"
+const RE = /^[\u0400-\u04FF\u00CB\u00EB -]+$/
 
 const validateFioStrValue = (value) => {
   const trimmedValue = value.trim()
@@ -9,8 +10,7 @@ const validateFioStrValue = (value) => {
     return FIO_ERROR_TXT
   }
 
-  const re = /^[\u0400-\u04FF\u00CB\u00EB -]+$/
-  if (!re.test(trimmedValue)) {
+  if (!RE.test(trimmedValue)) {
     return "Поле должно содержать только кириллицу"
   }
   return null
@@ -18,11 +18,15 @@ const validateFioStrValue = (value) => {
 
 const validateFioDadataValue = (dadataObj) => {
   const {
-    data: { name, surname },
+    data: { name, surname, patronymic },
   } = dadataObj
 
   if (!name || !surname) {
     return FIO_ERROR_TXT
+  }
+
+  if (!RE.test(patronymic ? name + surname + patronymic : name + surname)) {
+    return "Поле должно содержать только кириллицу"
   }
 
   return null

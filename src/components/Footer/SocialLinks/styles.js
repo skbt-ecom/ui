@@ -1,9 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles"
 
 function styles(theme) {
-  const isHalva = theme.name === "halva"
-  const isBlack = theme.name === "black"
-
   return {
     social: {
       display: "flex",
@@ -24,7 +21,8 @@ function styles(theme) {
 
       "& svg": {
         display: "inline-block",
-        fill: isHalva ? "#979797" : isBlack ? "#fff" : "#a1afbf", // eslint-disable-line
+        // fill: isHalva ? "#979797" : isBlack ? "#fff" : "#a1afbf", // eslint-disable-line
+        fill: theme.palette.custom.grey500,
         width: 27,
         height: 25,
       },

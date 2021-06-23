@@ -1,6 +1,6 @@
 import { createMuiTheme } from "@material-ui/core/styles"
 
-import themeBase from "./themeBase"
+import { themeBase } from "./themeBase"
 
 const PRIMARY_COLOR = "#ff4e50"
 const SECONDARY_COLOR = "#9e9e9e"
@@ -11,6 +11,7 @@ const theme = createMuiTheme({
   palette: {
     primary: { main: PRIMARY_COLOR },
     secondary: { main: SECONDARY_COLOR },
+    custom: { grey500: "#9e9e9e", grey600: "#757575" },
   },
   overrides: {
     ...themeBase.overrides,
