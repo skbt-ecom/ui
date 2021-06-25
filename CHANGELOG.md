@@ -1,3 +1,10 @@
+## [2.30.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.30.0...v2.30.1) (2021-06-25)
+
+
+### Bug Fixes
+
+* fallback font family ([a19c905](https://gitlab.sovcombank.group/web/ecom/ui/commit/a19c9050a01a6fe68a362ddf6ccaae2069de881f))
+
 # [2.30.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.29.0...v2.30.0) (2021-06-23)
 
 
