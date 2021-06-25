@@ -1,6 +1,8 @@
 html,
 body {
-  font: 400 16px Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+  // https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/
+  font: 400 16px Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   line-height: 1.167;
 }
