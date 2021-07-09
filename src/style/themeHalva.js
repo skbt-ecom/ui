@@ -7,11 +7,16 @@ const SECONDARY_COLOR = "#9e9e9e"
 
 const theme = createMuiTheme({
   ...themeBase,
-  name: "halva",
   palette: {
     primary: { main: PRIMARY_COLOR },
     secondary: { main: SECONDARY_COLOR },
-    custom: { grey500: "#9e9e9e", grey600: "#757575" },
+    custom: {
+      text1: "#9e9e9e",
+      text2: "#757575",
+      footerBg: "#fff",
+      acceptmentCheckbox: "rgba(0, 0, 0, 0.38)",
+      acceptmentLabel: "inherit",
+    },
   },
   overrides: {
     ...themeBase.overrides,
@@ -44,6 +49,7 @@ const theme = createMuiTheme({
         },
       },
       outlined: {
+        ...themeBase.overrides.MuiButton.outlined,
         borderWidth: "2px !important",
       },
       outlinedPrimary: {

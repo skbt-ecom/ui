@@ -6,6 +6,7 @@ import ThemeProvider from "@material-ui/styles/ThemeProvider"
 import themeBlue from "../src/style/theme"
 import themeRed from "../src/style/themeHalva"
 import themeDark from "../src/style/themeDark"
+import { themeBlack } from "../src/style/themeBlack"
 import Container from "../src/components/Container"
 
 import "./preview.css"
@@ -14,6 +15,7 @@ const themes = {
   blue: themeBlue,
   red: themeRed,
   dark: themeDark,
+  black: themeBlack,
 }
 
 function storyWrapper(Story, { globals }) {

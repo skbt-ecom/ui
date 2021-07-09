@@ -21,8 +21,7 @@ function styles(theme) {
 
       "& svg": {
         display: "inline-block",
-        // fill: isHalva ? "#979797" : isBlack ? "#fff" : "#a1afbf", // eslint-disable-line
-        fill: theme.palette.custom.grey500,
+        fill: theme.palette.custom.text1,
         width: 27,
         height: 25,
       },

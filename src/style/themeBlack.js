@@ -3,25 +3,28 @@ import { themeBase } from "./themeBase"
 
 const PRIMARY_COLOR = "#0A0A0A"
 
-const themeBlack = createMuiTheme({
+export const themeBlack = createMuiTheme({
   ...themeBase,
-  name: "black",
   palette: {
     primary: { main: PRIMARY_COLOR },
+    custom: {
+      text1: "#fff",
+      text2: "#fff",
+      footerBg: PRIMARY_COLOR,
+      acceptmentCheckbox: PRIMARY_COLOR,
+      acceptmentLabel: "#555",
+    },
   },
   overrides: {
     ...themeBase.overrides,
     MuiButton: {
       ...themeBase.overrides.MuiButton,
       root: {
+        ...themeBase.overrides.MuiButton.root,
         borderRadius: 0,
-        height: 56,
       },
       label: {
         textTransform: "none",
-        fontSize: "18px",
-        lineHeight: "28px",
-        letterSpacing: "0.8px",
       },
     },
     MuiOutlinedInput: {
@@ -36,5 +39,3 @@ const themeBlack = createMuiTheme({
     },
   },
 })
-
-export default themeBlack

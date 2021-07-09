@@ -3,7 +3,7 @@ import Link from "@material-ui/core/Link"
 import Checkbox from "../../../Checkbox/Checkbox"
 import { Field } from "../../FormContext/Field"
 
-import useAcceptmentStyles from "./styles"
+import { useAcceptmentStyles } from "./styles"
 import useStyles from "../styles"
 
 const Acceptment = React.memo((props) => {
@@ -48,7 +48,7 @@ const Acceptment = React.memo((props) => {
           root: classes.labelRoot,
         },
         helperTextClasses: { root: classes.helperTextRoot },
-        checkboxClasses: { root: classes.checkboxRoot },
+        checkboxClasses: { root: classes.checkboxRoot, checked: classes.checkboxChecked },
       }}
       onChange={onChange}
       checked={props.value}
