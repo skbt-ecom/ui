@@ -9,7 +9,8 @@ const PARAM_KEY = "theme"
 const COLORS = {
   blue: "#00f",
   red: "#f00",
-  dark: "#222",
+  dark: "#333",
+  black: "#000",
 }
 
 addons.register(ADDON_ID, () =>
@@ -26,6 +27,7 @@ function getLinks(onClick) {
     { id: "blue", title: "Blue light theme", onClick },
     { id: "red", title: "Red light theme", onClick },
     { id: "dark", title: "Dark theme", onClick },
+    { id: "black", title: "Black theme", onClick },
   ]
 }
 

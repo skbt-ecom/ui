@@ -2,12 +2,21 @@ import { createMuiTheme } from "@material-ui/core/styles"
 
 import { themeBase } from "./themeBase"
 
+const PRIMARY_COLOR = "#003791"
+const SECONDARY_COLOR = "#ff4b5f"
+
 const theme = createMuiTheme({
   ...themeBase,
   palette: {
-    primary: { main: "#003791" },
-    secondary: { main: "#FF4B5F" },
-    custom: { grey500: "#A1AFBF", grey600: "#607289" },
+    primary: { main: PRIMARY_COLOR },
+    secondary: { main: SECONDARY_COLOR },
+    custom: {
+      text1: "#A1AFBF",
+      text2: "#607289",
+      footerBg: "#fff",
+      acceptmentCheckbox: PRIMARY_COLOR,
+      acceptmentLabel: "inherit",
+    },
   },
   overrides: {
     ...themeBase.overrides,

@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme) => ({
   phoneNum: {
     fontWeight: 500,
     fontSize: 22,
-    color: theme.palette.custom.grey600,
+    color: theme.palette.custom.text2,
     textDecoration: "none",
     lineHeight: 1,
     display: "block",
