@@ -1,3 +1,10 @@
+## [2.30.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.30.2...v2.30.3) (2021-07-21)
+
+
+### Bug Fixes
+
+* theme ([48ed92a](https://gitlab.sovcombank.group/web/ecom/ui/commit/48ed92ad3050a45b66778866e8141486827d0498))
+
 ## [2.30.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.30.1...v2.30.2) (2021-07-09)
 
 
