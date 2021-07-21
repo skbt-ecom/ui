@@ -2,7 +2,7 @@ import React from "react"
 import addons, { types } from "@storybook/addons"
 import { useGlobals } from "@storybook/api"
 import { Icons, IconButton, WithTooltip, TooltipLinkList } from "@storybook/components"
-import { PARAM_KEY as BACKGROUNDS_PARAM_KEY } from "@storybook/addon-backgrounds/dist/constants"
+import { PARAM_KEY as BACKGROUNDS_PARAM_KEY } from "@storybook/addon-backgrounds/dist/esm/constants"
 
 const ADDON_ID = "theme-switcher"
 const PARAM_KEY = "theme"

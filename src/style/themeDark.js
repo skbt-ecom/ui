@@ -1,8 +1,8 @@
-import { createMuiTheme } from "@material-ui/core/styles"
+import { createTheme } from "@material-ui/core/styles"
 
 const PRIMARY_COLOR = "#fff"
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     type: "dark",
     text: {
@@ -12,7 +12,13 @@ const theme = createMuiTheme({
       main: "#fff",
     },
     secondary: { main: "#FF4B5F" },
-    custom: { footerBg: "#fff", acceptmentCheckbox: PRIMARY_COLOR, acceptmentLabel: "inherit" },
+    custom: {
+      text1: "#a1afbf",
+      text2: "#607289",
+      footerBg: "#292929",
+      acceptmentCheckbox: PRIMARY_COLOR,
+      acceptmentLabel: "inherit",
+    },
   },
   overrides: {
     // Style sheet name ⚛️
