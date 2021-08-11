@@ -5,13 +5,6 @@ const useStyles = makeStyles(() => ({
     position: "relative",
     width: "100%",
   },
-  input: {
-    fontWeight: 500,
-    fontSize: 18,
-    "& .MuiInputBase-root": {
-      fontSize: "inherit",
-    },
-  },
   sliderRoot: {
     position: "absolute",
     left: 0,
