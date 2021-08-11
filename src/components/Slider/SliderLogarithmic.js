@@ -109,7 +109,6 @@ const SliderComponent = React.memo((props) => {
       <NumberFormat
         {...inputProps}
         label={label}
-        className={classes.input}
         customInput={TextField}
         thousandSeparator={" "}
         value={value}
