@@ -1,3 +1,10 @@
+## [2.30.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.30.3...v2.30.4) (2021-08-11)
+
+
+### Bug Fixes
+
+* fix Slider font-size ([76a44fe](https://gitlab.sovcombank.group/web/ecom/ui/commit/76a44fedc82560fa33efe490a8a3c84c1445d0d8))
+
 ## [2.30.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.30.2...v2.30.3) (2021-07-21)
 
 
