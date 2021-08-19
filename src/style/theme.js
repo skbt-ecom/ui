@@ -11,8 +11,10 @@ const theme = createTheme({
     primary: { main: PRIMARY_COLOR },
     secondary: { main: SECONDARY_COLOR },
     custom: {
-      text1: "#a1afbf",
-      text2: "#607289",
+      headerPhone: "#a1afbf",
+      headerPhoneHint: "#607289",
+      footerText1: "#a1afbf",
+      footerText2: "#607289",
       footerBg: "#fff",
       acceptmentCheckbox: PRIMARY_COLOR,
       acceptmentLabel: "inherit",
