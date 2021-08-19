@@ -21,7 +21,7 @@ function styles(theme) {
 
       "& svg": {
         display: "inline-block",
-        fill: theme.palette.custom.text1,
+        fill: theme.palette.custom.footerText1,
         width: 27,
         height: 25,
       },

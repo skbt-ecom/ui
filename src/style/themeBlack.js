@@ -8,8 +8,10 @@ export const themeBlack = createTheme({
   palette: {
     primary: { main: PRIMARY_COLOR },
     custom: {
-      text1: "#fff",
-      text2: "#fff",
+      headerPhone: PRIMARY_COLOR,
+      headerPhoneHint: PRIMARY_COLOR,
+      footerText1: "#fff",
+      footerText2: "#fff",
       footerBg: PRIMARY_COLOR,
       acceptmentCheckbox: PRIMARY_COLOR,
       acceptmentLabel: "#555",
@@ -30,11 +32,6 @@ export const themeBlack = createTheme({
     MuiOutlinedInput: {
       root: {
         borderRadius: 0,
-      },
-    },
-    MuiLink: {
-      root: {
-        color: PRIMARY_COLOR,
       },
     },
   },

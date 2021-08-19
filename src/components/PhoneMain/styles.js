@@ -1,9 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles((theme) => ({
-  phoneContainer: {
-    color: theme.palette.custom.text1,
-  },
+  phoneContainer: {},
 
   phoneMultiple: {},
 

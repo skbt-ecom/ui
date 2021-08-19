@@ -43,11 +43,16 @@ export const useStyles = makeStyles((theme) => ({
 export const usePhoneStyles = makeStyles((theme) => ({
   phoneContainer: {
     display: "none",
+    color: theme.palette.custom.headerPhone,
 
     [theme.breakpoints.up("md")]: {
       display: "block",
       marginRight: "40px",
     },
+  },
+
+  phoneNum: {
+    color: theme.palette.custom.headerPhoneHint,
   },
 
   phoneMultiple: {

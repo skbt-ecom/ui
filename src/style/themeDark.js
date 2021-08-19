@@ -13,8 +13,10 @@ const theme = createTheme({
     },
     secondary: { main: "#FF4B5F" },
     custom: {
-      text1: "#a1afbf",
-      text2: "#607289",
+      headerPhone: "#a1afbf",
+      headerPhoneHint: "#607289",
+      footerText1: "#a1afbf",
+      footerText2: "#607289",
       footerBg: "#292929",
       acceptmentCheckbox: PRIMARY_COLOR,
       acceptmentLabel: "inherit",

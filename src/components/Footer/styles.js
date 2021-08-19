@@ -27,7 +27,7 @@ function styles(theme) {
     },
 
     phoneContainer: {
-      color: theme.palette.custom.text1,
+      color: theme.palette.custom.footerText1,
       flexGrow: 1,
       textAlign: "center",
       marginBottom: 43,
@@ -39,7 +39,7 @@ function styles(theme) {
     },
 
     phoneNum: {
-      color: theme.palette.custom.text2,
+      color: theme.palette.custom.footerText2,
     },
 
     phoneMultiple: {
@@ -63,7 +63,7 @@ function styles(theme) {
 
       "& p": {
         margin: 0,
-        color: theme.palette.custom.text1,
+        color: theme.palette.custom.footerText1,
         fontSize: 14,
         lineHeight: "20px",
         paddingBottom: 8,
@@ -78,7 +78,7 @@ function styles(theme) {
      * Лигал
      */
     ligal: {
-      color: theme.palette.custom.text1,
+      color: theme.palette.custom.footerText1,
       fontSize: 12,
       lineHeight: "18px",
 
@@ -91,8 +91,8 @@ function styles(theme) {
       display: "inline-block",
       background: "transparent",
       border: 0,
-      borderBottom: `1px solid ${theme.palette.custom.text2}`,
-      color: theme.palette.custom.text2,
+      borderBottom: `1px solid ${theme.palette.custom.footerText2}`,
+      color: theme.palette.custom.footerText2,
       fontSize: 12,
       paddingTop: 8,
       lineHeight: 1.2,

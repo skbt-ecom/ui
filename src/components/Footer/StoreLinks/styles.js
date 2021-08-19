@@ -9,14 +9,14 @@ function styles(theme) {
     },
 
     link: {
-      border: `1px solid ${theme.palette.custom.text1}`,
+      border: `1px solid ${theme.palette.custom.footerText1}`,
       borderRadius: 4,
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
       textAlign: "center",
-      color: theme.palette.custom.text1,
+      color: theme.palette.custom.footerText1,
       textDecoration: "none",
       fontSize: 10,
       width: 80,
@@ -27,7 +27,7 @@ function styles(theme) {
         height: 24,
 
         "& :first-child": {
-          fill: theme.palette.custom.text1,
+          fill: theme.palette.custom.footerText1,
         },
       },
     },
