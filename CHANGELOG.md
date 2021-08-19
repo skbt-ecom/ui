@@ -1,3 +1,10 @@
+## [2.30.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.30.4...v2.30.5) (2021-08-19)
+
+
+### Bug Fixes
+
+* **themes:** header colors ([84c3c80](https://gitlab.sovcombank.group/web/ecom/ui/commit/84c3c80974383f845256fa88c7188f5ccdf79fb6))
+
 ## [2.30.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.30.3...v2.30.4) (2021-08-11)
 
 
