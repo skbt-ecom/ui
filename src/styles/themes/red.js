@@ -1,11 +1,11 @@
 import { createTheme } from "@material-ui/core/styles"
 
-import { themeBase } from "./themeBase"
+import { themeBase } from "./base"
 
 const PRIMARY_COLOR = "#ff4e50"
 const SECONDARY_COLOR = "#9e9e9e"
 
-const theme = createTheme({
+export const redTheme = createTheme({
   ...themeBase,
   palette: {
     primary: { main: PRIMARY_COLOR },
@@ -107,11 +107,3 @@ const theme = createTheme({
     },
   },
 })
-
-if (process.env.NODE_ENV !== "production") {
-  console.error('⚠️ Deprecation theme "themeHalva". Use the "/styles/themes/red" instead')
-}
-/**
- * @deprecated use /styles/themes/red instead
- */
-export default theme

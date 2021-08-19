@@ -2,7 +2,7 @@ import { createTheme } from "@material-ui/core/styles"
 
 const PRIMARY_COLOR = "#fff"
 
-const theme = createTheme({
+export const darkTheme = createTheme({
   palette: {
     type: "dark",
     text: {
@@ -53,11 +53,3 @@ const theme = createTheme({
     },
   },
 })
-
-if (process.env.NODE_ENV !== "production") {
-  console.error('⚠️ Deprecation theme "themeDark". Use the "/styles/themes/dark" instead')
-}
-/**
- * @deprecated use /styles/themes/dark instead
- */
-export default theme
