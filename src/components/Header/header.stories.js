@@ -16,6 +16,7 @@ const story = {
     ButtonProps: {
       onClick: action("onClick"),
     },
+    buttonText: "текст",
     classes: { logo: "asdasd", header: "asd" },
     onLogoClick: action("onChange"),
   },
