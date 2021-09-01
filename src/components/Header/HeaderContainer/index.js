@@ -18,6 +18,7 @@ export default function HeaderContainer(props) {
     withButton,
     PhoneProps,
     ButtonProps,
+    buttonText = "оформить",
   } = props
   const classes = useStyles(props)
   const phoneClasses = usePhoneStyles(PhoneProps)
@@ -46,7 +47,7 @@ export default function HeaderContainer(props) {
                 <PhoneMain {...PhoneProps} classes={phoneClasses} />
                 {withButton && (
                   <Button {...ButtonProps} classes={buttonClasses}>
-                    оформить
+                    {buttonText}
                   </Button>
                 )}
               </Box>
