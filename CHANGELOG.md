@@ -1,3 +1,10 @@
+# [2.31.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.30.5...v2.31.0) (2021-09-01)
+
+
+### Features
+
+* **header:** добавлена возможность ставить свой текст на кнопку в Header'е ([6d00aee](https://gitlab.sovcombank.group/web/ecom/ui/commit/6d00aeef710c4d86b4b88925ee48d42fc44682b8)), closes [#COMMON-1552](https://gitlab.sovcombank.group/web/ecom/ui/issues/COMMON-1552)
+
 ## [2.30.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.30.4...v2.30.5) (2021-08-19)
 
 
