@@ -3,19 +3,21 @@ import React from "react"
 import { Helmet } from "react-helmet"
 
 import ThemeProvider from "@material-ui/styles/ThemeProvider"
-import themeBlue from "../src/style/theme"
-import themeRed from "../src/style/themeHalva"
-import themeDark from "../src/style/themeDark"
-import { themeBlack } from "../src/style/themeBlack"
+
 import Container from "../src/components/Container"
+
+import { blueTheme } from "../src/styles/themes/blue"
+import { redTheme } from "../src/styles/themes/red"
+import { darkTheme } from "../src/styles/themes/dark"
+import { blackTheme } from "../src/styles/themes/black"
 
 import "./preview.css"
 
 const themes = {
-  blue: themeBlue,
-  red: themeRed,
-  dark: themeDark,
-  black: themeBlack,
+  blue: blueTheme,
+  red: redTheme,
+  dark: darkTheme,
+  black: blackTheme,
 }
 
 function storyWrapper(Story, { globals }) {
