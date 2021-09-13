@@ -4,6 +4,8 @@ import IconVK from "./IconVK"
 import IconFacebook from "./IconFacebook"
 import IconOK from "./IconOK"
 import IconTwitter from "./IconTwitter"
+import IconInstagram from "./IconInstagram"
+import IconYoutube from "./IconYoutube"
 
 import useStyles from "./styles"
 
@@ -23,6 +25,14 @@ const defaultItems = [
   {
     href: "https://twitter.com/sovcombank",
     Icon: IconTwitter,
+  },
+  {
+    href: "https://www.instagram.com/sovcombank/",
+    Icon: IconInstagram,
+  },
+  {
+    href: "https://www.youtube.com/channel/UCfed_M_kc4-HqQCX-eHMvkQ",
+    Icon: IconYoutube,
   },
 ]
 
