@@ -47,13 +47,12 @@ function styles(theme) {
     },
 
     copyright: {
+      width: "100%",
       maxWidth: 312,
-
-      [theme.breakpoints.down("xs")]: {
-        margin: "0 auto",
-      },
+      margin: "0 auto",
 
       [theme.breakpoints.up("sm")]: {
+        margin: 0,
         maxWidth: 272,
       },
 

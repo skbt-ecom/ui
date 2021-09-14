@@ -75,12 +75,24 @@ const customStoreLinks = {
 
 const story = {
   title: "Footer",
+  args: {
+    shortText:
+      "asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd",
+    restText: "asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd",
+  },
+  argTypes: {
+    withStore: { type: "boolean" },
+    withLicense: { type: "boolean" },
+    phone: { type: "string" },
+    phoneHint: { type: "string" },
+  },
 }
 export default story
 
-export function withText() {
-  return <Footer shortText={shortText} restText={restText} />
+function TemplateMain(args) {
+  return <Footer {...args} />
 }
+export const withParams = TemplateMain.bind({})
 
 export function withTextAndMultiPhones() {
   return (
@@ -91,10 +103,6 @@ export function withTextAndMultiPhones() {
       phones={["8 927 463-12-81", "8 952 031-34-20"]}
     />
   )
-}
-
-export function withoutText() {
-  return <Footer phoneHint={null} />
 }
 
 export function withCustomSocialLinks() {
