@@ -27,11 +27,11 @@ const defaultItems = [
     Icon: IconTwitter,
   },
   {
-    href: "https://www.instagram.com/sovcombank/",
+    href: "https://instagram.com/sovcombank",
     Icon: IconInstagram,
   },
   {
-    href: "https://www.youtube.com/channel/UCfed_M_kc4-HqQCX-eHMvkQ",
+    href: "https://youtube.com/channel/UCfed_M_kc4-HqQCX-eHMvkQ",
     Icon: IconYoutube,
   },
 ]
