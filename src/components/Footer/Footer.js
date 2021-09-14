@@ -7,27 +7,29 @@ import StoreLinks from "./StoreLinks"
 
 import useStyles from "./styles"
 
-const Footer = (props, ref) => {
+export default function Footer(props) {
   const [isHide, setIsHide] = useState(true)
   const classes = useStyles(props)
   const {
     left,
     right,
-    shortText,
-    restText,
+    shortText = "",
+    restText = "",
     phone,
     phones,
     phoneHint,
     socialLinks,
     storeLinks,
-    withStore,
+    withStore = true,
+    withLicense = true,
   } = props
+
   function showRestLigal() {
     setIsHide(false)
   }
 
   return (
-    <footer className={classes.footer} ref={ref}>
+    <footer className={classes.footer}>
       <Container className={classes.root} fixed={false}>
         <div className={classes.inner}>
           {left || (
@@ -42,7 +44,6 @@ const Footer = (props, ref) => {
               }}
             />
           )}
-
           {right || (
             <div className={classes.copyright}>
               <SocialLinks items={socialLinks} />
@@ -51,7 +52,7 @@ const Footer = (props, ref) => {
                 <br />
                 Все права защищены
               </p>
-              <p>Генеральная лицензия Банка России №963 от 5 декабря 2014 г.</p>
+              {withLicense && <p>Генеральная лицензия Банка России №963 от 5 декабря 2014 г.</p>}
               {withStore ? (
                 <StoreLinks links={storeLinks} />
               ) : (
@@ -75,13 +76,3 @@ const Footer = (props, ref) => {
     </footer>
   )
 }
-
-const ForwardedFooter = React.forwardRef(Footer)
-
-ForwardedFooter.defaultProps = {
-  shortText: "",
-  restText: "",
-  withStore: true,
-}
-
-export default ForwardedFooter
