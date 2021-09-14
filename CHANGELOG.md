@@ -1,3 +1,10 @@
+# [2.33.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.32.0...v2.33.0) (2021-09-14)
+
+
+### Features
+
+* **footer:** add withLicense property ([1f83214](https://gitlab.sovcombank.group/web/ecom/ui/commit/1f8321452814e45e1d1780c1ef416dc021fb490c))
+
 # [2.32.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.31.0...v2.32.0) (2021-09-14)
 
 
