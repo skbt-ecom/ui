@@ -1,3 +1,10 @@
+# [2.32.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.31.0...v2.32.0) (2021-09-14)
+
+
+### Features
+
+* **component:** add instagram and youtube icons ([9fb33db](https://gitlab.sovcombank.group/web/ecom/ui/commit/9fb33db912856bb7d5f2663d001c930a68feb790))
+
 # [2.31.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.30.5...v2.31.0) (2021-09-01)
 
 
