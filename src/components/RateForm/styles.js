@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles"
 
-const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles((theme) => ({
   container: {
     maxWidth: 432,
     margin: "auto",
@@ -39,7 +39,9 @@ const useStyles = makeStyles((theme) => ({
   textField: {
     marginBottom: 48,
   },
+}))
 
+export const useRadioBtnClasses = makeStyles((theme) => ({
   label: {
     marginRight: 0,
 
@@ -62,14 +64,12 @@ const useStyles = makeStyles((theme) => ({
   },
 
   box: {
+    border: "none",
     width: "57px",
     height: "48px",
 
     [theme.breakpoints.up("sm")]: {
       width: "85px",
     },
-    border: "1px solid transparent",
   },
 }))
-
-export default useStyles

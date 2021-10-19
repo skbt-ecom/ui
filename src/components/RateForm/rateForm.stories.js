@@ -12,5 +12,9 @@ const story = {
 export default story
 
 export function Main(args) {
-  return <RateForm {...args} />
+  function handleSubmit(values) {
+    console.log(values)
+  }
+
+  return <RateForm {...args} onSubmit={handleSubmit} />
 }

@@ -11,9 +11,7 @@ import MoodNeutral from "./icons/MoodNeutral"
 import MoodSatisfied from "./icons/MoodSatisfied"
 import MoodVerySatisfied from "./icons/MoodVerySatisfied"
 
-// import sendRequest from "../../utils/sendRequest"
-
-import useStyles from "./styles"
+import { useStyles, useRadioBtnClasses } from "./styles"
 
 const items = [
   {
@@ -38,37 +36,31 @@ const items = [
   },
 ]
 
-export default function RateForm({ title }) {
+export default function RateForm({ title, onSubmit }) {
   const classes = useStyles()
-
-  const handleSubmit = (values) => {
-    console.log(values)
-    // e.preventDefault()
-
-    //   sendRequest("http://urt-web-app1:4037/", { text: data.text, rating: Number(data.rating) })
-  }
+  const radioBtnClasses = useRadioBtnClasses()
 
   return (
     <div>
       <h2 className={classes.title}>{title}</h2>
-      <FormLanding onSubmit={handleSubmit}>
+      <FormLanding onSubmit={onSubmit}>
         <div className={classes.container}>
           <div className={classes.containerElement}>
             <RadioGroupBtn
               defaultValue={items[3].value}
               items={items}
               name="rating"
-              radioBtnClasses={{ label: classes.label, input: classes.input, box: classes.box }}
+              numberType
+              radioBtnClasses={radioBtnClasses}
             />
           </div>
           <p className={classes.fieldDescr}>Напишите ваши замечания и предложения</p>
           <TextField
             name="text"
             placeholder="Введите текст"
-            fullWidth
             multiline
-            rows={6}
-            rowsMax={6}
+            minRows={6}
+            maxRows={6}
             className={classes.textField}
           />
           <div className={classes.containerElement}>
