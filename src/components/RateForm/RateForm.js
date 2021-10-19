@@ -45,15 +45,15 @@ export default function RateForm({ title, onSubmit }) {
       <h2 className={classes.title}>{title}</h2>
       <FormLanding onSubmit={onSubmit}>
         <div className={classes.container}>
-          <div className={classes.containerElement}>
-            <RadioGroupBtn
-              defaultValue={items[3].value}
-              items={items}
-              name="rating"
-              numberType
-              radioBtnClasses={radioBtnClasses}
-            />
-          </div>
+          <RadioGroupBtn
+            className={classes.radioGroupBtn}
+            defaultValue={items[3].value}
+            items={items}
+            name="rating"
+            numberType
+            radioBtnClasses={radioBtnClasses}
+          />
+
           <p className={classes.fieldDescr}>Напишите ваши замечания и предложения</p>
           <TextField
             name="text"

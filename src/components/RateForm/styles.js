@@ -39,6 +39,11 @@ export const useStyles = makeStyles((theme) => ({
   textField: {
     marginBottom: 48,
   },
+
+  radioGroupBtn: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
 }))
 
 export const useRadioBtnClasses = makeStyles((theme) => ({
@@ -65,11 +70,7 @@ export const useRadioBtnClasses = makeStyles((theme) => ({
 
   box: {
     border: "none",
-    width: "57px",
-    height: "48px",
-
-    [theme.breakpoints.up("sm")]: {
-      width: "85px",
-    },
+    width: 48,
+    height: 48,
   },
 }))
