@@ -1,3 +1,15 @@
+# [2.34.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.33.0...v2.34.0) (2021-10-19)
+
+
+### Bug Fixes
+
+* fixed icons ([f3da4d0](https://gitlab.sovcombank.group/web/ecom/ui/commit/f3da4d0ff9bbdf8694e5684e8ce60bc4f98f029e))
+
+
+### Features
+
+* created rate form ([aa23422](https://gitlab.sovcombank.group/web/ecom/ui/commit/aa23422e3eb865fe759bd28054db1a0532a88c2c))
+
 # [2.33.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.32.0...v2.33.0) (2021-09-14)
 
 
