@@ -5,23 +5,28 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 432,
     margin: "auto",
   },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
+
   title: {
+    fontSize: 32,
+    maxWidth: 550,
+    margin: "auto",
     textAlign: "center",
     marginBottom: 56,
   },
-  radioGroup: {
+
+  containerElement: {
     display: "flex",
-    justifyContent: "space-between",
-    width: "100%",
-    marginBottom: 48,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 24,
   },
-  radioButton: {
-    margin: 0,
+
+  button: {
+    width: "100%",
+
+    [theme.breakpoints.up("md")]: {
+      width: 240,
+    },
   },
 
   fieldDescr: {
@@ -30,29 +35,40 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     width: "100%",
   },
+
   textField: {
     marginBottom: 48,
   },
-  cssOutlinedInputBlue: {
-    "&$cssFocused $notchedOutline": {
-      borderColor: `${theme.palette.primary.main} !important`,
+
+  label: {
+    marginRight: 0,
+
+    "&:last-of-type": {
+      marginRight: 0,
     },
   },
-  cssOutlinedInputRed: {
-    "&$cssFocused $notchedOutline": {
-      borderColor: `${theme.palette.secondary.main} !important`,
+
+  input: {
+    "&:checked": {
+      "& + div": {
+        backgroundColor: "transparent",
+        "& span": {
+          "& svg": {
+            fill: theme.palette.primary.main,
+          },
+        },
+      },
     },
   },
 
-  notchedOutline: {},
+  box: {
+    width: "57px",
+    height: "48px",
 
-  cssFocused: {},
-  button: {
-    width: "100%",
-
-    [theme.breakpoints.up("md")]: {
-      width: 240,
+    [theme.breakpoints.up("sm")]: {
+      width: "85px",
     },
+    border: "1px solid transparent",
   },
 }))
 

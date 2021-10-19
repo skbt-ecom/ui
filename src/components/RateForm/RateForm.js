@@ -18,23 +18,23 @@ import useStyles from "./styles"
 const items = [
   {
     value: 1,
-    label: <MoodBad fill="#9FA0A7" />,
+    label: <MoodBad />,
   },
   {
     value: 2,
-    label: <MoodVeryBad fill="#9FA0A7" />,
+    label: <MoodVeryBad />,
   },
   {
     value: 3,
-    label: <MoodNeutral fill="#9FA0A7" />,
+    label: <MoodNeutral />,
   },
   {
     value: 4,
-    label: <MoodSatisfied fill="#9FA0A7" />,
+    label: <MoodSatisfied />,
   },
   {
     value: 5,
-    label: <MoodVerySatisfied fill="#9FA0A7" />,
+    label: <MoodVerySatisfied />,
   },
 ]
 
@@ -45,31 +45,36 @@ export default function RateForm({ title }) {
     console.log(values)
     // e.preventDefault()
 
-    // if (data.rating !== null) {
-    //   setData({ ...data, error: false })
     //   sendRequest("http://urt-web-app1:4037/", { text: data.text, rating: Number(data.rating) })
-    // } else {
-    //   setData({ ...data, error: true })
-    // }
   }
 
   return (
-    <div className={classes.container}>
+    <div>
       <h2 className={classes.title}>{title}</h2>
       <FormLanding onSubmit={handleSubmit}>
-        <RadioGroupBtn defaultValue={items[3].value} items={items} name="rating" />
-        <p className={classes.fieldDescr}>Напишите ваши замечания и предложения</p>
-        <TextField
-          name="text"
-          placeholder="Введите текст"
-          fullWidth
-          multiline
-          rows={6}
-          rowsMax={6}
-          className={classes.textField}
-          // helperText="Пожалуйста, поставьте оценку"
-        />
-        <SubmitButton className={classes.button}>Отправить</SubmitButton>
+        <div className={classes.container}>
+          <div className={classes.containerElement}>
+            <RadioGroupBtn
+              defaultValue={items[3].value}
+              items={items}
+              name="rating"
+              radioBtnClasses={{ label: classes.label, input: classes.input, box: classes.box }}
+            />
+          </div>
+          <p className={classes.fieldDescr}>Напишите ваши замечания и предложения</p>
+          <TextField
+            name="text"
+            placeholder="Введите текст"
+            fullWidth
+            multiline
+            rows={6}
+            rowsMax={6}
+            className={classes.textField}
+          />
+          <div className={classes.containerElement}>
+            <SubmitButton className={classes.button}>Отправить</SubmitButton>
+          </div>
+        </div>
       </FormLanding>
     </div>
   )
