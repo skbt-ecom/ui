@@ -1,13 +1,14 @@
 import React from "react"
-// webpack, parcel or else will inject the CSS into the page
+
 import { FormControlLabel, Radio, RadioGroup } from "@material-ui/core"
-import propTypes from "prop-types"
-import useStyles from "./styles"
+
 import MoodVeryBad from "./icons/MoodVeryBad"
 import MoodBad from "./icons/MoodBad"
 import MoodNeutral from "./icons/MoodNeutral"
 import MoodSatisfied from "./icons/MoodSatisfied"
 import MoodVerySatisfied from "./icons/MoodVerySatisfied"
+
+import useStyles from "./styles"
 
 export default function CustomRadioButtons({ valueRate, handleChange, formColor }) {
   const classes = useStyles()
@@ -78,10 +79,4 @@ export default function CustomRadioButtons({ valueRate, handleChange, formColor 
       />
     </RadioGroup>
   )
-}
-
-RadioGroup.propTypes = {
-  valueRate: propTypes.string,
-  handleChange: propTypes.func,
-  formColor: propTypes.string,
 }

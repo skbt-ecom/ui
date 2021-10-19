@@ -1,69 +1,76 @@
-import React, { useState } from "react"
-import propTypes from "prop-types"
-import { Button, TextField } from "@material-ui/core"
+import React from "react"
+
+import FormLanding from "../FormLanding"
+import SubmitButton from "../FormLanding/fields/SubmitButton"
+import TextField from "../FormLanding/fields/TextField"
+import RadioGroupBtn from "../FormLanding/fields/RadioGroupBtn"
+
+import MoodBad from "./icons/MoodBad"
+import MoodVeryBad from "./icons/MoodVeryBad"
+import MoodNeutral from "./icons/MoodNeutral"
+import MoodSatisfied from "./icons/MoodSatisfied"
+import MoodVerySatisfied from "./icons/MoodVerySatisfied"
+
+// import sendRequest from "../../utils/sendRequest"
+
 import useStyles from "./styles"
-import CustomRadioButtons from "./CustomRadioButtons"
-import sendRequest from "../../utils/sendRequest"
 
-export default function RateForm({ formColor, title }) {
+const items = [
+  {
+    value: 1,
+    label: <MoodBad fill="#9FA0A7" />,
+  },
+  {
+    value: 2,
+    label: <MoodVeryBad fill="#9FA0A7" />,
+  },
+  {
+    value: 3,
+    label: <MoodNeutral fill="#9FA0A7" />,
+  },
+  {
+    value: 4,
+    label: <MoodSatisfied fill="#9FA0A7" />,
+  },
+  {
+    value: 5,
+    label: <MoodVerySatisfied fill="#9FA0A7" />,
+  },
+]
+
+export default function RateForm({ title }) {
   const classes = useStyles()
-  const [data, setData] = useState({ rating: null, text: "", error: false })
-  const handleChange = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value })
-  }
-  const handleSubmit = (e) => {
-    e.preventDefault()
 
-    if (data.rating !== null) {
-      setData({ ...data, error: false })
-      sendRequest("http://urt-web-app1:4037/", { text: data.text, rating: Number(data.rating) })
-    } else {
-      setData({ ...data, error: true })
-    }
+  const handleSubmit = (values) => {
+    console.log(values)
+    // e.preventDefault()
+
+    // if (data.rating !== null) {
+    //   setData({ ...data, error: false })
+    //   sendRequest("http://urt-web-app1:4037/", { text: data.text, rating: Number(data.rating) })
+    // } else {
+    //   setData({ ...data, error: true })
+    // }
   }
 
   return (
     <div className={classes.container}>
       <h2 className={classes.title}>{title}</h2>
-      <form className={classes.form} onSubmit={handleSubmit}>
-        <CustomRadioButtons
-          valueRate={data.rating}
-          handleChange={handleChange}
-          formColor={formColor}
-        />
+      <FormLanding onSubmit={handleSubmit}>
+        <RadioGroupBtn defaultValue={items[3].value} items={items} name="rating" />
         <p className={classes.fieldDescr}>Напишите ваши замечания и предложения</p>
         <TextField
-          InputProps={{
-            classes: {
-              root:
-                formColor === "primary"
-                  ? classes.cssOutlinedInputBlue
-                  : classes.cssOutlinedInputRed,
-              focused: classes.cssFocused,
-              notchedOutline: classes.notchedOutline,
-            },
-          }}
           name="text"
           placeholder="Введите текст"
           fullWidth
           multiline
           rows={6}
           rowsMax={6}
-          value={data.text}
-          onChange={handleChange}
           className={classes.textField}
-          error={data.error}
-          helperText={data.error ? "Пожалуйста, поставьте оценку" : " "}
+          // helperText="Пожалуйста, поставьте оценку"
         />
-        <Button color={formColor} className={classes.button} type="submit">
-          Отправить
-        </Button>
-      </form>
+        <SubmitButton className={classes.button}>Отправить</SubmitButton>
+      </FormLanding>
     </div>
   )
-}
-
-RateForm.propTypes = {
-  formColor: propTypes.string.isRequired,
-  title: propTypes.string.isRequired,
 }
