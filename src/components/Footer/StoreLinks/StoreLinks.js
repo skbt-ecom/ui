@@ -8,6 +8,7 @@ import useStyles from "./styles"
 
 const defaultItems = [
   {
+    rel: "nofollow",
     href: "https://apps.apple.com/ru/app/halva/id1208055056",
     text: (
       <div style={{ marginTop: 8 }}>
@@ -18,6 +19,7 @@ const defaultItems = [
     Icon: IconAppstore,
   },
   {
+    rel: "",
     href: "https://play.google.com/store/apps/details?id=ru.sovcomcard.halva.v1",
     text: (
       <div style={{ marginTop: 8 }}>
@@ -28,6 +30,7 @@ const defaultItems = [
     Icon: IconGPlay,
   },
   {
+    rel: "nofollow",
     href: "https://appgallery.huawei.com/#/app/C101305485",
     text: (
       <div style={{ marginTop: 8 }}>
@@ -61,8 +64,14 @@ export default function StoreLinks(props) {
 
   return (
     <div className={classes.store}>
-      {items.map(({ href, text, Icon }, i) => (
-        <a key={i} href={href} target="_blank" rel="noopener noreferrer" className={classes.link}>
+      {items.map(({ rel, href, text, Icon }, i) => (
+        <a
+          key={i}
+          href={href}
+          target="_blank"
+          rel={`noopener noreferrer ${rel}`}
+          className={classes.link}
+        >
           <Icon />
           {text}
         </a>
