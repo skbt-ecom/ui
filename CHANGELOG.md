@@ -1,3 +1,15 @@
+# [2.35.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.34.0...v2.35.0) (2021-10-25)
+
+
+### Bug Fixes
+
+* fixed icon ([d70e9ce](https://gitlab.sovcombank.group/web/ecom/ui/commit/d70e9ce3c1b16ad6417e1004b52dbaaf06f231fc))
+
+
+### Features
+
+* added rel ([56be44c](https://gitlab.sovcombank.group/web/ecom/ui/commit/56be44ce4200dd1bdaaf3a1e897ccbb5ade98749))
+
 # [2.34.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.33.0...v2.34.0) (2021-10-19)
 
 
