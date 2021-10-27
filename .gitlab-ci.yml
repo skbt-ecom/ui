@@ -20,7 +20,7 @@ lint:
 publish:
   stage: build
   variables:
-    GITLAB_TOKEN: $GITLAB_TOKEN
+    GITLAB_TOKEN: $GITLAB_UI_TOKEN
     NPM_TOKEN: $NPM_TOKEN
   before_script:
     - apk update && apk upgrade && apk add --no-cache bash git
