@@ -1,4 +1,4 @@
-FROM node:lts-alpine as build
+FROM node:14-alpine as build
 
 ARG PROXY
 ARG NO_PROXY
@@ -19,7 +19,7 @@ COPY . .
 
 RUN npm run build-storybook
 
-FROM node:lts-alpine
+FROM node:14-alpine
 
 ARG NPM_REGISTRY
 RUN npm config set registry $NPM_REGISTRY/npm-all/

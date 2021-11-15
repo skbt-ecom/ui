@@ -1,4 +1,4 @@
-image: node:lts-alpine
+image: node:14-alpine
 
 variables:
   PORT: 3047
