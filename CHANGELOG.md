@@ -1,3 +1,15 @@
+# [2.36.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.35.0...v2.36.0) (2021-11-15)
+
+
+### Bug Fixes
+
+* **header:** add aria-label to logo button ([cb3f7f1](https://gitlab.sovcombank.group/web/ecom/ui/commit/cb3f7f112016c1a14ed6d5134b485a60f73108aa))
+
+
+### Features
+
+* update header logo? update Dockerfile ([0a9ac88](https://gitlab.sovcombank.group/web/ecom/ui/commit/0a9ac8826931dc05bec721bdec052a686a41c3d9))
+
 # [2.35.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.34.0...v2.35.0) (2021-10-25)
 
 
