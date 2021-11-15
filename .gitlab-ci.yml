@@ -1,4 +1,4 @@
-image: node:lts-alpine
+image: node:14
 
 variables:
   PORT: 3047
@@ -20,7 +20,7 @@ lint:
 publish:
   stage: build
   variables:
-    GITLAB_TOKEN: $GITLAB_TOKEN
+    GITLAB_TOKEN: $GITLAB_UI_TOKEN
     NPM_TOKEN: $NPM_TOKEN
   before_script:
     - apk update && apk upgrade && apk add --no-cache bash git

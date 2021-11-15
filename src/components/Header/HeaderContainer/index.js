@@ -35,6 +35,7 @@ export default function HeaderContainer(props) {
             className={classes.navigation}
           >
             <button
+              aria-label="go home page"
               type="button"
               className={cn(classes.logo, onLogoClick && classes.btn)}
               onClick={onLogoClick}
