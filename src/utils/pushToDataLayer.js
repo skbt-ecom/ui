@@ -6,7 +6,6 @@ export default function pushToDataLayer({
   // eslint-disable-next-line no-multi-assign
   const dataLayer = (window.dataLayer = window.dataLayer || [])
   dataLayer.push({ eventLabel, time, ...data })
-  console.log(dataLayer)
 }
 
 export const pushToDataLayerLoadedStep = (stepN) => {
