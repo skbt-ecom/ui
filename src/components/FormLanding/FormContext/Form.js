@@ -9,7 +9,11 @@ import {
   getHelperTextFromError,
   getRequiredFields,
 } from "./helpers"
-import { pushToDataLayerSendForm } from "../../../utils/pushToDataLayer"
+import {
+  pushToDataLayerFormSuccess,
+  pushToDataLayerSendForm,
+  pushToDataLayerStepSuccess,
+} from "../../../utils/pushToDataLayerUtils"
 
 export const FormContext = React.createContext({})
 
@@ -168,8 +172,8 @@ export class Form extends React.Component {
         }
       }
     })
-    if (this.props.stepN) {
-      pushToDataLayerSendForm(this.props.stepN)
+    if (this.props.step) {
+      pushToDataLayerSendForm(this.props.step)
     }
 
     if (!validForm) {
@@ -178,6 +182,9 @@ export class Form extends React.Component {
       })
       return
     }
+
+    if (this.props.step) pushToDataLayerStepSuccess(this.props.step)
+    else pushToDataLayerFormSuccess()
 
     this.props.onSubmit(fieldsToSubmit)
   }

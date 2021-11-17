@@ -7,7 +7,7 @@ import { getErrorProp, getHelperTextFromError } from "./helpers"
 import {
   pushToDataLayerInvalidField,
   pushToDataLayerRequiredValidField,
-} from "../../../utils/pushToDataLayer"
+} from "../../../utils/pushToDataLayerUtils"
 
 export class Field extends React.PureComponent {
   prevValue = undefined // needs to prevent calling onValidateItem if value does not changed (ex. onBlur)

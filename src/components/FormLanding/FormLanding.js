@@ -1,9 +1,5 @@
 import React, { useEffect } from "react"
-import {
-  pushToDataLayerFormSuccess,
-  pushToDataLayerLoadedStep,
-  pushToDataLayerStepSuccess,
-} from "../../utils/pushToDataLayer"
+import { pushToDataLayerLoadedStep } from "../../utils/pushToDataLayerUtils"
 
 import { Form } from "./FormContext/Form"
 
@@ -11,21 +7,15 @@ import useStyles from "./styles"
 
 const FormLanding = (props, ref) => {
   const classes = useStyles(props)
-  const { onSubmit, onChangeFields, children, stepN } = props
+  const { onSubmit, onChangeFields, children, step } = props
 
   useEffect(() => {
-    if (stepN) pushToDataLayerLoadedStep(stepN)
-  }, [stepN])
-
-  const handleSubmit = (fields) => {
-    if (stepN) pushToDataLayerStepSuccess(stepN)
-    else pushToDataLayerFormSuccess()
-    onSubmit(fields)
-  }
+    if (step) pushToDataLayerLoadedStep(step)
+  }, [step])
 
   return (
     <div className={classes.container}>
-      <Form onSubmit={handleSubmit} onChangeFields={onChangeFields} ref={ref} stepN={stepN}>
+      <Form onSubmit={onSubmit} onChangeFields={onChangeFields} ref={ref} step={step}>
         {children}
       </Form>
     </div>
