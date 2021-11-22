@@ -77,8 +77,7 @@ export function CreditAmountSlider() {
     </FormLanding>
   )
 }
-
-export function DadataFields() {
+export function DadataFieldsTemplate(props) {
   function handleSubmit(values) {
     console.log(values)
     const fieldsType = {
@@ -92,7 +91,7 @@ export function DadataFields() {
   }
 
   return (
-    <FormLanding onChangeFields={action("onChangeFields")} onSubmit={handleSubmit}>
+    <FormLanding {...props} onChangeFields={action("onChangeFields")} onSubmit={handleSubmit}>
       <DadataFio name="fio" label="ФИО" />
       <DadataFio name="oldFio" label="Предыдущий ФИО" />
       <DadataAddress name="address2" label="Адрес" />
@@ -102,6 +101,10 @@ export function DadataFields() {
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>
   )
+}
+export const DadataFields = DadataFieldsTemplate.bind({})
+DadataFields.args = {
+  step: 1,
 }
 
 export function FormWrapper() {
