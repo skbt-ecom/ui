@@ -4,10 +4,10 @@ import PropTypes from "prop-types"
 
 import { FormContext } from "./Form"
 import { getErrorProp, getHelperTextFromError } from "./helpers"
-import {
-  pushToDataLayerInvalidField,
-  pushToDataLayerRequiredValidField,
-} from "../../../utils/pushToDataLayerUtils"
+// import {
+//   pushToDataLayerInvalidField,
+//   pushToDataLayerRequiredValidField,
+// } from "../../../utils/pushToDataLayerUtils"
 
 export class Field extends React.PureComponent {
   prevValue = undefined // needs to prevent calling onValidateItem if value does not changed (ex. onBlur)
@@ -54,8 +54,8 @@ export class Field extends React.PureComponent {
     const error = isRequired ? this.props.validate(value) : false
     const helperText = getHelperTextFromError(error, this.props.helperText)
 
-    if (!error && isRequired) pushToDataLayerRequiredValidField(this.props.name)
-    else if (error) pushToDataLayerInvalidField(this.props.name, helperText)
+    // if (!error && isRequired) pushToDataLayerRequiredValidField(this.props.name)
+    // else if (error) pushToDataLayerInvalidField(this.props.name, helperText)
 
     this.context.onChange({
       fieldKey: this.props.name,
