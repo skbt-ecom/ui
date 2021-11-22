@@ -1,5 +1,5 @@
-import React, { useEffect } from "react"
-import { pushToDataLayerLoadedStep } from "../../utils/pushToDataLayerUtils"
+import React from "react"
+// import { pushToDataLayerLoadedStep } from "../../utils/pushToDataLayerUtils"
 
 import { Form } from "./FormContext/Form"
 
@@ -9,9 +9,9 @@ const FormLanding = (props, ref) => {
   const classes = useStyles(props)
   const { onSubmit, onChangeFields, children, step } = props
 
-  useEffect(() => {
-    if (step) pushToDataLayerLoadedStep(step)
-  }, [step])
+  // useEffect(() => {
+  //   if (step) pushToDataLayerLoadedStep(step)
+  // }, [step])
 
   return (
     <div className={classes.container}>
