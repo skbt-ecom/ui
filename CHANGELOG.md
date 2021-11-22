@@ -1,3 +1,20 @@
+# [2.37.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.36.0...v2.37.0) (2021-11-22)
+
+
+### Bug Fixes
+
+* **pushtodatalayer:** rm console.log ([1e9be75](https://gitlab.sovcombank.group/web/ecom/ui/commit/1e9be755bab18288e75a0724bc990ac7a554d6e1)), closes [#VG_SCB-30](https://gitlab.sovcombank.group/web/ecom/ui/issues/VG_SCB-30)
+
+
+### Features
+
+* **formlanding:** added reporting from FormLanding ([74e9961](https://gitlab.sovcombank.group/web/ecom/ui/commit/74e99616ff081a84139970924e16056a06c73a26)), closes [#VG_SCB-30](https://gitlab.sovcombank.group/web/ecom/ui/issues/VG_SCB-30)
+
+
+### Performance Improvements
+
+* update pushTodataLayer etv ([0659d0a](https://gitlab.sovcombank.group/web/ecom/ui/commit/0659d0a9b8597e16c897d4e8c1752e80b78fb8fd)), closes [#VG_SCB-30](https://gitlab.sovcombank.group/web/ecom/ui/issues/VG_SCB-30)
+
 # [2.36.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.35.0...v2.36.0) (2021-11-15)
 
 
