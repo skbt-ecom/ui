@@ -1,3 +1,10 @@
+## [2.38.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.38.0...v2.38.1) (2021-11-22)
+
+
+### Bug Fixes
+
+* temporarily disable form datalayer ([278223c](https://gitlab.sovcombank.group/web/ecom/ui/commit/278223c468b7ee2453a6cdb9d489b11d9ab6ae62))
+
 # [2.38.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.37.0...v2.38.0) (2021-11-22)
 
 
