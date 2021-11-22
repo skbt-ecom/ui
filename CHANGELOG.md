@@ -1,3 +1,10 @@
+# [2.38.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.37.0...v2.38.0) (2021-11-22)
+
+
+### Features
+
+* add new region ([7684f1b](https://gitlab.sovcombank.group/web/ecom/ui/commit/7684f1b3bf36d3cbbe4cbe5916c959e2813df275))
+
 # [2.37.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.36.0...v2.37.0) (2021-11-22)
 
 
