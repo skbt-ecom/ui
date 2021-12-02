@@ -1,3 +1,10 @@
+## [2.38.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.38.1...v2.38.2) (2021-12-02)
+
+
+### Bug Fixes
+
+* enable form's pushtodatalayer ([eab9335](https://gitlab.sovcombank.group/web/ecom/ui/commit/eab9335d3ddf18a524174c3e4bd8e6a1c9f92f8c))
+
 ## [2.38.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.38.0...v2.38.1) (2021-11-22)
 
 
