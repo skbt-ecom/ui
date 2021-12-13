@@ -1,3 +1,10 @@
+# [2.39.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.38.2...v2.39.0) (2021-12-13)
+
+
+### Features
+
+* **header:** add withButton prop to show/hide phone ([8802d9b](https://gitlab.sovcombank.group/web/ecom/ui/commit/8802d9bc893a61415407db26904f221d975ec993))
+
 ## [2.38.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.38.1...v2.38.2) (2021-12-02)
 
 
