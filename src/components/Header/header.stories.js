@@ -24,6 +24,7 @@ const story = {
   argTypes: {
     sticky: { type: "boolean" },
     withButton: { type: "boolean" },
+    withPhone: { type: "boolean" },
   },
 }
 export default story
