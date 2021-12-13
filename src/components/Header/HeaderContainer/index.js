@@ -16,6 +16,7 @@ export default function HeaderContainer(props) {
     sticky = false,
     onLogoClick,
     withButton,
+    withPhone = true,
     PhoneProps,
     ButtonProps,
     buttonText = "оформить",
@@ -45,7 +46,7 @@ export default function HeaderContainer(props) {
             {children}
             {right || (
               <Box display="flex" alignItems="center">
-                <PhoneMain {...PhoneProps} classes={phoneClasses} />
+                {withPhone && <PhoneMain {...PhoneProps} classes={phoneClasses} />}
                 {withButton && (
                   <Button {...ButtonProps} classes={buttonClasses}>
                     {buttonText}
