@@ -104,7 +104,7 @@ export function DadataFieldsTemplate(props) {
 }
 export const DadataFields = DadataFieldsTemplate.bind({})
 DadataFields.args = {
-  step: 1,
+  name: 1,
 }
 
 export function FormWrapper() {
