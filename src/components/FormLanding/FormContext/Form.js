@@ -10,7 +10,6 @@ import {
   getRequiredFields,
 } from "./helpers"
 import {
-  pushToDataLayerFormSuccess,
   pushToDataLayerSendForm,
   pushToDataLayerStepSuccess,
 } from "../../../utils/pushToDataLayerUtils"
@@ -185,7 +184,6 @@ export class Form extends React.Component {
     }
 
     if (this.props.name) pushToDataLayerStepSuccess(this.props.name)
-    else pushToDataLayerFormSuccess()
 
     this.props.onSubmit(fieldsToSubmit)
   }
