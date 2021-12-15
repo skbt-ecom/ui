@@ -5,11 +5,11 @@ function _pushToDataLayer({ time = Date.now(), eventLabel = window.location.path
   pushToDataLayer({ time, eventLabel, ...data })
 }
 
-export const pushToDataLayerLoadedStep = (stepN) => {
+export const pushToDataLayerLoadedStep = (name) => {
   _pushToDataLayer({
     event: "GAFormEvent",
     eventCategory: "stepLoaded",
-    eventAction: `step${stepN}`,
+    eventAction: name,
   })
 }
 
@@ -37,11 +37,11 @@ export const pushToDataLayerRequiredValidField = (fieldKey) => {
     focus: "onfocus",
   })
 }
-export const pushToDataLayerStepSuccess = (stepN) => {
+export const pushToDataLayerStepSuccess = (name) => {
   _pushToDataLayer({
     event: "GAFormEvent",
     eventCategory: "stepSuccess",
-    eventAction: `step${stepN}`,
+    eventAction: name,
   })
 }
 export const pushToDataLayerFormSuccess = () => {

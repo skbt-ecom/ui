@@ -7,15 +7,15 @@ import useStyles from "./styles"
 
 const FormLanding = (props, ref) => {
   const classes = useStyles(props)
-  const { onSubmit, onChangeFields, children, step } = props
+  const { onSubmit, onChangeFields, children, name } = props
 
   useEffect(() => {
-    if (step) pushToDataLayerLoadedStep(step)
-  }, [step])
+    if (name) pushToDataLayerLoadedStep(name)
+  }, [name])
 
   return (
     <div className={classes.container}>
-      <Form onSubmit={onSubmit} onChangeFields={onChangeFields} ref={ref} step={step}>
+      <Form onSubmit={onSubmit} onChangeFields={onChangeFields} ref={ref} name={name}>
         {children}
       </Form>
     </div>
