@@ -1,3 +1,11 @@
+## [2.39.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.39.0...v2.39.1) (2021-12-15)
+
+
+### Bug Fixes
+
+* fix ([48e155b](https://gitlab.sovcombank.group/web/ecom/ui/commit/48e155b9f26f8cd3e04c2e95e68eff060627fad5))
+* replacr step to name ([c8c87c1](https://gitlab.sovcombank.group/web/ecom/ui/commit/c8c87c1f3297c2ec2a1f0738fb58f221e205b605))
+
 # [2.39.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.38.2...v2.39.0) (2021-12-13)
 
 
