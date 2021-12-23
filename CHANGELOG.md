@@ -1,3 +1,13 @@
+# [2.40.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.39.1...v2.40.0) (2021-12-23)
+
+
+### Features
+
+* add new region ([98d81e4](https://gitlab.sovcombank.group/web/ecom/ui/commit/98d81e44cdb35c563e0fcc17d6361bb2727fc0f1))
+* change .eslintrc ([312eb03](https://gitlab.sovcombank.group/web/ecom/ui/commit/312eb031acd82152a5f25ccc58337fcbe48f55a3))
+* change .eslintrc ([422bdf9](https://gitlab.sovcombank.group/web/ecom/ui/commit/422bdf9e48a00bc8a9983c3fc9c770fb7b9e78fe))
+* update regions ([f67349c](https://gitlab.sovcombank.group/web/ecom/ui/commit/f67349ca3b312145ed4d30c1097c74c59d4586d9))
+
 ## [2.39.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.39.0...v2.39.1) (2021-12-15)
 
 
