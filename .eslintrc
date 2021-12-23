@@ -16,6 +16,7 @@
     "react/no-array-index-key": "off",
     "camelcase": "off",
     "react/prop-types": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "react/jsx-no-bind": "off"
   }
 }
