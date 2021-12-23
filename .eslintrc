@@ -17,6 +17,7 @@
     "camelcase": "off",
     "react/prop-types": "off",
     "no-console": "off",
-    "react/jsx-no-bind": "off"
+    "react/jsx-no-bind": "off",
+    "react/destructuring-assignment": [<enabled>, "always"]
   }
 }
