@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 
-import { Box } from "@material-ui/core"
 import Container from "../Container"
 import PhoneMain from "../PhoneMain"
 import SocialLinks from "./SocialLinks"
@@ -35,7 +34,7 @@ export default function Footer(props) {
       <Container className={classes.root} fixed={false}>
         <div className={classes.inner}>
           {left || (
-            <Box>
+            <div>
               {withPhone && (
                 <PhoneMain
                   phone={phone}
@@ -48,7 +47,7 @@ export default function Footer(props) {
                   }}
                 />
               )}
-            </Box>
+            </div>
           )}
           {right || (
             <div className={classes.copyright}>
