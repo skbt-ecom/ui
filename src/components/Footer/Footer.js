@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 
+import { Box } from "@material-ui/core"
 import Container from "../Container"
 import PhoneMain from "../PhoneMain"
 import SocialLinks from "./SocialLinks"
@@ -22,6 +23,7 @@ export default function Footer(props) {
     storeLinks,
     withStore = true,
     withLicense = true,
+    withPhone = true,
   } = props
 
   function showRestLigal() {
@@ -33,16 +35,20 @@ export default function Footer(props) {
       <Container className={classes.root} fixed={false}>
         <div className={classes.inner}>
           {left || (
-            <PhoneMain
-              phone={phone}
-              phones={phones}
-              phoneHint={phoneHint}
-              classes={{
-                phoneContainer: classes.phoneContainer,
-                phoneNum: classes.phoneNum,
-                phoneMultiple: classes.phoneMultiple,
-              }}
-            />
+            <Box>
+              {withPhone && (
+                <PhoneMain
+                  phone={phone}
+                  phones={phones}
+                  phoneHint={phoneHint}
+                  classes={{
+                    phoneContainer: classes.phoneContainer,
+                    phoneNum: classes.phoneNum,
+                    phoneMultiple: classes.phoneMultiple,
+                  }}
+                />
+              )}
+            </Box>
           )}
           {right || (
             <div className={classes.copyright}>
