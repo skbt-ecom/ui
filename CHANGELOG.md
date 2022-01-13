@@ -1,3 +1,15 @@
+# [2.41.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.40.0...v2.41.0) (2022-01-13)
+
+
+### Bug Fixes
+
+* fix ([a11ffa4](https://gitlab.sovcombank.group/web/ecom/ui/commit/a11ffa4343337e5628f67a0c6ba8c07ea35cae9b))
+
+
+### Features
+
+* add withPhone in Footer ([ef0728e](https://gitlab.sovcombank.group/web/ecom/ui/commit/ef0728e06a781119deda2e502810b944c0ac5e71))
+
 # [2.40.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.39.1...v2.40.0) (2021-12-23)
 
 
