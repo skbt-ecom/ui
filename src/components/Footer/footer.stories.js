@@ -85,6 +85,7 @@ const story = {
     withLicense: { type: "boolean" },
     phone: { type: "string" },
     phoneHint: { type: "string" },
+    withPhone: { type: "boolean" },
   },
 }
 export default story

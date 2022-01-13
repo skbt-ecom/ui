@@ -22,6 +22,7 @@ export default function Footer(props) {
     storeLinks,
     withStore = true,
     withLicense = true,
+    withPhone = true,
   } = props
 
   function showRestLigal() {
@@ -33,16 +34,20 @@ export default function Footer(props) {
       <Container className={classes.root} fixed={false}>
         <div className={classes.inner}>
           {left || (
-            <PhoneMain
-              phone={phone}
-              phones={phones}
-              phoneHint={phoneHint}
-              classes={{
-                phoneContainer: classes.phoneContainer,
-                phoneNum: classes.phoneNum,
-                phoneMultiple: classes.phoneMultiple,
-              }}
-            />
+            <div>
+              {withPhone && (
+                <PhoneMain
+                  phone={phone}
+                  phones={phones}
+                  phoneHint={phoneHint}
+                  classes={{
+                    phoneContainer: classes.phoneContainer,
+                    phoneNum: classes.phoneNum,
+                    phoneMultiple: classes.phoneMultiple,
+                  }}
+                />
+              )}
+            </div>
           )}
           {right || (
             <div className={classes.copyright}>
