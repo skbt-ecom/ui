@@ -1,3 +1,10 @@
+## [2.42.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.42.0...v2.42.1) (2022-01-24)
+
+
+### Bug Fixes
+
+* fix ([155dcaf](https://gitlab.sovcombank.group/web/ecom/ui/commit/155dcaf747bea2c361599fd39b0eec31bbb53c23))
+
 # [2.42.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.41.0...v2.42.0) (2022-01-24)
 
 
