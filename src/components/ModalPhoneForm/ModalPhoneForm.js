@@ -3,12 +3,12 @@ import Modal from "@material-ui/core/Modal"
 import Backdrop from "@material-ui/core/Backdrop"
 import Fade from "@material-ui/core/Fade"
 import Form from "../FormLanding"
-import PhoneFieldWithSeven from "../FormLanding/fields/PhoneFieldWithSeven"
 import AcceptmentField from "../FormLanding/fields/AcceptmentField"
 import SubmitButton from "../FormLanding/fields/SubmitButton"
 
 import CloseIcon from "./CloseIcon"
 import useStyles from "./styles"
+import PhoneField from "../PhoneField"
 
 const ModalPhoneForm = ({ isModalOpen, onClose, onSubmit, title, subtitle, ...props }) => {
   const styles = useStyles(props)
@@ -49,7 +49,7 @@ const ModalPhoneForm = ({ isModalOpen, onClose, onSubmit, title, subtitle, ...pr
             </h2>
             <p className={styles.subTitle}>{subtitle || "Нужен только ваш номер телефона"}</p>
             <Form onSubmit={submitHandler}>
-              <PhoneFieldWithSeven label="Телефон" name="phone" />
+              <PhoneField label="Телефон" name="phone" />
               <AcceptmentField
                 name="agree"
                 classes={{ fieldWrapperAcceptment: styles.fieldWrapperAcceptment }}

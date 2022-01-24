@@ -19,8 +19,8 @@ import DadataAuto from "./fields/DadataFields/DadataAuto"
 import DateField from "./fields/DateField"
 import EmailField from "./fields/EmailField"
 import MaskedField from "./fields/MaskedField"
-import PhoneFieldWithSeven from "./fields/PhoneFieldWithSeven"
 import RadioGroupField from "./fields/RadioGroupField"
+import PhoneField from "./fields/PhoneField"
 // import SelectField from './fields/SelectField';
 import SliderLogarithmic from "./fields/SliderLogarithmic"
 import SubmitButton from "./fields/SubmitButton"
@@ -312,12 +312,7 @@ export function RegionByPhone() {
 
   return (
     <FormLanding onChangeFields={onChangeFields} onSubmit={onSubmit} ref={formRef}>
-      <PhoneFieldWithSeven
-        name="phone"
-        label="Телефон"
-        placeholder="+7 (000) 000-00-00"
-        fullWidth
-      />
+      <PhoneField name="phone" label="Телефон" placeholder="+7 (000) 000-00-00" fullWidth />
       <AutocompleteRegionByPhoneField
         name="region"
         label="Регион"
@@ -343,7 +338,7 @@ export function MaskedFields() {
   return (
     <FormLanding onSubmit={handleSubmit}>
       <EmailField name="email" label="Email" />
-      <PhoneFieldWithSeven name="phone" label="Телефон" />
+      <PhoneField name="phone" label="Телефон" />
       <DateField name="birthdate" label="Дата рождения" />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>

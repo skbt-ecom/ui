@@ -11,6 +11,16 @@ function PhoneFieldWithSeven({ onChange, defaultValue, ...props }) {
     onChange(e.target.value)
   }
 
+  const onPaste = (e) => {
+    let phone = e.clipboardData.getData("text").replace(/\D/g, "")
+    if (phone.length === 11) {
+      phone = phone.slice(1)
+    }
+    if (phone) {
+      onChange(phone)
+    }
+  }
+
   const [focused, setFocused] = useState(false)
   const onFocus = () => setFocused(true)
 
@@ -29,7 +39,7 @@ function PhoneFieldWithSeven({ onChange, defaultValue, ...props }) {
       {...props}
       onChange={handleChange}
       defaultValue={defaultValue ? defaultValue.slice(1) : defaultValue}
-      InputProps={{ onFocus }}
+      InputProps={{ onFocus, onPaste }}
       dispatch={focused ? phoneDispatch : nullDispatch}
     />
   )
