@@ -3,12 +3,12 @@ import Modal from "@material-ui/core/Modal"
 import Backdrop from "@material-ui/core/Backdrop"
 import Fade from "@material-ui/core/Fade"
 import Form from "../FormLanding"
-import PhoneField from "../FormLanding/fields/PhoneField"
 import AcceptmentField from "../FormLanding/fields/AcceptmentField"
 import SubmitButton from "../FormLanding/fields/SubmitButton"
 
 import CloseIcon from "./CloseIcon"
 import useStyles from "./styles"
+import PhoneField from "../PhoneField"
 
 const ModalPhoneForm = ({ isModalOpen, onClose, onSubmit, title, subtitle, ...props }) => {
   const styles = useStyles(props)
