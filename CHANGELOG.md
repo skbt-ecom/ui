@@ -1,3 +1,16 @@
+# [2.42.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.41.0...v2.42.0) (2022-01-24)
+
+
+### Bug Fixes
+
+* fix ([ab4fd53](https://gitlab.sovcombank.group/web/ecom/ui/commit/ab4fd532307436bfc2596cb5d4f75ba6f8f8dbdd))
+
+
+### Features
+
+* add onPaste ([47cba56](https://gitlab.sovcombank.group/web/ecom/ui/commit/47cba5644f774fe7eb06720181677f95289fbb99))
+* add PhoneFieldWithSeven ([5dc75d0](https://gitlab.sovcombank.group/web/ecom/ui/commit/5dc75d0705083b0c028cc3d0e7a7cb84bc497f22))
+
 # [2.41.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.40.0...v2.41.0) (2022-01-13)
 
 
