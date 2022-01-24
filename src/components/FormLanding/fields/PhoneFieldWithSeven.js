@@ -9,16 +9,7 @@ import useStyles from "./styles"
 const phoneDispatch = (appended, dynamicMasked) => dynamicMasked.compiledMasks[0]
 const nullDispatch = () => null
 
-function PhoneFieldWithSeven({ onChange, defaultValue, ...props }) {
-  const [focused, setFocused] = useState(false)
-  const onFocus = () => setFocused(true)
-
-  useEffect(() => {
-    if (defaultValue) {
-      onFocus()
-    }
-  }, [defaultValue])
-
+function PhoneFieldWithSeven({ onChange, defaultValue, onFocus, focused, ...props }) {
   function handleChange(e) {
     onChange(e.target.value)
   }
@@ -46,11 +37,28 @@ function PhoneFieldWithSeven({ onChange, defaultValue, ...props }) {
   )
 }
 
-const WrappedField = ({ classsesComponent, ...props }) => {
+const WrappedField = ({ classsesComponent, defaultValue, ...props }) => {
+  const changedDefaultValue = defaultValue.slice(1)
+
+  const [focused, setFocused] = useState(false)
+  const onFocus = () => setFocused(true)
+
+  useEffect(() => {
+    if (defaultValue) {
+      onFocus()
+    }
+  }, [defaultValue])
+
   const classes = useStyles(props)
   return (
     <div className={classes.fieldWrapper}>
-      <Field {...props} classes={classsesComponent} />
+      <Field
+        {...props}
+        defaultValue={defaultValue ? changedDefaultValue : defaultValue}
+        onFocus={onFocus}
+        focused={focused}
+        classes={classsesComponent}
+      />
     </div>
   )
 }
