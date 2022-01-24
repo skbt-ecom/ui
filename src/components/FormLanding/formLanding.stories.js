@@ -21,6 +21,7 @@ import EmailField from "./fields/EmailField"
 import MaskedField from "./fields/MaskedField"
 import RadioGroupField from "./fields/RadioGroupField"
 import PhoneField from "./fields/PhoneField"
+import PhoneFieldWithSeven from "./fields/PhoneFieldWithSeven"
 // import SelectField from './fields/SelectField';
 import SliderLogarithmic from "./fields/SliderLogarithmic"
 import SubmitButton from "./fields/SubmitButton"
@@ -338,7 +339,7 @@ export function MaskedFields() {
   return (
     <FormLanding onSubmit={handleSubmit}>
       <EmailField name="email" label="Email" />
-      <PhoneField name="phone" label="Телефон" />
+      <PhoneFieldWithSeven name="phone" label="Телефон" />
       <DateField name="birthdate" label="Дата рождения" />
       <SubmitButton>Отправить</SubmitButton>
     </FormLanding>
