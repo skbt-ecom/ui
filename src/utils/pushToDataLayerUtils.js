@@ -1,4 +1,5 @@
 import pushToDataLayer from "./pushToDataLayer"
+//
 
 // eslint-disable-next-line no-underscore-dangle
 function _pushToDataLayer({ time = Date.now(), eventLabel = window.location.pathname, ...data }) {
