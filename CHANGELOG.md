@@ -1,3 +1,10 @@
+# [2.43.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.42.1...v2.43.0) (2022-01-26)
+
+
+### Features
+
+* add time ([4551725](https://gitlab.sovcombank.group/web/ecom/ui/commit/4551725bd50986a1d4366c2970fc2e7cb1fde9b2))
+
 ## [2.42.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.42.0...v2.42.1) (2022-01-24)
 
 
