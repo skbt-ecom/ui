@@ -5,55 +5,55 @@ function _pushToDataLayer({ time = Date.now(), eventLabel = window.location.path
   pushToDataLayer({ time, eventLabel, ...data })
 }
 
-export const pushToDataLayerLoadedStep = (name, time) => {
+export const pushToDataLayerLoadedStep = (name) => {
   _pushToDataLayer({
     event: "GAFormEvent",
     eventCategory: "stepLoaded",
     eventAction: name,
-    time,
+    time: Date.now(),
   })
 }
 
-export const pushToDataLayerInvalidField = (fieldKey, reason, time) => {
+export const pushToDataLayerInvalidField = (fieldKey, reason) => {
   _pushToDataLayer({
     event: "GAFormEvent",
     eventCategory: "invalidField",
     eventAction: `${fieldKey} - ${typeof reason === "object" ? JSON.stringify(reason) : reason}`,
     focus: "onfocus",
-    time,
+    time: Date.now(),
   })
 }
-export const pushToDataLayerSendForm = (time) => {
+export const pushToDataLayerSendForm = () => {
   _pushToDataLayer({
     event: "GAFormEvent",
     eventCategory: "sendForm",
     eventAction: window.location.pathname,
     focus: "onfocus",
-    time,
+    time: Date.now(),
   })
 }
-export const pushToDataLayerRequiredValidField = (fieldKey, time) => {
+export const pushToDataLayerRequiredValidField = (fieldKey) => {
   _pushToDataLayer({
     event: "GAFormEvent",
     eventCategory: "validateField",
     eventAction: fieldKey,
     focus: "onfocus",
-    time,
+    time: Date.now(),
   })
 }
-export const pushToDataLayerStepSuccess = (name, time) => {
+export const pushToDataLayerStepSuccess = (name) => {
   _pushToDataLayer({
     event: "GAFormEvent",
     eventCategory: "stepSuccess",
     eventAction: name,
-    time,
+    time: Date.now(),
   })
 }
-export const pushToDataLayerFormSuccess = (time) => {
+export const pushToDataLayerFormSuccess = () => {
   _pushToDataLayer({
     event: "GAFormEvent",
     eventCategory: "formSuccess",
     eventAction: window.location.pathname,
-    time,
+    time: Date.now(),
   })
 }
