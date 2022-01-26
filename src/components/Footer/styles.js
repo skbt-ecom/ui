@@ -44,6 +44,7 @@ function styles(theme) {
 
     phoneMultiple: {
       marginBottom: 8,
+      color: theme.palette.custom.footerText2,
     },
 
     copyright: {

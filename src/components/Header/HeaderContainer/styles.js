@@ -59,6 +59,7 @@ export const usePhoneStyles = makeStyles((theme) => ({
     marginBottom: 4,
     fontSize: 16,
     lineHeight: 1,
+    color: theme.palette.custom.headerPhoneHint,
 
     [theme.breakpoints.up("md")]: {
       fontSize: 20,
