@@ -1,4 +1,5 @@
 import pushToDataLayer from "./pushToDataLayer"
+//
 
 // eslint-disable-next-line no-underscore-dangle
 function _pushToDataLayer({ time = Date.now(), eventLabel = window.location.pathname, ...data }) {
@@ -10,6 +11,7 @@ export const pushToDataLayerLoadedStep = (name) => {
     event: "GAFormEvent",
     eventCategory: "stepLoaded",
     eventAction: name,
+    time: Date.now(),
   })
 }
 
@@ -19,6 +21,7 @@ export const pushToDataLayerInvalidField = (fieldKey, reason) => {
     eventCategory: "invalidField",
     eventAction: `${fieldKey} - ${typeof reason === "object" ? JSON.stringify(reason) : reason}`,
     focus: "onfocus",
+    time: Date.now(),
   })
 }
 export const pushToDataLayerSendForm = () => {
@@ -27,6 +30,7 @@ export const pushToDataLayerSendForm = () => {
     eventCategory: "sendForm",
     eventAction: window.location.pathname,
     focus: "onfocus",
+    time: Date.now(),
   })
 }
 export const pushToDataLayerRequiredValidField = (fieldKey) => {
@@ -35,6 +39,7 @@ export const pushToDataLayerRequiredValidField = (fieldKey) => {
     eventCategory: "validateField",
     eventAction: fieldKey,
     focus: "onfocus",
+    time: Date.now(),
   })
 }
 export const pushToDataLayerStepSuccess = (name) => {
@@ -42,6 +47,7 @@ export const pushToDataLayerStepSuccess = (name) => {
     event: "GAFormEvent",
     eventCategory: "stepSuccess",
     eventAction: name,
+    time: Date.now(),
   })
 }
 export const pushToDataLayerFormSuccess = () => {
@@ -49,5 +55,6 @@ export const pushToDataLayerFormSuccess = () => {
     event: "GAFormEvent",
     eventCategory: "formSuccess",
     eventAction: window.location.pathname,
+    time: Date.now(),
   })
 }
