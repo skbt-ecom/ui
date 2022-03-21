@@ -3,7 +3,7 @@ import React from "react"
 import IconVK from "./IconVK"
 // import IconFacebook from "./IconFacebook"
 import IconOK from "./IconOK"
-import IconTwitter from "./IconTwitter"
+// import IconTwitter from "./IconTwitter"
 // import IconInstagram from "./IconInstagram"
 // import IconYoutube from "./IconYoutube"
 import IconTelegram from "./IconTelegram"
@@ -23,10 +23,10 @@ const defaultItems = [
     href: "https://ok.ru/paosovcombank",
     Icon: IconOK,
   },
-  {
-    href: "https://twitter.com/sovcombank",
-    Icon: IconTwitter,
-  },
+  // {
+  //   href: "https://twitter.com/sovcombank",
+  //   Icon: IconTwitter,
+  // },
   // {
   //   href: "https://instagram.com/sovcombank",
   //   Icon: IconInstagram,
