@@ -3,9 +3,6 @@
  * @param {string} phone ex. 71111111111
  */
 export const phoneValidator = (phone) => {
-  if (phone[1] === "8") {
-    return "Введите корректный номер телефона"
-  }
   if (phone.length !== 11) {
     return "Введите номер телефона полностью"
   }
