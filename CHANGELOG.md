@@ -1,3 +1,10 @@
+## [2.43.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.43.1...v2.43.2) (2022-03-21)
+
+
+### Bug Fixes
+
+* fix phone verification ([5025190](https://gitlab.sovcombank.group/web/ecom/ui/commit/5025190502fe1e8046e38baf47702f77ad4db54c))
+
 ## [2.43.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.43.0...v2.43.1) (2022-03-21)
 
 
