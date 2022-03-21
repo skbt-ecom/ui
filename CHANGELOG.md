@@ -1,3 +1,11 @@
+## [2.43.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.43.0...v2.43.1) (2022-03-21)
+
+
+### Bug Fixes
+
+* comment fb, instagram and youtube links, add telegram link ([99774c3](https://gitlab.sovcombank.group/web/ecom/ui/commit/99774c3a5c25644382644743d9f3c54a559c555c))
+* fix +78 ([ee5792a](https://gitlab.sovcombank.group/web/ecom/ui/commit/ee5792aa638f7b95b675e49ad862f5872a8432b0))
+
 # [2.43.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.42.1...v2.43.0) (2022-01-26)
 
 
