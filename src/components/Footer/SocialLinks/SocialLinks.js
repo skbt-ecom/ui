@@ -1,11 +1,12 @@
 import React from "react"
 
 import IconVK from "./IconVK"
-import IconFacebook from "./IconFacebook"
+// import IconFacebook from "./IconFacebook"
 import IconOK from "./IconOK"
-import IconTwitter from "./IconTwitter"
-import IconInstagram from "./IconInstagram"
-import IconYoutube from "./IconYoutube"
+// import IconTwitter from "./IconTwitter"
+// import IconInstagram from "./IconInstagram"
+// import IconYoutube from "./IconYoutube"
+import IconTelegram from "./IconTelegram"
 
 import useStyles from "./styles"
 
@@ -14,25 +15,29 @@ const defaultItems = [
     href: "https://vk.com/sovcombank",
     Icon: IconVK,
   },
-  {
-    href: "https://facebook.com/sovcombank",
-    Icon: IconFacebook,
-  },
+  // {
+  //   href: "https://facebook.com/sovcombank",
+  //   Icon: IconFacebook,
+  // },
   {
     href: "https://ok.ru/paosovcombank",
     Icon: IconOK,
   },
+  // {
+  //   href: "https://twitter.com/sovcombank",
+  //   Icon: IconTwitter,
+  // },
+  // {
+  //   href: "https://instagram.com/sovcombank",
+  //   Icon: IconInstagram,
+  // },
+  // {
+  //   href: "https://youtube.com/channel/UCfed_M_kc4-HqQCX-eHMvkQ",
+  //   Icon: IconYoutube,
+  // },
   {
-    href: "https://twitter.com/sovcombank",
-    Icon: IconTwitter,
-  },
-  {
-    href: "https://instagram.com/sovcombank",
-    Icon: IconInstagram,
-  },
-  {
-    href: "https://youtube.com/channel/UCfed_M_kc4-HqQCX-eHMvkQ",
-    Icon: IconYoutube,
+    href: "https://t.me/sovcombankofficial",
+    Icon: IconTelegram,
   },
 ]
 
