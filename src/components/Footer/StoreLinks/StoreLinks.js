@@ -9,7 +9,7 @@ import useStyles from "./styles"
 const defaultItems = [
   {
     rel: "nofollow",
-    href: "https://apps.apple.com/ru/app/halva/id1208055056",
+    href: "https://scb.im/iosapp",
     text: (
       <div style={{ marginTop: 8 }}>
         Доступно в <br />
@@ -20,7 +20,7 @@ const defaultItems = [
   },
   {
     rel: "",
-    href: "https://play.google.com/store/apps/details?id=ru.sovcomcard.halva.v1",
+    href: "https://scb.im/androidapp",
     text: (
       <div style={{ marginTop: 8 }}>
         Доступно в <br />
@@ -31,7 +31,7 @@ const defaultItems = [
   },
   {
     rel: "nofollow",
-    href: "https://appgallery.huawei.com/#/app/C101305485",
+    href: "https://hva.im/D2fFvH",
     text: (
       <div style={{ marginTop: 8 }}>
         Откройте в <br />
