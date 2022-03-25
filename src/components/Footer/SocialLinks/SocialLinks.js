@@ -12,7 +12,7 @@ import useStyles from "./styles"
 
 const defaultItems = [
   {
-    href: "https://vk.com/sovcombank",
+    href: "https://scb.im/vk",
     Icon: IconVK,
   },
   // {
@@ -20,7 +20,7 @@ const defaultItems = [
   //   Icon: IconFacebook,
   // },
   {
-    href: "https://ok.ru/paosovcombank",
+    href: "https://scb.im/ok",
     Icon: IconOK,
   },
   // {
@@ -36,7 +36,7 @@ const defaultItems = [
   //   Icon: IconYoutube,
   // },
   {
-    href: "https://t.me/sovcombankofficial",
+    href: "https://scb.im/telegram",
     Icon: IconTelegram,
   },
 ]
