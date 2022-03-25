@@ -1,3 +1,10 @@
+## [2.43.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.43.2...v2.43.3) (2022-03-25)
+
+
+### Bug Fixes
+
+* fix social and store links ([2388495](https://gitlab.sovcombank.group/web/ecom/ui/commit/23884958cd19740e77fbb25a4c632c6078ee588d))
+
 ## [2.43.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.43.1...v2.43.2) (2022-03-21)
 
 
