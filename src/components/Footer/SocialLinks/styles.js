@@ -5,7 +5,7 @@ function styles(theme) {
     social: {
       display: "flex",
       alignItems: "center",
-      justifyContent: "space-between",
+      justifyContent: (props) => props.justifyContent,
       marginBottom: 43,
 
       [theme.breakpoints.up("sm")]: {
