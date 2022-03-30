@@ -10,34 +10,16 @@ const defaultItems = [
   {
     rel: "nofollow",
     href: "https://scb.im/iosapp",
-    text: (
-      <div style={{ marginTop: 8 }}>
-        Доступно в <br />
-        <span style={{ fontSize: 13, fontWeight: 500 }}>App Store</span>
-      </div>
-    ),
     Icon: IconAppstore,
   },
   {
     rel: "",
     href: "https://scb.im/androidapp",
-    text: (
-      <div style={{ marginTop: 8 }}>
-        Доступно в <br />
-        <span style={{ fontSize: 13, fontWeight: 500 }}>Google Play</span>
-      </div>
-    ),
     Icon: IconGPlay,
   },
   {
     rel: "nofollow",
     href: "https://hva.im/D2fFvH",
-    text: (
-      <div style={{ marginTop: 8 }}>
-        Откройте в <br />
-        <span style={{ fontSize: 13, fontWeight: 500 }}>AppGallery</span>
-      </div>
-    ),
     Icon: IconAppGallery,
   },
 ]
@@ -64,7 +46,7 @@ export default function StoreLinks(props) {
 
   return (
     <div className={classes.store}>
-      {items.map(({ rel, href, text, Icon }, i) => (
+      {items.map(({ rel, href, Icon }, i) => (
         <a
           key={i}
           href={href}
@@ -73,7 +55,6 @@ export default function StoreLinks(props) {
           className={classes.link}
         >
           <Icon />
-          {text}
         </a>
       ))}
     </div>
