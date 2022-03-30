@@ -70,7 +70,6 @@ function styles(theme) {
 
     copyright: {
       width: "100%",
-      maxWidth: 312,
       margin: "0 auto",
 
       [theme.breakpoints.up("sm")]: {
