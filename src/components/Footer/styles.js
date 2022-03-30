@@ -59,6 +59,7 @@ function styles(theme) {
     mobileOnlyPhone: {
       marginBottom: "20px",
       display: "flex",
+      color: theme.palette.custom.footerText1,
       flexDirection: "column",
       alignItems: "center",
 
