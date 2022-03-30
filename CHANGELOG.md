@@ -1,3 +1,11 @@
+## [2.43.6](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.43.5...v2.43.6) (2022-03-30)
+
+
+### Bug Fixes
+
+* fix store links color ([c38ee6a](https://gitlab.sovcombank.group/web/ecom/ui/commit/c38ee6a4b0ec8c79e9cb22c2b75f6c0c3afefa87))
+* update store links ([f89129f](https://gitlab.sovcombank.group/web/ecom/ui/commit/f89129f366460853ed4359ca1008971564a5c995))
+
 ## [2.43.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.43.4...v2.43.5) (2022-03-30)
 
 
