@@ -1,3 +1,10 @@
+## [2.43.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.43.4...v2.43.5) (2022-03-30)
+
+
+### Bug Fixes
+
+* fix styles ([9f1e8bd](https://gitlab.sovcombank.group/web/ecom/ui/commit/9f1e8bd496c457f8913452bd2b269386e4618e04))
+
 ## [2.43.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.43.3...v2.43.4) (2022-03-30)
 
 
