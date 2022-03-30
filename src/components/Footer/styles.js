@@ -17,7 +17,14 @@ function styles(theme) {
       },
     },
 
-    root: {},
+    root: {
+      display: "flex",
+      flexDirection: "column-reverse",
+
+      [theme.breakpoints.up("sm")]: {
+        flexDirection: "column",
+      },
+    },
 
     inner: {
       [theme.breakpoints.up("sm")]: {
@@ -27,12 +34,14 @@ function styles(theme) {
     },
 
     phoneContainer: {
+      display: "none",
       color: theme.palette.custom.footerText1,
       flexGrow: 1,
       textAlign: "center",
       marginBottom: 43,
 
       [theme.breakpoints.up("sm")]: {
+        display: "block",
         textAlign: "left",
         marginBottom: 0,
       },
@@ -45,6 +54,17 @@ function styles(theme) {
     phoneMultiple: {
       marginBottom: 8,
       color: theme.palette.custom.footerText2,
+    },
+
+    mobileOnlyPhone: {
+      marginBottom: "20px",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+
+      [theme.breakpoints.up("sm")]: {
+        display: "none",
+      },
     },
 
     copyright: {
@@ -81,9 +101,11 @@ function styles(theme) {
       color: theme.palette.custom.footerText1,
       fontSize: 12,
       lineHeight: "18px",
+      marginBottom: "40px",
 
       [theme.breakpoints.up("sm")]: {
         paddingTop: 16,
+        marginBottom: "0px",
       },
     },
 

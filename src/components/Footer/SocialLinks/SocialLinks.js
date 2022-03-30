@@ -47,7 +47,16 @@ export default function SocialLinks(props) {
     items = defaultItems
   }
 
-  const classes = useStyles({ paddingRight: 112 - 52 * (items.length - 4) })
+  let justifyContent = { justifyContent: "space-between" }
+
+  if (items.length < 3) {
+    justifyContent = { justifyContent: "space-around" }
+  }
+
+  const classes = useStyles({
+    paddingRight: 112 - 52 * (items.length - 4),
+    ...justifyContent,
+  })
 
   // add "text" - https://web.dev/link-name/
   return (
