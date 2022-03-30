@@ -66,17 +66,31 @@ export default function Footer(props) {
             </div>
           )}
         </div>
-        {shortText && (
-          <div className={classes.ligal}>
-            <div>{shortText}</div>
-            {restText && isHide && (
-              <button type="button" className={classes.showMore} onClick={showRestLigal}>
-                Подробные условия
-              </button>
-            )}
-            {!isHide && <div>{restText}</div>}
-          </div>
-        )}
+        <div>
+          {withPhone && (
+            <PhoneMain
+              phone={phone}
+              phones={phones}
+              phoneHint={phoneHint}
+              classes={{
+                phoneContainer: classes.mobileOnlyPhone,
+                phoneNum: classes.phoneNum,
+                phoneMultiple: classes.phoneMultiple,
+              }}
+            />
+          )}
+          {shortText && (
+            <div className={classes.ligal}>
+              <div>{shortText}</div>
+              {restText && isHide && (
+                <button type="button" className={classes.showMore} onClick={showRestLigal}>
+                  Подробные условия
+                </button>
+              )}
+              {!isHide && <div>{restText}</div>}
+            </div>
+          )}
+        </div>
       </Container>
     </footer>
   )
