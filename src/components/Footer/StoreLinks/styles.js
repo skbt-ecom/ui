@@ -18,7 +18,7 @@ function styles(theme) {
         height: 24,
 
         "& :first-child": {
-          fill: theme.palette.custom.footerText1,
+          fill: theme.palette.custom.storeLinksColor,
         },
       },
     },

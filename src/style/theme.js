@@ -15,6 +15,7 @@ const theme = createTheme({
       headerPhoneHint: "#607289",
       footerText1: "#a1afbf",
       footerText2: "#607289",
+      storeLinksColor: "#C1C9D2",
       footerBg: "#fff",
       acceptmentCheckbox: PRIMARY_COLOR,
       acceptmentLabel: "inherit",

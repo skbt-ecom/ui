@@ -17,6 +17,7 @@ export const darkTheme = createTheme({
       headerPhoneHint: "#607289",
       footerText1: "#a1afbf",
       footerText2: "#607289",
+      storeLinksColor: "#C1C9D2",
       footerBg: "#292929",
       acceptmentCheckbox: PRIMARY_COLOR,
       acceptmentLabel: "inherit",
