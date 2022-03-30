@@ -49,7 +49,7 @@ export default function SocialLinks(props) {
 
   let justifyContent = { justifyContent: "space-between" }
 
-  if (items.length < 3) {
+  if (items.length < 4) {
     justifyContent = { justifyContent: "space-around" }
   }
 
