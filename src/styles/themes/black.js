@@ -13,6 +13,7 @@ export const blackTheme = createTheme({
       headerPhoneHint: PRIMARY_COLOR,
       footerText1: "#fff",
       footerText2: "#fff",
+      storeLinksColor: "#fff",
       footerBg: PRIMARY_COLOR,
       acceptmentCheckbox: PRIMARY_COLOR,
       acceptmentLabel: "#555",
