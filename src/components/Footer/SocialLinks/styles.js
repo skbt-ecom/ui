@@ -11,6 +11,7 @@ function styles(theme) {
       [theme.breakpoints.up("sm")]: {
         marginBottom: 29,
         paddingRight: (props) => props.paddingRight,
+        justifyContent: () => "space-between",
       },
     },
 
