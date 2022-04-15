@@ -1,3 +1,11 @@
+## [2.43.8](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.43.7...v2.43.8) (2022-04-15)
+
+
+### Bug Fixes
+
+* fix styles ([2c94620](https://gitlab.sovcombank.group/web/ecom/ui/commit/2c9462004400b55903c0a833025808e538a2ca15))
+* modal phone ([e9440f7](https://gitlab.sovcombank.group/web/ecom/ui/commit/e9440f7a0ca0f7a205f8e9dcb0e732f205571a38))
+
 ## [2.43.7](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.43.6...v2.43.7) (2022-03-31)
 
 
