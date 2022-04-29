@@ -11,13 +11,23 @@ const getDadata = (
   type,
   data,
   options = {},
-  url = "https://api-app.sovcombank.ru/v1/cache/dadata"
+  url = "https://api-app.sovcombank.ru/v1/cache/dadata",
+  isBroker = false
 ) => {
   const query = {
     query: data,
     ...options,
   }
-  return fetch(`${url}/${type}`, {
+
+  let DADATA_URL
+
+  if (isBroker) {
+    DADATA_URL = `https://apply-gateway.sovcombank.ru/api/dadata/${type}`
+  } else {
+    DADATA_URL = `${url}/${type}`
+  }
+
+  return fetch(DADATA_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

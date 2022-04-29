@@ -13,6 +13,7 @@ const DadataAutocomplete = ({
   onBlur,
   value,
   url,
+  isBroker,
   ...props
 }) => {
   const [options, setOptions] = useState([])
@@ -58,7 +59,7 @@ const DadataAutocomplete = ({
     function fetchData() {
       setIsLoading(true)
 
-      getDadata(type, inputValue, dadataOptions, url).then((response) => {
+      getDadata(type, inputValue, dadataOptions, url, isBroker).then((response) => {
         let suggestions = []
         if (response?.suggestions) {
           suggestions = response.suggestions
@@ -89,7 +90,7 @@ const DadataAutocomplete = ({
     return () => {
       active = false
     }
-  }, [inputValue, type, dadataOptions, onBlur, url])
+  }, [inputValue, type, dadataOptions, onBlur, url, isBroker])
 
   useEffect(() => {
     if (incomingValue) {
