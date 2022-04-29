@@ -5,21 +5,29 @@
  * @param {object} options Dadata's options
  * @returns {Promise} Promise object with Dadata's response (as json if resolve)
  */
-export const getDadata = (type, data, options = {}) => {
-  const DADATA_URL = "https://api-app.sovcombank.ru/v1/cache/dadata"
+export const getDadata = (
+  type,
+  data,
+  options = {},
+  url = "https://api-app.sovcombank.ru/v1/cache/dadata",
+  isBroker = false
+) => {
   const query = {
     query: data,
     ...options,
   }
 
-  let url
-  if (type !== "auto") {
-    url = `${DADATA_URL}/${type}`
+  let DADATA_URL
+
+  if (type === "auto") {
+    DADATA_URL = "https://api-app.sovcombank.ru/constants/auto"
+  } else if (isBroker) {
+    DADATA_URL = `https://apply-gateway.sovcombank.ru/api/dadata/${type}`
   } else {
-    url = "https://api-app.sovcombank.ru/constants/auto"
+    DADATA_URL = `${url}/${type}`
   }
 
-  return fetch(url, {
+  return fetch(DADATA_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -27,6 +35,6 @@ export const getDadata = (type, data, options = {}) => {
     },
     body: JSON.stringify(query),
   })
-    .then(res => res.json())
-    .catch(err => console.error("Dadata error", err))
+    .then((res) => res.json())
+    .catch((err) => console.error("Dadata error", err))
 }

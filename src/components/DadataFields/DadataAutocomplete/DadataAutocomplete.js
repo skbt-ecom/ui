@@ -12,6 +12,8 @@ const DadataAutocomplete = ({
   renderOption,
   onBlur,
   value,
+  url,
+  isBroker,
   ...props
 }) => {
   const [options, setOptions] = useState([])
@@ -57,13 +59,13 @@ const DadataAutocomplete = ({
     function fetchData() {
       setIsLoading(true)
 
-      getDadata(type, inputValue, dadataOptions).then((response) => {
+      getDadata(type, inputValue, dadataOptions, url, isBroker).then((response) => {
         let suggestions = []
-        if (response.suggestions) {
+        if (response?.suggestions) {
           suggestions = response.suggestions
         }
 
-        if (response.matches) {
+        if (response?.matches) {
           suggestions = response.matches.map((i) => ({ value: i.model_mark }))
         }
 
@@ -88,7 +90,7 @@ const DadataAutocomplete = ({
     return () => {
       active = false
     }
-  }, [inputValue, type, dadataOptions, onBlur])
+  }, [inputValue, type, dadataOptions, onBlur, url, isBroker])
 
   useEffect(() => {
     if (incomingValue) {

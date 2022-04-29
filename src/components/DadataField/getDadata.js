@@ -7,13 +7,27 @@ import memoizeOne from "memoize-one"
  * @param {object} options Dadata's options
  * @returns {Promise} Promise object with Dadata's response (as json if resolve)
  */
-const getDadata = (type, data, options = {}) => {
-  const DADATA_URL = "https://api-app.sovcombank.ru/v1/cache/dadata"
+const getDadata = (
+  type,
+  data,
+  options = {},
+  url = "https://api-app.sovcombank.ru/v1/cache/dadata",
+  isBroker = false
+) => {
   const query = {
     query: data,
     ...options,
   }
-  return fetch(`${DADATA_URL}/${type}`, {
+
+  let DADATA_URL
+
+  if (isBroker) {
+    DADATA_URL = `https://apply-gateway.sovcombank.ru/api/dadata/${type}`
+  } else {
+    DADATA_URL = `${url}/${type}`
+  }
+
+  return fetch(DADATA_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
