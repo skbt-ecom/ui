@@ -1,3 +1,16 @@
+# [2.44.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.43.8...v2.44.0) (2022-05-04)
+
+
+### Bug Fixes
+
+* 🐛 add url and broker prop ([8db0f55](https://gitlab.sovcombank.group/web/ecom/ui/commit/8db0f550c117457445eecc3449b4d12cd5edba9c))
+
+
+### Features
+
+* 🎸 add optional url dadata ([ecd63e6](https://gitlab.sovcombank.group/web/ecom/ui/commit/ecd63e6f45af97bf8341e73edd7984a771fca071))
+* 🎸 add prop isBroker ([91ccf34](https://gitlab.sovcombank.group/web/ecom/ui/commit/91ccf3416fff4e6bba74b89a86383b3467e9a4d4))
+
 ## [2.43.8](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.43.7...v2.43.8) (2022-04-15)
 
 
