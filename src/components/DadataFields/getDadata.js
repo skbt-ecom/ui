@@ -16,8 +16,6 @@ export const getDadata = (
     ...options,
   }
 
-  console.log(url)
-
   let DADATA_URL
 
   if (type === "auto") {
