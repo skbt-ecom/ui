@@ -1,3 +1,11 @@
+## [2.44.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.44.0...v2.44.1) (2022-05-06)
+
+
+### Bug Fixes
+
+* 🐛 remove isBroker ([a379282](https://gitlab.sovcombank.group/web/ecom/ui/commit/a379282fdd2f6658d4d5aef79153b6a56b5a62dc))
+* 🐛 remove log ([16e852c](https://gitlab.sovcombank.group/web/ecom/ui/commit/16e852c2441afe5424b78ab3a32a434afb1f9485))
+
 # [2.44.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.43.8...v2.44.0) (2022-05-04)
 
 
