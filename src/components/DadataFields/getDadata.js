@@ -9,20 +9,19 @@ export const getDadata = (
   type,
   data,
   options = {},
-  url = "https://api-app.sovcombank.ru/v1/cache/dadata",
-  isBroker = false
+  url = "https://api-app.sovcombank.ru/v1/cache/dadata"
 ) => {
   const query = {
     query: data,
     ...options,
   }
 
+  console.log(url)
+
   let DADATA_URL
 
   if (type === "auto") {
     DADATA_URL = "https://api-app.sovcombank.ru/constants/auto"
-  } else if (isBroker) {
-    DADATA_URL = `https://apply-gateway.sovcombank.ru/api/dadata/${type}`
   } else {
     DADATA_URL = `${url}/${type}`
   }

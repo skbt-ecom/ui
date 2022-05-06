@@ -1,6 +1,6 @@
 import { getDadata } from "../getDadata"
 
-export function specifySuggestion(dadataValue, url, isBroker) {
+export function specifySuggestion(dadataValue, url) {
   return getDadata(
     "address",
     dadataValue.unrestricted_value,
@@ -8,7 +8,6 @@ export function specifySuggestion(dadataValue, url, isBroker) {
       count: 1,
       restrict_value: true,
     },
-    url,
-    isBroker
+    url
   ).then((getDadataResult) => getDadataResult?.suggestions?.[0])
 }

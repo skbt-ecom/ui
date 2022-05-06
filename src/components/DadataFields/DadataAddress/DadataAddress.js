@@ -3,7 +3,7 @@ import DadataAutocomplete from "../DadataAutocomplete"
 
 import { specifySuggestion } from "./helpers"
 
-const DadataAddress = ({ onBlur, url, isBroker, ...props }) => {
+const DadataAddress = ({ onBlur, url, ...props }) => {
   const handleBlur = useCallback(
     (e, values) => {
       const { dadataValue } = values
@@ -11,7 +11,7 @@ const DadataAddress = ({ onBlur, url, isBroker, ...props }) => {
       if (dadataValue && !dadataValue?.data?.postal_code) {
         // spike, because sometimes dadata not returns postal code
         // we must do specific query for only one suggestion
-        specifySuggestion(dadataValue, url, isBroker).then((specifiedSuggestion) => {
+        specifySuggestion(dadataValue, url).then((specifiedSuggestion) => {
           if (specifiedSuggestion) {
             onBlur(e, {
               ...values,
@@ -26,10 +26,10 @@ const DadataAddress = ({ onBlur, url, isBroker, ...props }) => {
         onBlur(e, values)
       }
     },
-    [onBlur, isBroker, url]
+    [onBlur, url]
   )
 
-  return <DadataAutocomplete {...props} type="address" onBlur={handleBlur} />
+  return <DadataAutocomplete url={url} {...props} type="address" onBlur={handleBlur} />
 }
 
 export default DadataAddress

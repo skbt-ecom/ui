@@ -49,8 +49,7 @@ if (process.env.NODE_ENV !== "production") {
  * @deprecated use DadataFields/Dadata*.js instead
  */
 const DadataComponent = React.memo((props) => {
-  const { label, placeholder, onChange, dadataOptions, value, url, isBroker, ...otherInputProps } =
-    props
+  const { label, placeholder, onChange, dadataOptions, value, url, ...otherInputProps } = props
   const classes = useStyles(props)
   const [state, setState] = useState({
     single: typeof value === "string" ? value : "",
@@ -64,7 +63,7 @@ const DadataComponent = React.memo((props) => {
 
   const inputValue = useRef("")
   const setSuggestions = useRef((inputValue1, dadataOptions1) => {
-    getDadata(props.type, inputValue1, dadataOptions1, url, isBroker).then(({ suggestions }) => {
+    getDadata(props.type, inputValue1, dadataOptions1, url).then(({ suggestions }) => {
       setStateSuggestions(suggestions)
     })
   })
@@ -106,11 +105,11 @@ const DadataComponent = React.memo((props) => {
     // we must do specific query for only one suggestion
     if (type === "address" && !suggestion.data.postal_code) {
       setIsLoading(true)
+
       getDadata(type, suggestion.unrestricted_value, {
         count: 1,
         restrict_value: true,
         url,
-        isBroker,
       }).then((res) => {
         currentSuggestion.current = res && res.suggestions && res.suggestions[0]
         onChange(currentSuggestion.current)
