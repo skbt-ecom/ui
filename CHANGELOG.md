@@ -1,3 +1,10 @@
+# [2.45.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.44.1...v2.45.0) (2022-06-24)
+
+
+### Features
+
+* 🎸 props noShadow at header ([1bf163e](https://gitlab.sovcombank.group/web/ecom/ui/commit/1bf163eb1ed89233965f8f40cfc3f62cff656c9a))
+
 ## [2.44.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.44.0...v2.44.1) (2022-05-06)
 
 
