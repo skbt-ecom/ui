@@ -25,6 +25,10 @@ export const useStyles = makeStyles((theme) => ({
     top: 0,
   },
 
+  noShadow: {
+    boxShadow: "none",
+  },
+
   logo: {
     cursor: "default",
     border: "0",

@@ -23,6 +23,7 @@ const story = {
   // https://storybook.js.org/docs/react/essentials/controls#annotation
   argTypes: {
     sticky: { type: "boolean" },
+    noShadow: { type: "boolean" },
     withButton: { type: "boolean" },
     withPhone: { type: "boolean" },
   },
