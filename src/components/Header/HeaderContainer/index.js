@@ -17,6 +17,7 @@ export default function HeaderContainer(props) {
     onLogoClick,
     withButton,
     withPhone = true,
+    noShadow = false,
     PhoneProps,
     ButtonProps,
     buttonText = "оформить",
@@ -26,7 +27,9 @@ export default function HeaderContainer(props) {
   const buttonClasses = useButtonStyles(ButtonProps)
 
   return (
-    <header className={cn(classes.header, sticky && classes.stickyHeader)}>
+    <header
+      className={cn(classes.header, sticky && classes.stickyHeader, noShadow && classes.noShadow)}
+    >
       <Container>
         <nav>
           <Box
