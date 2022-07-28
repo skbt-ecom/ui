@@ -55,7 +55,10 @@ export default function Uploader({
   }
 
   function removeImage() {
-    onRemove()
+    if (onRemove) {
+      onRemove()
+    }
+
     setIsLoaded(false)
     setImgSrc("")
   }
