@@ -1,3 +1,11 @@
+# [2.46.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.45.0...v2.46.0) (2022-07-28)
+
+
+### Features
+
+* 🎸 add prop isMobileLoad ([05d6e52](https://gitlab.sovcombank.group/web/ecom/ui/commit/05d6e5240425388883d28f6ed7d545f13950be50))
+* 🎸 add prop onRemove ([076a846](https://gitlab.sovcombank.group/web/ecom/ui/commit/076a846677b67c76510f00deedd09f80436031c3))
+
 # [2.45.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.44.1...v2.45.0) (2022-06-24)
 
 
