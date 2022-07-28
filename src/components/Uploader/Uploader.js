@@ -13,6 +13,7 @@ import useStyles from "./styles"
 
 export default function Uploader({
   onLoad,
+  onRemove,
   helperText,
   classes,
   disabled = false,
@@ -54,6 +55,7 @@ export default function Uploader({
   }
 
   function removeImage() {
+    onRemove()
     setIsLoaded(false)
     setImgSrc("")
   }
