@@ -6,11 +6,19 @@ import { useDropzone } from "react-dropzone"
 import Button from "@material-ui/core/Button"
 import ButtonBase from "@material-ui/core/ButtonBase"
 import CloudUpload from "@material-ui/icons/CloudUpload"
+import PhotoCameraOutlinedIcon from "@material-ui/icons/PhotoCameraOutlined"
 import Close from "@material-ui/icons/Close"
 
 import useStyles from "./styles"
 
-export default function Uploader({ onLoad, helperText, classes, disabled = false }) {
+export default function Uploader({
+  onLoad,
+  onRemove,
+  helperText,
+  classes,
+  disabled = false,
+  isMobileLoad = false,
+}) {
   const upClasses = useStyles({ classes })
   const [isLoaded, setIsLoaded] = useState(false)
   const [imgSrc, setImgSrc] = useState("")
@@ -38,6 +46,7 @@ export default function Uploader({ onLoad, helperText, classes, disabled = false
     onDrop,
     accept: "image/*",
     multiple: false,
+    capture: isMobileLoad ? "environment" : "",
   })
   const active = isLoaded || isDragActive ? upClasses.active : ""
   const btnBaseClasses = {
@@ -46,18 +55,21 @@ export default function Uploader({ onLoad, helperText, classes, disabled = false
   }
 
   function removeImage() {
+    onRemove()
     setIsLoaded(false)
     setImgSrc("")
   }
 
+  const icon = isMobileLoad ? (
+    <PhotoCameraOutlinedIcon className={upClasses.uploadIcon} />
+  ) : (
+    <CloudUpload className={upClasses.uploadIcon} />
+  )
+
   return (
     <div className={upClasses.root}>
       <ButtonBase {...getRootProps()} disabled={disabled || isLoaded} classes={btnBaseClasses}>
-        {isLoaded ? (
-          <img alt="" src={imgSrc} className={upClasses.imgOut} />
-        ) : (
-          <CloudUpload className={upClasses.uploadIcon} />
-        )}
+        {isLoaded ? <img alt="" src={imgSrc} className={upClasses.imgOut} /> : icon}
         {!isLoaded && <h4 className={upClasses.helperText}>{helperText}</h4>}
         <input {...getInputProps()} />
       </ButtonBase>
