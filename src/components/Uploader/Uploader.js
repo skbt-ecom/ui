@@ -33,8 +33,9 @@ export default function Uploader({
       const { result } = e.target
       setIsLoaded(true)
       setImgSrc(result)
-
+      console.log(e.target)
       if (onLoad) {
+        console.log(result)
         onLoad(result)
       }
     }
@@ -55,7 +56,10 @@ export default function Uploader({
   }
 
   function removeImage() {
-    onRemove()
+    if (onRemove) {
+      onRemove()
+    }
+
     setIsLoaded(false)
     setImgSrc("")
   }
