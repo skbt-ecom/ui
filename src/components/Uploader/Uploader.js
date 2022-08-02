@@ -12,17 +12,22 @@ import Close from "@material-ui/icons/Close"
 import useStyles from "./styles"
 
 export default function Uploader({
+  onChange,
   onLoad,
   onRemove,
   helperText,
   classes,
   disabled = false,
-  isMobileLoad = false,
+  isOnlyCameraForMobile = false,
 }) {
   const upClasses = useStyles({ classes })
   const [isLoaded, setIsLoaded] = useState(false)
   const [imgSrc, setImgSrc] = useState("")
   const handleLoad = (files) => {
+    if (onChange) {
+      onChange(files)
+    }
+
     const file = files[0]
 
     if (!file) return
@@ -41,12 +46,13 @@ export default function Uploader({
 
     reader.readAsDataURL(file)
   }
-  const onDrop = useCallback(handleLoad, [onLoad])
+
+  const onDrop = useCallback(handleLoad, [onLoad, onChange])
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: "image/*",
     multiple: false,
-    capture: isMobileLoad ? "environment" : "",
+    capture: isOnlyCameraForMobile ? "environment" : "",
   })
   const active = isLoaded || isDragActive ? upClasses.active : ""
   const btnBaseClasses = {
@@ -63,7 +69,7 @@ export default function Uploader({
     setImgSrc("")
   }
 
-  const icon = isMobileLoad ? (
+  const icon = isOnlyCameraForMobile ? (
     <PhotoCameraOutlinedIcon className={upClasses.uploadIcon} />
   ) : (
     <CloudUpload className={upClasses.uploadIcon} />
