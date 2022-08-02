@@ -1,3 +1,11 @@
+## [2.46.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.46.0...v2.46.1) (2022-08-02)
+
+
+### Bug Fixes
+
+* **iploader component:** cheack onChange function ([268f4c1](https://gitlab.sovcombank.group/web/ecom/ui/commit/268f4c18ae09b4650beaf0777e9fcd89f4b06cf5))
+* 🐛 onRemove ([8d5792e](https://gitlab.sovcombank.group/web/ecom/ui/commit/8d5792e0ecf21e77c0eb8cbb6040156b2541fda6))
+
 # [2.46.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.45.0...v2.46.0) (2022-07-28)
 
 
