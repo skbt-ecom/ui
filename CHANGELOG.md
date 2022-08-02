@@ -1,3 +1,10 @@
+## [2.46.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.46.1...v2.46.2) (2022-08-02)
+
+
+### Bug Fixes
+
+* **publish:** publish with not change ([c82eae3](https://gitlab.sovcombank.group/web/ecom/ui/commit/c82eae3b0b13f58d36072fc0d6e585bdf2cabb44))
+
 ## [2.46.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.46.0...v2.46.1) (2022-08-02)
 
 
