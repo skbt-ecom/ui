@@ -22,6 +22,7 @@ publish:
   variables:
     GITLAB_TOKEN: $GITLAB_UI_TOKEN
     NPM_TOKEN: $NPM_TOKEN
+    GRAYLOG_URL: udp://$GRAYLOG
   before_script:
     - apk update && apk upgrade && apk add --no-cache bash git
   script:
@@ -38,6 +39,7 @@ deploy to test:
   variables:
     HOST: $TEST_HOST
     NODE_ENV: production
+    GRAYLOG_URL: udp://$TEST_GRAYLOG
   before_script:
     - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
   script:
