@@ -29,7 +29,6 @@ export default function Uploader({
     }
 
     const file = files[0]
-
     if (!file) return
 
     const reader = new FileReader()
