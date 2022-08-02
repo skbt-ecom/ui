@@ -52,7 +52,6 @@ export default function Uploader({
     onDrop,
     accept: "image/*",
     multiple: false,
-    capture: isOnlyCameraForMobile ? "environment" : "",
   })
   const active = isLoaded || isDragActive ? upClasses.active : ""
   const btnBaseClasses = {
@@ -75,12 +74,17 @@ export default function Uploader({
     <CloudUpload className={upClasses.uploadIcon} />
   )
 
+  const inputProps = {
+    ...getInputProps(),
+    capture: isOnlyCameraForMobile ? "environment" : "",
+  }
+
   return (
     <div className={upClasses.root}>
       <ButtonBase {...getRootProps()} disabled={disabled || isLoaded} classes={btnBaseClasses}>
         {isLoaded ? <img alt="" src={imgSrc} className={upClasses.imgOut} /> : icon}
         {!isLoaded && <h4 className={upClasses.helperText}>{helperText}</h4>}
-        <input {...getInputProps()} />
+        <input {...inputProps} />
       </ButtonBase>
       {isLoaded && (
         <Button className={upClasses.removeBtn} onClick={removeImage}>
