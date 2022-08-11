@@ -1,3 +1,10 @@
+## [2.46.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.46.2...v2.46.3) (2022-08-11)
+
+
+### Bug Fixes
+
+* change Link in the Form for Policy ([1cee57e](https://gitlab.sovcombank.group/web/ecom/ui/commit/1cee57e897c721fa79dea27264581061735ffa16))
+
 ## [2.46.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.46.1...v2.46.2) (2022-08-02)
 
 
