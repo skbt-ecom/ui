@@ -14,9 +14,8 @@ services:
       - $PORT:8080
     mem_limit: 1g
     logging:
-      driver: "fluentd"
+      driver: gelf
       options:
-        fluentd-async-connect: "true"
-        fluentd-address: $HOST:24224
+        gelf-address: $GRAYLOG_URL
         tag: docker.ui
     network_mode: bridge

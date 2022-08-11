@@ -31,7 +31,7 @@ const Acceptment = React.memo((props) => {
           на&nbsp;обработку персональных данных и подтверждаю, что ознакомлен с&nbsp;
           <Link
             className={classes.link}
-            href="https://sovcombank.ru/about/pages/policy-personal-data/"
+            href="https://sovcombank.ru/about/pages/policy-personal-data"
             target="_blank"
             rel="noopener noreferrer"
             underline="always"
