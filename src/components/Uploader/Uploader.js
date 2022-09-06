@@ -59,7 +59,7 @@ export default function Uploader({
   }
 
   function removeImage() {
-    // eslint-disable-next-line no-restricted-globals no-alert
+    // eslint-disable-next-line no-restricted-globals, no-alert
 
     const agreement = confirm('Вы точно хотите удалить фотографию?')
 
