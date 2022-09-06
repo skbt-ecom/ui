@@ -59,12 +59,21 @@ export default function Uploader({
   }
 
   function removeImage() {
-    if (onRemove) {
-      onRemove()
-    }
+    const agreement = confirm('Вы точно хотите удалить фотографию?')
 
-    setIsLoaded(false)
-    setImgSrc("")
+    if(agreement) {
+      setIsLoaded(false)
+      onRemove()
+      setImgSrc("")
+    } else {
+      setIsLoaded(true)
+      const reader = new FileReader()
+
+      reader.onload = (e) => {
+        const { result } = e.target
+        setImgSrc(result)
+      }
+    }
   }
 
   const icon = isOnlyCameraForMobile ? (
