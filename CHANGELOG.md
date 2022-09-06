@@ -1,3 +1,13 @@
+## [2.46.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.46.3...v2.46.4) (2022-09-06)
+
+
+### Bug Fixes
+
+* 🐛 Lint ([5b28845](https://gitlab.sovcombank.group/web/ecom/ui/commit/5b28845619bb9eeaa0bbce4e385b7cf02ba7c412))
+* 🐛 Lint error ([4380e64](https://gitlab.sovcombank.group/web/ecom/ui/commit/4380e64bd26b84eceeeb5baa1244d6f0e170c78d))
+* 🐛 Linter ([1385ebb](https://gitlab.sovcombank.group/web/ecom/ui/commit/1385ebb376107de651f785eb03f0fe2f5788a657))
+* 🐛 Linter ([641790d](https://gitlab.sovcombank.group/web/ecom/ui/commit/641790d59241bb4dc23d350ea9322f15670a7a2b))
+
 ## [2.46.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.46.2...v2.46.3) (2022-08-11)
 
 
