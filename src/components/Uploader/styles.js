@@ -29,6 +29,10 @@ function styles(theme) {
       },
     },
 
+    without_border: {
+      border: "none",
+    },
+
     active: {},
 
     disabled: {
@@ -53,10 +57,19 @@ function styles(theme) {
       height: "100%",
     },
 
-    removeBtn: {
+    btnWrapper: {
+      padding: 10,
+      cursor: "pointer",
       position: "absolute",
       top: 8,
       right: 8,
+    },
+
+    largeBtn: {
+      padding: 25,
+    },
+
+    removeBtn: {
       borderRadius: "50%",
       minWidth: "auto",
       padding: 0,
@@ -79,10 +92,45 @@ function styles(theme) {
       },
     },
 
+    largeRemoveIcon: {
+      width: 21,
+      height: 21,
+
+      [theme.breakpoints.up("sm")]: {
+        width: 23,
+        height: 23,
+      },
+    },
+
     helperText: {
       fontWeight: 400,
       fontSize: 14,
       lineHeight: "22px",
+    },
+
+    lightbox: {
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100vw",
+      height: "100vh",
+      background: "rgba(0, 0, 0, 0.5)",
+      display: "flex",
+      alignItems: "center",
+      visibility: "hidden",
+      opacity: 0,
+      transition: "ease 0.4s",
+    },
+
+    show: {
+      visibility: "visible",
+      opacity: 1,
+    },
+
+    show_image: {
+      width: "70%",
+      height: "70vh",
+      objectFit: "contain",
     },
   }
 }
