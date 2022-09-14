@@ -9,7 +9,7 @@ function styles(theme) {
       display: "flex",
       position: "relative",
       width: 200,
-      minHeight: 150,
+      height: 200,
     },
 
     uploader: {
