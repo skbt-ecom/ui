@@ -1,3 +1,10 @@
+## [2.47.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.47.0...v2.47.1) (2022-09-15)
+
+
+### Bug Fixes
+
+* 🐛 zIndex ([c745e0b](https://gitlab.sovcombank.group/web/ecom/ui/commit/c745e0b2aef87778780ae5a0b155b5b555c02aca))
+
 # [2.47.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.46.4...v2.47.0) (2022-09-15)
 
 
