@@ -110,7 +110,6 @@ function styles(theme) {
 
     lightbox: {
       position: "fixed",
-      overflow: "hidden",
       zIndex: 999,
       top: 0,
       left: 0,
@@ -130,7 +129,7 @@ function styles(theme) {
     },
 
     show_image: {
-      width: "70%",
+      width: "100%",
       height: "70vh",
       objectFit: "contain",
     },
