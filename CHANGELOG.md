@@ -1,3 +1,10 @@
+## [2.47.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.47.1...v2.47.2) (2022-09-15)
+
+
+### Bug Fixes
+
+* 🐛 scroll ([5a7747f](https://gitlab.sovcombank.group/web/ecom/ui/commit/5a7747f580d139ab5189b6fc6fbb19e31f036a65))
+
 ## [2.47.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.47.0...v2.47.1) (2022-09-15)
 
 
