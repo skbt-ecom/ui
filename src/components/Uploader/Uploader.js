@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 
 import cn from "classnames"
 import { useDropzone } from "react-dropzone"
@@ -23,6 +23,8 @@ export default function Uploader({
   const upClasses = useStyles({ classes })
   const [isLoaded, setIsLoaded] = useState(false)
   const [imgSrc, setImgSrc] = useState("")
+  const [hasClick, setHasClick] = useState(false)
+
   const handleLoad = (files) => {
     if (onChange) {
       onChange(files)
@@ -54,25 +56,55 @@ export default function Uploader({
   })
   const active = isLoaded || isDragActive ? upClasses.active : ""
   const btnBaseClasses = {
-    root: cn(upClasses.uploader, active),
+    root: hasClick
+      ? cn(upClasses.uploader, upClasses.without_border, active)
+      : cn(upClasses.uploader, active),
     disabled: upClasses.disabled,
   }
 
-  function removeImage() {
-    // eslint-disable-next-line no-restricted-globals, no-alert
-    const agreement = confirm('Вы точно хотите удалить фотографию?')
+  const escFunction = useCallback((event) => {
+    if (event.key === "Escape") {
+      setHasClick(false)
+    }
+  }, [])
 
-    if(agreement) {
-      setIsLoaded(false)
-      onRemove()
-      setImgSrc("")
+  useEffect(() => {
+    document.addEventListener("keydown", escFunction, false)
+
+    return () => {
+      document.removeEventListener("keydown", escFunction, false)
+    }
+  }, [escFunction])
+
+  const setClick = () => {
+    setHasClick(true)
+  }
+
+  const unsetClick = () => {
+    setHasClick(false)
+  }
+
+  function removeImage(event) {
+    event.stopPropagation()
+
+    if (hasClick) {
+      unsetClick()
     } else {
-      setIsLoaded(true)
-      const reader = new FileReader()
+      // eslint-disable-next-line no-restricted-globals, no-alert
+      const agreement = confirm("Вы точно хотите удалить фотографию?")
 
-      reader.onload = (e) => {
-        const { result } = e.target
-        setImgSrc(result)
+      if (agreement) {
+        setIsLoaded(false)
+        onRemove()
+        setImgSrc("")
+      } else {
+        setIsLoaded(true)
+        const reader = new FileReader()
+
+        reader.onload = (e) => {
+          const { result } = e.target
+          setImgSrc(result)
+        }
       }
     }
   }
@@ -89,16 +121,38 @@ export default function Uploader({
   }
 
   return (
-    <div className={upClasses.root}>
+    <div
+      className={hasClick ? cn(upClasses.lightbox, upClasses.show) : upClasses.root}
+      onClick={isLoaded && !hasClick ? setClick : undefined}
+      onKeyDown={isLoaded && !hasClick ? setClick : undefined}
+      aria-hidden="true"
+    >
       <ButtonBase {...getRootProps()} disabled={disabled || isLoaded} classes={btnBaseClasses}>
-        {isLoaded ? <img alt="" src={imgSrc} className={upClasses.imgOut} /> : icon}
+        {isLoaded ? (
+          <img
+            src={imgSrc}
+            className={hasClick ? upClasses.show_image : upClasses.imgOut}
+            alt="img"
+          />
+        ) : (
+          icon
+        )}
+
         {!isLoaded && <h4 className={upClasses.helperText}>{helperText}</h4>}
         <input {...inputProps} />
       </ButtonBase>
       {isLoaded && (
-        <Button className={upClasses.removeBtn} onClick={removeImage}>
-          <Close className={upClasses.removeIcon} />
-        </Button>
+        <div className={upClasses.btnWrapper} onClick={removeImage} aria-hidden="true">
+          <Button
+            classes={{
+              root: hasClick
+                ? cn(upClasses.removeBtn, upClasses.largeRemoveIcon)
+                : upClasses.removeBtn,
+            }}
+          >
+            <Close className={hasClick ? upClasses.largeRemoveIcon : upClasses.removeIcon} />
+          </Button>
+        </div>
       )}
     </div>
   )
