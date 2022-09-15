@@ -76,6 +76,14 @@ export default function Uploader({
     }
   }, [escFunction])
 
+  useEffect(() => {
+    if (hasClick) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "unset"
+    }
+  }, [hasClick])
+
   const setClick = () => {
     setHasClick(true)
   }
