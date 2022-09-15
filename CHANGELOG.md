@@ -1,3 +1,15 @@
+# [2.47.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.46.4...v2.47.0) (2022-09-15)
+
+
+### Bug Fixes
+
+* 🐛 height uploader ([3df5501](https://gitlab.sovcombank.group/web/ecom/ui/commit/3df550127db355c689a67788fe4baa4d1c17b65c))
+
+
+### Features
+
+* 🎸 show img ([2a2d8b1](https://gitlab.sovcombank.group/web/ecom/ui/commit/2a2d8b13d1cabe700b48844cd9fd42e9d5e79608))
+
 ## [2.46.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.46.3...v2.46.4) (2022-09-06)
 
 
