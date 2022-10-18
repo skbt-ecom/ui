@@ -3,6 +3,7 @@ import React from "react"
 import IconAppstore from "./IconAppstore"
 import IconGPlay from "./IconGPlay"
 import IconAppGallery from "./IconAppGallery"
+import IconRustore from "./IconRustore"
 
 import useStyles from "./styles"
 
@@ -22,13 +23,23 @@ const defaultItems = [
     href: "https://hva.im/D2fFvH",
     Icon: IconAppGallery,
   },
+  {
+    rel: "nofollow",
+    href: "https://apps.rustore.ru/app/ru.sovcomcard.halva.v1",
+    Icon: IconRustore,
+  },
 ]
 
 export default function StoreLinks(props) {
   const classes = useStyles()
 
   const { links } = props
-  const items = [{ ...defaultItems[0] }, { ...defaultItems[1] }, { ...defaultItems[2] }]
+  const items = [
+    { ...defaultItems[0] },
+    { ...defaultItems[1] },
+    { ...defaultItems[2] },
+    { ...defaultItems[3] },
+  ]
 
   if (links) {
     if (links.appStore) {
@@ -41,6 +52,10 @@ export default function StoreLinks(props) {
 
     if (links.appGallery) {
       items[2].href = links.appGallery
+    }
+
+    if (links.rustore) {
+      items[3].href = links.rustore
     }
   }
 
