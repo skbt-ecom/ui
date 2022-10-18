@@ -1,3 +1,10 @@
+# [2.48.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.47.2...v2.48.0) (2022-10-18)
+
+
+### Features
+
+* 🎸 add rustore ([2991330](https://gitlab.sovcombank.group/web/ecom/ui/commit/2991330637439e3fa8c8561e87686584d5d960a9))
+
 ## [2.47.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.47.1...v2.47.2) (2022-09-15)
 
 
