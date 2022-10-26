@@ -54,8 +54,8 @@ export default function StoreLinks(props) {
       items[2].href = links.appGallery
     }
 
-    if (links.rustore) {
-      items[3].href = links.rustore
+    if (links.ruStore) {
+      items[3].href = links.ruStore
     }
   }
 
