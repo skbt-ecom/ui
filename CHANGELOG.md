@@ -1,3 +1,11 @@
+## [2.48.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.48.0...v2.48.1) (2022-10-26)
+
+
+### Bug Fixes
+
+* 🐛 rustore naming ([9b94c9e](https://gitlab.sovcombank.group/web/ecom/ui/commit/9b94c9e28f9ba80aa2a533de7b1378e9ee38bcc4))
+* 🐛 rustore naming ([fc92799](https://gitlab.sovcombank.group/web/ecom/ui/commit/fc92799dcff8119c1ed3fdeab31aabe17acd965f))
+
 # [2.48.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.47.2...v2.48.0) (2022-10-18)
 
 
