@@ -71,7 +71,7 @@ const customSocialLinks = [
 const customStoreLinks = {
   appStore: "https://ru.wikipedia.org/wiki/App_Store",
   googlePlay: "https://ru.wikipedia.org/wiki/Google_Play",
-  rustore: "https://ru.wikipedia.org/wiki/RuStore",
+  ruStore: "https://ru.wikipedia.org/wiki/RuStore",
 }
 
 const story = {
