@@ -1,3 +1,5 @@
+import removeTrailingSlash from "../helpers/removeTrailingSlash"
+
 function checkStatus(response) {
   return response
     .json()
@@ -11,9 +13,10 @@ function checkStatus(response) {
     .catch((err) => Promise.reject(err))
 }
 
-export default function sendRequest(url, data) {
-  return fetch(url, {
-    method: "post",
+export default function sendRequest(url, data, apiId) {
+  const requestUrl = apiId ? `${removeTrailingSlash(url)}/${apiId}` : url 
+  return fetch(requestUrl, {
+    method: apiId ? 'PUT' : 'POST',
     headers: {
       "Content-Type": "application/json",
     },
