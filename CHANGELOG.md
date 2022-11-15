@@ -1,3 +1,15 @@
+# [2.49.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.48.1...v2.49.0) (2022-11-15)
+
+
+### Bug Fixes
+
+* 🐛 kameleeonData ([f6e2bd5](https://gitlab.sovcombank.group/web/ecom/ui/commit/f6e2bd5ab6be33b7816fd0af862334c18e0dd1a2))
+
+
+### Features
+
+* 🎸 getAdditionalData ([60fad16](https://gitlab.sovcombank.group/web/ecom/ui/commit/60fad164e074f5ac2a9b869300a68bba80bfa956))
+
 ## [2.48.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.48.0...v2.48.1) (2022-10-26)
 
 
