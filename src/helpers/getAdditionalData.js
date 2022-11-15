@@ -5,7 +5,11 @@ export default function getAdditionalData() {
 
   try {
     const kameleoonVisitorCode = JSON.parse(localStorage.getItem('kameleoonVisitorCode'))
-    kameleoonData = {kameleoonVisitorCode}
+    if(kameleoonVisitorCode)  {
+      kameleoonData = {kameleoonVisitorCode}
+    }
+    
+
   } catch (error) {
     console.error('kameleoonVisitorCode parsing error', error.message)
   }
