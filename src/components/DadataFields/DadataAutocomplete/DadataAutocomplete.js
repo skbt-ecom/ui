@@ -13,6 +13,7 @@ const DadataAutocomplete = ({
   onBlur,
   value,
   url,
+  isGetData = true,
   ...props
 }) => {
   const [options, setOptions] = useState([])
@@ -79,7 +80,7 @@ const DadataAutocomplete = ({
       })
     }
 
-    if (inputValue) {
+    if (inputValue && isGetData) {
       fetchData()
     } else {
       setOptions([])
@@ -89,7 +90,7 @@ const DadataAutocomplete = ({
     return () => {
       active = false
     }
-  }, [inputValue, type, dadataOptions, onBlur, url])
+  }, [inputValue, isGetData, type, dadataOptions, onBlur, url])
 
   useEffect(() => {
     if (incomingValue) {
