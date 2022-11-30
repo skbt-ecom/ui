@@ -1,3 +1,10 @@
+# [2.50.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.49.0...v2.50.0) (2022-11-30)
+
+
+### Features
+
+* add isGetData propt to DadataAutocomplete component ([a873b9e](https://gitlab.sovcombank.group/web/ecom/ui/commit/a873b9e2879d370337a36ee8571ad66251ed7a7f))
+
 # [2.49.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.48.1...v2.49.0) (2022-11-15)
 
 
