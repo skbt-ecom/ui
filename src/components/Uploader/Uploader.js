@@ -9,6 +9,8 @@ import CloudUpload from "@material-ui/icons/CloudUpload"
 import PhotoCameraOutlinedIcon from "@material-ui/icons/PhotoCameraOutlined"
 import Close from "@material-ui/icons/Close"
 
+import { getIDBValue, setIDBValue, deleteIDBValue } from "../../utils/idbUtils"
+
 import useStyles from "./styles"
 
 export default function Uploader({
@@ -16,6 +18,7 @@ export default function Uploader({
   onLoad,
   onRemove,
   helperText,
+  documentType,
   classes,
   disabled = false,
   isOnlyCameraForMobile = false,
@@ -25,11 +28,7 @@ export default function Uploader({
   const [imgSrc, setImgSrc] = useState("")
   const [hasClick, setHasClick] = useState(false)
 
-  const handleLoad = (files) => {
-    if (onChange) {
-      onChange(files)
-    }
-
+  function fileReader(files) {
     const file = files[0]
     if (!file) return
 
@@ -48,6 +47,26 @@ export default function Uploader({
     reader.readAsDataURL(file)
   }
 
+  useEffect(() => {
+    getIDBValue(documentType).then((file) => {
+      if (file) {
+        fileReader(file)
+      } else {
+        console.log("У вас нет файлов в хранилище")
+      }
+    })
+    // eslint-disable-next-line
+  }, [])
+
+  const handleLoad = (files) => {
+    setIDBValue(documentType, files)
+
+    if (onChange) {
+      onChange(files)
+    }
+    fileReader(files)
+  }
+  // eslint-disable-next-line
   const onDrop = useCallback(handleLoad, [onLoad, onChange])
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
@@ -103,6 +122,8 @@ export default function Uploader({
 
       if (agreement) {
         setIsLoaded(false)
+        deleteIDBValue(documentType)
+
         onRemove()
         setImgSrc("")
       } else {
