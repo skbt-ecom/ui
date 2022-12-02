@@ -1,3 +1,10 @@
+# [2.51.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.50.0...v2.51.0) (2022-12-02)
+
+
+### Features
+
+* **uploader:** new Functional ([1ba7b07](https://gitlab.sovcombank.group/web/ecom/ui/commit/1ba7b07338257522edf0019af1d52283c4541427))
+
 # [2.50.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.49.0...v2.50.0) (2022-11-30)
 
 
