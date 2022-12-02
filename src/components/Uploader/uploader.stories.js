@@ -13,6 +13,7 @@ export function Default() {
       helperText="Для загрузки выберите файл на Вашем устройстве"
       onLoad={console.log}
       classes={{ root: "root" }}
+      documentType="autoPhoto"
       // disabled
     />
   )
