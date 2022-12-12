@@ -1,3 +1,10 @@
+# [2.52.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.51.0...v2.52.0) (2022-12-12)
+
+
+### Features
+
+* **required.js:** requerd fields ([7b86cfc](https://gitlab.sovcombank.group/web/ecom/ui/commit/7b86cfcb3b83b95fd985809ba04505f81a263204))
+
 # [2.51.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.50.0...v2.51.0) (2022-12-02)
 
 
