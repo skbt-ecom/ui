@@ -3,21 +3,19 @@ import getSearchParams from "../utils/getSearchParams"
 export default function getAdditionalData() {
   let kameleoonData
 
-  try {
-    const kameleoonVisitorCode = JSON.parse(localStorage.getItem('kameleoonVisitorCode'))
-    if(kameleoonVisitorCode)  {
-      kameleoonData = {kameleoonVisitorCode}
-    }
-    
+  // https://developers.kameleoon.com/activation-api.html#kameleoon-api-currentvisit
 
-  } catch (error) {
-    console.error('kameleoonVisitorCode parsing error', error.message)
+  const kameleoonVisitorCode = window?.Kameleoon?.API?.Visitor?.code
+  const kameleoonActivatedExperiments = window?.Kameleoon?.API?.CurrentVisit?.activatedExperiments
+
+  if (kameleoonVisitorCode || kameleoonActivatedExperiments) {
+    kameleoonData = { kameleoonVisitorCode, kameleoonActivatedExperiments }
   }
 
   return {
     url: window.location.href,
     cookie: window.document.cookie,
     qsParams: getSearchParams(),
-    kameleoonData
+    kameleoonData,
   }
 }

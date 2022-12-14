@@ -1,11 +1,10 @@
-FROM node:14 as build
+FROM registry.sovcombank.group/project-cache/library/node:14 as build
 
 ARG PROXY
-ARG NO_PROXY
+ARG http_proxy="http://proxy-server.sovcombank.group:3128" 
+ARG https_proxy="http://proxy-server.sovcombank.group:3128" 
+ARG no_proxy="127.0.0.1,.sovcombank.group" 
 ARG NPM_REGISTRY
-ENV NO_PROXY $NO_PROXY
-ENV HTTP_PROXY $PROXY
-ENV HTTPS_PROXY $PROXY
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -19,7 +18,7 @@ COPY . .
 
 RUN npm run build-storybook
 
-FROM node:14
+FROM registry.sovcombank.group/project-cache/library/node:14
 
 ARG NPM_REGISTRY
 RUN npm config set registry $NPM_REGISTRY/npm-all/
