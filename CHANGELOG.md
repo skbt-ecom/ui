@@ -1,3 +1,10 @@
+## [2.52.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.0...v2.52.1) (2022-12-14)
+
+
+### Bug Fixes
+
+* **getadditionaldata:** change kameleoonData for POST in the server ([c3a032a](https://gitlab.sovcombank.group/web/ecom/ui/commit/c3a032ab56137178eb1c881fb22487ac5208c098))
+
 # [2.52.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.51.0...v2.52.0) (2022-12-12)
 
 
