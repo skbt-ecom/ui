@@ -10,8 +10,10 @@ stages:
 
 lint:
   stage: lint
+  before_script:
+    - npm config set registry $NPM_REGISTRY/npm-all/
   script:
-    - npm i
+    - npm ci
     - npm run lint
     - npm run build
   only:

@@ -53,19 +53,19 @@ export default function Uploader({
       if (file) {
         fileReader(file)
       } else {
-        console.log("У вас нет файлов в хранилище")
+        console.log("У вас нет файлов в хранилище!")
       }
     })
     // eslint-disable-next-line
   }, [])
 
   const handleLoad = (files) => {
-    const filesObj = {
-      files,
+    const fileObj = {
+      ...files,
       required,
     }
 
-    setIDBValue(documentType, filesObj)
+    setIDBValue(documentType, fileObj)
 
     if (onChange) {
       onChange(files)
