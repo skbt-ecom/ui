@@ -18,22 +18,6 @@ export function Default() {
         required
         // disabled
       />
-      <Uploader
-        helperText="Для загрузки выберите файл на Вашем устройстве"
-        onLoad={console.log}
-        classes={{ root: "root" }}
-        documentType="autoSome"
-        required
-        // disabled
-      />
-      <Uploader
-        helperText="Для загрузки выберите файл на Вашем устройстве"
-        onLoad={console.log}
-        classes={{ root: "root" }}
-        documentType="autoTest"
-        required={false}
-        // disabled
-      />
     </>
   )
 }
