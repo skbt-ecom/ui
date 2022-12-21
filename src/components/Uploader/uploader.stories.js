@@ -14,6 +14,7 @@ export function Default() {
       onLoad={console.log}
       classes={{ root: "root" }}
       documentType="autoPhoto"
+      required
       // disabled
     />
   )

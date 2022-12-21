@@ -22,6 +22,7 @@ export default function Uploader({
   classes,
   disabled = false,
   isOnlyCameraForMobile = false,
+  required = true,
 }) {
   const upClasses = useStyles({ classes })
   const [isLoaded, setIsLoaded] = useState(false)
@@ -59,7 +60,12 @@ export default function Uploader({
   }, [])
 
   const handleLoad = (files) => {
-    setIDBValue(documentType, files)
+    const filesObj = {
+      files,
+      required,
+    }
+
+    setIDBValue(documentType, filesObj)
 
     if (onChange) {
       onChange(files)
