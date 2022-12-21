@@ -53,7 +53,7 @@ export default function Uploader({
       if (file) {
         fileReader(file)
       } else {
-        console.log("У вас нет файлов в хранилище")
+        console.log("У вас нет файлов в хранилище!")
       }
     })
     // eslint-disable-next-line
