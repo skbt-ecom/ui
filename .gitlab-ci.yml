@@ -11,7 +11,7 @@ stages:
 lint:
   stage: lint
   script:
-    - npm i
+    - npm ci
     - npm run lint
     - npm run build
   only:
