@@ -1,3 +1,13 @@
+## [2.52.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.2...v2.52.3) (2022-12-21)
+
+
+### Bug Fixes
+
+* **.gitlab.ci file:** add before_script ([bd951aa](https://gitlab.sovcombank.group/web/ecom/ui/commit/bd951aaff5436db2f45845d91812e827b1cb29d4))
+* 🐛 pipleline-check(versions) ([515ee84](https://gitlab.sovcombank.group/web/ecom/ui/commit/515ee84f78f403dd1604b14e49242fe54916f000))
+* **uploader:** delete incorrect ([393a4e8](https://gitlab.sovcombank.group/web/ecom/ui/commit/393a4e8515acad649cf761982cd406332676fb12))
+* **uploader:** fix idbDDB ([206e8d8](https://gitlab.sovcombank.group/web/ecom/ui/commit/206e8d8580d8535b1918b599eda71ffa339cc631))
+
 ## [2.52.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.1...v2.52.2) (2022-12-21)
 
 
