@@ -60,12 +60,12 @@ export default function Uploader({
   }, [])
 
   const handleLoad = (files) => {
-    const filesObj = {
-      files,
+    const fileObj = {
+      ...files,
       required,
     }
 
-    setIDBValue(documentType, filesObj)
+    setIDBValue(documentType, fileObj)
 
     if (onChange) {
       onChange(files)
