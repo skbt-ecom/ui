@@ -24,6 +24,9 @@ publish:
     NPM_TOKEN: $NPM_TOKEN
     GRAYLOG_URL: udp://$GRAYLOG
   before_script:
+    - export http_proxy=${PROXY}
+    - export https_proxy=${PROXY} 
+    - export no_proxy=${NO_PROXY} 
     - apk update && apk upgrade && apk add --no-cache bash git
   script:
     - npm i
