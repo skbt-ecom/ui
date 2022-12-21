@@ -1,3 +1,10 @@
+## [2.52.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.1...v2.52.2) (2022-12-21)
+
+
+### Bug Fixes
+
+* **uploader:** fix requerd field ([7d70b72](https://gitlab.sovcombank.group/web/ecom/ui/commit/7d70b72fd2b5e8de8fcb7bc67020d7de965edc2d))
+
 ## [2.52.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.0...v2.52.1) (2022-12-14)
 
 
