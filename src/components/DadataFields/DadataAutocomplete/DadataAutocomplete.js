@@ -119,7 +119,7 @@ const DadataAutocomplete = ({
       freeSolo
       autoComplete
       disableClearable
-      options={options}
+      options={Array.isArray(options) ? options : []}
       includeInputInList
       loading={isLoading}
       value={dadataValue}
