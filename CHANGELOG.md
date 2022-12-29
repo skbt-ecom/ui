@@ -1,3 +1,10 @@
+## [2.52.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.3...v2.52.4) (2022-12-29)
+
+
+### Bug Fixes
+
+* 🐛 not array options bug ([2f3f046](https://gitlab.sovcombank.group/web/ecom/ui/commit/2f3f0463019ec98cc34382530dcb9446f288122a))
+
 ## [2.52.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.2...v2.52.3) (2022-12-21)
 
 
