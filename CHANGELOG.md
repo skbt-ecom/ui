@@ -1,3 +1,10 @@
+## [2.52.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.4...v2.52.5) (2022-12-29)
+
+
+### Bug Fixes
+
+* 🐛 autocomplete bug ([e1f344e](https://gitlab.sovcombank.group/web/ecom/ui/commit/e1f344e4c3fcfefac5e503997c161749406078fc))
+
 ## [2.52.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.3...v2.52.4) (2022-12-29)
 
 
