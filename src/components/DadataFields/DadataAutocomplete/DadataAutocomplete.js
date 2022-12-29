@@ -115,7 +115,7 @@ const DadataAutocomplete = ({
   return (
     <Autocomplete
       getOptionLabel={(option) => option.value || ""}
-      filterOptions={(x) => x}
+      filterOptions={(x) => (Array.isArray(x) ? x : [])}
       freeSolo
       autoComplete
       disableClearable
