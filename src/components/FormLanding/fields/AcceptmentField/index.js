@@ -13,6 +13,8 @@ const Acceptment = React.memo((props) => {
     props.onChange(e.target.checked)
   }
 
+  console.log(classes)
+
   return (
     <Checkbox
       color="primary"
