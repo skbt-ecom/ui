@@ -1,3 +1,10 @@
+## [2.52.6](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.5...v2.52.6) (2023-01-17)
+
+
+### Bug Fixes
+
+* 🐛 undefined of theme ([16e1e59](https://gitlab.sovcombank.group/web/ecom/ui/commit/16e1e5958c4f7d495189cd77631cc8de19654618))
+
 ## [2.52.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.4...v2.52.5) (2022-12-29)
 
 
