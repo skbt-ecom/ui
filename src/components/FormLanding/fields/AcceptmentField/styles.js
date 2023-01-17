@@ -6,7 +6,7 @@ export const useAcceptmentStyles = makeStyles((theme) => ({
     fontSize: 12,
     lineHeight: 1.3,
     padding: "9px 0",
-    color: theme.palette.custom.acceptmentLabel,
+    color: theme.palette?.custom?.acceptmentLabel,
   },
 
   labelRoot: {
