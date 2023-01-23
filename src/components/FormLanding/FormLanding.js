@@ -13,8 +13,14 @@ const FormLanding = (props, ref) => {
     if (name) pushToDataLayerLoadedStep(name)
   }, [name])
 
+  const handleClick = () => {
+    console.log(1)
+    
+  }
+
   return (
-    <div className={classes.container}>
+    /* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
+    <div className={classes.container} onClick={handleClick} onKeyDown={handleClick}>
       <Form onSubmit={onSubmit} onChangeFields={onChangeFields} ref={ref} name={name}>
         {children}
       </Form>
