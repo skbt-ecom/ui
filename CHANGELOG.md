@@ -1,3 +1,10 @@
+# [2.53.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.7...v2.53.0) (2023-01-23)
+
+
+### Features
+
+* **formlanding:** add event Start_filling to form ([2ce0534](https://gitlab.sovcombank.group/web/ecom/ui/commit/2ce053460535d51f4cfd0c371669d06f546ebcf9))
+
 ## [2.52.7](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.6...v2.52.7) (2023-01-17)
 
 
