@@ -1,3 +1,10 @@
+# [2.54.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.53.0...v2.54.0) (2023-02-06)
+
+
+### Features
+
+* add eventAttempt ([98af3bc](https://gitlab.sovcombank.group/web/ecom/ui/commit/98af3bcbe9ef44543b4c317ab0d6f422a4b4cb57))
+
 # [2.53.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.7...v2.53.0) (2023-01-23)
 
 
