@@ -12,6 +12,7 @@ import {
 import {
   pushToDataLayerSendForm,
   pushToDataLayerStepSuccess,
+  pushToDataLayerInvalidField,
 } from "../../../utils/pushToDataLayerUtils"
 
 export const FormContext = React.createContext({})
@@ -163,6 +164,7 @@ export class Form extends React.Component {
       const stateField = this.state.fields[fieldKey]
       if (fieldKey in fieldsWithError) {
         nextFields[fieldKey] = { ...fieldsWithError[fieldKey] }
+        pushToDataLayerInvalidField(fieldKey, nextFields[fieldKey].helperText, true)
       } else {
         nextFields[fieldKey] = {
           ...stateField,
