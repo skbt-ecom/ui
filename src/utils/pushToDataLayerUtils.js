@@ -15,13 +15,14 @@ export const pushToDataLayerLoadedStep = (name) => {
   })
 }
 
-export const pushToDataLayerInvalidField = (fieldKey, reason) => {
+export const pushToDataLayerInvalidField = (fieldKey, reason, eventAttempt = false) => {
   _pushToDataLayer({
     event: "GAFormEvent",
     eventCategory: "invalidField",
     eventAction: `${fieldKey} - ${typeof reason === "object" ? JSON.stringify(reason) : reason}`,
     focus: "onfocus",
     time: Date.now(),
+    eventAttempt,
   })
 }
 export const pushToDataLayerSendForm = () => {
