@@ -2,7 +2,6 @@ import "./globalThis.polyfill"
 
 import React, { useState } from "react"
 
-
 import { IMaskInput } from "react-imask"
 
 import TextField from "@material-ui/core/TextField"
@@ -42,6 +41,11 @@ export default function MaskedFieldSeven({ InputProps, ...props }) {
   }
 
   const handleSelect = (e) => {
+    if (e.target.selectionStart < 4) {
+      e.target.selectionStart = 4
+      e.target.selectionEnd = 4
+    }
+
     if (!selecTed) {
       e.target.selectionStart = 4
       e.target.selectionEnd = 4
