@@ -1,3 +1,16 @@
+# [2.55.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.54.0...v2.55.0) (2023-02-08)
+
+
+### Bug Fixes
+
+* dfdf ([ae002a1](https://gitlab.sovcombank.group/web/ecom/ui/commit/ae002a15060bcd82313eb9a887e8a1878eedb28e))
+
+
+### Features
+
+* 🎸 add phoneWithSeven ([e9dca50](https://gitlab.sovcombank.group/web/ecom/ui/commit/e9dca5043f075c2e6aa2e544a34d4540a4533154))
+* dfdffd ([bc2cb08](https://gitlab.sovcombank.group/web/ecom/ui/commit/bc2cb0880a87657b50a9172b37aab3f214b0d8ca))
+
 # [2.54.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.53.0...v2.54.0) (2023-02-06)
 
 
