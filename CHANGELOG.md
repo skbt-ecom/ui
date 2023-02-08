@@ -1,3 +1,10 @@
+## [2.55.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.55.0...v2.55.1) (2023-02-08)
+
+
+### Performance Improvements
+
+* ⚡️ MaskedFieldSeven ([b2a45dd](https://gitlab.sovcombank.group/web/ecom/ui/commit/b2a45ddd4cfeff5e5f1290032a0d6d651e571976))
+
 # [2.55.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.54.0...v2.55.0) (2023-02-08)
 
 
