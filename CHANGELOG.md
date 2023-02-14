@@ -1,3 +1,10 @@
+## [2.55.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.55.1...v2.55.2) (2023-02-14)
+
+
+### Bug Fixes
+
+* maskedfieldSeven for pkw ([08bd728](https://gitlab.sovcombank.group/web/ecom/ui/commit/08bd7283508f79eed018587f6f0985930d887745))
+
 ## [2.55.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.55.0...v2.55.1) (2023-02-08)
 
 
