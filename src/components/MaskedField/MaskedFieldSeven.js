@@ -33,6 +33,8 @@ export default function MaskedFieldSeven({ InputProps, ...props }) {
   const [focuSed, setFocused] = useState(false)
   const [selecTed, setSelected] = useState(false)
 
+  // костыли для формы pkw
+
   const handleFocus = (e) => {
     if (!focuSed) {
       e.target.value = "+7 (___) ___-__-__"
@@ -41,6 +43,9 @@ export default function MaskedFieldSeven({ InputProps, ...props }) {
   }
 
   const handleSelect = (e) => {
+    if (e.target.value === "") {
+      e.target.value = "+7 (___) ___-__-__"
+    }
     if (e.target.selectionStart < 4) {
       e.target.selectionStart = 4
       e.target.selectionEnd = 4
