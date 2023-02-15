@@ -1,3 +1,11 @@
+## [2.55.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.55.2...v2.55.3) (2023-02-15)
+
+
+### Bug Fixes
+
+* 🐛 delete log ([9cd05ab](https://gitlab.sovcombank.group/web/ecom/ui/commit/9cd05ab1f73df6535274f9ac15301f996894a90f))
+* 🐛 disabled backspace ([1b70d91](https://gitlab.sovcombank.group/web/ecom/ui/commit/1b70d91ea16fb3e697820cc64c30478ce13f68f0))
+
 ## [2.55.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.55.1...v2.55.2) (2023-02-14)
 
 
