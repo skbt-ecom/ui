@@ -36,7 +36,6 @@ export default function MaskedFieldSeven({ InputProps, ...props }) {
   // костыли для формы pkw
 
   const handleFocus = (e) => {
-    console.log(e.target.value)
     if (!focuSed) {
       e.target.value = "+7 (___) ___-__-__"
     }
