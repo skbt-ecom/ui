@@ -43,9 +43,6 @@ export default function MaskedFieldSeven({ InputProps, ...props }) {
   }
 
   const handleSelect = (e) => {
-    if (e.target.value === "") {
-      e.target.value = "+7 (___) ___-__-__"
-    }
     if (e.target.selectionStart < 4) {
       e.target.selectionStart = 4
       e.target.selectionEnd = 4
@@ -58,11 +55,18 @@ export default function MaskedFieldSeven({ InputProps, ...props }) {
     }
   }
 
+  const handleKey = (e) => {
+    if (e.target.selectionStart === 4 && e.key === "Backspace") {
+      e.preventDefault()
+    }
+  }
+
   return (
     <TextField
       {...textFieldProps}
       onFocus={(e) => handleFocus(e)}
       onSelect={(e) => handleSelect(e)}
+      onKeyDown={(e) => handleKey(e)}
       InputProps={{
         ...InputProps,
         inputProps,
