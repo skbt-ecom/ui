@@ -1,8 +1,7 @@
 import React from "react"
 import MaterialDadataField from "../../DadataField"
 import { Field } from "../FormContext/Field"
-import { fioValidator } from "../validators/fioValidator"
-import { addressValidator } from "../validators/addressValidator"
+import { fioValidator, addressValidator } from "../validators"
 
 import useStyles from "./styles"
 

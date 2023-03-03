@@ -1,7 +1,7 @@
 import React, { useCallback } from "react"
 import MateriaDadataAddress from "../../../DadataFields/DadataAddress"
 import { Field } from "../../FormContext/Field"
-import { addressDadataValidator } from "../../validators/dadataAddressValidator"
+import { addressDadataValidator } from "../../validators"
 
 import useStyles from "../styles"
 
@@ -13,7 +13,7 @@ const DadataAddress = React.memo(({ onChange, ...props }) => {
     [onChange]
   )
 
-  return <MateriaDadataAddress {...props} onBlur={handleBlur} />
+  return <MateriaDadataAddress {...props} onBlur={handleBlur} onChange={onChange} />
 })
 
 const WrappedField = ({ classsesComponent, ...props }) => {

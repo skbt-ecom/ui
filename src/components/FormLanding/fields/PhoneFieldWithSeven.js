@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 
 import MaterialPhoneField from "../../PhoneField"
 import { Field } from "../FormContext/Field"
-import { phoneValidator } from "../validators/phoneValidator"
+import { phoneValidator } from "../validators"
 
 import useStyles from "./styles"
 
