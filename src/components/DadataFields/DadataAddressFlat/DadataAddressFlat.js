@@ -14,96 +14,99 @@ const parseIncomingValue = (regexp, incomingValue) => {
 
 const dadataOptions = { to_bound: { value: "house" } }
 
-const DadataAddressFlat = React.memo(({ regexp, incomingValue, onBlur, name, url, ...props }) => {
-  const addressDadataClasses = useStylesAddressDadata(props.classes.addressDadataClasses)
-  const flatInfoClasses = useStylesFlatInfo(props.classes.flatInfoClasses)
+const DadataAddressFlat = React.memo(
+  ({ regexp, incomingValue, onBlur, onChange, name, url, ...props }) => {
+    const addressDadataClasses = useStylesAddressDadata(props.classes.addressDadataClasses)
+    const flatInfoClasses = useStylesFlatInfo(props.classes.flatInfoClasses)
 
-  const [dadataAddressData, setDadataAddressData] = useState(null)
-  const [flat, setFlat] = useState("")
-  const [isNoFlat, setIsNoFlat] = useState(false)
+    const [dadataAddressData, setDadataAddressData] = useState(null)
+    const [flat, setFlat] = useState("")
+    const [isNoFlat, setIsNoFlat] = useState(false)
 
-  const [incomingValueWOFlat, setIncomingValueWOFlat] = useState("")
+    const [incomingValueWOFlat, setIncomingValueWOFlat] = useState("")
 
-  useEffect(() => {
-    if (incomingValue) {
-      const parsedIncomingValue = parseIncomingValue(regexp, incomingValue)
-      const [, addressWOFlat, flat1] = parsedIncomingValue || []
+    useEffect(() => {
+      if (incomingValue) {
+        const parsedIncomingValue = parseIncomingValue(regexp, incomingValue)
+        const [, addressWOFlat, flat1] = parsedIncomingValue || []
 
-      setIncomingValueWOFlat(addressWOFlat)
-      if (flat1) {
-        setFlat(flat1)
+        setIncomingValueWOFlat(addressWOFlat)
+        if (flat1) {
+          setFlat(flat1)
+        }
       }
+    }, [regexp, incomingValue])
+
+    useEffect(() => {
+      if (dadataAddressData) {
+        onBlur(null, {
+          ...dadataAddressData,
+          dadataValue: {
+            ...dadataAddressData.dadataValue,
+            inputFlat: flat,
+            isNoFlat,
+          },
+        })
+      }
+    }, [flat, isNoFlat, dadataAddressData, onBlur])
+
+    const handleAddressDadataBlur = useCallback((e, values) => {
+      setDadataAddressData(values)
+    }, [])
+
+    const addressDadataErrorProps = {
+      error: props.error ? Boolean(props.error.addressDadata) : false,
+      helperText: props.helperText.addressDadata,
     }
-  }, [regexp, incomingValue])
-
-  useEffect(() => {
-    if (dadataAddressData) {
-      onBlur(null, {
-        ...dadataAddressData,
-        dadataValue: {
-          ...dadataAddressData.dadataValue,
-          inputFlat: flat,
-          isNoFlat,
-        },
-      })
+    const flatErrorProps = {
+      error: props.error ? Boolean(props.error.flat) : false,
+      helperText: props.helperText.flat,
     }
-  }, [flat, isNoFlat, dadataAddressData, onBlur])
 
-  const handleAddressDadataBlur = useCallback((e, values) => {
-    setDadataAddressData(values)
-  }, [])
-
-  const addressDadataErrorProps = {
-    error: props.error ? Boolean(props.error.addressDadata) : false,
-    helperText: props.helperText.addressDadata,
-  }
-  const flatErrorProps = {
-    error: props.error ? Boolean(props.error.flat) : false,
-    helperText: props.helperText.flat,
-  }
-
-  return (
-    <div>
-      <div className={addressDadataClasses.container}>
-        <DadataAddress
-          url={url}
-          onBlur={handleAddressDadataBlur}
-          type="address"
-          label="Адрес"
-          name={name}
-          dadataOptions={dadataOptions}
-          incomingValue={incomingValueWOFlat}
-          fullWidth
-          {...addressDadataErrorProps}
-        />
+    return (
+      <div>
+        <div className={addressDadataClasses.container}>
+          <DadataAddress
+            url={url}
+            onBlur={handleAddressDadataBlur}
+            onChange={onChange}
+            type="address"
+            label="Адрес"
+            name={name}
+            dadataOptions={dadataOptions}
+            incomingValue={incomingValueWOFlat}
+            fullWidth
+            {...addressDadataErrorProps}
+          />
+        </div>
+        <div className={flatInfoClasses.container}>
+          <TextField
+            label="Квартира"
+            onChange={(e) => setFlat(e.target.value)}
+            value={flat}
+            disabled={isNoFlat}
+            classes={{
+              root: flatInfoClasses.flatField,
+            }}
+            {...flatErrorProps}
+          />
+          <Checkbox
+            onChange={(e) => setIsNoFlat(e.target.checked)}
+            label="Нет номера квартиры"
+            color="primary"
+            checked={isNoFlat}
+            classes={{
+              labelClasses: {
+                root: flatInfoClasses.checkbox,
+                label: flatInfoClasses.checkboxLabel,
+              },
+            }}
+          />
+        </div>
       </div>
-      <div className={flatInfoClasses.container}>
-        <TextField
-          label="Квартира"
-          onChange={(e) => setFlat(e.target.value)}
-          value={flat}
-          disabled={isNoFlat}
-          classes={{
-            root: flatInfoClasses.flatField,
-          }}
-          {...flatErrorProps}
-        />
-        <Checkbox
-          onChange={(e) => setIsNoFlat(e.target.checked)}
-          label="Нет номера квартиры"
-          color="primary"
-          checked={isNoFlat}
-          classes={{
-            labelClasses: {
-              root: flatInfoClasses.checkbox,
-              label: flatInfoClasses.checkboxLabel,
-            },
-          }}
-        />
-      </div>
-    </div>
-  )
-})
+    )
+  }
+)
 
 DadataAddressFlat.defaultProps = {
   helperText: { addressDadata: null, flat: null },

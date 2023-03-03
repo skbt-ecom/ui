@@ -1,7 +1,7 @@
 import React, { useCallback } from "react"
 import MaterialDadataFio from "../../../DadataFields/DadataFio"
 import { Field } from "../../FormContext/Field"
-import { fioDadataValidator } from "../../validators/dadataFioValidator"
+import { fioDadataValidator } from "../../validators"
 
 import useStyles from "../styles"
 
@@ -13,7 +13,7 @@ const DadataFio = React.memo(({ onChange, ...props }) => {
     [onChange]
   )
 
-  return <MaterialDadataFio {...props} onBlur={handleBlur} />
+  return <MaterialDadataFio {...props} onBlur={handleBlur} onChange={onChange} />
 })
 
 const WrappedField = ({ classsesComponent, ...props }) => {

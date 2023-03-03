@@ -14,6 +14,8 @@ export class Field extends React.PureComponent {
 
   initialValue = this.props.value || this.props.defaultValue
 
+  isNotEmpty = false
+
   componentDidMount() {
     const field = this.context.fields[this.props.name] || {}
     const { validate, helperText, isRequired } = this.props
@@ -28,6 +30,15 @@ export class Field extends React.PureComponent {
   }
 
   onChange = (value) => {
+    if (typeof value === "string") {
+      this.isNotEmpty = true
+    }
+    if (value?.target?.value !== undefined) {
+      this.isNotEmpty = true
+    }
+    if (value?.target?.value !== undefined) {
+      return null
+    }
     if (this.props.validateOnBlur) {
       // reset error state from field
       return this.context.onChange({
@@ -51,7 +62,7 @@ export class Field extends React.PureComponent {
     //   return;
     // }
     this.prevValue = value
-    const error = isRequired ? this.props.validate(value) : false
+    const error = isRequired && this.isNotEmpty ? this.props.validate(value) : false
     const helperText = getHelperTextFromError(error, this.props.helperText)
 
     if (!error && isRequired) pushToDataLayerRequiredValidField(this.props.name)

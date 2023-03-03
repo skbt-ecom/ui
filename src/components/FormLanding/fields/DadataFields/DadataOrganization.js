@@ -1,7 +1,7 @@
 import React, { useCallback } from "react"
 import MaterialDadataOrganization from "../../../DadataFields/DadataOrganization"
 import { Field } from "../../FormContext/Field"
-import { organizationValidator } from "../../validators/organizationValidator"
+import { organizationValidator } from "../../validators"
 
 import useStyles from "../styles"
 
@@ -13,7 +13,7 @@ const DadataOrganization = React.memo(({ onChange, ...props }) => {
     [onChange]
   )
 
-  return <MaterialDadataOrganization {...props} onBlur={handleBlur} />
+  return <MaterialDadataOrganization {...props} onBlur={handleBlur} onChange={onChange} />
 })
 
 const WrappedField = ({ classsesComponent, ...props }) => {
