@@ -1,7 +1,7 @@
 import React, { useCallback } from "react"
 import MateriaDadataAddressFlat from "../../../DadataFields/DadataAddressFlat"
 import { Field } from "../../FormContext/Field"
-import { addressFlatDadataValidator } from "../../validators/dadataAddressValidator"
+import { addressFlatDadataValidator } from "../../validators"
 
 import useStyles from "../styles"
 import { useAddressDadataStyles, useFlatInfoStyles } from "./styles"
@@ -24,6 +24,7 @@ const DadataAddressFlat = React.memo(({ onChange, ...props }) => {
       }}
       {...props}
       onBlur={handleBlur}
+      onChange={onChange}
     />
   )
 })

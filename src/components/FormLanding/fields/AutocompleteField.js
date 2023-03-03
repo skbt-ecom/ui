@@ -1,7 +1,7 @@
 import React from "react"
 import MaterialAutocompleteField from "../../AutocompleteField"
 import { Field } from "../FormContext/Field"
-import { autocompleteValidator } from "../validators/autocompleteValidator"
+import { autocompleteValidator } from "../validators"
 
 import useStyles from "./styles"
 

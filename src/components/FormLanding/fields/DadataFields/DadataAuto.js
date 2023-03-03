@@ -1,7 +1,7 @@
 import React, { useCallback } from "react"
 import MaterialDadataAuto from "../../../DadataFields/DadataAuto"
 import { Field } from "../../FormContext/Field"
-import { autoDadataValidator } from "../../validators/dadataAutoValidator"
+import { autoDadataValidator } from "../../validators"
 
 import useStyles from "../styles"
 
@@ -13,7 +13,7 @@ const DadataAuto = React.memo(({ onChange, ...props }) => {
     [onChange]
   )
 
-  return <MaterialDadataAuto {...props} onBlur={handleBlur} />
+  return <MaterialDadataAuto {...props} onBlur={handleBlur} onChange={onChange} />
 })
 
 const WrappedField = ({ classsesComponent, ...props }) => {
