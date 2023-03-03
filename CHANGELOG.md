@@ -1,3 +1,10 @@
+## [2.55.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.55.3...v2.55.4) (2023-03-03)
+
+
+### Bug Fixes
+
+* change validation ([2f3b3e1](https://gitlab.sovcombank.group/web/ecom/ui/commit/2f3b3e1dbcb55eb5e395c3019ac7e7114e13a286))
+
 ## [2.55.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.55.2...v2.55.3) (2023-02-15)
 
 
