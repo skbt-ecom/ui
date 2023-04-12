@@ -8,10 +8,10 @@ import Container from "../Container"
 import Logo from "./Logo"
 import PhoneMain from "../PhoneMain"
 
-import { useHeaderStyles, usePhoneStyles, useButtonStyles } from "./styles"
+import { useButtonStyles, useHeaderStyles, usePhoneStyles } from "./styles"
 
 const Header = (props, ref) => {
-  const { left, right, LogoProps, withButton, ButtonProps, PhoneProps, sticky } = props
+  const { left, right, LogoProps, withButton, ButtonProps, PhoneProps, sticky, children } = props
   const classes = useHeaderStyles(props)
   const phoneClasses = usePhoneStyles(PhoneProps)
   const buttonClasses = useButtonStyles(ButtonProps)
@@ -32,6 +32,7 @@ const Header = (props, ref) => {
           </div>
         )}
       </Container>
+      {children}
     </header>
   )
 }
