@@ -1,3 +1,10 @@
+# [2.56.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.55.4...v2.56.0) (2023-04-12)
+
+
+### Features
+
+* add header children ([dbbfd6e](https://gitlab.sovcombank.group/web/ecom/ui/commit/dbbfd6e5d1c145d8a36084a3c0b01eb939ebcf9b))
+
 ## [2.55.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.55.3...v2.55.4) (2023-03-03)
 
 
