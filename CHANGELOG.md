@@ -1,3 +1,10 @@
+# [2.57.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.56.0...v2.57.0) (2023-04-13)
+
+
+### Features
+
+* **multipleselect:** add new component multipleSelect ([8d5fd07](https://gitlab.sovcombank.group/web/ecom/ui/commit/8d5fd07f9f78be136da9ed74853e241d22c25ef7))
+
 # [2.56.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.55.4...v2.56.0) (2023-04-12)
 
 
