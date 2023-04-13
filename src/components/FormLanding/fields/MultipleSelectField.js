@@ -1,15 +1,15 @@
 import React from "react"
-import MaterialSelect from "../../Select"
+import MaterialMultipleSelect from "../../MultipleSelect"
 import { Field } from "../FormContext/Field"
 
 import useStyles from "./styles"
 
-const SelectField = React.memo((props) => {
+const MultipleSelectField = React.memo((props) => {
   const onChange = (e) => {
     props.onChange(e.target.value)
   }
 
-  return <MaterialSelect {...props} onChange={onChange} />
+  return <MaterialMultipleSelect {...props} onChange={onChange} />
 })
 
 const WrappedField = ({ classsesComponent, ...props }) => {
@@ -21,11 +21,11 @@ const WrappedField = ({ classsesComponent, ...props }) => {
   )
 }
 
-WrappedField.displayName = "SelectField"
+WrappedField.displayName = "MultipleSelectField"
 WrappedField.defaultProps = {
-  component: SelectField,
+  component: MultipleSelectField,
   fullWidth: true,
-  defaultValue: "",
+  defaultValue: [],
 }
 
 export default WrappedField
