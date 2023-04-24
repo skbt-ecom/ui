@@ -1,3 +1,10 @@
+# [2.58.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.57.0...v2.58.0) (2023-04-24)
+
+
+### Features
+
+* **component:** new sms code verification field ([8ef5219](https://gitlab.sovcombank.group/web/ecom/ui/commit/8ef52196d27602997cdbaa72fbde0f5c4c1a818e))
+
 # [2.57.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.56.0...v2.57.0) (2023-04-13)
 
 
