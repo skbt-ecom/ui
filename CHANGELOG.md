@@ -1,3 +1,10 @@
+## [2.58.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.0...v2.58.1) (2023-05-03)
+
+
+### Bug Fixes
+
+* change email validation ([a8d1f79](https://gitlab.sovcombank.group/web/ecom/ui/commit/a8d1f79ec5d30efc634d0269f3040f9a5cc2724f))
+
 # [2.58.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.57.0...v2.58.0) (2023-04-24)
 
 
