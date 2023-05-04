@@ -70,7 +70,7 @@ export class Field extends React.PureComponent {
 
     this.context.onChange({
       fieldKey: this.props.name,
-      value,
+      value: value.trim(),
       error,
       helperText,
     })
@@ -79,7 +79,7 @@ export class Field extends React.PureComponent {
   onBlur = () => {
     this.onValidateItem({
       fieldKey: this.props.name,
-      value: this.context.fields[this.props.name].value.trim(),
+      value: this.context.fields[this.props.name].value,
       isRequired: this.context.fields[this.props.name].isRequired,
     })
   }
