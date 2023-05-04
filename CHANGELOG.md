@@ -1,3 +1,10 @@
+## [2.58.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.2...v2.58.3) (2023-05-04)
+
+
+### Bug Fixes
+
+* change field trim ([4cc477c](https://gitlab.sovcombank.group/web/ecom/ui/commit/4cc477cf0172e7fe622554857bc32d0f3d740b2c))
+
 ## [2.58.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.1...v2.58.2) (2023-05-04)
 
 
