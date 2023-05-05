@@ -1,3 +1,10 @@
+## [2.58.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.4...v2.58.5) (2023-05-05)
+
+
+### Bug Fixes
+
+* change field logic ([7ca9b95](https://gitlab.sovcombank.group/web/ecom/ui/commit/7ca9b95993b314a2d620317c76cd62b482cc3519))
+
 ## [2.58.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.3...v2.58.4) (2023-05-05)
 
 
