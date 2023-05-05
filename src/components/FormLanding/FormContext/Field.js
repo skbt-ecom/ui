@@ -18,7 +18,7 @@ export class Field extends React.PureComponent {
 
   componentDidMount() {
     const field = this.context.fields[this.props.name] || {}
-    const { validate, helperText, isRequired } = this.props
+    const { validate, helperText, isRequired, isTrim } = this.props
 
     this.context.registerField({
       fieldKey: this.props.name,
@@ -26,6 +26,7 @@ export class Field extends React.PureComponent {
       validate,
       helperText,
       isRequired,
+      isTrim,
     })
   }
 
@@ -52,11 +53,12 @@ export class Field extends React.PureComponent {
       fieldKey: this.props.name,
       value,
       isRequired: this.props.isRequired,
+      isTrim: this.props.isTrim,
     })
   }
 
   onValidateItem = (props) => {
-    const { value, isRequired } = props
+    const { value, isRequired, isTrim } = props
     // return when value has not been changed
     // if (value === this.prevValue) {
     //   return;
@@ -67,10 +69,11 @@ export class Field extends React.PureComponent {
 
     if (!error && isRequired) pushToDataLayerRequiredValidField(this.props.name)
     else if (error) pushToDataLayerInvalidField(this.props.name, helperText)
-
+    let newValue = value
+    if (isTrim) newValue = value.trim()
     this.context.onChange({
       fieldKey: this.props.name,
-      value: value.trim(),
+      value: newValue,
       error,
       helperText,
     })
@@ -81,6 +84,7 @@ export class Field extends React.PureComponent {
       fieldKey: this.props.name,
       value: this.context.fields[this.props.name].value,
       isRequired: this.context.fields[this.props.name].isRequired,
+      isTrim: this.props.isTrim,
     })
   }
 
@@ -92,6 +96,7 @@ export class Field extends React.PureComponent {
       defaultValue,
       validateOnBlur,
       isRequired,
+      isTrim,
       ...props
     } = this.props
 
@@ -121,6 +126,7 @@ Field.defaultProps = {
   validate: () => undefined,
   validateOnBlur: true,
   isRequired: true,
+  isTrim: false,
 }
 
 Field.propTypes = {
@@ -128,4 +134,5 @@ Field.propTypes = {
   name: PropTypes.string.isRequired,
   validateOnBlur: PropTypes.bool,
   isRequired: PropTypes.bool,
+  isTrim: PropTypes.bool,
 }
