@@ -63,14 +63,15 @@ export class Field extends React.PureComponent {
     // if (value === this.prevValue) {
     //   return;
     // }
+    console.log(isTrim)
     this.prevValue = value
     const error = isRequired && this.isNotEmpty ? this.props.validate(value) : false
     const helperText = getHelperTextFromError(error, this.props.helperText)
 
     if (!error && isRequired) pushToDataLayerRequiredValidField(this.props.name)
     else if (error) pushToDataLayerInvalidField(this.props.name, helperText)
-    let newValue = value
-    if (isTrim) newValue = value.trim()
+    const newValue = value
+    // if (isTrim) newValue = value.trim()
     this.context.onChange({
       fieldKey: this.props.name,
       value: newValue,
