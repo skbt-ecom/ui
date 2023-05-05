@@ -9,6 +9,7 @@ const EmailField = (props) => <TextField {...props} />
 EmailField.displayName = "EmailField"
 EmailField.defaultProps = {
   validate: emailValidator,
+  isTrim: true,
 }
 
 export default EmailField
