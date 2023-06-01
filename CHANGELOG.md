@@ -1,3 +1,10 @@
+## [2.58.7](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.6...v2.58.7) (2023-06-01)
+
+
+### Bug Fixes
+
+* **verify code array:** input autocomplete ([1462b71](https://gitlab.sovcombank.group/web/ecom/ui/commit/1462b71e74e6565c26d6515753377cc5d62cd750))
+
 ## [2.58.6](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.5...v2.58.6) (2023-05-11)
 
 
