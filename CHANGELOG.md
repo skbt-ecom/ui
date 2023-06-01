@@ -1,3 +1,273 @@
+## [2.58.6](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.5...v2.58.6) (2023-05-11)
+
+
+### Bug Fixes
+
+* change field logic ([06bd527](https://gitlab.sovcombank.group/web/ecom/ui/commit/06bd5273ff90016fccf2c75d236ae36713d720c1))
+
+## [2.58.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.4...v2.58.5) (2023-05-05)
+
+
+### Bug Fixes
+
+* change field logic ([7ca9b95](https://gitlab.sovcombank.group/web/ecom/ui/commit/7ca9b95993b314a2d620317c76cd62b482cc3519))
+
+## [2.58.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.3...v2.58.4) (2023-05-05)
+
+
+### Bug Fixes
+
+* change field logic ([b4a27e6](https://gitlab.sovcombank.group/web/ecom/ui/commit/b4a27e64f6b8080babfd0b81ab8fb135a980fa1f))
+
+## [2.58.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.2...v2.58.3) (2023-05-04)
+
+
+### Bug Fixes
+
+* change field trim ([4cc477c](https://gitlab.sovcombank.group/web/ecom/ui/commit/4cc477cf0172e7fe622554857bc32d0f3d740b2c))
+
+## [2.58.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.1...v2.58.2) (2023-05-04)
+
+
+### Bug Fixes
+
+* add filed value trim ([f2b1f05](https://gitlab.sovcombank.group/web/ecom/ui/commit/f2b1f05fde173bcd8a8ef65f3f2c55a06b0d0eaf))
+* change email validation ([02051a3](https://gitlab.sovcombank.group/web/ecom/ui/commit/02051a392ef97427bc50054a8daafd6c4dd200ab))
+
+## [2.58.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.0...v2.58.1) (2023-05-03)
+
+
+### Bug Fixes
+
+* change email validation ([a8d1f79](https://gitlab.sovcombank.group/web/ecom/ui/commit/a8d1f79ec5d30efc634d0269f3040f9a5cc2724f))
+
+# [2.58.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.57.0...v2.58.0) (2023-04-24)
+
+
+### Features
+
+* **component:** new sms code verification field ([8ef5219](https://gitlab.sovcombank.group/web/ecom/ui/commit/8ef52196d27602997cdbaa72fbde0f5c4c1a818e))
+
+# [2.57.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.56.0...v2.57.0) (2023-04-13)
+
+
+### Features
+
+* **multipleselect:** add new component multipleSelect ([8d5fd07](https://gitlab.sovcombank.group/web/ecom/ui/commit/8d5fd07f9f78be136da9ed74853e241d22c25ef7))
+
+# [2.56.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.55.4...v2.56.0) (2023-04-12)
+
+
+### Features
+
+* add header children ([dbbfd6e](https://gitlab.sovcombank.group/web/ecom/ui/commit/dbbfd6e5d1c145d8a36084a3c0b01eb939ebcf9b))
+
+## [2.55.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.55.3...v2.55.4) (2023-03-03)
+
+
+### Bug Fixes
+
+* change validation ([2f3b3e1](https://gitlab.sovcombank.group/web/ecom/ui/commit/2f3b3e1dbcb55eb5e395c3019ac7e7114e13a286))
+
+## [2.55.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.55.2...v2.55.3) (2023-02-15)
+
+
+### Bug Fixes
+
+* 🐛 delete log ([9cd05ab](https://gitlab.sovcombank.group/web/ecom/ui/commit/9cd05ab1f73df6535274f9ac15301f996894a90f))
+* 🐛 disabled backspace ([1b70d91](https://gitlab.sovcombank.group/web/ecom/ui/commit/1b70d91ea16fb3e697820cc64c30478ce13f68f0))
+
+## [2.55.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.55.1...v2.55.2) (2023-02-14)
+
+
+### Bug Fixes
+
+* maskedfieldSeven for pkw ([08bd728](https://gitlab.sovcombank.group/web/ecom/ui/commit/08bd7283508f79eed018587f6f0985930d887745))
+
+## [2.55.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.55.0...v2.55.1) (2023-02-08)
+
+
+### Performance Improvements
+
+* ⚡️ MaskedFieldSeven ([b2a45dd](https://gitlab.sovcombank.group/web/ecom/ui/commit/b2a45ddd4cfeff5e5f1290032a0d6d651e571976))
+
+# [2.55.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.54.0...v2.55.0) (2023-02-08)
+
+
+### Bug Fixes
+
+* dfdf ([ae002a1](https://gitlab.sovcombank.group/web/ecom/ui/commit/ae002a15060bcd82313eb9a887e8a1878eedb28e))
+
+
+### Features
+
+* 🎸 add phoneWithSeven ([e9dca50](https://gitlab.sovcombank.group/web/ecom/ui/commit/e9dca5043f075c2e6aa2e544a34d4540a4533154))
+* dfdffd ([bc2cb08](https://gitlab.sovcombank.group/web/ecom/ui/commit/bc2cb0880a87657b50a9172b37aab3f214b0d8ca))
+
+# [2.54.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.53.0...v2.54.0) (2023-02-06)
+
+
+### Features
+
+* add eventAttempt ([98af3bc](https://gitlab.sovcombank.group/web/ecom/ui/commit/98af3bcbe9ef44543b4c317ab0d6f422a4b4cb57))
+
+# [2.53.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.7...v2.53.0) (2023-01-23)
+
+
+### Features
+
+* **formlanding:** add event Start_filling to form ([2ce0534](https://gitlab.sovcombank.group/web/ecom/ui/commit/2ce053460535d51f4cfd0c371669d06f546ebcf9))
+
+## [2.52.7](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.6...v2.52.7) (2023-01-17)
+
+
+### Bug Fixes
+
+* 🐛 theme ([0635359](https://gitlab.sovcombank.group/web/ecom/ui/commit/06353591121caa25bd4675b2281dd966b93a5f9f))
+
+## [2.52.6](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.5...v2.52.6) (2023-01-17)
+
+
+### Bug Fixes
+
+* 🐛 undefined of theme ([16e1e59](https://gitlab.sovcombank.group/web/ecom/ui/commit/16e1e5958c4f7d495189cd77631cc8de19654618))
+
+## [2.52.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.4...v2.52.5) (2022-12-29)
+
+
+### Bug Fixes
+
+* 🐛 autocomplete bug ([e1f344e](https://gitlab.sovcombank.group/web/ecom/ui/commit/e1f344e4c3fcfefac5e503997c161749406078fc))
+
+## [2.52.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.3...v2.52.4) (2022-12-29)
+
+
+### Bug Fixes
+
+* 🐛 not array options bug ([2f3f046](https://gitlab.sovcombank.group/web/ecom/ui/commit/2f3f0463019ec98cc34382530dcb9446f288122a))
+
+## [2.52.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.2...v2.52.3) (2022-12-21)
+
+
+### Bug Fixes
+
+* **.gitlab.ci file:** add before_script ([bd951aa](https://gitlab.sovcombank.group/web/ecom/ui/commit/bd951aaff5436db2f45845d91812e827b1cb29d4))
+* 🐛 pipleline-check(versions) ([515ee84](https://gitlab.sovcombank.group/web/ecom/ui/commit/515ee84f78f403dd1604b14e49242fe54916f000))
+* **uploader:** delete incorrect ([393a4e8](https://gitlab.sovcombank.group/web/ecom/ui/commit/393a4e8515acad649cf761982cd406332676fb12))
+* **uploader:** fix idbDDB ([206e8d8](https://gitlab.sovcombank.group/web/ecom/ui/commit/206e8d8580d8535b1918b599eda71ffa339cc631))
+
+## [2.52.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.1...v2.52.2) (2022-12-21)
+
+
+### Bug Fixes
+
+* **uploader:** fix requerd field ([7d70b72](https://gitlab.sovcombank.group/web/ecom/ui/commit/7d70b72fd2b5e8de8fcb7bc67020d7de965edc2d))
+
+## [2.52.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.52.0...v2.52.1) (2022-12-14)
+
+
+### Bug Fixes
+
+* **getadditionaldata:** change kameleoonData for POST in the server ([c3a032a](https://gitlab.sovcombank.group/web/ecom/ui/commit/c3a032ab56137178eb1c881fb22487ac5208c098))
+
+# [2.52.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.51.0...v2.52.0) (2022-12-12)
+
+
+### Features
+
+* **required.js:** requerd fields ([7b86cfc](https://gitlab.sovcombank.group/web/ecom/ui/commit/7b86cfcb3b83b95fd985809ba04505f81a263204))
+
+# [2.51.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.50.0...v2.51.0) (2022-12-02)
+
+
+### Features
+
+* **uploader:** new Functional ([1ba7b07](https://gitlab.sovcombank.group/web/ecom/ui/commit/1ba7b07338257522edf0019af1d52283c4541427))
+
+# [2.50.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.49.0...v2.50.0) (2022-11-30)
+
+
+### Features
+
+* add isGetData propt to DadataAutocomplete component ([a873b9e](https://gitlab.sovcombank.group/web/ecom/ui/commit/a873b9e2879d370337a36ee8571ad66251ed7a7f))
+
+# [2.49.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.48.1...v2.49.0) (2022-11-15)
+
+
+### Bug Fixes
+
+* 🐛 kameleeonData ([f6e2bd5](https://gitlab.sovcombank.group/web/ecom/ui/commit/f6e2bd5ab6be33b7816fd0af862334c18e0dd1a2))
+
+
+### Features
+
+* 🎸 getAdditionalData ([60fad16](https://gitlab.sovcombank.group/web/ecom/ui/commit/60fad164e074f5ac2a9b869300a68bba80bfa956))
+
+## [2.48.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.48.0...v2.48.1) (2022-10-26)
+
+
+### Bug Fixes
+
+* 🐛 rustore naming ([9b94c9e](https://gitlab.sovcombank.group/web/ecom/ui/commit/9b94c9e28f9ba80aa2a533de7b1378e9ee38bcc4))
+* 🐛 rustore naming ([fc92799](https://gitlab.sovcombank.group/web/ecom/ui/commit/fc92799dcff8119c1ed3fdeab31aabe17acd965f))
+
+# [2.48.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.47.2...v2.48.0) (2022-10-18)
+
+
+### Features
+
+* 🎸 add rustore ([2991330](https://gitlab.sovcombank.group/web/ecom/ui/commit/2991330637439e3fa8c8561e87686584d5d960a9))
+
+## [2.47.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.47.1...v2.47.2) (2022-09-15)
+
+
+### Bug Fixes
+
+* 🐛 scroll ([5a7747f](https://gitlab.sovcombank.group/web/ecom/ui/commit/5a7747f580d139ab5189b6fc6fbb19e31f036a65))
+
+## [2.47.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.47.0...v2.47.1) (2022-09-15)
+
+
+### Bug Fixes
+
+* 🐛 zIndex ([c745e0b](https://gitlab.sovcombank.group/web/ecom/ui/commit/c745e0b2aef87778780ae5a0b155b5b555c02aca))
+
+# [2.47.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.46.4...v2.47.0) (2022-09-15)
+
+
+### Bug Fixes
+
+* 🐛 height uploader ([3df5501](https://gitlab.sovcombank.group/web/ecom/ui/commit/3df550127db355c689a67788fe4baa4d1c17b65c))
+
+
+### Features
+
+* 🎸 show img ([2a2d8b1](https://gitlab.sovcombank.group/web/ecom/ui/commit/2a2d8b13d1cabe700b48844cd9fd42e9d5e79608))
+
+## [2.46.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.46.3...v2.46.4) (2022-09-06)
+
+
+### Bug Fixes
+
+* 🐛 Lint ([5b28845](https://gitlab.sovcombank.group/web/ecom/ui/commit/5b28845619bb9eeaa0bbce4e385b7cf02ba7c412))
+* 🐛 Lint error ([4380e64](https://gitlab.sovcombank.group/web/ecom/ui/commit/4380e64bd26b84eceeeb5baa1244d6f0e170c78d))
+* 🐛 Linter ([1385ebb](https://gitlab.sovcombank.group/web/ecom/ui/commit/1385ebb376107de651f785eb03f0fe2f5788a657))
+* 🐛 Linter ([641790d](https://gitlab.sovcombank.group/web/ecom/ui/commit/641790d59241bb4dc23d350ea9322f15670a7a2b))
+
+## [2.46.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.46.2...v2.46.3) (2022-08-11)
+
+
+### Bug Fixes
+
+* change Link in the Form for Policy ([1cee57e](https://gitlab.sovcombank.group/web/ecom/ui/commit/1cee57e897c721fa79dea27264581061735ffa16))
+
+## [2.46.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.46.1...v2.46.2) (2022-08-02)
+
+
+### Bug Fixes
+
+* **publish:** publish with not change ([c82eae3](https://gitlab.sovcombank.group/web/ecom/ui/commit/c82eae3b0b13f58d36072fc0d6e585bdf2cabb44))
+
 ## [2.46.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.46.0...v2.46.1) (2022-08-02)
 
 

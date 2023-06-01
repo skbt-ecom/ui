@@ -16,7 +16,7 @@ RUN npm i
 
 COPY . .
 
-RUN npm run build-storybook
+RUN npm run build-sb
 
 FROM registry.sovcombank.group/project-cache/library/node:14
 

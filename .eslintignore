@@ -1,3 +1,4 @@
-lib
-.storybook
 node_modules
+**/*.js
+dist
+.storybook
