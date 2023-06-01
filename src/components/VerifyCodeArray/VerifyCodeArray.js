@@ -100,6 +100,7 @@ function VerifyCode(props) {
               // eslint-disable-next-line jsx-a11y/no-autofocus
               autoFocus={i === 0}
               disabled={disabled}
+              autoComplete="one-time-code"
             />
           ))}
         </div>
