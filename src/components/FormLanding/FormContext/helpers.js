@@ -8,7 +8,7 @@ export const checkUnTouchedFields = (fields) => {
 
     fieldsToSubmit[fieldKey] = field.value
     // if (!field.touched) {
-    const error = field.validate(field.value)
+    const error = field?.validate?.(field.value)
 
     if (error) {
       validForm = false
