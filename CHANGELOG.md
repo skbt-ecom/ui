@@ -1,3 +1,15 @@
+# [2.59.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.7...v2.59.0) (2023-06-02)
+
+
+### Bug Fixes
+
+* 🐛 fix validate on field ([058a4ed](https://gitlab.sovcombank.group/web/ecom/ui/commit/058a4ed924d4ab5ed9345cb76867d545db3f84c1))
+
+
+### Features
+
+* **new func:** pushToDataLayerOnce ([af51ffc](https://gitlab.sovcombank.group/web/ecom/ui/commit/af51ffca5f1eab268e135985ce50ce2693aa5c80))
+
 ## [2.58.7](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.6...v2.58.7) (2023-06-01)
 
 
