@@ -1,3 +1,10 @@
+## [2.59.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.59.0...v2.59.1) (2023-06-02)
+
+
+### Bug Fixes
+
+* **bug ios:** verify ([1915926](https://gitlab.sovcombank.group/web/ecom/ui/commit/191592640accba1bc6e4747892b2ea0e58232539))
+
 # [2.59.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.58.7...v2.59.0) (2023-06-02)
 
 
