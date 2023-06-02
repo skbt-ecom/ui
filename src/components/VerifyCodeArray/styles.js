@@ -4,6 +4,7 @@ const useStyles = makeStyles(
   {
     inputWrapper: { width: 192, overflow: "hidden" },
     input: {
+      appearance: "none",
       border: "none",
       borderBottom: "1px solid #A1AFBF",
       boxSizing: "border-box",

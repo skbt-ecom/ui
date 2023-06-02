@@ -56,6 +56,7 @@ function VerifyCode(props) {
   }
 
   const onPaste = (e, index) => {
+    e.preventDefault()
     const pastedVal = e.clipboardData.getData("text").slice(0, code.length)
     const newCode = [...code]
 
