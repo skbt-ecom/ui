@@ -59,3 +59,15 @@ export const pushToDataLayerFormSuccess = () => {
     time: Date.now(),
   })
 }
+
+export const pushToDataLayerOnce = (() => {
+  const isExecuted = {}
+
+  // eslint-disable-next-line func-names
+  return function (name, data) {
+    if (!isExecuted[name]) {
+      isExecuted[name] = true
+      pushToDataLayer(data)
+    }
+  }
+})()
