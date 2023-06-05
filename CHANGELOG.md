@@ -1,3 +1,10 @@
+## [2.59.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.59.1...v2.59.2) (2023-06-05)
+
+
+### Bug Fixes
+
+* **style inputs:** bug ios ([eec3a70](https://gitlab.sovcombank.group/web/ecom/ui/commit/eec3a7040010fbb5c261fb998f5649ba571da8b2))
+
 ## [2.59.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.59.0...v2.59.1) (2023-06-02)
 
 
