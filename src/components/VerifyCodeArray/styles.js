@@ -4,9 +4,9 @@ const useStyles = makeStyles(
   {
     inputWrapper: { width: 192, overflow: "hidden" },
     input: {
-      appearance: "none",
       border: "none",
       borderBottom: "1px solid #A1AFBF",
+      borderRadius: "0px",
       boxSizing: "border-box",
       color: "#0b1f35",
       flexShrink: 0,
@@ -17,6 +17,8 @@ const useStyles = makeStyles(
       outline: "none",
       textAlign: "center",
       width: "32px",
+      paddingLeft: "0px",
+      paddingRight: "0px",
       paddingBottom: "8px",
     },
     formControlRoot: {
