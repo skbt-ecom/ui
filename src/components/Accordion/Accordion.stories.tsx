@@ -20,14 +20,11 @@ const meta = {
 
 export default meta;
 
-type AccordionStoryProps = Pick<
-  AccordionProps,
-  "title" | "children" | "isOpen"
->;
+type AccordionStoryProps = Pick<AccordionProps, "title" | "children" | "isOpen">;
 
-export const AccordionStoryTemplate: Story<AccordionStoryProps> = ({
-  ...args
-}) => <Accordion {...args} innerControl />;
+export const AccordionStoryTemplate: Story<AccordionStoryProps> = ({ ...args }) => (
+  <Accordion {...args} innerControl />
+);
 
 AccordionStoryTemplate.storyName = "Accordion";
 

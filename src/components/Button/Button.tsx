@@ -12,6 +12,4 @@ export interface ButtonProps extends ButtonBaseProps {
   label: string;
 }
 
-export const Button = ({ label, ...rest }: ButtonProps) => (
-  <MuiButton {...rest}>{label}</MuiButton>
-);
+export const Button = ({ label, ...rest }: ButtonProps) => <MuiButton {...rest}>{label}</MuiButton>;

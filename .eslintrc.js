@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
   },
   extends: ["eslint:recommended", "plugin:react/recommended", "airbnb", "airbnb/hooks", "prettier"],
-  plugins: ["prettier", "react", "unused-imports"],
+  plugins: ["react", "unused-imports", "prettier"],
   overrides: [
     {
       files: ["**/*.ts", "**/*.tsx"],
@@ -81,8 +81,12 @@ module.exports = {
         unnamedComponents: "arrow-function",
       },
     ],
-
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
     "no-console": "warn",
     "no-alert": "error",
     "arrow-body-style": "off",
@@ -134,4 +138,4 @@ module.exports = {
       },
     ],
   },
-}
+};
