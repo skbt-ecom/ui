@@ -18,3 +18,10 @@ export const Primary: Story = {
     label: "Button",
   },
 };
+
+export const Secondary: Story = {
+  args: {
+    label: "Button",
+    variant: "contained",
+  },
+};

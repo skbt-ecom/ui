@@ -12,7 +12,6 @@
   ],
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
-    "start:ci": "start-storybook -p 8080 --ci",
     "prepare": "husky install",
     "build:prepare": "rm -rf dist",
     "build": "npm run build:prepare && rollup -c",
