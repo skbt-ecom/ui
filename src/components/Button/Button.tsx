@@ -10,8 +10,13 @@ type ButtonBaseProps = Pick<MuiButtonProps, "variant" | "size" | "color">;
 
 export interface ButtonProps extends ButtonBaseProps {
   label: string;
+  handleClick: () => void;
 }
 
-export const Button = ({ label, ...rest }: ButtonProps) => {
-  return <MuiButton {...rest}>{label}</MuiButton>;
+export const Button = ({ label, handleClick, ...props }: ButtonProps) => {
+  return (
+    <MuiButton onClick={handleClick} {...props}>
+      {label}
+    </MuiButton>
+  );
 };
