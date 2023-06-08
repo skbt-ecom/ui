@@ -1,0 +1,39 @@
+@import "../../core/styles/media-queries.scss";
+
+.wrapper {
+  width: 100%;
+  max-width: 800px;
+  padding: 48px 16px;
+
+  @include tablet {
+    text-align: center;
+    padding: 48px 32px;
+    position: relative;
+  }
+
+  @include desktop {
+    padding: 48px 165px;
+  }
+}
+
+.title {
+  margin: 32px 0 16px;
+  line-height: 28px;
+}
+
+.subTitle {
+  line-height: 22px;
+}
+
+.btn {
+  position: absolute;
+  top: 440px;
+
+  @include tablet {
+    top: 402px;
+  }
+
+  @include desktop {
+    position: unset;
+  }
+}

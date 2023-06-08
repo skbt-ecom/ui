@@ -1,9 +1,10 @@
 import type { HTMLProps, FC } from "react";
-import React from "react";
 
 import { ReactComponent as CheckIconComponent } from "../../core/assets/icons/check.svg";
 import { ReactComponent as QuestionMarkIconComponent } from "../../core/assets/icons/question-mark.svg";
 import { ReactComponent as UserIconComponent } from "../../core/assets/icons/user.svg";
+import { ReactComponent as RefreshIconComponent } from "../../core/assets/icons/refresh.svg";
+import { ReactComponent as SadEmojiIconComponent } from "../../core/assets/icons/sad-emoji.svg";
 
 export type IconProps = Partial<HTMLProps<SVGElement>>;
 
@@ -17,3 +18,5 @@ const createIcon =
 export const CheckIcon = createIcon(CheckIconComponent);
 export const QuestionMarkIcon = createIcon(QuestionMarkIconComponent);
 export const UserIcon = createIcon(UserIconComponent);
+export const RefreshIcon = createIcon(RefreshIconComponent);
+export const SadEmojiIcon = createIcon(SadEmojiIconComponent);

@@ -1,0 +1,10 @@
+@import "../../core/styles/media-queries.scss";
+
+.wrapper {
+  background: #fff;
+
+  @include tablet {
+    box-shadow: 0px 12px 18px #ebecee;
+    border-radius: 24px;
+  }
+}
