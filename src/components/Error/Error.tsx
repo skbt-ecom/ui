@@ -1,20 +1,21 @@
 import { Button } from "../Button";
 import { Wrapper } from "../Wrapper";
-import { items } from "./helper";
+
 import type { Variant } from "./types";
+import { items } from "./helper";
 
-import styles from "./Reject.module.scss";
+import styles from "./Error.module.scss";
 
-type RejectProps = {
+type ErrorProps = {
   variant: Variant;
 };
 
-const Reject = ({ variant }: RejectProps) => {
+const Error = ({ variant }: ErrorProps) => {
   const { Icon, title, subTitle, btnText } = items[variant];
 
   return (
     <Wrapper className={styles.wrapper}>
-      <Icon width={56} height={56} />
+      <Icon width={56} height={56} className={styles.icon} />
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.subTitle}>{subTitle}</p>
       <div className={styles.btn}>
@@ -24,4 +25,4 @@ const Reject = ({ variant }: RejectProps) => {
   );
 };
 
-export default Reject;
+export default Error;

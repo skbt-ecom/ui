@@ -1,0 +1,22 @@
+import { RefreshIcon, SadEmojiIcon } from "../Icons";
+import type { Items, Variant } from "./types";
+
+export const items: Record<Variant, Items> = {
+  reject: {
+    Icon: RefreshIcon,
+    title: <>Что-то пошло не так</>,
+    subTitle: (
+      <>
+        Обновите страницу — скорее всего, мы&nbsp;уже&nbsp;все&nbsp;починили.
+        Если&nbsp;не&nbsp;помогло&nbsp;—&nbsp;попробуйте снова через 5 минут
+      </>
+    ),
+    btnText: "Обновить страницу",
+  },
+  technical: {
+    Icon: SadEmojiIcon,
+    title: <>Нам очень жаль!</>,
+    subTitle: <>К сожалению, сейча мы не можем принять вашу&nbsp;заявку&nbsp;на&nbsp;Халву.</>,
+    btnText: "Вернуться на главную",
+  },
+};

@@ -1,0 +1,80 @@
+@import "../../core/styles/media-queries.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+
+.container {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 92px;
+
+  @include tablet {
+    row-gap: 126px;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    column-gap: 32px;
+  }
+}
+
+.wrapper {
+  max-width: 384px;
+  height: 100%;
+  padding: 48px 16px;
+
+  @include tablet {
+    padding: 48px 32px 70px;
+  }
+
+  @include tablet {
+    padding: 48px 32px;
+  }
+}
+
+.icon {
+  display: block;
+}
+
+.title {
+  font-family: "Montserrat";
+  margin: 32px 0 16px;
+  line-height: 28px;
+}
+
+.subTitle {
+  line-height: 22px;
+
+  @include tablet {
+    margin-bottom: 0;
+  }
+}
+
+.btnContainer {
+  background: #eef5fb;
+  border-radius: 24px;
+  padding: 24px 20px;
+  max-width: 328px;
+
+  @include desktop {
+    max-width: 384px;
+    padding: 32px 40px;
+  }
+}
+
+.text {
+  margin: 0 0 24px;
+
+  @include desktop {
+    margin: 0 0 35px;
+  }
+}
+
+.img {
+  display: none;
+
+  @include desktop {
+    display: block;
+    margin: 0 auto 12px;
+  }
+}
