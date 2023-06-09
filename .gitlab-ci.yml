@@ -1,4 +1,4 @@
-image: registry.sovcombank.group/project-cache/library/node:14
+image: registry.sovcombank.group/project-cache/library/node:16
 
 variables:
   PORT: 3047
@@ -27,8 +27,8 @@ publish:
     GRAYLOG_URL: udp://$GRAYLOG
   before_script:
     - export http_proxy=${PROXY}
-    - export https_proxy=${PROXY} 
-    - export no_proxy=${NO_PROXY} 
+    - export https_proxy=${PROXY}
+    - export no_proxy=${NO_PROXY}
     - apk update && apk upgrade && apk add --no-cache bash git
   script:
     - npm i

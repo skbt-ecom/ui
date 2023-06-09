@@ -1,4 +1,4 @@
-FROM registry.sovcombank.group/project-cache/library/node:14 as build
+FROM registry.sovcombank.group/project-cache/library/node:16 as build
 
 ARG PROXY
 ARG http_proxy="http://proxy-server.sovcombank.group:3128" 
@@ -18,7 +18,7 @@ COPY . .
 
 RUN npm run build-sb
 
-FROM registry.sovcombank.group/project-cache/library/node:14
+FROM registry.sovcombank.group/project-cache/library/node:16
 
 ARG NPM_REGISTRY
 RUN npm config set registry $NPM_REGISTRY/npm-all/
