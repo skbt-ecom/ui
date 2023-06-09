@@ -26,6 +26,7 @@ module.exports = {
         "@typescript-eslint/consistent-type-imports": "error",
         "@typescript-eslint/no-explicit-any": "error",
         "@typescript-eslint/strict-boolean-expressions": "off",
+
         "@typescript-eslint/consistent-type-assertions": [
           "warn",
           {

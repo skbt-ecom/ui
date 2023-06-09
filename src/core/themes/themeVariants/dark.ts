@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material";
-import { blueGrey } from "@mui/material/colors";
 import { ThemePallete } from "../themeConfig";
 
 export const darkTheme = createTheme({
@@ -10,10 +9,6 @@ export const darkTheme = createTheme({
     secondary: {
       // Заглушка
       main: ThemePallete.BLACK_PRIMARY,
-    },
-    background: {
-      default: blueGrey["800"],
-      paper: blueGrey["700"],
     },
   },
 });

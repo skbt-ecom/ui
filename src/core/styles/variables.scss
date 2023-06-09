@@ -1,9 +1,31 @@
 :root {
   //COLORS
   --black-primary-color: #292929;
-  --pink-primary-color: #ff4b5f;
+  --red-primary-color: #ff4b5f;
   --blue-primary-color: #003791;
   --white-color: #ffffff;
   --gray-dark-color: #607289;
   --gray-color: #a1afbf;
+}
+
+$sm: 600px;
+$md: 960px;
+$lg: 1280px;
+
+@mixin tablet {
+  @media (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: $lg) {
+    @content;
+  }
 }
