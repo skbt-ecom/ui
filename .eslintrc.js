@@ -86,6 +86,7 @@ module.exports = {
       "error",
       {
         endOfLine: "auto",
+        semi: true,
       },
     ],
     "no-console": "warn",
