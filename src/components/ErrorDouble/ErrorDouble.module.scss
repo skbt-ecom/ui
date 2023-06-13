@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   row-gap: 92px;
 
   @include tablet {
@@ -14,12 +15,12 @@
 
   @include desktop {
     flex-direction: row;
+    align-items: flex-start;
     column-gap: 32px;
   }
 }
 
 .wrapper {
-  max-width: 384px;
   height: 100%;
   padding: 48px 16px;
 
@@ -27,7 +28,8 @@
     padding: 48px 32px 70px;
   }
 
-  @include tablet {
+  @include desktop {
+    max-width: 384px;
     padding: 48px 32px;
   }
 }
@@ -77,4 +79,9 @@
     display: block;
     margin: 0 auto 12px;
   }
+}
+
+.btn {
+  width: 100%;
+  text-transform: none;
 }

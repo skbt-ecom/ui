@@ -18,9 +18,7 @@ const Error = ({ variant }: ErrorProps) => {
       <Icon width={56} height={56} className={styles.icon} />
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.subTitle}>{subTitle}</p>
-      <div className={styles.btn}>
-        <Button label={btnText} variant="contained" />
-      </div>
+      <Button className={styles.btn} label={btnText} variant="contained" />
     </Wrapper>
   );
 };
