@@ -16,6 +16,8 @@
     "build:prepare": "rm -rf dist",
     "build": "npm run build:prepare && rollup -c",
     "build-sb": "storybook build",
+    "": "to serve sb u need to change host into serve.js file to 127.0.0.1 but never push it to git!",
+    "serve-sb": "node serve.js",
     "lint": "eslint . --max-warnings 0",
     "ts-check": "tsc --noEmit --pretty",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -32,8 +34,9 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.13.4",
-    "express": "^4.18.2"
+    "@fontsource/material-icons": "^5.0.3",
+    "@fontsource/roboto": "^5.0.3",
+    "@mui/material": "^5.13.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -53,7 +56,6 @@
     "@storybook/addon-essentials": "^7.0.18",
     "@storybook/addon-interactions": "^7.0.18",
     "@storybook/addon-links": "^7.0.18",
-    "@storybook/addon-mdx-gfm": "^7.0.18",
     "@storybook/addon-storysource": "^7.0.18",
     "@storybook/addon-styling": "^1.0.8",
     "@storybook/blocks": "^7.0.18",
@@ -81,6 +83,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "express": "^4.18.2",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.2",
     "postcss": "^8.4.23",

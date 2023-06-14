@@ -1,18 +1,26 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
 const config = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: ["@storybook/addon-links", "@storybook/addon-essentials", "@storybook/addon-interactions", "@storybook/preset-scss", "@storybook/addon-storysource", "@storybook/addon-a11y", "storybook-mobile", "@storybook/addon-styling"
-  //  storybook 6 (coming soon)
-  // "storybook-addon-material-ui"
-  //  coming soon  https://github.com/storybookjs/addon-designs
-  // "storybook-addon-designs",
-  , "@storybook/addon-mdx-gfm"],
+  addons: [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
+    "@storybook/preset-scss",
+    "@storybook/addon-storysource",
+    "@storybook/addon-a11y",
+    "storybook-mobile",
+    "@storybook/addon-styling",
+    //  storybook 6 (coming soon)
+    // "storybook-addon-material-ui"
+    //  coming soon  https://github.com/storybookjs/addon-designs
+    // "storybook-addon-designs",
+  ],
   framework: {
     name: "@storybook/react-webpack5",
-    options: {}
+    options: {},
   },
   docs: {
-    autodocs: "tag"
+    autodocs: "tag",
   },
   typescript: {
     check: false,
@@ -28,22 +36,29 @@ const config = {
       // makes string and boolean types that can be undefined appear as inputs and switches
       shouldRemoveUndefinedFromOptional: true,
       // Filter out third-party props from node_modules except @mui packages
-      propFilter: prop => prop.parent ? !/node_modules\/(?!@mui)/.test(prop.parent.fileName) : true
-    }
+      propFilter: (prop) =>
+        prop.parent ? !/node_modules\/(?!@mui)/.test(prop.parent.fileName) : true,
+    },
   },
-  webpackFinal: config => {
+  webpackFinal: (config) => {
     config.resolve.modules = [...(config.resolve.modules || []), "./src"];
-    config.module.rules = [...(config.module.rules || []), {
-      test: /\.svg$/i,
-      type: "javascript/auto",
-      use: [{
-        loader: "@svgr/webpack",
-        options: {
-          icon: true
-        }
-      }, "url-loader"]
-    }];
+    config.module.rules = [
+      ...(config.module.rules || []),
+      {
+        test: /\.svg$/i,
+        type: "javascript/auto",
+        use: [
+          {
+            loader: "@svgr/webpack",
+            options: {
+              icon: true,
+            },
+          },
+          "url-loader",
+        ],
+      },
+    ];
     return config;
-  }
+  },
 };
 export default config;
