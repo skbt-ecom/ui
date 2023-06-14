@@ -1,3 +1,10 @@
+# [2.60.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.59.2...v2.60.0) (2023-06-14)
+
+
+### Features
+
+* **new component:** otp inputs ([15a4c0b](https://gitlab.sovcombank.group/web/ecom/ui/commit/15a4c0bc016b190a1903c931b86b117416c72afe))
+
 ## [2.59.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.59.1...v2.59.2) (2023-06-05)
 
 
