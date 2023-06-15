@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Error from "./Error";
+import Notification from "./Notification";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const meta: Meta<typeof Error> = {
-  title: "Components/Error",
-  component: Error,
+const meta: Meta<typeof Notification> = {
+  title: "Components/Notification",
+  component: Notification,
   tags: ["autodocs"],
 };
 
@@ -21,6 +21,12 @@ export const Reject: Story = {
 
 export const Technical: Story = {
   args: {
-    variant: "technical",
+    variant: "techError",
+  },
+};
+
+export const Success: Story = {
+  args: {
+    variant: "success",
   },
 };

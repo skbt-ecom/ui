@@ -13,7 +13,7 @@ export const items: Record<Variant, Items> = {
     ),
     btnText: "Обновить страницу",
   },
-  technical: {
+  techError: {
     Icon: SadEmojiIcon,
     title: <>Нам очень жаль!</>,
     subTitle: <>К сожалению, сейча мы не можем принять вашу&nbsp;заявку&nbsp;на&nbsp;Халву.</>,

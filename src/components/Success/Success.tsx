@@ -4,7 +4,7 @@ import { Button } from "../Button";
 import { UserCircleIcon } from "../Icons";
 import { Wrapper } from "../Wrapper";
 
-import styles from "./ErrorDouble.module.scss";
+import styles from "./Success.module.scss";
 
 const title = <>Привет, мы вас узнали!</>;
 const subTitle = (
@@ -18,7 +18,7 @@ const text = (
 );
 const btnText = "Посмотреть товары";
 
-const ErrorDouble = () => {
+const Success = () => {
   return (
     <div className={styles.container}>
       <Wrapper className={styles.wrapper}>
@@ -35,4 +35,4 @@ const ErrorDouble = () => {
   );
 };
 
-export default ErrorDouble;
+export default Success;

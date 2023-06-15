@@ -7,4 +7,4 @@ export type Items = {
   btnText: string;
 };
 
-export type Variant = "reject" | "technical";
+export type Variant = "reject" | "techError";
