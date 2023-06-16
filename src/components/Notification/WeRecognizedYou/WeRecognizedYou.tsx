@@ -1,10 +1,10 @@
-import img from "../../core/assets/img/halvaCard.png";
+import img from "../../../core/assets/img/halvaCard.png";
 
-import { Button } from "../Button";
-import { UserCircleIcon } from "../Icons";
-import { Wrapper } from "../Wrapper";
+import { Button } from "../../Button";
+import { UserCircleIcon } from "../../Icons";
+import { Wrapper } from "../../Wrapper";
 
-import styles from "./Success.module.scss";
+import styles from "./WeRecognizedYou.module.scss";
 
 const title = <>Привет, мы вас узнали!</>;
 const subTitle = (
@@ -18,7 +18,7 @@ const text = (
 );
 const btnText = "Посмотреть товары";
 
-const Success = () => {
+const WeRecognizedYou = () => {
   return (
     <div className={styles.container}>
       <Wrapper className={styles.wrapper}>
@@ -35,4 +35,4 @@ const Success = () => {
   );
 };
 
-export default Success;
+export default WeRecognizedYou;

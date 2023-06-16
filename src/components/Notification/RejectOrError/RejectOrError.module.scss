@@ -1,6 +1,4 @@
-@import "../../core/styles/media-queries.scss";
-@import "../../core/styles/variables.scss";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@use "../../../core/styles/global.scss" as *;
 
 .wrapper {
   width: 100%;

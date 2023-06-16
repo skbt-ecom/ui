@@ -1,17 +1,19 @@
-import { Error } from "../Error";
-import { Success } from "../Success";
+import { RejectOrError } from "./RejectOrError";
+import { WeRecognizedYou } from "./WeRecognizedYou";
 
 type NotificationProps = {
-  variant: "reject" | "techError" | "success";
+  variant?: "reject" | "techError" | "weRecognizedYou";
 };
 
 const Notification = ({ variant }: NotificationProps) => {
   switch (variant) {
     case "reject":
     case "techError":
-      return <Error variant={variant} />;
+      return <RejectOrError variant={variant} />;
+    case "weRecognizedYou":
+      return <WeRecognizedYou />;
     default:
-      return <Success />;
+      return <RejectOrError variant="reject" />;
   }
 };
 

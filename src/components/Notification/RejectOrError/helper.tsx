@@ -1,8 +1,8 @@
-import { RefreshIcon, SadEmojiIcon } from "../Icons";
+import { RefreshIcon, SadEmojiIcon } from "../../Icons";
 import type { Items, Variant } from "./types";
 
 export const items: Record<Variant, Items> = {
-  reject: {
+  techError: {
     Icon: RefreshIcon,
     title: <>Что-то пошло не так</>,
     subTitle: (
@@ -13,7 +13,7 @@ export const items: Record<Variant, Items> = {
     ),
     btnText: "Обновить страницу",
   },
-  techError: {
+  reject: {
     Icon: SadEmojiIcon,
     title: <>Нам очень жаль!</>,
     subTitle: <>К сожалению, сейча мы не можем принять вашу&nbsp;заявку&nbsp;на&nbsp;Халву.</>,

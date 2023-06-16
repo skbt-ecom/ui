@@ -19,14 +19,14 @@ export const Reject: Story = {
   },
 };
 
-export const Technical: Story = {
+export const TechError: Story = {
   args: {
     variant: "techError",
   },
 };
 
-export const Success: Story = {
+export const WeRecognizedYou: Story = {
   args: {
-    variant: "success",
+    variant: "weRecognizedYou",
   },
 };

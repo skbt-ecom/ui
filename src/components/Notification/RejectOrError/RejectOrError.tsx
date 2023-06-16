@@ -1,16 +1,16 @@
-import { Button } from "../Button";
-import { Wrapper } from "../Wrapper";
+import { Button } from "../../Button";
+import { Wrapper } from "../../Wrapper";
 
 import type { Variant } from "./types";
 import { items } from "./helper";
 
-import styles from "./Error.module.scss";
+import styles from "./RejectOrError.module.scss";
 
 type ErrorProps = {
   variant: Variant;
 };
 
-const Error = ({ variant }: ErrorProps) => {
+const RejectOrError = ({ variant }: ErrorProps) => {
   const { Icon, title, subTitle, btnText } = items[variant];
 
   return (
@@ -23,4 +23,4 @@ const Error = ({ variant }: ErrorProps) => {
   );
 };
 
-export default Error;
+export default RejectOrError;

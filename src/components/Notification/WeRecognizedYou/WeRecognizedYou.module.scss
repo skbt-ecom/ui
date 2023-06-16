@@ -1,5 +1,4 @@
-@import "../../core/styles/media-queries.scss";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@use "../../../core/styles/global.scss" as *;
 
 .container {
   max-width: 800px;
@@ -83,5 +82,5 @@
 
 .btn {
   width: 100%;
-  text-transform: none;
+  text-transform: none !important;
 }
