@@ -26,7 +26,6 @@ RUN npm config set registry $NPM_REGISTRY/npm-all/
 COPY --from=build /usr/src/app/storybook-static ./storybook-static
 COPY serve.js ./
 
-
 CMD [ "node", "serve.js"]
 
 EXPOSE 8080

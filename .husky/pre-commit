@@ -2,4 +2,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # Disable concurent to run `check-types` after ESLint in lint-staged
-tsc -p tsconfig.json --noEmit && lint-staged --concurrent false && npm run build && npm run build-sb && npm run clean
+tsc -p tsconfig.json --noEmit && lint-staged --concurrent false
