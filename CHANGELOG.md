@@ -1,3 +1,10 @@
+# [3.0.0-beta.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.3...v3.0.0-beta.4) (2023-06-16)
+
+
+### Bug Fixes
+
+* fix pre-commit hook ([9487e44](https://gitlab.sovcombank.group/web/ecom/ui/commit/9487e44486aea40fdc42d9f734efb34121bcee60))
+
 # [3.0.0-beta.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2023-06-16)
 
 
