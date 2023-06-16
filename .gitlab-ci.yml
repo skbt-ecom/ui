@@ -36,6 +36,7 @@ publish:
     - npm run publish-ui
   only:
     - master
+    - beta
 
 deploy to test:
   stage: deploy
@@ -56,3 +57,4 @@ deploy to test:
     - docker logout $CI_REGISTRY
   only:
     - test
+    - beta
