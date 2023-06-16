@@ -1,3 +1,10 @@
+# [3.0.0-beta.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.1...v3.0.0-beta.2) (2023-06-16)
+
+
+### Performance Improvements
+
+* **husky:** reinstall husky ([d0c7087](https://gitlab.sovcombank.group/web/ecom/ui/commit/d0c7087639870491074c0f858ec8cf307e29cfd2))
+
 # [3.0.0-beta.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.60.0...v3.0.0-beta.1) (2023-06-16)
 
 
