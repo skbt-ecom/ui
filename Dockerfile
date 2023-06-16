@@ -1,4 +1,4 @@
-FROM registry.sovcombank.group/project-cache/library/node:16 as build
+FROM registry.sovcombank.group/project-cache/library/node:18 as build
 
 ARG PROXY
 ARG http_proxy="http://proxy-server.sovcombank.group:3128" 

@@ -25,7 +25,9 @@
     "semantic-release": "semantic-release",
     "publish:prepare": "npm run build && cp package.json dist",
     "publish-ui": "npm run publish:prepare && npm run semantic-release",
-    "pack-ui": "npm run publish:prepare && cd lib && nano package.json && npm pack"
+    "pack-ui": "npm run publish:prepare && cd lib && nano package.json && npm pack",
+    "clean": "rm -rf dist storybook-static",
+    "clean:all": "npm cache clean -f & rm -rf node_modules & npm run clean"
   },
   "peerDependencies": {
     "react": "^17.0.0",

@@ -1,4 +1,4 @@
-image: registry.sovcombank.group/project-cache/library/node:16
+image: registry.sovcombank.group/project-cache/library/node:18
 
 variables:
   PORT: 3047
