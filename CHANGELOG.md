@@ -1,3 +1,10 @@
+# [3.0.0-beta.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.4...v3.0.0-beta.5) (2023-06-19)
+
+
+### Bug Fixes
+
+* **husky:** fix husky deploy ([945fd4b](https://gitlab.sovcombank.group/web/ecom/ui/commit/945fd4b64d91fdb489bc2a0584e01b73de5e09a4))
+
 # [3.0.0-beta.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.60.0...v3.0.0-beta.1) (2023-06-16)
 
 ### Bug Fixes
