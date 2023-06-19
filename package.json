@@ -12,7 +12,6 @@
   ],
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
-    "prepare": "husky install",
     "build:prepare": "rm -rf dist",
     "build": "npm run build:prepare && rollup -c",
     "build-sb": "storybook build",
@@ -104,7 +103,7 @@
     "storybook-mobile": "^1.0.1",
     "typescript": "^5.0.4",
     "url-loader": "^4.1.1",
-    "husky": "^8.0.0"
+    "husky": "^4.3.8"
   },
   "browserslist": {
     "production": [
@@ -120,6 +119,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsc -p tsconfig.json --noEmit && lint-staged --concurrent false"
+    }
   },
   "config": {
     "commitizen": {

@@ -1,65 +1,40 @@
-# [3.0.0-beta.4](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.3...v3.0.0-beta.4) (2023-06-16)
-
-
-### Bug Fixes
-
-* fix pre-commit hook ([9487e44](https://gitlab.sovcombank.group/web/ecom/ui/commit/9487e44486aea40fdc42d9f734efb34121bcee60))
-
-# [3.0.0-beta.3](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2023-06-16)
-
-
-### Bug Fixes
-
-* remove npm i express from docker ([fdeadef](https://gitlab.sovcombank.group/web/ecom/ui/commit/fdeadef741192bbdfb7d74a34bac049eae5b15e0))
-
-# [3.0.0-beta.2](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.1...v3.0.0-beta.2) (2023-06-16)
-
-
-### Performance Improvements
-
-* **husky:** reinstall husky ([d0c7087](https://gitlab.sovcombank.group/web/ecom/ui/commit/d0c7087639870491074c0f858ec8cf307e29cfd2))
-
 # [3.0.0-beta.1](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.60.0...v3.0.0-beta.1) (2023-06-16)
 
-
 ### Bug Fixes
 
-* 🐛 add sass to dev deps ([2c73223](https://gitlab.sovcombank.group/web/ecom/ui/commit/2c73223bd438a8f3cb6c481b478c20ab9cedd31d))
-* 🐛 emotion/react error ([3b3709b](https://gitlab.sovcombank.group/web/ecom/ui/commit/3b3709bbcb0ace194fe47a24f0af19553db95d3a))
-* 🐛 emotion/styled error ([22b041c](https://gitlab.sovcombank.group/web/ecom/ui/commit/22b041c1ea5c3cd2fc5d44913b9a4cef7cdd8809))
-* 🐛 error mui ([af134e6](https://gitlab.sovcombank.group/web/ecom/ui/commit/af134e6739ac023337017fc593b8dfc98687bb70))
-* 🐛 eslint config ([0812933](https://gitlab.sovcombank.group/web/ecom/ui/commit/0812933b2a1f20c33d94fca95ca88627e7e66767))
-* 🐛 eslint prettier rules conflicts ([76ef6aa](https://gitlab.sovcombank.group/web/ecom/ui/commit/76ef6aa06633a7f2e80feefebe3e16db4f8e7b91))
-* 🐛 eslint prettier semi error ([21c8bb3](https://gitlab.sovcombank.group/web/ecom/ui/commit/21c8bb357fe2188cd95201cb5813c58be82d2aa5))
-* 🐛 material-icons error ([c1feaa2](https://gitlab.sovcombank.group/web/ecom/ui/commit/c1feaa2c7c6cefce93bdb7809d685f1db7e05102))
-* 🐛 mui error ([d3866d2](https://gitlab.sovcombank.group/web/ecom/ui/commit/d3866d2368e3f02fa7d4a1444d60cb72319b8e7e))
-* 🐛 mui lint error ([400631e](https://gitlab.sovcombank.group/web/ecom/ui/commit/400631ed0806fb4f7ce3948b16bdd8570e7b5808))
-* 🐛 remove node-sass ([a1de248](https://gitlab.sovcombank.group/web/ecom/ui/commit/a1de2484d7a06307d178b38613b146067ccee563))
-* **lint:** fix no-extraneous-deps ([fd63113](https://gitlab.sovcombank.group/web/ecom/ui/commit/fd6311373d0de25703b629f1e58fc0798a1e5b8e))
-* resolve conflicts ([34c0756](https://gitlab.sovcombank.group/web/ecom/ui/commit/34c07565cd93fdd1003bcc84d1b797e36e5cc5cb))
-* **storybook deploy:** remove unused plugin and install fonts as dev deps ([bb32490](https://gitlab.sovcombank.group/web/ecom/ui/commit/bb32490825ed4b1d635a75a3426045b4a884a199))
-
+- 🐛 add sass to dev deps ([2c73223](https://gitlab.sovcombank.group/web/ecom/ui/commit/2c73223bd438a8f3cb6c481b478c20ab9cedd31d))
+- 🐛 emotion/react error ([3b3709b](https://gitlab.sovcombank.group/web/ecom/ui/commit/3b3709bbcb0ace194fe47a24f0af19553db95d3a))
+- 🐛 emotion/styled error ([22b041c](https://gitlab.sovcombank.group/web/ecom/ui/commit/22b041c1ea5c3cd2fc5d44913b9a4cef7cdd8809))
+- 🐛 error mui ([af134e6](https://gitlab.sovcombank.group/web/ecom/ui/commit/af134e6739ac023337017fc593b8dfc98687bb70))
+- 🐛 eslint config ([0812933](https://gitlab.sovcombank.group/web/ecom/ui/commit/0812933b2a1f20c33d94fca95ca88627e7e66767))
+- 🐛 eslint prettier rules conflicts ([76ef6aa](https://gitlab.sovcombank.group/web/ecom/ui/commit/76ef6aa06633a7f2e80feefebe3e16db4f8e7b91))
+- 🐛 eslint prettier semi error ([21c8bb3](https://gitlab.sovcombank.group/web/ecom/ui/commit/21c8bb357fe2188cd95201cb5813c58be82d2aa5))
+- 🐛 material-icons error ([c1feaa2](https://gitlab.sovcombank.group/web/ecom/ui/commit/c1feaa2c7c6cefce93bdb7809d685f1db7e05102))
+- 🐛 mui error ([d3866d2](https://gitlab.sovcombank.group/web/ecom/ui/commit/d3866d2368e3f02fa7d4a1444d60cb72319b8e7e))
+- 🐛 mui lint error ([400631e](https://gitlab.sovcombank.group/web/ecom/ui/commit/400631ed0806fb4f7ce3948b16bdd8570e7b5808))
+- 🐛 remove node-sass ([a1de248](https://gitlab.sovcombank.group/web/ecom/ui/commit/a1de2484d7a06307d178b38613b146067ccee563))
+- **lint:** fix no-extraneous-deps ([fd63113](https://gitlab.sovcombank.group/web/ecom/ui/commit/fd6311373d0de25703b629f1e58fc0798a1e5b8e))
+- resolve conflicts ([34c0756](https://gitlab.sovcombank.group/web/ecom/ui/commit/34c07565cd93fdd1003bcc84d1b797e36e5cc5cb))
+- **storybook deploy:** remove unused plugin and install fonts as dev deps ([bb32490](https://gitlab.sovcombank.group/web/ecom/ui/commit/bb32490825ed4b1d635a75a3426045b4a884a199))
 
 ### Features
 
-* 🎸 ADD NEW COMPONENT LIBRARY SETUP ([762d9fc](https://gitlab.sovcombank.group/web/ecom/ui/commit/762d9fc16f84ccb3506a8a34a79a3e2e5ee90279))
-* 🎸 change releaserc ([188f924](https://gitlab.sovcombank.group/web/ecom/ui/commit/188f924223d7c7c495a6f3ae736ccf7ed69ddd40))
-* 🎸 change semantic-release ([e0d3425](https://gitlab.sovcombank.group/web/ecom/ui/commit/e0d34259a7e23560ef1793bbefecb742a82090c2))
-* 🎸 remove start:ci ([88d8e04](https://gitlab.sovcombank.group/web/ecom/ui/commit/88d8e04cd9715d63cdbfb5a46669479bdacccb83))
-* **ci/cd:** change gitlab-ci for publish in beta ([7d1dadf](https://gitlab.sovcombank.group/web/ecom/ui/commit/7d1dadf501fcebeee9f21d3404af745e407e66a0))
-* **package.json:** update semantic-release ([01d9611](https://gitlab.sovcombank.group/web/ecom/ui/commit/01d9611402493e49f5ea21c98ffc75ee4e4102fb))
-* **package.json:** update semantic-release ([55ff4c9](https://gitlab.sovcombank.group/web/ecom/ui/commit/55ff4c91031d1485fb56d6e6516decd5aa0b438f))
-
+- 🎸 ADD NEW COMPONENT LIBRARY SETUP ([762d9fc](https://gitlab.sovcombank.group/web/ecom/ui/commit/762d9fc16f84ccb3506a8a34a79a3e2e5ee90279))
+- 🎸 change releaserc ([188f924](https://gitlab.sovcombank.group/web/ecom/ui/commit/188f924223d7c7c495a6f3ae736ccf7ed69ddd40))
+- 🎸 change semantic-release ([e0d3425](https://gitlab.sovcombank.group/web/ecom/ui/commit/e0d34259a7e23560ef1793bbefecb742a82090c2))
+- 🎸 remove start:ci ([88d8e04](https://gitlab.sovcombank.group/web/ecom/ui/commit/88d8e04cd9715d63cdbfb5a46669479bdacccb83))
+- **ci/cd:** change gitlab-ci for publish in beta ([7d1dadf](https://gitlab.sovcombank.group/web/ecom/ui/commit/7d1dadf501fcebeee9f21d3404af745e407e66a0))
+- **package.json:** update semantic-release ([01d9611](https://gitlab.sovcombank.group/web/ecom/ui/commit/01d9611402493e49f5ea21c98ffc75ee4e4102fb))
+- **package.json:** update semantic-release ([55ff4c9](https://gitlab.sovcombank.group/web/ecom/ui/commit/55ff4c91031d1485fb56d6e6516decd5aa0b438f))
 
 ### Performance Improvements
 
-* **package.json & gitlab-ci:** add new clean scripts & update nodejs ([a844557](https://gitlab.sovcombank.group/web/ecom/ui/commit/a844557eee6c8abd82d5932fa20aa91f3ac25c8e))
-* **ui:** this commit is fix for commitizen but also it needs for breaking change new ui ([671b5d6](https://gitlab.sovcombank.group/web/ecom/ui/commit/671b5d63ef795c39e6c3a9bcf1c2e492ef70b1cb))
-
+- **package.json & gitlab-ci:** add new clean scripts & update nodejs ([a844557](https://gitlab.sovcombank.group/web/ecom/ui/commit/a844557eee6c8abd82d5932fa20aa91f3ac25c8e))
+- **ui:** this commit is fix for commitizen but also it needs for breaking change new ui ([671b5d6](https://gitlab.sovcombank.group/web/ecom/ui/commit/671b5d63ef795c39e6c3a9bcf1c2e492ef70b1cb))
 
 ### BREAKING CHANGES
 
-* **ui:** release a new ui lib
+- **ui:** release a new ui lib
 
 # [2.60.0](https://gitlab.sovcombank.group/web/ecom/ui/compare/v2.59.2...v2.60.0) (2023-06-14)
 
