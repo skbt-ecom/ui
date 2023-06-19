@@ -1,3 +1,10 @@
+# [3.0.0-beta.11](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.10...v3.0.0-beta.11) (2023-06-19)
+
+
+### Bug Fixes
+
+* **pkg:** same ([550928c](https://gitlab.sovcombank.group/web/ecom/ui/commit/550928c40eeb3756cd810d70eb67c341fa957532))
+
 # [3.0.0-beta.10](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.9...v3.0.0-beta.10) (2023-06-19)
 
 
