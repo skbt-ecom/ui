@@ -22,7 +22,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cz": "cz -a",
     "semantic-release": "semantic-release",
-    "publish:prepare": "npm run build && cp package.json dist",
+    "publish:prepare": "npm run build && cp package.json dist && ls dist",
     "publish-ui": "npm run publish:prepare && npm run semantic-release",
     "pack-ui": "npm run publish:prepare && cd dist && nano package.json && npm pack",
     "clean": "rm -rf dist storybook-static",
