@@ -1,3 +1,10 @@
+# [3.0.0-beta.7](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.6...v3.0.0-beta.7) (2023-06-19)
+
+
+### Bug Fixes
+
+* **package.json:** files property ([0f876fe](https://gitlab.sovcombank.group/web/ecom/ui/commit/0f876febc3ae91d43ca5af7eb84d961aa1c0880f))
+
 # [3.0.0-beta.6](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2023-06-19)
 
 
