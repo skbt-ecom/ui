@@ -1,3 +1,10 @@
+# [3.0.0-beta.6](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2023-06-19)
+
+
+### Bug Fixes
+
+* **semantic-release:** change dist to dist/ ([81e04d0](https://gitlab.sovcombank.group/web/ecom/ui/commit/81e04d03e0d6042aa20ecdc40db61902f1da4765))
+
 # [3.0.0-beta.5](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.4...v3.0.0-beta.5) (2023-06-19)
 
 
