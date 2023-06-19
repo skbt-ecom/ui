@@ -1,3 +1,11 @@
+# [3.0.0-beta.8](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.7...v3.0.0-beta.8) (2023-06-19)
+
+
+### Bug Fixes
+
+* **package.json:** files props ([95e1e75](https://gitlab.sovcombank.group/web/ecom/ui/commit/95e1e7578c270f1687356d013e92c247b0f17bb0))
+* **releaserc:** pkgroot ([7dd543d](https://gitlab.sovcombank.group/web/ecom/ui/commit/7dd543d0c919ac5cabc68b7c7894c5b6f9a89fb5))
+
 # [3.0.0-beta.7](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.6...v3.0.0-beta.7) (2023-06-19)
 
 
