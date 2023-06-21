@@ -1,3 +1,10 @@
+# [3.0.0-beta.15](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.14...v3.0.0-beta.15) (2023-06-21)
+
+
+### Bug Fixes
+
+* **package.json & rollup.config.js:** paths ([d1ac014](https://gitlab.sovcombank.group/web/ecom/ui/commit/d1ac014c229b724d3f11d10412865f35ac0b0e0f))
+
 # [3.0.0-beta.14](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.13...v3.0.0-beta.14) (2023-06-21)
 
 
