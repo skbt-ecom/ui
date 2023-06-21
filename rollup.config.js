@@ -19,13 +19,13 @@ module.exports = [
     output: [
       // common js
       {
-        file: packageJson.module,
+        file: packageJson.main,
         format: "cjs",
         sourcemap: true,
       },
       // es module
       {
-        file: packageJson.main,
+        file: packageJson.module,
         format: "esm",
         sourcemap: true,
       },

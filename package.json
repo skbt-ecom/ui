@@ -5,7 +5,7 @@
   "author": "I",
   "license": "ISC",
   "types": "lib/index.d.ts",
-  "main": "lib/esm/index.js",
+  "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
