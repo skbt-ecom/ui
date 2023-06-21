@@ -6,7 +6,7 @@
     [
       "@semantic-release/npm",
       {
-        "pkgRoot": "lib/"
+        "pkgRoot": "lib"
       }
     ],
     "@semantic-release/gitlab",
