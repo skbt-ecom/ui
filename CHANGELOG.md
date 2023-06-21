@@ -1,3 +1,10 @@
+# [3.0.0-beta.14](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.13...v3.0.0-beta.14) (2023-06-21)
+
+
+### Bug Fixes
+
+* **package.json:** fix main path ([b3e0ea7](https://gitlab.sovcombank.group/web/ecom/ui/commit/b3e0ea78ef5dbb4e53118085b01c40cf018fceb5))
+
 # [3.0.0-beta.13](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.12...v3.0.0-beta.13) (2023-06-21)
 
 
