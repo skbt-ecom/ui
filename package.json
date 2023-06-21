@@ -5,7 +5,7 @@
   "author": "I",
   "license": "ISC",
   "types": "lib/index.d.ts",
-  "main": "lib/cjs/index.js",
+  "main": "lib/esm/index.js",
   "module": "lib/esm/index.js",
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
@@ -19,7 +19,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cz": "cz -a",
     "semantic-release": "semantic-release",
-    "publish:prepare": "npm run build && cp package.json lib && ls",
+    "publish:prepare": "npm run build && cp package.json lib",
     "publish-ui": "npm run publish:prepare && npm run semantic-release",
     "clean": "rm -rf lib storybook-static",
     "clean:all": "npm cache clean -f & rm -rf node_modules & npm run clean"
