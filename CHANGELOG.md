@@ -1,3 +1,10 @@
+# [3.0.0-beta.12](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.11...v3.0.0-beta.12) (2023-06-19)
+
+
+### Bug Fixes
+
+* **pck:** replace al dist to lib ([356f68c](https://gitlab.sovcombank.group/web/ecom/ui/commit/356f68cc44f086aae3baec224a4544213d29b005))
+
 # [3.0.0-beta.11](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.10...v3.0.0-beta.11) (2023-06-19)
 
 
