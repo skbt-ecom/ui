@@ -5,13 +5,8 @@
   "author": "I",
   "license": "ISC",
   "types": "lib/index.d.ts",
-  "main": "lib/cjs/index.js",
-  "module": "lib/esm/index.js",
-  "files": [
-    "cjs/",
-    "esm/",
-    "index.d.ts"
-  ],
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
     "prebuild": "rm -rf lib storybook-static",
