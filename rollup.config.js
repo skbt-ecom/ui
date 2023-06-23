@@ -19,13 +19,13 @@ module.exports = [
     output: [
       // common js
       {
-        file: packageJson.main,
+        file: `lib/${packageJson.main}`,
         format: "cjs",
         sourcemap: true,
       },
       // es module
       {
-        file: packageJson.module,
+        file: `lib/${packageJson.module}`,
         format: "esm",
         sourcemap: true,
       },
@@ -63,7 +63,7 @@ module.exports = [
   // for types
   {
     input: "src/index.ts",
-    output: [{ file: packageJson.types, format: "esm" }],
+    output: [{ file: `lib/${packageJson.types}`, format: "esm" }],
     // exclude css/scss files from this bundle (this is only for global types)
     external: [/\.(css|scss)$/],
     plugins: [dts.default()],
