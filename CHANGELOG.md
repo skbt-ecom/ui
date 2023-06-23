@@ -1,3 +1,10 @@
+# [3.0.0-beta.26](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.25...v3.0.0-beta.26) (2023-06-23)
+
+
+### Bug Fixes
+
+* **pkg:** files ([ff3228b](https://gitlab.sovcombank.group/web/ecom/ui/commit/ff3228b01c82b7878e618ff8e7b9d9812aae8f12))
+
 # [3.0.0-beta.25](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.24...v3.0.0-beta.25) (2023-06-23)
 
 
