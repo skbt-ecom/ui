@@ -23,9 +23,11 @@
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
+    "emitDeclarationOnly": true,
     "noEmit": true,
     "jsx": "react"
   },
+  "include": ["src"],
   "exclude": [
     "lib",
     ".cache",

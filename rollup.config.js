@@ -62,8 +62,10 @@ module.exports = [
   },
   // for types
   {
-    input: "lib/esm/types/index.d.ts",
-    output: [{ file: packageJson.types, format: "esm" }],
+    // input: "lib/esm/types/index.d.ts",
+    // output: [{ file: packageJson.types, format: "esm" }],
+    input: "src/index.ts",
+    output: [{ file: packageJson.types, format: "es" }],
     // exclude css/scss files from this bundle (this is only for global types)
     external: [/\.(css|scss)$/],
     plugins: [dts.default()],

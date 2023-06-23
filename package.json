@@ -19,14 +19,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cz": "cz -a",
     "semantic-release": "semantic-release",
-    "publish:prepare": "npm run build && cp package.json lib",
-    "publish-ui": "npm run publish:prepare && npm run semantic-release",
+    "prepublish-ui": "npm run build && cp package.json lib",
+    "publish-ui": "npm run semantic-release",
     "clean": "rm -rf lib storybook-static",
-    "clean:all": "npm cache clean -f & rm -rf node_modules & npm run clean"
+    "clean-all": "npm cache clean -f & rm -rf node_modules & npm run clean"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
