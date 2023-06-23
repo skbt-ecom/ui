@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "lib/src",
     "paths": {
       "@src/*": ["./*"]
     },
@@ -19,7 +19,7 @@
     "declaration": true,
     "declarationDir": "lib",
     "sourceMap": true,
-    "outDir": "lib",
+    "outDir": ".",
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
