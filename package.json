@@ -9,8 +9,8 @@
   "module": "lib/esm/index.js",
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
-    "build:prepare": "rm -rf lib",
-    "build": "npm run build:prepare && rollup -c",
+    "prebuild": "rm -rf lib storybook-static",
+    "build": "rollup -c",
     "build-sb": "storybook build",
     "": "to serve sb u need to change host into serve.js file to 127.0.0.1 but never push it to git!",
     "serve-sb": "node serve.js",
@@ -25,8 +25,8 @@
     "clean:all": "npm cache clean -f & rm -rf node_modules & npm run clean"
   },
   "peerDependencies": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -81,6 +81,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^4.3.8",
     "lint-staged": "^13.2.2",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
@@ -96,10 +97,8 @@
     "semantic-release": "^21.0.5",
     "storybook": "^7.0.18",
     "storybook-addon-designs": "^6.3.1",
-    "storybook-mobile": "^1.0.1",
     "typescript": "^5.0.4",
-    "url-loader": "^4.1.1",
-    "husky": "^4.3.8"
+    "url-loader": "^4.1.1"
   },
   "browserslist": {
     "production": [

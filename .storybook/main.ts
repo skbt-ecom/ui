@@ -7,7 +7,6 @@ const config = {
     "@storybook/preset-scss",
     "@storybook/addon-storysource",
     "@storybook/addon-a11y",
-    "storybook-mobile",
     "@storybook/addon-styling",
     //  storybook 6 (coming soon)
     // "storybook-addon-material-ui"
