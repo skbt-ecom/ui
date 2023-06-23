@@ -1,3 +1,10 @@
+# [3.0.0-beta.27](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.26...v3.0.0-beta.27) (2023-06-23)
+
+
+### Bug Fixes
+
+* **tsonfig:** files ([36c30c3](https://gitlab.sovcombank.group/web/ecom/ui/commit/36c30c3b2d831acb61e4312a9e05d95b9c151f5f))
+
 # [3.0.0-beta.26](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.25...v3.0.0-beta.26) (2023-06-23)
 
 
