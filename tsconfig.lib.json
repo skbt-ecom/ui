@@ -4,9 +4,9 @@
     "paths": {
       "@src/*": ["./*"]
     },
-    "target": "es6",
+    "target": "es5",
     "allowJs": true,
-    "lib": ["dom", "dom.iterable", "es2016", "esnext"],
+    "lib": ["dom", "ES6", "es2016", "es2017", "esnext"],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
@@ -17,7 +17,7 @@
     "isolatedModules": true,
     "module": "ESNext",
     "declaration": true,
-    "declarationDir": "types",
+    "declarationDir": "lib",
     "sourceMap": true,
     "outDir": "lib",
     "moduleResolution": "node",
@@ -27,7 +27,7 @@
     "noEmit": true,
     "jsx": "react"
   },
-  "include": ["src"],
+  "include": ["src/**/*"],
   "exclude": [
     "lib",
     ".cache",
