@@ -1,3 +1,10 @@
+# [3.0.0-beta.18](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.17...v3.0.0-beta.18) (2023-06-23)
+
+
+### Bug Fixes
+
+* **rollup:** change rollup and ts conig ([efb2ced](https://gitlab.sovcombank.group/web/ecom/ui/commit/efb2ced707bb13cec49a43a1c03d08d8b58e8373))
+
 # [3.0.0-beta.17](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.16...v3.0.0-beta.17) (2023-06-23)
 
 
