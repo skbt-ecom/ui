@@ -4,9 +4,9 @@
   "description": "sovcombank ecom ui library",
   "author": "I",
   "license": "ISC",
-  "types": "lib/index.d.ts",
-  "main": "lib/index.js",
-  "module": "lib/index.esm.js",
+  "types": "ui/index.d.ts",
+  "main": "ui/cjs/index.js",
+  "module": "ui/esm/index.js",
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
     "prebuild": "rm -rf lib storybook-static",
