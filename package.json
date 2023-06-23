@@ -5,10 +5,10 @@
   "author": "I",
   "license": "ISC",
   "types": "lib/index.d.ts",
-  "main": "lib/index.js",
-  "module": "lib/index.es.js",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
   "files": [
-    "lib/"
+    "lib"
   ],
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
