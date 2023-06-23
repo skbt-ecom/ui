@@ -1,3 +1,10 @@
+# [3.0.0-beta.28](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.27...v3.0.0-beta.28) (2023-06-23)
+
+
+### Bug Fixes
+
+* **tscnfig:** sourcemap ([4c27c16](https://gitlab.sovcombank.group/web/ecom/ui/commit/4c27c169c4525575a30ba97613cadce22fc28067))
+
 # [3.0.0-beta.27](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.26...v3.0.0-beta.27) (2023-06-23)
 
 
