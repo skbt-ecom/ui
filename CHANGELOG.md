@@ -1,3 +1,10 @@
+# [3.0.0-beta.29](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.28...v3.0.0-beta.29) (2023-06-23)
+
+
+### Bug Fixes
+
+* **rollup:** files ([97b4d66](https://gitlab.sovcombank.group/web/ecom/ui/commit/97b4d666eb85384f1e456b785a7e34f91138a822))
+
 # [3.0.0-beta.28](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.27...v3.0.0-beta.28) (2023-06-23)
 
 
