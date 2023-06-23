@@ -10,7 +10,7 @@
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
     "prebuild": "rm -rf lib storybook-static",
-    "build": "rollup -c",
+    "build": "rollup -c --bundleConfigAsCjs",
     "build-sb": "storybook build",
     "": "to serve sb u need to change host into serve.js file to 127.0.0.1 but never push it to git!",
     "serve-sb": "node serve.js",
