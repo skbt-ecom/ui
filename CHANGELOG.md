@@ -1,3 +1,15 @@
+# [3.0.0-beta.16](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.15...v3.0.0-beta.16) (2023-06-23)
+
+
+### Bug Fixes
+
+* **rollup:** edit rollup and ts config, update react to 18.2.0, edit some npm scripts ([4a02401](https://gitlab.sovcombank.group/web/ecom/ui/commit/4a02401561b4e0f54e8c0351f83c1194f77b369d))
+
+
+### Features
+
+* **package.json:** update react, update build script and remove depricated package ([237d166](https://gitlab.sovcombank.group/web/ecom/ui/commit/237d166a4abeeb4b3c478ccef6ceb833136167ae))
+
 # [3.0.0-beta.15](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.14...v3.0.0-beta.15) (2023-06-21)
 
 
