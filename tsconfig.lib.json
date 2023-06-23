@@ -18,7 +18,6 @@
     "module": "ESNext",
     "declaration": true,
     "declarationDir": "types",
-    // "sourceMap": true,
     "outDir": "lib",
     "moduleResolution": "node",
     "noUnusedLocals": true,

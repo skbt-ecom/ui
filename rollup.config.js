@@ -4,7 +4,7 @@ const typescript = require("@rollup/plugin-typescript");
 const postcss = require("rollup-plugin-postcss");
 const url = require("@rollup/plugin-url");
 const svgr = require("@svgr/rollup");
-// const terser = require("@rollup/plugin-terser");
+const terser = require("@rollup/plugin-terser");
 const dts = require("rollup-plugin-dts");
 const peerDepsExternal = require("rollup-plugin-peer-deps-external");
 const autoprefixer = require("autoprefixer");
@@ -55,6 +55,7 @@ module.exports = [
       url(),
       svgr({ icon: true }),
       // min js bundle
+      terser(),
     ],
   },
   // for types
