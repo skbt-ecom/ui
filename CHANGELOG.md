@@ -1,3 +1,10 @@
+# [3.0.0-beta.17](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.16...v3.0.0-beta.17) (2023-06-23)
+
+
+### Bug Fixes
+
+* **rollup:** change build command ([d3fe2bd](https://gitlab.sovcombank.group/web/ecom/ui/commit/d3fe2bd924f0856087f365db137922d6a0a26345))
+
 # [3.0.0-beta.16](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.15...v3.0.0-beta.16) (2023-06-23)
 
 
