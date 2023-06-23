@@ -8,7 +8,7 @@
   "main": "lib/index.js",
   "module": "lib/index.es.js",
   "files": [
-    "lib/*"
+    "lib/"
   ],
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
