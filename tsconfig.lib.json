@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "lib/src",
+    "baseUrl": "./src",
     "paths": {
       "@src/*": ["./*"]
     },
@@ -17,9 +17,9 @@
     "isolatedModules": true,
     "module": "ESNext",
     "declaration": true,
-    "declarationDir": "lib",
-    "sourceMap": true,
-    "outDir": ".",
+    "declarationDir": "types",
+    // "sourceMap": true,
+    "outDir": "lib",
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
