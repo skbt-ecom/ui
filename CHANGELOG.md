@@ -1,3 +1,10 @@
+# [3.0.0-beta.30](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.29...v3.0.0-beta.30) (2023-06-27)
+
+
+### Features
+
+* **rollup:** add plugins for postcss ([efa2ea2](https://gitlab.sovcombank.group/web/ecom/ui/commit/efa2ea2c343f6034c59ada74cdf747b8eb370b27))
+
 # [3.0.0-beta.29](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.28...v3.0.0-beta.29) (2023-06-23)
 
 
