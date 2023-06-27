@@ -11,6 +11,11 @@ const autoprefixer = require("autoprefixer");
 const resolve = require("@rollup/plugin-node-resolve");
 const commonjs = require("@rollup/plugin-commonjs");
 
+const simplevars = require("postcss-simple-vars");
+const nested = require("postcss-nested");
+const cssnext = require("postcss-cssnext");
+const cssnano = require("cssnano");
+
 const packageJson = require("./package.json");
 
 module.exports = [
@@ -43,7 +48,13 @@ module.exports = [
       }),
       // scss
       postcss({
-        plugins: [autoprefixer],
+        plugins: [
+          autoprefixer,
+          simplevars(),
+          nested(),
+          cssnext({ warnForDuplicates: false }),
+          cssnano(),
+        ],
         modules: {
           scopeBehaviour: "global",
         },
