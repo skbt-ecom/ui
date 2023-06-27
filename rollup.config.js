@@ -1,4 +1,5 @@
 // https://www.youtube.com/watch?v=CROGZ0sSt6Y&t=713s&ab_channel=MaximFilanovich
+/* eslint-disable import/no-extraneous-dependencies */
 
 const typescript = require("@rollup/plugin-typescript");
 const postcss = require("rollup-plugin-postcss");
@@ -13,7 +14,7 @@ const commonjs = require("@rollup/plugin-commonjs");
 
 const simplevars = require("postcss-simple-vars");
 const nested = require("postcss-nested");
-const cssnext = require("postcss-cssnext");
+const presetenv = require("postcss-preset-env");
 const cssnano = require("cssnano");
 
 const packageJson = require("./package.json");
@@ -48,18 +49,10 @@ module.exports = [
       }),
       // scss
       postcss({
-        plugins: [
-          autoprefixer,
-          simplevars(),
-          nested(),
-          cssnext({ warnForDuplicates: false }),
-          cssnano(),
-        ],
-        modules: {
-          scopeBehaviour: "global",
-        },
+        plugins: [autoprefixer, simplevars(), nested(), presetenv(), cssnano()],
+        modules: true,
         sourceMap: true,
-        extract: true,
+        extract: false,
         minimize: true,
       }),
       // for icons and svg
