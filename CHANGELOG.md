@@ -1,3 +1,10 @@
+# [3.0.0-beta.31](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.30...v3.0.0-beta.31) (2023-06-27)
+
+
+### Features
+
+* **rollup:** replace depricated cssnext plugin ([18d222e](https://gitlab.sovcombank.group/web/ecom/ui/commit/18d222e95660531c546059538b213ecb08b04a00))
+
 # [3.0.0-beta.30](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.29...v3.0.0-beta.30) (2023-06-27)
 
 
