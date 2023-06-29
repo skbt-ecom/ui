@@ -3,6 +3,7 @@ declare module "*.scss" {
   export default content;
 }
 
+declare module "*.png";
 declare module "*.svg" {
   import type { HTMLProps, FC } from "react";
 

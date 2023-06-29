@@ -1,0 +1,76 @@
+@use "../../../core/styles/global.scss" as *;
+
+.wrapper {
+  width: 100%;
+  max-width: 800px;
+  padding: 48px 16px;
+
+  @include tablet {
+    position: relative;
+    padding: 32px 48px;
+  }
+
+  @include desktop {
+    text-align: center;
+    padding: 48px 165px;
+  }
+}
+
+.icon {
+  display: block;
+
+  @include desktop {
+    margin: 0 auto;
+  }
+}
+
+.title {
+  font-family: "Montserrat";
+  margin: 32px 0 16px;
+  line-height: 28px;
+}
+
+.subTitle {
+  line-height: 22px;
+
+  @include tablet {
+    margin-bottom: 0;
+  }
+
+  @include desktop {
+    margin: 16px 0 32px;
+  }
+}
+
+.btn {
+  text-transform: none !important;
+
+  position: absolute !important;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100%;
+  max-width: 328px;
+
+  @include mobile-only {
+    top: 440px;
+  }
+
+  @include tablet-only {
+    bottom: -96px;
+  }
+
+  @include desktop {
+    position: unset !important;
+    left: unset;
+    transform: unset;
+  }
+}
+
+.text {
+  margin: 0 0 24px;
+
+  @include desktop {
+    margin: 0 0 35px;
+  }
+}

@@ -1,4 +1,3 @@
-import React from "react";
 import type { Story, Meta } from "@storybook/react";
 import type { AccordionProps } from "./Accordion";
 import { Accordion } from "./Accordion";
