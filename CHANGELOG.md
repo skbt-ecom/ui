@@ -1,3 +1,10 @@
+# [3.0.0-beta.33](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2023-06-29)
+
+
+### Bug Fixes
+
+* **lib:** show new component ([c911ba0](https://gitlab.sovcombank.group/web/ecom/ui/commit/c911ba09776bc7d8bad4e0eb4d04ab14fae70f87))
+
 # [3.0.0-beta.32](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.31...v3.0.0-beta.32) (2023-06-29)
 
 
