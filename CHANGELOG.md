@@ -1,3 +1,12 @@
+# [3.0.0-beta.32](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.31...v3.0.0-beta.32) (2023-06-29)
+
+
+### Features
+
+* 🎸 ErrorDouble and Error pages layout ([6dcaa5a](https://gitlab.sovcombank.group/web/ecom/ui/commit/6dcaa5a6e6677ecc3f4ac73cafbd1edd168d81f4))
+* 🎸 Wrapper component and Reject layout ([fa165fd](https://gitlab.sovcombank.group/web/ecom/ui/commit/fa165fd00e19e3335187eb492af99e5511cd81fb))
+* **lib:** add new components to beta ([dfa6207](https://gitlab.sovcombank.group/web/ecom/ui/commit/dfa6207edf193be72107a9d433857c77dcd680ff))
+
 # [3.0.0-beta.31](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.30...v3.0.0-beta.31) (2023-06-27)
 
 
