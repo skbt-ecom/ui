@@ -1,4 +1,4 @@
-import { Button } from "../../Button";
+import { Button } from "../../base/Button";
 import { Wrapper } from "../../Wrapper";
 
 import type { Variant } from "./types";
@@ -18,7 +18,9 @@ const RejectOrError = ({ variant }: ErrorProps) => {
       <Icon width={56} height={56} className={styles.icon} />
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.subTitle}>{subTitle}</p>
-      <Button className={styles.btn} label={btnText} variant="contained" />
+      <Button className={styles.btn} variant="contained">
+        {btnText}
+      </Button>
     </Wrapper>
   );
 };

@@ -8,9 +8,14 @@ type ButtonBaseProps = Pick<MuiButtonProps, "variant" | "size" | "color" | "clas
 // type ButtonBaseProps = Omit<MuiButtonProps, "disableRipple">;
 
 export interface ButtonProps extends ButtonBaseProps {
-  label: string;
+  children: string;
+  handleClick?: () => void;
 }
 
-export const Button = ({ label, ...rest }: ButtonProps) => {
-  return <MuiButton {...rest}>{label}</MuiButton>;
+export const Button = ({ children, handleClick, ...props }: ButtonProps) => {
+  return (
+    <MuiButton onClick={handleClick} {...props}>
+      {children}
+    </MuiButton>
+  );
 };
