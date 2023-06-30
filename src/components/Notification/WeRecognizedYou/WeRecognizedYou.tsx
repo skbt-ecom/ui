@@ -1,6 +1,6 @@
 import img from "../../../core/assets/img/halvaCard.png";
 
-import { Button } from "../../Button";
+import { Button } from "../../base/Button";
 import { UserCircleIcon } from "../../Icons";
 import { Wrapper } from "../../Wrapper";
 
@@ -29,7 +29,9 @@ const WeRecognizedYou = () => {
       <div className={styles.btnContainer}>
         <p className={styles.text}>{text}</p>
         <img className={styles.img} src={img} alt="halva card" width={202.55} height={185} />
-        <Button className={styles.btn} label={btnText} variant="contained" />
+        <Button className={styles.btn} variant="contained">
+          {btnText}
+        </Button>
       </div>
     </div>
   );
