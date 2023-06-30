@@ -1,3 +1,12 @@
+# [3.0.0-beta.34](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.33...v3.0.0-beta.34) (2023-06-30)
+
+
+### Features
+
+* 🎸 add main container for pages , some fix ([3dad221](https://gitlab.sovcombank.group/web/ecom/ui/commit/3dad221eb911275627f40f8a3aa429439154f3da))
+* 🎸 add theme colors, button component ([66ef1a6](https://gitlab.sovcombank.group/web/ecom/ui/commit/66ef1a6cfdd2829ad125d635616d864dd0ca2dbd))
+* **lib:** merge theme branch ([14db890](https://gitlab.sovcombank.group/web/ecom/ui/commit/14db890232b16793326f7ad20624fc7339022b33))
+
 # [3.0.0-beta.33](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2023-06-29)
 
 
