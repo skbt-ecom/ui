@@ -1,8 +1,10 @@
 import { redTheme, lightTheme, darkTheme, blueTheme } from "../src/core/themes";
 import type { Preview } from "@storybook/react";
 
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { CssBaseline } from "@mui/material";
 import { withThemeFromJSXProvider } from "@storybook/addon-styling";
+
+import { ThemeProvider } from "../src/components/ThemeProvider";
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";

@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from "react";
 
-import { classNames } from "../../utils/classNames";
+import { classNames } from "../../../utils/classNames";
 
 import styles from "./Wrapper.module.scss";
 

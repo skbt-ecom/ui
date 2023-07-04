@@ -1,5 +1,5 @@
 import { Button } from "../../base/Button";
-import { Wrapper } from "../../Wrapper";
+import { Wrapper } from "../Wrapper";
 
 import type { Variant } from "./types";
 import { items } from "./helper";
