@@ -5,6 +5,7 @@ variables:
 
 stages:
   - lint
+  - test
   - build
   - deploy
 
@@ -18,6 +19,22 @@ lint:
     - npm run build
   only:
     - merge_requests
+
+test:
+  stage: test
+  only:
+    - beta
+  before_script:
+    - npm config set registry $NPM_REGISTRY/npm-all/
+  script:
+    - npm ci
+    - npm run lint
+    - npm run build
+    - npx playwright install --with-deps
+    - npm run build-storybook --quiet
+    - npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+      "npx http-server storybook-static --port 6006 --silent" \
+      "npx wait-on tcp:6006 && yarn test-storybook"
 
 publish:
   stage: build
