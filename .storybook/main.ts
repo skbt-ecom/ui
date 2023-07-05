@@ -8,6 +8,7 @@ const config = {
     "@storybook/addon-storysource",
     "@storybook/addon-a11y",
     "@storybook/addon-styling",
+    "storybook-dark-mode",
     //  storybook 6 (coming soon)
     // "storybook-addon-material-ui"
     //  coming soon  https://github.com/storybookjs/addon-designs
@@ -16,6 +17,9 @@ const config = {
   framework: {
     name: "@storybook/react-webpack5",
     options: {},
+  },
+  features: {
+    interactionsDebugger: true,
   },
   docs: {
     autodocs: "tag",
