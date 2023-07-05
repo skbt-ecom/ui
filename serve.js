@@ -10,5 +10,4 @@ app.use(express.static("storybook-static"));
 
 app.listen(PORT, HOST);
 
-// eslint-disable-next-line
 console.log(`Running on http://${HOST}:${PORT}`);
