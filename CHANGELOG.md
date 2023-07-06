@@ -1,3 +1,22 @@
+# [3.0.0-beta.35](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.34...v3.0.0-beta.35) (2023-07-06)
+
+
+### Bug Fixes
+
+* **axe:** remove playwright ([4a61eb1](https://gitlab.sovcombank.group/web/ecom/ui/commit/4a61eb135355b2301571cac99e205e716fd1cd1d))
+* **ci/cd:** add package-lock ([9c98dfb](https://gitlab.sovcombank.group/web/ecom/ui/commit/9c98dfbd971ab28cb5a7c086c337decf85fe7c25))
+* **ci/cd:** gitlab-ci ([c562982](https://gitlab.sovcombank.group/web/ecom/ui/commit/c562982a316e564169838fb9cf33bf158fb00564))
+* **ci/cd:** revert gitlub-ci ([e4975e8](https://gitlab.sovcombank.group/web/ecom/ui/commit/e4975e8ca2694ad65a84090984eb7d488bda94ba))
+
+
+### Features
+
+* **ci/cd:** add test stage ([5e8c566](https://gitlab.sovcombank.group/web/ecom/ui/commit/5e8c566eb08994fcd656f508d6c8b2261842aecd))
+* **ci/cd:** add test stage ([3d0dbc0](https://gitlab.sovcombank.group/web/ecom/ui/commit/3d0dbc053d1d51dd2a09780e6420c96eaae0ef08))
+* **lib:** add theme provider ([b65bb66](https://gitlab.sovcombank.group/web/ecom/ui/commit/b65bb66fb85f8e23c1636ca2c265620f7df4886b))
+* **storybook:** add accessibility test ([2c5788e](https://gitlab.sovcombank.group/web/ecom/ui/commit/2c5788e2a581c985f886ee9042630f56a821b439))
+* **theme provider:** wrapper from mui ThemeProvider ([f475bc9](https://gitlab.sovcombank.group/web/ecom/ui/commit/f475bc9812943e7ff66875d79cdfa35d83d95a66))
+
 # [3.0.0-beta.34](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.33...v3.0.0-beta.34) (2023-06-30)
 
 
