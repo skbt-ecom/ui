@@ -23,7 +23,7 @@ lint:
 test:
   stage: test
   only:
-    - beta
+    - change_to_beta
   script:
     - npm ci
     - npm run build

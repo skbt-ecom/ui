@@ -3,25 +3,23 @@ import { ThemeProvider as ThemeProviderMui } from "@mui/material";
 
 import type { ReactNode } from "react";
 
-import { blueTheme, darkTheme, lightTheme, redTheme } from "../../core/themes";
+import { blueTheme, darkTheme, redTheme } from "../../../core/themes";
 
 type ThemeProviderProps = {
   children: ReactNode;
   theme?: typeof redTheme;
+  key?: string;
 };
 
-const ThemeProvider = ({ theme, children }: ThemeProviderProps) => {
+const ThemeProvider = ({ theme, key = "theme", children }: ThemeProviderProps) => {
   const [currentTheme, setCurrentTheme] = useState<typeof redTheme>(redTheme);
 
-  const localStorageTheme = localStorage.getItem("theme");
+  const localStorageTheme = localStorage.getItem(key);
 
   useLayoutEffect(() => {
     switch (localStorageTheme) {
       case "dark":
         setCurrentTheme(darkTheme);
-        break;
-      case "light":
-        setCurrentTheme(lightTheme);
         break;
       case "blue":
         setCurrentTheme(blueTheme);

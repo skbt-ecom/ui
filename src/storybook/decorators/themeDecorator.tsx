@@ -1,7 +1,7 @@
 import type { Decorator } from "@storybook/react";
-import { ThemeProvider } from "../../components/ThemeProvider";
+import { ThemeProvider } from "../../components";
 
-type Types = "dark" | "light" | "blue" | "red";
+type Types = "dark" | "blue" | "red";
 
 const themeDecorator =
   (theme: Types): Decorator =>
