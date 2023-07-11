@@ -18,7 +18,7 @@ COPY . .
 
 RUN npm run build-sb
 
-FROM registry.sovcombank.group/project-cache/library/node:16
+FROM registry.sovcombank.group/project-cache/library/node:18
 
 ARG NPM_REGISTRY
 RUN npm config set registry $NPM_REGISTRY/npm-all/
