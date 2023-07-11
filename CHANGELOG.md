@@ -1,3 +1,17 @@
+# [3.0.0-beta.36](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.35...v3.0.0-beta.36) (2023-07-11)
+
+
+### Bug Fixes
+
+* **dockerfile:** change node version ([e0ace01](https://gitlab.sovcombank.group/web/ecom/ui/commit/e0ace012417344119544e72bac91626602bf8caa))
+* **serve:** host ([f0f8367](https://gitlab.sovcombank.group/web/ecom/ui/commit/f0f8367f22da3718be83cae4eefdca48019ddd3f))
+* **serve:** serve.js ([717e34c](https://gitlab.sovcombank.group/web/ecom/ui/commit/717e34cc4fbbe68aed286992a7d658e4adea6784))
+
+
+### Performance Improvements
+
+* **serve:** some ([2dfce4b](https://gitlab.sovcombank.group/web/ecom/ui/commit/2dfce4bfc6cfb3f4c0d57b651204c66ffb967c8b))
+
 # [3.0.0-beta.35](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.34...v3.0.0-beta.35) (2023-07-06)
 
 
