@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const fs = require("fs");
 
 // Constants
 const PORT = 8080;
@@ -12,7 +13,7 @@ app.use(express.static("storybook-static"));
 app.get("/", (req, res) => {
   res.sendFile(path.join("storybook-static", "index.html"));
 });
-const fs = require("fs");
+
 //joining path of directory
 const directoryPath = path.join(__dirname, ".");
 //passsing directoryPath and callback function
