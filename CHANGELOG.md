@@ -1,3 +1,10 @@
+# [3.0.0-beta.39](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.38...v3.0.0-beta.39) (2023-07-13)
+
+
+### Bug Fixes
+
+* **docker:** add new command ([005a90b](https://gitlab.sovcombank.group/web/ecom/ui/commit/005a90b1d9635369a5241a01be130347dc96d62f))
+
 # [3.0.0-beta.38](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.37...v3.0.0-beta.38) (2023-07-13)
 
 
