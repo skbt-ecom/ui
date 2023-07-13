@@ -12,7 +12,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 RUN npm config set registry $NPM_REGISTRY/npm-all/
-RUN npm i
+RUN npm ci
 
 COPY . .
 
@@ -26,7 +26,8 @@ RUN npm config set registry $NPM_REGISTRY/npm-all/
 COPY --from=build /usr/src/app/storybook-static ./storybook-static
 COPY serve.js ./
 
-RUN npm i express 
+RUN npm i express
+RUN ls
 CMD [ "node", "serve.js"]
 
 EXPOSE 8080
