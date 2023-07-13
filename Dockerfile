@@ -25,6 +25,7 @@ RUN npm config set registry $NPM_REGISTRY/npm-all/
 
 COPY --from=build /usr/src/app/storybook-static ./storybook-static
 COPY serve.js ./
+RUN apt-get update && apt-get install -y tree
 RUN tree -L 3
 RUN npm i express
 
