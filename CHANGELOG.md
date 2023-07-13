@@ -1,3 +1,11 @@
+# [3.0.0-beta.37](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.36...v3.0.0-beta.37) (2023-07-13)
+
+
+### Bug Fixes
+
+* 🐛 serve.js ([1c6a848](https://gitlab.sovcombank.group/web/ecom/ui/commit/1c6a84856d5b15ec7c425a5c69d74e1e3675728a))
+* **ci:** remove testing and playwright ([d97ad8d](https://gitlab.sovcombank.group/web/ecom/ui/commit/d97ad8db066235d80ccc3e309fa6ba6f96766af2))
+
 # [3.0.0-beta.36](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.35...v3.0.0-beta.36) (2023-07-11)
 
 
