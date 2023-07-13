@@ -1,3 +1,10 @@
+# [3.0.0-beta.41](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.40...v3.0.0-beta.41) (2023-07-13)
+
+
+### Bug Fixes
+
+* **docker:** add clean cache ([ed7e494](https://gitlab.sovcombank.group/web/ecom/ui/commit/ed7e494e9385aa146a8bbd99d192914e009a29fd))
+
 # [3.0.0-beta.40](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.39...v3.0.0-beta.40) (2023-07-13)
 
 
