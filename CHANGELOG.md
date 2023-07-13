@@ -1,3 +1,10 @@
+# [3.0.0-beta.40](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.39...v3.0.0-beta.40) (2023-07-13)
+
+
+### Bug Fixes
+
+* **dockerfile:** remove tree for ls ([ffdccf6](https://gitlab.sovcombank.group/web/ecom/ui/commit/ffdccf62e5effe468f07f564d45242809238cfbb))
+
 # [3.0.0-beta.39](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.38...v3.0.0-beta.39) (2023-07-13)
 
 
