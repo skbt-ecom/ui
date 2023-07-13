@@ -1,3 +1,10 @@
+# [3.0.0-beta.42](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.41...v3.0.0-beta.42) (2023-07-13)
+
+
+### Bug Fixes
+
+* **docker:** remove some code ([50b8281](https://gitlab.sovcombank.group/web/ecom/ui/commit/50b828160c1744e3fc612dbc8038fc377839f0ef))
+
 # [3.0.0-beta.41](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.40...v3.0.0-beta.41) (2023-07-13)
 
 
