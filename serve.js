@@ -1,6 +1,6 @@
 const express = require("express");
-const path = require("path");
 const fs = require("fs");
+const path = require("path");
 
 //joining path of directory
 const directoryPath = path.join(__dirname, ".");
