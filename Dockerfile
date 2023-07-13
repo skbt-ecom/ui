@@ -1,4 +1,4 @@
-FROM registry.sovcombank.group/project-cache/library/node:18 as build
+FROM registry.sovcombank.group/project-cache/library/node:18
 
 ARG PROXY
 ARG http_proxy="http://proxy-server.sovcombank.group:3128" 
@@ -17,19 +17,6 @@ RUN npm ci
 COPY . .
 
 RUN npm run build-sb
-
-FROM registry.sovcombank.group/project-cache/library/node:18
-
-ARG NPM_REGISTRY
-RUN npm config set registry $NPM_REGISTRY/npm-all/
-
-COPY --from=build /usr/src/app/storybook-static ./storybook-static
-COPY serve.js ./
-
-RUN rm -rf node_modules
-RUN npm cache clean -f
-RUN ls
-RUN npm i express
 
 CMD [ "node", "serve.js"]
 
