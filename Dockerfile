@@ -26,6 +26,8 @@ RUN npm config set registry $NPM_REGISTRY/npm-all/
 COPY --from=build /usr/src/app/storybook-static ./storybook-static
 COPY serve.js ./
 
+RUN rm -rf node_modules
+RUN npm cache clean -f
 RUN ls
 RUN npm i express
 
