@@ -15,9 +15,9 @@ import "@fontsource/material-icons";
 
 const customViewports = {
   small: {
-    name: "300",
+    name: "320",
     styles: {
-      width: "300px",
+      width: "320px",
       height: "700px",
     },
   },
@@ -86,6 +86,13 @@ const preview: Preview = {
     viewport: {
       viewports: { ...customViewports, ...INITIAL_VIEWPORTS },
       defaultViewport: "960",
+    },
+    playroom: {
+      url:
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:9000"
+          : "http://urt-web-app1:3047/playroom",
+      code: "code here ...",
     },
   },
 };

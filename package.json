@@ -109,6 +109,7 @@
     "semantic-release": "^21.0.5",
     "storybook": "^7.0.18",
     "storybook-addon-designs": "^6.3.1",
+    "storybook-addon-playroom": "^4.0.0",
     "storybook-dark-mode": "^3.0.0",
     "style-loader": "^3.3.3",
     "ts-loader": "^9.4.4",
