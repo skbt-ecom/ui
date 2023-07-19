@@ -4,7 +4,7 @@ module.exports = {
 
   // Optional:
   title: "My Awesome Library",
-  widths: [300, 360, 600, 960, 1280],
+  widths: [320, 360, 600, 960, 1280],
   port: 9000,
   openBrowser: false,
   iframeSandbox: "allow-scripts allow-same-origin",
@@ -67,6 +67,11 @@ module.exports = {
             },
             "url-loader",
           ],
+        },
+        {
+          test: /\.css$/i,
+          exclude: /node_modules/,
+          use: ["style-loader", "css-loader"],
         },
         {
           test: /\.s[ac]ss$/i,

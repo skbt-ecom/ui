@@ -13,6 +13,7 @@ const config = {
     // "storybook-addon-material-ui"
     //  coming soon  https://github.com/storybookjs/addon-designs
     // "storybook-addon-designs",
+    "storybook-addon-playroom",
   ],
   framework: {
     name: "@storybook/react-webpack5",
