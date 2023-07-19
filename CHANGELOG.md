@@ -1,3 +1,10 @@
+# [3.0.0-beta.45](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.44...v3.0.0-beta.45) (2023-07-19)
+
+
+### Features
+
+* **sb:** add playroom addon ([6c9d079](https://gitlab.sovcombank.group/web/ecom/ui/commit/6c9d07982d35dce3ba48f44083419c53768f2d93))
+
 # [3.0.0-beta.44](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2023-07-19)
 
 
