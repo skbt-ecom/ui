@@ -1,3 +1,10 @@
+# [3.0.0-beta.44](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2023-07-19)
+
+
+### Bug Fixes
+
+* **lib:** remove width:100% ([d381d30](https://gitlab.sovcombank.group/web/ecom/ui/commit/d381d30706c122a1e2aa7646b9f984150590dcba))
+
 # [3.0.0-beta.43](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.42...v3.0.0-beta.43) (2023-07-17)
 
 
