@@ -38,7 +38,7 @@ const customViewports = {
   desktop: {
     name: "960",
     styles: {
-      width: "600px",
+      width: "960px",
       height: "700px",
     },
   },
