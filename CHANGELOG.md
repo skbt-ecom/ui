@@ -1,3 +1,10 @@
+# [3.0.0-beta.46](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.45...v3.0.0-beta.46) (2023-07-20)
+
+
+### Bug Fixes
+
+* **storybook:** playroom url and viewports default ([0024ad4](https://gitlab.sovcombank.group/web/ecom/ui/commit/0024ad42e2587eba971ee466ddc3683d7e22ea4f))
+
 # [3.0.0-beta.45](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.44...v3.0.0-beta.45) (2023-07-19)
 
 
