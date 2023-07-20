@@ -85,7 +85,7 @@ const preview: Preview = {
     // },
     viewport: {
       viewports: { ...customViewports, ...INITIAL_VIEWPORTS },
-      defaultViewport: "960",
+      defaultViewport: "desktop",
     },
     playroom: {
       url:

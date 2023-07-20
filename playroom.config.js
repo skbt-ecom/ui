@@ -5,6 +5,7 @@ module.exports = {
   // Optional:
   title: "My Awesome Library",
   widths: [320, 360, 600, 960, 1280],
+  baseUrl: "/playroom/",
   port: 9000,
   openBrowser: false,
   iframeSandbox: "allow-scripts allow-same-origin",
