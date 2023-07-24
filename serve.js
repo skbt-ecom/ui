@@ -3,12 +3,12 @@ const path = require("path");
 
 // Constants
 const PORT = 8080;
-const HOST = "0.0.0.0";
+const HOST = "127.0.0.1";
 
 // App
 const app = express();
 app.use(express.static("storybook-static"));
-app.use(express.static("playroom-static"));
+app.use("/playroom", express.static("playroom-static"));
 
 app.listen(PORT, HOST);
 
