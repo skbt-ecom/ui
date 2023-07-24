@@ -1,3 +1,10 @@
+# [3.0.0-beta.49](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.48...v3.0.0-beta.49) (2023-07-24)
+
+
+### Bug Fixes
+
+* **serve:** change host ([4d6ac76](https://gitlab.sovcombank.group/web/ecom/ui/commit/4d6ac766b3aad9448d78dbe1c3b29d9e105af18a))
+
 # [3.0.0-beta.48](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2023-07-24)
 
 
