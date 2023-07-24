@@ -1,3 +1,10 @@
+# [3.0.0-beta.47](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2023-07-24)
+
+
+### Bug Fixes
+
+* **serve:** remove some code ([31334c1](https://gitlab.sovcombank.group/web/ecom/ui/commit/31334c1534f7993f64cbbdf4401a7b3e3611f44f))
+
 # [3.0.0-beta.46](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.45...v3.0.0-beta.46) (2023-07-20)
 
 
