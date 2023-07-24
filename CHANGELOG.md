@@ -1,3 +1,10 @@
+# [3.0.0-beta.48](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2023-07-24)
+
+
+### Bug Fixes
+
+* **serce:** add url for playroom ([8ff13c1](https://gitlab.sovcombank.group/web/ecom/ui/commit/8ff13c12cc4b6e3e447448a99b378d1424266060))
+
 # [3.0.0-beta.47](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2023-07-24)
 
 
