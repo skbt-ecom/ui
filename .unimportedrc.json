@@ -1,0 +1,22 @@
+{
+  "preset": "node",
+  "entry": ["src/index.ts", "src/*.{ts,tsx}", ".storybook/*"],
+  "extensions": [".js", ".jsx", ".ts", ".tsx"],
+  "ignorePatterns": [
+    "**/*.tests.{js,jsx,ts,tsx}",
+    "**/*.test.{js,jsx,ts,tsx}",
+    "**/*.spec.{js,jsx,ts,tsx}",
+    "**/tests/**",
+    "**/__tests__/**",
+    "**/*.d.ts",
+    "**/*.stories.**",
+    "**/src/playroom/*",
+    "**/src/storybook/**",
+    "**/public/**",
+    "**/node_modules/**"
+  ],
+
+  "ignoreUnimported": [],
+  "ignoreUnused": ["express"],
+  "ignoreUnresolved": []
+}
