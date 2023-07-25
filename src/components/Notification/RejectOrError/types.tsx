@@ -1,4 +1,4 @@
-import type { FC, HTMLProps } from "react";
+import type { FC, HTMLProps, JSX } from "react";
 
 export type Items = {
   Icon: FC<Partial<HTMLProps<SVGElement>>>;
