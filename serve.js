@@ -6,7 +6,6 @@ const PORT = 8080;
 
 // App
 const app = express();
-app.use(express.static("storybook-static"));
-app.use("/playroom", express.static("playroom-static"));
+app.use(express.static("public"));
 
 app.listen(PORT);

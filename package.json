@@ -9,14 +9,14 @@
   "module": "esm/index.js",
   "scripts": {
     "start": "concurrently -k -s first -n \"Storybook,Playroom\" -c \"magenta,blue\" \"npm run start-sb\" \"npm run start-pr\"",
-    "prebuild": "rm -rf lib storybook-static playroom-static",
+    "prebuild": "rm -rf lib public",
     "build": "rollup -c",
     "start-sb": "storybook dev -p 6006 --no-open",
-    "build-sb": "storybook build",
+    "build-sb": "storybook build -o ./public",
     "start-pr": "playroom start",
     "build-pr": "playroom build",
-    "": "to serve sb u need to change host into serve.js file to 127.0.0.1 but never push it to git!",
-    "serve": "npm run build-pr && npm run build-sb && node serve.js",
+    "": "build-sb then build-pr and after serve",
+    "serve": "node serve.js",
     "lint": "eslint . --max-warnings 0",
     "ts-check": "tsc --noEmit --pretty",
     "test": "test-storybook",
@@ -24,7 +24,7 @@
     "semantic-release": "semantic-release",
     "prepublish-ui": "npm run build && cp package.json lib",
     "publish-ui": "npm run semantic-release",
-    "clean": "rm -rf lib storybook-static playroom-static",
+    "clean": "rm -rf lib public",
     "clean-all": "npm cache clean -f & rm -rf node_modules & npm run clean"
   },
   "peerDependencies": {
