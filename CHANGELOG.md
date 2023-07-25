@@ -1,3 +1,10 @@
+# [3.0.0-beta.50](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.49...v3.0.0-beta.50) (2023-07-25)
+
+
+### Features
+
+* **serve:** remove host ([11641de](https://gitlab.sovcombank.group/web/ecom/ui/commit/11641debc82b4f35f60e5d27142ad25ae26f764f))
+
 # [3.0.0-beta.49](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.48...v3.0.0-beta.49) (2023-07-24)
 
 
