@@ -6,8 +6,7 @@
 .pnp.js
 .idea
 .npmrc
-storybook-static
-playroom-static
+public
 
 # testing
 /coverage

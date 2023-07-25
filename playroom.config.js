@@ -1,6 +1,6 @@
 module.exports = {
   components: "./src/components/index.ts",
-  outputPath: "playroom-static",
+  outputPath: "public/playroom",
 
   // Optional:
   title: "My Awesome Library",

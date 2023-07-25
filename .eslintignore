@@ -1,5 +1,5 @@
 node_modules
 dist
 lib
-storybook-static
+public
 serve.js
