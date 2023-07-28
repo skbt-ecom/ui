@@ -3,9 +3,11 @@ import type { HTMLProps, FC } from "react";
 import { ReactComponent as CheckIconComponent } from "../../core/assets/icons/check.svg";
 import { ReactComponent as QuestionMarkIconComponent } from "../../core/assets/icons/question-mark.svg";
 import { ReactComponent as UserIconComponent } from "../../core/assets/icons/user.svg";
+import { ReactComponent as HalvaIconComponent } from "../../core/assets/icons/halvaIcon.svg";
 import { ReactComponent as RefreshIconComponent } from "../../core/assets/icons/refresh.svg";
 import { ReactComponent as SadEmojiIconComponent } from "../../core/assets/icons/sad-emoji.svg";
 import { ReactComponent as UserCircleIconComponent } from "../../core/assets/icons/user-circle.svg";
+import { ReactComponent as GiftIconComponent } from "../../core/assets/icons/gift.svg";
 
 export type IconProps = Partial<HTMLProps<SVGElement>>;
 
@@ -19,6 +21,8 @@ const createIcon =
 export const CheckIcon = createIcon(CheckIconComponent);
 export const QuestionMarkIcon = createIcon(QuestionMarkIconComponent);
 export const UserIcon = createIcon(UserIconComponent);
+export const HalvaIcon = createIcon(HalvaIconComponent);
 export const RefreshIcon = createIcon(RefreshIconComponent);
 export const SadEmojiIcon = createIcon(SadEmojiIconComponent);
 export const UserCircleIcon = createIcon(UserCircleIconComponent);
+export const GiftIcon = createIcon(GiftIconComponent);

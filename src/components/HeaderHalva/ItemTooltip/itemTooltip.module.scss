@@ -1,0 +1,34 @@
+@import "@ecom/ui/style/common/media-queries";
+
+.childrenContainer {
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.hintModal {
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 186px;
+
+  @include tablet {
+    max-width: 142px;
+  }
+
+  @include desktop {
+    max-width: 212px;
+  }
+}
+
+.hintContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hintIcon img {
+  width: 16px;
+  height: 16px;
+}
