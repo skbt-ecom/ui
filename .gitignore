@@ -6,7 +6,7 @@
 .pnp.js
 .idea
 .npmrc
-storybook-static
+public
 
 # testing
 /coverage

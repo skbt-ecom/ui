@@ -1,3 +1,66 @@
+# [3.0.0-beta.51](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.50...v3.0.0-beta.51) (2023-07-25)
+
+
+### Features
+
+* **unimported:** add unimported ([51dcca3](https://gitlab.sovcombank.group/web/ecom/ui/commit/51dcca3d4d8136fcc9cc96d11b72dfd361f32894))
+
+# [3.0.0-beta.50](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.49...v3.0.0-beta.50) (2023-07-25)
+
+
+### Features
+
+* **serve:** remove host ([11641de](https://gitlab.sovcombank.group/web/ecom/ui/commit/11641debc82b4f35f60e5d27142ad25ae26f764f))
+
+# [3.0.0-beta.49](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.48...v3.0.0-beta.49) (2023-07-24)
+
+
+### Bug Fixes
+
+* **serve:** change host ([4d6ac76](https://gitlab.sovcombank.group/web/ecom/ui/commit/4d6ac766b3aad9448d78dbe1c3b29d9e105af18a))
+
+# [3.0.0-beta.48](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2023-07-24)
+
+
+### Bug Fixes
+
+* **serce:** add url for playroom ([8ff13c1](https://gitlab.sovcombank.group/web/ecom/ui/commit/8ff13c12cc4b6e3e447448a99b378d1424266060))
+
+# [3.0.0-beta.47](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2023-07-24)
+
+
+### Bug Fixes
+
+* **serve:** remove some code ([31334c1](https://gitlab.sovcombank.group/web/ecom/ui/commit/31334c1534f7993f64cbbdf4401a7b3e3611f44f))
+
+# [3.0.0-beta.46](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.45...v3.0.0-beta.46) (2023-07-20)
+
+
+### Bug Fixes
+
+* **storybook:** playroom url and viewports default ([0024ad4](https://gitlab.sovcombank.group/web/ecom/ui/commit/0024ad42e2587eba971ee466ddc3683d7e22ea4f))
+
+# [3.0.0-beta.45](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.44...v3.0.0-beta.45) (2023-07-19)
+
+
+### Features
+
+* **sb:** add playroom addon ([6c9d079](https://gitlab.sovcombank.group/web/ecom/ui/commit/6c9d07982d35dce3ba48f44083419c53768f2d93))
+
+# [3.0.0-beta.44](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2023-07-19)
+
+
+### Bug Fixes
+
+* **lib:** remove width:100% ([d381d30](https://gitlab.sovcombank.group/web/ecom/ui/commit/d381d30706c122a1e2aa7646b9f984150590dcba))
+
+# [3.0.0-beta.43](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.42...v3.0.0-beta.43) (2023-07-17)
+
+
+### Features
+
+* **playroom:** add playroom ([f8807d5](https://gitlab.sovcombank.group/web/ecom/ui/commit/f8807d5c7906ad8e6d614de0d92dbd2251a4fec8))
+
 # [3.0.0-beta.42](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.41...v3.0.0-beta.42) (2023-07-13)
 
 

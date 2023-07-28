@@ -8,12 +8,15 @@
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "scripts": {
-    "start": "storybook dev -p 6006 --no-open",
-    "prebuild": "rm -rf lib storybook-static",
+    "start": "concurrently -k -s first -n \"Storybook,Playroom\" -c \"magenta,blue\" \"npm run start-sb\" \"npm run start-pr\"",
+    "prebuild": "rm -rf lib public",
     "build": "rollup -c",
-    "build-sb": "storybook build",
-    "": "to serve sb u need to change host into serve.js file to 127.0.0.1 but never push it to git!",
-    "serve-sb": "node serve.js",
+    "start-sb": "storybook dev -p 6006 --no-open",
+    "build-sb": "storybook build -o ./public",
+    "start-pr": "playroom start",
+    "build-pr": "playroom build",
+    "": "build-sb then build-pr and after serve",
+    "serve": "node serve.js",
     "lint": "eslint . --max-warnings 0",
     "ts-check": "tsc --noEmit --pretty",
     "test": "test-storybook",
@@ -21,7 +24,7 @@
     "semantic-release": "semantic-release",
     "prepublish-ui": "npm run build && cp package.json lib",
     "publish-ui": "npm run semantic-release",
-    "clean": "rm -rf lib storybook-static",
+    "clean": "rm -rf lib public",
     "clean-all": "npm cache clean -f & rm -rf node_modules & npm run clean"
   },
   "peerDependencies": {
@@ -67,7 +70,10 @@
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
     "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.3",
     "commitizen": "^4.2.3",
+    "concurrently": "^8.2.0",
+    "css-loader": "^6.8.1",
     "cssnano": "^6.0.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.41.0",
@@ -82,8 +88,10 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "file-loader": "^6.2.0",
     "husky": "^4.3.8",
     "lint-staged": "^13.2.2",
+    "playroom": "^0.32.0",
     "postcss": "^8.4.23",
     "postcss-cssnext": "^3.1.1",
     "postcss-nested": "^6.0.1",
@@ -99,11 +107,16 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.63.3",
+    "sass-loader": "^13.3.2",
     "semantic-release": "^21.0.5",
     "storybook": "^7.0.18",
     "storybook-addon-designs": "^6.3.1",
+    "storybook-addon-playroom": "^4.0.0",
     "storybook-dark-mode": "^3.0.0",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.4.4",
     "typescript": "^5.0.4",
+    "unimported": "^1.29.2",
     "url-loader": "^4.1.1"
   },
   "browserslist": {
@@ -123,7 +136,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsc -p tsconfig.json --noEmit && lint-staged --concurrent false"
+      "pre-commit": "tsc -p tsconfig.json --noEmit && lint-staged --concurrent false && unimported"
     }
   },
   "config": {
