@@ -1,3 +1,10 @@
+# [3.0.0-beta.56](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.55...v3.0.0-beta.56) (2023-08-01)
+
+
+### Bug Fixes
+
+* **loki:** change app to docker ([c3c1489](https://gitlab.sovcombank.group/web/ecom/ui/commit/c3c148946854566b10f9f45e6e28dd810cc035bc))
+
 # [3.0.0-beta.55](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.54...v3.0.0-beta.55) (2023-08-01)
 
 
