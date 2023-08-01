@@ -1,3 +1,10 @@
+# [3.0.0-beta.54](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.53...v3.0.0-beta.54) (2023-08-01)
+
+
+### Bug Fixes
+
+* **ci/cd:** loki config ([f278f32](https://gitlab.sovcombank.group/web/ecom/ui/commit/f278f32ee287ec51dad43868825794c3da4e452f))
+
 # [3.0.0-beta.53](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.52...v3.0.0-beta.53) (2023-08-01)
 
 
