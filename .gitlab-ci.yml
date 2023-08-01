@@ -27,7 +27,7 @@ test:
   when: manual
   allow_failure: true
   script:
-    - npm c
+    - npm i
     - npm run test-ci
 
 publish:
