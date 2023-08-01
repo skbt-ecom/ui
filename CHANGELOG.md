@@ -1,3 +1,10 @@
+# [3.0.0-beta.55](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.54...v3.0.0-beta.55) (2023-08-01)
+
+
+### Bug Fixes
+
+* **ci/cd:** test loki command ([edd7a34](https://gitlab.sovcombank.group/web/ecom/ui/commit/edd7a344c085c2692f11c95a89c06394e4298b08))
+
 # [3.0.0-beta.54](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.53...v3.0.0-beta.54) (2023-08-01)
 
 
