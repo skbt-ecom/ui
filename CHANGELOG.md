@@ -1,3 +1,11 @@
+# [3.0.0-beta.53](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.52...v3.0.0-beta.53) (2023-08-01)
+
+
+### Bug Fixes
+
+* **ci/cd:** gitlab test pipeline ([0cc0615](https://gitlab.sovcombank.group/web/ecom/ui/commit/0cc06157c66fa1c8abf85b2eb155c0c5bdc20948))
+* **ci/cd:** gitlab test pipeline ([959b525](https://gitlab.sovcombank.group/web/ecom/ui/commit/959b5251f190aa7409c3f340f5ba8c689c6c6e30))
+
 # [3.0.0-beta.52](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.51...v3.0.0-beta.52) (2023-08-01)
 
 
