@@ -21,6 +21,7 @@ lint:
     - merge_requests
 
 test:
+  image: registry.sovcombank.group/library/library/docker:git
   stage: test
   only:
     - beta
