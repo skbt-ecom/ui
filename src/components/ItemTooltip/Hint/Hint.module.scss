@@ -1,0 +1,30 @@
+@import "../../../core/styles/media-queries.scss";
+
+.hintContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hintIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.hintModal {
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 186px;
+
+  @include tablet {
+    max-width: 142px;
+  }
+
+  @include desktop {
+    max-width: 212px;
+  }
+}
+
+.close {
+  cursor: pointer;
+  margin-top: 4px;
+}
