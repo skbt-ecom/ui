@@ -1,10 +1,15 @@
+import { styled } from "@mui/material";
 import { useEffect, useState } from "react";
-
-import styles from "./Countdown.module.scss";
 
 type CountdownProps = {
   countDownTime?: number;
 };
+
+const CountDownContainer = styled("span")(() => ({
+  fontSize: 16,
+  fontWeight: 700,
+  letterSpacing: 0.3,
+}));
 
 const Countdown = ({ countDownTime = 43200000 }: CountdownProps) => {
   const [count, setCount] = useState(countDownTime);
@@ -78,9 +83,9 @@ const Countdown = ({ countDownTime = 43200000 }: CountdownProps) => {
   }
 
   return (
-    <span id="countdownBlock" className={styles.countdown}>
+    <CountDownContainer id="countdownBlock">
       {loading ? loadingDisplayTime : displayTime}
-    </span>
+    </CountDownContainer>
   );
 };
 

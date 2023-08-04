@@ -1,9 +1,10 @@
-import { makeStyles } from "tss-react/mui";
-
 import type { FC, HTMLProps, PropsWithChildren } from "react";
 
+import clsx from "clsx";
+
+import { styled } from "@mui/material";
 import { HalvaIcon } from "../Icons";
-import { Button } from "../base";
+import { Button, MainContainer } from "../base";
 import { Timer } from "./Timer";
 import { Phone } from "../Phone";
 
@@ -24,25 +25,8 @@ type Props = {
   hasTimer?: boolean;
   hasHint?: boolean;
   hasPhone?: boolean;
+  hasShadow?: boolean;
 };
-
-const useStyles = makeStyles()((theme) => ({
-  icon: {
-    fill: theme.palette.primary.main,
-
-    width: 72,
-    height: 14,
-
-    [theme.breakpoints.up("sm")]: {
-      width: 78,
-    },
-
-    [theme.breakpoints.up("md")]: {
-      width: 108,
-      height: 20,
-    },
-  },
-}));
 
 const Header = ({
   children,
@@ -55,27 +39,45 @@ const Header = ({
   hasHint = false,
   hasTimer = false,
   hasPhone = false,
+  hasShadow = false,
   Logo = HalvaIcon,
   AdditionalLogo,
   PhoneProps,
 }: PropsWithChildren<Props>) => {
-  const { classes } = useStyles();
+  const HalvaLogo = styled(Logo)(({ theme }) => ({
+    fill: [theme.palette.primary.main],
+    width: 72,
+    height: 14,
+    [theme.breakpoints.up("sm")]: {
+      width: 78,
+    },
+    [theme.breakpoints.up("md")]: {
+      width: 108,
+      height: 20,
+    },
+  }));
+
+  const phoneClasses = { phoneContainer: styles.phoneContainer };
 
   return (
-    <header className={styles.header}>
-      <div className={styles.logos}>
-        <Logo className={classes.icon} />
-        {AdditionalLogo && <AdditionalLogo />}
-      </div>
-      {children}
-      {hasRightSection && (
-        <div className={styles.rightSection}>
-          {hasPhone && <Phone {...PhoneProps} />}
-          {hasHint && <div className={styles.halvaDesyatka} />}
-          {hasTimer && <Timer countDownTime={countDownTime} />}
-          {hasBtn && <Button>{btnText}</Button>}
+    <header className={clsx({ [styles.shadow]: hasShadow })}>
+      <MainContainer>
+        <div className={styles.container}>
+          <div className={styles.logos}>
+            <HalvaLogo />
+            {AdditionalLogo && <AdditionalLogo />}
+          </div>
+          {children}
+          {hasRightSection && (
+            <div className={styles.rightSection}>
+              {hasPhone && <Phone {...PhoneProps} classes={phoneClasses} />}
+              {hasHint && <div className={styles.halvaDesyatka} />}
+              {hasTimer && <Timer countDownTime={countDownTime} />}
+              {hasBtn && <Button>{btnText}</Button>}
+            </div>
+          )}
         </div>
-      )}
+      </MainContainer>
     </header>
   );
 };

@@ -1,11 +1,19 @@
-.dNone {
-  display: none;
-}
+@use "../../core/styles/global.scss" as *;
 
-.header {
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  height: 64px;
+
+  @include tablet {
+    height: 80px;
+  }
+
+  @include tablet {
+    height: 88px;
+  }
 }
 
 .rightSection {
@@ -18,4 +26,16 @@
   justify-content: space-between;
   align-items: center;
   column-gap: 24px;
+}
+
+.phoneContainer {
+  display: none;
+
+  @include desktop {
+    display: block;
+  }
+}
+
+.shadow {
+  box-shadow: -1px 2px 4px 0px rgba(0, 0, 0, 0.05);
 }

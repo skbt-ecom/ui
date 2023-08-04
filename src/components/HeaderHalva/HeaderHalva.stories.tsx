@@ -18,20 +18,39 @@ const meta: Meta<typeof HeaderHalva> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const RedTheme: Story = {};
+export const RedTheme: Story = {
+  args: {
+    hasBtn: false,
+  },
+};
 
 export const DarkTheme: Story = {
   args: {
-    btnText: "Получить карту",
+    hasBtn: false,
   },
   decorators: [themeDecorator("dark")],
 };
 
-export const WithCountdown: Story = {
+export const WithShadow: Story = {
   args: {
-    hasTimer: true,
-    countDownTime: 1800000,
+    hasBtn: false,
+    hasShadow: true,
   },
+};
+
+export const WithPhone: Story = {
+  args: {
+    hasBtn: false,
+    hasPhone: true,
+    PhoneProps: {
+      phoneHint: "Для звонков по России (бесплатно)",
+      phones: ["8 800 100-10-20"],
+    },
+  },
+};
+
+export const WithButton: Story = {
+  args: {},
 };
 
 export const WithAdditionalLogo: Story = {
@@ -40,12 +59,9 @@ export const WithAdditionalLogo: Story = {
   },
 };
 
-export const WithPhone: Story = {
+export const WithCountdown: Story = {
   args: {
-    hasPhone: true,
-    PhoneProps: {
-      phoneHint: "Для звонков по России (бесплатно)",
-      phones: ["8 800 100-10-20"],
-    },
+    hasTimer: true,
+    countDownTime: 1800000,
   },
 };

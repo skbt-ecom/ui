@@ -1,22 +1,24 @@
 import { useMemo } from "react";
-import { styled } from "@mui/material";
 
 import { PhoneNumber } from "./PhoneNumber";
+import { Hint } from "./Hint";
+
+export type PhoneClasses = {
+  phoneContainer?: string;
+  phoneNumber?: string;
+  hint?: string;
+};
 
 export type PhoneProps = {
   phoneHint?: string;
   phones?: string[];
+  classes?: PhoneClasses;
 };
-
-const Hint = styled("span")(({ theme }) => ({
-  color: [theme.palette.text.secondary],
-  marginTop: 4,
-  fontSize: 12,
-}));
 
 const Phone = ({
   phoneHint = "Для звонков по России (бесплатно)",
   phones = ["8 800 100-10-20"],
+  classes,
 }: PhoneProps) => {
   const hasHint = phones.length === 1 && phoneHint;
 
@@ -26,7 +28,7 @@ const Phone = ({
   );
 
   return (
-    <div>
+    <div className={classes?.phoneContainer}>
       {phoneNumbers}
       {hasHint && <Hint>{phoneHint}</Hint>}
     </div>
