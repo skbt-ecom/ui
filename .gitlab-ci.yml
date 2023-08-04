@@ -28,6 +28,7 @@ test:
     - export https_proxy=${PROXY}
     - export no_proxy=${NO_PROXY}
     - sh docker.sh
+    - docker -v
   script:
     - npm i
     - npm run test-ci
