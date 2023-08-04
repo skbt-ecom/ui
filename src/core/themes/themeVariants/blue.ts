@@ -1,14 +1,18 @@
 import { createTheme } from "@mui/material";
-import { ThemePallete } from "../themeConfig";
+import { ThemePalleteDK } from "../themeConfig";
 
 export const blueTheme = createTheme({
   palette: {
     primary: {
-      main: ThemePallete.BLUE_PRIMARY,
+      main: ThemePalleteDK.PRIMARY_BLUE,
     },
     secondary: {
       // Заглушка
-      main: ThemePallete.BLUE_PRIMARY,
+      main: ThemePalleteDK.PRIMARY_BLUE,
+    },
+    text: {
+      primary: ThemePalleteDK.PRIMARY_BLACK,
+      secondary: ThemePalleteDK.SECONDARY,
     },
   },
 });

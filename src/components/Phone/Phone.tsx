@@ -1,12 +1,18 @@
 import { useMemo } from "react";
-import { PhoneNumber } from "./PhoneNumber";
+import { styled } from "@mui/material";
 
-import styles from "./Phone.module.scss";
+import { PhoneNumber } from "./PhoneNumber";
 
 export type PhoneProps = {
   phoneHint?: string;
   phones?: string[];
 };
+
+const Hint = styled("span")(({ theme }) => ({
+  color: [theme.palette.text.secondary],
+  marginTop: 4,
+  fontSize: 12,
+}));
 
 const Phone = ({
   phoneHint = "Для звонков по России (бесплатно)",
@@ -15,14 +21,14 @@ const Phone = ({
   const hasHint = phones.length === 1 && phoneHint;
 
   const phoneNumbers = useMemo(
-    () => phones.map((num, i) => <PhoneNumber number={num} key={i} className={styles.phoneNum} />),
+    () => phones.map((num, i) => <PhoneNumber number={num} key={i} />),
     [phones]
   );
 
   return (
     <div>
       {phoneNumbers}
-      {hasHint && <span className={styles.hint}>{phoneHint}</span>}
+      {hasHint && <Hint>{phoneHint}</Hint>}
     </div>
   );
 };

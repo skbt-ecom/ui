@@ -1,15 +1,19 @@
 import { createTheme } from "@mui/material";
-import { ThemePallete } from "../themeConfig";
+import { ThemePalleteHalva } from "../themeConfig";
 
 export const redTheme = createTheme({
   palette: {
     primary: {
-      main: ThemePallete.RED_PRIMARY,
+      main: ThemePalleteHalva.RED_PRIMARY,
     },
     secondary: {
       // Заглушка
 
-      main: ThemePallete.RED_PRIMARY,
+      main: ThemePalleteHalva.RED_PRIMARY,
+    },
+    text: {
+      primary: ThemePalleteHalva.PRIMARY_BLACK,
+      secondary: ThemePalleteHalva.SECONDARY,
     },
   },
 });
