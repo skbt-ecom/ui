@@ -39,3 +39,13 @@ export const WithAdditionalLogo: Story = {
     AdditionalLogo: () => <img src={ivi} alt="ivi" width={78} height={32} />,
   },
 };
+
+export const WithPhone: Story = {
+  args: {
+    hasPhone: true,
+    PhoneProps: {
+      phoneHint: "Для звонков по России (бесплатно)",
+      phones: ["8 800 100-10-20"],
+    },
+  },
+};

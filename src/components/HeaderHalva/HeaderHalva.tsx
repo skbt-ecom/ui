@@ -4,9 +4,12 @@ import type { FC, HTMLProps, PropsWithChildren } from "react";
 
 import { HalvaIcon } from "../Icons";
 import { Button } from "../base";
+import { Timer } from "./Timer";
+import { Phone } from "../Phone";
+
+import type { PhoneProps } from "../Phone";
 
 import styles from "./HeaderHalva.module.scss";
-import { Timer } from "./Timer";
 
 type Props = {
   btnText: string;
@@ -15,6 +18,7 @@ type Props = {
   countDownTime?: number;
   Logo?: FC<Partial<HTMLProps<SVGElement>>>;
   AdditionalLogo?: FC<Partial<HTMLProps<SVGElement>>>;
+  PhoneProps?: PhoneProps;
   hasRightSection: boolean;
   hasBtn?: boolean;
   hasTimer?: boolean;
@@ -38,7 +42,6 @@ const useStyles = makeStyles()((theme) => ({
       height: 20,
     },
   },
-  btn: {},
 }));
 
 const Header = ({
@@ -54,22 +57,23 @@ const Header = ({
   hasPhone = false,
   Logo = HalvaIcon,
   AdditionalLogo,
+  PhoneProps,
 }: PropsWithChildren<Props>) => {
   const { classes } = useStyles();
 
   return (
     <header className={styles.header}>
       <div className={styles.logos}>
-        <Logo className={classes.icon} height={50} />
+        <Logo className={classes.icon} />
         {AdditionalLogo && <AdditionalLogo />}
       </div>
       {children}
       {hasRightSection && (
         <div className={styles.rightSection}>
-          {hasPhone && <div className={styles.phone} />}
+          {hasPhone && <Phone {...PhoneProps} />}
           {hasHint && <div className={styles.halvaDesyatka} />}
           {hasTimer && <Timer countDownTime={countDownTime} />}
-          {hasBtn && <Button className={classes.btn}>{btnText}</Button>}
+          {hasBtn && <Button>{btnText}</Button>}
         </div>
       )}
     </header>
