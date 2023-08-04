@@ -21,15 +21,20 @@ lint:
     - merge_requests
 
 test:
-  image: registry.sovcombank.group/library/library/docker:git
   stage: test
+
+  before_script:
+    - export http_proxy=${PROXY}
+    - export https_proxy=${PROXY}
+    - export no_proxy=${NO_PROXY}
+    - sh docker.sh
+  script:
+    - npm i
+    - npm run test-ci
   only:
     - beta
   when: manual
   allow_failure: true
-  script:
-    - npm i
-    - npm run test-ci
 
 publish:
   stage: build
