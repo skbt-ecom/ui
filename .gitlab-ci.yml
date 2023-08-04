@@ -29,6 +29,7 @@ test:
     - export no_proxy=${NO_PROXY}
     - sh docker.sh
     - docker -v
+    - apt install netstat -y
   script:
     - npm i
     - npm run test-ci
