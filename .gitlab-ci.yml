@@ -29,7 +29,7 @@ test:
     - export no_proxy=${NO_PROXY}
     - sh docker.sh
     - docker -v
-    - apt install net-stat -y
+    - apt install net-tools -y
   script:
     - npm i
     - npm run test-ci
