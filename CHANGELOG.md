@@ -1,3 +1,39 @@
+# [3.0.0-beta.56](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.55...v3.0.0-beta.56) (2023-08-01)
+
+
+### Bug Fixes
+
+* **loki:** change app to docker ([c3c1489](https://gitlab.sovcombank.group/web/ecom/ui/commit/c3c148946854566b10f9f45e6e28dd810cc035bc))
+
+# [3.0.0-beta.55](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.54...v3.0.0-beta.55) (2023-08-01)
+
+
+### Bug Fixes
+
+* **ci/cd:** test loki command ([edd7a34](https://gitlab.sovcombank.group/web/ecom/ui/commit/edd7a344c085c2692f11c95a89c06394e4298b08))
+
+# [3.0.0-beta.54](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.53...v3.0.0-beta.54) (2023-08-01)
+
+
+### Bug Fixes
+
+* **ci/cd:** loki config ([f278f32](https://gitlab.sovcombank.group/web/ecom/ui/commit/f278f32ee287ec51dad43868825794c3da4e452f))
+
+# [3.0.0-beta.53](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.52...v3.0.0-beta.53) (2023-08-01)
+
+
+### Bug Fixes
+
+* **ci/cd:** gitlab test pipeline ([0cc0615](https://gitlab.sovcombank.group/web/ecom/ui/commit/0cc06157c66fa1c8abf85b2eb155c0c5bdc20948))
+* **ci/cd:** gitlab test pipeline ([959b525](https://gitlab.sovcombank.group/web/ecom/ui/commit/959b5251f190aa7409c3f340f5ba8c689c6c6e30))
+
+# [3.0.0-beta.52](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.51...v3.0.0-beta.52) (2023-08-01)
+
+
+### Features
+
+* **loki:** add loki ([e81b945](https://gitlab.sovcombank.group/web/ecom/ui/commit/e81b945b74fe70046efede78845ef1a9eb50df15))
+
 # [3.0.0-beta.51](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.50...v3.0.0-beta.51) (2023-07-25)
 
 

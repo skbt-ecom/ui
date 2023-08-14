@@ -22,17 +22,21 @@ lint:
 
 test:
   stage: test
+
+  before_script:
+    - export http_proxy=${PROXY}
+    - export https_proxy=${PROXY}
+    - export no_proxy=${NO_PROXY}
+    - sh docker.sh
+    - docker -v
+    - apt install net-tools -y
+  script:
+    - npm i
+    - npm run test-ci
   only:
     - beta
   when: manual
   allow_failure: true
-  script:
-    - npm ci
-    - npx playwright install --with-deps
-    - npm run build-storybook --quiet
-    - npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-      "npx http-server storybook-static --port 6006 --silent" \
-      "npx wait-on tcp:6006 && npm run test"
 
 publish:
   stage: build

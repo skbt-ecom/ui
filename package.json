@@ -8,7 +8,7 @@
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "scripts": {
-    "start": "concurrently -k -s first -n \"Storybook,Playroom\" -c \"magenta,blue\" \"npm run start-sb\" \"npm run start-pr\"",
+    "start": "concurrently -k -s first -n \"Storybook,Playroom\" -c \"magenta,blue\" \"npm:start-sb\" \"npm:start-pr\"",
     "prebuild": "rm -rf lib public",
     "build": "rollup -c",
     "start-sb": "storybook dev -p 6006 --no-open",
@@ -19,7 +19,9 @@
     "serve": "node serve.js",
     "lint": "eslint . --max-warnings 0",
     "ts-check": "tsc --noEmit --pretty",
-    "test": "test-storybook",
+    "test-loki": "concurrently -k -s first -n \"Storybook,Loki\" -c \"magenta,blue\" \"npm:start-sb\" \"npx loki test\"",
+    "pretest-ci": "npm run build-sb",
+    "test-ci": "npm run test-loki",
     "cz": "cz -a",
     "semantic-release": "semantic-release",
     "prepublish-ui": "npm run build && cp package.json lib",
@@ -91,6 +93,7 @@
     "file-loader": "^6.2.0",
     "husky": "^4.3.8",
     "lint-staged": "^13.2.2",
+    "loki": "^0.32.0",
     "playroom": "^0.32.0",
     "postcss": "^8.4.23",
     "postcss-cssnext": "^3.1.1",
@@ -142,6 +145,11 @@
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
+    }
+  },
+  "overrides": {
+    "loki": {
+      "@storybook/react": "$@storybook/react"
     }
   }
 }
