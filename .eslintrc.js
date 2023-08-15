@@ -103,6 +103,7 @@ module.exports = {
         argsIgnorePattern: "^_",
       },
     ],
+    "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
     "import/extensions": [
       "error",
