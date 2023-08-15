@@ -12,6 +12,10 @@ const autoprefixer = require("autoprefixer");
 const resolve = require("@rollup/plugin-node-resolve");
 const commonjs = require("@rollup/plugin-commonjs");
 const alias = require("@rollup/plugin-alias");
+const json = require("@rollup/plugin-json");
+const progress = require("rollup-plugin-progress");
+const sizes = require("rollup-plugin-sizes");
+const filesize = require("rollup-plugin-filesize");
 
 const simplevars = require("postcss-simple-vars");
 const nested = require("postcss-nested");
@@ -28,16 +32,27 @@ module.exports = [
       {
         file: `lib/${packageJson.main}`,
         format: "cjs",
+        sourcemap: true,
       },
       // es module
       {
         file: `lib/${packageJson.module}`,
         format: "esm",
+        sourcemap: true,
       },
     ],
     // external deps
     external: ["react", "react-dom"],
+    onwarn(warning, warn) {
+      // for hide 'use client' warning
+      if (warning.code === "MODULE_LEVEL_DIRECTIVE") {
+        return;
+      }
+      warn(warning);
+    },
     plugins: [
+      // progress bar
+      progress(),
       // for peerDeps
       peerDepsExternal(),
       // for aliases
@@ -46,6 +61,8 @@ module.exports = [
           "@src/": "src/",
         },
       }),
+      // json
+      json(),
       // Resolving third-party dependencies in node_modules
       resolve(),
       // Bundling to CommonJS format (module.exports/require())
@@ -67,6 +84,8 @@ module.exports = [
       svgr({ icon: true }),
       // min js bundle
       terser(),
+      sizes(),
+      filesize(),
     ],
   },
   // for types
