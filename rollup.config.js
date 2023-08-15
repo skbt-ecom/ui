@@ -11,6 +11,7 @@ const peerDepsExternal = require("rollup-plugin-peer-deps-external");
 const autoprefixer = require("autoprefixer");
 const resolve = require("@rollup/plugin-node-resolve");
 const commonjs = require("@rollup/plugin-commonjs");
+const alias = require("@rollup/plugin-alias");
 
 const simplevars = require("postcss-simple-vars");
 const nested = require("postcss-nested");
@@ -39,6 +40,12 @@ module.exports = [
     plugins: [
       // for peerDeps
       peerDepsExternal(),
+      // for aliases
+      alias({
+        entries: {
+          "@src/": "src/",
+        },
+      }),
       // Resolving third-party dependencies in node_modules
       resolve(),
       // Bundling to CommonJS format (module.exports/require())

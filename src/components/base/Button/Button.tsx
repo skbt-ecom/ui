@@ -1,5 +1,6 @@
 import type { ButtonProps as MuiButtonProps } from "@mui/material";
 import { Button as MuiButton } from "@mui/material";
+import { classNames } from "@src/utils/classNames";
 
 // Only include variant, size, and color
 type ButtonBaseProps = Pick<MuiButtonProps, "variant" | "size" | "color" | "className">;
@@ -13,8 +14,14 @@ export interface ButtonProps extends ButtonBaseProps {
 }
 
 export const Button = ({ children, handleClick, ...props }: ButtonProps) => {
+  // test alias - TODO:: remove
+  const onClick = () => {
+    console.log(classNames);
+    handleClick?.();
+  };
+
   return (
-    <MuiButton onClick={handleClick} {...props}>
+    <MuiButton onClick={onClick} {...props}>
       {children}
     </MuiButton>
   );
