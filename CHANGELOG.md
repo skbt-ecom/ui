@@ -1,3 +1,10 @@
+# [3.0.0-beta.57](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.56...v3.0.0-beta.57) (2023-08-15)
+
+
+### Features
+
+* **lib:** add alias support (@src/) ([4144c55](https://gitlab.sovcombank.group/web/ecom/ui/commit/4144c5590533fdd763ecc4bfa307602eafbc15c7))
+
 # [3.0.0-beta.56](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.55...v3.0.0-beta.56) (2023-08-01)
 
 
