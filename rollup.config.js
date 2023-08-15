@@ -16,6 +16,7 @@ const json = require("@rollup/plugin-json");
 const progress = require("rollup-plugin-progress");
 const sizes = require("rollup-plugin-sizes");
 const filesize = require("rollup-plugin-filesize");
+const copy = require("rollup-plugin-copy");
 
 const simplevars = require("postcss-simple-vars");
 const nested = require("postcss-nested");
@@ -84,6 +85,23 @@ module.exports = [
       svgr({ icon: true }),
       // min js bundle
       terser(),
+      copy({
+        copyOnce: true,
+        flatten: false,
+        targets: [
+          {
+            src: [
+              "src/**/*.(js|ts|jsx|tsx)",
+              "**/assets/**",
+              "!src/**/index.ts",
+              "!**/*.(stories|test|spec).*",
+              "!**/(storybook|playroom)/**",
+              "!**/node_modules/**",
+            ],
+            dest: "lib/src/",
+          },
+        ],
+      }),
       sizes(),
       filesize(),
     ],
