@@ -1,3 +1,10 @@
+# [3.0.0-beta.59](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.58...v3.0.0-beta.59) (2023-08-15)
+
+
+### Features
+
+* **lib:** add src files to final bundle ([8819535](https://gitlab.sovcombank.group/web/ecom/ui/commit/881953597788ffd6f81b12c0dfd2544289fa806b))
+
 # [3.0.0-beta.58](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.57...v3.0.0-beta.58) (2023-08-15)
 
 
