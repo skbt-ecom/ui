@@ -31,8 +31,8 @@ type Props = {
 const Header = ({
   children,
   btnText,
-  hintTitle = "Халва.Десятка в подарок",
-  hintText = "Оформите карту «Халва» сейчас и получите подписку «Халва.Десятка» в подарок. Раскройте все возможности Халвы по максимуму!",
+  // hintTitle = "Халва.Десятка в подарок",
+  // hintText = "Оформите карту «Халва» сейчас и получите подписку «Халва.Десятка» в подарок. Раскройте все возможности Халвы по максимуму!",
   countDownTime,
   hasRightSection = true,
   hasBtn = true,
@@ -57,8 +57,6 @@ const Header = ({
     },
   }));
 
-  const phoneClasses = { phoneContainer: styles.phoneContainer };
-
   return (
     <header className={clsx({ [styles.shadow]: hasShadow })}>
       <MainContainer>
@@ -70,7 +68,7 @@ const Header = ({
           {children}
           {hasRightSection && (
             <div className={styles.rightSection}>
-              {hasPhone && <Phone {...PhoneProps} classes={phoneClasses} />}
+              {hasPhone && <Phone {...PhoneProps} />}
               {hasHint && <div className={styles.halvaDesyatka} />}
               {hasTimer && <Timer countDownTime={countDownTime} />}
               {hasBtn && <Button>{btnText}</Button>}

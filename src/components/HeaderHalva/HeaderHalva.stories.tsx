@@ -12,6 +12,11 @@ const meta: Meta<typeof HeaderHalva> = {
   tags: ["autodocs"],
   args: {
     btnText: "Оформить карту",
+    hasRightSection: true,
+    hasHint: false,
+    hasTimer: false,
+    hasPhone: false,
+    hasShadow: false,
   },
 };
 

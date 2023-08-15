@@ -12,7 +12,7 @@ export const darkTheme = createTheme({
     },
     text: {
       primary: ThemePalleteHalva.BLACK_PRIMARY,
-      secondary: ThemePalleteHalva.BLACK_PRIMARY,
+      secondary: ThemePalleteHalva.SECONDARY,
     },
   },
 });

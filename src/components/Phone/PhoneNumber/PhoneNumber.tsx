@@ -1,21 +1,20 @@
 import { styled } from "@mui/material";
 
 type PhoneNumberProps = {
-  number?: string;
+  value?: string;
 };
 
 const PhoneLink = styled("a")(({ theme }) => ({
   color: [theme.palette.text.primary],
   fontWeight: 500,
-  fontSize: 22,
   textDecoration: "none",
-  lineHeight: 1,
-  display: "block",
+  fontSize: "22px",
+  lineHeight: "22px",
 }));
 
-const PhoneNumber = ({ number }: PhoneNumberProps) => (
-  <PhoneLink rel="nofollow" href={`tel:${number}`}>
-    {number}
+const PhoneNumber = ({ value }: PhoneNumberProps) => (
+  <PhoneLink rel="nofollow" href={`tel:${value}`}>
+    {value}
   </PhoneLink>
 );
 

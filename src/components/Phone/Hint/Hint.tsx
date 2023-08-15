@@ -1,9 +1,15 @@
 import { styled } from "@mui/material";
 
-const Hint = styled("span")(({ theme }) => ({
+const Span = styled("span")(({ theme }) => ({
   color: [theme.palette.text.secondary],
-  marginTop: 4,
-  fontSize: 12,
+  fontSize: "12px",
+  lineHeight: "12px",
 }));
+
+type HintProps = {
+  text: string;
+};
+
+const Hint = ({ text }: HintProps) => <Span>{text}</Span>;
 
 export default Hint;
