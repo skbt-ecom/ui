@@ -1,3 +1,10 @@
+# [3.0.0-beta.58](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.57...v3.0.0-beta.58) (2023-08-15)
+
+
+### Features
+
+* **rollup:** add plugins (progress/sizes) and json support ([b97443c](https://gitlab.sovcombank.group/web/ecom/ui/commit/b97443c8ca56706e9fd77a48843a750c0e673c03))
+
 # [3.0.0-beta.57](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.56...v3.0.0-beta.57) (2023-08-15)
 
 
