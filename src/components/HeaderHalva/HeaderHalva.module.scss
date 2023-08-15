@@ -19,6 +19,10 @@
 .rightSection {
   display: flex;
   align-items: center;
+
+  & > :last-child {
+    text-align: right;
+  }
 }
 
 .logos {

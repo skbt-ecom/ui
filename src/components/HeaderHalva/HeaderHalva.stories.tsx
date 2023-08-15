@@ -48,7 +48,7 @@ export const WithPhone: Story = {
     hasBtn: false,
     hasPhone: true,
     PhoneProps: {
-      phoneHint: "Для звонков по России (бесплатно)",
+      phoneHint: "Звонок по России (бесплатно)",
       phones: ["8 800 100-10-20"],
     },
   },
