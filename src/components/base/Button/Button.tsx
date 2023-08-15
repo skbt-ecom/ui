@@ -16,6 +16,7 @@ export interface ButtonProps extends ButtonBaseProps {
 export const Button = ({ children, handleClick, ...props }: ButtonProps) => {
   // test alias - TODO:: remove
   const onClick = () => {
+    // eslint-disable-next-line
     console.log(classNames);
     handleClick?.();
   };
