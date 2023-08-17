@@ -1,3 +1,10 @@
+# [3.0.0-beta.60](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.59...v3.0.0-beta.60) (2023-08-17)
+
+
+### Bug Fixes
+
+* **package-lock.json:** fix playroom in storybook bug ([aa75ec8](https://gitlab.sovcombank.group/web/ecom/ui/commit/aa75ec8873d159ac8b56b62387c19e6d16448e62))
+
 # [3.0.0-beta.59](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.58...v3.0.0-beta.59) (2023-08-15)
 
 
