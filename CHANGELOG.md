@@ -1,3 +1,10 @@
+# [3.0.0-beta.61](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.60...v3.0.0-beta.61) (2023-08-18)
+
+
+### Features
+
+* **lib:** add babel support to rollup and webpack ([7278ff0](https://gitlab.sovcombank.group/web/ecom/ui/commit/7278ff0023ea25adad06facf508054f8387cc446))
+
 # [3.0.0-beta.60](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.59...v3.0.0-beta.60) (2023-08-17)
 
 
