@@ -66,6 +66,13 @@ const config = {
           "url-loader",
         ],
       },
+      {
+        test: /\.(?:js|jsx|ts|tsx)$/,
+        exclude: /(node_modules|lib|public)/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
     ];
     return config;
   },

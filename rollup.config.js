@@ -17,6 +17,7 @@ const progress = require("rollup-plugin-progress");
 const sizes = require("rollup-plugin-sizes");
 const filesize = require("rollup-plugin-filesize");
 const copy = require("rollup-plugin-copy");
+const babel = require("@rollup/plugin-babel");
 
 const simplevars = require("postcss-simple-vars");
 const nested = require("postcss-nested");
@@ -66,6 +67,8 @@ module.exports = [
       json(),
       // Resolving third-party dependencies in node_modules
       resolve(),
+      // Babel support
+      babel({ babelHelpers: "bundled" }),
       // Bundling to CommonJS format (module.exports/require())
       commonjs(),
       // ts
@@ -85,6 +88,7 @@ module.exports = [
       svgr({ icon: true }),
       // min js bundle
       terser(),
+      // add source files
       copy({
         copyOnce: true,
         flatten: false,
@@ -117,8 +121,4 @@ module.exports = [
 ];
 
 // TODO:: testing
-
-// "babel-loader": "^8.3.0",
-// rollup-plugin-babel
 // process.env is working?
-// svg with sb?
