@@ -5,7 +5,14 @@ module.exports = {
   },
   extends: ["eslint:recommended", "plugin:react/recommended", "airbnb", "airbnb/hooks", "prettier"],
   plugins: ["react", "unused-imports", "prettier"],
+
   overrides: [
+    {
+      files: ["**/*.js"],
+      rules: {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
     {
       files: ["**/*.ts", "**/*.tsx"],
       plugins: ["@typescript-eslint", "prettier"],
@@ -23,6 +30,7 @@ module.exports = {
         sourceType: "module",
       },
       rules: {
+        "import/no-extraneous-dependencies": "off",
         "@typescript-eslint/quotes": ["error", "double"],
         "@typescript-eslint/consistent-type-imports": "error",
         "@typescript-eslint/no-explicit-any": "error",
@@ -103,7 +111,6 @@ module.exports = {
         argsIgnorePattern: "^_",
       },
     ],
-    "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
     "import/extensions": [
       "error",

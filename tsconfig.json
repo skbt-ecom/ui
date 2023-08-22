@@ -24,7 +24,9 @@
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": ["node", "jest", "@testing-library/jest-dom"]
   },
+
   "exclude": ["lib", ".cache", "node_modules"]
 }
