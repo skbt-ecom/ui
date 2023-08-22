@@ -1,3 +1,10 @@
+# [3.0.0-beta.62](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.61...v3.0.0-beta.62) (2023-08-22)
+
+
+### Features
+
+* **test:** add jest ([f930ec2](https://gitlab.sovcombank.group/web/ecom/ui/commit/f930ec28f27960ef1d525c28dec9d73eca068e44))
+
 # [3.0.0-beta.61](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.60...v3.0.0-beta.61) (2023-08-18)
 
 
