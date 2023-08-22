@@ -1,3 +1,16 @@
+# [3.0.0-beta.64](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.63...v3.0.0-beta.64) (2023-08-22)
+
+
+### Bug Fixes
+
+* **jest:** add alias support ([5a39d57](https://gitlab.sovcombank.group/web/ecom/ui/commit/5a39d57ace938114ef617d8e5963db90aa9765c0))
+* **test:** sum tests ([645f72c](https://gitlab.sovcombank.group/web/ecom/ui/commit/645f72cbbbf72f91eaae49bc8902984ab8da1150))
+
+
+### Features
+
+* **eslint:** add jest rules ([15e547a](https://gitlab.sovcombank.group/web/ecom/ui/commit/15e547a444b115689a4ae726e659448c0315001a))
+
 # [3.0.0-beta.63](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.62...v3.0.0-beta.63) (2023-08-22)
 
 
