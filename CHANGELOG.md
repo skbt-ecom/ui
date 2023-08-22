@@ -1,3 +1,10 @@
+# [3.0.0-beta.63](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.62...v3.0.0-beta.63) (2023-08-22)
+
+
+### Bug Fixes
+
+* **ci/cd:** jest output error ([8f99673](https://gitlab.sovcombank.group/web/ecom/ui/commit/8f99673bbc305f89690153c368bbccea21380d06))
+
 # [3.0.0-beta.62](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.61...v3.0.0-beta.62) (2023-08-22)
 
 
