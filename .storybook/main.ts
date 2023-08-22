@@ -16,6 +16,7 @@ const config = {
     //  coming soon  https://github.com/storybookjs/addon-designs
     // "storybook-addon-designs",
     "storybook-addon-playroom",
+    "@storybook/addon-jest",
   ],
   framework: {
     name: "@storybook/react-webpack5",
