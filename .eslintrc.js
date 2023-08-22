@@ -2,11 +2,18 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    "jest/globals": true,
   },
   extends: ["eslint:recommended", "plugin:react/recommended", "airbnb", "airbnb/hooks", "prettier"],
   plugins: ["react", "unused-imports", "prettier"],
 
   overrides: [
+    {
+      files: ["**/*.{test,spec}.{js,jsx,ts,tsx}"],
+      plugins: ["jest"],
+      extends: ["plugin:jest/all"],
+      rules: {},
+    },
     {
       files: ["**/*.js"],
       rules: {
