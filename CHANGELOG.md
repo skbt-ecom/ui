@@ -1,3 +1,10 @@
+# [3.0.0-beta.65](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.64...v3.0.0-beta.65) (2023-08-23)
+
+
+### Features
+
+* **sb:** add actions and interactions addons ([433397f](https://gitlab.sovcombank.group/web/ecom/ui/commit/433397f8b75ca51f0a3ef41d02ad921dfdcf91db))
+
 # [3.0.0-beta.64](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.63...v3.0.0-beta.64) (2023-08-22)
 
 
