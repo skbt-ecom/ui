@@ -1,5 +1,6 @@
 import { styled } from "@mui/material";
-import { Countdown } from "./CountDown";
+
+import Countdown from "./CountDown/Countdown";
 import { GiftIcon } from "../../Icons";
 
 type TimerProps = {

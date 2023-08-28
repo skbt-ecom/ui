@@ -1,5 +1,5 @@
-import { styled } from "@mui/material";
 import { useEffect, useState } from "react";
+import { styled } from "@mui/material";
 
 type CountdownProps = {
   countDownTime?: number;

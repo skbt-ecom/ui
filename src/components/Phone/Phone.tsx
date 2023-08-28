@@ -1,5 +1,5 @@
-import { PhoneNumber } from "./PhoneNumber";
-import { Hint } from "./Hint";
+import PhoneNumber from "./PhoneNumber/PhoneNumber";
+import Hint from "./Hint/Hint";
 
 import styles from "./Phone.module.scss";
 
@@ -9,7 +9,7 @@ export type PhoneProps = {
 };
 
 const Phone = ({
-  phoneHint = "Для звонков по России (бесплатно)",
+  phoneHint = "Звонок по России (бесплатно)",
   phoneNumber = "8 800 100-10-20",
 }: PhoneProps) => {
   return (
