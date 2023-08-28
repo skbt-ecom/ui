@@ -27,7 +27,7 @@ export const TestComponent = ({ onClick }: Props) => {
         }}
         data-testid="btn"
       >
-        {clicked ? "Clicked" : "Click Me"}
+        {clicked ? "Clicked" : "Click me"}
       </button>
     </div>
   );

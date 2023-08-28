@@ -12,6 +12,9 @@ stages:
 lint:
   stage: lint
   before_script:
+    - export http_proxy=${PROXY}
+    - export https_proxy=${PROXY}
+    - export no_proxy=${NO_PROXY}
     - npm config set registry $NPM_REGISTRY/npm-all/
   script:
     - npm ci
