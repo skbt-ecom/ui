@@ -1,3 +1,15 @@
+# [3.0.0-beta.66](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.65...v3.0.0-beta.66) (2023-08-28)
+
+
+### Bug Fixes
+
+* **ci/cd:** add proxy ([7274996](https://gitlab.sovcombank.group/web/ecom/ui/commit/727499637434b826cc5a067d283eb96c0761351c))
+
+
+### Features
+
+* **test:** add test-runner ([8bb2741](https://gitlab.sovcombank.group/web/ecom/ui/commit/8bb27416735c0b033f5123460241f793fe85b31a))
+
 # [3.0.0-beta.65](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.64...v3.0.0-beta.65) (2023-08-23)
 
 
