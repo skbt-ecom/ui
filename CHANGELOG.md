@@ -1,3 +1,11 @@
+# [3.0.0-beta.67](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.66...v3.0.0-beta.67) (2023-08-28)
+
+
+### Bug Fixes
+
+* **ci/cd:** add missing deps at gitlab ([9e34805](https://gitlab.sovcombank.group/web/ecom/ui/commit/9e34805b9938c7bcbb785f1e1d5ec811b9da06c1))
+* **git:** resolve conflicts ([f55ba07](https://gitlab.sovcombank.group/web/ecom/ui/commit/f55ba07e829943de6c18ae25fac8ec74bff98ea3))
+
 # [3.0.0-beta.66](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.65...v3.0.0-beta.66) (2023-08-28)
 
 
