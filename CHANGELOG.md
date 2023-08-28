@@ -1,3 +1,226 @@
+# [3.0.0-beta.66](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.65...v3.0.0-beta.66) (2023-08-28)
+
+
+### Bug Fixes
+
+* **ci/cd:** add proxy ([7274996](https://gitlab.sovcombank.group/web/ecom/ui/commit/727499637434b826cc5a067d283eb96c0761351c))
+
+
+### Features
+
+* **test:** add test-runner ([8bb2741](https://gitlab.sovcombank.group/web/ecom/ui/commit/8bb27416735c0b033f5123460241f793fe85b31a))
+
+# [3.0.0-beta.65](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.64...v3.0.0-beta.65) (2023-08-23)
+
+
+### Features
+
+* **sb:** add actions and interactions addons ([433397f](https://gitlab.sovcombank.group/web/ecom/ui/commit/433397f8b75ca51f0a3ef41d02ad921dfdcf91db))
+
+# [3.0.0-beta.64](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.63...v3.0.0-beta.64) (2023-08-22)
+
+
+### Bug Fixes
+
+* **jest:** add alias support ([5a39d57](https://gitlab.sovcombank.group/web/ecom/ui/commit/5a39d57ace938114ef617d8e5963db90aa9765c0))
+* **test:** sum tests ([645f72c](https://gitlab.sovcombank.group/web/ecom/ui/commit/645f72cbbbf72f91eaae49bc8902984ab8da1150))
+
+
+### Features
+
+* **eslint:** add jest rules ([15e547a](https://gitlab.sovcombank.group/web/ecom/ui/commit/15e547a444b115689a4ae726e659448c0315001a))
+
+# [3.0.0-beta.63](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.62...v3.0.0-beta.63) (2023-08-22)
+
+
+### Bug Fixes
+
+* **ci/cd:** jest output error ([8f99673](https://gitlab.sovcombank.group/web/ecom/ui/commit/8f99673bbc305f89690153c368bbccea21380d06))
+
+# [3.0.0-beta.62](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.61...v3.0.0-beta.62) (2023-08-22)
+
+
+### Features
+
+* **test:** add jest ([f930ec2](https://gitlab.sovcombank.group/web/ecom/ui/commit/f930ec28f27960ef1d525c28dec9d73eca068e44))
+
+# [3.0.0-beta.61](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.60...v3.0.0-beta.61) (2023-08-18)
+
+
+### Features
+
+* **lib:** add babel support to rollup and webpack ([7278ff0](https://gitlab.sovcombank.group/web/ecom/ui/commit/7278ff0023ea25adad06facf508054f8387cc446))
+
+# [3.0.0-beta.60](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.59...v3.0.0-beta.60) (2023-08-17)
+
+
+### Bug Fixes
+
+* **package-lock.json:** fix playroom in storybook bug ([aa75ec8](https://gitlab.sovcombank.group/web/ecom/ui/commit/aa75ec8873d159ac8b56b62387c19e6d16448e62))
+
+# [3.0.0-beta.59](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.58...v3.0.0-beta.59) (2023-08-15)
+
+
+### Features
+
+* **lib:** add src files to final bundle ([8819535](https://gitlab.sovcombank.group/web/ecom/ui/commit/881953597788ffd6f81b12c0dfd2544289fa806b))
+
+# [3.0.0-beta.58](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.57...v3.0.0-beta.58) (2023-08-15)
+
+
+### Features
+
+* **rollup:** add plugins (progress/sizes) and json support ([b97443c](https://gitlab.sovcombank.group/web/ecom/ui/commit/b97443c8ca56706e9fd77a48843a750c0e673c03))
+
+# [3.0.0-beta.57](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.56...v3.0.0-beta.57) (2023-08-15)
+
+
+### Features
+
+* **lib:** add alias support (@src/) ([4144c55](https://gitlab.sovcombank.group/web/ecom/ui/commit/4144c5590533fdd763ecc4bfa307602eafbc15c7))
+
+# [3.0.0-beta.56](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.55...v3.0.0-beta.56) (2023-08-01)
+
+
+### Bug Fixes
+
+* **loki:** change app to docker ([c3c1489](https://gitlab.sovcombank.group/web/ecom/ui/commit/c3c148946854566b10f9f45e6e28dd810cc035bc))
+
+# [3.0.0-beta.55](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.54...v3.0.0-beta.55) (2023-08-01)
+
+
+### Bug Fixes
+
+* **ci/cd:** test loki command ([edd7a34](https://gitlab.sovcombank.group/web/ecom/ui/commit/edd7a344c085c2692f11c95a89c06394e4298b08))
+
+# [3.0.0-beta.54](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.53...v3.0.0-beta.54) (2023-08-01)
+
+
+### Bug Fixes
+
+* **ci/cd:** loki config ([f278f32](https://gitlab.sovcombank.group/web/ecom/ui/commit/f278f32ee287ec51dad43868825794c3da4e452f))
+
+# [3.0.0-beta.53](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.52...v3.0.0-beta.53) (2023-08-01)
+
+
+### Bug Fixes
+
+* **ci/cd:** gitlab test pipeline ([0cc0615](https://gitlab.sovcombank.group/web/ecom/ui/commit/0cc06157c66fa1c8abf85b2eb155c0c5bdc20948))
+* **ci/cd:** gitlab test pipeline ([959b525](https://gitlab.sovcombank.group/web/ecom/ui/commit/959b5251f190aa7409c3f340f5ba8c689c6c6e30))
+
+# [3.0.0-beta.52](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.51...v3.0.0-beta.52) (2023-08-01)
+
+
+### Features
+
+* **loki:** add loki ([e81b945](https://gitlab.sovcombank.group/web/ecom/ui/commit/e81b945b74fe70046efede78845ef1a9eb50df15))
+
+# [3.0.0-beta.51](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.50...v3.0.0-beta.51) (2023-07-25)
+
+
+### Features
+
+* **unimported:** add unimported ([51dcca3](https://gitlab.sovcombank.group/web/ecom/ui/commit/51dcca3d4d8136fcc9cc96d11b72dfd361f32894))
+
+# [3.0.0-beta.50](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.49...v3.0.0-beta.50) (2023-07-25)
+
+
+### Features
+
+* **serve:** remove host ([11641de](https://gitlab.sovcombank.group/web/ecom/ui/commit/11641debc82b4f35f60e5d27142ad25ae26f764f))
+
+# [3.0.0-beta.49](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.48...v3.0.0-beta.49) (2023-07-24)
+
+
+### Bug Fixes
+
+* **serve:** change host ([4d6ac76](https://gitlab.sovcombank.group/web/ecom/ui/commit/4d6ac766b3aad9448d78dbe1c3b29d9e105af18a))
+
+# [3.0.0-beta.48](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2023-07-24)
+
+
+### Bug Fixes
+
+* **serce:** add url for playroom ([8ff13c1](https://gitlab.sovcombank.group/web/ecom/ui/commit/8ff13c12cc4b6e3e447448a99b378d1424266060))
+
+# [3.0.0-beta.47](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2023-07-24)
+
+
+### Bug Fixes
+
+* **serve:** remove some code ([31334c1](https://gitlab.sovcombank.group/web/ecom/ui/commit/31334c1534f7993f64cbbdf4401a7b3e3611f44f))
+
+# [3.0.0-beta.46](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.45...v3.0.0-beta.46) (2023-07-20)
+
+
+### Bug Fixes
+
+* **storybook:** playroom url and viewports default ([0024ad4](https://gitlab.sovcombank.group/web/ecom/ui/commit/0024ad42e2587eba971ee466ddc3683d7e22ea4f))
+
+# [3.0.0-beta.45](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.44...v3.0.0-beta.45) (2023-07-19)
+
+
+### Features
+
+* **sb:** add playroom addon ([6c9d079](https://gitlab.sovcombank.group/web/ecom/ui/commit/6c9d07982d35dce3ba48f44083419c53768f2d93))
+
+# [3.0.0-beta.44](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2023-07-19)
+
+
+### Bug Fixes
+
+* **lib:** remove width:100% ([d381d30](https://gitlab.sovcombank.group/web/ecom/ui/commit/d381d30706c122a1e2aa7646b9f984150590dcba))
+
+# [3.0.0-beta.43](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.42...v3.0.0-beta.43) (2023-07-17)
+
+
+### Features
+
+* **playroom:** add playroom ([f8807d5](https://gitlab.sovcombank.group/web/ecom/ui/commit/f8807d5c7906ad8e6d614de0d92dbd2251a4fec8))
+
+# [3.0.0-beta.42](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.41...v3.0.0-beta.42) (2023-07-13)
+
+
+### Bug Fixes
+
+* **docker:** remove some code ([50b8281](https://gitlab.sovcombank.group/web/ecom/ui/commit/50b828160c1744e3fc612dbc8038fc377839f0ef))
+
+# [3.0.0-beta.41](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.40...v3.0.0-beta.41) (2023-07-13)
+
+
+### Bug Fixes
+
+* **docker:** add clean cache ([ed7e494](https://gitlab.sovcombank.group/web/ecom/ui/commit/ed7e494e9385aa146a8bbd99d192914e009a29fd))
+
+# [3.0.0-beta.40](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.39...v3.0.0-beta.40) (2023-07-13)
+
+
+### Bug Fixes
+
+* **dockerfile:** remove tree for ls ([ffdccf6](https://gitlab.sovcombank.group/web/ecom/ui/commit/ffdccf62e5effe468f07f564d45242809238cfbb))
+
+# [3.0.0-beta.39](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.38...v3.0.0-beta.39) (2023-07-13)
+
+
+### Bug Fixes
+
+* **docker:** add new command ([005a90b](https://gitlab.sovcombank.group/web/ecom/ui/commit/005a90b1d9635369a5241a01be130347dc96d62f))
+
+# [3.0.0-beta.38](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.37...v3.0.0-beta.38) (2023-07-13)
+
+
+### Bug Fixes
+
+* **docker:** change ls to tree ([7317856](https://gitlab.sovcombank.group/web/ecom/ui/commit/73178565b071844316f4b1cd0f42a2237d967467))
+
+# [3.0.0-beta.37](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.36...v3.0.0-beta.37) (2023-07-13)
+
+
+### Bug Fixes
+
+* 🐛 serve.js ([1c6a848](https://gitlab.sovcombank.group/web/ecom/ui/commit/1c6a84856d5b15ec7c425a5c69d74e1e3675728a))
+* **ci:** remove testing and playwright ([d97ad8d](https://gitlab.sovcombank.group/web/ecom/ui/commit/d97ad8db066235d80ccc3e309fa6ba6f96766af2))
+
 # [3.0.0-beta.36](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.35...v3.0.0-beta.36) (2023-07-11)
 
 
