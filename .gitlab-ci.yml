@@ -31,6 +31,7 @@ test:
   allow_failure: true
   script:
     - npm i
+    - npx playwright install-deps
     - npm run test-ci
 
 publish:
