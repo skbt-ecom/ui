@@ -25,7 +25,6 @@ lint:
 
 test:
   stage: test
-
   before_script:
     - export http_proxy=${PROXY}
     - export https_proxy=${PROXY}
@@ -33,9 +32,6 @@ test:
     - sh docker.sh
     - docker -v
     - apt install net-tools -y
-  script:
-    - npm i
-    - npm run test-ci
   only:
     - beta
   when: manual

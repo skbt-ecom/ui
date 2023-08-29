@@ -10,7 +10,7 @@ const config = {
     "@storybook/preset-scss",
     "@storybook/addon-jest",
     "@storybook/addon-storysource",
-    // "@storybook/addon-a11y",
+    "@storybook/addon-a11y",
     "@storybook/addon-styling",
     //  storybook 6 (coming soon)
     // "storybook-addon-material-ui"

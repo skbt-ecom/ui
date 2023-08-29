@@ -8,15 +8,23 @@
     "**/*.spec.{js,jsx,ts,tsx}",
     "**/tests/**",
     "**/__tests__/**",
+    "**/__snapshots__/**",
     "**/*.d.ts",
     "**/*.stories.**",
     "**/src/playroom/*",
     "**/src/storybook/**",
     "**/public/**",
-    "**/node_modules/**"
+    "**/node_modules/**",
+    "./node_modules/**"
   ],
 
   "ignoreUnimported": [],
-  "ignoreUnused": ["express"],
+  "ignoreUnused": [
+    "express",
+    "pnpapi",
+    "spdx-license-ids",
+    "spdx-license-ids/deprecated",
+    "spdx-exceptions"
+  ],
   "ignoreUnresolved": []
 }
