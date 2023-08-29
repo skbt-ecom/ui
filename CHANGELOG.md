@@ -1,3 +1,10 @@
+# [3.0.0-beta.68](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.67...v3.0.0-beta.68) (2023-08-29)
+
+
+### Features
+
+* **test:** add a11y test ([cc059fb](https://gitlab.sovcombank.group/web/ecom/ui/commit/cc059fb46332bed68ed777ca5db876617dc812a2))
+
 # [3.0.0-beta.67](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.66...v3.0.0-beta.67) (2023-08-28)
 
 
