@@ -1,3 +1,16 @@
+# [3.0.0-beta.70](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.69...v3.0.0-beta.70) (2023-08-29)
+
+
+### Bug Fixes
+
+* **ci/cd:** add proxies ([e7431f8](https://gitlab.sovcombank.group/web/ecom/ui/commit/e7431f89b2dc20c5022528f977acade1ccaf72df))
+* **ci/cd:** add proxies to unit ([a311280](https://gitlab.sovcombank.group/web/ecom/ui/commit/a3112801c2f43072a9052e9c7e4fc9165010bb9c))
+
+
+### Features
+
+* **ci/cd:** add jobs ([21bb393](https://gitlab.sovcombank.group/web/ecom/ui/commit/21bb393d912479a452d24bc74d9bc8e6b0332b6d))
+
 # [3.0.0-beta.69](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.68...v3.0.0-beta.69) (2023-08-29)
 
 
