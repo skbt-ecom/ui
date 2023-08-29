@@ -65,7 +65,6 @@ visual:
   only:
     - beta
     - merge_requests
-  when: manual
   allow_failure: true
   script:
     - npm i
