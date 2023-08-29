@@ -1,3 +1,10 @@
+# [3.0.0-beta.69](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.68...v3.0.0-beta.69) (2023-08-29)
+
+
+### Bug Fixes
+
+* **unimported:** remove kastyl ([5888e69](https://gitlab.sovcombank.group/web/ecom/ui/commit/5888e69bd4c8338959f35979354710d6866d4b6c))
+
 # [3.0.0-beta.68](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.67...v3.0.0-beta.68) (2023-08-29)
 
 
