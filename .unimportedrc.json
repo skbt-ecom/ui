@@ -1,6 +1,6 @@
 {
   "preset": "node",
-  "entry": ["src/index.ts", "src/*.{ts,tsx}", ".storybook/*"],
+  "entry": ["src/index.ts", "src/*.{ts,tsx}", ".storybook/preview.ts"],
   "extensions": [".js", ".jsx", ".ts", ".tsx"],
   "ignorePatterns": [
     "**/*.tests.{js,jsx,ts,tsx}",
@@ -14,17 +14,9 @@
     "**/src/playroom/*",
     "**/src/storybook/**",
     "**/public/**",
-    "**/node_modules/**",
-    "./node_modules/**"
+    "**/node_modules/**"
   ],
-
   "ignoreUnimported": [],
-  "ignoreUnused": [
-    "express",
-    "pnpapi",
-    "spdx-license-ids",
-    "spdx-license-ids/deprecated",
-    "spdx-exceptions"
-  ],
+  "ignoreUnused": ["express"],
   "ignoreUnresolved": []
 }
