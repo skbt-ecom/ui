@@ -2,10 +2,24 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    "jest/globals": true,
   },
   extends: ["eslint:recommended", "plugin:react/recommended", "airbnb", "airbnb/hooks", "prettier"],
   plugins: ["react", "unused-imports", "prettier"],
+
   overrides: [
+    {
+      files: ["**/*.{test,spec}.{js,jsx,ts,tsx}"],
+      plugins: ["jest"],
+      extends: ["plugin:jest/all"],
+      rules: {},
+    },
+    {
+      files: ["**/*.js"],
+      rules: {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
     {
       files: ["**/*.ts", "**/*.tsx"],
       plugins: ["@typescript-eslint", "prettier"],
@@ -23,6 +37,7 @@ module.exports = {
         sourceType: "module",
       },
       rules: {
+        "import/no-extraneous-dependencies": "off",
         "@typescript-eslint/quotes": ["error", "double"],
         "@typescript-eslint/consistent-type-imports": "error",
         "@typescript-eslint/no-explicit-any": "error",

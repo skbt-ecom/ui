@@ -1,3 +1,5 @@
+import path from "path";
+
 const config = {
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -6,8 +8,9 @@ const config = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/preset-scss",
+    "@storybook/addon-jest",
     "@storybook/addon-storysource",
-    // "@storybook/addon-a11y",
+    "@storybook/addon-a11y",
     "@storybook/addon-styling",
     //  storybook 6 (coming soon)
     // "storybook-addon-material-ui"
@@ -45,6 +48,10 @@ const config = {
   },
   webpackFinal: (config) => {
     config.resolve.modules = [...(config.resolve.modules || []), "./src"];
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@src": path.resolve(__dirname, "../src"),
+    };
     config.module.rules = [
       ...(config.module.rules || []),
       {
@@ -59,6 +66,13 @@ const config = {
           },
           "url-loader",
         ],
+      },
+      {
+        test: /\.(?:js|jsx|ts|tsx)$/,
+        exclude: /(node_modules|lib|public)/,
+        use: {
+          loader: "babel-loader",
+        },
       },
     ];
     return config;

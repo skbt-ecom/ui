@@ -11,6 +11,13 @@ const peerDepsExternal = require("rollup-plugin-peer-deps-external");
 const autoprefixer = require("autoprefixer");
 const resolve = require("@rollup/plugin-node-resolve");
 const commonjs = require("@rollup/plugin-commonjs");
+const alias = require("@rollup/plugin-alias");
+const json = require("@rollup/plugin-json");
+const progress = require("rollup-plugin-progress");
+const sizes = require("rollup-plugin-sizes");
+const filesize = require("rollup-plugin-filesize");
+const copy = require("rollup-plugin-copy");
+const babel = require("@rollup/plugin-babel");
 
 const simplevars = require("postcss-simple-vars");
 const nested = require("postcss-nested");
@@ -27,20 +34,41 @@ module.exports = [
       {
         file: `lib/${packageJson.main}`,
         format: "cjs",
+        sourcemap: true,
       },
       // es module
       {
         file: `lib/${packageJson.module}`,
         format: "esm",
+        sourcemap: true,
       },
     ],
     // external deps
     external: ["react", "react-dom"],
+    onwarn(warning, warn) {
+      // for hide 'use client' warning
+      if (warning.code === "MODULE_LEVEL_DIRECTIVE") {
+        return;
+      }
+      warn(warning);
+    },
     plugins: [
+      // progress bar
+      progress(),
       // for peerDeps
       peerDepsExternal(),
+      // for aliases
+      alias({
+        entries: {
+          "@src/": "src/",
+        },
+      }),
+      // json
+      json(),
       // Resolving third-party dependencies in node_modules
       resolve(),
+      // Babel support
+      babel({ babelHelpers: "bundled" }),
       // Bundling to CommonJS format (module.exports/require())
       commonjs(),
       // ts
@@ -60,6 +88,26 @@ module.exports = [
       svgr({ icon: true }),
       // min js bundle
       terser(),
+      // add source files
+      copy({
+        copyOnce: true,
+        flatten: false,
+        targets: [
+          {
+            src: [
+              "src/**/*.(js|ts|jsx|tsx)",
+              "**/assets/**",
+              "!src/**/index.ts",
+              "!**/*.(stories|test|spec).*",
+              "!**/(storybook|playroom)/**",
+              "!**/node_modules/**",
+            ],
+            dest: "lib/src/",
+          },
+        ],
+      }),
+      sizes(),
+      filesize(),
     ],
   },
   // for types
@@ -73,8 +121,4 @@ module.exports = [
 ];
 
 // TODO:: testing
-
-// "babel-loader": "^8.3.0",
-// rollup-plugin-babel
 // process.env is working?
-// svg with sb?

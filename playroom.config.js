@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   components: "./src/components/index.ts",
   outputPath: "public/playroom",
@@ -115,9 +117,9 @@ module.exports = {
 
     resolve: {
       extensions: [".js", ".ts", ".tsx"],
-      // alias: {
-      //   "@src/*": path.resolve(__dirname, "src/"),
-      // },
+      alias: {
+        "@src": path.resolve(__dirname, "src/"),
+      },
     },
   }),
 };

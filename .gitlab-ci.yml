@@ -4,25 +4,27 @@ variables:
   PORT: 3047
 
 stages:
-  - lint
   - test
   - build
   - deploy
 
 lint:
-  stage: lint
+  stage: test
   before_script:
+    - export http_proxy=${PROXY}
+    - export https_proxy=${PROXY}
+    - export no_proxy=${NO_PROXY}
     - npm config set registry $NPM_REGISTRY/npm-all/
   script:
     - npm ci
     - npm run lint
+    - npm run ts-check
     - npm run build
   only:
     - merge_requests
 
-test:
+unit:
   stage: test
-
   before_script:
     - export http_proxy=${PROXY}
     - export https_proxy=${PROXY}
@@ -30,13 +32,44 @@ test:
     - sh docker.sh
     - docker -v
     - apt install net-tools -y
-  script:
-    - npm i
-    - npm run test-ci
   only:
     - beta
-  when: manual
+    - merge_requests
+  script:
+    - npm i
+    - npm run test
+
+sb:
+  stage: test
+  before_script:
+    - export http_proxy=${PROXY}
+    - export https_proxy=${PROXY}
+    - export no_proxy=${NO_PROXY}
+    - sh docker.sh
+    - docker -v
+    - apt install net-tools -y
+  only:
+    - beta
+    - merge_requests
+  script:
+    - npm i
+    - npx playwright install-deps
+    - npm run test-sb
+
+visual:
+  stage: test
+  before_script:
+    - sh docker.sh
+    - docker -v
+    - apt install net-tools -y
+  only:
+    - beta
+    - merge_requests
   allow_failure: true
+  script:
+    - npm i
+    - npx playwright install-deps
+    - npm run test-loki
 
 publish:
   stage: build

@@ -4,6 +4,9 @@ import type { Preview } from "@storybook/react";
 import { CssBaseline } from "@mui/material";
 import { withThemeFromJSXProvider } from "@storybook/addon-styling";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { withTests } from "@storybook/addon-jest";
+
+import results from "../.jest-test-results.json";
 
 import { ThemeProvider } from "../src/components";
 
@@ -111,5 +114,8 @@ export const decorators = [
     defaultTheme: "red",
     Provider: ThemeProvider,
     GlobalStyles: CssBaseline,
+  }),
+  withTests({
+    results,
   }),
 ];
