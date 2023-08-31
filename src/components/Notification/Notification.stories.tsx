@@ -29,9 +29,7 @@ export const Reject: Story = {
   parameters: {
     playroom: {
       code: `
-        <MainContainer>
-          <Notification variant="reject"/>
-        </MainContainer>
+      <Notification variant="reject"/>
       `,
     },
   },
@@ -44,9 +42,7 @@ export const TechError: Story = {
   parameters: {
     playroom: {
       code: `
-        <MainContainer>
-          <Notification variant='techError'/>
-        </MainContainer>
+      <Notification variant='techError'/>
       `,
     },
   },
@@ -59,10 +55,8 @@ export const WeRecognizedYou: Story = {
   parameters: {
     playroom: {
       code: `
-      <MainContainer>
-        <Notification variant='weRecognizedYou'/>
-      </MainContainer>
-    `,
+      <Notification variant='weRecognizedYou'/>
+      `,
     },
   },
 };

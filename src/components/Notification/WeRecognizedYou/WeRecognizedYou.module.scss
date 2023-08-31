@@ -1,16 +1,17 @@
 @use "../../../core/styles/global.scss" as *;
 
 .container {
-  margin: 0 auto;
   max-width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   row-gap: 92px;
+  margin: 0 auto;
 
   @include tablet {
     row-gap: 126px;
+    padding-top: 48px;
   }
 
   @include desktop {
@@ -18,19 +19,28 @@
     align-items: flex-start;
     column-gap: 32px;
   }
+
+  @include desktop-only {
+    padding-top: 40px;
+  }
 }
 
 .wrapper {
   height: 100%;
-  padding: 48px 16px;
+  padding: 32px 0;
+  width: 100%;
 
   @include tablet {
-    padding: 48px 32px 70px;
+    padding: 32px 48px 70px;
   }
 
   @include desktop {
     max-width: 384px;
-    padding: 48px 32px;
+    padding: 48px;
+  }
+
+  @include large-desktop {
+    padding: 48px 40px;
   }
 }
 
@@ -46,30 +56,37 @@
 
 .subTitle {
   line-height: 22px;
+  width: 326px;
 
   @include tablet {
     margin-bottom: 0;
+    width: 336px;
+  }
+
+  @include desktop {
+    width: 298px;
   }
 }
 
 .btnContainer {
   background: #eef5fb;
   border-radius: 24px;
-  padding: 24px 20px;
+  padding: 24px 16px;
   max-width: 328px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
 
   @include desktop {
     max-width: 384px;
     padding: 32px 40px;
+    row-gap: 0;
   }
 }
 
 .text {
-  margin: 0 0 24px;
-
-  @include desktop {
-    margin: 0 0 35px;
-  }
+  font-family: "Montserrat";
+  margin: 0;
 }
 
 .img {
@@ -77,11 +94,17 @@
 
   @include desktop {
     display: block;
-    margin: 0 auto 12px;
+    margin: 35px auto 12px;
   }
 }
 
 .btn {
   width: 100%;
   text-transform: none !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  letter-spacing: 0.4px !important;
+  padding: 12px 0 !important;
+  border-radius: 8px !important;
 }
