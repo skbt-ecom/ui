@@ -8,11 +8,6 @@ export const title = (
 
 export const subTitle = <>Решение по прошлой заявке еще активно. Возвращайтесь к нам позже.</>;
 
-export const text = (
-  <>
-    А&nbsp;пока&nbsp;загляните&nbsp;в&nbsp;наш&nbsp;магазин&nbsp;—
-    нам&nbsp;есть&nbsp;чем&nbsp;вас&nbsp;порадовать
-  </>
-);
+export const text = <>А пока загляните в наш магазин — нам есть чем вас порадовать</>;
 
 export const btnText = "Посмотреть товары";

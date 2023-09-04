@@ -8,6 +8,7 @@ const meta: Meta<typeof Notification> = {
   component: Notification,
   tags: ["autodocs"],
   parameters: {
+    layout: "fullscreen",
     playroom: {
       code: `
         <MainContainer>

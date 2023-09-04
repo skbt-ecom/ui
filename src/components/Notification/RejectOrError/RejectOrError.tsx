@@ -16,9 +16,11 @@ const RejectOrError = ({ variant, onClick }: ErrorProps) => {
 
   return (
     <Wrapper className={styles.wrapper}>
-      <Icon width={56} height={56} className={styles.icon} />
-      <h2 className={styles.title}>{title}</h2>
-      <p className={styles.subTitle}>{subTitle}</p>
+      <div className={styles.message}>
+        <Icon width={56} height={56} className={styles.icon} />
+        <h2 className={styles.title}>{title}</h2>
+        <p className={styles.subTitle}>{subTitle}</p>
+      </div>
       <Button className={styles.btn} variant="contained" handleClick={onClick}>
         {btnText}
       </Button>
