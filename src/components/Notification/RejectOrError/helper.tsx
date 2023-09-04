@@ -16,7 +16,7 @@ export const items: Record<Variant, Items> = {
   reject: {
     Icon: SadEmojiIcon,
     title: <>Нам очень жаль!</>,
-    subTitle: <>К сожалению, сейча мы не можем принять вашу&nbsp;заявку&nbsp;на&nbsp;Халву.</>,
+    subTitle: <>К сожалению, сейчас мы не можем одобрить вашу&nbsp;заявку&nbsp;на&nbsp;Халву.</>,
     btnText: "Вернуться на главную",
   },
 };

@@ -8,9 +8,10 @@ import styles from "./RejectOrError.module.scss";
 
 type ErrorProps = {
   variant: Variant;
+  onClick: () => void;
 };
 
-const RejectOrError = ({ variant }: ErrorProps) => {
+const RejectOrError = ({ variant, onClick }: ErrorProps) => {
   const { Icon, title, subTitle, btnText } = items[variant];
 
   return (
@@ -18,7 +19,7 @@ const RejectOrError = ({ variant }: ErrorProps) => {
       <Icon width={56} height={56} className={styles.icon} />
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.subTitle}>{subTitle}</p>
-      <Button className={styles.btn} variant="contained">
+      <Button className={styles.btn} variant="contained" handleClick={onClick}>
         {btnText}
       </Button>
     </Wrapper>
