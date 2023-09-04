@@ -10,6 +10,7 @@ const meta: Meta<typeof HeaderHalva> = {
   title: "Components/HeaderHalva",
   component: HeaderHalva,
   tags: ["autodocs"],
+
   args: {
     btnText: "Оформить карту",
     hasRightSection: true,
@@ -17,7 +18,9 @@ const meta: Meta<typeof HeaderHalva> = {
     hasTimer: false,
     hasPhone: false,
     hasShadow: false,
+    hasNav: false,
   },
+  parameters: { layout: "fullscreen" },
 };
 
 export default meta;
@@ -68,5 +71,12 @@ export const WithCountdown: Story = {
   args: {
     hasTimer: true,
     countDownTime: 1800000,
+  },
+};
+
+export const WithNavigation: Story = {
+  args: {
+    hasNav: true,
+    orderNum: "99",
   },
 };

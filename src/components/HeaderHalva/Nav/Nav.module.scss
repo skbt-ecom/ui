@@ -1,0 +1,48 @@
+@use "../../../core/styles/global.scss" as *;
+
+.nav {
+  display: none;
+
+  @include desktop {
+    display: block;
+    margin-left: 40px;
+  }
+
+  @include large-desktop {
+    margin-left: 48px;
+  }
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88px;
+  padding: 12px 0;
+  width: 100%;
+  column-gap: 16px;
+
+  @include large-desktop {
+    column-gap: 24px;
+  }
+}
+
+.listItem {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+  color: #292929;
+  font-size: 14px;
+  line-height: 14px;
+
+  @include large-desktop {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  &:hover {
+    color: #a1afbf;
+  }
+}

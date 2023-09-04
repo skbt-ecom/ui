@@ -1,38 +1,42 @@
-import type { FC, HTMLProps, PropsWithChildren } from "react";
-
 import clsx from "clsx";
-
 import { styled } from "@mui/material";
-import { HalvaIcon } from "../Icons";
+
+import type { FC, HTMLProps } from "react";
+import { useCallback, useState } from "react";
+
+import { BurgerIcon, HalvaIcon } from "../Icons";
 import { Button, MainContainer } from "../base";
 import { Timer } from "./Timer";
 import { Phone } from "../Phone";
+import Nav from "./Nav/Nav";
+import Sidebar from "./Sidebar/Sidebar";
 
 import type { PhoneProps } from "../Phone";
+import type { SidebarProps } from "./Sidebar/Sidebar";
+import type { Link } from "./types";
 
 import styles from "./HeaderHalva.module.scss";
 
-type Props = {
+type HeaderHalvaProps = {
   btnText: string;
-  hintTitle: string;
-  hintText: string;
   countDownTime?: number;
   Logo?: FC<Partial<HTMLProps<SVGElement>>>;
   AdditionalLogo?: FC<Partial<HTMLProps<SVGElement>>>;
   PhoneProps?: PhoneProps;
-  hasRightSection: boolean;
+  SidebarProps?: Pick<SidebarProps, "onClickBtn" | "onLogoClick">;
+  links?: Link[];
+  orderNum?: string;
+  hasRightSection?: boolean;
   hasBtn?: boolean;
   hasTimer?: boolean;
   hasHint?: boolean;
   hasPhone?: boolean;
   hasShadow?: boolean;
+  hasNav?: boolean;
 };
 
-const Header = ({
-  children,
-  btnText,
-  // hintTitle = "Халва.Десятка в подарок",
-  // hintText = "Оформите карту «Халва» сейчас и получите подписку «Халва.Десятка» в подарок. Раскройте все возможности Халвы по максимуму!",
+const HeaderHalva = ({
+  btnText = "Оформить карту",
   countDownTime,
   hasRightSection = true,
   hasBtn = true,
@@ -40,44 +44,83 @@ const Header = ({
   hasTimer = false,
   hasPhone = false,
   hasShadow = false,
+  hasNav = false,
   Logo = HalvaIcon,
   AdditionalLogo,
   PhoneProps,
-}: PropsWithChildren<Props>) => {
+  SidebarProps,
+  orderNum,
+  links,
+}: HeaderHalvaProps) => {
   const HalvaLogo = styled(Logo)(({ theme }) => ({
     fill: [theme.palette.primary.main],
     width: 72,
     height: 14,
+
     [theme.breakpoints.up("sm")]: {
       width: 78,
     },
+
     [theme.breakpoints.up("md")]: {
       width: 108,
       height: 20,
     },
   }));
 
+  const [isActive, setIsActive] = useState(false);
+
+  const onToggleSidebar = useCallback(() => {
+    setIsActive((prevState) => !prevState);
+  }, []);
+
   return (
     <header className={clsx({ [styles.shadow]: hasShadow })}>
       <MainContainer>
-        <div className={styles.container}>
-          <div className={styles.logos}>
+        <div className={styles.wrapper}>
+          <div className={styles.leftSection}>
             <HalvaLogo />
-            {AdditionalLogo && <AdditionalLogo />}
+            {AdditionalLogo && <AdditionalLogo className={styles.additionalLogo} />}
+            {hasNav && <Nav links={links} />}
           </div>
-          {children}
           {hasRightSection && (
             <div className={styles.rightSection}>
-              {hasPhone && <Phone {...PhoneProps} />}
-              {hasHint && <div className={styles.halvaDesyatka} />}
-              {hasTimer && <Timer countDownTime={countDownTime} />}
-              {hasBtn && <Button>{btnText}</Button>}
+              {hasNav ? (
+                <div className={styles.btnGroup}>
+                  <Button className={styles.btn}>{btnText}</Button>
+                  <div data-exclude={orderNum}>
+                    <BurgerIcon
+                      className={styles.burger}
+                      onClick={onToggleSidebar}
+                      width={18}
+                      height={14}
+                    />
+                  </div>
+                </div>
+              ) : (
+                <>
+                  {hasPhone && <Phone {...PhoneProps} />}
+                  {hasHint && <div className={styles.halvaDesyatka} />}
+                  {hasTimer && <Timer countDownTime={countDownTime} />}
+                  {hasBtn && <Button>{btnText}</Button>}
+                </>
+              )}
             </div>
           )}
         </div>
+        {hasNav && (
+          <div data-exclude={orderNum}>
+            <Sidebar
+              Logo={Logo}
+              isActive={isActive}
+              buttonText={btnText}
+              onCloseSidebar={onToggleSidebar}
+              {...SidebarProps}
+            />
+          </div>
+        )}
       </MainContainer>
     </header>
   );
 };
 
-export default Header;
+export default HeaderHalva;

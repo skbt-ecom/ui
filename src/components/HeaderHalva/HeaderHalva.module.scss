@@ -1,6 +1,6 @@
 @use "../../core/styles/global.scss" as *;
 
-.container {
+.wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,6 +16,15 @@
   }
 }
 
+.leftSection {
+  display: flex;
+  align-items: center;
+
+  .additionalLogo {
+    margin-left: 24px;
+  }
+}
+
 .rightSection {
   display: flex;
   align-items: center;
@@ -23,13 +32,6 @@
   & > :last-child {
     text-align: right;
   }
-}
-
-.logos {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  column-gap: 24px;
 }
 
 .shadow {
@@ -41,5 +43,33 @@
 
   @include desktop {
     display: block;
+  }
+}
+
+.btnGroup {
+  display: flex;
+  align-items: center;
+
+  .btn {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      text-transform: none;
+      border-radius: 8px;
+      height: 40px;
+      width: 168px;
+      font-size: 14px;
+    }
+  }
+}
+
+.burger {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @include desktop {
+    display: none;
   }
 }

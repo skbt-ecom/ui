@@ -8,6 +8,8 @@ import { ReactComponent as RefreshIconComponent } from "../../core/assets/icons/
 import { ReactComponent as SadEmojiIconComponent } from "../../core/assets/icons/sad-emoji.svg";
 import { ReactComponent as UserCircleIconComponent } from "../../core/assets/icons/user-circle.svg";
 import { ReactComponent as GiftIconComponent } from "../../core/assets/icons/gift.svg";
+import { ReactComponent as CrossIconComponent } from "../../core/assets/icons/cross.svg";
+import { ReactComponent as BurgerIconComponent } from "../../core/assets/icons/burger.svg";
 
 export type IconProps = Partial<HTMLProps<SVGElement>>;
 
@@ -26,3 +28,5 @@ export const RefreshIcon = createIcon(RefreshIconComponent);
 export const SadEmojiIcon = createIcon(SadEmojiIconComponent);
 export const UserCircleIcon = createIcon(UserCircleIconComponent);
 export const GiftIcon = createIcon(GiftIconComponent);
+export const CrossIcon = createIcon(CrossIconComponent);
+export const BurgerIcon = createIcon(BurgerIconComponent);
