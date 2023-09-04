@@ -1,20 +1,29 @@
+import { MainContainer } from "../base";
+
 import { RejectOrError } from "./RejectOrError";
 import { WeRecognizedYou } from "./WeRecognizedYou";
 
 type NotificationProps = {
   variant?: "reject" | "techError" | "weRecognizedYou";
+  onClick: () => void;
 };
 
-const Notification = ({ variant }: NotificationProps) => {
+const Notification = ({ variant, onClick }: NotificationProps) => {
+  let Message: JSX.Element;
+
   switch (variant) {
     case "reject":
     case "techError":
-      return <RejectOrError variant={variant} />;
+      Message = <RejectOrError variant={variant} onClick={onClick} />;
+      break;
     case "weRecognizedYou":
-      return <WeRecognizedYou />;
+      Message = <WeRecognizedYou onClick={onClick} />;
+      break;
     default:
-      return <RejectOrError variant="reject" />;
+      Message = <RejectOrError variant="reject" onClick={onClick} />;
   }
+
+  return <MainContainer>{Message}</MainContainer>;
 };
 
 export default Notification;

@@ -1,59 +1,62 @@
 @use "../../../core/styles/global.scss" as *;
 
 .wrapper {
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   max-width: 800px;
-  padding: 48px 16px;
+  padding: 48px 0;
+  margin: 0 auto;
 
   @include tablet {
     position: relative;
     padding: 32px 48px;
+    margin-top: 48px;
+    min-height: 306px;
   }
 
   @include desktop {
     text-align: center;
     padding: 48px 165px;
+    align-items: center;
+  }
+
+  @include desktop-only {
+    margin-top: 40px;
   }
 }
 
 .icon {
   display: block;
-
-  @include desktop {
-    margin: 0 auto;
-  }
 }
 
 .title {
   font-family: "Montserrat";
-  margin: 32px 0 16px;
   line-height: 28px;
+  margin: 32px 0 16px;
 }
 
 .subTitle {
   line-height: 22px;
-
-  @include tablet {
-    margin-bottom: 0;
-  }
-
-  @include desktop {
-    margin: 16px 0 32px;
-  }
+  letter-spacing: 0.2px;
+  margin: 0;
 }
 
 .btn {
-  text-transform: none !important;
-
   position: absolute !important;
+  text-transform: none !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  letter-spacing: 0.4px !important;
+  padding: 12px 0 !important;
+  border-radius: 8px !important;
   left: 50%;
   transform: translateX(-50%);
-
   width: 100%;
   max-width: 328px;
 
   @include mobile-only {
-    top: 440px;
+    top: 504px;
   }
 
   @include tablet-only {
@@ -64,13 +67,6 @@
     position: unset !important;
     left: unset;
     transform: unset;
-  }
-}
-
-.text {
-  margin: 0 0 24px;
-
-  @include desktop {
-    margin: 0 0 35px;
+    margin-top: 40px !important;
   }
 }
