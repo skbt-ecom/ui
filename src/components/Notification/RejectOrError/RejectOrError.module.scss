@@ -6,6 +6,7 @@
   max-width: 800px;
   padding: 48px 0;
   margin: 0 auto;
+  position: relative;
 
   @include tablet {
     position: relative;
@@ -22,6 +23,15 @@
 
   @include desktop-only {
     margin-top: 40px;
+  }
+
+  .message {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      align-items: center;
+    }
   }
 }
 
