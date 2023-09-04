@@ -17,6 +17,14 @@ const meta: Meta<typeof Notification> = {
       `,
     },
   },
+  argTypes: {
+    subTitle: { control: "text" },
+    title: { control: "text" },
+    textAboveBtn: { control: "text" },
+    Icon: {
+      control: false,
+    },
+  },
 };
 
 export default meta;

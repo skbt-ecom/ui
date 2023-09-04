@@ -1,18 +1,26 @@
 import { Button } from "../../base/Button";
 import { Wrapper } from "../Wrapper";
 
-import type { Variant } from "./types";
 import { items } from "./helper";
+
+import type { Variant } from "./types";
+import type { RejectOrErrorItems } from "../types";
 
 import styles from "./RejectOrError.module.scss";
 
-type ErrorProps = {
+type RejectOrErrorProps = {
   variant: Variant;
   onClick: () => void;
-};
+} & RejectOrErrorItems;
 
-const RejectOrError = ({ variant, onClick }: ErrorProps) => {
-  const { Icon, title, subTitle, btnText } = items[variant];
+const RejectOrError = ({ variant, onClick, ...props }: RejectOrErrorProps) => {
+  const { defaultIcon, defaultTitle, defaultSubTitle, defaultBtnText } = items[variant];
+  const {
+    Icon = defaultIcon,
+    title = defaultTitle,
+    subTitle = defaultSubTitle,
+    btnText = defaultBtnText,
+  } = props;
 
   return (
     <Wrapper className={styles.wrapper}>
