@@ -1,3 +1,10 @@
+# [3.0.0-beta.71](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.70...v3.0.0-beta.71) (2023-09-04)
+
+
+### Features
+
+* **styles perf and onclick handler on notification components:** - ([30b4129](https://gitlab.sovcombank.group/web/ecom/ui/commit/30b412995fcb65e7ac8742c5a9ec38b813b60e88))
+
 # [3.0.0-beta.70](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.69...v3.0.0-beta.70) (2023-08-29)
 
 
