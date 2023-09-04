@@ -18,6 +18,7 @@ export type SidebarProps = {
   buttonText?: string;
   Logo?: FC<Partial<HTMLProps<SVGElement>>>;
   links?: Link[];
+  orderNum?: string;
 };
 
 const Sidebar = ({
@@ -28,6 +29,7 @@ const Sidebar = ({
   buttonText = "Оформить карту",
   Logo = HalvaIcon,
   links,
+  orderNum,
 }: SidebarProps) => {
   const mods = {
     sidebar: { [styles.active]: isActive },
@@ -52,7 +54,7 @@ const Sidebar = ({
   }, [onCloseSidebar, onClickBtn]);
 
   return (
-    <div className={clsx(styles.container, styles.animated, mods.sidebar)}>
+    <div className={clsx(styles.container, styles.animated, mods.sidebar)} data-exclude={orderNum}>
       <div className={styles.header}>
         <Logo onClick={onLogoClick} width={72} />
         <CrossIcon className={styles.cross} onClick={onCloseSidebar} width={16} height={16} />

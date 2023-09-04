@@ -87,14 +87,13 @@ const HeaderHalva = ({
               {hasNav ? (
                 <div className={styles.btnGroup}>
                   <Button className={styles.btn}>{btnText}</Button>
-                  <div data-exclude={orderNum}>
-                    <BurgerIcon
-                      className={styles.burger}
-                      onClick={onToggleSidebar}
-                      width={18}
-                      height={14}
-                    />
-                  </div>
+                  <BurgerIcon
+                    className={styles.burger}
+                    onClick={onToggleSidebar}
+                    data-exclude={orderNum}
+                    width={18}
+                    height={14}
+                  />
                 </div>
               ) : (
                 <>
@@ -108,15 +107,14 @@ const HeaderHalva = ({
           )}
         </div>
         {hasNav && (
-          <div data-exclude={orderNum}>
-            <Sidebar
-              Logo={Logo}
-              isActive={isActive}
-              buttonText={btnText}
-              onCloseSidebar={onToggleSidebar}
-              {...SidebarProps}
-            />
-          </div>
+          <Sidebar
+            Logo={Logo}
+            isActive={isActive}
+            buttonText={btnText}
+            onCloseSidebar={onToggleSidebar}
+            orderNum={orderNum}
+            {...SidebarProps}
+          />
         )}
       </MainContainer>
     </header>
