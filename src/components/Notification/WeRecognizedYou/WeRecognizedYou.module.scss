@@ -23,88 +23,90 @@
   @include desktop-only {
     padding-top: 40px;
   }
-}
 
-.wrapper {
-  height: 100%;
-  padding: 32px 0;
-  width: 100%;
+  .wrapper {
+    height: 100%;
+    padding: 32px 0;
+    width: 100%;
 
-  @include tablet {
-    padding: 32px 48px 70px;
+    @include tablet {
+      padding: 32px 48px 70px;
+    }
+
+    @include desktop {
+      max-width: 384px;
+      padding: 48px;
+    }
+
+    @include large-desktop {
+      padding: 48px 40px;
+    }
+
+    .icon {
+      display: block;
+    }
+
+    .title {
+      font-family: "Montserrat";
+      margin: 32px 0 16px;
+      line-height: 28px;
+    }
+
+    .subTitle {
+      line-height: 22px;
+      width: 326px;
+
+      @include tablet {
+        margin-bottom: 0;
+        width: 336px;
+      }
+
+      @include desktop {
+        width: 298px;
+      }
+    }
   }
 
-  @include desktop {
-    max-width: 384px;
-    padding: 48px;
+  .btnContainer {
+    background: #eef5fb;
+    border-radius: 24px;
+    padding: 24px 16px;
+    width: 100%;
+    max-width: 328px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    @include desktop {
+      max-width: 384px;
+      padding: 32px 40px;
+      row-gap: 0;
+    }
+
+    .text {
+      font-family: "Montserrat";
+      margin: 0;
+      width: 100%;
+    }
+
+    .img {
+      display: none;
+
+      @include desktop {
+        display: block;
+        margin: 35px auto 12px;
+      }
+    }
+
+    .btn {
+      width: 100%;
+      text-transform: none !important;
+      font-size: 16px !important;
+      font-weight: 500 !important;
+      line-height: 24px !important;
+      letter-spacing: 0.4px !important;
+      padding: 12px 0 !important;
+      border-radius: 8px !important;
+    }
   }
-
-  @include large-desktop {
-    padding: 48px 40px;
-  }
-}
-
-.icon {
-  display: block;
-}
-
-.title {
-  font-family: "Montserrat";
-  margin: 32px 0 16px;
-  line-height: 28px;
-}
-
-.subTitle {
-  line-height: 22px;
-  width: 326px;
-
-  @include tablet {
-    margin-bottom: 0;
-    width: 336px;
-  }
-
-  @include desktop {
-    width: 298px;
-  }
-}
-
-.btnContainer {
-  background: #eef5fb;
-  border-radius: 24px;
-  padding: 24px 16px;
-  max-width: 328px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 24px;
-
-  @include desktop {
-    max-width: 384px;
-    padding: 32px 40px;
-    row-gap: 0;
-  }
-}
-
-.text {
-  font-family: "Montserrat";
-  margin: 0;
-}
-
-.img {
-  display: none;
-
-  @include desktop {
-    display: block;
-    margin: 35px auto 12px;
-  }
-}
-
-.btn {
-  width: 100%;
-  text-transform: none !important;
-  font-size: 16px !important;
-  font-weight: 500 !important;
-  line-height: 24px !important;
-  letter-spacing: 0.4px !important;
-  padding: 12px 0 !important;
-  border-radius: 8px !important;
 }

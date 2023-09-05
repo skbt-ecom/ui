@@ -1,3 +1,15 @@
+# [3.0.0-beta.72](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.71...v3.0.0-beta.72) (2023-09-04)
+
+
+### Bug Fixes
+
+* **adaptivity for 320px:** - ([aa7fbec](https://gitlab.sovcombank.group/web/ecom/ui/commit/aa7fbec46885cfcf0fc686f6ed7844cc80cb33fb))
+
+
+### Features
+
+* **notification extensibility:** text and icon props ([daf1a8a](https://gitlab.sovcombank.group/web/ecom/ui/commit/daf1a8a13efe3d52af0a2f30fac8a3f598aa231c))
+
 # [3.0.0-beta.71](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.70...v3.0.0-beta.71) (2023-09-04)
 
 

@@ -1,4 +1,4 @@
-export const title = (
+export const defaultTitle = (
   <>
     Привет, мы вас
     <br />
@@ -6,13 +6,12 @@ export const title = (
   </>
 );
 
-export const subTitle = <>Решение по прошлой заявке еще активно. Возвращайтесь к нам позже.</>;
-
-export const text = (
-  <>
-    А&nbsp;пока&nbsp;загляните&nbsp;в&nbsp;наш&nbsp;магазин&nbsp;—
-    нам&nbsp;есть&nbsp;чем&nbsp;вас&nbsp;порадовать
-  </>
+export const defaultSubtitle = (
+  <>Решение по прошлой заявке еще активно. Возвращайтесь к нам позже.</>
 );
 
-export const btnText = "Посмотреть товары";
+export const defaultTextAboveBtn = (
+  <>А пока загляните в наш магазин — нам есть чем вас порадовать</>
+);
+
+export const defaultBtnText = "Посмотреть товары";

@@ -8,12 +8,21 @@ const meta: Meta<typeof Notification> = {
   component: Notification,
   tags: ["autodocs"],
   parameters: {
+    layout: "fullscreen",
     playroom: {
       code: `
         <MainContainer>
           <Notification variant="reject"/>
         </MainContainer>
       `,
+    },
+  },
+  argTypes: {
+    subTitle: { control: "text" },
+    title: { control: "text" },
+    textAboveBtn: { control: "text" },
+    Icon: {
+      control: false,
     },
   },
 };
