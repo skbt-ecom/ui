@@ -1,0 +1,26 @@
+@use "../../../../core/styles/global.scss" as *;
+
+.close {
+  width: 11px;
+  height: 11px;
+  cursor: pointer;
+}
+
+.hintIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.hintModal {
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 186px;
+
+  @include tablet {
+    max-width: 142px;
+  }
+
+  @include desktop {
+    max-width: 212px;
+  }
+}

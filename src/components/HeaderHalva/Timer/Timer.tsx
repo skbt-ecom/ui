@@ -1,10 +1,10 @@
 import { styled } from "@mui/material";
 
-import Countdown from "./CountDown/Countdown";
+import Countdown from "./Countdown/Countdown";
 import { GiftIcon } from "../../Icons";
 
 type TimerProps = {
-  countDownTime?: number;
+  countdownTime?: number;
 };
 
 const TimerContainer = styled("div")(() => ({
@@ -13,11 +13,11 @@ const TimerContainer = styled("div")(() => ({
   columnGap: 4,
 }));
 
-const Timer = ({ countDownTime }: TimerProps) => {
+const Timer = ({ countdownTime }: TimerProps) => {
   return (
     <TimerContainer>
       <GiftIcon width={24} height={24} />
-      <Countdown countDownTime={countDownTime} />
+      <Countdown countdownTime={countdownTime} />
     </TimerContainer>
   );
 };

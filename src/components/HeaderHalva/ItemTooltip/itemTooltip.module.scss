@@ -1,34 +1,21 @@
-@import "@ecom/ui/style/common/media-queries";
-
 .childrenContainer {
   cursor: pointer;
 }
 
-.close {
-  cursor: pointer;
-  margin-top: 4px;
+.MuiTooltip-tooltip {
+  color: #000;
+  position: absolute;
+  pointer-events: auto;
+  padding: 12px 16px;
+  background-color: #edf6fe;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  width: 280px;
+  transition: 0.5s all;
+  margin-top: 16px;
 }
 
-.hintModal {
-  font-size: 12px;
-  line-height: 16px;
-  max-width: 186px;
-
-  @include tablet {
-    max-width: 142px;
-  }
-
-  @include desktop {
-    max-width: 212px;
-  }
-}
-
-.hintContainer {
-  display: flex;
-  justify-content: space-between;
-}
-
-.hintIcon img {
-  width: 16px;
-  height: 16px;
+.icon {
+  vertical-align: middle;
 }

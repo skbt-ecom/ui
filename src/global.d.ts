@@ -4,8 +4,5 @@ declare module "*.scss" {
 }
 
 declare module "*.png";
-declare module "*.svg" {
-  import type { HTMLProps, FC } from "react";
 
-  export const ReactComponent: FC<HTMLProps<SVGElement>>;
-}
+declare module "*.svg";

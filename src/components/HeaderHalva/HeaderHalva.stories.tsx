@@ -14,8 +14,8 @@ const meta: Meta<typeof HeaderHalva> = {
   args: {
     btnText: "Оформить карту",
     hasRightSection: true,
+    hasBtn: true,
     hasHint: false,
-    hasTimer: false,
     hasPhone: false,
     hasShadow: false,
     hasNav: false,
@@ -37,6 +37,13 @@ export const DarkTheme: Story = {
     hasBtn: false,
   },
   decorators: [themeDecorator("dark")],
+};
+
+export const WithHintAndCountdown: Story = {
+  args: {
+    hasHint: true,
+    countdownTime: 1800000,
+  },
 };
 
 export const WithShadow: Story = {
@@ -64,13 +71,6 @@ export const WithButton: Story = {
 export const WithAdditionalLogo: Story = {
   args: {
     AdditionalLogo: () => <img src={ivi} alt="ivi" width={78} height={32} />,
-  },
-};
-
-export const WithCountdown: Story = {
-  args: {
-    hasTimer: true,
-    countDownTime: 1800000,
   },
 };
 

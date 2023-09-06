@@ -2,29 +2,29 @@ import { useEffect, useState } from "react";
 import { styled } from "@mui/material";
 
 type CountdownProps = {
-  countDownTime?: number;
+  countdownTime?: number;
 };
 
-const CountDownContainer = styled("span")(() => ({
+const CountdownContainer = styled("span")(() => ({
   fontSize: 16,
   fontWeight: 700,
   letterSpacing: 0.3,
 }));
 
-const Countdown = ({ countDownTime = 43200000 }: CountdownProps) => {
-  const [count, setCount] = useState(countDownTime);
+const Countdown = ({ countdownTime = 43200000 }: CountdownProps) => {
+  const [count, setCount] = useState(countdownTime);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const savedCount = localStorage.getItem("countDownDate");
+    const savedCount = localStorage.getItem("countdownDate");
 
-    setCount(Number(savedCount) || countDownTime);
+    setCount(Number(savedCount) || countdownTime);
     setLoading(false);
-  }, [countDownTime]);
+  }, [countdownTime]);
 
   useEffect(() => {
     if (!loading) {
-      localStorage.setItem("countDownDate", `${count}`);
+      localStorage.setItem("countdownDate", `${count}`);
     }
   }, [count, loading]);
 
@@ -83,9 +83,9 @@ const Countdown = ({ countDownTime = 43200000 }: CountdownProps) => {
   }
 
   return (
-    <CountDownContainer id="countdownBlock">
+    <CountdownContainer id="countdownBlock">
       {loading ? loadingDisplayTime : displayTime}
-    </CountDownContainer>
+    </CountdownContainer>
   );
 };
 

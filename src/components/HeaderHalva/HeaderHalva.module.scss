@@ -73,3 +73,11 @@
     display: none;
   }
 }
+
+.hide {
+  display: none !important;
+
+  @include tablet {
+    display: block !important;
+  }
+}

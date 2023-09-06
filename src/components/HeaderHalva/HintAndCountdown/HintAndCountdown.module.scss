@@ -1,0 +1,24 @@
+@use "../../../core/styles/global.scss" as *;
+
+.MuiTooltip-tooltip {
+  & > {
+    background-color: #edf6fe;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  column-gap: 8px;
+
+  @include desktop {
+    column-gap: 16px;
+  }
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 500;
+  // line-height: 125%;
+}

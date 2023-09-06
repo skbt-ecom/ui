@@ -1,15 +1,15 @@
 import clsx from "clsx";
 import { styled } from "@mui/material";
 
-import type { FC, HTMLProps } from "react";
+import type { FC, HTMLProps, ReactNode } from "react";
 import { useCallback, useState } from "react";
 
 import { BurgerIcon, HalvaIcon } from "../Icons";
 import { Button, MainContainer } from "../base";
-import { Timer } from "./Timer";
 import { Phone } from "../Phone";
 import Nav from "./Nav/Nav";
 import Sidebar from "./Sidebar/Sidebar";
+import { HintAndCountdown } from "./HintAndCountdown";
 
 import type { PhoneProps } from "../Phone";
 import type { SidebarProps } from "./Sidebar/Sidebar";
@@ -18,8 +18,10 @@ import type { Link } from "./types";
 import styles from "./HeaderHalva.module.scss";
 
 type HeaderHalvaProps = {
+  hintTitle: ReactNode;
+  hintText: string;
   btnText: string;
-  countDownTime?: number;
+  countdownTime?: number;
   Logo?: FC<Partial<HTMLProps<SVGElement>>>;
   AdditionalLogo?: FC<Partial<HTMLProps<SVGElement>>>;
   PhoneProps?: PhoneProps;
@@ -28,7 +30,6 @@ type HeaderHalvaProps = {
   orderNum?: string;
   hasRightSection?: boolean;
   hasBtn?: boolean;
-  hasTimer?: boolean;
   hasHint?: boolean;
   hasPhone?: boolean;
   hasShadow?: boolean;
@@ -36,12 +37,13 @@ type HeaderHalvaProps = {
 };
 
 const HeaderHalva = ({
+  hintTitle,
+  hintText,
   btnText = "Оформить карту",
-  countDownTime,
+  countdownTime,
   hasRightSection = true,
   hasBtn = true,
   hasHint = false,
-  hasTimer = false,
   hasPhone = false,
   hasShadow = false,
   hasNav = false,
@@ -98,9 +100,18 @@ const HeaderHalva = ({
               ) : (
                 <>
                   {hasPhone && <Phone {...PhoneProps} />}
-                  {hasHint && <div className={styles.halvaDesyatka} />}
-                  {hasTimer && <Timer countDownTime={countDownTime} />}
-                  {hasBtn && <Button>{btnText}</Button>}
+                  {hasHint && (
+                    <HintAndCountdown
+                      hintTitle={hintTitle}
+                      hintText={hintText}
+                      onTooltipClose={() => {}}
+                      onTooltipOpen={() => {}}
+                      countdownTime={countdownTime}
+                    />
+                  )}
+                  {hasBtn && (
+                    <Button className={clsx({ [styles.hide]: hasHint })}>{btnText}</Button>
+                  )}
                 </>
               )}
             </div>
