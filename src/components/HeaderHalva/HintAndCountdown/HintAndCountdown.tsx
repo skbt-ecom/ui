@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
-import { ItemTooltip } from "../ItemTooltip";
-import { Timer } from "../Timer";
+import { ItemTooltip } from "./ItemTooltip";
+import { Timer } from "./Timer";
 
 import styles from "./HintAndCountdown.module.scss";
 

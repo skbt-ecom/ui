@@ -1,17 +1,16 @@
+import { useCallback, useState } from "react";
 import clsx from "clsx";
 import { styled } from "@mui/material";
-
 import type { FC, HTMLProps, ReactNode } from "react";
-import { useCallback, useState } from "react";
 
-import { BurgerIcon, HalvaIcon } from "../Icons";
-import { Button, MainContainer } from "../base";
-import { Phone } from "../Phone";
+import { BurgerIcon, HalvaIcon } from "@src/components/Icons";
+import { Button, MainContainer } from "@src/components/base";
+import { Phone } from "@src/components/Phone";
+import type { PhoneProps } from "@src/components/Phone";
+
 import Nav from "./Nav/Nav";
 import Sidebar from "./Sidebar/Sidebar";
 import { HintAndCountdown } from "./HintAndCountdown";
-
-import type { PhoneProps } from "../Phone";
 import type { SidebarProps } from "./Sidebar/Sidebar";
 import type { Link } from "./types";
 

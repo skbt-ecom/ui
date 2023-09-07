@@ -1,6 +1,6 @@
-import { Button } from "../../base/Button";
-import { Wrapper } from "../Wrapper";
+import { Button } from "@src/components/base/Button";
 
+import { Wrapper } from "../Wrapper";
 import { items } from "./helper";
 
 import type { Variant } from "./types";

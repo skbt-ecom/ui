@@ -1,4 +1,5 @@
-import { RefreshIcon, SadEmojiIcon } from "../../Icons";
+import { RefreshIcon, SadEmojiIcon } from "@src/components/Icons";
+
 import type { Items, Variant } from "./types";
 
 export const items: Record<Variant, Items> = {

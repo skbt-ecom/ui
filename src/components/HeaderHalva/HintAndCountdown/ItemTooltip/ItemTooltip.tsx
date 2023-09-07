@@ -3,8 +3,8 @@ import { Zoom, Tooltip, ClickAwayListener } from "@mui/material";
 
 import type { FC, HTMLProps, ReactNode } from "react";
 
+import { ExclamCircle } from "@src/components/Icons";
 import Hint from "./Hint/Hint";
-import { ExclamCircle } from "../../Icons";
 
 import styles from "./ItemTooltip.module.scss";
 
@@ -59,6 +59,7 @@ const ItemTooltip = ({
               marginTop: "16px",
               width: "300px",
               left: "-100px",
+              lineHeight: "125%",
             },
           },
         }}
