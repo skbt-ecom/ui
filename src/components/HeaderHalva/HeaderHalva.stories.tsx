@@ -64,6 +64,16 @@ export const WithPhone: Story = {
   },
 };
 
+export const WithPhoneAndButton: Story = {
+  args: {
+    hasPhone: true,
+    PhoneProps: {
+      phoneHint: "Звонок по России (бесплатно)",
+      phones: ["8 800 100-10-20"],
+    },
+  },
+};
+
 export const WithButton: Story = {
   args: {},
 };

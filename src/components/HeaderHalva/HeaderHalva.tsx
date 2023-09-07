@@ -74,6 +74,11 @@ const HeaderHalva = ({
     setIsActive((prevState) => !prevState);
   }, []);
 
+  const mods = {
+    hideOnMob: { [styles.hideOnMob]: hasHint },
+    hideOnTab: { [styles.hideOnTab]: hasPhone },
+  };
+
   return (
     <header className={clsx({ [styles.shadow]: hasShadow })}>
       <MainContainer>
@@ -109,7 +114,9 @@ const HeaderHalva = ({
                     />
                   )}
                   {hasBtn && (
-                    <Button className={clsx({ [styles.hide]: hasHint })}>{btnText}</Button>
+                    <Button className={clsx(mods.hideOnMob, mods.hideOnTab)} variant="contained">
+                      {btnText}
+                    </Button>
                   )}
                 </>
               )}

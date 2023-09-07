@@ -1,9 +1,9 @@
 import { useCallback, useState } from "react";
 import { Zoom, Tooltip, ClickAwayListener } from "@mui/material";
-
 import type { FC, HTMLProps, ReactNode } from "react";
 
 import { ExclamCircle } from "@src/components/Icons";
+
 import Hint from "./Hint/Hint";
 
 import styles from "./ItemTooltip.module.scss";

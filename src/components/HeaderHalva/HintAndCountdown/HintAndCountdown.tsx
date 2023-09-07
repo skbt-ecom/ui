@@ -31,7 +31,7 @@ const HintAndCountdown = ({
 }: HintAndCountdownProps) => (
   <div className={styles.container}>
     <ItemTooltip hintText={hintText} onTooltipOpen={onTooltipOpen} onTooltipClose={onTooltipClose}>
-      <span className={styles.title}>{hintTitle}</span>
+      {hintTitle}
     </ItemTooltip>
     <Timer countdownTime={countdownTime} />
   </div>
