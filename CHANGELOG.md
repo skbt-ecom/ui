@@ -1,3 +1,10 @@
+# [3.0.0-beta.74](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.73...v3.0.0-beta.74) (2023-09-07)
+
+
+### Bug Fixes
+
+* **lib:** return rollup config ([0c6f5dc](https://gitlab.sovcombank.group/web/ecom/ui/commit/0c6f5dc4e7f2ec1ccac6f9cf255ac639835542c5))
+
 # [3.0.0-beta.73](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.72...v3.0.0-beta.73) (2023-09-07)
 
 
