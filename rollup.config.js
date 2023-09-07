@@ -5,24 +5,24 @@ const typescript = require("@rollup/plugin-typescript");
 const postcss = require("rollup-plugin-postcss");
 const url = require("@rollup/plugin-url");
 const svgr = require("@svgr/rollup");
-const terser = require("@rollup/plugin-terser");
-const dts = require("rollup-plugin-dts");
+// const terser = require("@rollup/plugin-terser");
+// const dts = require("rollup-plugin-dts");
 const peerDepsExternal = require("rollup-plugin-peer-deps-external");
-const autoprefixer = require("autoprefixer");
-const resolve = require("@rollup/plugin-node-resolve");
-const commonjs = require("@rollup/plugin-commonjs");
-const alias = require("@rollup/plugin-alias");
-const json = require("@rollup/plugin-json");
-const progress = require("rollup-plugin-progress");
-const sizes = require("rollup-plugin-sizes");
-const filesize = require("rollup-plugin-filesize");
-const copy = require("rollup-plugin-copy");
-const babel = require("@rollup/plugin-babel");
+// const autoprefixer = require("autoprefixer");
+// const resolve = require("@rollup/plugin-node-resolve");
+// const commonjs = require("@rollup/plugin-commonjs");
+// const alias = require("@rollup/plugin-alias");
+// const json = require("@rollup/plugin-json");
+// const progress = require("rollup-plugin-progress");
+// const sizes = require("rollup-plugin-sizes");
+// const filesize = require("rollup-plugin-filesize");
+// const copy = require("rollup-plugin-copy");
+// const babel = require("@rollup/plugin-babel");
 
-const simplevars = require("postcss-simple-vars");
-const nested = require("postcss-nested");
-const presetenv = require("postcss-preset-env");
-const cssnano = require("cssnano");
+// const simplevars = require("postcss-simple-vars");
+// const nested = require("postcss-nested");
+// const presetenv = require("postcss-preset-env");
+// const cssnano = require("cssnano");
 
 const packageJson = require("./package.json");
 
@@ -54,70 +54,70 @@ module.exports = [
     },
     plugins: [
       // progress bar
-      progress(),
+      // progress(),
       // for peerDeps
       peerDepsExternal(),
-      // for aliases
-      alias({
-        entries: {
-          "@src/": "src/",
-        },
-      }),
-      // json
-      json(),
+      // // for aliases
+      // alias({
+      //   entries: {
+      //     "@src/": "src/",
+      //   },
+      // }),
+      // // json
+      // json(),
       // Resolving third-party dependencies in node_modules
-      resolve(),
-      // Babel support
-      babel({ babelHelpers: "bundled" }),
+      // resolve(),
+      // // Babel support
+      // babel({ babelHelpers: "bundled" }),
       // Bundling to CommonJS format (module.exports/require())
-      commonjs(),
+      // commonjs(),
       // ts
       typescript({
         tsconfig: "./tsconfig.lib.json",
       }),
       // scss
       postcss({
-        plugins: [autoprefixer, simplevars(), nested(), presetenv(), cssnano()],
-        modules: true,
-        sourceMap: true,
-        extract: false,
-        minimize: true,
+        // plugins: [autoprefixer, simplevars(), nested(), presetenv(), cssnano()],
+        // modules: true,
+        // sourceMap: true,
+        // extract: false,
+        // minimize: true,
       }),
       // for icons and svg
       url(),
       svgr({ icon: true }),
-      // min js bundle
-      terser(),
-      // add source files
-      copy({
-        copyOnce: true,
-        flatten: false,
-        targets: [
-          {
-            src: [
-              "src/**/*.(js|ts|jsx|tsx)",
-              "**/assets/**",
-              "!src/**/index.ts",
-              "!**/*.(stories|test|spec).*",
-              "!**/(storybook|playroom)/**",
-              "!**/node_modules/**",
-            ],
-            dest: "lib/src/",
-          },
-        ],
-      }),
-      sizes(),
-      filesize(),
+      // // min js bundle
+      // terser(),
+      // // add source files
+      // copy({
+      //   copyOnce: true,
+      //   flatten: false,
+      //   targets: [
+      //     {
+      //       src: [
+      //         "src/**/*.(js|ts|jsx|tsx)",
+      //         "**/assets/**",
+      //         "!src/**/index.ts",
+      //         "!**/*.(stories|test|spec).*",
+      //         "!**/(storybook|playroom)/**",
+      //         "!**/node_modules/**",
+      //       ],
+      //       dest: "lib/src/",
+      //     },
+      //   ],
+      // }),
+      // sizes(),
+      // filesize(),
     ],
   },
   // for types
-  {
-    input: "src/index.ts",
-    output: [{ file: `lib/${packageJson.types}`, format: "esm" }],
-    // exclude css/scss files from this bundle (this is only for global types)
-    external: [/\.(css|scss)$/],
-    plugins: [dts.default()],
-  },
+  // {
+  //   input: "src/index.ts",
+  //   output: [{ file: `lib/${packageJson.types}`, format: "esm" }],
+  //   // exclude css/scss files from this bundle (this is only for global types)
+  //   external: [/\.(css|scss)$/],
+  //   plugins: [dts.default()],
+  // },
 ];
 
 // TODO:: testing
