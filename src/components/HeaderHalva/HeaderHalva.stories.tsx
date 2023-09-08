@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { themeDecorator } from "../../storybook/decorators";
+import { themeDecorator, mainContainerDecorator } from "@src/storybook/decorators";
+
+import ivi from "@src/core/assets/img/ivi.png";
 
 import HeaderHalva from "./HeaderHalva";
-
-import ivi from "../../core/assets/img/ivi.png";
 
 const meta: Meta<typeof HeaderHalva> = {
   title: "Components/HeaderHalva",
@@ -20,7 +20,7 @@ const meta: Meta<typeof HeaderHalva> = {
   },
   argTypes: {
     Logo: { control: false },
-    AdditionalLogo: { control: false },
+    SecondLogo: { control: false },
   },
   parameters: {
     layout: "fullscreen",
@@ -32,20 +32,35 @@ const meta: Meta<typeof HeaderHalva> = {
     `,
     },
   },
+  decorators: [mainContainerDecorator()],
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const RedTheme: Story = {
-  args: {
-    withBtn: false,
+  args: { withBtn: false },
+  parameters: {
+    playroom: {
+      code: `
+      <MainContainer>
+        <HeaderHalva withBtn={false}/>
+      </MainContainer>
+    `,
+    },
   },
 };
 
 export const DarkTheme: Story = {
-  args: {
-    withBtn: false,
+  args: { withBtn: false },
+  parameters: {
+    playroom: {
+      code: `
+      <MainContainer>
+        <HeaderHalva withBtn={false}/>
+      </MainContainer>
+    `,
+    },
   },
   decorators: [themeDecorator("dark")],
 };
@@ -55,12 +70,30 @@ export const WithHintAndCountdown: Story = {
     withHint: true,
     countdownTime: 1800000,
   },
+  parameters: {
+    playroom: {
+      code: `
+      <MainContainer>
+        <HeaderHalva withHint countdownTime={1800000}/>
+      </MainContainer>
+    `,
+    },
+  },
 };
 
 export const WithShadow: Story = {
   args: {
     withBtn: false,
     withShadow: true,
+  },
+  parameters: {
+    playroom: {
+      code: `
+      <MainContainer>
+        <HeaderHalva withBtn={false} withShadow/>
+      </MainContainer>
+    `,
+    },
   },
 };
 
@@ -73,6 +106,15 @@ export const WithPhone: Story = {
       phones: ["8 800 100-10-20"],
     },
   },
+  parameters: {
+    playroom: {
+      code: `
+      <MainContainer>
+        <HeaderHalva withBtn={false} withPhone PhoneProps={phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 100-10-20"]} />
+      </MainContainer>
+    `,
+    },
+  },
 };
 
 export const WithPhoneAndButton: Story = {
@@ -83,21 +125,34 @@ export const WithPhoneAndButton: Story = {
       phones: ["8 800 100-10-20"],
     },
   },
+  parameters: {
+    playroom: {
+      code: `
+      <MainContainer>
+        <HeaderHalva withPhone PhoneProps={phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 100-10-20"]} />
+      </MainContainer>
+    `,
+    },
+  },
 };
 
 export const WithButton: Story = {
   args: {},
 };
 
-export const WithAdditionalLogo: Story = {
-  args: {
-    AdditionalLogo: () => <img src={ivi} alt="ivi" width={78} height={32} />,
-  },
+export const WithSecondLogo: Story = {
+  args: { SecondLogo: () => <img src={ivi} alt="ivi" width={78} height={32} /> },
 };
 
 export const WithNavigation: Story = {
-  args: {
-    withNav: true,
-    orderNum: "99",
+  args: { withNav: true },
+  parameters: {
+    playroom: {
+      code: `
+      <MainContainer>
+        <HeaderHalva withNav />
+      </MainContainer>
+    `,
+    },
   },
 };

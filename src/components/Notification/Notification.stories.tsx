@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { mainContainerDecorator } from "@src/storybook/decorators";
+
 import Notification from "./Notification";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
@@ -11,9 +13,9 @@ const meta: Meta<typeof Notification> = {
     layout: "fullscreen",
     playroom: {
       code: `
-        <MainContainer>
-          <Notification variant="reject"/>
-        </MainContainer>
+      <MainContainer>
+        <Notification variant="reject"/>
+      </MainContainer>
       `,
     },
   },
@@ -25,6 +27,7 @@ const meta: Meta<typeof Notification> = {
       control: false,
     },
   },
+  decorators: [mainContainerDecorator()],
 };
 
 export default meta;
@@ -38,7 +41,9 @@ export const Reject: Story = {
   parameters: {
     playroom: {
       code: `
-      <Notification variant="reject"/>
+      <MainContainer>
+        <Notification variant="reject"/>
+      </MainContainer>
       `,
     },
   },
@@ -51,7 +56,9 @@ export const TechError: Story = {
   parameters: {
     playroom: {
       code: `
-      <Notification variant='techError'/>
+      <MainContainer>
+        <Notification variant="techError"/>
+      </MainContainer>
       `,
     },
   },
@@ -64,7 +71,9 @@ export const WeRecognizedYou: Story = {
   parameters: {
     playroom: {
       code: `
-      <Notification variant='weRecognizedYou'/>
+      <MainContainer>
+        <Notification variant="weRecognizedYou"/>
+      </MainContainer>
       `,
     },
   },

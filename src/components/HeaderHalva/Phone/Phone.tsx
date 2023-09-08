@@ -1,6 +1,7 @@
 import clsx from "clsx";
-import PhoneNumber from "./PhoneNumber/PhoneNumber";
-import Hint from "./Hint/Hint";
+
+import PhoneNumber from "./PhoneNumber";
+import Hint from "./Hint";
 
 import styles from "./Phone.module.scss";
 

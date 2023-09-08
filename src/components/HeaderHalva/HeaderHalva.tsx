@@ -4,9 +4,10 @@ import { styled } from "@mui/material";
 import type { FC, HTMLProps, ReactNode } from "react";
 
 import { BurgerIcon, HalvaIcon } from "@src/components/Icons";
-import { Button, MainContainer } from "@src/components/base";
-import { Phone } from "@src/components/Phone";
-import type { PhoneProps } from "@src/components/Phone";
+import { Button } from "@src/components/base";
+import { Phone } from "@src/components/HeaderHalva/Phone";
+import { Portal } from "@src/components/Portal";
+import type { PhoneProps } from "@src/components/HeaderHalva/Phone";
 
 import Nav from "./Nav/Nav";
 import Sidebar from "./Sidebar/Sidebar";
@@ -22,7 +23,7 @@ type HeaderHalvaProps = {
   btnText?: string;
   countdownTime?: number;
   Logo?: FC<Partial<HTMLProps<SVGElement>>>;
-  AdditionalLogo?: FC<Partial<HTMLProps<SVGElement>>>;
+  SecondLogo?: FC<Partial<HTMLProps<SVGElement>>>;
   PhoneProps?: PhoneProps;
   SidebarProps?: Pick<SidebarProps, "onClickBtn" | "onLogoClick">;
   links?: Link[];
@@ -45,7 +46,7 @@ const HeaderHalva = ({
   withShadow = false,
   withNav = false,
   Logo = HalvaIcon,
-  AdditionalLogo,
+  SecondLogo,
   PhoneProps,
   SidebarProps,
   orderNum,
@@ -79,14 +80,12 @@ const HeaderHalva = ({
   };
 
   return (
-    <header className={clsx(mods.shadow)}>
-      <MainContainer>
+    <>
+      <header className={clsx(mods.shadow)}>
         <div className={styles.wrapper}>
           <div className={styles.leftSection}>
             <HalvaLogo alt="halva logo" />
-            {AdditionalLogo && (
-              <AdditionalLogo className={styles.additionalLogo} alt="additional logo" />
-            )}
+            {SecondLogo && <SecondLogo className={styles.secondLogo} alt="second logo" />}
             {withNav && <Nav links={links} />}
           </div>
           <div className={styles.rightSection}>
@@ -120,7 +119,9 @@ const HeaderHalva = ({
             )}
           </div>
         </div>
-        {withNav && (
+      </header>
+      {withNav && (
+        <Portal>
           <Sidebar
             Logo={Logo}
             isActive={isActive}
@@ -129,9 +130,9 @@ const HeaderHalva = ({
             orderNum={orderNum}
             {...SidebarProps}
           />
-        )}
-      </MainContainer>
-    </header>
+        </Portal>
+      )}
+    </>
   );
 };
 

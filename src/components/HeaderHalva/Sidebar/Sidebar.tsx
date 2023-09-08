@@ -55,10 +55,10 @@ const Sidebar = ({
 
   return (
     <div className={clsx(styles.container, styles.animated, mods.sidebar)} data-exclude={orderNum}>
-      <div className={styles.header}>
+      <header className={styles.header}>
         <Logo onClick={onLogoClick} width={72} />
         <CrossIcon className={styles.cross} onClick={onCloseSidebar} width={16} height={16} />
-      </div>
+      </header>
       <NavLinks links={links} />
       <Btn handleClick={onClick}>{buttonText}</Btn>
     </div>
