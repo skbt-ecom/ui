@@ -11,7 +11,7 @@ const CountdownContainer = styled("span")(() => ({
   letterSpacing: 0.3,
 }));
 
-const Countdown = ({ countdownTime = 43200000 }: CountdownProps) => {
+const Countdown = ({ countdownTime = 1800000 }: CountdownProps) => {
   const [count, setCount] = useState(countdownTime);
   const [loading, setLoading] = useState(true);
 

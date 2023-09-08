@@ -10,17 +10,28 @@ const meta: Meta<typeof HeaderHalva> = {
   title: "Components/HeaderHalva",
   component: HeaderHalva,
   tags: ["autodocs"],
-
   args: {
     btnText: "Оформить карту",
-    hasRightSection: true,
-    hasBtn: true,
-    hasHint: false,
-    hasPhone: false,
-    hasShadow: false,
-    hasNav: false,
+    withBtn: true,
+    withHint: false,
+    withPhone: false,
+    withShadow: false,
+    withNav: false,
   },
-  parameters: { layout: "fullscreen" },
+  argTypes: {
+    Logo: { control: false },
+    AdditionalLogo: { control: false },
+  },
+  parameters: {
+    layout: "fullscreen",
+    playroom: {
+      code: `
+      <MainContainer>
+        <HeaderHalva />
+      </MainContainer>
+    `,
+    },
+  },
 };
 
 export default meta;
@@ -28,35 +39,35 @@ type Story = StoryObj<typeof meta>;
 
 export const RedTheme: Story = {
   args: {
-    hasBtn: false,
+    withBtn: false,
   },
 };
 
 export const DarkTheme: Story = {
   args: {
-    hasBtn: false,
+    withBtn: false,
   },
   decorators: [themeDecorator("dark")],
 };
 
 export const WithHintAndCountdown: Story = {
   args: {
-    hasHint: true,
+    withHint: true,
     countdownTime: 1800000,
   },
 };
 
 export const WithShadow: Story = {
   args: {
-    hasBtn: false,
-    hasShadow: true,
+    withBtn: false,
+    withShadow: true,
   },
 };
 
 export const WithPhone: Story = {
   args: {
-    hasBtn: false,
-    hasPhone: true,
+    withBtn: false,
+    withPhone: true,
     PhoneProps: {
       phoneHint: "Звонок по России (бесплатно)",
       phones: ["8 800 100-10-20"],
@@ -66,7 +77,7 @@ export const WithPhone: Story = {
 
 export const WithPhoneAndButton: Story = {
   args: {
-    hasPhone: true,
+    withPhone: true,
     PhoneProps: {
       phoneHint: "Звонок по России (бесплатно)",
       phones: ["8 800 100-10-20"],
@@ -86,7 +97,7 @@ export const WithAdditionalLogo: Story = {
 
 export const WithNavigation: Story = {
   args: {
-    hasNav: true,
+    withNav: true,
     orderNum: "99",
   },
 };

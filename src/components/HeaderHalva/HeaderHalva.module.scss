@@ -14,28 +14,58 @@
   @include tablet {
     height: 88px;
   }
-}
 
-.leftSection {
-  display: flex;
-  align-items: center;
+  .leftSection {
+    display: flex;
+    align-items: center;
 
-  .additionalLogo {
-    margin-left: 24px;
-  }
-}
-
-.rightSection {
-  display: flex;
-  align-items: center;
-  column-gap: 24px;
-
-  @include desktop {
-    column-gap: 32px;
+    .additionalLogo {
+      margin-left: 24px;
+    }
   }
 
-  & > :last-child {
-    text-align: right;
+  .rightSection {
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+
+    @include desktop {
+      column-gap: 32px;
+    }
+
+    & > :last-child {
+      text-align: right;
+    }
+
+    .btnGroup {
+      display: flex;
+      align-items: center;
+
+      .btn {
+        display: none;
+
+        @include desktop {
+          display: flex;
+          text-transform: none;
+          border-radius: 8px;
+          height: 40px;
+          width: 168px;
+          font-size: 14px;
+        }
+      }
+
+      .burger {
+        background: none;
+        border: none;
+        width: 18px;
+        height: 14px;
+        cursor: pointer;
+
+        @include desktop {
+          display: none;
+        }
+      }
+    }
   }
 }
 
@@ -43,54 +73,14 @@
   box-shadow: -1px 2px 4px 0px rgba(0, 0, 0, 0.05);
 }
 
-.phoneContainer {
-  display: none;
-
-  @include desktop {
-    display: block;
-  }
-}
-
-.btnGroup {
-  display: flex;
-  align-items: center;
-
-  .btn {
-    display: none;
-
-    @include desktop {
-      display: flex;
-      text-transform: none;
-      border-radius: 8px;
-      height: 40px;
-      width: 168px;
-      font-size: 14px;
-    }
-  }
-}
-
-.burger {
-  background: none;
-  border: none;
-  cursor: pointer;
-
-  @include desktop {
-    display: none;
-  }
-}
-
 .hideOnMob {
-  display: none !important;
-
-  @include tablet {
-    display: block !important;
+  @include mobile-only {
+    display: none !important;
   }
 }
 
 .hideOnTab {
-  display: none !important;
-
-  @include desktop {
-    display: block !important;
+  @include tablet-only {
+    display: none !important;
   }
 }
