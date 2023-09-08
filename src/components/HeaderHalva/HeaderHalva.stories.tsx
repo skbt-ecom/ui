@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { themeDecorator, mainContainerDecorator } from "@src/storybook/decorators";
+import { themeDecorator } from "@src/storybook/decorators";
 
 import ivi from "@src/core/assets/img/ivi.png";
 
@@ -25,14 +25,9 @@ const meta: Meta<typeof HeaderHalva> = {
   parameters: {
     layout: "fullscreen",
     playroom: {
-      code: `
-      <MainContainer>
-        <HeaderHalva />
-      </MainContainer>
-    `,
+      code: `<HeaderHalva />`,
     },
   },
-  decorators: [mainContainerDecorator()],
 };
 
 export default meta;
@@ -42,11 +37,7 @@ export const RedTheme: Story = {
   args: { withBtn: false },
   parameters: {
     playroom: {
-      code: `
-      <MainContainer>
-        <HeaderHalva withBtn={false}/>
-      </MainContainer>
-    `,
+      code: `<HeaderHalva withBtn={false}/>`,
     },
   },
 };
@@ -55,11 +46,7 @@ export const DarkTheme: Story = {
   args: { withBtn: false },
   parameters: {
     playroom: {
-      code: `
-      <MainContainer>
-        <HeaderHalva withBtn={false}/>
-      </MainContainer>
-    `,
+      code: `<HeaderHalva withBtn={false}/>`,
     },
   },
   decorators: [themeDecorator("dark")],
@@ -72,11 +59,7 @@ export const WithHintAndCountdown: Story = {
   },
   parameters: {
     playroom: {
-      code: `
-      <MainContainer>
-        <HeaderHalva withHint countdownTime={1800000}/>
-      </MainContainer>
-    `,
+      code: `<HeaderHalva withHint countdownTime={1800000}/>`,
     },
   },
 };
@@ -88,11 +71,7 @@ export const WithShadow: Story = {
   },
   parameters: {
     playroom: {
-      code: `
-      <MainContainer>
-        <HeaderHalva withBtn={false} withShadow/>
-      </MainContainer>
-    `,
+      code: `<HeaderHalva withBtn={false} withShadow/>`,
     },
   },
 };
@@ -103,16 +82,12 @@ export const WithPhone: Story = {
     withPhone: true,
     PhoneProps: {
       phoneHint: "Звонок по России (бесплатно)",
-      phones: ["8 800 100-10-20"],
+      phones: ["8 800 555-35-35"],
     },
   },
   parameters: {
     playroom: {
-      code: `
-      <MainContainer>
-        <HeaderHalva withBtn={false} withPhone PhoneProps={phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 100-10-20"]} />
-      </MainContainer>
-    `,
+      code: `<HeaderHalva withBtn={false} withPhone PhoneProps={phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]} />`,
     },
   },
 };
@@ -122,16 +97,12 @@ export const WithPhoneAndButton: Story = {
     withPhone: true,
     PhoneProps: {
       phoneHint: "Звонок по России (бесплатно)",
-      phones: ["8 800 100-10-20"],
+      phones: ["8 800 555-35-35"],
     },
   },
   parameters: {
     playroom: {
-      code: `
-      <MainContainer>
-        <HeaderHalva withPhone PhoneProps={phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 100-10-20"]} />
-      </MainContainer>
-    `,
+      code: `<HeaderHalva withPhone PhoneProps={phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]} />`,
     },
   },
 };
@@ -148,11 +119,7 @@ export const WithNavigation: Story = {
   args: { withNav: true },
   parameters: {
     playroom: {
-      code: `
-      <MainContainer>
-        <HeaderHalva withNav />
-      </MainContainer>
-    `,
+      code: `<HeaderHalva withNav />`,
     },
   },
 };

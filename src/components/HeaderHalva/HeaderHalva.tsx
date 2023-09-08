@@ -4,7 +4,7 @@ import { styled } from "@mui/material";
 import type { FC, HTMLProps, ReactNode } from "react";
 
 import { BurgerIcon, HalvaIcon } from "@src/components/Icons";
-import { Button } from "@src/components/base";
+import { Button, MainContainer } from "@src/components/base";
 import { Phone } from "@src/components/HeaderHalva/Phone";
 import { Portal } from "@src/components/Portal";
 import type { PhoneProps } from "@src/components/HeaderHalva/Phone";
@@ -80,8 +80,8 @@ const HeaderHalva = ({
   };
 
   return (
-    <>
-      <header className={clsx(mods.shadow)}>
+    <header className={clsx(mods.shadow)}>
+      <MainContainer>
         <div className={styles.wrapper}>
           <div className={styles.leftSection}>
             <HalvaLogo alt="halva logo" />
@@ -119,20 +119,20 @@ const HeaderHalva = ({
             )}
           </div>
         </div>
-      </header>
-      {withNav && (
-        <Portal>
-          <Sidebar
-            Logo={Logo}
-            isActive={isActive}
-            buttonText={btnText}
-            onCloseSidebar={onToggleSidebar}
-            orderNum={orderNum}
-            {...SidebarProps}
-          />
-        </Portal>
-      )}
-    </>
+        {withNav && (
+          <Portal>
+            <Sidebar
+              Logo={Logo}
+              isActive={isActive}
+              buttonText={btnText}
+              onCloseSidebar={onToggleSidebar}
+              orderNum={orderNum}
+              {...SidebarProps}
+            />
+          </Portal>
+        )}
+      </MainContainer>
+    </header>
   );
 };
 
