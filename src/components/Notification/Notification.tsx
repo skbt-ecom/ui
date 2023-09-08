@@ -1,5 +1,7 @@
 import type { FC, HTMLProps, ReactNode } from "react";
 
+import { MainContainer } from "@src/components/base";
+
 import { RejectOrError } from "./RejectOrError";
 import { WeRecognizedYou } from "./WeRecognizedYou";
 
@@ -63,7 +65,7 @@ const Notification = ({
       );
   }
 
-  return Message;
+  return <MainContainer>{Message}</MainContainer>;
 };
 
 export default Notification;
