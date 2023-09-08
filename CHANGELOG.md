@@ -1,3 +1,10 @@
+# [3.0.0-beta.75](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.74...v3.0.0-beta.75) (2023-09-08)
+
+
+### Features
+
+* **text-align property:** - ([003f56f](https://gitlab.sovcombank.group/web/ecom/ui/commit/003f56f840e8685431c1621c628a129c9d42f7f9))
+
 # [3.0.0-beta.74](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.73...v3.0.0-beta.74) (2023-09-07)
 
 
