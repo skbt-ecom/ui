@@ -1,18 +1,5 @@
 @use "@src/core/styles/global.scss" as *;
 
-.nav {
-  display: none;
-
-  @include desktop {
-    display: block;
-    margin-left: 40px;
-  }
-
-  @include large-desktop {
-    margin-left: 48px;
-  }
-}
-
 .list {
   display: flex;
   justify-content: space-between;

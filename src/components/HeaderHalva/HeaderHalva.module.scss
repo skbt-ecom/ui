@@ -19,8 +19,26 @@
     display: flex;
     align-items: center;
 
-    .secondLogo {
-      margin-left: 24px;
+    @include desktop {
+      column-gap: 40px;
+    }
+
+    @include large-desktop {
+      column-gap: 48px;
+    }
+
+    .logos {
+      display: flex;
+      align-items: center;
+      column-gap: 16px;
+
+      @include tablet {
+        column-gap: 20px;
+      }
+
+      @include desktop {
+        column-gap: 24px;
+      }
     }
   }
 
@@ -41,19 +59,6 @@
       display: flex;
       align-items: center;
 
-      .btn {
-        display: none;
-
-        @include desktop {
-          display: flex;
-          text-transform: none;
-          border-radius: 8px;
-          height: 40px;
-          width: 168px;
-          font-size: 14px;
-        }
-      }
-
       .burger {
         background: none;
         border: none;
@@ -66,6 +71,23 @@
         }
       }
     }
+  }
+}
+
+.btn {
+  padding: 0 !important;
+  text-transform: none !important;
+  border-radius: 8px !important;
+  font-size: 12px !important;
+  width: 130px;
+  height: 32px;
+  font-weight: 500;
+  line-height: 150%;
+
+  @include desktop {
+    font-size: 14px !important;
+    width: 161px;
+    height: 40px;
   }
 }
 

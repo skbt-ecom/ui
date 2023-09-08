@@ -23,7 +23,7 @@ type HeaderHalvaProps = {
   btnText?: string;
   countdownTime?: number;
   Logo?: FC<Partial<HTMLProps<SVGElement>>>;
-  SecondLogo?: FC<Partial<HTMLProps<SVGElement>>>;
+  SecondLogo?: JSX.Element;
   PhoneProps?: PhoneProps;
   SidebarProps?: Pick<SidebarProps, "onClickBtn" | "onLogoClick">;
   links?: Link[];
@@ -74,6 +74,7 @@ const HeaderHalva = ({
   }, []);
 
   const mods = {
+    hideNav: { [styles.hideOnMob]: true, [styles.hideOnTab]: true },
     hidePhone: { [styles.hideOnMob]: true, [styles.hideOnTab]: true },
     hideBtn: { [styles.hideOnMob]: withHint },
     shadow: { [styles.shadow]: withShadow },
@@ -84,14 +85,18 @@ const HeaderHalva = ({
       <MainContainer>
         <div className={styles.wrapper}>
           <div className={styles.leftSection}>
-            <HalvaLogo alt="halva logo" />
-            {SecondLogo && <SecondLogo className={styles.secondLogo} alt="second logo" />}
-            {withNav && <Nav links={links} />}
+            <div className={styles.logos}>
+              <HalvaLogo alt="halva logo" />
+              {SecondLogo}
+            </div>
+            {withNav && <Nav links={links} className={clsx(mods.hideNav)} />}
           </div>
           <div className={styles.rightSection}>
             {withNav ? (
               <div className={styles.btnGroup}>
-                <Button className={styles.btn}>{btnText}</Button>
+                <Button variant="contained" className={clsx(styles.btn, mods.hideNav)}>
+                  {btnText}
+                </Button>
                 <BurgerIcon
                   className={styles.burger}
                   onClick={onToggleSidebar}
@@ -111,7 +116,7 @@ const HeaderHalva = ({
                 )}
                 {withPhone && <Phone className={clsx(mods.hidePhone)} {...PhoneProps} />}
                 {withBtn && (
-                  <Button variant="contained" className={clsx(mods.hideBtn)}>
+                  <Button variant="contained" className={clsx(styles.btn, mods.hideBtn)}>
                     {btnText}
                   </Button>
                 )}

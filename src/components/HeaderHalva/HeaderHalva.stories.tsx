@@ -112,7 +112,9 @@ export const WithButton: Story = {
 };
 
 export const WithSecondLogo: Story = {
-  args: { SecondLogo: () => <img src={ivi} alt="ivi" width={78} height={32} /> },
+  args: {
+    SecondLogo: <img src={ivi} alt="ivi" width={78} height={32} />,
+  },
 };
 
 export const WithNavigation: Story = {
