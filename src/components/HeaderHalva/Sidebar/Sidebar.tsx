@@ -4,7 +4,7 @@ import clsx from "clsx";
 import type { FC, HTMLProps } from "react";
 
 import { HalvaIcon, CrossIcon } from "../../Icons";
-import { NavLinks } from "./NavLinks";
+import NavLinks from "../NavLinks/NavLinks";
 import Btn from "./Btn/Btn";
 
 import styles from "./Sidebar.module.scss";
@@ -59,7 +59,7 @@ const Sidebar = ({
         <Logo onClick={onLogoClick} width={72} />
         <CrossIcon className={styles.cross} onClick={onCloseSidebar} width={16} height={16} />
       </header>
-      <NavLinks links={links} />
+      <NavLinks links={links} variant="vertical" />
       <Btn handleClick={onClick}>{buttonText}</Btn>
     </div>
   );

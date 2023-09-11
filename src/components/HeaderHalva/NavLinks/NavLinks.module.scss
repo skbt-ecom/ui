@@ -1,6 +1,6 @@
 @use "@src/core/styles/global.scss" as *;
 
-.list {
+.list.horizontal {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,6 +31,26 @@
       &:hover {
         color: #a1afbf;
       }
+    }
+  }
+}
+
+.list.vertical {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 40px;
+  padding: 32px 0 0;
+
+  .listItem {
+    list-style: none;
+
+    .link {
+      font-size: 24px;
+      font-weight: 700;
+      color: #9fa0a7;
+      text-decoration: none;
+      line-height: 16px;
     }
   }
 }
