@@ -47,9 +47,16 @@ module.exports = [
     output: {
       dir: "lib",
       format: "esm",
+      sourcemap: true,
       preserveModules: true,
       preserveModulesRoot: "src",
-      sourcemap: true,
+      entryFileNames: (chunkInfo) => {
+        if (chunkInfo.name.includes("node_modules")) {
+          return `${chunkInfo.name.replace("node_modules", "external")}.js`;
+        }
+
+        return "[name].js";
+      },
     },
     // external deps
     external: ["react", "react-dom"],
@@ -76,7 +83,7 @@ module.exports = [
       // Resolving third-party dependencies in node_modules
       resolve(),
       // Babel support
-      babel({ babelHelpers: "bundled" }),
+      babel({ babelHelpers: "bundled", exclude: "node_modules/**" }),
       // Bundling to CommonJS format (module.exports/require())
       commonjs(),
       // ts
@@ -96,6 +103,7 @@ module.exports = [
       // for icons and svg
       url(),
       svgr({ icon: true }),
+      // for size visualize
       sizes(),
       visualizer({
         filename: "bundle-analysis.html",

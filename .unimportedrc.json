@@ -16,7 +16,7 @@
     "**/public/**",
     "**/node_modules/**"
   ],
-  "ignoreUnimported": [],
+  "ignoreUnimported": ["src/utils/getFiles.js"],
   "ignoreUnused": ["express"],
   "ignoreUnresolved": []
 }
