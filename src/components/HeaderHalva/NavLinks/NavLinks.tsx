@@ -2,14 +2,14 @@ import { defaultLinks } from "../helpers";
 
 import type { Link } from "../types";
 
-import styles from "./Nav.module.scss";
+import styles from "./NavLinks.module.scss";
 
-type NavProps = {
+type NavLinksProps = {
   links?: Link[];
   className?: string;
 };
 
-const Nav = ({ links = defaultLinks, className }: NavProps) => {
+const NavLinks = ({ links = defaultLinks, className }: NavLinksProps) => {
   const listItems = links.map(({ title, href }, i) => (
     <li className={styles.listItem} key={i}>
       <a className={styles.link} href={href}>
@@ -25,4 +25,4 @@ const Nav = ({ links = defaultLinks, className }: NavProps) => {
   );
 };
 
-export default Nav;
+export default NavLinks;

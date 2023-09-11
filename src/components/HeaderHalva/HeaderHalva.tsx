@@ -1,6 +1,5 @@
 import { useCallback, useState } from "react";
 import clsx from "clsx";
-import { styled } from "@mui/material";
 import type { FC, HTMLProps, ReactNode } from "react";
 
 import { BurgerIcon, HalvaIcon } from "@src/components/Icons";
@@ -9,8 +8,9 @@ import { Phone } from "@src/components/HeaderHalva/Phone";
 import { Portal } from "@src/components/Portal";
 import type { PhoneProps } from "@src/components/HeaderHalva/Phone";
 
-import Nav from "./Nav/Nav";
+import Nav from "./NavLinks/NavLinks";
 import Sidebar from "./Sidebar/Sidebar";
+import HalvaLogo from "./HalvaLogo/HalvaLogo";
 import { HintAndCountdown } from "./HintAndCountdown";
 import type { SidebarProps } from "./Sidebar/Sidebar";
 import type { Link } from "./types";
@@ -33,6 +33,7 @@ type HeaderHalvaProps = {
   withPhone?: boolean;
   withShadow?: boolean;
   withNav?: boolean;
+  logoColor?: "red" | "dark";
 };
 
 const HeaderHalva = ({
@@ -51,22 +52,8 @@ const HeaderHalva = ({
   SidebarProps,
   orderNum,
   links,
+  logoColor = "dark",
 }: HeaderHalvaProps) => {
-  const HalvaLogo = styled(Logo)(({ theme }) => ({
-    fill: [theme.palette.primary.main],
-    width: 72,
-    height: 14,
-
-    [theme.breakpoints.up("sm")]: {
-      width: 78,
-    },
-
-    [theme.breakpoints.up("md")]: {
-      width: 108,
-      height: 20,
-    },
-  }));
-
   const [isActive, setIsActive] = useState(false);
 
   const onToggleSidebar = useCallback(() => {
@@ -86,7 +73,7 @@ const HeaderHalva = ({
         <div className={styles.wrapper}>
           <div className={styles.leftSection}>
             <div className={styles.logos}>
-              <HalvaLogo alt="halva logo" />
+              <HalvaLogo Img={Logo} variant={logoColor} />
               {SecondLogo}
             </div>
             {withNav && <Nav links={links} className={clsx(mods.hideNav)} />}
@@ -131,6 +118,7 @@ const HeaderHalva = ({
               isActive={isActive}
               buttonText={btnText}
               onCloseSidebar={onToggleSidebar}
+              links={links}
               orderNum={orderNum}
               {...SidebarProps}
             />

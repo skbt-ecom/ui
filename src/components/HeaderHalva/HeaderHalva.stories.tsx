@@ -84,10 +84,11 @@ export const WithPhone: Story = {
       phoneHint: "Звонок по России (бесплатно)",
       phones: ["8 800 555-35-35"],
     },
+    logoColor: "red",
   },
   parameters: {
     playroom: {
-      code: `<HeaderHalva withBtn={false} withPhone PhoneProps={phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]} />`,
+      code: `<HeaderHalva withBtn={false} withPhone PhoneProps={phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]} logoColor="red"/>`,
     },
   },
 };
@@ -99,20 +100,27 @@ export const WithPhoneAndButton: Story = {
       phoneHint: "Звонок по России (бесплатно)",
       phones: ["8 800 555-35-35"],
     },
+    logoColor: "red",
   },
   parameters: {
     playroom: {
-      code: `<HeaderHalva withPhone PhoneProps={phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]} />`,
+      code: `<HeaderHalva withPhone PhoneProps={phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]} logoColor="red" />`,
     },
   },
 };
 
 export const WithButton: Story = {
-  args: {},
+  args: { logoColor: "red" },
+  parameters: {
+    playroom: {
+      code: `<HeaderHalva logoColor="red" />`,
+    },
+  },
 };
 
 export const WithSecondLogo: Story = {
   args: {
+    logoColor: "red",
     SecondLogo: <img src={ivi} alt="ivi" width={78} height={32} />,
   },
 };
