@@ -1,3 +1,10 @@
+# [3.0.0-beta.76](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.75...v3.0.0-beta.76) (2023-09-11)
+
+
+### Features
+
+* **rollup:** add code splitting ([7af172d](https://gitlab.sovcombank.group/web/ecom/ui/commit/7af172d02c8e1f3afa1f657c16d2ae3f3affced1))
+
 # [3.0.0-beta.75](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.74...v3.0.0-beta.75) (2023-09-08)
 
 
