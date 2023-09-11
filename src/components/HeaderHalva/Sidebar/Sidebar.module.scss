@@ -8,10 +8,13 @@
   height: 100%;
   background: #fff;
   transform: translateX(100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   z-index: 9999;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .active {
@@ -28,11 +31,9 @@
   justify-content: space-between;
   align-items: center;
   height: 64px;
-  padding: 0 16px;
 
   @include tablet {
     height: 80px;
-    padding: 0 28px;
   }
 
   @include tablet {
@@ -54,4 +55,13 @@
 
 .noScroll {
   overflow: hidden;
+}
+
+.btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 328px;
 }

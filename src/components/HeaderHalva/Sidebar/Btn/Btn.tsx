@@ -6,7 +6,6 @@ import type { ButtonProps } from "../../../base/Button";
 
 const StyledBtn = styled(Button)(({ theme }) => ({
   width: "100%",
-  maxWidth: "328px",
   height: "48px",
   margin: "auto auto 24px",
   background: [theme.palette.primary.main],

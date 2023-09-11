@@ -88,7 +88,7 @@ export const WithPhone: Story = {
   },
   parameters: {
     playroom: {
-      code: `<HeaderHalva withBtn={false} withPhone PhoneProps={phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]} logoColor="red"/>`,
+      code: `<HeaderHalva withBtn={false} withPhone PhoneProps={{phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]}} logoColor="red"/>`,
     },
   },
 };
@@ -104,7 +104,7 @@ export const WithPhoneAndButton: Story = {
   },
   parameters: {
     playroom: {
-      code: `<HeaderHalva withPhone PhoneProps={phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]} logoColor="red" />`,
+      code: `<HeaderHalva withPhone PhoneProps={{phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]}} logoColor="red" />`,
     },
   },
 };

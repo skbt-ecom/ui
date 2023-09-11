@@ -1,14 +1,15 @@
 import { useCallback, useEffect } from "react";
 import clsx from "clsx";
-
 import type { FC, HTMLProps } from "react";
+
+import { MainContainer } from "@src/components/base";
 
 import { HalvaIcon, CrossIcon } from "../../Icons";
 import NavLinks from "../NavLinks/NavLinks";
 import Btn from "./Btn/Btn";
+import type { Link } from "../types";
 
 import styles from "./Sidebar.module.scss";
-import type { Link } from "../types";
 
 export type SidebarProps = {
   isActive?: boolean;
@@ -55,12 +56,20 @@ const Sidebar = ({
 
   return (
     <div className={clsx(styles.container, styles.animated, mods.sidebar)} data-exclude={orderNum}>
-      <header className={styles.header}>
-        <Logo onClick={onLogoClick} width={72} />
-        <CrossIcon className={styles.cross} onClick={onCloseSidebar} width={16} height={16} />
-      </header>
-      <NavLinks links={links} variant="vertical" />
-      <Btn handleClick={onClick}>{buttonText}</Btn>
+      <div className={styles.wrapper}>
+        <MainContainer>
+          <header className={styles.header}>
+            <Logo onClick={onLogoClick} width={72} />
+            <CrossIcon className={styles.cross} onClick={onCloseSidebar} width={16} height={16} />
+          </header>
+        </MainContainer>
+        <NavLinks links={links} variant="vertical" />
+        <div className={styles.btn}>
+          <MainContainer>
+            <Btn handleClick={onClick}>{buttonText}</Btn>
+          </MainContainer>
+        </div>
+      </div>
     </div>
   );
 };
