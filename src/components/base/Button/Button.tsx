@@ -18,7 +18,7 @@ export const Button = ({ children, handleClick, ...props }: ButtonProps) => {
   // test alias - TODO:: remove
   const onClick = () => {
     // eslint-disable-next-line no-console
-    console.log(classNames, test.name, test);
+    // console.log(classNames, test.name, test);
     handleClick?.();
   };
 

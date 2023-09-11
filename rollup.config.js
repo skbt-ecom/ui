@@ -67,7 +67,7 @@ module.exports = [
       json(),
       // Resolving third-party dependencies in node_modules
       resolve(),
-      // Babel support
+      // // Babel support
       babel({ babelHelpers: "bundled" }),
       // Bundling to CommonJS format (module.exports/require())
       commonjs(),
