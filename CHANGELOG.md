@@ -1,3 +1,35 @@
+# [3.0.0-beta.79](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.78...v3.0.0-beta.79) (2023-09-13)
+
+
+### Bug Fixes
+
+* **import style:** - ([a2dce27](https://gitlab.sovcombank.group/web/ecom/ui/commit/a2dce27fa9a47071f88f829a8fefc3adb7a8062e))
+* **mr conflict:** - ([99b87f9](https://gitlab.sovcombank.group/web/ecom/ui/commit/99b87f9bc918d68a0c167d517326c4945237af2e))
+* **mr conflict:** - ([2a33029](https://gitlab.sovcombank.group/web/ecom/ui/commit/2a33029c3378d64311568531e5b3ba5675a60558))
+* **scss import s:** - ([5f95b58](https://gitlab.sovcombank.group/web/ecom/ui/commit/5f95b58e0acb205b5417f44f2d4695bd7d6912c7))
+* **type  of setinterval:** - ([3cedb0d](https://gitlab.sovcombank.group/web/ecom/ui/commit/3cedb0d54c63c9e595bcf3bf52d98502db909af7))
+
+
+### Features
+
+* **change relative import s to absolute:** - ([4ae0c8e](https://gitlab.sovcombank.group/web/ecom/ui/commit/4ae0c8e94e3506a666eb334136b13987f6fe9e54))
+* **delete maincontainerdecorator:** - ([8e4e969](https://gitlab.sovcombank.group/web/ecom/ui/commit/8e4e9695f193ae659e59c5c776e3b0c3f4c78ae8))
+* **header halva  component  variations:** - ([2b4d014](https://gitlab.sovcombank.group/web/ecom/ui/commit/2b4d0147f2c4dec9443152ef2f880e801c5db5a1))
+* **header styles:** - ([09f42d6](https://gitlab.sovcombank.group/web/ecom/ui/commit/09f42d6818644afedb400e5c9b35a9c82f4af5e9))
+* **header with navigation and sidebat:** - ([77fdeaf](https://gitlab.sovcombank.group/web/ecom/ui/commit/77fdeafb0c5c345ca228a700104584b4a0fe89e9))
+* **header with phone:** - ([dd21be3](https://gitlab.sovcombank.group/web/ecom/ui/commit/dd21be34b5c030f0f3e81eb86c4eae8898c27b72))
+* **logo color props:** - ([5724f8a](https://gitlab.sovcombank.group/web/ecom/ui/commit/5724f8abc1f6c3a580a1238bc966c91f9ae7f423))
+* **maincontainer on hedaer:** - ([84ca2ac](https://gitlab.sovcombank.group/web/ecom/ui/commit/84ca2ac9d9a49f712ee60a5e9cc7b398b12e8ab4))
+* **phone and hint edits:** - ([3009f6e](https://gitlab.sovcombank.group/web/ecom/ui/commit/3009f6e141bbe63a3f029423f8d587444d32634b))
+* **phone on  halva header:** - ([fcb55a7](https://gitlab.sovcombank.group/web/ecom/ui/commit/fcb55a7904435caee02d578fbd8b2d4f4c37e2fb))
+* **phone styles:** - ([732b5cc](https://gitlab.sovcombank.group/web/ecom/ui/commit/732b5cc7898703880fd7f5e884d28b89a2c7f03a))
+* **remove unsed import:** - ([7830288](https://gitlab.sovcombank.group/web/ecom/ui/commit/7830288e0d0133297187565015e423b01eafca16))
+* **shadow on header:** - ([2f525d5](https://gitlab.sovcombank.group/web/ecom/ui/commit/2f525d54eeeb9ab329600781e3c19be023de1c32))
+* **sidebar adaptivity for 320:** - ([9b9838b](https://gitlab.sovcombank.group/web/ecom/ui/commit/9b9838b622454fa88c93fb49017bec8c0bab65c3))
+* **sidebar portal:** - ([02e853a](https://gitlab.sovcombank.group/web/ecom/ui/commit/02e853a94692445f6771604cafba3d9c0d1662f9))
+* **timer and addirional logo on header:** header extensibility ([8371c92](https://gitlab.sovcombank.group/web/ecom/ui/commit/8371c9203d28044ac9cd435969d209133895b8c8))
+* **tooltip with countdown in header:** - ([5aa98d8](https://gitlab.sovcombank.group/web/ecom/ui/commit/5aa98d86f0a3f653b40e32c5e0d47e554af7fe92))
+
 # [3.0.0-beta.78](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.77...v3.0.0-beta.78) (2023-09-13)
 
 
