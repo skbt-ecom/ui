@@ -1,3 +1,10 @@
+# [3.0.0-beta.80](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.79...v3.0.0-beta.80) (2023-09-13)
+
+
+### Bug Fixes
+
+* **lib:** svgr alias error and refactor some components paths ([30cb926](https://gitlab.sovcombank.group/web/ecom/ui/commit/30cb926edc63db52e31f5b4cbd31c140105c2d2b))
+
 # [3.0.0-beta.79](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.78...v3.0.0-beta.79) (2023-09-13)
 
 
