@@ -5,14 +5,14 @@ import type { FC, HTMLProps, ReactNode } from "react";
 import { BurgerIcon, HalvaIcon } from "@src/components/Icons";
 import { Button, MainContainer } from "@src/components/base";
 import { Phone } from "@src/components/halva/Header/Phone";
-import { Portal } from "@src/components/Portal";
+import { Portal } from "@src/components/base/Portal";
 import type { PhoneProps } from "@src/components/halva/Header/Phone";
 
 import Nav from "./NavLinks/NavLinks";
-import Sidebar from "./Sidebar/Sidebar";
+import { Sidebar } from "./Sidebar";
 import HalvaLogo from "./HalvaLogo/HalvaLogo";
 import { HintAndCountdown } from "./HintAndCountdown";
-import type { SidebarProps } from "./Sidebar/Sidebar";
+import type { SidebarProps } from "./Sidebar";
 import type { Link } from "./types";
 
 import styles from "./Header.module.scss";
