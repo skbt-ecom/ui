@@ -1,3 +1,10 @@
+# [3.0.0-beta.78](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.77...v3.0.0-beta.78) (2023-09-13)
+
+
+### Features
+
+* **lib:** remove unused plugins and set extract css false ([cdabbcc](https://gitlab.sovcombank.group/web/ecom/ui/commit/cdabbcccff2d9957ba7a17f010b6c22203117f4c))
+
 # [3.0.0-beta.77](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.76...v3.0.0-beta.77) (2023-09-11)
 
 
