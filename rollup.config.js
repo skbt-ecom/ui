@@ -1,27 +1,30 @@
-// https://www.youtube.com/watch?v=CROGZ0sSt6Y&t=713s&ab_channel=MaximFilanovich
 /* eslint-disable import/no-extraneous-dependencies */
 
-const typescript = require("@rollup/plugin-typescript");
-const postcss = require("rollup-plugin-postcss");
-const url = require("@rollup/plugin-url");
-const svgr = require("@svgr/rollup");
-
+// general
 const peerDepsExternal = require("rollup-plugin-peer-deps-external");
-const autoprefixer = require("autoprefixer");
-const resolve = require("@rollup/plugin-node-resolve");
-const commonjs = require("@rollup/plugin-commonjs");
 const alias = require("@rollup/plugin-alias");
 const json = require("@rollup/plugin-json");
-const progress = require("rollup-plugin-progress");
-const sizes = require("rollup-plugin-sizes");
-const { visualizer } = require("rollup-plugin-visualizer");
-
+const resolve = require("@rollup/plugin-node-resolve");
 const babel = require("@rollup/plugin-babel");
+const commonjs = require("@rollup/plugin-commonjs");
+const typescript = require("@rollup/plugin-typescript");
 
+// styles
+const postcss = require("rollup-plugin-postcss");
+const autoprefixer = require("autoprefixer");
 const simplevars = require("postcss-simple-vars");
 const nested = require("postcss-nested");
 const presetenv = require("postcss-preset-env");
 const cssnano = require("cssnano");
+
+// static
+const url = require("@rollup/plugin-url");
+const svgr = require("@svgr/rollup");
+
+// devtools
+const progress = require("rollup-plugin-progress");
+const sizes = require("rollup-plugin-sizes");
+const { visualizer } = require("rollup-plugin-visualizer");
 
 const { getFiles } = require("./src/utils/getFiles");
 
@@ -64,6 +67,7 @@ module.exports = [
     },
     // external deps
     external: ["react", "react-dom"],
+    // resolve unnecassary warnings
     onwarn(warning, warn) {
       // for hide 'use client' warning
       if (warning.code === "MODULE_LEVEL_DIRECTIVE") {
@@ -82,7 +86,7 @@ module.exports = [
           "@src/": "src/",
         },
       }),
-      // json
+      // json support
       json(),
       // Resolving third-party dependencies in node_modules
       resolve(),
@@ -108,6 +112,7 @@ module.exports = [
       svgr({ icon: true }),
       // for size visualize
       sizes(),
+      // bundle visualize
       visualizer({
         filename: "bundle-analysis.html",
         open: true,
