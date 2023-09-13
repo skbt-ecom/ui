@@ -48,8 +48,12 @@ module.exports = [
       dir: "lib",
       format: "esm",
       sourcemap: true,
+      // code-splitting
       preserveModules: true,
       preserveModulesRoot: "src",
+      // resolve node_modeules error
+      // (preserveModules add node_modules folder to the final bundle,
+      // but flatten node_modules structure during the publish stage )
       entryFileNames: (chunkInfo) => {
         if (chunkInfo.name.includes("node_modules")) {
           return `${chunkInfo.name.replace("node_modules", "external")}.js`;
@@ -97,7 +101,6 @@ module.exports = [
         plugins: [autoprefixer, simplevars(), nested(), presetenv(), cssnano()],
         modules: true,
         sourceMap: true,
-        extract: true,
         minimize: true,
       }),
       // for icons and svg
