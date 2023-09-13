@@ -4,11 +4,11 @@ import { themeDecorator } from "@src/storybook/decorators";
 
 import ivi from "@src/core/assets/img/ivi.png";
 
-import HeaderHalva from "./HeaderHalva";
+import Header from "./Header";
 
-const meta: Meta<typeof HeaderHalva> = {
-  title: "Components/HeaderHalva",
-  component: HeaderHalva,
+const meta: Meta<typeof Header> = {
+  title: "Components/Header",
+  component: Header,
   tags: ["autodocs"],
   args: {
     btnText: "Оформить карту",
@@ -25,7 +25,7 @@ const meta: Meta<typeof HeaderHalva> = {
   parameters: {
     layout: "fullscreen",
     playroom: {
-      code: `<HeaderHalva />`,
+      code: `<Header />`,
     },
   },
 };
@@ -37,7 +37,7 @@ export const RedTheme: Story = {
   args: { withBtn: false },
   parameters: {
     playroom: {
-      code: `<HeaderHalva withBtn={false}/>`,
+      code: `<Header withBtn={false}/>`,
     },
   },
 };
@@ -46,7 +46,7 @@ export const DarkTheme: Story = {
   args: { withBtn: false },
   parameters: {
     playroom: {
-      code: `<HeaderHalva withBtn={false}/>`,
+      code: `<Header withBtn={false}/>`,
     },
   },
   decorators: [themeDecorator("dark")],
@@ -59,7 +59,7 @@ export const WithHintAndCountdown: Story = {
   },
   parameters: {
     playroom: {
-      code: `<HeaderHalva withHint countdownTime={1800000}/>`,
+      code: `<Header withHint countdownTime={1800000}/>`,
     },
   },
 };
@@ -71,7 +71,7 @@ export const WithShadow: Story = {
   },
   parameters: {
     playroom: {
-      code: `<HeaderHalva withBtn={false} withShadow/>`,
+      code: `<Header withBtn={false} withShadow/>`,
     },
   },
 };
@@ -88,7 +88,7 @@ export const WithPhone: Story = {
   },
   parameters: {
     playroom: {
-      code: `<HeaderHalva withBtn={false} withPhone PhoneProps={{phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]}} logoColor="red"/>`,
+      code: `<Header withBtn={false} withPhone PhoneProps={{phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]}} logoColor="red"/>`,
     },
   },
 };
@@ -104,7 +104,7 @@ export const WithPhoneAndButton: Story = {
   },
   parameters: {
     playroom: {
-      code: `<HeaderHalva withPhone PhoneProps={{phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]}} logoColor="red" />`,
+      code: `<Header withPhone PhoneProps={{phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]}} logoColor="red" />`,
     },
   },
 };
@@ -113,7 +113,7 @@ export const WithButton: Story = {
   args: { logoColor: "red" },
   parameters: {
     playroom: {
-      code: `<HeaderHalva logoColor="red" />`,
+      code: `<Header logoColor="red" />`,
     },
   },
 };
@@ -129,7 +129,7 @@ export const WithNavigation: Story = {
   args: { withNav: true },
   parameters: {
     playroom: {
-      code: `<HeaderHalva withNav />`,
+      code: `<Header withNav />`,
     },
   },
 };

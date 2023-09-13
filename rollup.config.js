@@ -5,8 +5,7 @@ const typescript = require("@rollup/plugin-typescript");
 const postcss = require("rollup-plugin-postcss");
 const url = require("@rollup/plugin-url");
 const svgr = require("@svgr/rollup");
-const terser = require("@rollup/plugin-terser");
-const dts = require("rollup-plugin-dts");
+
 const peerDepsExternal = require("rollup-plugin-peer-deps-external");
 const autoprefixer = require("autoprefixer");
 const resolve = require("@rollup/plugin-node-resolve");
@@ -15,8 +14,8 @@ const alias = require("@rollup/plugin-alias");
 const json = require("@rollup/plugin-json");
 const progress = require("rollup-plugin-progress");
 const sizes = require("rollup-plugin-sizes");
-const filesize = require("rollup-plugin-filesize");
-const copy = require("rollup-plugin-copy");
+const { visualizer } = require("rollup-plugin-visualizer");
+
 const babel = require("@rollup/plugin-babel");
 
 const simplevars = require("postcss-simple-vars");
@@ -24,25 +23,41 @@ const nested = require("postcss-nested");
 const presetenv = require("postcss-preset-env");
 const cssnano = require("cssnano");
 
-const packageJson = require("./package.json");
+const { getFiles } = require("./src/utils/getFiles");
+
+const extensions = [".js", ".ts", ".jsx", ".tsx"];
+const ignoreExtensions = [
+  ".stories.jsx",
+  ".stories.tsx",
+  ".stories.js",
+  ".stories.ts",
+  ".test.jsx",
+  ".test.tsx",
+  ".test.js",
+  ".test.ts",
+  ".spec.jsx",
+  ".spec.tsx",
+  ".spec.js",
+  ".spec.ts",
+];
 
 module.exports = [
   {
-    input: "src/index.ts",
-    output: [
-      // common js
-      {
-        file: `lib/${packageJson.main}`,
-        format: "cjs",
-        sourcemap: true,
+    input: ["./src/index.ts", ...getFiles("./src/components", extensions, ignoreExtensions)],
+    output: {
+      dir: "lib",
+      format: "esm",
+      sourcemap: true,
+      preserveModules: true,
+      preserveModulesRoot: "src",
+      entryFileNames: (chunkInfo) => {
+        if (chunkInfo.name.includes("node_modules")) {
+          return `${chunkInfo.name.replace("node_modules", "external")}.js`;
+        }
+
+        return "[name].js";
       },
-      // es module
-      {
-        file: `lib/${packageJson.module}`,
-        format: "esm",
-        sourcemap: true,
-      },
-    ],
+    },
     // external deps
     external: ["react", "react-dom"],
     onwarn(warning, warn) {
@@ -68,57 +83,34 @@ module.exports = [
       // Resolving third-party dependencies in node_modules
       resolve(),
       // Babel support
-      babel({ babelHelpers: "bundled" }),
+      babel({ babelHelpers: "bundled", exclude: "node_modules/**" }),
       // Bundling to CommonJS format (module.exports/require())
       commonjs(),
       // ts
       typescript({
         tsconfig: "./tsconfig.lib.json",
+        declaration: true,
+        declarationDir: "lib",
       }),
       // scss
       postcss({
         plugins: [autoprefixer, simplevars(), nested(), presetenv(), cssnano()],
         modules: true,
         sourceMap: true,
-        extract: false,
+        extract: true,
         minimize: true,
       }),
       // for icons and svg
       url(),
       svgr({ icon: true }),
-      // min js bundle
-      terser(),
-      // add source files
-      copy({
-        copyOnce: true,
-        flatten: false,
-        targets: [
-          {
-            src: [
-              "src/**/*.(js|ts|jsx|tsx)",
-              "**/assets/**",
-              "!src/**/index.ts",
-              "!**/*.(stories|test|spec).*",
-              "!**/(storybook|playroom)/**",
-              "!**/node_modules/**",
-            ],
-            dest: "lib/src/",
-          },
-        ],
-      }),
+      // for size visualize
       sizes(),
-      filesize(),
+      visualizer({
+        filename: "bundle-analysis.html",
+        open: true,
+        gzipSize: true,
+        brotliSize: true,
+      }),
     ],
   },
-  // for types
-  {
-    input: "src/index.ts",
-    output: [{ file: `lib/${packageJson.types}`, format: "esm" }],
-    // exclude css/scss files from this bundle (this is only for global types)
-    external: [/\.(css|scss)$/],
-    plugins: [dts.default()],
-  },
 ];
-
-// TODO:: testing
-// process.env is working?

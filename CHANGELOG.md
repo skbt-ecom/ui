@@ -1,3 +1,44 @@
+# [3.0.0-beta.77](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.76...v3.0.0-beta.77) (2023-09-11)
+
+
+### Bug Fixes
+
+* **lib:** rename node_modules to external from lib ([252cc00](https://gitlab.sovcombank.group/web/ecom/ui/commit/252cc00891de3458bea8bccd3863fa9bb06338ce))
+
+# [3.0.0-beta.76](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.75...v3.0.0-beta.76) (2023-09-11)
+
+
+### Features
+
+* **rollup:** add code splitting ([7af172d](https://gitlab.sovcombank.group/web/ecom/ui/commit/7af172d02c8e1f3afa1f657c16d2ae3f3affced1))
+
+# [3.0.0-beta.75](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.74...v3.0.0-beta.75) (2023-09-08)
+
+
+### Features
+
+* **text-align property:** - ([003f56f](https://gitlab.sovcombank.group/web/ecom/ui/commit/003f56f840e8685431c1621c628a129c9d42f7f9))
+
+# [3.0.0-beta.74](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.73...v3.0.0-beta.74) (2023-09-07)
+
+
+### Bug Fixes
+
+* **lib:** return rollup config ([0c6f5dc](https://gitlab.sovcombank.group/web/ecom/ui/commit/0c6f5dc4e7f2ec1ccac6f9cf255ac639835542c5))
+
+# [3.0.0-beta.73](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.72...v3.0.0-beta.73) (2023-09-07)
+
+
+### Bug Fixes
+
+* **lib:** test some rollup plugins ([1411996](https://gitlab.sovcombank.group/web/ecom/ui/commit/14119966f96bb9dc402e9a3d98a4c6a936ab4704))
+* **loki:** replace docker chrome to app ([28db5af](https://gitlab.sovcombank.group/web/ecom/ui/commit/28db5afd4bf03bc07d1bd0209ac3f5e9a3f6132a))
+
+
+### Features
+
+* **ci/cd:** add proxies to visual test stage ([9491c21](https://gitlab.sovcombank.group/web/ecom/ui/commit/9491c21057687b84727b9f337aad04bd5bfa2a40))
+
 # [3.0.0-beta.72](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.71...v3.0.0-beta.72) (2023-09-04)
 
 

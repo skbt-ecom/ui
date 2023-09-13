@@ -4,9 +4,9 @@ import type { FC, HTMLProps, ReactNode } from "react";
 
 import { BurgerIcon, HalvaIcon } from "@src/components/Icons";
 import { Button, MainContainer } from "@src/components/base";
-import { Phone } from "@src/components/HeaderHalva/Phone";
+import { Phone } from "@src/components/halva/Header/Phone";
 import { Portal } from "@src/components/Portal";
-import type { PhoneProps } from "@src/components/HeaderHalva/Phone";
+import type { PhoneProps } from "@src/components/halva/Header/Phone";
 
 import Nav from "./NavLinks/NavLinks";
 import Sidebar from "./Sidebar/Sidebar";
@@ -15,9 +15,9 @@ import { HintAndCountdown } from "./HintAndCountdown";
 import type { SidebarProps } from "./Sidebar/Sidebar";
 import type { Link } from "./types";
 
-import styles from "./HeaderHalva.module.scss";
+import styles from "./Header.module.scss";
 
-type HeaderHalvaProps = {
+type HeaderProps = {
   hintTitle?: ReactNode;
   hintText?: string;
   btnText?: string;
@@ -36,7 +36,7 @@ type HeaderHalvaProps = {
   logoColor?: "red" | "dark";
 };
 
-const HeaderHalva = ({
+const Header = ({
   hintTitle,
   hintText,
   btnText = "Оформить карту",
@@ -53,7 +53,7 @@ const HeaderHalva = ({
   orderNum,
   links,
   logoColor = "dark",
-}: HeaderHalvaProps) => {
+}: HeaderProps) => {
   const [isActive, setIsActive] = useState(false);
 
   const onToggleSidebar = useCallback(() => {
@@ -129,4 +129,4 @@ const HeaderHalva = ({
   );
 };
 
-export default HeaderHalva;
+export default Header;
