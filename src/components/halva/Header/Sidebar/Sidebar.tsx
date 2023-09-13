@@ -4,7 +4,7 @@ import type { FC, HTMLProps } from "react";
 
 import { MainContainer } from "@src/components/base";
 
-import { HalvaIcon, CrossIcon } from "../../Icons";
+import { HalvaIcon, CrossIcon } from "../../../Icons";
 import NavLinks from "../NavLinks/NavLinks";
 import Btn from "./Btn/Btn";
 import type { Link } from "../types";

@@ -1,8 +1,8 @@
 import { styled } from "@mui/material";
 
-import { Button } from "../../../base/Button";
+import { Button } from "../../../../base/Button";
 
-import type { ButtonProps } from "../../../base/Button";
+import type { ButtonProps } from "../../../../base/Button";
 
 const StyledBtn = styled(Button)(({ theme }) => ({
   width: "100%",
