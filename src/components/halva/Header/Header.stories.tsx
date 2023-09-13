@@ -7,7 +7,7 @@ import ivi from "@src/core/assets/img/ivi.png";
 import Header from "./Header";
 
 const meta: Meta<typeof Header> = {
-  title: "Components/Header",
+  title: "halva/Header",
   component: Header,
   tags: ["autodocs"],
   args: {
@@ -82,13 +82,13 @@ export const WithPhone: Story = {
     withPhone: true,
     PhoneProps: {
       phoneHint: "Звонок по России (бесплатно)",
-      phones: ["8 800 555-35-35"],
+      phoneNumber: "8 800 555-35-35",
     },
     logoColor: "red",
   },
   parameters: {
     playroom: {
-      code: `<Header withBtn={false} withPhone PhoneProps={{phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]}} logoColor="red"/>`,
+      code: `<Header withBtn={false} withPhone PhoneProps={{phoneHint: "Звонок по России (бесплатно)", phoneNumber: "8 800 555-35-35"}} logoColor="red"/>`,
     },
   },
 };
@@ -98,13 +98,13 @@ export const WithPhoneAndButton: Story = {
     withPhone: true,
     PhoneProps: {
       phoneHint: "Звонок по России (бесплатно)",
-      phones: ["8 800 555-35-35"],
+      phoneNumber: "8 800 555-35-35",
     },
     logoColor: "red",
   },
   parameters: {
     playroom: {
-      code: `<Header withPhone PhoneProps={{phoneHint: "Звонок по России (бесплатно)", phones: ["8 800 555-35-35"]}} logoColor="red" />`,
+      code: `<Header withPhone PhoneProps={{phoneHint: "Звонок по России (бесплатно)", phoneNumber: "8 800 555-35-35"}} logoColor="red" />`,
     },
   },
 };

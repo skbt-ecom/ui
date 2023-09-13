@@ -29,16 +29,16 @@ const Countdown = ({ countdownTime = 1800000 }: CountdownProps) => {
   }, [count, loading]);
 
   useEffect(() => {
-    let secondsLeft: NodeJS.Timer;
+    let interval: ReturnType<typeof setInterval>;
 
     if (count > 0 && !loading) {
-      secondsLeft = setInterval(() => {
+      interval = setInterval(() => {
         setCount((c) => c - 1000);
       }, 1000);
     }
 
     return () => {
-      clearInterval(secondsLeft);
+      clearInterval(interval);
     };
   }, [count, loading]);
 
