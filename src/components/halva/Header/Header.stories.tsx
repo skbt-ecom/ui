@@ -7,7 +7,7 @@ import ivi from "@src/core/assets/img/ivi.png";
 import Header from "./Header";
 
 const meta: Meta<typeof Header> = {
-  title: "halva/Header",
+  title: "Halva/Header",
   component: Header,
   tags: ["autodocs"],
   args: {

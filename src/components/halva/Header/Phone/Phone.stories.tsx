@@ -4,7 +4,7 @@ import Phone from "./Phone";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Phone> = {
-  title: "Components/Phone",
+  title: "Halva/Header/Phone",
   component: Phone,
   tags: ["autodocs"],
   parameters: {

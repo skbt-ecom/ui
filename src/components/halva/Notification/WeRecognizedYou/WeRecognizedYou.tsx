@@ -1,7 +1,7 @@
-import img from "../../../core/assets/img/halvaCard.png";
+import img from "@src/core/assets/img/halvaCard.png";
 
-import { Button } from "../../base/Button";
-import { UserCircleIcon } from "../../Icons";
+import { Button } from "@src/components/base/Button";
+import { UserCircleIcon } from "@src/components/Icons";
 import { Wrapper } from "../Wrapper";
 import { defaultSubtitle, defaultTitle, defaultTextAboveBtn, defaultBtnText } from "./helper";
 

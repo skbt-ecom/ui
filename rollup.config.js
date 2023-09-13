@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-
+const path = require("path");
 // general
 const peerDepsExternal = require("rollup-plugin-peer-deps-external");
 const alias = require("@rollup/plugin-alias");
@@ -83,7 +83,7 @@ module.exports = [
       // for aliases
       alias({
         entries: {
-          "@src/": "src/",
+          "@src": path.resolve(__dirname, "./src"),
         },
       }),
       // json support
@@ -106,6 +106,7 @@ module.exports = [
         modules: true,
         sourceMap: true,
         minimize: true,
+        // extract: true,
       }),
       // for icons and svg
       url(),
