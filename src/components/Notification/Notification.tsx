@@ -1,6 +1,7 @@
 import type { FC, HTMLProps, ReactNode } from "react";
 
-import { MainContainer } from "../base";
+import { MainContainer } from "@src/components/base";
+
 import { RejectOrError } from "./RejectOrError";
 import { WeRecognizedYou } from "./WeRecognizedYou";
 

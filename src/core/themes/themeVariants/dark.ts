@@ -1,14 +1,18 @@
 import { createTheme } from "@mui/material";
-import { ThemePallete } from "../themeConfig";
+import { ThemePalleteHalva } from "../themeConfig";
 
 export const darkTheme = createTheme({
   palette: {
     primary: {
-      main: ThemePallete.BLACK_PRIMARY,
+      main: ThemePalleteHalva.BLACK_PRIMARY,
     },
     secondary: {
       // Заглушка
-      main: ThemePallete.BLACK_PRIMARY,
+      main: ThemePalleteHalva.BLACK_PRIMARY,
+    },
+    text: {
+      primary: ThemePalleteHalva.BLACK_PRIMARY,
+      secondary: ThemePalleteHalva.SECONDARY,
     },
   },
 });

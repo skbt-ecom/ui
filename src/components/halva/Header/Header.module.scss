@@ -1,0 +1,108 @@
+@use "../../../core/styles/global.scss" as *;
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 64px;
+
+  @include tablet {
+    height: 80px;
+  }
+
+  @include desktop {
+    height: 88px;
+  }
+
+  .leftSection {
+    display: flex;
+    align-items: center;
+
+    @include desktop {
+      column-gap: 40px;
+    }
+
+    @include large-desktop {
+      column-gap: 48px;
+    }
+
+    .logos {
+      display: flex;
+      align-items: center;
+      column-gap: 16px;
+
+      @include tablet {
+        column-gap: 20px;
+      }
+
+      @include desktop {
+        column-gap: 24px;
+      }
+    }
+  }
+
+  .rightSection {
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+
+    @include desktop {
+      column-gap: 32px;
+    }
+
+    & > :last-child {
+      text-align: right;
+    }
+
+    .btnGroup {
+      display: flex;
+      align-items: center;
+
+      .burger {
+        background: none;
+        border: none;
+        width: 18px;
+        height: 14px;
+        cursor: pointer;
+
+        @include desktop {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  padding: 0 !important;
+  text-transform: none !important;
+  border-radius: 8px !important;
+  font-size: 12px !important;
+  width: 130px;
+  height: 32px;
+  font-weight: 500;
+  line-height: 150%;
+
+  @include desktop {
+    font-size: 14px !important;
+    width: 161px;
+    height: 40px;
+  }
+}
+
+.shadow {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.hideOnMob {
+  @include mobile-only {
+    display: none !important;
+  }
+}
+
+.hideOnTab {
+  @include tablet-only {
+    display: none !important;
+  }
+}

@@ -1,6 +1,6 @@
 import type { ButtonProps as MuiButtonProps } from "@mui/material";
 import { Button as MuiButton } from "@mui/material";
-import { classNames } from "@src/utils/classNames";
+import classNames from "classnames";
 import test from "./test.json";
 import styles from "./Button.module.scss";
 

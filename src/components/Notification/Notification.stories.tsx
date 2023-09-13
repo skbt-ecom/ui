@@ -10,11 +10,7 @@ const meta: Meta<typeof Notification> = {
   parameters: {
     layout: "fullscreen",
     playroom: {
-      code: `
-        <MainContainer>
-          <Notification variant="reject"/>
-        </MainContainer>
-      `,
+      code: `<Notification variant="reject"/>`,
     },
   },
   argTypes: {
@@ -37,9 +33,7 @@ export const Reject: Story = {
   },
   parameters: {
     playroom: {
-      code: `
-      <Notification variant="reject"/>
-      `,
+      code: `<Notification variant="reject"/>`,
     },
   },
 };
@@ -50,9 +44,7 @@ export const TechError: Story = {
   },
   parameters: {
     playroom: {
-      code: `
-      <Notification variant='techError'/>
-      `,
+      code: `<Notification variant="techError"/>`,
     },
   },
 };
@@ -63,9 +55,7 @@ export const WeRecognizedYou: Story = {
   },
   parameters: {
     playroom: {
-      code: `
-      <Notification variant='weRecognizedYou'/>
-      `,
+      code: `<Notification variant="weRecognizedYou"/>`,
     },
   },
 };
