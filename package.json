@@ -25,7 +25,7 @@
     "test-ci": "npm run test && npm run test-sb && npm run test-loki",
     "test": "jest",
     "test-output": "jest --json --outputFile=.jest-test-results.json",
-    "test-output-watch": "npm run test-output -- --watch || true",
+    "test-output-watch": "npm run test-output -- --watchAll || true",
     "cz": "cz -a",
     "semantic-release": "semantic-release",
     "prepublish-ui": "npm run build && cp package.json lib",
