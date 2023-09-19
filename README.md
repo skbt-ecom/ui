@@ -57,6 +57,15 @@ yarn add @ecom/ui
 npm i @ecom/ui
 ```
 
+### Beta version (from beta branch)
+```
+yarn add @ecom/ui@beta
+```
+
+```
+npm i @ecom/ui@beta
+```
+
 ## Доступные команды
 
 ```
