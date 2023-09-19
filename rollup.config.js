@@ -50,7 +50,6 @@ module.exports = [
     output: {
       dir: "lib",
       format: "esm",
-      sourcemap: true,
       // code-splitting
       preserveModules: true,
       preserveModulesRoot: "src",

@@ -1,5 +1,11 @@
 # База компонетов на React.js + Material-ui
 
+1) [Процесс разработки](./docs/flow.md)
+2) [Дока по сборщику](./docs/rollup.md)
+3) [Что нужно сделать](./docs/todo.md)
+4) [Дока по скриншотному тестированию](./docs/test/loki.md)
+5) [Дока по сторибуку](./docs/test/storybook.md)
+
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Публикация в nexus repository
@@ -51,6 +57,15 @@ yarn add @ecom/ui
 npm i @ecom/ui
 ```
 
+### Beta version (from beta branch)
+```
+yarn add @ecom/ui@beta
+```
+
+```
+npm i @ecom/ui@beta
+```
+
 ## Доступные команды
 
 ```
@@ -80,6 +95,8 @@ yarn start
 
 1. Создать папку с именем компонента в папке `src/components`;
 1. В папке с именем компонента создать 3 файла:
-   - `[ComponentName].js` - код компонента
-   - `index.js` - экспорт компонента
-   - `stories.js` - описание компонента для storybook [(Документация)](https://storybook.js.org/docs/basics/writing-stories/)
+   - `[ComponentName].ts` - код компонента
+   - `index.ts` - экспорт компонента
+   - `stories.ts` - описание компонента для storybook [(Документация)](https://storybook.js.org/docs/basics/writing-stories/)
+
+P.S [Подробнее](./docs/flow.md)
