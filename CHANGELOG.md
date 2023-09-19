@@ -1,3 +1,11 @@
+# [3.0.0-beta.81](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.80...v3.0.0-beta.81) (2023-09-19)
+
+
+### Features
+
+* **doc:** add doc files ([80156ab](https://gitlab.sovcombank.group/web/ecom/ui/commit/80156ab13a11b8800292119a00c71353038d6f63))
+* **scripts:** test-output-watch ([fadd342](https://gitlab.sovcombank.group/web/ecom/ui/commit/fadd342e6af939e755438dcd91e87a18142ef459))
+
 # [3.0.0-beta.80](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.79...v3.0.0-beta.80) (2023-09-13)
 
 
