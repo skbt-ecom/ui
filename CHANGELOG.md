@@ -1,3 +1,10 @@
+# [3.0.0-beta.82](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.81...v3.0.0-beta.82) (2023-09-25)
+
+
+### Bug Fixes
+
+* **image crush:** image is not rendered on project, where the packare is imported ([bee700e](https://gitlab.sovcombank.group/web/ecom/ui/commit/bee700e508ba7e0cd88810956bed90597afe29a2))
+
 # [3.0.0-beta.81](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.80...v3.0.0-beta.81) (2023-09-19)
 
 
