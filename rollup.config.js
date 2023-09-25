@@ -8,6 +8,7 @@ const resolve = require("@rollup/plugin-node-resolve");
 const babel = require("@rollup/plugin-babel");
 const commonjs = require("@rollup/plugin-commonjs");
 const typescript = require("@rollup/plugin-typescript");
+const image = require("@rollup/plugin-image");
 
 // styles
 const postcss = require("rollup-plugin-postcss");
@@ -75,6 +76,8 @@ module.exports = [
       warn(warning);
     },
     plugins: [
+      // images
+      image(),
       // progress bar
       progress(),
       // for peerDeps
