@@ -1,3 +1,10 @@
+# [3.0.0-beta.83](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.82...v3.0.0-beta.83) (2023-09-29)
+
+
+### Performance Improvements
+
+* **delete visual testing:** - ([acc159d](https://gitlab.sovcombank.group/web/ecom/ui/commit/acc159dc0a2e4da4bb02dc93deb252610d62b562))
+
 # [3.0.0-beta.82](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.81...v3.0.0-beta.82) (2023-09-25)
 
 
