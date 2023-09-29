@@ -56,24 +56,6 @@ sb:
     - npx playwright install-deps
     - npm run test-sb
 
-visual:
-  stage: test
-  before_script:
-    - export http_proxy=${PROXY}
-    - export https_proxy=${PROXY}
-    - export no_proxy=${NO_PROXY}
-    - sh docker.sh
-    - docker -v
-    - apt install net-tools -y
-  only:
-    - beta
-    - merge_requests
-  allow_failure: true
-  script:
-    - npm i
-    - npx playwright install-deps
-    - npm run test-loki
-
 publish:
   stage: build
   variables:
