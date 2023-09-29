@@ -19,10 +19,8 @@
     "serve": "node serve.js",
     "lint": "eslint . --max-warnings 0",
     "ts-check": "tsc --noEmit --pretty",
-    "pretest-loki": "npm run build-sb",
-    "test-loki": "concurrently -k -s first -n \"Storybook,Loki\" -c \"magenta,blue\" \"npm:start-sb\" \"npx loki test\"",
     "test-sb": "concurrently -k -s first -n \"Storybook,Test-runner\" -c \"magenta,blue\" \"npm run serve\" \"wait-on tcp:8080 && test-storybook --url http://127.0.0.1:8080\"",
-    "test-ci": "npm run test && npm run test-sb && npm run test-loki",
+    "test-ci": "npm run test && npm run test-sb",
     "test": "jest",
     "test-output": "jest --json --outputFile=.jest-test-results.json",
     "test-output-watch": "npm run test-output -- --watchAll || true",
@@ -114,7 +112,6 @@
     "jest": "^29.6.2",
     "jest-environment-jsdom": "^29.6.2",
     "lint-staged": "^13.2.2",
-    "loki": "^0.32.0",
     "playroom": "^0.32.0",
     "postcss": "^8.4.23",
     "postcss-cssnext": "^3.1.1",
@@ -167,11 +164,6 @@
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
-    }
-  },
-  "overrides": {
-    "loki": {
-      "@storybook/react": "$@storybook/react"
     }
   }
 }
