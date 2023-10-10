@@ -1,4 +1,4 @@
-@import "../../../core/styles/variables.scss";
+@use "@src/core/styles" as *;
 
 .container {
   margin: 0 auto;

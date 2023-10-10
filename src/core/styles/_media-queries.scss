@@ -1,6 +1,4 @@
-$sm: 600px;
-$md: 960px;
-$lg: 1280px;
+@use "./variables" as *;
 
 @mixin mobile-only {
   @media (max-width: ($sm - 0.05)) {

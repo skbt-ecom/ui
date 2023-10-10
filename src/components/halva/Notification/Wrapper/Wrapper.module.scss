@@ -1,4 +1,4 @@
-@import "../../../../core/styles/global.scss";
+@use "@src/core/styles" as *;
 
 .wrapper {
   background: #fff;
