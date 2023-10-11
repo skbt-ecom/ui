@@ -1,3 +1,19 @@
+# [3.0.0-beta.84](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.83...v3.0.0-beta.84) (2023-10-11)
+
+
+### Bug Fixes
+
+* **build fail:** fixed imports in scss ([7403222](https://gitlab.sovcombank.group/web/ecom/ui/commit/74032224e9e82f522d4aa3633fa457f44827ecf4))
+* **scss import  style:** - ([327b416](https://gitlab.sovcombank.group/web/ecom/ui/commit/327b416cf922c23b114bbdc2f2133487f8fa0621))
+
+
+### Features
+
+* **delete test file:** - ([b9337d2](https://gitlab.sovcombank.group/web/ecom/ui/commit/b9337d25aa2f9b965bf8f0c2bd331c1fc5b25d13))
+* **husky pre-commit:** - ([3c53c73](https://gitlab.sovcombank.group/web/ecom/ui/commit/3c53c73a3a23ccf304cde87b83ceda3db3833a6f))
+* **test commit:** - ([02820a5](https://gitlab.sovcombank.group/web/ecom/ui/commit/02820a5fa9561484e9789c28c9cf91262e43e2e9))
+* **test commit:** - ([8e7a5cb](https://gitlab.sovcombank.group/web/ecom/ui/commit/8e7a5cbba08152ba596098e97eff969eb7c7abe1))
+
 # [3.0.0-beta.83](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.82...v3.0.0-beta.83) (2023-09-29)
 
 
