@@ -1,8 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const path = require("path");
 // general
 const peerDepsExternal = require("rollup-plugin-peer-deps-external");
-const alias = require("@rollup/plugin-alias");
 const json = require("@rollup/plugin-json");
 const resolve = require("@rollup/plugin-node-resolve");
 const babel = require("@rollup/plugin-babel");
@@ -76,22 +74,16 @@ module.exports = [
       warn(warning);
     },
     plugins: [
+      // Resolving third-party dependencies in node_modules
+      resolve(),
       // images
       image(),
       // progress bar
       progress(),
       // for peerDeps
       peerDepsExternal(),
-      // for aliases
-      alias({
-        entries: {
-          "@src": path.resolve(__dirname, "./src"),
-        },
-      }),
       // json support
       json(),
-      // Resolving third-party dependencies in node_modules
-      resolve(),
       // Babel support
       babel({ babelHelpers: "bundled", exclude: "node_modules/**" }),
       // Bundling to CommonJS format (module.exports/require())
@@ -108,7 +100,6 @@ module.exports = [
         modules: true,
         sourceMap: true,
         minimize: true,
-        // extract: true,
       }),
       // for icons and svg
       url(),

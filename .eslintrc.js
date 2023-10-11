@@ -105,7 +105,6 @@ module.exports = {
         semi: true,
       },
     ],
-    "no-console": "warn",
     "no-alert": "error",
     "arrow-body-style": "off",
     "comma-dangle": "off",
@@ -155,5 +154,6 @@ module.exports = {
         },
       },
     ],
+    "no-console": ["error", { allow: ["warn", "error", "info"] }],
   },
 };
