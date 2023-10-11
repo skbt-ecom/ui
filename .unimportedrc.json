@@ -18,5 +18,5 @@
   ],
   "ignoreUnimported": ["src/utils/getFiles.js"],
   "ignoreUnused": ["express"],
-  "ignoreUnresolved": []
+  "ignoreUnresolved": [["core/styles"]]
 }

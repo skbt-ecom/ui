@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 // general
+const path = require("path");
 const peerDepsExternal = require("rollup-plugin-peer-deps-external");
 const json = require("@rollup/plugin-json");
 const resolve = require("@rollup/plugin-node-resolve");
@@ -7,6 +8,7 @@ const babel = require("@rollup/plugin-babel");
 const commonjs = require("@rollup/plugin-commonjs");
 const typescript = require("@rollup/plugin-typescript");
 const image = require("@rollup/plugin-image");
+const alias = require("@rollup/plugin-alias");
 
 // styles
 const postcss = require("rollup-plugin-postcss");
@@ -82,6 +84,12 @@ module.exports = [
       progress(),
       // for peerDeps
       peerDepsExternal(),
+      // for aliases
+      alias({
+        entries: {
+          "@src": path.resolve(__dirname, "./src"),
+        },
+      }),
       // json support
       json(),
       // Babel support

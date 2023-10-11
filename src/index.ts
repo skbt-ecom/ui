@@ -1,4 +1,4 @@
-import "@src/core/styles";
+import "core/styles";
 
 export * from "./components";
 export * from "./core/themes";
