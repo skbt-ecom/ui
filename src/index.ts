@@ -1,4 +1,4 @@
-import "./core/styles/global.scss";
+import "core/styles";
 
 export * from "./components";
 export * from "./core/themes";

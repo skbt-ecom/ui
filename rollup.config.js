@@ -1,14 +1,14 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const path = require("path");
 // general
+const path = require("path");
 const peerDepsExternal = require("rollup-plugin-peer-deps-external");
-const alias = require("@rollup/plugin-alias");
 const json = require("@rollup/plugin-json");
 const resolve = require("@rollup/plugin-node-resolve");
 const babel = require("@rollup/plugin-babel");
 const commonjs = require("@rollup/plugin-commonjs");
 const typescript = require("@rollup/plugin-typescript");
 const image = require("@rollup/plugin-image");
+const alias = require("@rollup/plugin-alias");
 
 // styles
 const postcss = require("rollup-plugin-postcss");
@@ -76,6 +76,8 @@ module.exports = [
       warn(warning);
     },
     plugins: [
+      // Resolving third-party dependencies in node_modules
+      resolve(),
       // images
       image(),
       // progress bar
@@ -90,8 +92,6 @@ module.exports = [
       }),
       // json support
       json(),
-      // Resolving third-party dependencies in node_modules
-      resolve(),
       // Babel support
       babel({ babelHelpers: "bundled", exclude: "node_modules/**" }),
       // Bundling to CommonJS format (module.exports/require())
@@ -108,7 +108,6 @@ module.exports = [
         modules: true,
         sourceMap: true,
         minimize: true,
-        // extract: true,
       }),
       // for icons and svg
       url(),

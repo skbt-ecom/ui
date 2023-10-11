@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npx tsc -p tsconfig.json --noEmit
+npx lint-staged
+npx unimported

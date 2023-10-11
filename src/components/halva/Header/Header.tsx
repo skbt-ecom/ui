@@ -4,9 +4,9 @@ import type { FC, HTMLProps, ReactNode } from "react";
 
 import { BurgerIcon, HalvaIcon } from "@src/components/Icons";
 import { Button, MainContainer } from "@src/components/base";
-import { Phone } from "@src/components/halva/Header/Phone";
+import { Phone } from "@src/components/base/Phone";
 import { Portal } from "@src/components/base/Portal";
-import type { PhoneProps } from "@src/components/halva/Header/Phone";
+import type { PhoneProps } from "@src/components/base/Phone";
 
 import Nav from "./NavLinks/NavLinks";
 import { Sidebar } from "./Sidebar";
