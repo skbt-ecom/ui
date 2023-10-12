@@ -1,3 +1,11 @@
+# [3.0.0-beta.85](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.84...v3.0.0-beta.85) (2023-10-12)
+
+
+### Features
+
+* **return package name:** @ecom/ui-beta -> @ecom/ui ([1eb6270](https://gitlab.sovcombank.group/web/ecom/ui/commit/1eb627098786deb5d2d2cf07e2856484c0246c56))
+* **update name of a package:** @ecom/ui -> @ecom/ui-beta ([9ae2528](https://gitlab.sovcombank.group/web/ecom/ui/commit/9ae2528de1438fb8ab80981f4f0a0e8d546bb25d))
+
 # [3.0.0-beta.84](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.83...v3.0.0-beta.84) (2023-10-11)
 
 
