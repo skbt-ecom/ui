@@ -62,6 +62,7 @@ publish:
     GITLAB_TOKEN: $GITLAB_UI_TOKEN
     NPM_TOKEN: $NPM_TOKEN
     GRAYLOG_URL: udp://$GRAYLOG
+    HUSKY: 0 # To disable hooks installation
   before_script:
     - export http_proxy=${PROXY}
     - export https_proxy=${PROXY}
