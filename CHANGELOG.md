@@ -1,3 +1,10 @@
+# [3.0.0-beta.87](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.86...v3.0.0-beta.87) (2023-10-16)
+
+
+### Bug Fixes
+
+* **semantic_release publish pipeline fail:** - ([4b34594](https://gitlab.sovcombank.group/web/ecom/ui/commit/4b345946392b838c0f0e7592a8f770ec4cba21ea))
+
 # [3.0.0-beta.86](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.85...v3.0.0-beta.86) (2023-10-12)
 
 
