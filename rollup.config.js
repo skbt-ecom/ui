@@ -50,11 +50,10 @@ module.exports = [
     input: ["./src/index.ts", ...getFiles("./src/components", extensions, ignoreExtensions)],
     output: {
       dir: "lib",
-      format: "esm",
       // code-splitting
       preserveModules: true,
       preserveModulesRoot: "src",
-      // resolve node_modeules error
+      // resolve node_modules error
       // (preserveModules add node_modules folder to the final bundle,
       // but flatten node_modules structure during the publish stage )
       entryFileNames: (chunkInfo) => {
