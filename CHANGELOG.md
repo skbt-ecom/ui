@@ -1,3 +1,10 @@
+# [3.0.0-beta.88](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.87...v3.0.0-beta.88) (2023-10-17)
+
+
+### Bug Fixes
+
+* **unresolved core/styles in final bundle:** - ([e427833](https://gitlab.sovcombank.group/web/ecom/ui/commit/e427833a035d6b23fe8a76f88bfcbb25945496a9))
+
 # [3.0.0-beta.87](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.86...v3.0.0-beta.87) (2023-10-16)
 
 
