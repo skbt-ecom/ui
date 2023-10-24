@@ -1,6 +1,5 @@
 import type { ButtonProps as MuiButtonProps } from "@mui/material";
 import { Button as MuiButton } from "@mui/material";
-import classNames from "classnames";
 import test from "./test.json";
 import styles from "./Button.module.scss";
 
@@ -19,7 +18,7 @@ export const Button = ({ children, handleClick, ...props }: ButtonProps) => {
   // test alias - TODO:: remove
   const onClick = () => {
     // eslint-disable-next-line no-console
-    console.log(classNames, test.name, test, styles);
+    console.log(test.name, test, styles);
     handleClick?.();
   };
 

@@ -54,7 +54,7 @@ sb:
   script:
     - npm i
     - npx playwright install-deps
-    - npm run test-sb
+    - npm run test:sb
 
 publish:
   stage: build
@@ -71,7 +71,7 @@ publish:
   script:
     - npm i
     - npm config set @ecom:registry $NPM_REGISTRY/npm-internal/
-    - npm run publish-ui
+    - npm run publish:ui
   only:
     - master
     - beta

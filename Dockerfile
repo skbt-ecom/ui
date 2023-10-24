@@ -16,8 +16,8 @@ RUN npm ci
 
 COPY . .
 
-RUN npm run build-sb
-RUN npm run build-pr
+RUN npm run build:sb
+RUN npm run build:pr
 
 CMD [ "node", "serve.js"]
 
