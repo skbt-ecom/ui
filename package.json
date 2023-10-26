@@ -127,7 +127,6 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-progress": "^1.1.2",
     "rollup-plugin-sass": "^1.12.21",
-    "rollup-plugin-scss": "^4.0.0",
     "sass": "^1.63.3",
     "sass-loader": "^13.3.2",
     "semantic-release": "^21.0.5",
