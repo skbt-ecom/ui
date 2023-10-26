@@ -53,7 +53,6 @@ sb:
     - merge_requests
   script:
     - npm i
-    - npx playwright install-deps
     - npm run test:sb
 
 publish:
