@@ -24,8 +24,6 @@ const svgr = require("@svgr/rollup");
 
 // devtools
 const progress = require("rollup-plugin-progress");
-const sizes = require("rollup-plugin-sizes");
-const { visualizer } = require("rollup-plugin-visualizer");
 
 const { getFiles } = require("./src/utils/getFiles");
 
@@ -45,6 +43,8 @@ const ignoreExtensions = [
   ".spec.ts",
 ];
 
+const isDev = process.env.NODE_ENV === "development";
+
 module.exports = [
   {
     input: ["./src/index.ts", ...getFiles("./src/components", extensions, ignoreExtensions)],
@@ -63,6 +63,7 @@ module.exports = [
 
         return "[name].js";
       },
+      sourcemap: isDev,
     },
     // external deps
     external: ["react", "react-dom"],
@@ -100,26 +101,18 @@ module.exports = [
         tsconfig: "./tsconfig.lib.json",
         declaration: true,
         declarationDir: "lib",
+        sourceMap: isDev,
       }),
       // scss
       postcss({
         plugins: [autoprefixer, simplevars(), nested(), presetenv(), cssnano()],
         modules: true,
-        sourceMap: true,
+        sourceMap: isDev,
         minimize: true,
       }),
       // for icons and svg
       url(),
       svgr({ icon: true }),
-      // for size visualize
-      sizes(),
-      // bundle visualize
-      visualizer({
-        filename: "bundle-analysis.html",
-        open: true,
-        gzipSize: true,
-        brotliSize: true,
-      }),
     ],
   },
 ];
