@@ -1,3 +1,27 @@
+# [3.0.0-beta.89](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.88...v3.0.0-beta.89) (2023-10-30)
+
+
+### Bug Fixes
+
+* **pipeline fail:** - ([7e7c488](https://gitlab.sovcombank.group/web/ecom/ui/commit/7e7c488cabd0d724c0c75d2035b34d00983df514))
+* **pipeline fail:** - ([a115de3](https://gitlab.sovcombank.group/web/ecom/ui/commit/a115de317b1b7b6929463ed08a40e941e41338d1))
+* **pipeline fail:** - ([6b162ce](https://gitlab.sovcombank.group/web/ecom/ui/commit/6b162ce0c0dd7fc2b44fe701604dabbc76147ee5))
+* **pipeline fail:** reinstall uninstalled packages ([f4b761e](https://gitlab.sovcombank.group/web/ecom/ui/commit/f4b761eb1dbf999275d1bdfa7ea04a929f89241b))
+
+
+### Features
+
+* **npm scripts refactor:** - ([050be19](https://gitlab.sovcombank.group/web/ecom/ui/commit/050be1984b455d3596cb6ddb4c3b5f880375e8cb))
+* **remove playwright:** - ([9c85843](https://gitlab.sovcombank.group/web/ecom/ui/commit/9c85843730afd6cf45da7268c3d5327716245d29))
+
+
+### Performance Improvements
+
+* **remove playwright install-deps:** - ([94d4043](https://gitlab.sovcombank.group/web/ecom/ui/commit/94d404354bd7953b4afb4cec9c503c72ea456573))
+* **remove unused packages:** [@emotion](https://gitlab.sovcombank.group/emotion) ([d0aa261](https://gitlab.sovcombank.group/web/ecom/ui/commit/d0aa261449de4ffb54f40e31e9d01c617c3c7a44))
+* **update package-lock:** - ([e5b0fba](https://gitlab.sovcombank.group/web/ecom/ui/commit/e5b0fba1b8e0db271e64e593553e2d86fba623f2))
+* **update package.lock:** = ([7d86374](https://gitlab.sovcombank.group/web/ecom/ui/commit/7d863743148becfe8ed3db185e564952b50b1592))
+
 # [3.0.0-beta.88](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.87...v3.0.0-beta.88) (2023-10-17)
 
 
