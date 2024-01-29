@@ -1,40 +1,14 @@
-import * as React from "react";
+import type { ChangeEvent } from "react";
+import { useState } from "react";
 
-import { styled } from "@mui/material/styles";
-import type { InputProps as MuiInputProps } from "@mui/material";
-import TextField from "@mui/material/TextField";
+import type { InputProps } from "./types";
 
-type InputBaseProps = Pick<MuiInputProps, "className">;
-
-export interface InputProps extends InputBaseProps, MuiInputProps {
-  defaultValue: number;
-  min: number;
-  max: number;
-}
-
-const CustomTextField = styled(TextField)({
-  "& .MuiOutlinedInput-notchedOutline": {
-    border: "none",
-  },
-  input: {
-    "&[type=number]": {
-      "-moz-appearance": "textfield",
-    },
-    "&::-webkit-outer-spin-button": {
-      "-webkit-appearance": "none",
-      margin: 0,
-    },
-    "&::-webkit-inner-spin-button": {
-      "-webkit-appearance": "none",
-      margin: 0,
-    },
-  },
-});
+import { CustomTextField } from "./styles";
 
 export const Input = ({ defaultValue, min, max }: InputProps) => {
-  const [value, setValue] = React.useState(defaultValue);
+  const [value, setValue] = useState(defaultValue);
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value === "" ? 0 : Number(event.target.value));
   };
 
@@ -55,11 +29,10 @@ export const Input = ({ defaultValue, min, max }: InputProps) => {
       onBlur={handleBlur}
       inputProps={{
         step: null,
-        defaultValue,
         min,
         max,
         type: "number",
-        disableUnderline: true,
+        "data-testid": "TextFieldTestId",
       }}
     />
   );
