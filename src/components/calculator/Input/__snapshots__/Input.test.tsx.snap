@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`input Component renders input 1`] = `
+<input
+  aria-invalid="false"
+  class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+  data-testid="TextFieldTestId"
+  id="outlined-start-adornment"
+  max="10"
+  min="0"
+  type="number"
+  value="5"
+/>
+`;
