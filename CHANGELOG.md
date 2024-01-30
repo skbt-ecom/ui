@@ -1,3 +1,19 @@
+# [3.0.0-beta.90](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.89...v3.0.0-beta.90) (2024-01-30)
+
+
+### Bug Fixes
+
+* update snapshots ([02a102f](https://gitlab.sovcombank.group/web/ecom/ui/commit/02a102f399a90251f6b148ac007bd031610640e7))
+
+
+### Features
+
+* **add slider and textfield for calc:** add new compontents slider and textField for calc ([dceb72e](https://gitlab.sovcombank.group/web/ecom/ui/commit/dceb72e726b0f253c6108012c603bf38eaf036e3))
+* add tests, styles, types ([1d191e6](https://gitlab.sovcombank.group/web/ecom/ui/commit/1d191e6c9a7fe99d6b6c4865f45595a0855cca77))
+* **fixed pipline:** fixed pipline ([76a7ea6](https://gitlab.sovcombank.group/web/ecom/ui/commit/76a7ea6218b8ee5d257b30232165404b55458b12))
+* **slider and input for calc:** add new components slider and input for calc ([2e298b9](https://gitlab.sovcombank.group/web/ecom/ui/commit/2e298b99b4efe1db497f4925446dcdd5271b3155))
+* update snapshots ([a0e4ebb](https://gitlab.sovcombank.group/web/ecom/ui/commit/a0e4ebb1921b694fddb516d64d509d84b7d0ba87))
+
 # [3.0.0-beta.89](https://gitlab.sovcombank.group/web/ecom/ui/compare/v3.0.0-beta.88...v3.0.0-beta.89) (2023-10-30)
 
 
