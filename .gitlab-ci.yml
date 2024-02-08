@@ -39,7 +39,7 @@ unit:
     - npm i
     - npm run test
 
-sb:
+storybook:
   stage: test
   before_script:
     - export http_proxy=${PROXY}
@@ -54,7 +54,7 @@ sb:
   script:
     - npm i
     - npx playwright install --with-deps
-    - npm run test:sb
+    - npm run test:storybook
 
 publish:
   stage: build
