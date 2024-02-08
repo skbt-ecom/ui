@@ -20,7 +20,7 @@
     "lint": "eslint . --max-warnings 0",
     "ts-check": "tsc --noEmit --pretty",
     "test": "jest",
-    "test:storybook": "concurrently -k -s first -n \"Storybook,Test-runner\" -c \"magenta,blue\" \"npm run serve\" \"wait-on tcp:8080 && test-storybook --url http://127.0.0.1:8080\"",
+    "test:storybook": "concurrently -k -s first -n \"Storybook,Test-runner\" -c \"magenta,blue\" \"npx http-serve ./public\" \"wait-on tcp:8080 && test-storybook --url http://127.0.0.1:8080\"",
     "test:ci": "npm run test && npm run test:storybook",
     "test:output": "jest --json --outputFile=.jest-test-results.json",
     "test:output:watch": "npm run test:output -- --watchAll || true",

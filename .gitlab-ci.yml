@@ -29,6 +29,7 @@ unit:
     - export http_proxy=${PROXY}
     - export https_proxy=${PROXY}
     - export no_proxy=${NO_PROXY}
+    - npm config set registry $NPM_REGISTRY/npm-all/
     - sh docker.sh
     - docker -v
     - apt install net-tools -y
@@ -36,7 +37,8 @@ unit:
     - beta
     - merge_requests
   script:
-    - npm i
+    - npm config set registry $NPM_REGISTRY/npm-all/
+    - npm ci
     - npm run test
 
 storybook:
@@ -52,7 +54,8 @@ storybook:
     - beta
     - merge_requests
   script:
-    - npm i
+    - npm config set registry $NPM_REGISTRY/npm-all/
+    - npm ci
     - npx playwright install --with-deps
     - npm run test:storybook
 
@@ -67,9 +70,10 @@ publish:
     - export http_proxy=${PROXY}
     - export https_proxy=${PROXY}
     - export no_proxy=${NO_PROXY}
+    - npm config set registry $NPM_REGISTRY/npm-all/
     - apk update && apk upgrade && apk add --no-cache bash git
   script:
-    - npm i
+    - npm ci
     - npm config set @ecom:registry $NPM_REGISTRY/npm-internal/
     - npm run publish:ui
   only:
