@@ -1,9 +1,5 @@
 FROM registry.sovcombank.group/project-cache/library/node:18
 
-ARG PROXY
-ARG http_proxy="http://proxy-server.sovcombank.group:3128" 
-ARG https_proxy="http://proxy-server.sovcombank.group:3128" 
-ARG no_proxy="127.0.0.1,.sovcombank.group" 
 ARG NPM_REGISTRY
 
 # Create app directory
@@ -16,9 +12,14 @@ RUN npm ci
 
 COPY . .
 
-RUN npm run build:sb
-RUN npm run build:pr
+RUN npm run build
+RUN npm run build:storybook
+RUN npm run build:playroom
 
-CMD [ "node", "serve.js"]
+FROM registry.sovcombank.group/project-cache/nginxinc/nginx-unprivileged:1.20.2
+
+COPY --from=build /usr/src/app/public /var/www/html
 
 EXPOSE 8080
+
+CMD ["nginx", "-g", "daemon off;"]
