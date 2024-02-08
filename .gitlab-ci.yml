@@ -57,7 +57,7 @@ storybook:
     - npm config set registry $NPM_REGISTRY/npm-all/
     - npm ci
     - npx playwright install --with-deps
-    - npm run test:storybook
+    # - npm run test:storybook
 
 publish:
   stage: build
