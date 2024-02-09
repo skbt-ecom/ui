@@ -1,4 +1,4 @@
-FROM registry.sovcombank.group/project-cache/library/node:18
+FROM registry.sovcombank.group/project-cache/library/node:18 as build
 
 ARG NPM_REGISTRY
 
