@@ -18,8 +18,8 @@ RUN npm run build:playroom
 
 FROM registry.sovcombank.group/project-cache/nginxinc/nginx-unprivileged:1.20.2
 
-COPY --from=build /usr/src/app/public /var/www/html
+COPY --from=build /usr/src/app/public /usr/share/nginx/html
 
-EXPOSE 8080
+EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
