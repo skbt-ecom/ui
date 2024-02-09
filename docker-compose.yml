@@ -1,6 +1,7 @@
 version: "2"
 services:
   ui:
+    container_name: ui
     build:
       context: .
       args:

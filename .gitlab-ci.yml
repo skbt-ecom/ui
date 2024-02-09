@@ -89,7 +89,7 @@ deploy to test:
   before_script:
     - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
   script:
-    - docker-compose up -d --no-deps --build HTTPS_PROXY=$PROXY ui
+    - docker-compose up -d --no-deps --build
     - docker system prune -af
     - docker stats --no-stream
   after_script:
