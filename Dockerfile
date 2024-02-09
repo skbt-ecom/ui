@@ -20,6 +20,6 @@ FROM registry.sovcombank.group/project-cache/nginxinc/nginx-unprivileged:1.20.2
 
 COPY --from=build /usr/src/app/public /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 8080
 
 CMD ["nginx", "-g", "daemon off;"]

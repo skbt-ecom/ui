@@ -11,6 +11,6 @@ services:
     environment:
       - NODE_ENV
     ports:
-      - $PORT:80
+      - $PORT:8080
     mem_limit: 1g
     network_mode: bridge
