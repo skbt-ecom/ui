@@ -8,14 +8,8 @@ services:
         - PROXY
         - NO_PROXY
     environment:
-      - HOST
       - NODE_ENV
     ports:
       - $PORT:8080
     mem_limit: 1g
-    logging:
-      driver: gelf
-      options:
-        gelf-address: $GRAYLOG_URL
-        tag: docker.ui
     network_mode: bridge

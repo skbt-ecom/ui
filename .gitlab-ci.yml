@@ -85,15 +85,12 @@ deploy to test:
   tags:
     - urt-web-app1-for-web-gr
   variables:
-    HOST: $TEST_HOST
     NODE_ENV: production
-    GRAYLOG_URL: udp://$TEST_GRAYLOG
   before_script:
     - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
   script:
-    - docker-compose down
-    - docker-compose build --build-arg HTTPS_PROXY=$PROXY ui
-    - docker-compose up -d
+    - docker-compose up -d --no-deps --build HTTPS_PROXY=$PROXY ui
+    - docker system prune -af
     - docker stats --no-stream
   after_script:
     - docker logout $CI_REGISTRY
