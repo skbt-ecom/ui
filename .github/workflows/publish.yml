@@ -30,6 +30,12 @@ jobs:
       - name: Build 🏗️
         run: npm run build
 
+      - name: Build Storybook 🏗️
+        run: npm run build:storybook
+
+      - name: Build Playroom 🏗️
+        run: npm run build:playroom
+
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
         with:
