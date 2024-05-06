@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "../Button";
 import { MainContainer } from "./MainContainer";
 
 const meta: Meta<typeof MainContainer> = {
@@ -26,10 +25,6 @@ export const Primary: Story = {
           eaque tempora iure hic? Obcaecati molestias voluptas alias hic, harum dignissimos ducimus
           asperiores?
         </p>
-        <div style={{ display: "flex", gap: "15px" }}>
-          <Button variant="contained">Button</Button>
-          <Button variant="outlined">Button</Button>
-        </div>
       </div>
     </MainContainer>
   ),

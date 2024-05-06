@@ -7,7 +7,6 @@ import { WeRecognizedYou } from "./WeRecognizedYou";
 
 type NotificationProps = {
   variant?: "reject" | "techError" | "weRecognizedYou";
-  onClick: () => void;
   Icon?: FC<Partial<HTMLProps<SVGElement>>>;
   title?: ReactNode;
   subTitle?: ReactNode;
@@ -17,7 +16,6 @@ type NotificationProps = {
 
 const Notification = ({
   variant,
-  onClick,
   Icon,
   title,
   subTitle,
@@ -32,7 +30,6 @@ const Notification = ({
       Message = (
         <RejectOrError
           variant={variant}
-          onClick={onClick}
           Icon={Icon}
           title={title}
           subTitle={subTitle}
@@ -43,7 +40,6 @@ const Notification = ({
     case "weRecognizedYou":
       Message = (
         <WeRecognizedYou
-          onClick={onClick}
           Icon={Icon}
           title={title}
           subTitle={subTitle}
@@ -56,7 +52,6 @@ const Notification = ({
       Message = (
         <RejectOrError
           variant="reject"
-          onClick={onClick}
           Icon={Icon}
           title={title}
           subTitle={subTitle}

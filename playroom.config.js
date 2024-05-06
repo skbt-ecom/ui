@@ -11,8 +11,6 @@ module.exports = {
   port: 9000,
   openBrowser: false,
   iframeSandbox: "allow-scripts allow-same-origin",
-  frameComponent: "./src/playroom/FrameComponent.tsx",
-  themes: "./src/core/themes/index.ts",
   exampleCode: `
     <Button variant="contained">
       Hello World!
