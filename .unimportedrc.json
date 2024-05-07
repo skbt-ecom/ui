@@ -17,6 +17,11 @@
     "**/node_modules/**"
   ],
   "ignoreUnimported": ["src/utils/getFiles.js"],
-  "ignoreUnused": ["express"],
+  "ignoreUnused": [
+    "@fontsource/roboto",
+    "@radix-ui/react-popover",
+    "express",
+    "react-number-format"
+  ],
   "ignoreUnresolved": []
 }
