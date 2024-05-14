@@ -1,4 +1,4 @@
 export * from "./base";
 export * from "./Icons";
 export * from "./halva";
-export * from "./Calculator";
+export * from "./DynamicSwitcherBlock";

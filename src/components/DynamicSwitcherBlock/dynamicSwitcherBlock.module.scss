@@ -1,0 +1,23 @@
+.section {
+  margin: 88px 0;
+}
+
+.headTitle {
+  font-weight: 700;
+  font-size: 32px;
+  color: #292929;
+  margin-bottom: 24px;
+}
+
+.tabsList {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-top: 32px;
+}
