@@ -1,0 +1,1 @@
+export { SingleDocument } from "./SingleDocument";

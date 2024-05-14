@@ -16,12 +16,18 @@
     "**/public/**",
     "**/node_modules/**"
   ],
-  "ignoreUnimported": ["src/utils/getFiles.js"],
+  "ignoreUnimported": [
+    "src/utils/deepCompare.ts",
+    "src/utils/getFiles.js",
+    "src/utils/unusedCase.ts"
+  ],
   "ignoreUnused": [
     "@fontsource/roboto",
     "@radix-ui/react-popover",
+    "@radix-ui/react-slider",
     "express",
+    "react-hook-form",
     "react-number-format"
   ],
-  "ignoreUnresolved": []
+  "ignoreUnresolved": [["utils/unusedCase"]]
 }

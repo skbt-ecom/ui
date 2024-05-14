@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 656px;
+}
+
+.textBlock {
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #292929;
+  line-height: 28px;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #292929;
+}
+
+.docsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
