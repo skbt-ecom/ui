@@ -1,5 +1,5 @@
 import { memo, useCallback } from "react";
-import { unusedCase } from "utils/unusedCase";
+import { unusedCase } from "@src/utils/unusedCase";
 import {
   EnumEntityVariant,
   type IDocumentDetails,
