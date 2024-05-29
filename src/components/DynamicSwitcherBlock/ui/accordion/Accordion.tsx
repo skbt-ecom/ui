@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 import { useState } from "react";
 import { clsx } from "clsx";
-import { SvgArrow } from "../../icons";
 import styles from "./accordion.module.scss";
+import { SvgArrow } from "../../icons";
 
 interface IAccordionsProps {
   title: string;

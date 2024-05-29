@@ -35,3 +35,9 @@
     @content;
   }
 }
+
+@mixin isDesktop {
+  @media (min-width: 1188px) {
+    @content;
+  }
+}

@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import type { ITableDetails, TTableRow } from "../../../types";
+import type { ITableDetails } from "../../../types";
 import { Accordion } from "../../accordion";
-import { transformArrayToSubgroups } from "./helper";
+import { RowsBody, RowsHead } from "./ui";
 import styles from "./dataGrid.module.scss";
 
 export const DataGrid = ({
@@ -10,26 +10,16 @@ export const DataGrid = ({
   rowsBody = [],
   columnsCount,
   config,
+  title,
 }: ITableDetails) => {
-  const formattedRows = transformArrayToSubgroups<TTableRow>(columnsCount, rowsBody);
-
   const dataGridElement = (
-    <div className={styles.wrapper}>
-      <div className={styles.rowsWrapper}>
-        <div className={clsx(styles.rowsHead, styles[`grid${columnsCount}`])}>
-          {rowsHead?.map(({ head }) => (
-            <div className={clsx(styles.ceil, styles.headCeil)}>{head}</div>
-          ))}
-        </div>
-        <div className={styles.rowsBody}>
-          {formattedRows?.map((subgroup, index) => (
-            <div key={index} className={clsx(styles.row, styles[`grid${columnsCount}`])}>
-              {subgroup?.map(({ text }) => (
-                <div className={styles.ceil}>{text}</div>
-              ))}
-            </div>
-          ))}
-        </div>
+    <div className={clsx(styles.wrapper, styles[`wrapper_${columnsCount}_columns`])}>
+      {title && <h4 className={styles.title}>{title}</h4>}
+      <div className={clsx(styles.rowsWrapper, styles[`rowsWrapper_${columnsCount}_columns`])}>
+        {rowsHead && rowsHead.length > 0 && (
+          <RowsHead rowsHead={rowsHead} columnsCount={columnsCount} />
+        )}
+        <RowsBody rowsHead={rowsHead} columnsCount={columnsCount} rowsBody={rowsBody} />
       </div>
       {description && <p className={styles.description}>{description}</p>}
     </div>
@@ -37,7 +27,7 @@ export const DataGrid = ({
 
   return (
     <>
-      {config && config?.isAccordion && config?.accordionTitle ? (
+      {config && config?.isAccordion ? (
         <Accordion title={config?.accordionTitle} collapsedContent={dataGridElement} />
       ) : (
         dataGridElement

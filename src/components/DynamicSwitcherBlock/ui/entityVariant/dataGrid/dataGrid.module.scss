@@ -1,58 +1,37 @@
+@use "src/core/styles" as *;
+
 .wrapper {
   display: flex;
   flex-direction: column;
+  &_2_columns {
+    max-width: 656px;
+  }
+
+  &_3_columns {
+    max-width: 768px;
+  }
 }
 
 .rowsWrapper {
   display: flex;
   flex-direction: column;
-}
+  &_3_columns {
+    overflow-x: auto;
+    padding-bottom: 10px;
 
-.rowsBody {
-  display: flex;
-  flex-direction: column;
-  margin: 16px 0;
-}
-
-.rowsHead {
-  display: grid;
-  column-gap: 32px;
-
-  &.grid2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  &.grid3 {
-    grid-template-columns: repeat(3, 1fr);
+    @include isDesktop {
+      overflow: inherit;
+      padding: 0;
+    }
   }
 }
 
-.row {
-  border-top: 1px solid #e4e4e4;
-  padding: 16px 0;
-  display: grid;
-  gap: 32px;
-
-  &.grid2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  &.grid3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.ceil {
-  font-size: 16px;
-  line-height: 22px;
-  font-weight: 500;
+.title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 137%;
   color: #292929;
-  &:first-child {
-    font-weight: 400;
-  }
-}
-
-.headCeil {
-  color: #607286;
-  font-weight: 400;
+  margin-bottom: 24px;
 }
 
 .description {
@@ -61,4 +40,5 @@
   line-height: 137%;
   color: #292929;
   max-width: 608px;
+  margin-top: 24px;
 }

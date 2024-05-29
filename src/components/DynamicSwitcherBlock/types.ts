@@ -5,7 +5,7 @@ export type TColumnsCount = 2 | 3;
 
 export type TEntityConfig = {
   isAccordion: boolean;
-  accordionTitle?: string;
+  accordionTitle: string;
 };
 
 export interface ISingleDocument {
@@ -18,7 +18,7 @@ export type TTableRow = {
   text: string;
 };
 
-type TTableHead = {
+export type TTableHead = {
   head: string;
 };
 
@@ -30,6 +30,7 @@ export enum EnumEntityVariant {
 
 export interface ITableDetails {
   description?: string;
+  title?: string;
   columnsCount: TColumnsCount;
   rowsHead?: TTableHead[];
   rowsBody: TTableRow[];
@@ -62,6 +63,7 @@ interface ITabContent {
 
 export interface ISingleTab {
   tabName: string;
+  tabId: string;
   contents: ITabContent[];
 }
 

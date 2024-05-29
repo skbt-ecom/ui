@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
-import { SvgDocsFilled } from "./icons";
 import type { TDocsIconsVariants } from "./types";
+import { SvgDocsFilled } from "./icons";
 
 const iconsVariants: Record<TDocsIconsVariants, ReactElement> = {
   outlineDoc: <SvgDocsFilled />,

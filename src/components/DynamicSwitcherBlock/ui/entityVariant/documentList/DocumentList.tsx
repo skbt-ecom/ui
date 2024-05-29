@@ -1,6 +1,6 @@
+import { SingleDocument } from "./ui/singleDocument";
 import type { IDocumentDetails } from "../../../types";
 import { Accordion } from "../../accordion";
-import { SingleDocument } from "./ui/singleDocument";
 import styles from "./documentList.module.scss";
 
 export const DocumentList = ({
@@ -26,7 +26,7 @@ export const DocumentList = ({
 
   return (
     <>
-      {config && config?.isAccordion && config?.accordionTitle ? (
+      {config && config?.isAccordion ? (
         <Accordion title={config?.accordionTitle} collapsedContent={documentListElement} />
       ) : (
         documentListElement

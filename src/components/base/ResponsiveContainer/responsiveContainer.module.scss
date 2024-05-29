@@ -1,0 +1,11 @@
+@use "src/core/styles" as *;
+
+.container {
+  width: 100%;
+  padding: 0 16px;
+  max-width: 1188px;
+  margin: 0 auto;
+  @include isDesktop {
+    padding: 0 24px;
+  }
+}
