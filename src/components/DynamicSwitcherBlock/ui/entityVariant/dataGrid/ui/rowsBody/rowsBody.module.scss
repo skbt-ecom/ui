@@ -1,4 +1,4 @@
-@use "src/core/styles";
+@import "../../core/styles/media-queries.scss";
 @mixin twoColumnsDesk {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
