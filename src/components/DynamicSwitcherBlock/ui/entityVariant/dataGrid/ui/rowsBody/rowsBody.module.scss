@@ -1,0 +1,69 @@
+@use "src/core/styles" as *;
+@mixin twoColumnsDesk {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.rowsBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  &_2_columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(134px, 1fr));
+    gap: 24px;
+
+    padding: 16px 0;
+    border-top: 1px solid #e4e4e4;
+
+    &:last-child {
+      padding: 0;
+      padding-top: 16px;
+    }
+
+    &.noHead {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      &:first-child {
+        border: none;
+        padding: 0;
+        padding-bottom: 16px;
+      }
+      @include isDesktop {
+        @include twoColumnsDesk();
+      }
+    }
+
+    @include isDesktop {
+      @include twoColumnsDesk();
+    }
+  }
+
+  &_3_columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    border: none;
+    .ceil {
+      border-top: 1px solid #e4e4e4;
+      padding: 16px 0 16px 32px;
+      &:first-child {
+        padding: 16px 0;
+      }
+    }
+  }
+}
+
+.ceil {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  color: #292929;
+  &:first-child {
+    font-weight: 400;
+  }
+}

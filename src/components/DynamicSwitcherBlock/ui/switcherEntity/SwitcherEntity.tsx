@@ -1,14 +1,16 @@
 import { memo, useCallback } from "react";
-import { unusedCase } from "../../../../utils/unusedCase";
+import styles from "./switcherEntity.module.scss";
+
 import {
   EnumEntityVariant,
-  type IDocumentDetails,
   type IEntity,
   type IHTMLDetails,
   type ITableDetails,
+  type IDocumentDetails,
 } from "../../types";
+
 import { DataGrid, DocumentList, HTML } from "../entityVariant";
-import styles from "./switcherEntity.module.scss";
+import { unusedCase } from "../../../../utils/unusedCase";
 
 interface ISwitcherEntityProps {
   entity: IEntity;
@@ -20,8 +22,8 @@ export const SwitcherEntity = memo(({ entity }: ISwitcherEntityProps) => {
       case EnumEntityVariant.HTML:
         return (
           <>
-            {entity.details?.map((details) => (
-              <HTML {...(details as IHTMLDetails)} />
+            {entity.details?.map((details, index) => (
+              <HTML key={index} {...(details as IHTMLDetails)} />
             ))}
           </>
         );
@@ -29,8 +31,8 @@ export const SwitcherEntity = memo(({ entity }: ISwitcherEntityProps) => {
       case EnumEntityVariant.TABLE:
         return (
           <>
-            {entity.details?.map((details) => (
-              <DataGrid {...(details as ITableDetails)} />
+            {entity.details?.map((details, index) => (
+              <DataGrid key={index} {...(details as ITableDetails)} />
             ))}
           </>
         );
@@ -38,8 +40,8 @@ export const SwitcherEntity = memo(({ entity }: ISwitcherEntityProps) => {
       case EnumEntityVariant.DOCUMENTS:
         return (
           <>
-            {entity.details?.map((details) => (
-              <DocumentList {...(details as IDocumentDetails)} />
+            {entity.details?.map((details, index) => (
+              <DocumentList key={index} {...(details as IDocumentDetails)} />
             ))}
           </>
         );

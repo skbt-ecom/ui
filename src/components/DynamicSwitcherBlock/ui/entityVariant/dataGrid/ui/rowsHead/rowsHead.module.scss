@@ -1,0 +1,33 @@
+@use "src/core/styles" as *;
+.rowsHead {
+  margin-bottom: 16px;
+
+  &_2_columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(134px, 1fr));
+    gap: 24px;
+    @include isDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(150px, 1fr));
+      gap: 32px;
+    }
+  }
+
+  &_3_columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    .headCeil {
+      padding-left: 32px;
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.headCeil {
+  color: #607286;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}

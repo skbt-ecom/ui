@@ -15,6 +15,7 @@ const mocks: ISwitcherBlockSchema = {
   tabs: [
     {
       tabName: "Тарифы",
+      tabId: "some-id-1",
       contents: [
         {
           entity: {
@@ -41,6 +42,7 @@ const mocks: ISwitcherBlockSchema = {
     },
     {
       tabName: "Требования к заемщику",
+      tabId: "some-id-2",
       contents: [
         {
           entity: {
@@ -96,6 +98,7 @@ const mocks: ISwitcherBlockSchema = {
     },
     {
       tabName: "Получение и погашение",
+      tabId: "some-id-3",
       contents: [
         {
           entity: {
@@ -105,6 +108,7 @@ const mocks: ISwitcherBlockSchema = {
                 html: '<h2>Получение денежных средств</h2><p><br></p><p>– Рассмотрим заявку за 5 минут</p><p><br></p><p>– Наличными в отделении банка</p><p><br></p><p>– Зачисление на карту «Халва»</p><p><br></p><h2>Как внести платеж или погасить кредит досрочно</h2><p><br></p><p>– В офисах или устройствах самообслуживания с помощью карты для внесения платежей по кредиту (идентификационная карта Банка)</p><p><br></p><p>– Через Интернет-банк</p><p><br></p><p>– Отделения Почты России</p><p><br></p><p>– Сторонние организации*</p><p><br></p><p><em style="color: rgb(136, 136, 136);">*Взимается комиссия, установленная сторонними организациями</em></p>',
                 config: {
                   isAccordion: false,
+                  accordionTitle: "",
                 },
               },
             ],
@@ -114,6 +118,7 @@ const mocks: ISwitcherBlockSchema = {
     },
     {
       tabName: "Документация",
+      tabId: "some-id-4",
       contents: [
         {
           entity: {
@@ -142,6 +147,7 @@ const mocks: ISwitcherBlockSchema = {
                 ],
                 config: {
                   isAccordion: false,
+                  accordionTitle: "",
                 },
               },
             ],
@@ -151,6 +157,7 @@ const mocks: ISwitcherBlockSchema = {
     },
     {
       tabName: "Описание",
+      tabId: "some-id-5",
       contents: [
         {
           entity: {
@@ -160,6 +167,7 @@ const mocks: ISwitcherBlockSchema = {
                 html: "<h2>Преимущества</h2><p><br></p><p>– Большой список кредитных программ;</p><p><br></p><p>– Возможность удобного погашения;</p><p><br></p><p>– Наличие выгодных процентных ставок.&nbsp;</p><p><br></p><h2>Как оформить</h2><p><br></p><p>Оформить потребительский кредит можно в любом отделении Совкомбанка. Также есть возможность заполнить заявку на сайте онлайн и получить предварительное решение в течение нескольких минут.</p><p><br></p><h2>Условия</h2><p><br></p><p>– Взять кредит наличными онлайн</p><p><br></p><p>– Клиент должен быть гражданином РФ и иметь постоянную регистрацию на территории РФ</p><p><br></p><p>– Официальное трудоустройство и стаж на текущем месте работы не менее 4 месяцев</p><p><br></p><p>– Место проживания не далее, чем в 70 км от ближайшего отделения банка&nbsp;</p>",
                 config: {
                   isAccordion: false,
+                  accordionTitle: "",
                 },
               },
             ],
@@ -199,6 +207,7 @@ const mocks: ISwitcherBlockSchema = {
                 ],
                 config: {
                   isAccordion: false,
+                  accordionTitle: "",
                 },
               },
             ],
@@ -208,6 +217,7 @@ const mocks: ISwitcherBlockSchema = {
     },
     {
       tabName: "Вопрос-ответ",
+      tabId: "some-id-6",
       contents: [
         {
           entity: {

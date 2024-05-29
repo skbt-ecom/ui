@@ -43,7 +43,7 @@ module.exports = {
         "@typescript-eslint/no-explicit-any": "error",
         "@typescript-eslint/strict-boolean-expressions": "off",
         "react/jsx-no-useless-fragment": "off",
-
+        "react/no-danger": "off",
         "@typescript-eslint/consistent-type-assertions": [
           "warn",
           {

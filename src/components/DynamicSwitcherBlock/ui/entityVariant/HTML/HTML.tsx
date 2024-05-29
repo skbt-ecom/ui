@@ -1,21 +1,20 @@
-/* eslint-disable react/no-danger */
+import clsx from "clsx";
+import styles from "./HTML.module.scss";
 import type { IHTMLDetails } from "../../../types";
 import { Accordion } from "../../accordion";
-import styles from "./HTML.module.scss";
 
 export const HTML = ({ html, config }: IHTMLDetails) => {
   if (!html) return null;
-  const filteredHTML = html?.replace(/<p><br><\/p>/g, "<br>");
+  const filteredHTML = html?.replace(/<p><br><\/p>/g, "");
 
   const HTMLElement = (
-    <div className={styles.htmlWrapper}>
+    <div className={clsx(styles.htmlWrapper, styles.htmlWrapperOnAccordion)}>
       <div dangerouslySetInnerHTML={{ __html: filteredHTML }} />
     </div>
   );
-
   return (
     <>
-      {config && config?.isAccordion && config?.accordionTitle ? (
+      {config && config?.isAccordion ? (
         <Accordion title={config?.accordionTitle} collapsedContent={HTMLElement} />
       ) : (
         HTMLElement
