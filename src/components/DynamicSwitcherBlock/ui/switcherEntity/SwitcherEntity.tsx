@@ -44,7 +44,6 @@ export const SwitcherEntity = memo(({ entity }: ISwitcherEntityProps) => {
             ))}
           </>
         );
-
       default:
         return null;
     }
