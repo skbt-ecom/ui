@@ -10,7 +10,6 @@ import {
 } from "../../types";
 
 import { DataGrid, DocumentList, HTML } from "../entityVariant";
-import { unusedCase } from "../../../../utils/unusedCase";
 
 interface ISwitcherEntityProps {
   entity: IEntity;
@@ -45,9 +44,8 @@ export const SwitcherEntity = memo(({ entity }: ISwitcherEntityProps) => {
             ))}
           </>
         );
-
-      default: 
-        return null
+      default:
+        return null;
     }
   }, [entity.details, entity.variant]);
 
