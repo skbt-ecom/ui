@@ -46,8 +46,8 @@ export const SwitcherEntity = memo(({ entity }: ISwitcherEntityProps) => {
           </>
         );
 
-      default:
-        return unusedCase(entity.variant);
+      default: 
+        return null
     }
   }, [entity.details, entity.variant]);
 
