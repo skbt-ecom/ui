@@ -8,13 +8,7 @@ export interface IPageHeaderProps {
   phoneText?: string
 }
 
-export const PageHeader = ({
-  logoPath = '/',
-  logoType = 'main',
-  variant = 'withButton',
-  phone,
-  phoneText
-}: IPageHeaderProps) => {
+export const PageHeader = ({ logoPath = '/', logoType = 'main', variant = 'withButton', phone, phoneText }: IPageHeaderProps) => {
   return (
     <header className='bg-color-white flex items-center justify-center h-[72px]'>
       <ResponsiveContainer>

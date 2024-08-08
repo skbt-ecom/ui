@@ -112,10 +112,4 @@ const allowedStrokeColors = {
   ...rootStyles
 } as const
 
-export {
-  allowedStrokeColors,
-  allowedBannersBackgroundColors,
-  allowedIconsColors,
-  allowedTextColors,
-  allowedBackgroundColors
-}
+export { allowedStrokeColors, allowedBannersBackgroundColors, allowedIconsColors, allowedTextColors, allowedBackgroundColors }

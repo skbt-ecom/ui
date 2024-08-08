@@ -104,12 +104,7 @@ export const Buttons: Story = {
           <Button iconLeft={<Icon name='common/check' />} intent='primary' size='lg'>
             Button
           </Button>
-          <Button
-            iconLeft={<Icon name='common/check' />}
-            iconRight={<Icon name='common/check' />}
-            intent='primary'
-            size='md'
-          >
+          <Button iconLeft={<Icon name='common/check' />} iconRight={<Icon name='common/check' />} intent='primary' size='md'>
             Button
           </Button>
           <Button iconRight={<Icon name='common/check' />} intent='primary' size='sm'>
