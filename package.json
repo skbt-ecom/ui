@@ -71,6 +71,7 @@
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-unused-imports": "^3.2.0",
+    "husky": "^9.1.4",
     "postcss": "^8.4.40",
     "storybook": "^8.2.6",
     "ts-node": "^10.9.2",
