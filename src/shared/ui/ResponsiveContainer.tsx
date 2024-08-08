@@ -1,0 +1,11 @@
+import type { HTMLAttributes, ReactNode } from 'react'
+import { cn } from '../utils/cn'
+
+interface IResponsiveContainerProps extends HTMLAttributes<HTMLDivElement> {
+  children: ReactNode
+  className?: string
+}
+
+export const ResponsiveContainer = ({ children, className }: IResponsiveContainerProps) => {
+  return <div className={cn('w-full px-4 m-auto desktop:max-w-[1188px]', className)}>{children}</div>
+}
