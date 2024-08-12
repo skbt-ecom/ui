@@ -1,9 +1,10 @@
 {
-  "name": "storybook",
+  "name": "@ecom-ui",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "main": "dist/main.js",
+  "module": "dist/main.mjs",
   "types": "dist/main.d.ts",
   "files": [
     "dist"

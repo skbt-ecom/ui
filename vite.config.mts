@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [
     react(),
     libInjectCss(),
-    dts({ include: 'lib', insertTypesEntry: true }),
+    dts({ include: ['lib'], insertTypesEntry: true }),
     svg({
       root: 'assets',
       group: true,
@@ -42,7 +42,7 @@ export default defineConfig({
 
     lib: {
       entry: resolve(__dirname, 'lib/main.ts'),
-      name: 'ui-kit',
+      name: '@ecom-ui',
       formats: ['es']
     },
     rollupOptions: {
