@@ -9,5 +9,6 @@
     "strict": true,
     "noEmit": true
   },
-  "include": ["vite.config.mts", "package.json"]
+  "include": ["vite.config.mts", "package.json"],
+  "exclude": ["src/**/*.stories.ts"]
 }

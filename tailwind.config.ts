@@ -11,7 +11,7 @@ import {
 } from './src/shared/constants'
 
 const tailwindConfig: Config = {
-  content: ['/index.html', './src/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: ['/index.html', './src/**/*.{js,ts,jsx,tsx,mdx}', './lib/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     screens: {
       desktop: '1188px'
@@ -43,12 +43,10 @@ const tailwindConfig: Config = {
         popper: 'var(--radix-popover-content-available-width)',
         trigger: 'var(--radix-popover-trigger-width)'
       },
-      transformOrigin: {
-        k: 'var(--radix-popover-content-transform-origin)'
-      },
       transitionDuration: {
         DEFAULT: '0.3s',
-        12: '0.12s'
+        12: '0.12s',
+        15: '0.15s'
       },
       transitionTimingFunction: {
         DEFAULT: 'ease-in-out'

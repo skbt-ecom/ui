@@ -1,3 +1,3 @@
 export const App = () => {
-  return <div className=' text-icon-secondary-dark-hover size-80 block'>Home page</div>
+  return <h2 className='text-color-primary-default'>Home page</h2>
 }

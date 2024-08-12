@@ -25,8 +25,10 @@
     "verbatimModuleSyntax": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "$/*": ["lib/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "lib"],
+  "exclude": ["src/**/*.stories.ts"]
 }
