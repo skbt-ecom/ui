@@ -39,10 +39,9 @@ export default defineConfig({
 
   build: {
     copyPublicDir: false,
-
     lib: {
       entry: resolve(__dirname, 'lib/index.ts'),
-      name: '@ecom-ui',
+      name: '@ecom/ui-master',
       formats: ['es']
     },
     rollupOptions: {
