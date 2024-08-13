@@ -1,6 +1,6 @@
 import type { FieldValues } from 'react-hook-form'
 import { z } from 'zod'
-import type { InputControlMaskProps, InputControlProps } from '$/shared/ui/formControl'
+import type { InputControlMaskProps, InputControlProps } from '$/shared/ui/formControlElements'
 import { VALIDATION_MESSAGES } from '$/shared/validation'
 
 enum EnumFieldType {

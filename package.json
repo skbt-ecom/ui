@@ -44,9 +44,8 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "@chromatic-com/storybook": "^1.6.1",
+    "@headlessui/react": "^2.1.2",
     "@hookform/resolvers": "^3.9.0",
     "@neodx/svg": "^0.7.1",
     "@radix-ui/react-accordion": "^1.2.0",
@@ -91,6 +90,8 @@
     "glob": "^7.2.3",
     "husky": "^9.1.4",
     "postcss": "^8.4.40",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.2",
     "react-number-format": "^5.4.0",
     "storybook": "^8.2.6",
