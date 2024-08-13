@@ -28,12 +28,12 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Build 🏗️
-        run: npm run build
+        run: npm run build-storybook
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./storybook-static
 
   deploy:
     environment:
