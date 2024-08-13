@@ -1,7 +1,7 @@
 import { type ReactElement } from 'react'
 import type { TooltipContentProps } from '@radix-ui/react-tooltip'
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
-import { cn } from '@/shared/utils'
+import { cn } from '$/shared/utils'
 
 type TAdditionalClasses = {
   content: string

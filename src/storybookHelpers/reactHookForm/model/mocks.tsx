@@ -1,7 +1,7 @@
 import type { FieldValues } from 'react-hook-form'
 import { z } from 'zod'
-import { VALIDATION_MESSAGES } from '@/shared/validation'
 import type { InputControlMaskProps, InputControlProps } from '$/shared/ui/formControl'
+import { VALIDATION_MESSAGES } from '$/shared/validation'
 
 enum EnumFieldType {
   INPUT = 'input',
@@ -16,21 +16,18 @@ type TControlledInputMask<T extends FieldValues> = Omit<InputControlMaskProps<T>
 export type TStorybookFieldConfig<T extends FieldValues> = TControlledInputMask<T> | TControlledInput<T>
 
 export const mockSchema = z.object({
-  surname: z.string({ required_error: VALIDATION_MESSAGES.REQUIRED }).min(3, `${VALIDATION_MESSAGES.MIN_LENGTH} 3`),
-  city: z.string({ required_error: VALIDATION_MESSAGES.REQUIRED }).min(7, `${VALIDATION_MESSAGES.MIN_LENGTH} 7`),
+  city: z.string({ required_error: VALIDATION_MESSAGES.REQUIRED }).min(3, `${VALIDATION_MESSAGES.MIN_LENGTH} 3`),
   phone: z.string({ required_error: VALIDATION_MESSAGES.REQUIRED }).min(7, `${VALIDATION_MESSAGES.MIN_LENGTH} 7`)
 })
 
 export type TMockSchema = z.infer<typeof mockSchema>
 
 export const mockDefaultValues: TMockSchema = {
-  surname: '',
   city: '',
   phone: ''
 }
 
 export const mockFields: TStorybookFieldConfig<TMockSchema>[] = [
-  { name: 'surname', label: 'Фамилия', fieldType: EnumFieldType.INPUT },
   { name: 'city', label: 'Город', fieldType: EnumFieldType.INPUT },
   { name: 'phone', label: 'Номер телефона', fieldType: EnumFieldType.MASK, format: '# (###) ###-##-##' }
 ]

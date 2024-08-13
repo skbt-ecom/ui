@@ -1,8 +1,13 @@
 'use client'
 
-import { type ComponentProps, forwardRef } from 'react'
+import { type ComponentProps, forwardRef, type ReactElement } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
-import { cn } from '@/shared/utils'
+import { cn } from '$/shared/utils'
+
+type TAdditionalClasses = {
+  button: string
+  icon: string
+}
 
 const buttonConfig = cva(
   'group flex items-center justify-center cursor-pointer rounded-full outline-offset-[3px] outline-transparent outline-2 transition duration-12 active:scale-[0.97] disabled:pointer-events-none',
@@ -29,29 +34,18 @@ const buttonConfig = cva(
   }
 )
 
-const buttonIconConfig = cva('size-[22px] flex items-center justify-center [&_svg]:size-full stroke-1', {
-  variants: {
-    iconType: {
-      fill: '[&_*]:fill-current',
-      stroke: '[&_*]:stroke-current',
-      all: '[&_*]:fill-current [&_*]:stroke-current'
-    }
-  },
-  defaultVariants: {
-    iconType: 'stroke'
-  }
-})
-
 type TButtonProps = VariantProps<typeof buttonConfig>
-type TButtonIconProps = VariantProps<typeof buttonIconConfig>
 
-export interface IButtonIconProps extends ComponentProps<'button'>, TButtonProps, TButtonIconProps {}
+export interface IButtonIconProps extends ComponentProps<'button'>, TButtonProps {
+  children: ReactElement
+  classes?: Partial<TAdditionalClasses>
+}
 
 export const ButtonIcon = forwardRef<HTMLButtonElement, IButtonIconProps>(
-  ({ size, intent, children, className, type = 'button', iconType, ...props }, ref) => {
+  ({ size, intent, children, classes, type = 'button', ...props }, ref) => {
     return (
-      <button ref={ref} type={type} className={cn(buttonConfig({ intent, size }), className)} {...props}>
-        <span className={cn(buttonIconConfig({ iconType }))}>{children}</span>
+      <button ref={ref} type={type} className={cn(buttonConfig({ intent, size }), classes?.button)} {...props}>
+        <span className={cn(classes?.icon)}>{children}</span>
       </button>
     )
   }

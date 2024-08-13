@@ -1,6 +1,6 @@
 export interface SpritesMap {
   brandLogos: 'logoBlack' | 'logoBusiness' | 'logoGray' | 'logoInsurance' | 'logoMain' | 'logoWhite'
-  common: 'arrowCircle' | 'check' | 'close'
+  common: 'arrowCircle' | 'check' | 'close' | 'warningCircle'
 }
 export const SPRITES_META: {
   [Key in keyof SpritesMap]: {
@@ -51,7 +51,7 @@ export const SPRITES_META: {
     }
   },
   common: {
-    filePath: 'common.f63a3e8e.svg',
+    filePath: 'common.04ae7461.svg',
     items: {
       arrowCircle: {
         viewBox: '0 0 32 32',
@@ -67,6 +67,11 @@ export const SPRITES_META: {
         viewBox: '0 0 24 24',
         width: 24,
         height: 24
+      },
+      warningCircle: {
+        viewBox: '0 0 20 20',
+        width: 20,
+        height: 20
       }
     }
   }

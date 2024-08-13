@@ -1,1 +1,0 @@
-export { MessageView } from './MessageView'

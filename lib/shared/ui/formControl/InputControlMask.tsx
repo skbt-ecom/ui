@@ -2,10 +2,10 @@ import { type ComponentProps, useId } from 'react'
 import { type Control, Controller, type FieldValues, type Path } from 'react-hook-form'
 import { PatternFormat } from 'react-number-format'
 import { cva, type VariantProps } from 'class-variance-authority'
-import { cn } from '@/shared/utils'
-import { MessageView } from '../messageView'
+import { FieldAttachment, type IFieldAttachmentProps, MessageView, type TFieldAttachmentClasses } from './ui'
+import { cn } from '$/shared/utils'
 
-type TAdditionalClasses = {
+type TAdditionalClasses = TFieldAttachmentClasses & {
   container: string
   field: string
   label: string
@@ -24,10 +24,13 @@ const containerConfig = cva('flex flex-col group', {
   }
 })
 
-type TContainerProps = VariantProps<typeof containerConfig>
-type InputBaseProps = Omit<ComponentProps<'input'>, 'name' | 'placeholder' | 'size' | 'type' | 'defaultValue'>
+type TFieldContainerProps = VariantProps<typeof containerConfig>
+type TInputBaseProps = Omit<ComponentProps<'input'>, 'name' | 'placeholder' | 'size' | 'type' | 'defaultValue'>
 
-export interface InputControlMaskProps<T extends FieldValues> extends InputBaseProps, TContainerProps {
+export interface InputControlMaskProps<T extends FieldValues>
+  extends TInputBaseProps,
+    TFieldContainerProps,
+    IFieldAttachmentProps {
   name: Path<T>
   control: Control<T>
   format: string
@@ -35,8 +38,7 @@ export interface InputControlMaskProps<T extends FieldValues> extends InputBaseP
   mask?: string | string[]
   placeholder?: never
   allowEmptyFormatting?: boolean
-  customOnChange?: (arg?: string) => void
-  marker?: boolean
+  onInputChange?: (arg?: string) => void
   helperText?: string
   classes?: Partial<TAdditionalClasses>
 }
@@ -46,12 +48,14 @@ export const InputControlMask = <T extends FieldValues>({
   allowEmptyFormatting = false,
   mask = '',
   control,
-  customOnChange,
-  marker = true,
+  onInputChange,
   size = 'full',
   helperText,
   label,
   classes,
+  disabled,
+  badge,
+  icon,
   ...props
 }: InputControlMaskProps<T>) => {
   const inputId = useId()
@@ -64,26 +68,25 @@ export const InputControlMask = <T extends FieldValues>({
         <div className={cn(containerConfig({ size }), classes?.container)}>
           <div
             className={cn(
-              'relative border-solid rounded-md px-4 border border-warm-grey-300 group-focus-within:border-primary-default hover:border-primary-default',
-              { '!border-negative': !!error?.message },
+              'relative border-solid rounded-md border border-transparent bg-color-blue-grey-100 group-focus-within:border-blue-grey-800  focus:outline-blue-grey-800 hover:bg-color-blue-grey-200 active:bg-color-blue-grey-100 flex items-center justify-between ',
+              { '!border-negative': !!error?.message, '!bg-color-blue-grey-100': disabled },
               classes?.field
             )}
           >
             <label
               htmlFor={inputId}
               className={cn(
-                'absolute top-2/4 -translate-y-1/2 left-4 desk-body-regular-m text-color-tetriary pointer-events-none transition-all duration-15 group-focus-within:float-label',
-                { '-translate-y-1/2 top-0 px-[10px] bg-color-white scale-90': value },
+                'absolute top-2/4 -translate-y-1/2 left-4 desk-body-regular-l text-color-tetriary pointer-events-none transition-all duration-15 group-focus-within:float-label ',
+                { 'top-2 bg-color-transparent translate-y-0  desk-body-regular-s': value },
                 classes?.label
               )}
             >
               {label}
-              {marker && <span className='text-color-negative'> *</span>}
             </label>
             <PatternFormat
               value={value?.toString()}
               className={cn(
-                ' w-full h-14 desk-body-regular-m text-color-dark transition-all bg-color-transparent outline-none',
+                'w-full h-[56px] desk-body-regular-l  text-color-dark transition-all bg-color-transparent outline-none pt-5 px-4 rounded-md',
                 classes?.input
               )}
               format={format}
@@ -91,11 +94,21 @@ export const InputControlMask = <T extends FieldValues>({
               mask={mask}
               onChange={(e) => {
                 onChange(e)
-                if (customOnChange) {
-                  customOnChange(e.target.value)
+                if (onInputChange) {
+                  onInputChange(e.target.value)
                 }
               }}
               {...props}
+            />
+            <FieldAttachment
+              badge={badge}
+              icon={icon}
+              error={!!error?.message}
+              classes={{
+                badge: classes?.badge,
+                icon: classes?.icon,
+                attachmentWrapper: classes?.attachmentWrapper
+              }}
             />
           </div>
           <MessageView

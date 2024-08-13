@@ -84,6 +84,7 @@ module.exports = {
     'import/no-default-export': 'error',
     'implicit-arrow-linebreak': 'off',
     'react/jsx-one-expression-per-line': 'off',
+    '@typescript-eslint/indent': 'off',
     'prettier/prettier': [
       'error',
       {
@@ -109,22 +110,7 @@ module.exports = {
     'simple-import-sort/imports': [
       'error',
       {
-        groups: [
-          [
-            '^react',
-            '^next',
-            '^',
-            '^\u0000',
-            '^@/app',
-            '^@/screens',
-            '^@/features',
-            '^@/widgets',
-            '^@/shared',
-            '^../',
-            '^./',
-            '^.+.module.s?css$'
-          ]
-        ]
+        groups: [['^react', '^', '^\u0000', '^@/app', '^@/widgets', '^$/shared', '^../', '^./']]
       }
     ],
     '@typescript-eslint/naming-convention': [

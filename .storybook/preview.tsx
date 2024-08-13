@@ -1,5 +1,5 @@
 import { RootProvider } from '../src/app/providers'
-import '../src/shared/core/styles/root.css'
+import '../lib/shared/core/styles/root.css'
 
 import type { Preview } from '@storybook/react'
 import { withConsole } from '@storybook/addon-console'

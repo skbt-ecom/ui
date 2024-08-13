@@ -41,7 +41,7 @@ export default defineConfig({
     copyPublicDir: false,
 
     lib: {
-      entry: resolve(__dirname, 'lib/main.ts'),
+      entry: resolve(__dirname, 'lib/index.ts'),
       name: '@ecom-ui',
       formats: ['es']
     },
@@ -59,7 +59,7 @@ export default defineConfig({
       ),
       output: {
         assetFileNames: 'assets/[name][extname]',
-        entryFileNames: '[name].js'
+        entryFileNames: '[name].ts'
       }
     }
   }

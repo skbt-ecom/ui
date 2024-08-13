@@ -1,11 +1,5 @@
 import type { Meta } from '@storybook/react'
-import {
-  mockDefaultValues,
-  mockFields,
-  mockSchema,
-  StorybookFieldsMapper,
-  StorybookFormProvider
-} from '@/shared/storybookHelpers'
+import { mockDefaultValues, mockFields, mockSchema, StorybookFieldsMapper, StorybookFormProvider } from '@/storybookHelpers'
 import { FormControl } from '$/shared/ui/'
 
 const meta = {

@@ -1,8 +1,8 @@
 import { type ComponentProps, forwardRef, type ReactElement } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
-import { cn } from '@/shared/utils'
 import { Loader } from '../loader'
 import { setButtonLoaderIntent } from './model/helpers'
+import { cn } from '$/shared/utils'
 
 const buttonConfig = cva(
   'relative flex items-center justify-center gap-4 cursor-pointer rounded-sm w-[216px] outline-offset-4 outline-transparent outline-2 desk-body-regular-l transition duration-12 active:scale-[0.97] disabled:pointer-events-none',

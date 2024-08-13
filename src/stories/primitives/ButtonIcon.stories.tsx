@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast'
 import type { Meta, StoryObj } from '@storybook/react'
 import { ButtonIcon, Icon } from '$/shared/ui'
 
@@ -13,7 +14,16 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const ButtonIcons: Story = {
+export const Base: Story = {
+  args: {
+    size: 'md',
+    intent: 'primary',
+    onClick: () => toast.success('Clicked'),
+    children: <Icon name='common/check' />
+  }
+}
+
+export const AllVariantsButtonsIcon = {
   render: () => (
     <div className='flex flex-col gap-6'>
       <div className='flex items-center gap-5'>

@@ -8,7 +8,7 @@ import {
   allowedLineHeight,
   allowedStrokeColors,
   allowedTextColors
-} from './src/shared/constants'
+} from './lib/shared/constants'
 
 const tailwindConfig: Config = {
   content: ['/index.html', './src/**/*.{js,ts,jsx,tsx,mdx}', './lib/**/*.{js,ts,jsx,tsx,mdx}'],

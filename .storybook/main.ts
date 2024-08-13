@@ -51,7 +51,8 @@ const config: StorybookConfig = {
       ],
       resolve: {
         alias: {
-          '@': resolve(__dirname, '../src')
+          '@': resolve(__dirname, '../src'),
+          $: resolve(__dirname, '../lib')
         }
       }
     }),

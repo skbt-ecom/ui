@@ -1,6 +1,6 @@
 import type { HTMLAttributes } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
-import { cn } from '@/shared/utils'
+import { cn } from '$/shared/utils'
 
 const loaderConfig = cva('border-2 border-solid block animate-spin rounded-full ', {
   variants: {

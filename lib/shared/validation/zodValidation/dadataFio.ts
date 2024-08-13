@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import { capitalize } from '@/shared/utils'
 import { RgxCheckForHyphen, RgxPatronymic, RgxUnicode } from '../regExp'
+import { capitalize } from '$/shared/utils'
 
 const formattedFio = (value: string) => {
   const parts = value.trim().replace(/\s+/g, ' ').split(' ')

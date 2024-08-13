@@ -1,7 +1,7 @@
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
-import { cn } from '@/shared/utils'
 import type { IAccordionHeaderClasses, IAccordionItem, IAccordionRootClasses } from './model/types'
 import { AccordionHeader } from './ui/AccordionHeader'
+import { cn } from '$/shared/utils'
 
 export interface IAccordionProps {
   accordionItems: IAccordionItem[]

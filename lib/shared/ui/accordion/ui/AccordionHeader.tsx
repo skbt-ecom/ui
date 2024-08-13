@@ -1,8 +1,8 @@
 import { forwardRef, type ReactElement } from 'react'
 import { Header, Trigger } from '@radix-ui/react-accordion'
-import { cn } from '@/shared/utils'
 import { Icon } from '../../icon'
 import type { IAccordionHeaderClasses } from '../model/types'
+import { cn } from '$/shared/utils'
 
 interface IAccordionHeaderProps {
   children?: ReactElement | string

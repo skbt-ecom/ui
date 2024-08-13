@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { setTextWithElementSB } from '@/shared/storybookHelpers'
+import { setTextWithElementSB } from '@/storybookHelpers'
 import { Hint } from '$/shared/ui'
 
 const meta = {
