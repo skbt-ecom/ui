@@ -13,7 +13,7 @@ export default defineConfig({
     libInjectCss(),
     dts({ include: ['lib'], insertTypesEntry: true }),
     svg({
-      root: 'assets',
+      root: 'static',
       group: true,
       output: './public/sprites',
       fileName: '{name}.{hash:8}.svg',

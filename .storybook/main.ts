@@ -24,7 +24,7 @@ const config: StorybookConfig = {
       strictMode: true
     }
   },
-
+  staticDirs: ['../public', '../static'],
   docs: {
     autodocs: 'tag'
   },
@@ -32,7 +32,7 @@ const config: StorybookConfig = {
     mergeConfig(config, {
       plugins: [
         svg({
-          root: 'assets',
+          root: 'static',
           group: true,
           output: './public/sprites',
           fileName: '{name}.{hash:8}.svg',
