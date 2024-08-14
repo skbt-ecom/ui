@@ -28,6 +28,7 @@ export const Base: Story = {
 export const AllVariantsButtons: Story = {
   render: () => (
     <div className='flex flex-col gap-8'>
+      <img src='/img/test.avif' alt='test' className='size-40' />
       <div className='flex flex-col gap-3'>
         <strong className='text-color-tetriary'># Primary</strong>
         <div className='flex items-center gap-5'>
