@@ -1,26 +1,21 @@
-import toast from 'react-hot-toast'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from '$/shared/ui'
+import { Table } from '$/shared/ui/table/Table'
+import { defaultTableValue } from '$/shared/ui/table/utils/defaultValue'
 
 const meta = {
   title: 'DataBlocks/Table',
-  component: Button,
+  component: Table,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered'
   }
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof Table>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Base: Story = {
   args: {
-    size: 'md',
-    children: 'Button',
-    intent: 'primary',
-    textFormat: 'initial',
-    isLoading: false,
-    onClick: () => toast.success('Clicked')
+    ...defaultTableValue
   }
 }

@@ -1,22 +1,17 @@
-export interface ITable<C extends ColumnCount> {
-  columnCount: C
-  headingTitles: HeadingTitles[]
-  body: Body<C>
+import type { ReactElement } from 'react'
+
+export type ColumnCount = '2' | '3'
+
+export type Titles = {
+  name: string | ReactElement
 }
 
-type ColumnCount = '2' | '3'
-
-type HeadingTitles = {
-  name: string
+export type Body<C extends ColumnCount> = {
+  rows: ColumnsForCount<C>
 }
 
-type Body<C extends ColumnCount> = {
-  columns: ColumnsForCount<C>
-}
+export type ColumnsForCount<C extends ColumnCount> = C extends '2' ? [Row, Row] : C extends '3' ? [Row, Row, Row] : never
 
-type ColumnsForCount<C extends ColumnCount> = C extends '2' ? [Column, Column] : C extends '3' ? [Column, Column, Column] : never
-
-type Column = {
-  bodyTitle: string
-  bodyText: string[]
+export type Row = {
+  rowText: string[]
 }

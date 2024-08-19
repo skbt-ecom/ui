@@ -6,6 +6,7 @@ export { ButtonIcon } from './buttonIcon'
 export { Loader } from './loader'
 export { PhoneView } from './phoneView'
 export { Badge } from './badge'
+export { Table } from './table'
 
 // # INTERACTIVE
 export { Accordion } from './accordion'
