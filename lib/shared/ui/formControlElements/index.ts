@@ -1,3 +1,6 @@
 export { InputControl, type InputControlProps } from './InputControl'
 export { InputControlMask, type InputControlMaskProps } from './InputControlMask'
 export { FormControl } from './FormControl'
+export { DadataInputControl, type IDadataInputControlProps } from './dadata'
+export { CheckboxControl, type ICheckboxControlProps } from './CheckboxControl'
+export { RadioControl, type IRadioControlProps } from './RadioControl'

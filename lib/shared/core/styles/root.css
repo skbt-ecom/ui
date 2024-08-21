@@ -84,6 +84,25 @@
   .float-label {
     @apply top-2 bg-color-transparent translate-y-0 desk-body-regular-s;
   }
+
+  .customScrollbar-y::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .customScrollbar-y::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background: #d4dbe2;
+  }
+
+  .customScrollbar-y::-webkit-scrollbar-thumb {
+    background: #a9b6c5;
+    border-radius: 8px;
+  }
+  .scrollHidden::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 }
 
 * {

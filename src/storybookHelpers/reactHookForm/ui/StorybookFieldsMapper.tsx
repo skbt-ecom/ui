@@ -1,8 +1,7 @@
-/* eslint-disable no-case-declarations */
 import { type Control, type DefaultValues, type FieldValues, useFormContext } from 'react-hook-form'
 import type { Schema, TypeOf } from 'zod'
-import type { TStorybookFieldConfig } from '../model/mocks'
-import { Button, InputControl, InputControlMask } from '$/shared/ui'
+import type { TStorybookFieldConfig } from '../model/types'
+import { Button, CheckboxControl, DadataInputControl, InputControl, InputControlMask, RadioControl } from '$/shared/ui'
 
 type TStorybookFieldsMapperProps<T extends FieldValues> = {
   fields: TStorybookFieldConfig<T>[]
@@ -15,10 +14,17 @@ const renderFields = <T extends FieldValues>(fieldConfig: TStorybookFieldConfig<
   const { name, label, fieldType } = fieldConfig
   switch (fieldType) {
     case 'input':
-      return <InputControl name={name} label={label} control={control} />
+      return <InputControl name={name} label={label} control={control} badge='+25%' />
     case 'mask':
       const { format, mask } = fieldConfig
       return <InputControlMask name={name} label={label} format={format} control={control} mask={mask} />
+    case 'dadata':
+      return <DadataInputControl name={name} label={label} control={control} badge='+25%' />
+    case 'checkbox':
+      return <CheckboxControl name={name} label={label} control={control} />
+    case 'radio':
+      const { radioItemsGroup } = fieldConfig
+      return <RadioControl name={name} label={label} control={control} radioItemsGroup={radioItemsGroup} />
     default:
       return null
   }
@@ -31,6 +37,7 @@ export const StorybookFieldsMapper = <T extends FieldValues>({
   btnReset = 'Сбросить состояние'
 }: TStorybookFieldsMapperProps<T>) => {
   const { control, clearErrors, reset } = useFormContext()
+
   const resetStates = () => {
     clearErrors()
     reset(defaultValues)

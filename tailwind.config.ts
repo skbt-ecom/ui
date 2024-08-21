@@ -40,9 +40,9 @@ const tailwindConfig: Config = {
     },
     extend: {
       width: {
-        popper: 'var(--radix-popover-content-available-width)',
-        trigger: 'var(--radix-popover-trigger-width)',
-        autocomplete: 'var(--input-width)'
+        'popper-content': 'var(--radix-popover-content-available-width)',
+        'popper-trigger': 'var(--radix-popover-trigger-width)',
+        'autocomplete-input': 'var(--input-width)'
       },
       transitionDuration: {
         DEFAULT: '0.3s',

@@ -3,7 +3,7 @@ import { mockDefaultValues, mockFields, mockSchema, StorybookFieldsMapper, Story
 import { FormControl } from '$/shared/ui/'
 
 const meta = {
-  title: 'CONTROLLED FORM UI/FormControl',
+  title: 'CONTROLLED FORM UI/FormControlAllFields',
   component: FormControl,
   parameters: {
     layout: 'centered'
@@ -20,6 +20,6 @@ const meta = {
 
 export default meta
 
-export const ControlledFormAllElements = () => {
+export const FormControlAllFields = () => {
   return <StorybookFieldsMapper fields={mockFields} defaultValues={mockDefaultValues} />
 }

@@ -20,5 +20,11 @@ export { Icon } from './icon'
 export { brandLogosVariants, type TBrandLogoVariant } from './logos'
 
 // # CONTROLLED FORM UI
-
-export { InputControl, InputControlMask, FormControl } from './formControlElements'
+export {
+  InputControl,
+  InputControlMask,
+  FormControl,
+  DadataInputControl,
+  CheckboxControl,
+  RadioControl
+} from './formControlElements'

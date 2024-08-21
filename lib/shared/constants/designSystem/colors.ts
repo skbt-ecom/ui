@@ -28,6 +28,7 @@ const allowedBackgroundColors = {
   'warning-light': '#ffeecc',
   white: '#ffffff',
   'primary-disabled': '#809bc7',
+  'secondary-disabled': '#FFB7BF',
   ...rootStyles
 } as const
 

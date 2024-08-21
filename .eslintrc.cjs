@@ -82,6 +82,7 @@ module.exports = {
     'linebreak-style': 'off',
     'object-curly-newline': 'off',
     'prefer-arrow-callback': 'off',
+    'no-case-declarations': 'off',
     '@typescript-eslint/comma-dangle': 'off',
     'max-len': 'off',
     'jsx-quotes': [2, 'prefer-single'],
