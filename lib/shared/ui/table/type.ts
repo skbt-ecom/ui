@@ -7,11 +7,15 @@ export type Titles = {
 }
 
 export type Body<C extends ColumnCount> = {
-  rows: ColumnsForCount<C>
+  rows: Row<C>[]
 }
 
-export type ColumnsForCount<C extends ColumnCount> = C extends '2' ? [Row, Row] : C extends '3' ? [Row, Row, Row] : never
+export type ColumnsForCount<C extends ColumnCount> = C extends '2'
+  ? [string, string]
+  : C extends '3'
+    ? [string, string, string]
+    : never
 
-export type Row = {
-  rowText: string[]
+export type Row<C extends ColumnCount> = {
+  rowText: ColumnsForCount<C>
 }

@@ -1,6 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Table } from '$/shared/ui/table/Table'
-import { defaultTableValue } from '$/shared/ui/table/utils/defaultValue'
+import { Table } from '$/shared/ui/'
+import {
+  tableValue,
+  tableValueThreeCols,
+  tableValueThreeColsWithoutTitles,
+  tableValueWithoutTitles
+} from '$/shared/ui/table/utils/defaultValue'
 
 const meta = {
   title: 'DataBlocks/Table',
@@ -16,6 +21,24 @@ type Story = StoryObj<typeof meta>
 
 export const Base: Story = {
   args: {
-    ...defaultTableValue
+    ...tableValue
+  }
+}
+
+export const ThreeColumns: Story = {
+  args: {
+    ...tableValueThreeCols
+  }
+}
+
+export const BaseWithoutTitles: Story = {
+  args: {
+    ...tableValueWithoutTitles
+  }
+}
+
+export const ThreeColumnsWithoutTitles: Story = {
+  args: {
+    ...tableValueThreeColsWithoutTitles
   }
 }
