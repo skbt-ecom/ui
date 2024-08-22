@@ -54,7 +54,7 @@ exports[`Тестирование Button > Кнопка должна отобр�
     data-testid="test-button"
     type="button"
   >
-    Click me!2
+    Click me!
     <span
       class="size-5 flex items-center justify-center"
     >
