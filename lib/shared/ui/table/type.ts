@@ -1,21 +1,24 @@
 import type { ReactElement } from 'react'
 
-export type ColumnCount = '2' | '3'
+export type TTableColumnCount = 'twoColumns' | 'threeColumns'
 
-export type Titles = {
-  name: string | ReactElement
+export type TableRows<C extends TTableColumnCount> = ColumnsCount<C>[]
+
+export type Ceil = {
+  text: string | ReactElement
 }
 
-export type Body<C extends ColumnCount> = {
-  rows: Row<C>[]
-}
-
-export type ColumnsForCount<C extends ColumnCount> = C extends '2'
-  ? [string, string]
-  : C extends '3'
-    ? [string, string, string]
+export type ColumnsCount<C extends TTableColumnCount> = C extends 'twoColumns'
+  ? [Ceil, Ceil]
+  : C extends 'threeColumns'
+    ? [Ceil, Ceil, Ceil]
     : never
 
-export type Row<C extends ColumnCount> = {
-  rowText: ColumnsForCount<C>
+export type TTableClasses = {
+  tableRootWrapper: string
+  tableHeading: string
+  tableBody: string
+  tableRow: string
+  tableCell: string
+  tableAdditionalText: string
 }

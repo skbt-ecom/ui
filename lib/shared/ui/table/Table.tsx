@@ -2,12 +2,12 @@ import type { ReactElement } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { Heading } from '../heading'
 import { ResponsiveContainer } from '../ResponsiveContainer'
-import type { Body, ColumnCount, Titles } from './type'
+import type { TableRows, TTableClasses, TTableColumnCount } from './type'
 import { cn } from '$/shared/utils'
 
 const tableConfig = cva('grid', {
   variants: {
-    intent: {
+    columnCount: {
       twoColumns: 'grid-cols-[repeat(2,minmax(172px,_1fr))] desktop:grid-cols-[repeat(2,minmax(172px,_1fr))]',
       threeColumns: 'grid-cols-[repeat(3,minmax(172px,_1fr))] desktop:grid-cols-[repeat(3,minmax(312px,_1fr))]'
     }
@@ -16,7 +16,7 @@ const tableConfig = cva('grid', {
 
 const itemTableConfig = cva('grid', {
   variants: {
-    intent: {
+    columnCount: {
       twoColumns: '',
       threeColumns: ''
     },
@@ -28,22 +28,22 @@ const itemTableConfig = cva('grid', {
   compoundVariants: [
     {
       titlesExist: 'notExist',
-      intent: 'twoColumns',
+      columnCount: 'twoColumns',
       class: 'grid-rows-[repeat(2,_auto)] border-b border-warm-grey-200 py-4'
     },
     {
       titlesExist: 'notExist',
-      intent: 'threeColumns',
+      columnCount: 'threeColumns',
       class: 'grid-cols-[repeat(3,_auto)]'
     },
     {
       titlesExist: 'exist',
-      intent: 'twoColumns',
+      columnCount: 'twoColumns',
       class: 'grid-cols-[repeat(2,_auto)]'
     },
     {
       titlesExist: 'exist',
-      intent: 'threeColumns',
+      columnCount: 'threeColumns',
       class: 'grid-cols-[repeat(3,_auto)]'
     }
   ]
@@ -51,22 +51,22 @@ const itemTableConfig = cva('grid', {
 
 const tableOverflowConfig = cva('grid', {
   variants: {
-    intent: {
+    columnCount: {
       twoColumns: '',
       threeColumns: ''
     }
   },
   compoundVariants: [
     {
-      intent: 'threeColumns',
-      class: 'mobile:overflow-x-scroll mobile:max-w-[368px]'
+      columnCount: 'threeColumns',
+      class: 'mobile:overflow-x-scroll mobile:max-w-[368px] mb-1'
     }
   ]
 })
 
-const textTableConfig = cva('desktop:desk-body-regular-l mob-body-regular-l', {
+const textTableConfig = cva('border-b border-warm-grey-200 py-4 desktop:desk-body-regular-l mob-body-regular-l', {
   variants: {
-    intent: {
+    columnCount: {
       twoColumns: '',
       threeColumns: ''
     },
@@ -78,65 +78,65 @@ const textTableConfig = cva('desktop:desk-body-regular-l mob-body-regular-l', {
   compoundVariants: [
     {
       titlesExist: 'notExist',
-      intent: 'twoColumns',
-      class: ''
-    },
-    {
-      titlesExist: 'exist',
-      intent: 'twoColumns',
-      class: 'border-b border-warm-grey-200 py-4'
-    },
-    {
-      titlesExist: 'notExist',
-      intent: 'threeColumns',
-      class: 'border-b border-warm-grey-200 py-4'
-    },
-    {
-      titlesExist: 'exist',
-      intent: 'threeColumns',
-      class: 'border-b border-warm-grey-200 py-4'
+      columnCount: 'twoColumns',
+      class: 'border-transparent border-0 p-0'
     }
   ]
 })
 
 type TTableProps = VariantProps<typeof tableConfig>
-export type TTableIntents = 'twoColumns' | 'threeColumns'
-export interface ITable<C extends ColumnCount> extends TTableProps {
+
+export interface ITable<C extends TTableColumnCount> extends TTableProps {
   headTitle: string | ReactElement
-  // eslint-disable-next-line react/no-unused-prop-types
-  columnCount: C
-  titles?: Titles[]
-  body: Body<C>
+  columnCount: TTableColumnCount
+  tableHead?: string[]
+  tableRows: TableRows<C>
   additionalText?: string
+  classes?: Partial<TTableClasses>
 }
 
-export const Table = <C extends ColumnCount>({ headTitle, body, titles, additionalText, intent }: ITable<C>) => {
-  const titlesExist = titles && titles.length > 0 ? 'exist' : 'notExist'
+export const Table = <C extends TTableColumnCount>({
+  headTitle,
+  tableRows,
+  tableHead,
+  additionalText,
+  columnCount,
+  classes
+}: ITable<C>) => {
+  const titlesExist = tableHead && tableHead.length > 0 ? 'exist' : 'notExist'
 
   return (
     <ResponsiveContainer>
-      <div className='flex flex-col'>
-        <Heading as='h3' className='mob-title-bold-m desktop:desk-title-bold-s pb-6'>
+      <div className={cn('flex flex-col', classes?.tableRootWrapper)}>
+        <Heading as='h3' className={cn('mob-title-bold-m desktop:desk-title-bold-s pb-6', classes?.tableHeading)}>
           {headTitle}
         </Heading>
-        <div className={cn(tableOverflowConfig({ intent }))}>
-          <ul className={cn(tableConfig({ intent }))}>
-            {titles?.map(({ name }) => (
-              <li className='border-b border-warm-grey-200 mob-body-regular-l desktop:desk-body-regular-l py-4'>{name}</li>
+        <div className={cn(tableOverflowConfig({ columnCount }), classes?.tableBody)}>
+          <ul className={cn(tableConfig({ columnCount }), classes?.tableTitlesContainer)}>
+            {tableHead?.map((title) => (
+              <li
+                key={title}
+                className={cn(
+                  'border-b border-warm-grey-200 mob-body-regular-l desktop:desk-body-regular-l py-4',
+                  classes?.tableTitleRow
+                )}
+              >
+                {title}
+              </li>
             ))}
           </ul>
 
-          <ul className='mb-4 flex flex-col'>
-            {body.rows.map(({ rowText }) => (
-              <li className={cn(itemTableConfig({ intent, titlesExist }))}>
-                {rowText.map((item) => (
-                  <p className={cn(textTableConfig({ titlesExist, intent }))}>{item}</p>
+          <ul className={cn('mb-4 flex flex-col', classes?.tableBodyContainer)}>
+            {tableRows.map((row) => (
+              <li className={cn(itemTableConfig({ columnCount, titlesExist }), classes?.tableBodyRow)}>
+                {row.map((ceil) => (
+                  <p className={cn(textTableConfig({ titlesExist, columnCount }), classes?.tableBodyCeil)}>{ceil.text}</p>
                 ))}
               </li>
             ))}
           </ul>
         </div>
-        <p className='mob-body-regular-m desktop:desk-body-regular-l'>{additionalText}</p>
+        <p className={cn('mob-body-regular-m desktop:desk-body-regular-l', classes?.tableAdditionalText)}>{additionalText}</p>
       </div>
     </ResponsiveContainer>
   )

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Table } from '$/shared/ui/'
 import {
   tableValue,
   tableValueThreeCols,
   tableValueThreeColsWithoutTitles,
   tableValueWithoutTitles
-} from '$/shared/ui/table/utils/defaultValue'
+} from '@/stories/primitives/Table/utils/defaultValue'
+import { Table } from '$/shared/ui/'
 
 const meta = {
   title: 'DataBlocks/Table',
