@@ -18,7 +18,13 @@ export type TTableClasses = {
   tableRootWrapper: string
   tableHeading: string
   tableBody: string
-  tableRow: string
+  tableRowTitles: string
   tableCell: string
   tableAdditionalText: string
+  tableTitlesContainer: string
+  tableTitleCeil: string
+  tableBodyContainer: string
+  tableTitleRow: string
+  tableBodyRow: string
+  tableBodyCeil: string
 }
