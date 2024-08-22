@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "composite": true,
+    "types": ["vitest", "@testing-library/jest-dom"],
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
     "useDefineForClassFields": true,
@@ -29,6 +30,6 @@
       "$/*": ["lib/*"]
     }
   },
-  "include": ["src", "lib"],
+  "include": ["src", "lib", "test"],
   "exclude": ["src/**/*.stories.ts"]
 }
