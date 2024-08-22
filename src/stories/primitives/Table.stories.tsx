@@ -4,7 +4,7 @@ import {
   tableValueThreeCols,
   tableValueThreeColsWithoutTitles,
   tableValueWithoutTitles
-} from '@/stories/primitives/Table/utils/defaultValue'
+} from '@/storybookHelpers/table/utils/defaultValue'
 import { Table } from '$/shared/ui/'
 
 const meta = {

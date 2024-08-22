@@ -1,4 +1,4 @@
-import type { ITable } from '../../../../../lib/shared/ui/table/Table'
+import type { ITable } from '../../../../lib/shared/ui/table/Table'
 
 export const tableValue: ITable<'twoColumns'> = {
   columnCount: 'twoColumns',
