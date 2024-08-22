@@ -1,7 +1,7 @@
 {
-  "name": "@ecom/ui-master",
+  "name": "@skbt-ecom/ui",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "main": "dist/index.umd.ts",
   "module": "dist/index.es.ts",
@@ -17,7 +17,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build --base=/ui/",
+    "build": "tsc -b && vite build",
     "lint": "eslint . --quiet",
     "preview": "vite preview",
     "start:sb": "storybook dev -p 6006 --no-open",
