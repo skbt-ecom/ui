@@ -19,7 +19,7 @@ export const Base: Story = {
     size: 'md',
     children: 'Button',
     intent: 'primary',
-    textFormat: 'uppercase',
+    textFormat: 'initial',
     isLoading: false,
     onClick: () => toast.success('Clicked')
   }
