@@ -21,7 +21,8 @@ const renderFields = <T extends FieldValues>(fieldConfig: TStorybookFieldConfig<
     case 'dadata':
       return <DadataInputControl name={name} label={label} control={control} badge='+25%' />
     case 'checkbox':
-      return <CheckboxControl name={name} label={label} control={control} />
+      const { defaultChecked } = fieldConfig
+      return <CheckboxControl name={name} label={label} control={control} defaultChecked={defaultChecked} />
     case 'radio':
       const { radioItemsGroup } = fieldConfig
       return <RadioControl name={name} label={label} control={control} radioItemsGroup={radioItemsGroup} />

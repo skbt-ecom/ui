@@ -5,7 +5,7 @@ import type { TAdditionalInputClassesWithAttachment, TControlledInputProps } fro
 import { FieldAttachment, FieldContainer, FieldWrapper, MessageView } from '../ui'
 import type { TDadataBaseUrl, TDadataType } from './model/types'
 import { useDadata } from './model/useDadata'
-import { capitalize, cn } from '$/shared/utils'
+import { cn } from '$/shared/utils'
 
 type TDadataClasses = Partial<TAdditionalInputClassesWithAttachment> & {
   options?: string
@@ -53,12 +53,12 @@ export const DadataInputControl = <T extends FieldValues>({
                 <>
                   <ComboboxInput
                     className={cn(
-                      'w-full h-[56px] desk-body-regular-l text-color-dark transition-all bg-color-transparent outline-none pt-5 px-4 rounded-md z-10 capitalize ',
+                      'w-full h-[56px] desk-body-regular-l text-color-dark transition-all bg-color-transparent outline-none pt-5 px-4 rounded-md z-10',
                       classes?.input
                     )}
                     ref={ref}
                     name={name}
-                    value={value ? capitalize(value) : value}
+                    value={value} // TODO: capitalize
                     displayValue={(currentValue: string) => {
                       return currentValue
                     }}
@@ -67,7 +67,7 @@ export const DadataInputControl = <T extends FieldValues>({
                       setQuery(event.target.value)
                     }}
                   />
-                  {/* //TODO: Пока проблемы с реализацией на других полях,  */}
+                  {/* //TODO: Пока проблемы с реализацией на других полях  */}
                   {/* {suggestionsOptions && debounceQuery && (
                     <span className='absolute desk-body-regular-l text-color-blue-grey-600 left-[16px] top-[28px] capitalize group-focus-within:visible'>
                       {suggestionsOptions[0]?.value}

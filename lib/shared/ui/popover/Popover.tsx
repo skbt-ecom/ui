@@ -1,7 +1,7 @@
 import type { ReactElement, ReactNode } from 'react'
 import type { PopoverContentProps as TPopoverContentPropsBase } from '@radix-ui/react-popover'
 import * as PopoverPrimitive from '@radix-ui/react-popover'
-import { Icon } from '../icon'
+import { Icon } from '../Icon'
 import { cn } from '$/shared/utils'
 
 type TAdditionalClasses = {

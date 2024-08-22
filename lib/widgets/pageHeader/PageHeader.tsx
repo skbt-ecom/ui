@@ -1,4 +1,4 @@
-import { brandLogosVariants, Button, PhoneView, ResponsiveContainer, type TBrandLogoVariant } from '$/shared/ui'
+import { brandLogos, Button, PhoneView, ResponsiveContainer, type TBrandLogoVariant } from '$/shared/ui'
 
 export interface IPageHeaderProps {
   logoPath?: string
@@ -14,7 +14,7 @@ export const PageHeader = ({ logoPath = '/', logoType = 'main', variant = 'withB
       <ResponsiveContainer>
         <div className='flex items-center justify-between gap-5 px-5'>
           <a href={logoPath} target='_blank' rel='noreferrer' className='[&_svg]:w-[192px] h-[32px]'>
-            {brandLogosVariants[logoType]}
+            {brandLogos[logoType]}
           </a>
           {variant === 'withButton' ? (
             <Button intent='secondary' size='sm'>

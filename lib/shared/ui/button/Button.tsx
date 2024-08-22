@@ -1,6 +1,6 @@
 import { type ComponentProps, forwardRef, type ReactElement } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
-import { Loader } from '../loader'
+import { Loader } from '../Loader'
 import { setButtonLoaderIntent } from './model/helpers'
 import { cn } from '$/shared/utils'
 
