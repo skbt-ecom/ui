@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Breadcrumbs, type Links } from '$/shared/ui/Breadcrumbs'
+import { Breadcrumbs } from '$/shared/ui'
+import type { TLinksList } from '$/shared/ui/Breadcrumbs'
 
 const meta = {
   title: 'Navigation/Breadcrumbs',
@@ -15,7 +16,7 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-const linksList: Links = [
+const linksList: TLinksList = [
   { label: 'Главная', path: 'https://sovcombank.ru/' },
   { label: 'Займы', path: 'https://sovcombank.ru/apply/credit/zajm-online/' },
   { label: 'Главная' }

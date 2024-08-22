@@ -89,6 +89,7 @@ const allowedIconsColors = {
   'warning-hover': '#d68b00',
   white: '#ffffff',
   'primary-disabled': '#809bc7',
+  footer: '#C3C3C3',
   ...rootStyles
 } as const
 

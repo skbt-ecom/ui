@@ -18,6 +18,10 @@ export { Heading } from './Heading'
 export { Icon } from './Icon'
 export { brandLogos, type TBrandLogoVariant } from './brandLogos'
 
+// # Navigation
+export { Breadcrumbs } from './Breadcrumbs'
+export { CustomLink } from './CustomLink'
+
 // # CONTROLLED FORM UI
 export {
   InputControl,
