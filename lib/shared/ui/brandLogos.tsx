@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react'
-import { Icon } from './Icon'
+import { Icon } from './icon/Icon'
 
 export type TBrandLogoVariant = 'main' | 'white' | 'gray' | 'black' | 'business' | 'insurance'
 type TBrandLogosVariants = Record<TBrandLogoVariant, ReactElement>

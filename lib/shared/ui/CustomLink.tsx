@@ -1,7 +1,7 @@
 import { type ComponentProps } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '../utils'
-import { type AnyIconName, Icon } from './Icon'
+import { type AnyIconName, Icon } from './icon/Icon'
 
 const customLinkConfig = cva(
   'group desk-body-regular-l underline underline-offset-4 outline-none p-[2px] rounded-sm border border-solid border-transparent',

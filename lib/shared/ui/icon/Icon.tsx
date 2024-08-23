@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-import { SPRITES_META, type SpritesMap } from '@/sprite.gen'
+import { SPRITES_META, type SpritesMap } from './sprite.gen'
 import { cn } from '$/shared/utils'
 
 export type IconName<Key extends keyof SpritesMap> = `${Key}/${SpritesMap[Key]}`

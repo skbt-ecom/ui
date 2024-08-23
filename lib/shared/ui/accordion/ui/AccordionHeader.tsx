@@ -1,6 +1,6 @@
 import { forwardRef, type ReactElement } from 'react'
 import { Header, Trigger } from '@radix-ui/react-accordion'
-import { Icon } from '../../Icon'
+import { Icon } from '../../icon/Icon'
 import type { IAccordionHeaderClasses } from '../model/types'
 import { cn } from '$/shared/utils'
 

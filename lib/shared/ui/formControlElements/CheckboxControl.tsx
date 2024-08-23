@@ -1,7 +1,7 @@
 import { useId } from 'react'
 import { Controller, type FieldValues } from 'react-hook-form'
 import { Indicator, Root } from '@radix-ui/react-checkbox'
-import { Icon } from '../Icon'
+import { Icon } from '../icon/Icon'
 import type { TAdditionalInputPrimitiveClasses, TControlledInputPrimitiveProps } from './model'
 import { MessageView } from './ui'
 import { cn } from '$/shared/utils'

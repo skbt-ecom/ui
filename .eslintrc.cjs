@@ -14,15 +14,7 @@ module.exports = {
     'airbnb-typescript',
     'plugin:@typescript-eslint/recommended'
   ],
-  ignorePatterns: [
-    'dist',
-    '.eslintrc.cjs',
-    'vite.config.mts',
-    'tailwind.config.ts',
-    'postcss.config.mjs',
-    'sprite.gen.ts',
-    'storybook-static'
-  ],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.mts', 'tailwind.config.ts', 'postcss.config.mjs', 'storybook-static'],
   parser: '@typescript-eslint/parser',
   overrides: [
     {
@@ -48,7 +40,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true
     },
-    project: './tsconfig.app.json',
+    project: './tsconfig.json',
     tsconfigRootDir: __dirname
   },
   plugins: [

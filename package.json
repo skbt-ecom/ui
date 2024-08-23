@@ -1,19 +1,20 @@
 {
-  "name": "@scbt-ecom/ui",
+  "name": "@scbt-ecom",
   "version": "0.0.1",
   "type": "module",
-  "main": "dist/index.umd.ts",
-  "module": "dist/index.es.ts",
-  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/@scbt-ecom.es.ts",
+      "require": "./dist/@scbt-ecom.umd.ts"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "main": "./dist/@scbt-ecom.umd.cjs",
+  "module": "./dist/@scbt-ecom.es.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "exports": {
-    ".": {
-      "import": "./dist/index.es.ts",
-      "require": "./dist/index.umd.ts"
-    }
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -99,6 +100,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
     "vite": "^5.3.4",
+    "vite-plugin-checker": "^0.7.2",
     "vite-plugin-dts": "^4.0.2",
     "vite-plugin-lib-inject-css": "^2.1.1",
     "zod": "^3.23.8"

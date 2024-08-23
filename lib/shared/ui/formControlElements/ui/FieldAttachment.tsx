@@ -1,5 +1,5 @@
 import { Badge } from '../../Badge'
-import { Icon } from '../../Icon'
+import { Icon } from '../../icon/Icon'
 import type { TFieldAttachmentClasses } from '../model/classes-types'
 import type { TFieldAttachment } from '../model/props-types'
 import { cn } from '$/shared/utils'

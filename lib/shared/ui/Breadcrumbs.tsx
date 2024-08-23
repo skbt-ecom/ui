@@ -1,5 +1,5 @@
 import { cn } from '../utils'
-import { Icon } from './Icon'
+import { Icon } from './icon/Icon'
 
 export interface IBreadcrumbLink {
   label: string

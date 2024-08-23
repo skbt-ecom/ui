@@ -1,28 +1,27 @@
 import react from '@vitejs/plugin-react'
-import { resolve, extname, relative } from 'path'
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import svg from '@neodx/svg/vite'
 import dts from 'vite-plugin-dts'
-import { libInjectCss } from 'vite-plugin-lib-inject-css'
-import glob from 'glob'
-import { fileURLToPath } from 'node:url'
+import typeChecker from 'vite-plugin-checker'
+import { dependencies } from './package.json'
 
 export default defineConfig({
   plugins: [
     react(),
-    libInjectCss(),
     dts({ include: ['lib'], insertTypesEntry: true }),
+    typeChecker({ typescript: true }),
     svg({
       root: 'static',
       group: true,
-      output: './public/sprites',
+      output: './lib/shared/ui/icon/sprites',
       fileName: '{name}.{hash:8}.svg',
       resetColors: {
         exclude: [/^brandLogos/],
         replaceUnknown: 'currentColor'
       },
       metadata: {
-        path: './src/sprite.gen.ts',
+        path: './lib/shared/ui/icon/sprite.gen.ts',
         runtime: {
           size: true,
           viewBox: true
@@ -40,25 +39,19 @@ export default defineConfig({
   build: {
     copyPublicDir: false,
     lib: {
-      entry: resolve(__dirname, 'lib/index.ts'),
-      name: '@ecom/ui-master',
-      formats: ['es']
+      entry: resolve(__dirname, './lib/index.ts'),
+      name: '@scbt-ecom',
+      formats: ['es', 'umd'],
+      fileName: (format) => `@scbt-ecom.${format}.js`
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
-      input: Object.fromEntries(
-        glob
-          .sync('lib/**/*.{ts,tsx}', {
-            ignore: ['lib/**/*.d.ts']
-          })
-          .map((file) => [
-            relative('lib', file.slice(0, file.length - extname(file).length)),
-            fileURLToPath(new URL(file, import.meta.url))
-          ])
-      ),
+      external: Object.keys(dependencies),
       output: {
-        assetFileNames: 'assets/[name][extname]',
-        entryFileNames: '[name].ts'
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+          'class-variance-authority': 'classVarianceAuthority'
+        }
       }
     }
   }

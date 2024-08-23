@@ -15,7 +15,7 @@ export { Popover } from './popover'
 export { Heading } from './Heading'
 
 // # ICONS
-export { Icon } from './Icon'
+export { Icon, type IconProps, type AnyIconName } from './icon'
 export { brandLogos, type TBrandLogoVariant } from './brandLogos'
 
 // # Navigation
