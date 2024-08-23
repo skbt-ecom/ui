@@ -41,7 +41,7 @@ const config: StorybookConfig = {
             replaceUnknown: 'currentColor'
           },
           metadata: {
-            path: './src/shared/ui/icon/sprite.gen.ts',
+            path: './lib/shared/ui/icon/sprite.gen.ts',
             runtime: {
               size: true,
               viewBox: true

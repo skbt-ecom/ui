@@ -1,11 +1,12 @@
+import svg from '@neodx/svg/vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import svg from '@neodx/svg/vite'
-import dts from 'vite-plugin-dts'
 import typeChecker from 'vite-plugin-checker'
+import dts from 'vite-plugin-dts'
 import { dependencies } from './package.json'
 
+// eslint-disable-next-line import/no-default-export
 export default defineConfig({
   plugins: [
     react(),
