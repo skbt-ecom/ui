@@ -24,7 +24,7 @@ const config: StorybookConfig = {
       strictMode: true
     }
   },
-  staticDirs: ['../public'],
+  // staticDirs: ['../public'],
   docs: {
     autodocs: 'tag'
   },
@@ -34,7 +34,7 @@ const config: StorybookConfig = {
         svg({
           root: 'static',
           group: true,
-          output: './public/sprites',
+          output: './lib/shared/ui/icon/sprites',
           fileName: '{name}.{hash:8}.svg',
           resetColors: {
             exclude: [/^brandLogos/],
