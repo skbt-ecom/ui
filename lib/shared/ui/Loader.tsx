@@ -31,5 +31,5 @@ export interface ILoaderProps extends VariantProps<typeof loaderConfig>, HTMLAtt
 }
 
 export const Loader = ({ size = 'md', className, intent = 'secondary', position = 'static', ...props }: ILoaderProps) => {
-  return <span className={cn(loaderConfig({ size, intent, position }), className)} {...props}></span>
+  return <span data-testid='loader' className={cn(loaderConfig({ size, intent, position }), className)} {...props}></span>
 }

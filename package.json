@@ -19,25 +19,34 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint . --quiet",
+    "test": "vitest",
     "preview": "vite preview",
     "start:sb": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build",
     "start": "npm run start:sb",
     "test-storybook": "test-storybook",
     "prepare": "husky",
-    "pre-commit": "npm run lint"
+    "pre-commit": "npm run lint",
+    "chromatic": "npx chromatic --project-token=chpt_9468dafcf1bf3e3 --only-changed --files='src/stories/**/*.stories.@(tsx)'",
+    "pre-deploy": "npm run lint && npm run test -- --watch=false && npm run chromatic"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.4",
     "@storybook/builder-vite": "^8.2.6",
     "@storybook/testing-library": "^0.2.2",
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
+    "chromatic": "^11.7.1",
     "class-variance-authority": "^0.7.0",
+    "jsdom": "^24.1.1",
     "react-hot-toast": "^2.4.1",
     "react-redux": "^9.1.2",
     "tailwind-merge": "^2.4.0",
     "tailwindcss": "^3.4.7",
     "tailwindcss-animate": "^1.0.7",
-    "vite-plugin-svgr": "^4.2.0"
+    "vite-plugin-svgr": "^4.2.0",
+    "vitest": "^2.0.5"
   },
   "peerDependecies": {
     "react": "^18.3.1",

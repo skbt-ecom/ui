@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["vitest", "@testing-library/jest-dom"],
     "target": "ES2022",
     "useDefineForClassFields": true,
     "allowJs": true,
