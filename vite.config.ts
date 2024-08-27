@@ -6,7 +6,6 @@ import typeChecker from 'vite-plugin-checker'
 import dts from 'vite-plugin-dts'
 import { dependencies } from './package.json'
 
-// eslint-disable-next-line import/no-default-export
 export default defineConfig({
   plugins: [
     react(),
@@ -41,7 +40,7 @@ export default defineConfig({
     copyPublicDir: false,
     lib: {
       entry: resolve(__dirname, './lib/index.ts'),
-      name: '@scbt-ecom',
+      name: '@scbt-ecom/ui',
       formats: ['es', 'umd'],
       fileName: (format) => `@scbt-ecom.${format}.js`
     },

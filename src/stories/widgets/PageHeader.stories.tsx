@@ -12,13 +12,22 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const WithPhone: Story = {
-  render: () => <PageHeader variant='withPhone' />
+  args: {
+    variant: 'withPhone',
+    phone: '8 800 000-00-00',
+    phoneText: 'Бесплатно по России'
+  }
 }
 
 export const WithButton: Story = {
-  render: () => <PageHeader variant='withButton' />
+  args: {
+    variant: 'withButton'
+  }
 }
 
 export const WithOtherLogo: Story = {
-  render: () => <PageHeader variant='withButton' logoType='business' />
+  args: {
+    variant: 'withButton',
+    logoType: 'business'
+  }
 }

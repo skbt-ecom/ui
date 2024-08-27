@@ -14,6 +14,8 @@ storybook-static
 *.local
 
 env
+tsconfig.tsbuildinfo
+tsconfig.node.tsbuildinfo
 
 # Editor directories and files
 .vscode/*

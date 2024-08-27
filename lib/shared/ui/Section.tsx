@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactNode } from 'react'
 import { cn } from '$/shared/utils'
 
-interface ISectionProps extends HTMLAttributes<HTMLDivElement> {
+export interface ISectionProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode
   className?: string
 }

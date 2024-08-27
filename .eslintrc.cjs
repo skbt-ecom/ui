@@ -14,7 +14,7 @@ module.exports = {
     'airbnb-typescript',
     'plugin:@typescript-eslint/recommended'
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.mts', 'tailwind.config.ts', 'postcss.config.mjs', 'storybook-static'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts', 'tailwind.config.ts', 'postcss.config.mjs', 'storybook-static'],
   parser: '@typescript-eslint/parser',
   overrides: [
     {

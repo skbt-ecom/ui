@@ -34,14 +34,14 @@ const config: StorybookConfig = {
         svg({
           root: 'static',
           group: true,
-          output: './lib/shared/ui/icon/sprites',
+          output: './public/sprites',
           fileName: '{name}.{hash:8}.svg',
           resetColors: {
             exclude: [/^brandLogos/],
             replaceUnknown: 'currentColor'
           },
           metadata: {
-            path: './lib/shared/ui/icon/sprite.gen.ts',
+            path: './src/sprite.gen.ts',
             runtime: {
               size: true,
               viewBox: true
