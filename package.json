@@ -5,9 +5,10 @@
   "exports": {
     ".": {
       "import": "./dist/ui.es.js",
-      "require": "./dist/ui.umd.cjs"
+      "require": "./dist/ui.umd.cjs",
+      "types": "./dist/index.d.ts"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./dist/root.css": "./dist/root.css"
   },
   "main": "./dist/ui.umd.cjs",
   "module": "./dist/ui.es.js",
