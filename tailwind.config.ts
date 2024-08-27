@@ -7,8 +7,10 @@ import {
   allowedIconsColors,
   allowedLineHeight,
   allowedStrokeColors,
-  allowedTextColors
+  allowedTextColors,
+  allowedTextStyles
 } from './lib/shared/constants'
+import plugin from 'tailwindcss/plugin'
 
 const tailwindConfig: Config = {
   content: ['/index.html', './src/**/*.{js,ts,jsx,tsx,mdx}', './lib/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -73,7 +75,12 @@ const tailwindConfig: Config = {
       }
     }
   },
-  plugins: [require('tailwindcss-animate')]
+  plugins: [
+    require('tailwindcss-animate'),
+    plugin(({ addComponents }) => {
+      addComponents(allowedTextStyles)
+    })
+  ]
 }
 
 export default tailwindConfig

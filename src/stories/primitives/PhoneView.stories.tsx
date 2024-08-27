@@ -15,7 +15,7 @@ export default meta
 export const Base = {
   render: () => (
     <div className='flex gap-4'>
-      <PhoneView />
+      <PhoneView phone='8 800 000-00-00' text='Бесплатно по России' />
     </div>
   )
 }

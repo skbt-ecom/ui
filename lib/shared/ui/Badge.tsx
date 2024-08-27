@@ -8,13 +8,13 @@ export interface IBadgeProps {
 
 export const Badge = ({ children, className }: IBadgeProps) => {
   return (
-    <div
+    <span
       className={cn(
         'min-h-6 min-w-6 px-2 py-1 flex items-center justify-center rounded-full desk-body-regular-s bg-color-primary-default text-color-white text-nowrap',
         className
       )}
     >
       {children}
-    </div>
+    </span>
   )
 }

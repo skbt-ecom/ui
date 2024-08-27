@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactNode } from 'react'
 import { cn } from '$/shared/utils'
 
-interface IResponsiveContainerProps extends HTMLAttributes<HTMLDivElement> {
+export interface IResponsiveContainerProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode
   className?: string
 }

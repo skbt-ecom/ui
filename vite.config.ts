@@ -6,7 +6,6 @@ import typeChecker from 'vite-plugin-checker'
 import dts from 'vite-plugin-dts'
 import { dependencies } from './package.json'
 
-// eslint-disable-next-line import/no-default-export
 export default defineConfig({
   plugins: [
     react(),
