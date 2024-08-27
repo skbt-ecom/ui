@@ -4,8 +4,8 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/ui.es.ts",
-      "require": "./dist/ui.umd.ts"
+      "import": "./dist/ui.es.js",
+      "require": "./dist/ui.umd.cjs"
     },
     "./dist/style.css": "./dist/style.css"
   },
