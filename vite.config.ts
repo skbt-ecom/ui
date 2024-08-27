@@ -41,9 +41,9 @@ export default defineConfig({
     copyPublicDir: false,
     lib: {
       entry: resolve(__dirname, './lib/index.ts'),
-      name: '@scbt-ecom',
+      name: 'ui',
       formats: ['es', 'umd'],
-      fileName: (format) => `@scbt-ecom.${format}.js`
+      fileName: (format) => `ui.${format}.js`
     },
     rollupOptions: {
       external: Object.keys(dependencies),

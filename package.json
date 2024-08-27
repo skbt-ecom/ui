@@ -1,16 +1,16 @@
 {
-  "name": "@scbt-ecom",
+  "name": "@scbt-ecom/ui",
   "version": "0.0.1",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/@scbt-ecom.es.ts",
-      "require": "./dist/@scbt-ecom.umd.ts"
+      "import": "./dist/ui.es.ts",
+      "require": "./dist/ui.umd.ts"
     },
     "./dist/style.css": "./dist/style.css"
   },
-  "main": "./dist/@scbt-ecom.umd.cjs",
-  "module": "./dist/@scbt-ecom.es.js",
+  "main": "./dist/ui.umd.cjs",
+  "module": "./dist/ui.es.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
@@ -28,7 +28,7 @@
     "prepare": "husky",
     "pre-commit": "npm run lint",
     "chromatic": "npx chromatic --project-token=chpt_9468dafcf1bf3e3 --only-changed --files='src/stories/**/*.stories.@(tsx)'",
-    "pre-deploy": "npm run lint && npm run test -- --watch=false && npm run chromatic"
+    "pre-deploy": "npm run lint && npm run test -- --watch=false"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.4",
@@ -116,5 +116,18 @@
   },
   "sideEffects": [
     "**/*.css"
-  ]
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scbt-ecom/ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scbt-ecom/ui/issues"
+  },
+  "homepage": "https://github.com/scbt-ecom/ui#readme"
 }
