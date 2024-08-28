@@ -1,4 +1,4 @@
-import './shared/core/styles/root.css'
+import './shared/style.css'
 
 export * from './shared/constants'
 export * from './shared/hooks'
