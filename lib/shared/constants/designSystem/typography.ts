@@ -33,7 +33,7 @@ const allowedTextStyles = {
   '.mob-title-bold-l': {
     '@apply font-bold text-20 leading-24': ''
   },
-  '.mob-title-bold-m ': {
+  '.mob-title-bold-m': {
     ' @apply font-bold text-18 leading-22': ''
   },
   /* # Body */
