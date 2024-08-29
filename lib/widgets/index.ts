@@ -1,3 +1,3 @@
-export { PageHeader } from './pageHeader'
+export { PageHeader, type THeaderContentVariant } from './pageHeader'
 export { Banner } from './banner'
-export { Advantages } from './Advantages'
+export { Advantages, type IAdvantage, type IAdvantagesProps } from './Advantages'

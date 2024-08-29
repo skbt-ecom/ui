@@ -10,7 +10,7 @@ export const BannerButtonsGroup = ({ buttonsConfig }: IBannerButtonsGroupProps) 
   const withSecondaryBtn = buttonsConfig?.secondary && buttonsConfig.secondary.children
 
   return (
-    <div className={cn('w-max', { 'flex items-center gap-4': withSecondaryBtn })}>
+    <div className={cn('w-max mobile:absolute bottom-0', { 'flex items-center gap-4': withSecondaryBtn })}>
       <Button intent='primary' {...buttonsConfig.primary}>
         {buttonsConfig.primary.children}
       </Button>

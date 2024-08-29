@@ -7,7 +7,14 @@ const meta = {
   tags: ['autodocs'],
   parameters: {
     layout: 'centered'
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div className='min-h-screen min-w-full bg-color-blue-grey-300 flex items-center justify-center px-6'>
+        <Story />
+      </div>
+    )
+  ]
 } satisfies Meta<typeof Advantages>
 
 export default meta
@@ -20,8 +27,16 @@ const mockThreeCards: IAdvantage[] = [
   { title: 'От 5 минут', description: 'быстрое одобрение' }
 ]
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-export const Base: Story = {
-  render: () => <Advantages advantagesList={mockThreeCards} />
+const mockFourCards: IAdvantage[] = [...mockThreeCards, { title: 'От 15 минут', description: 'сумма одобрение' }]
+
+export const ThreeCards: Story = {
+  args: {
+    advantagesList: mockThreeCards
+  }
+}
+
+export const FourCards: Story = {
+  args: {
+    advantagesList: mockFourCards
+  }
 }

@@ -13,7 +13,7 @@ interface IHeaderWithButton extends ICommonHeaderProps {
   variant: 'withButton'
 }
 
-type THeaderContentVariant = IHeaderWithButton | IHeaderWithPhone
+export type THeaderContentVariant = IHeaderWithButton | IHeaderWithPhone
 
 const renderContent = (props: THeaderContentVariant) => {
   switch (props.variant) {

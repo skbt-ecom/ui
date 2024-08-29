@@ -16,6 +16,7 @@ const tailwindConfig: Config = {
   content: ['/index.html', './src/**/*.{js,ts,jsx,tsx,mdx}', './lib/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     screens: {
+      mobile: { max: '1187px' },
       desktop: '1188px'
     },
     backgroundColor: {

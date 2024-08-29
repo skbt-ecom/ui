@@ -37,7 +37,7 @@ export default defineConfig({
   },
 
   build: {
-    copyPublicDir: false,
+    copyPublicDir: true,
     lib: {
       entry: resolve(__dirname, './lib/index.ts'),
       name: 'ui',
