@@ -5,6 +5,7 @@ import { defineConfig } from 'vite'
 import typeChecker from 'vite-plugin-checker'
 import dts from 'vite-plugin-dts'
 import { dependencies } from './package.json'
+import copy from 'rollup-plugin-copy'
 
 export default defineConfig({
   plugins: [
@@ -27,6 +28,9 @@ export default defineConfig({
           viewBox: true
         }
       }
+    }),
+    copy({
+      targets: [{ src: './lib/shared/ui/icon/sprites/*', dest: 'public' }]
     })
   ],
   resolve: {
@@ -35,7 +39,6 @@ export default defineConfig({
       $: resolve(__dirname, './lib')
     }
   },
-
   build: {
     copyPublicDir: true,
     lib: {
@@ -54,5 +57,6 @@ export default defineConfig({
         }
       }
     }
-  }
+  },
+  publicDir: 'public'
 })
