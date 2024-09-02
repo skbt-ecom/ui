@@ -53,5 +53,6 @@ export default defineConfig({
         }
       }
     }
-  }
+  },
+  base: '/public/'
 })
