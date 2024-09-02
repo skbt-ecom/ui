@@ -1,6 +1,6 @@
 {
   "name": "@scbt-ecom/ui",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "type": "module",
   "exports": {
     ".": {
@@ -14,7 +14,8 @@
   "module": "./dist/ui.es.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "public"
   ],
   "scripts": {
     "dev": "vite",
