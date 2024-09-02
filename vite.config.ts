@@ -5,6 +5,7 @@ import { defineConfig } from 'vite'
 import typeChecker from 'vite-plugin-checker'
 import dts from 'vite-plugin-dts'
 import { dependencies } from './package.json'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
   plugins: [
@@ -27,6 +28,14 @@ export default defineConfig({
           viewBox: true
         }
       }
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'public/sprites/*',
+          dest: 'sprites'
+        }
+      ]
     })
   ],
   resolve: {
