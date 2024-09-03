@@ -10,6 +10,7 @@ export { Loader, type ILoaderProps } from './Loader'
 export { Accordion, type IAccordionProps } from './accordion'
 export { Hint, type IHintProps } from './Hint'
 export { Popover } from './popover'
+export { ProgressBar, type IProgressBarProps } from './ProgressBar'
 
 // # TYPOGRAPHY
 export { Heading, type IHeadingProps } from './Heading'
@@ -34,5 +35,11 @@ export {
   CheckboxControl,
   type ICheckboxControlProps,
   RadioControl,
-  type IRadioControlProps
+  type IRadioControlProps,
+  type IRadioGroupOption,
+  SwitchControl,
+  type ISwitchControlProps,
+  SelectControl,
+  type ISelectControlProps,
+  type ISelectOption
 } from './formControlElements'

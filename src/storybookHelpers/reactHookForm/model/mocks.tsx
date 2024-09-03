@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { MOCK_RADIO_GROUP, MOCK_SELECT_OPTIONS } from './mockData'
 import { EnumFieldType, type TStorybookFieldConfig } from './types'
 import { VALIDATION_MESSAGES } from '$/shared/validation'
 
@@ -14,7 +15,9 @@ export const mockSchema = z.object({
   phone: z.string({ required_error: VALIDATION_MESSAGES.REQUIRED }).min(7, `${VALIDATION_MESSAGES.MIN_LENGTH} 7`),
   fio: z.string({ required_error: VALIDATION_MESSAGES.REQUIRED }),
   condition: z.literal<boolean>(true, { errorMap: () => ({ message: VALIDATION_MESSAGES.REQUIRED }) }),
-  sex: z.string().min(2, VALIDATION_MESSAGES.REQUIRED)
+  sex: z.string().min(2, VALIDATION_MESSAGES.REQUIRED),
+  percent: z.literal<boolean>(true, { errorMap: () => ({ message: VALIDATION_MESSAGES.REQUIRED }) }),
+  months: z.string().or(z.array(z.string()))
 })
 
 export type TMockSchema = z.infer<typeof mockSchema>
@@ -23,7 +26,9 @@ export const mockDefaultValues: TMockSchema = {
   phone: '',
   fio: '',
   condition: true,
-  sex: ''
+  sex: '',
+  percent: true,
+  months: ''
 }
 
 export const mockFields: TStorybookFieldConfig<TMockSchema>[] = [
@@ -39,10 +44,14 @@ export const mockFields: TStorybookFieldConfig<TMockSchema>[] = [
   {
     name: 'sex',
     groupName: 'Выберите пол',
-    radioItemsGroup: [
-      { label: 'Мужской', value: 'male' },
-      { label: 'Женский', value: 'female' }
-    ],
+    radioItemsGroup: MOCK_RADIO_GROUP,
     fieldType: EnumFieldType.RADIO
+  },
+  { name: 'percent', label: 'Увеличенный процент', fieldType: EnumFieldType.SWITCH },
+  {
+    name: 'months',
+    label: 'Выберите месяц',
+    fieldType: EnumFieldType.SELECT,
+    optionsList: MOCK_SELECT_OPTIONS
   }
 ]

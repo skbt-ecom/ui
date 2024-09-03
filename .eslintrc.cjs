@@ -61,6 +61,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'warn',
     'promise/prefer-await-to-then': 'error',
     'react/self-closing-comp': 'off',
+    'react/jsx-closing-tag-location': 'off',
     'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     'import/prefer-default-export': 'off',

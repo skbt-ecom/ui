@@ -33,6 +33,7 @@ export const DadataInputControl = <T extends FieldValues>({
 }: IDadataInputControlProps<T>) => {
   const { setQuery, suggestionsOptions } = useDadata(dadataType, dadataBaseUrl)
   const inputId = useId()
+  // TODO: Пофиксить при нажатие на enter очищается инпут, если нет опшенов
 
   return (
     <Controller

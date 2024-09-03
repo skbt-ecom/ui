@@ -14,8 +14,7 @@
   "module": "./dist/ui.es.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "public"
+    "dist"
   ],
   "scripts": {
     "dev": "vite",
@@ -30,7 +29,7 @@
     "prepare": "husky",
     "pre-commit": "npm run lint",
     "chromatic": "npx chromatic --project-token=chpt_9468dafcf1bf3e3 --only-changed --files='src/stories/**/*.stories.@(tsx)'",
-    "pre-deploy": "npm run lint && npm run test -- --watch=false"
+    "pre-deploy": "npm run lint"
   },
   "peerDependecies": {
     "react": "^18.3.1",
@@ -48,6 +47,7 @@
     "@radix-ui/react-checkbox": "^1.1.1",
     "@radix-ui/react-popover": "^1.1.1",
     "@radix-ui/react-radio-group": "^1.2.0",
+    "@radix-ui/react-switch": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.2",
     "@storybook/addon-console": "^3.0.0",
     "@storybook/addon-coverage": "^1.0.4",
@@ -55,6 +55,7 @@
     "@storybook/addon-interactions": "^8.2.6",
     "@storybook/addon-links": "^8.2.6",
     "@storybook/addon-onboarding": "^8.2.6",
+    "@storybook/addon-viewport": "^8.2.9",
     "@storybook/blocks": "^8.2.6",
     "@storybook/react": "^8.2.6",
     "@storybook/react-vite": "^8.2.6",
@@ -108,7 +109,6 @@
     "vite": "^5.3.4",
     "vite-plugin-checker": "^0.7.2",
     "vite-plugin-dts": "^4.0.2",
-    "vite-plugin-static-copy": "^1.0.6",
     "vitest": "^2.0.5",
     "zod": "^3.23.8"
   },

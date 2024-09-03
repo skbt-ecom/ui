@@ -16,7 +16,7 @@ export const SPRITES_META: {
   }
 } = {
   brandLogos: {
-    filePath: 'brandLogos.aa92281d.svg',
+    filePath: 'brandLogos.svg',
     items: {
       logoBlack: {
         viewBox: '0 0 194 32',
@@ -51,7 +51,7 @@ export const SPRITES_META: {
     }
   },
   common: {
-    filePath: 'common.5922c9ad.svg',
+    filePath: 'common.svg',
     items: {
       arrowCircle: {
         viewBox: '0 0 32 32',

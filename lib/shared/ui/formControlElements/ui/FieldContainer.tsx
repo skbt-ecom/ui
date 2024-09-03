@@ -5,6 +5,10 @@ import { cn } from '$/shared/utils'
 
 const fieldContainerConfig = cva('relative flex flex-col group', {
   variants: {
+    intent: {
+      clear: '!w-full min-w-[140px]',
+      filled: ''
+    },
     size: {
       sm: 'w-[360px]',
       md: 'w-[520px]',
@@ -13,7 +17,8 @@ const fieldContainerConfig = cva('relative flex flex-col group', {
     }
   },
   defaultVariants: {
-    size: 'full'
+    size: 'full',
+    intent: 'filled'
   }
 })
 
@@ -24,6 +29,6 @@ interface IFieldContainerProps extends TFieldContainerConfig {
   children: ReactNode
 }
 
-export const FieldContainer = ({ size, classes, children }: IFieldContainerProps) => {
-  return <div className={cn(fieldContainerConfig({ size }), classes?.container)}>{children}</div>
+export const FieldContainer = ({ size, intent, classes, children }: IFieldContainerProps) => {
+  return <div className={cn(fieldContainerConfig({ size, intent }), classes?.container)}>{children}</div>
 }

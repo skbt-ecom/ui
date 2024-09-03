@@ -1,4 +1,4 @@
-import { useId } from 'react'
+import { type ReactElement, useId } from 'react'
 import { Controller, type FieldValues } from 'react-hook-form'
 import { Indicator, Root } from '@radix-ui/react-checkbox'
 import { Icon } from '../icon/Icon'
@@ -11,8 +11,9 @@ type TCheckboxClasses = Partial<TAdditionalInputPrimitiveClasses> & {
   indicator?: string
 }
 
-export interface ICheckboxControlProps<T extends FieldValues> extends TControlledInputPrimitiveProps<T> {
+export interface ICheckboxControlProps<T extends FieldValues> extends Omit<TControlledInputPrimitiveProps<T>, 'label'> {
   classes?: TCheckboxClasses
+  label: ReactElement | string
 }
 
 export const CheckboxControl = <T extends FieldValues>({

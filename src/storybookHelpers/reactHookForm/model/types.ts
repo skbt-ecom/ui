@@ -4,7 +4,9 @@ import type {
   IDadataInputControlProps,
   InputControlMaskProps,
   InputControlProps,
-  IRadioControlProps
+  IRadioControlProps,
+  ISelectControlProps,
+  ISwitchControlProps
 } from '$/shared/ui/formControlElements'
 
 export enum EnumFieldType {
@@ -12,7 +14,9 @@ export enum EnumFieldType {
   MASK = 'mask',
   DADATA = 'dadata',
   CHECKBOX = 'checkbox',
-  RADIO = 'radio'
+  RADIO = 'radio',
+  SWITCH = 'switch',
+  SELECT = 'select'
 }
 
 type TControlledInput<T extends FieldValues> = Omit<InputControlProps<T>, 'control'> & { fieldType: EnumFieldType.INPUT }
@@ -27,9 +31,19 @@ type TControlledInputRadio<T extends FieldValues> = Omit<IRadioControlProps<T>, 
   fieldType: EnumFieldType.RADIO
 }
 
+type TControlledInputSwitch<T extends FieldValues> = Omit<ISwitchControlProps<T>, 'control'> & {
+  fieldType: EnumFieldType.SWITCH
+}
+
+type TControlledInputSelect<T extends FieldValues> = Omit<ISelectControlProps<T>, 'control'> & {
+  fieldType: EnumFieldType.SELECT
+}
+
 export type TStorybookFieldConfig<T extends FieldValues> =
   | TControlledInputMask<T>
   | TControlledInput<T>
   | TControlledInputDadata<T>
   | TControlledInputCheckbox<T>
   | TControlledInputRadio<T>
+  | TControlledInputSwitch<T>
+  | TControlledInputSelect<T>

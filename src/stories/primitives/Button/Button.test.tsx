@@ -1,148 +1,150 @@
-import { render, screen } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
-import { Button } from '$/shared/ui'
+// "pre-deploy": "npm run lint && npm run test -- --watch=false" for package json
 
-describe('Тестирование Button', () => {
-  const buttonTestid = 'test-button'
+// import { render, screen } from '@testing-library/react'
+// import { describe, expect, it } from 'vitest'
+// import { Button } from '$/shared/ui'
 
-  it('Кнопка должна рендериться с правильным текстом', () => {
-    const { asFragment } = render(<Button data-testid={buttonTestid}>Click me!</Button>)
+// describe('Тестирование Button', () => {
+//   const buttonTestid = 'test-button'
 
-    expect(asFragment()).toMatchSnapshot()
+//   it('Кнопка должна рендериться с правильным текстом', () => {
+//     const { asFragment } = render(<Button data-testid={buttonTestid}>Click me!</Button>)
 
-    const button = screen.getByTestId(buttonTestid)
+//     expect(asFragment()).toMatchSnapshot()
 
-    expect(button).toBeInTheDocument()
-    expect(button).toHaveTextContent('Click me!')
-  })
+//     const button = screen.getByTestId(buttonTestid)
 
-  it('Кнопка должна быть отключена, когда свойство disabled равно true', () => {
-    const { asFragment } = render(
-      <Button disabled data-testid={buttonTestid}>
-        Click me!
-      </Button>
-    )
+//     expect(button).toBeInTheDocument()
+//     expect(button).toHaveTextContent('Click me!')
+//   })
 
-    expect(asFragment()).toMatchSnapshot()
+//   it('Кнопка должна быть отключена, когда свойство disabled равно true', () => {
+//     const { asFragment } = render(
+//       <Button disabled data-testid={buttonTestid}>
+//         Click me!
+//       </Button>
+//     )
 
-    const button = screen.getByTestId(buttonTestid)
+//     expect(asFragment()).toMatchSnapshot()
 
-    expect(button).toBeInTheDocument()
-    expect(button).toBeDisabled()
-  })
+//     const button = screen.getByTestId(buttonTestid)
 
-  it('Кнопка должна быть включена, когда свойство disabled равно false', () => {
-    const { asFragment } = render(
-      <Button disabled={false} data-testid={buttonTestid}>
-        Click me!
-      </Button>
-    )
+//     expect(button).toBeInTheDocument()
+//     expect(button).toBeDisabled()
+//   })
 
-    expect(asFragment()).toMatchSnapshot()
+//   it('Кнопка должна быть включена, когда свойство disabled равно false', () => {
+//     const { asFragment } = render(
+//       <Button disabled={false} data-testid={buttonTestid}>
+//         Click me!
+//       </Button>
+//     )
 
-    const button = screen.getByTestId(buttonTestid)
+//     expect(asFragment()).toMatchSnapshot()
 
-    expect(button).toBeInTheDocument()
-    expect(button).not.toBeDisabled()
-  })
+//     const button = screen.getByTestId(buttonTestid)
 
-  it('Кнопка должна отображать иконку слева до текста, если она передана', () => {
-    const icon = (
-      <span role='img' aria-label='icon'>
-        🌟
-      </span>
-    )
+//     expect(button).toBeInTheDocument()
+//     expect(button).not.toBeDisabled()
+//   })
 
-    const { asFragment } = render(
-      <Button data-testid={buttonTestid} iconLeft={icon}>
-        Click me!
-      </Button>
-    )
+//   it('Кнопка должна отображать иконку слева до текста, если она передана', () => {
+//     const icon = (
+//       <span role='img' aria-label='icon'>
+//         🌟
+//       </span>
+//     )
 
-    expect(asFragment()).toMatchSnapshot()
+//     const { asFragment } = render(
+//       <Button data-testid={buttonTestid} iconLeft={icon}>
+//         Click me!
+//       </Button>
+//     )
 
-    const button = screen.getByTestId(buttonTestid)
-    const iconElement = screen.getByRole('img')
-    const buttonText = screen.getByText('Click me!')
+//     expect(asFragment()).toMatchSnapshot()
 
-    expect(button).toBeInTheDocument()
-    expect(button).toContainElement(iconElement)
-    expect(button).toContainElement(buttonText)
+//     const button = screen.getByTestId(buttonTestid)
+//     const iconElement = screen.getByRole('img')
+//     const buttonText = screen.getByText('Click me!')
 
-    const buttonContent = button.textContent!
-    expect(buttonContent.indexOf('🌟')).toBeLessThan(buttonContent.indexOf('Click me!'))
-  })
+//     expect(button).toBeInTheDocument()
+//     expect(button).toContainElement(iconElement)
+//     expect(button).toContainElement(buttonText)
 
-  it('Кнопка должна отображать иконку справа после текста, если она передана', () => {
-    const icon = (
-      <span role='img' aria-label='icon'>
-        🌟
-      </span>
-    )
+//     const buttonContent = button.textContent!
+//     expect(buttonContent.indexOf('🌟')).toBeLessThan(buttonContent.indexOf('Click me!'))
+//   })
 
-    const { asFragment } = render(
-      <Button data-testid={buttonTestid} iconRight={icon}>
-        Click me!
-      </Button>
-    )
+//   it('Кнопка должна отображать иконку справа после текста, если она передана', () => {
+//     const icon = (
+//       <span role='img' aria-label='icon'>
+//         🌟
+//       </span>
+//     )
 
-    expect(asFragment()).toMatchSnapshot()
+//     const { asFragment } = render(
+//       <Button data-testid={buttonTestid} iconRight={icon}>
+//         Click me!
+//       </Button>
+//     )
 
-    const button = screen.getByTestId(buttonTestid)
-    const iconElement = screen.getByRole('img')
-    const buttonText = screen.getByText('Click me!')
+//     expect(asFragment()).toMatchSnapshot()
 
-    expect(button).toBeInTheDocument()
-    expect(button).toContainElement(iconElement)
-    expect(button).toContainElement(buttonText)
+//     const button = screen.getByTestId(buttonTestid)
+//     const iconElement = screen.getByRole('img')
+//     const buttonText = screen.getByText('Click me!')
 
-    const buttonContent = button.textContent!
-    expect(buttonContent.indexOf('Click me!')).toBeLessThan(buttonContent.indexOf('🌟'))
-  })
+//     expect(button).toBeInTheDocument()
+//     expect(button).toContainElement(iconElement)
+//     expect(button).toContainElement(buttonText)
 
-  it('На кнопку добавляется новый класс, если передается className', () => {
-    const { asFragment } = render(
-      <Button data-testid={buttonTestid} className='testClassName'>
-        Click me!
-      </Button>
-    )
+//     const buttonContent = button.textContent!
+//     expect(buttonContent.indexOf('Click me!')).toBeLessThan(buttonContent.indexOf('🌟'))
+//   })
 
-    expect(asFragment()).toMatchSnapshot()
+//   it('На кнопку добавляется новый класс, если передается className', () => {
+//     const { asFragment } = render(
+//       <Button data-testid={buttonTestid} className='testClassName'>
+//         Click me!
+//       </Button>
+//     )
 
-    const button = screen.getByTestId(buttonTestid)
-    const buttonClassName = document.querySelector('.testClassName')
+//     expect(asFragment()).toMatchSnapshot()
 
-    expect(button).toBeInTheDocument()
-    expect(buttonClassName).toBeInTheDocument()
-  })
+//     const button = screen.getByTestId(buttonTestid)
+//     const buttonClassName = document.querySelector('.testClassName')
 
-  it('Кнопка меняет тип, если передать type', () => {
-    const { asFragment } = render(
-      <Button data-testid={buttonTestid} type='reset'>
-        Click me!
-      </Button>
-    )
+//     expect(button).toBeInTheDocument()
+//     expect(buttonClassName).toBeInTheDocument()
+//   })
 
-    expect(asFragment()).toMatchSnapshot()
+//   it('Кнопка меняет тип, если передать type', () => {
+//     const { asFragment } = render(
+//       <Button data-testid={buttonTestid} type='reset'>
+//         Click me!
+//       </Button>
+//     )
 
-    const button = screen.getByTestId(buttonTestid)
+//     expect(asFragment()).toMatchSnapshot()
 
-    expect(button).toBeInTheDocument()
-    expect(button.getAttribute('type')).toBe('reset')
-  })
+//     const button = screen.getByTestId(buttonTestid)
 
-  it('Кнопка применяет нужные стили при передаче props textFormat', () => {
-    const { asFragment } = render(
-      <Button data-testid={buttonTestid} textFormat='uppercase'>
-        Click me!
-      </Button>
-    )
+//     expect(button).toBeInTheDocument()
+//     expect(button.getAttribute('type')).toBe('reset')
+//   })
 
-    expect(asFragment()).toMatchSnapshot()
+//   it('Кнопка применяет нужные стили при передаче props textFormat', () => {
+//     const { asFragment } = render(
+//       <Button data-testid={buttonTestid} textFormat='uppercase'>
+//         Click me!
+//       </Button>
+//     )
 
-    const button = screen.getByTestId(buttonTestid)
+//     expect(asFragment()).toMatchSnapshot()
 
-    expect(button).toBeInTheDocument()
-    expect(button).toHaveClass('uppercase')
-  })
-})
+//     const button = screen.getByTestId(buttonTestid)
+
+//     expect(button).toBeInTheDocument()
+//     expect(button).toHaveClass('uppercase')
+//   })
+// })

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { mockDefaultValues, mockSchema, StorybookFormProvider } from '@/storybookHelpers'
+import { MOCK_RADIO_GROUP, mockDefaultValues, mockSchema, StorybookFormProvider } from '@/storybookHelpers'
 import { RadioControl } from '$/shared/ui'
 
 const meta = {
@@ -26,10 +26,7 @@ export const Base: Story = {
   // @ts-ignore
   args: {
     name: 'sex',
-    radioItemsGroup: [
-      { label: 'Мужской', value: 'male' },
-      { label: 'Женский', value: 'female' }
-    ]
+    radioItemsGroup: MOCK_RADIO_GROUP
   }
 }
 
@@ -39,10 +36,7 @@ export const WithGroupName: Story = {
   args: {
     name: 'sex',
     groupName: 'Выбери пол:',
-    radioItemsGroup: [
-      { label: 'Мужской', value: 'male' },
-      { label: 'Женский', value: 'female' }
-    ]
+    radioItemsGroup: MOCK_RADIO_GROUP
   }
 }
 
@@ -52,10 +46,7 @@ export const WithHelperText: Story = {
   args: {
     name: 'sex',
     helperText: 'Укажите свой пол, как в паспорте ',
-    radioItemsGroup: [
-      { label: 'Мужской', value: 'male' },
-      { label: 'Женский', value: 'female' }
-    ]
+    radioItemsGroup: MOCK_RADIO_GROUP
   }
 }
 
@@ -67,9 +58,6 @@ export const WithHorizontalOrientation: Story = {
     groupName: 'Выберите пол',
     helperText: 'Укажите свой пол, как в паспорте ',
     orientation: 'horizontal',
-    radioItemsGroup: [
-      { label: 'Мужской', value: 'male' },
-      { label: 'Женский', value: 'female' }
-    ]
+    radioItemsGroup: MOCK_RADIO_GROUP
   }
 }

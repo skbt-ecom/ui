@@ -13,9 +13,9 @@ interface IHeaderWithButton extends ICommonHeaderProps {
   variant: 'withButton'
 }
 
-export type THeaderContentVariant = IHeaderWithButton | IHeaderWithPhone
+export type TPageHeaderProps = IHeaderWithButton | IHeaderWithPhone
 
-const renderContent = (props: THeaderContentVariant) => {
+const renderContentVariant = (props: TPageHeaderProps) => {
   switch (props.variant) {
     case 'withButton':
       return (
@@ -27,11 +27,11 @@ const renderContent = (props: THeaderContentVariant) => {
       const { phone, phoneText } = props as IHeaderWithPhone
       return <PhoneView phone={phone} text={phoneText} />
     default:
-      return 'withButton'
+      return null
   }
 }
 
-export const PageHeader = (props: THeaderContentVariant) => {
+export const PageHeader = (props: TPageHeaderProps) => {
   const { logoPath = '/', logoType = 'main' } = props
 
   return (
@@ -46,7 +46,7 @@ export const PageHeader = (props: THeaderContentVariant) => {
           >
             {brandLogos[logoType]}
           </a>
-          {renderContent(props)}
+          {renderContentVariant(props)}
         </div>
       </ResponsiveContainer>
     </header>

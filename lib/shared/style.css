@@ -38,6 +38,11 @@
     width: 0;
     height: 0;
   }
+
+  .progressBar {
+    background-image: repeating-linear-gradient(-33deg, #d4dbe2, #d4dbe2 5px, #f3f4f7 0, #f3f4f7 14px);
+    background-size: 2000% 2000%;
+  }
 }
 
 * {

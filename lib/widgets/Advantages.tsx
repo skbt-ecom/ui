@@ -22,7 +22,7 @@ export const Advantages = ({ advantagesList, classes }: IAdvantagesProps) => {
   return (
     <div
       className={cn(
-        'flex flex-col gap-8 w-[328px] desktop:w-full desktop:flex-row desktop:items-start desktop:gap-0 mobile:p-6 desktop:py-6 bg-color-white rounded-md shadow-md',
+        'flex flex-col gap-8 w-[328px] desktop:w-full desktop:flex-row desktop:items-start desktop:gap-0 mobile:p-6 desktop:py-6 bg-color-white rounded-md shadow-sm',
         classes?.wrapper
       )}
     >

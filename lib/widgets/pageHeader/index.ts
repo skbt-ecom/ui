@@ -1,1 +1,1 @@
-export { PageHeader, type THeaderContentVariant } from './PageHeader'
+export { PageHeader, type TPageHeaderProps } from './PageHeader'

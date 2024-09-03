@@ -5,7 +5,6 @@ import { defineConfig } from 'vite'
 import typeChecker from 'vite-plugin-checker'
 import dts from 'vite-plugin-dts'
 import { dependencies } from './package.json'
-import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
   plugins: [
@@ -15,8 +14,8 @@ export default defineConfig({
     svg({
       root: 'static',
       group: true,
-      output: './lib/shared/ui/icon/sprites',
-      fileName: '{name}.{hash:8}.svg',
+      output: './public/sprites',
+      // fileName: '{name}.{hash:8}.svg',
       resetColors: {
         exclude: [/^brandLogos/],
         replaceUnknown: 'currentColor'
@@ -28,14 +27,6 @@ export default defineConfig({
           viewBox: true
         }
       }
-    }),
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'public/sprites/*',
-          dest: 'sprites'
-        }
-      ]
     })
   ],
   resolve: {
@@ -62,6 +53,5 @@ export default defineConfig({
         }
       }
     }
-  },
-  base: '/public/'
+  }
 })

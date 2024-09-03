@@ -1,8 +1,21 @@
-import type { HTMLAttributes } from 'react'
+import type { HTMLAttributes, ReactElement } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '$/shared/utils'
 
-const loaderConfig = cva('border-2 border-solid block animate-spin rounded-full ', {
+const wrapperConfig = cva('', {
+  variants: {
+    position: {
+      absolute: 'absolute',
+      static: 'static',
+      fixed: 'fixed'
+    }
+  },
+  defaultVariants: {
+    position: 'static'
+  }
+})
+
+const loaderConfig = cva('border-2 border-solid block animate-spin rounded-full', {
   variants: {
     intent: {
       primary: 'border-white border-b-transparent',
@@ -12,24 +25,34 @@ const loaderConfig = cva('border-2 border-solid block animate-spin rounded-full 
       sm: 'size-5 border-2',
       md: 'size-8 border-2',
       lg: 'size-12 border-4'
-    },
-    position: {
-      absolute: 'absolute',
-      static: 'static',
-      fixed: 'fixed'
     }
   },
   defaultVariants: {
     size: 'md',
-    position: 'static',
     intent: 'primary'
   }
 })
 
-export interface ILoaderProps extends VariantProps<typeof loaderConfig>, HTMLAttributes<HTMLDivElement> {
-  intent?: 'primary' | 'secondary'
+interface ILoaderClasses {
+  wrapper: string
+  loader: string
+  text: string
 }
 
-export const Loader = ({ size = 'md', className, intent = 'secondary', position = 'static', ...props }: ILoaderProps) => {
-  return <span data-testid='loader' className={cn(loaderConfig({ size, intent, position }), className)} {...props}></span>
+export interface ILoaderProps
+  extends VariantProps<typeof loaderConfig>,
+    VariantProps<typeof wrapperConfig>,
+    HTMLAttributes<HTMLDivElement> {
+  intent?: 'primary' | 'secondary'
+  text?: ReactElement | string
+  classes?: Partial<ILoaderClasses>
+}
+
+export const Loader = ({ size = 'md', classes, intent = 'secondary', position = 'static', text, ...props }: ILoaderProps) => {
+  return (
+    <div className={cn(wrapperConfig({ position }), { 'flex flex-col items-center gap-2': text }, classes?.wrapper)}>
+      <span data-testid='loader' className={cn(loaderConfig({ size, intent }), classes?.loader)} {...props}></span>
+      {text && <p className={cn('desk-body-regular-l text-color-dark', classes?.text)}>{text}</p>}
+    </div>
+  )
 }

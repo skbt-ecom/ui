@@ -45,7 +45,8 @@ const tailwindConfig: Config = {
       width: {
         'popper-content': 'var(--radix-popover-content-available-width)',
         'popper-trigger': 'var(--radix-popover-trigger-width)',
-        'autocomplete-input': 'var(--input-width)'
+        'autocomplete-input': 'var(--input-width)',
+        'select-trigger': 'var(--button-width)'
       },
       transitionDuration: {
         DEFAULT: '0.3s',
@@ -67,12 +68,18 @@ const tailwindConfig: Config = {
         'scale-in': {
           from: { opacity: '0', scale: '0' },
           to: { opacity: '1', scale: '1' }
+        },
+        'progress-loader': {
+          '100%': {
+            backgroundPosition: '100% 100%'
+          }
         }
       },
       animation: {
         slideDown: 'slideDown 0.3s cubic-bezier(0.87, 0, 0.13, 1)',
         slideUp: 'slideUp 0.3s cubic-bezier(0.87, 0, 0.13, 1)',
-        'scale-in': 'scale-in 0.3s ease-in-out'
+        'scale-in': 'scale-in 0.3s ease-in-out',
+        'progress-loader': 'progress-loader 250s linear infinite;'
       }
     }
   },
