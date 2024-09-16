@@ -4,6 +4,7 @@ import type {
   IDadataInputControlProps,
   InputControlMaskProps,
   InputControlProps,
+  InputSliderControlProps,
   IRadioControlProps,
   ISelectControlProps,
   ISwitchControlProps
@@ -39,6 +40,10 @@ type TControlledInputSelect<T extends FieldValues> = Omit<ISelectControlProps<T>
   fieldType: EnumFieldType.SELECT
 }
 
+type TControlledInputSlider<T extends FieldValues> = Omit<InputSliderControlProps<T>, 'control'> & {
+  fieldType: EnumFieldType.SELECT
+}
+
 export type TStorybookFieldConfig<T extends FieldValues> =
   | TControlledInputMask<T>
   | TControlledInput<T>
@@ -47,3 +52,4 @@ export type TStorybookFieldConfig<T extends FieldValues> =
   | TControlledInputRadio<T>
   | TControlledInputSwitch<T>
   | TControlledInputSelect<T>
+  | TControlledInputSlider<T>
