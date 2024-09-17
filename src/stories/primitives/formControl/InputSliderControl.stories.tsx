@@ -30,7 +30,10 @@ export const Base: Story = {
     size: 'md',
     min: 1,
     max: 10,
-    defaultValue: [3]
+    defaultValueSlider: [5],
+    suffix: 'years',
+    sliderTextRight: 'лет',
+    sliderTextLeft: 'год'
   }
 }
 

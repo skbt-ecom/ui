@@ -1,25 +1,22 @@
 import React from 'react'
 import * as SliderPrimitive from '@radix-ui/react-slider'
+import { type TInputSliderProps } from '../model'
 import { cn } from '$/shared/utils'
 
 export const SliderControl = React.forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> & {
-    className?: string
-    min?: number
-    max?: number
-  }
->(({ className, min, max, ...props }, ref) => (
-  <div className='absolute bottom-0 w-full px-4'>
+  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> & Omit<TInputSliderProps, 'suffix'>
+>(({ className, min, max, sliderTextLeft, sliderTextRight, ...props }, ref) => (
+  <div className='absolute bottom-[-7px] w-full px-4'>
     <SliderPrimitive.Root
       ref={ref}
-      className={cn('relative flex w-full touch-none select-none items-center', className)}
+      className={cn('relative h-4 flex w-full touch-none select-none items-center', className)}
       min={min}
       max={max}
       {...props}
     >
-      <div className='absolute left-[-10px] bottom-[-30px] text-color-tetriary desk-body-regular-m'>{min}</div>
-      <div className='absolute right-[-10px] bottom-[-30px] text-color-tetriary desk-body-regular-m'>{max}</div>
+      <span className='absolute left-[-10px] bottom-[-30px] text-color-tetriary desk-body-regular-m'>{`${min} ${sliderTextLeft}`}</span>
+      <span className='absolute right-[-10px] bottom-[-30px] text-color-tetriary desk-body-regular-m'>{`${max} ${sliderTextRight}`}</span>
       <SliderPrimitive.Track className='relative h-[2px] w-full grow overflow-hidden rounded-full bg-color-primary-default'>
         <SliderPrimitive.Range className='absolute h-full bg-primary' />
       </SliderPrimitive.Track>

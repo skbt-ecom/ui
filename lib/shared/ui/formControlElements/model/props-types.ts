@@ -11,10 +11,14 @@ type TFieldControlledProps<T extends FieldValues> = {
   helperText?: string
 }
 
-type TInputSliderProps = {
-  min?: number
-  max?: number
-  defaultValue?: number[]
+export type TInputSliderProps = {
+  min: number
+  max: number
+  defaultValueSlider?: [number] | [number, number]
+  sliderTextLeft: string
+  sliderTextRight: string
+  suffix: 'years' | 'months' | 'sum'
+  className?: string
 }
 
 export type TFieldContainerSize = 'sm' | 'md' | 'lg' | 'full'
@@ -27,8 +31,7 @@ export type TFieldAttachment = {
 export type TControlledInputProps<T extends FieldValues> = TFieldContainerConfig &
   TFieldCommonProps &
   TFieldAttachment &
-  TFieldControlledProps<T> &
-  TInputSliderProps
+  TFieldControlledProps<T>
 
 // # Required props on controlled INPUTS - [checkbox, radio]
 export type TControlledInputPrimitiveProps<T extends FieldValues> = TFieldCommonProps & TFieldControlledProps<T>
