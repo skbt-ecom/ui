@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { CustomLink } from '$/shared/ui/CustomLink'
+import { CustomLink } from '$/shared/ui'
 
 const meta = {
   title: 'Navigation/CustomLink',
@@ -47,7 +47,7 @@ export const WithOtherIcon: Story = {
     href: 'https://sovcombank.ru/',
     children: 'Совкомбанк',
     withIcon: true,
-    icon: 'common/close',
+    icon: 'general/close',
     intent: 'blue'
   }
 }

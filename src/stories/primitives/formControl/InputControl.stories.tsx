@@ -38,7 +38,7 @@ export const WithIcon: Story = {
     name: 'city',
     label: 'Город',
     size: 'md',
-    icon: <Icon name='common/check' className='text-icon-positive-default' />
+    icon: <Icon name='general/check' className='text-icon-positive-default' />
   }
 }
 

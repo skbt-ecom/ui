@@ -40,7 +40,7 @@ export const WithIcon: Story = {
     label: 'Номер телефона',
     format: '# (###) ###-##-##',
     size: 'md',
-    icon: <Icon name='common/check' className='text-icon-positive-default' />
+    icon: <Icon name='general/check' className='text-icon-positive-default' />
   }
 }
 

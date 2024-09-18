@@ -22,7 +22,7 @@ export const AccordionHeader = forwardRef<HTMLButtonElement, IAccordionHeaderPro
       >
         <div className={cn('desk-body-medium-l text-color-dark', classes?.inner)}>{children}</div>
         <Icon
-          name='common/arrowCircle'
+          name='arrows/arrowCircle'
           className={cn('group-data-[state=open]:rotate-180 transition-all text-icon-blue-grey-800 size-8', classes?.icon)}
         />
       </Trigger>

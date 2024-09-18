@@ -1,6 +1,9 @@
 export interface SpritesMap {
+  arrows: 'arrowCircle' | 'arrowLink' | 'arrowRight'
   brandLogos: 'logoBlack' | 'logoBusiness' | 'logoGray' | 'logoInsurance' | 'logoMain' | 'logoWhite'
-  common: 'arrowCircle' | 'arrowLink' | 'arrowRight' | 'check' | 'close' | 'warningCircle'
+  files: 'documentFilled' | 'documentOutline'
+  general: 'check' | 'close'
+  info: 'warningCircle'
 }
 export const SPRITES_META: {
   [Key in keyof SpritesMap]: {
@@ -15,6 +18,26 @@ export const SPRITES_META: {
     >
   }
 } = {
+  arrows: {
+    filePath: 'arrows.svg',
+    items: {
+      arrowCircle: {
+        viewBox: '0 0 32 32',
+        width: 32,
+        height: 32
+      },
+      arrowLink: {
+        viewBox: '0 0 24 24',
+        width: 24,
+        height: 24
+      },
+      arrowRight: {
+        viewBox: '0 0 16 17',
+        width: 16,
+        height: 17
+      }
+    }
+  },
   brandLogos: {
     filePath: 'brandLogos.svg',
     items: {
@@ -50,24 +73,24 @@ export const SPRITES_META: {
       }
     }
   },
-  common: {
-    filePath: 'common.svg',
+  files: {
+    filePath: 'files.svg',
     items: {
-      arrowCircle: {
-        viewBox: '0 0 32 32',
-        width: 32,
-        height: 32
+      documentFilled: {
+        viewBox: '0 0 22 28',
+        width: 22,
+        height: 28
       },
-      arrowLink: {
-        viewBox: '0 0 24 24',
-        width: 24,
-        height: 24
-      },
-      arrowRight: {
-        viewBox: '0 0 16 17',
-        width: 16,
-        height: 17
-      },
+      documentOutline: {
+        viewBox: '0 0 22 28',
+        width: 22,
+        height: 28
+      }
+    }
+  },
+  general: {
+    filePath: 'general.svg',
+    items: {
       check: {
         viewBox: '0 0 24 24',
         width: 800,
@@ -77,7 +100,12 @@ export const SPRITES_META: {
         viewBox: '0 0 24 24',
         width: 24,
         height: 24
-      },
+      }
+    }
+  },
+  info: {
+    filePath: 'info.svg',
+    items: {
       warningCircle: {
         viewBox: '0 0 20 20',
         width: 20,

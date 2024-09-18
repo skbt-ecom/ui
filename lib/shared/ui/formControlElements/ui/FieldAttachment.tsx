@@ -13,7 +13,7 @@ export const FieldAttachment = ({ badge, icon, error, classes }: IFieldAttachmen
   return (
     <>
       {error ? (
-        <Icon name='common/warningCircle' className='text-icon-secondary-default size-6 mr-4' />
+        <Icon name='info/warningCircle' className='text-icon-secondary-default size-6 mr-4' />
       ) : (
         <>
           {(badge || icon) && (

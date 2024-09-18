@@ -19,7 +19,7 @@ export const Base: Story = {
     size: 'md',
     intent: 'primary',
     onClick: () => toast.success('Clicked'),
-    children: <Icon name='common/check' />
+    children: <Icon name='general/check' />
   }
 }
 
@@ -28,46 +28,46 @@ export const AllVariantsButtonsIcon = {
     <div className='flex flex-col gap-6'>
       <div className='flex items-center gap-5'>
         <ButtonIcon intent='primary' color='text-color-negative' size='lg'>
-          <Icon name='common/check' />
+          <Icon name='general/check' />
         </ButtonIcon>
         <ButtonIcon intent='primary' size='md'>
-          <Icon name='common/check' />
+          <Icon name='general/check' />
         </ButtonIcon>
         <ButtonIcon intent='primary' size='sm'>
-          <Icon name='common/check' />
+          <Icon name='general/check' />
         </ButtonIcon>
         <ButtonIcon intent='primary' size='sm' disabled>
-          <Icon name='common/check' />
+          <Icon name='general/check' />
         </ButtonIcon>
       </div>
 
       <div className='flex items-center gap-5'>
         <ButtonIcon intent='secondary' size='lg'>
-          <Icon name='common/check' />
+          <Icon name='general/check' />
         </ButtonIcon>
         <ButtonIcon intent='secondary' size='md'>
-          <Icon name='common/check' />
+          <Icon name='general/check' />
         </ButtonIcon>
         <ButtonIcon intent='secondary' size='sm'>
-          <Icon name='common/check' />
+          <Icon name='general/check' />
         </ButtonIcon>
         <ButtonIcon intent='secondary' size='sm' disabled>
-          <Icon name='common/check' />
+          <Icon name='general/check' />
         </ButtonIcon>
       </div>
 
       <div className='flex items-center gap-5'>
         <ButtonIcon intent='ghost' size='lg'>
-          <Icon name='common/check' />
+          <Icon name='general/check' />
         </ButtonIcon>
         <ButtonIcon intent='ghost' size='md'>
-          <Icon name='common/check' />
+          <Icon name='general/check' />
         </ButtonIcon>
         <ButtonIcon intent='ghost' size='sm'>
-          <Icon name='common/check' />
+          <Icon name='general/check' />
         </ButtonIcon>
         <ButtonIcon intent='ghost' size='sm' disabled>
-          <Icon name='common/check' />
+          <Icon name='general/check' />
         </ButtonIcon>
       </div>
     </div>

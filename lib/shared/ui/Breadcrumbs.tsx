@@ -41,7 +41,7 @@ export const Breadcrumbs = ({ linksList }: IBreadcrumbsProps) => {
                 {link.label}
               </a>
               <Icon
-                name='common/arrowRight'
+                name='arrows/arrowRight'
                 className={cn('text-icon-primary-default size-4', { '!text-icon-disabled': link?.isDisabled })}
               />
             </div>

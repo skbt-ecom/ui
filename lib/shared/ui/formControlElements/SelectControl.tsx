@@ -53,9 +53,22 @@ const renderSelectedValue = ({ multiple, controlledValue, label, isClearIntent, 
     </div>
   )
 
+  // if (multiple) {
+  //   if (Array.isArray(controlledValue) && controlledValue.length > 0) {
+  //     return <div className={cn('text-color-dark flex-1', classes?.value)}>{controlledValue.join('; ')}</div>
+  //   }
+  //   return labelElement
+  // }
+
   if (multiple) {
     if (Array.isArray(controlledValue) && controlledValue.length > 0) {
-      return <div className={cn('text-color-dark flex-1', classes?.value)}>{controlledValue.join('; ')}</div>
+      return (
+        <div className='flex items-center gap-2 flex-wrap'>
+          {controlledValue.map((value) => (
+            <div className={cn('text-color-dark w-max bg-color-blue-grey-300 rounded-sm py-1 px-2', classes?.value)}>{value}</div>
+          ))}
+        </div>
+      )
     }
     return labelElement
   }
@@ -114,7 +127,7 @@ export const SelectControl = <T extends FieldValues>({
                 {renderSelectedValue({ multiple, controlledValue, label, isClearIntent, disabled, classes })}
 
                 <Icon
-                  name='common/arrowRight'
+                  name='arrows/arrowRight'
                   className={cn(
                     'size-6 rotate-90  text-icon-blue-grey-600 group-data-[open]:-rotate-90 transition-all',
                     { 'text-icon-blue-grey-700 group-data-[hover]:text-icon-primary-hover': isClearIntent },
@@ -132,7 +145,7 @@ export const SelectControl = <T extends FieldValues>({
               />
               <ListboxOptions
                 className={cn(
-                  'bg-color-white items-start justify-start shadow-sm w-select-trigger outline-transparent scrollHidden p-2 data-[closed]:opacity-0 transition-all duration-200',
+                  'bg-color-white items-start justify-start shadow-sm w-select-trigger outline-transparent scrollHidden p-2 data-[closed]:opacity-0 transition-opacity duration-200',
                   classes?.options
                 )}
                 transition
@@ -147,7 +160,7 @@ export const SelectControl = <T extends FieldValues>({
                       value={optionValue}
                       disabled={isDisabled}
                       className={cn(
-                        'desk-body-regular-l text-color-dark p-2 rounded-sm cursor-pointer transition-all hover:bg-color-primary-tr-hover hover:text-color-primary-hover data-[focus]:text-color-primary-hover data-[focus]:bg-color-primary-tr-hover data-[disabled]:pointer-events-none  data-[disabled]:text-color-disabled',
+                        'desk-body-regular-l text-color-dark p-2 rounded-sm cursor-pointer transition-all hover:bg-color-primary-tr-hover hover:text-color-primary-hover data-[focus]:text-color-primary-hover data-[focus]:bg-color-primary-tr-hover data-[disabled]:pointer-events-none data-[disabled]:text-color-disabled',
                         classes?.option
                       )}
                     >
@@ -155,7 +168,7 @@ export const SelectControl = <T extends FieldValues>({
                         <div className={cn('flex justify-between items-center gap-2')}>
                           {optionValue}
                           <Icon
-                            name='common/check'
+                            name='general/check'
                             className={cn('size-5  text-icon-primary-default', { invisible: !selected })}
                           />
                         </div>

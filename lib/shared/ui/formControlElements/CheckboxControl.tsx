@@ -60,7 +60,7 @@ export const CheckboxControl = <T extends FieldValues>({
                   <Indicator
                     className={cn('flex items-center justify-center data-[state=checked]:text-icon-white', classes?.indicator)}
                   >
-                    <Icon name='common/check' className='size-5' />
+                    <Icon name='general/check' className='size-5' />
                   </Indicator>
                 </Root>
               </div>

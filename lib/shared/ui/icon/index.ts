@@ -1,2 +1,2 @@
-export { Icon, type IconProps, type AnyIconName } from './Icon'
+export { Icon, type IconProps, type TAllowedIcons } from './Icon'
 export * from './sprite.gen'

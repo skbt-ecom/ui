@@ -15,8 +15,8 @@ export default meta
 export const Common = {
   render: () => (
     <div className='flex gap-4'>
-      <Icon name='common/check' className='text-icon-positive-default' />
-      <Icon name='common/close' className='text-icon-negative-default' />
+      <Icon name='general/check' className='text-icon-positive-default' />
+      <Icon name='general/close' className='text-icon-negative-default' />
     </div>
   )
 }

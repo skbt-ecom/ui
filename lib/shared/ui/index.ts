@@ -16,12 +16,15 @@ export { ProgressBar, type IProgressBarProps } from './ProgressBar'
 export { Heading, type IHeadingProps } from './Heading'
 
 // # ICONS
-export { Icon, type IconProps, type AnyIconName } from './icon'
+export { Icon, type IconProps, type TAllowedIcons } from './icon'
 export { brandLogos, type TBrandLogoVariant } from './brandLogos'
 
-// # Navigation
+// # NAVIGATION
 export { Breadcrumbs, type IBreadcrumbsProps } from './Breadcrumbs'
 export { CustomLink, type ICustomLinkProps } from './CustomLink'
+
+// # FILes
+export { Document, type IDocumentProps } from './Document'
 
 // # CONTROLLED FORM UI
 export {

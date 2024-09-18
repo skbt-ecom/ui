@@ -66,7 +66,7 @@ export const Popover = ({
           >
             {children}
             <PopoverPrimitive.Close aria-label='Close' className='size-4 outline-transparent outline-0'>
-              <Icon name='common/close' className='size-4 text-icon-blue-grey-600 cursor-pointer ' />
+              <Icon name='general/close' className='size-4 text-icon-blue-grey-600 cursor-pointer ' />
             </PopoverPrimitive.Close>
             <PopoverPrimitive.Arrow width={12} height={6} className={cn('fill-secondary-default', classes?.arrow)} />
           </PopoverPrimitive.Content>

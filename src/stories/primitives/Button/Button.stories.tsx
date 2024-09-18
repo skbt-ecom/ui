@@ -133,13 +133,13 @@ export const AllVariantsButtons: Story = {
       <div className='flex flex-col gap-3'>
         <strong className='text-color-tetriary'># With icons</strong>
         <div className='flex items-center gap-5'>
-          <Button iconLeft={<Icon name='common/check' />} intent='primary' size='lg'>
+          <Button iconLeft={<Icon name='general/check' />} intent='primary' size='lg'>
             Button
           </Button>
-          <Button iconLeft={<Icon name='common/check' />} iconRight={<Icon name='common/check' />} intent='primary' size='md'>
+          <Button iconLeft={<Icon name='general/check' />} iconRight={<Icon name='general/check' />} intent='primary' size='md'>
             Button
           </Button>
-          <Button iconRight={<Icon name='common/check' />} intent='primary' size='sm'>
+          <Button iconRight={<Icon name='general/check' />} intent='primary' size='sm'>
             Button
           </Button>
         </div>
