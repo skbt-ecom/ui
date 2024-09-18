@@ -4,10 +4,10 @@ import type { TAdditionalInputClassesWithAttachment, TControlledInputProps, TInp
 import { FieldAttachment, FieldContainer, FieldWrapper, MessageView } from './ui'
 import { SliderControl } from './ui/Slider'
 import { cn } from '$/shared/utils'
-import { getYearEnding } from '$/shared/utils/dates'
+import { formatNumber, getInputSliderSuffix, getStepByVariant } from '$/shared/utils/slider'
 
 export interface InputSliderControlProps<T extends FieldValues>
-  extends Omit<TControlledInputProps<T>, 'max' | 'min'>,
+  extends Omit<TControlledInputProps<T>, 'max' | 'min' | 'step'>,
     TInputSliderProps {
   classes?: Partial<TAdditionalInputClassesWithAttachment>
 }
@@ -24,9 +24,7 @@ export const InputSliderControl = <T extends FieldValues>({
   defaultValueSlider,
   min,
   max,
-  sliderTextLeft,
-  sliderTextRight,
-  suffix,
+  variant,
   ...props
 }: InputSliderControlProps<T>) => {
   const inputId = useId()
@@ -39,7 +37,7 @@ export const InputSliderControl = <T extends FieldValues>({
       // @ts-expect-error need read docs
       defaultValue={defaultValueSlider?.[0]}
       render={({ field: { onChange, ref, value }, fieldState: { error } }) => {
-        let suffixText = ''
+        const suffixText = getInputSliderSuffix(variant, value)
 
         const handleBlur = () => {
           setFocus(false)
@@ -49,10 +47,6 @@ export const InputSliderControl = <T extends FieldValues>({
           if (value < min) {
             onChange(min)
           }
-        }
-
-        if (suffix === 'years') {
-          suffixText = getYearEnding(value)
         }
 
         return (
@@ -69,7 +63,7 @@ export const InputSliderControl = <T extends FieldValues>({
                   id={inputId}
                   onFocus={() => setFocus(true)}
                   onBlur={handleBlur}
-                  value={focus ? value : `${value} ${suffixText}`}
+                  value={focus ? value : `${formatNumber(value)} ${suffixText}`}
                   onChange={onChange}
                   disabled={disabled}
                   {...props}
@@ -80,8 +74,8 @@ export const InputSliderControl = <T extends FieldValues>({
                   defaultValue={defaultValueSlider}
                   min={min}
                   max={max}
-                  sliderTextLeft={sliderTextLeft}
-                  sliderTextRight={sliderTextRight}
+                  step={getStepByVariant(value, variant)}
+                  variant={variant}
                 />
                 <FieldAttachment badge={badge} icon={icon} error={!!error?.message} classes={classes} />
               </>

@@ -11,13 +11,14 @@ type TFieldControlledProps<T extends FieldValues> = {
   helperText?: string
 }
 
+export type TSliderVariants = 'years' | 'credit'
+
 export type TInputSliderProps = {
   min: number
   max: number
   defaultValueSlider?: [number] | [number, number]
-  sliderTextLeft: string
-  sliderTextRight: string
-  suffix: 'years' | 'months' | 'sum'
+  variant: TSliderVariants
+  step?: number
   className?: string
 }
 

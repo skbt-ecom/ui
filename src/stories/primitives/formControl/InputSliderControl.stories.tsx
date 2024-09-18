@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { mockDefaultValues, mockSchema, StorybookFormProvider } from '@/storybookHelpers'
-import { Icon, InputSliderControl } from '$/shared/ui'
+import { InputSliderControl } from '$/shared/ui'
 
 const meta = {
   title: 'CONTROLLED FORM UI/InputSliderControl',
@@ -26,58 +26,25 @@ export const Base: Story = {
   // @ts-ignore
   args: {
     name: 'term',
+    label: 'Сумма кредита',
+    size: 'md',
+    min: 30_000,
+    max: 5_000_000,
+    defaultValueSlider: [300_000],
+    variant: 'credit'
+  }
+}
+
+export const WithYears: Story = {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  args: {
+    name: 'term',
     label: 'Срок кредита',
     size: 'md',
     min: 1,
-    max: 10,
-    defaultValueSlider: [5],
-    suffix: 'years',
-    sliderTextRight: 'лет',
-    sliderTextLeft: 'год'
-  }
-}
-
-export const WithIcon: Story = {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  args: {
-    name: 'city',
-    label: 'Город',
-    size: 'md',
-    icon: <Icon name='common/check' className='text-icon-positive-default' />
-  }
-}
-
-export const WithBadge: Story = {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  args: {
-    name: 'city',
-    label: 'Город',
-    size: 'md',
-    badge: '+25%'
-  }
-}
-
-export const WithHelperText: Story = {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  args: {
-    name: 'city',
-    label: 'Город',
-    helperText: 'Введите город проживания',
-    size: 'md'
-  }
-}
-
-export const Disabled: Story = {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  args: {
-    name: 'city',
-    label: 'Город',
-    helperText: 'Введите город проживания',
-    size: 'md',
-    disabled: true
+    max: 12,
+    defaultValueSlider: [1],
+    variant: 'years'
   }
 }
