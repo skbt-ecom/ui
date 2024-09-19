@@ -1,7 +1,7 @@
 import { type IRadioGroupOption, type ISelectOption } from '$/shared/ui'
 
 export const MOCK_SELECT_OPTIONS: ISelectOption[] = [
-  { id: '1', optionValue: 'Январь' },
+  { id: '1', optionValue: 'Кредитная' },
   { id: '2', optionValue: 'Февраль' },
   { id: '3', optionValue: 'Март' },
   { id: '4', optionValue: 'Апрель' },

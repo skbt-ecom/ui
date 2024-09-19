@@ -10,10 +10,8 @@ const meta = {
 
 export default meta
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof Banner>
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 export const Base: Story = {
   render: () => (
     <>
@@ -23,8 +21,6 @@ export const Base: Story = {
   )
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 export const OnlyPrimaryButton: Story = {
   render: () => (
     <>
@@ -34,8 +30,6 @@ export const OnlyPrimaryButton: Story = {
   )
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 export const WithAdvantages: Story = {
   render: () => (
     <>

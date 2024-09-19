@@ -17,7 +17,7 @@ export const STORYBOOK_VIEWPORTS = {
     name: 'fullscreen',
     styles: {
       width: '100%',
-      height: '801px'
+      height: '100%'
     }
   }
 }

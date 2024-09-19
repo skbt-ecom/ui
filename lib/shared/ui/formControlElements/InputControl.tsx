@@ -1,10 +1,10 @@
 import { useId } from 'react'
 import { Controller, type FieldValues } from 'react-hook-form'
-import type { TAdditionalInputClassesWithAttachment, TControlledInputProps } from './model'
+import type { TAdditionalInputClassesWithAttachment, TControlledInputProps, TInputCommonProps } from './model'
 import { FieldAttachment, FieldContainer, FieldWrapper, MessageView } from './ui'
 import { cn } from '$/shared/utils'
 
-export interface InputControlProps<T extends FieldValues> extends TControlledInputProps<T> {
+export interface InputControlProps<T extends FieldValues> extends TControlledInputProps<T>, TInputCommonProps {
   classes?: Partial<TAdditionalInputClassesWithAttachment>
 }
 

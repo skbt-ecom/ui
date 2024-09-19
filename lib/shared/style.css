@@ -15,21 +15,15 @@
 }
 
 @layer components {
-  /* # Components */
-  .float-label {
-    @apply top-2 bg-color-transparent translate-y-0 desk-body-regular-s;
-  }
-
+  /* # Custom scroll */
   .customScrollbar-y::-webkit-scrollbar {
     width: 4px;
     height: 4px;
   }
-
   .customScrollbar-y::-webkit-scrollbar-track {
     border-radius: 8px;
     background: #d4dbe2;
   }
-
   .customScrollbar-y::-webkit-scrollbar-thumb {
     background: #a9b6c5;
     border-radius: 8px;
@@ -39,9 +33,15 @@
     height: 0;
   }
 
-  .progressBar {
+  .progressBar-apply {
     background-image: repeating-linear-gradient(-33deg, #d4dbe2, #d4dbe2 5px, #f3f4f7 0, #f3f4f7 14px);
     background-size: 2000% 2000%;
+  }
+
+  .skeleton-apply {
+    background: linear-gradient(80deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    background-size: 200% 100%;
+    animation: 1.5s shine linear infinite;
   }
 }
 
@@ -61,4 +61,10 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
 }

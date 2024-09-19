@@ -2,7 +2,8 @@ import type { ComponentProps, ReactElement } from 'react'
 import type { Control, FieldValues, Path } from 'react-hook-form'
 import type { TFieldContainerConfig } from '../ui/FieldContainer'
 
-type TFieldCommonProps = Omit<ComponentProps<'input'>, 'name' | 'placeholder' | 'size' | 'type' | 'defaultValue'>
+export type TInputCommonProps = Omit<ComponentProps<'input'>, 'name' | 'placeholder' | 'size' | 'type' | 'defaultValue'>
+export type TTextareaCommonProps = Omit<ComponentProps<'textarea'>, 'name' | 'size' | 'type' | 'defaultValue'>
 
 type TFieldControlledProps<T extends FieldValues> = {
   name: Path<T>
@@ -18,10 +19,7 @@ export type TFieldAttachment = {
 }
 
 // # Required props on controlled INPUTS - [maskInput, baseInput, dadata]
-export type TControlledInputProps<T extends FieldValues> = TFieldContainerConfig &
-  TFieldCommonProps &
-  TFieldAttachment &
-  TFieldControlledProps<T>
+export type TControlledInputProps<T extends FieldValues> = TFieldContainerConfig & TFieldAttachment & TFieldControlledProps<T>
 
 // # Required props on controlled INPUTS - [checkbox, radio]
-export type TControlledInputPrimitiveProps<T extends FieldValues> = TFieldCommonProps & TFieldControlledProps<T>
+export type TControlledInputPrimitiveProps<T extends FieldValues> = TInputCommonProps & TFieldControlledProps<T>

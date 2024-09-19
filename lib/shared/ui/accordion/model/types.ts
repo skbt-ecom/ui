@@ -1,15 +1,16 @@
 import type { ReactNode } from 'react'
 
-export interface IAccordionHeaderClasses {
+export type TAccordionHeaderClasses = {
   trigger: string
   icon: string
   header: string
   inner: string
 }
 
-export interface IAccordionRootClasses {
+export type TAccordionRootClasses = {
   item: string
   content: string
+  contentInner: string
   accordion: string
 }
 

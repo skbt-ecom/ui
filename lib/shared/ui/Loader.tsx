@@ -33,7 +33,7 @@ const loaderConfig = cva('border-2 border-solid block animate-spin rounded-full'
   }
 })
 
-interface ILoaderClasses {
+type ILoaderClasses = {
   wrapper: string
   loader: string
   text: string

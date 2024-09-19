@@ -1,7 +1,7 @@
 import { useId } from 'react'
 import { Controller, type FieldValues } from 'react-hook-form'
 import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions } from '@headlessui/react'
-import type { TAdditionalInputClassesWithAttachment, TControlledInputProps } from '../model'
+import type { TAdditionalInputClassesWithAttachment, TControlledInputProps, TInputCommonProps } from '../model'
 import { FieldAttachment, FieldContainer, FieldWrapper, MessageView } from '../ui'
 import type { TDadataBaseUrl, TDadataType } from './model/types'
 import { useDadata } from './model/useDadata'
@@ -12,7 +12,7 @@ type TDadataClasses = Partial<TAdditionalInputClassesWithAttachment> & {
   indentMargin?: string
 }
 
-export interface IDadataInputControlProps<T extends FieldValues> extends TControlledInputProps<T> {
+export interface IDadataInputControlProps<T extends FieldValues> extends TControlledInputProps<T>, TInputCommonProps {
   classes?: TDadataClasses
   dadataType?: TDadataType
   dadataBaseUrl?: TDadataBaseUrl

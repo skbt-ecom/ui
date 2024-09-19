@@ -4,7 +4,7 @@ import { type ComponentProps, forwardRef, type ReactElement } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '$/shared/utils'
 
-type TAdditionalClasses = {
+type TButtonClasses = {
   button: string
   icon: string
 }
@@ -38,7 +38,7 @@ type TButtonProps = VariantProps<typeof buttonConfig>
 
 export interface IButtonIconProps extends ComponentProps<'button'>, TButtonProps {
   children: ReactElement
-  classes?: Partial<TAdditionalClasses>
+  classes?: Partial<TButtonClasses>
 }
 
 export const ButtonIcon = forwardRef<HTMLButtonElement, IButtonIconProps>(

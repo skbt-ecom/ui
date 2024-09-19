@@ -14,7 +14,7 @@ const meta = {
 
 export default meta
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof Hint>
 
 const hintContent = 'Небольшая подсказка для пользователя'
 
@@ -28,7 +28,7 @@ export const Base: Story = {
   }
 }
 
-export const DifferentAlign = {
+export const DifferentAlign: Story = {
   render: () => (
     <div className='grid grid-cols-3 gap-24'>
       <Hint triggerElement={setTextWithElementSB('В начале')} align='start'>
@@ -44,7 +44,7 @@ export const DifferentAlign = {
   )
 }
 
-export const DifferentPositions = {
+export const DifferentPositions: Story = {
   render: () => (
     <div className='grid grid-cols-2 gap-24'>
       <Hint triggerElement={setTextWithElementSB('Слева')} side='left'>
@@ -63,7 +63,7 @@ export const DifferentPositions = {
   )
 }
 
-export const OtherConfiguration = {
+export const OtherConfiguration: Story = {
   render: () => (
     <div className='grid grid-cols-3 gap-24'>
       <Hint triggerElement={setTextWithElementSB('Кастомный отступ от подсказки')} sideOffset={30}>

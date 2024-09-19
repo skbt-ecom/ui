@@ -1,12 +1,12 @@
 import { useId } from 'react'
 import { Controller, type FieldValues } from 'react-hook-form'
 import { PatternFormat } from 'react-number-format'
-import type { TAdditionalInputClassesWithAttachment, TControlledInputProps } from './model'
+import type { TAdditionalInputClassesWithAttachment, TControlledInputProps, TInputCommonProps } from './model'
 import { FieldAttachment, FieldWrapper, MessageView } from './ui'
 import { FieldContainer } from './ui/FieldContainer'
 import { cn } from '$/shared/utils'
 
-export interface InputControlMaskProps<T extends FieldValues> extends TControlledInputProps<T> {
+export interface InputControlMaskProps<T extends FieldValues> extends TControlledInputProps<T>, TInputCommonProps {
   format: string
   mask?: string | string[]
   allowEmptyFormatting?: boolean

@@ -116,16 +116,16 @@ export const AllVariantsButtons: Story = {
         <strong className='text-color-tetriary'># Text format</strong>
         <div className='flex items-center gap-5'>
           <Button intent='primary' size='lg' textFormat='capitalize'>
-            Button
+            capitalize
           </Button>
           <Button intent='primary' size='md' textFormat='uppercase'>
-            Button
+            uppercase
           </Button>
           <Button intent='primary' size='sm' textFormat='lowercase'>
-            Button
+            lowercase
           </Button>
           <Button intent='primary' size='sm' textFormat='initial'>
-            Button
+            initial
           </Button>
         </div>
       </div>

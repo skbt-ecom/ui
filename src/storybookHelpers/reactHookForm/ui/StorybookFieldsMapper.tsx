@@ -9,7 +9,8 @@ import {
   InputControlMask,
   RadioControl,
   SelectControl,
-  SwitchControl
+  SwitchControl,
+  TextareaControl
 } from '$/shared/ui'
 
 type TStorybookFieldsMapperProps<T extends FieldValues> = {
@@ -40,6 +41,8 @@ const renderFields = <T extends FieldValues>(fieldConfig: TStorybookFieldConfig<
     case EnumFieldType.SELECT:
       const { optionsList } = fieldConfig
       return <SelectControl name={name} label={label} control={control} optionsList={optionsList} />
+    case EnumFieldType.TEXTAREA:
+      return <TextareaControl name={name} label={label} control={control} />
     default:
       return null
   }

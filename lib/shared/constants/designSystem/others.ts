@@ -6,4 +6,13 @@ const allowedBorderRadius = {
   full: '9999px'
 }
 
-export { allowedBorderRadius }
+const allowedBackgroundDeg = {
+  30: '30deg',
+  45: '45deg',
+  80: '80deg',
+  90: '90deg',
+  110: '110deg',
+  180: '180deg'
+}
+
+export { allowedBorderRadius, allowedBackgroundDeg }

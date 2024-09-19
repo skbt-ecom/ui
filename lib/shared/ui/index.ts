@@ -6,11 +6,14 @@ export { ButtonIcon, type IButtonIconProps } from './ButtonIcon'
 export { PhoneView } from './PhoneView'
 export { Badge, type IBadgeProps } from './Badge'
 export { Loader, type ILoaderProps } from './Loader'
+export { Skeleton, type ISkeletonProps } from './Skeleton'
+
 // # INTERACTIVE
 export { Accordion, type IAccordionProps } from './accordion'
 export { Hint, type IHintProps } from './Hint'
 export { Popover } from './popover'
 export { ProgressBar, type IProgressBarProps } from './ProgressBar'
+export { TabsSwitcher, type ITabsSwitcherProps, type ITabRenderContent } from './TabsSwitcher'
 
 // # TYPOGRAPHY
 export { Heading, type IHeadingProps } from './Heading'
@@ -44,5 +47,7 @@ export {
   type ISwitchControlProps,
   SelectControl,
   type ISelectControlProps,
-  type ISelectOption
+  type ISelectOption,
+  TextareaControl,
+  type TextareaControlProps
 } from './formControlElements'

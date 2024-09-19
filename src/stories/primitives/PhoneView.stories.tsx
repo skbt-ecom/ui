@@ -1,4 +1,4 @@
-import type { Meta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { PhoneView } from '$/shared/ui'
 
 const meta = {
@@ -9,10 +9,11 @@ const meta = {
     layout: 'centered'
   }
 } satisfies Meta<typeof PhoneView>
+type Story = StoryObj<typeof PhoneView>
 
 export default meta
 
-export const Base = {
+export const Base: Story = {
   render: () => (
     <div className='flex gap-4'>
       <PhoneView phone='8 800 000-00-00' text='Бесплатно по России' />

@@ -1,7 +1,7 @@
 import { type ReactElement } from 'react'
 import { cn } from '../utils'
 
-interface IProgressBarClasses {
+type IProgressBarClasses = {
   wrapper: string
   topContent: string
   bottomContent: string
@@ -31,7 +31,7 @@ export const ProgressBar = ({ topContent, bottomContent, progress, maxPercent = 
         <span
           style={{ maxWidth: `${maxPercent}%` }}
           className={cn(
-            'absolute z-[2] h-full w-full rounded-md top-1/2 -translate-y-1/2 progressBar animate-progress-loader',
+            'absolute z-[2] h-full w-full rounded-md top-1/2 -translate-y-1/2 progressBar-apply animate-progress-loader',
             classes?.loader
           )}
         ></span>

@@ -1,12 +1,12 @@
 import { forwardRef, type ReactElement } from 'react'
 import { Header, Trigger } from '@radix-ui/react-accordion'
 import { Icon } from '../../icon/Icon'
-import type { IAccordionHeaderClasses } from '../model/types'
+import type { TAccordionHeaderClasses } from '../model/types'
 import { cn } from '$/shared/utils'
 
 interface IAccordionHeaderProps {
   children?: ReactElement | string
-  classes?: Partial<IAccordionHeaderClasses>
+  classes?: Partial<TAccordionHeaderClasses>
 }
 
 export const AccordionHeader = forwardRef<HTMLButtonElement, IAccordionHeaderProps>(

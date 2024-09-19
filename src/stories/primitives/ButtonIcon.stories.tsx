@@ -12,7 +12,7 @@ const meta = {
 } satisfies Meta<typeof ButtonIcon>
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof ButtonIcon>
 
 export const Base: Story = {
   args: {
@@ -23,7 +23,7 @@ export const Base: Story = {
   }
 }
 
-export const AllVariantsButtonsIcon = {
+export const AllVariantsButtonsIcon: Story = {
   render: () => (
     <div className='flex flex-col gap-6'>
       <div className='flex items-center gap-5'>

@@ -37,6 +37,7 @@ export interface ISelectControlProps<T extends FieldValues> extends TControlledI
   label: string
   multiple?: boolean
   intent?: 'filled' | 'clear'
+  disabled?: boolean
 }
 
 const renderSelectedValue = ({ multiple, controlledValue, label, isClearIntent, disabled, classes }: TRenderSelectedValue) => {

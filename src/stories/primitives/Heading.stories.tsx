@@ -1,4 +1,4 @@
-import type { Meta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Heading } from '$/shared/ui'
 
 const meta = {
@@ -9,10 +9,11 @@ const meta = {
     layout: 'centered'
   }
 } satisfies Meta<typeof Heading>
+type Story = StoryObj<typeof Heading>
 
 export default meta
 
-export const Headings = {
+export const Headings: Story = {
   render: () => (
     <div className='flex flex-col gap-6'>
       <Heading as='h1'>h1 - заголовок страницы</Heading>
