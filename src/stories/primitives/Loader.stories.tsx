@@ -28,3 +28,12 @@ export const Base: Story = {
     position: 'static'
   }
 }
+
+export const WithText: Story = {
+  args: {
+    size: 'md',
+    intent: 'secondary',
+    position: 'static',
+    text: 'Загрузка'
+  }
+}

@@ -1,14 +1,11 @@
 {
   "compilerOptions": {
     "composite": true,
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "noEmit": true
+    "strict": true
   },
-  "include": ["vite.config.mts", "package.json"],
-  "exclude": ["src/**/*.stories.ts"]
+  "include": ["vite.config.mjs", "package.json"]
 }

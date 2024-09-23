@@ -1,9 +1,10 @@
 import { RootProvider } from '../src/app/providers'
-import '../lib/shared/core/styles/root.css'
-
+import '../lib/shared/style.css'
+import { STORYBOOK_VIEWPORTS } from '../src/configs/storybook.config'
 import type { Preview } from '@storybook/react'
 import { withConsole } from '@storybook/addon-console'
 import React from 'react'
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 
 const preview: Preview = {
   decorators: [
@@ -14,7 +15,16 @@ const preview: Preview = {
       </RootProvider>
     )
   ],
+
   parameters: {
+    layout: 'fullscreen',
+    viewport: {
+      viewports: {
+        ...STORYBOOK_VIEWPORTS,
+        ...INITIAL_VIEWPORTS
+      },
+      defaultViewport: 'fullscreen'
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

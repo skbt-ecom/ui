@@ -1,8 +1,17 @@
-/* eslint-disable no-case-declarations */
 import { type Control, type DefaultValues, type FieldValues, useFormContext } from 'react-hook-form'
 import type { Schema, TypeOf } from 'zod'
-import type { TStorybookFieldConfig } from '../model/mocks'
-import { Button, InputControl, InputControlMask } from '$/shared/ui'
+import { EnumFieldType, type TStorybookFieldConfig } from '../model/types'
+import {
+  Button,
+  CheckboxControl,
+  DadataInputControl,
+  InputControl,
+  InputControlMask,
+  RadioControl,
+  SelectControl,
+  SwitchControl,
+  TextareaControl
+} from '$/shared/ui'
 
 type TStorybookFieldsMapperProps<T extends FieldValues> = {
   fields: TStorybookFieldConfig<T>[]
@@ -14,11 +23,26 @@ type TStorybookFieldsMapperProps<T extends FieldValues> = {
 const renderFields = <T extends FieldValues>(fieldConfig: TStorybookFieldConfig<T>, control: Control<FieldValues>) => {
   const { name, label, fieldType } = fieldConfig
   switch (fieldType) {
-    case 'input':
-      return <InputControl name={name} label={label} control={control} />
-    case 'mask':
+    case EnumFieldType.INPUT:
+      return <InputControl name={name} label={label} control={control} badge='+25%' />
+    case EnumFieldType.MASK:
       const { format, mask } = fieldConfig
       return <InputControlMask name={name} label={label} format={format} control={control} mask={mask} />
+    case EnumFieldType.DADATA:
+      return <DadataInputControl name={name} label={label} control={control} badge='+25%' />
+    case EnumFieldType.CHECKBOX:
+      const { defaultChecked } = fieldConfig
+      return <CheckboxControl name={name} label={label} control={control} defaultChecked={defaultChecked} />
+    case EnumFieldType.RADIO:
+      const { radioItemsGroup } = fieldConfig
+      return <RadioControl name={name} label={label} control={control} radioItemsGroup={radioItemsGroup} />
+    case EnumFieldType.SWITCH:
+      return <SwitchControl name={name} label={label} control={control} />
+    case EnumFieldType.SELECT:
+      const { optionsList } = fieldConfig
+      return <SelectControl name={name} label={label} control={control} optionsList={optionsList} />
+    case EnumFieldType.TEXTAREA:
+      return <TextareaControl name={name} label={label} control={control} />
     default:
       return null
   }
@@ -31,6 +55,7 @@ export const StorybookFieldsMapper = <T extends FieldValues>({
   btnReset = 'Сбросить состояние'
 }: TStorybookFieldsMapperProps<T>) => {
   const { control, clearErrors, reset } = useFormContext()
+
   const resetStates = () => {
     clearErrors()
     reset(defaultValues)

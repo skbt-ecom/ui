@@ -1,7 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite'
 import { mergeConfig } from 'vite'
 import { resolve } from 'path'
-import svg from '@neodx/svg/vite'
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx|mdx)'],
@@ -13,7 +12,8 @@ const config: StorybookConfig = {
     '@chromatic-com/storybook',
     '@storybook/addon-interactions',
     '@storybook/addon-coverage',
-    '@storybook/addon-console'
+    '@storybook/addon-console',
+    '@storybook/addon-viewport'
   ],
   core: {
     builder: '@storybook/builder-vite'
@@ -24,31 +24,12 @@ const config: StorybookConfig = {
       strictMode: true
     }
   },
-  staticDirs: ['../public'],
+  // staticDirs: ['../public'],
   docs: {
     autodocs: 'tag'
   },
   viteFinal: (config) =>
     mergeConfig(config, {
-      plugins: [
-        svg({
-          root: 'static',
-          group: true,
-          output: './public/sprites',
-          fileName: '{name}.{hash:8}.svg',
-          resetColors: {
-            exclude: [/^brandLogos/],
-            replaceUnknown: 'currentColor'
-          },
-          metadata: {
-            path: './src/sprite.gen.ts',
-            runtime: {
-              size: true,
-              viewBox: true
-            }
-          }
-        })
-      ],
       resolve: {
         alias: {
           '@': resolve(__dirname, '../src'),

@@ -6,14 +6,18 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+build-storybook.log*
 
 node_modules
 dist
 dist-ssr
 storybook-static
 *.local
+*.tsbuildinfo
 
 env
+tsconfig.tsbuildinfo
+tsconfig.node.tsbuildinfo
 
 # Editor directories and files
 .vscode/*

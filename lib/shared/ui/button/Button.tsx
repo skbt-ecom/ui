@@ -1,6 +1,6 @@
 import { type ComponentProps, forwardRef, type ReactElement } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
-import { Loader } from '../loader'
+import { Loader } from '../Loader'
 import { setButtonLoaderIntent } from './model/helpers'
 import { cn } from '$/shared/utils'
 
@@ -10,11 +10,12 @@ const buttonConfig = cva(
     variants: {
       intent: {
         primary:
-          'bg-color-primary-default text-color-white hover:bg-color-primary-hover active:bg-color-primary-hover  focus:bg-color-primary-default focus:outline-primary-focus disabled:bg-color-primary-disabled',
+          'bg-color-primary-default text-color-white outline-offset-[3px]  hover:bg-color-primary-hover  active:bg-color-primary-hover  focus:bg-color-primary-default focus:outline-primary-focus  disabled:bg-color-primary-disabled',
         secondary:
           'bg-transparent text-color-primary-default border border-solid border-primary-default hover:bg-color-primary-tr-hover active:bg-color-primary-tr-pressed active:border-primary-hover  focus:outline-primary-focus  focus:bg-color-primary-tr-focus disabled:bg-color-blue-grey-200 disabled:text-color-primary-disabled disabled:border-transparent',
         ghost:
-          'bg-transparent text-color-primary-default hover:bg-color-primary-tr-hover hover:text-color-primary-hover focus:bg-color-primary-tr-focus focus:outline-primary-focus active:bg-color-primary-tr-pressed active:text-color-primary-hover disabled:text-color-primary-disabled disabled:bg-transparent'
+          'bg-transparent text-color-primary-default hover:bg-color-primary-tr-hover hover:text-color-primary-hover focus:bg-color-primary-tr-focus focus:outline-primary-focus active:bg-color-primary-tr-pressed active:text-color-primary-hover disabled:text-color-primary-disabled disabled:bg-transparent',
+        red: 'bg-color-secondary-default text-color-white outline-offset-[3px] hover:bg-color-secondary-hover disabled:bg-color-secondary-disabled active:bg-color-secondary-hover focus:bg-color-secondary-default focus:outline-primary-focus'
       },
       size: {
         sm: 'h-10',
@@ -47,6 +48,11 @@ const buttonConfig = cva(
         intent: 'ghost',
         isLoading: true,
         class: '!bg-color-blue-grey-200'
+      },
+      {
+        intent: 'red',
+        isLoading: true,
+        class: '!bg-color-secondary-default'
       }
     ],
     defaultVariants: {
@@ -57,9 +63,9 @@ const buttonConfig = cva(
   }
 )
 
-type TButtonProps = VariantProps<typeof buttonConfig>
-export type TButtonIntents = 'primary' | 'secondary' | 'ghost'
-export interface IButtonProps extends ComponentProps<'button'>, TButtonProps {
+type TButtonConfig = VariantProps<typeof buttonConfig>
+export type TButtonIntents = 'primary' | 'secondary' | 'ghost' | 'red'
+export interface IButtonProps extends ComponentProps<'button'>, TButtonConfig {
   iconLeft?: ReactElement
   iconRight?: ReactElement
   isLoading?: boolean

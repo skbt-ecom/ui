@@ -1,12 +1,12 @@
 import { forwardRef, type ReactElement } from 'react'
 import { Header, Trigger } from '@radix-ui/react-accordion'
-import { Icon } from '../../icon'
-import type { IAccordionHeaderClasses } from '../model/types'
+import { Icon } from '../../icon/Icon'
+import type { TAccordionHeaderClasses } from '../model/types'
 import { cn } from '$/shared/utils'
 
 interface IAccordionHeaderProps {
   children?: ReactElement | string
-  classes?: Partial<IAccordionHeaderClasses>
+  classes?: Partial<TAccordionHeaderClasses>
 }
 
 export const AccordionHeader = forwardRef<HTMLButtonElement, IAccordionHeaderProps>(
@@ -22,7 +22,7 @@ export const AccordionHeader = forwardRef<HTMLButtonElement, IAccordionHeaderPro
       >
         <div className={cn('desk-body-medium-l text-color-dark', classes?.inner)}>{children}</div>
         <Icon
-          name='common/arrowCircle'
+          name='arrows/arrowCircle'
           className={cn('group-data-[state=open]:rotate-180 transition-all text-icon-blue-grey-800 size-8', classes?.icon)}
         />
       </Trigger>

@@ -14,15 +14,7 @@ module.exports = {
     'airbnb-typescript',
     'plugin:@typescript-eslint/recommended'
   ],
-  ignorePatterns: [
-    'dist',
-    '.eslintrc.cjs',
-    'vite.config.mts',
-    'tailwind.config.ts',
-    'postcss.config.mjs',
-    'sprite.gen.ts',
-    'storybook-static'
-  ],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts', 'tailwind.config.ts', 'postcss.config.mjs', 'storybook-static'],
   parser: '@typescript-eslint/parser',
   overrides: [
     {
@@ -48,7 +40,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true
     },
-    project: './tsconfig.app.json',
+    project: './tsconfig.json',
     tsconfigRootDir: __dirname
   },
   plugins: [
@@ -69,6 +61,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'warn',
     'promise/prefer-await-to-then': 'error',
     'react/self-closing-comp': 'off',
+    'react/jsx-closing-tag-location': 'off',
     'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     'import/prefer-default-export': 'off',
@@ -82,6 +75,7 @@ module.exports = {
     'linebreak-style': 'off',
     'object-curly-newline': 'off',
     'prefer-arrow-callback': 'off',
+    'no-case-declarations': 'off',
     '@typescript-eslint/comma-dangle': 'off',
     'max-len': 'off',
     'jsx-quotes': [2, 'prefer-single'],

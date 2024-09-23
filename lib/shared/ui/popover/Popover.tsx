@@ -1,7 +1,7 @@
 import type { ReactElement, ReactNode } from 'react'
 import type { PopoverContentProps as TPopoverContentPropsBase } from '@radix-ui/react-popover'
 import * as PopoverPrimitive from '@radix-ui/react-popover'
-import { Icon } from '../icon'
+import { Icon } from '../icon/Icon'
 import { cn } from '$/shared/utils'
 
 type TAdditionalClasses = {
@@ -66,7 +66,7 @@ export const Popover = ({
           >
             {children}
             <PopoverPrimitive.Close aria-label='Close' className='size-4 outline-transparent outline-0'>
-              <Icon name='common/close' className='size-4 text-icon-blue-grey-600 cursor-pointer ' />
+              <Icon name='general/close' className='size-4 text-icon-blue-grey-600 cursor-pointer ' />
             </PopoverPrimitive.Close>
             <PopoverPrimitive.Arrow width={12} height={6} className={cn('fill-secondary-default', classes?.arrow)} />
           </PopoverPrimitive.Content>

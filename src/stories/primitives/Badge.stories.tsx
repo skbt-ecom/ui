@@ -5,14 +5,8 @@ const meta = {
   title: 'Base/Badge',
   component: Badge,
   parameters: {
-    layout: 'centered',
-    docs: {
-      description: {
-        component: 'description use example on docs'
-      }
-    }
+    layout: 'centered'
   },
-
   tags: ['autodocs']
 } satisfies Meta<typeof Badge>
 

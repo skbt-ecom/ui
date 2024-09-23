@@ -1,2 +1,3 @@
-export { mockDefaultValues, mockSchema, mockFields, type TMockSchema, type TStorybookFieldConfig } from './model/mocks'
+export { mockDefaultValues, mockSchema, mockFields, type TMockSchema } from './model/mocks'
+export * from './model/mockData'
 export { StorybookFieldsMapper, StorybookFormProvider } from './ui'

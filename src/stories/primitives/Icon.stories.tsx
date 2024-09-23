@@ -1,4 +1,4 @@
-import type { Meta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Icon } from '$/shared/ui'
 
 const meta = {
@@ -9,19 +9,20 @@ const meta = {
     layout: 'centered'
   }
 } satisfies Meta<typeof Icon>
+type Story = StoryObj<typeof Icon>
 
 export default meta
 
-export const Common = {
+export const Common: Story = {
   render: () => (
     <div className='flex gap-4'>
-      <Icon name='common/check' className='text-icon-positive-default' />
-      <Icon name='common/close' className='text-icon-negative-default' />
+      <Icon name='general/check' className='text-icon-positive-default' />
+      <Icon name='general/close' className='text-icon-negative-default' />
     </div>
   )
 }
 
-export const SovcombankLogos = {
+export const SovcombankLogos: Story = {
   render: () => (
     <div className=' gap-16 bg-color-blue-grey-300 p-6 grid grid-cols-2 rounded-md'>
       <Icon name='brandLogos/logoBlack' className='w-[192px] h-[32px]' />

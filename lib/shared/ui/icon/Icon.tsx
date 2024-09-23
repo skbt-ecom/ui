@@ -1,12 +1,12 @@
 import type { SVGProps } from 'react'
-import { SPRITES_META, type SpritesMap } from '@/sprite.gen'
+import { SPRITES_META, type SpritesMap } from './sprite.gen'
 import { cn } from '$/shared/utils'
 
 export type IconName<Key extends keyof SpritesMap> = `${Key}/${SpritesMap[Key]}`
-export type AnyIconName = { [Key in keyof SpritesMap]: IconName<Key> }[keyof SpritesMap]
+export type TAllowedIcons = { [Key in keyof SpritesMap]: IconName<Key> }[keyof SpritesMap]
 
 export interface IconProps extends SVGProps<SVGSVGElement> {
-  name: AnyIconName
+  name: TAllowedIcons
 }
 
 const getIconMeta = <Key extends keyof SpritesMap>(name: IconName<Key>) => {
@@ -35,7 +35,7 @@ export const Icon = ({ name, className, ...props }: IconProps) => {
       data-axis={axis}
       {...props}
     >
-      <use href={`./sprites/${filePath}#${iconName}`} />
+      <use href={`sprites/${filePath}#${iconName}`} />
     </svg>
   )
 }
