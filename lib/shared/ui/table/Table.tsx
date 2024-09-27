@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
-import { Heading } from '../heading'
+import { Heading } from '../Heading'
 import { ResponsiveContainer } from '../ResponsiveContainer'
 import type { TableRows, TTableClasses, TTableColumnCount } from './type'
 import { cn } from '$/shared/utils'
