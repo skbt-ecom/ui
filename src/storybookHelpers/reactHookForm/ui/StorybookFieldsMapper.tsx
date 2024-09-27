@@ -3,6 +3,7 @@ import type { Schema, TypeOf } from 'zod'
 import { EnumFieldType, type TStorybookFieldConfig } from '../model/types'
 import {
   Button,
+  CalendarControl,
   CheckboxControl,
   DadataInputControl,
   InputControl,
@@ -43,6 +44,8 @@ const renderFields = <T extends FieldValues>(fieldConfig: TStorybookFieldConfig<
       return <SelectControl name={name} label={label} control={control} optionsList={optionsList} />
     case EnumFieldType.TEXTAREA:
       return <TextareaControl name={name} label={label} control={control} />
+    case EnumFieldType.CALENDAR:
+      return <CalendarControl name={name} label={label} control={control} mode='single' />
     default:
       return null
   }

@@ -27,6 +27,7 @@ export const InputControlMask = <T extends FieldValues>({
   disabled,
   badge,
   icon,
+  swapPosition,
   ...props
 }: InputControlMaskProps<T>) => {
   const inputId = useId()
@@ -62,7 +63,7 @@ export const InputControlMask = <T extends FieldValues>({
                 }}
                 {...props}
               />
-              <FieldAttachment badge={badge} icon={icon} error={!!error?.message} classes={classes} />
+              <FieldAttachment badge={badge} icon={icon} error={!!error?.message} classes={classes} swapPosition={swapPosition} />
             </>
           </FieldWrapper>
           <MessageView

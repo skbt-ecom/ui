@@ -2,7 +2,7 @@ export interface SpritesMap {
   arrows: 'arrowCircle' | 'arrowLink' | 'arrowRight'
   brandLogos: 'logoBlack' | 'logoBusiness' | 'logoGray' | 'logoInsurance' | 'logoMain' | 'logoWhite'
   files: 'documentFilled' | 'documentOutline'
-  general: 'check' | 'close'
+  general: 'calendar' | 'check' | 'close'
   info: 'warningCircle'
 }
 export const SPRITES_META: {
@@ -91,6 +91,11 @@ export const SPRITES_META: {
   general: {
     filePath: 'general.svg',
     items: {
+      calendar: {
+        viewBox: '0 0 19 20',
+        width: 19,
+        height: 20
+      },
       check: {
         viewBox: '0 0 24 24',
         width: 800,

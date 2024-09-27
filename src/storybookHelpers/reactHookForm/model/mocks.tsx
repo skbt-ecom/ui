@@ -1,5 +1,5 @@
+import { isValid, parse } from 'date-fns'
 import { z } from 'zod'
-import { MOCK_RADIO_GROUP, MOCK_SELECT_OPTIONS } from './mockData'
 import { EnumFieldType, type TStorybookFieldConfig } from './types'
 import { VALIDATION_MESSAGES } from '$/shared/validation'
 
@@ -11,54 +11,82 @@ export const mockToastMessage = (values: string) => (
 )
 
 export const mockSchema = z.object({
-  city: z.string({ required_error: VALIDATION_MESSAGES.REQUIRED }).min(3, `${VALIDATION_MESSAGES.MIN_LENGTH} 3`),
-  phone: z.string({ required_error: VALIDATION_MESSAGES.REQUIRED }).min(7, `${VALIDATION_MESSAGES.MIN_LENGTH} 7`),
-  fio: z.string({ required_error: VALIDATION_MESSAGES.REQUIRED }),
-  condition: z.literal<boolean>(true, { errorMap: () => ({ message: VALIDATION_MESSAGES.REQUIRED }) }),
-  sex: z.string().min(2, VALIDATION_MESSAGES.REQUIRED),
-  percent: z.literal<boolean>(true, { errorMap: () => ({ message: VALIDATION_MESSAGES.REQUIRED }) }),
-  months: z.string().or(z.array(z.string())),
-  description: z.string().min(3, `${VALIDATION_MESSAGES.MIN_LENGTH} 3`)
+  // city: z.string({ required_error: VALIDATION_MESSAGES.REQUIRED }).min(3, `${VALIDATION_MESSAGES.MIN_LENGTH} 3`),
+  // phone: z.string({ required_error: VALIDATION_MESSAGES.REQUIRED }).min(7, `${VALIDATION_MESSAGES.MIN_LENGTH} 7`),
+  // fio: z.string({ required_error: VALIDATION_MESSAGES.REQUIRED }),
+  // condition: z.literal<boolean>(true, { errorMap: () => ({ message: VALIDATION_MESSAGES.REQUIRED }) }),
+  // sex: z.string().min(2, VALIDATION_MESSAGES.REQUIRED),
+  // percent: z.literal<boolean>(true, { errorMap: () => ({ message: VALIDATION_MESSAGES.REQUIRED }) }),
+  // months: z.string().or(z.array(z.string())),
+  description: z.string().min(3, `${VALIDATION_MESSAGES.MIN_LENGTH} 3`),
+  birthday: z
+    .string()
+    .length(10, { message: VALIDATION_MESSAGES.INVALID_DATE })
+    .superRefine((val, ctx) => {
+      const [day, month, year] = val?.split('.') ?? ''
+      const parsed = parse(`${day}/${month}/${year}`, 'dd/MM/yyyy', new Date())
+
+      if (!isValid(parsed)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: VALIDATION_MESSAGES.INVALID_DATE
+        })
+      }
+
+      if (new Date().getTime() < new Date(parsed).getTime()) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: VALIDATION_MESSAGES.FUTURE_DATE_NOT_ALLOWED
+        })
+      }
+    })
 })
 
 export type TMockSchema = z.infer<typeof mockSchema>
 export const mockDefaultValues: TMockSchema = {
-  city: '',
-  phone: '',
-  fio: '',
-  condition: true,
-  sex: '',
-  percent: true,
-  months: '',
-  description: ''
+  // city: '',
+  // phone: '',
+  // fio: '',
+  // condition: true,
+  // sex: '',
+  // percent: true,
+  // months: '',
+  description: '',
+  birthday: '26.09.2024'
 }
 
 export const mockFields: TStorybookFieldConfig<TMockSchema>[] = [
-  { name: 'city', label: 'Город', fieldType: EnumFieldType.INPUT },
-  { name: 'phone', label: 'Номер телефона', fieldType: EnumFieldType.MASK, format: '# (###) ###-##-##' },
-  { name: 'fio', label: 'ФИО', fieldType: EnumFieldType.DADATA },
-  {
-    name: 'condition',
-    label:
-      'Выражаю согласие на обработку персональных данных и подтверждаю, что ознакомлен с Политикой обработки персональных данных',
-    fieldType: EnumFieldType.CHECKBOX
-  },
-  {
-    name: 'sex',
-    groupName: 'Выберите пол',
-    radioItemsGroup: MOCK_RADIO_GROUP,
-    fieldType: EnumFieldType.RADIO
-  },
-  { name: 'percent', label: 'Увеличенный процент', fieldType: EnumFieldType.SWITCH },
-  {
-    name: 'months',
-    label: 'Выберите месяц',
-    fieldType: EnumFieldType.SELECT,
-    optionsList: MOCK_SELECT_OPTIONS
-  },
+  // { name: 'city', label: 'Город', fieldType: EnumFieldType.INPUT },
+  // { name: 'phone', label: 'Номер телефона', fieldType: EnumFieldType.MASK, format: '# (###) ###-##-##' },
+  // { name: 'fio', label: 'ФИО', fieldType: EnumFieldType.DADATA },
+  // {
+  //   name: 'condition',
+  //   label:
+  //     'Выражаю согласие на обработку персональных данных и подтверждаю, что ознакомлен с Политикой обработки персональных данных',
+  //   fieldType: EnumFieldType.CHECKBOX
+  // },
+  // {
+  //   name: 'sex',
+  //   groupName: 'Выберите пол',
+  //   radioItemsGroup: MOCK_RADIO_GROUP,
+  //   fieldType: EnumFieldType.RADIO
+  // },
+  // { name: 'percent', label: 'Увеличенный процент', fieldType: EnumFieldType.SWITCH },
+  // {
+  //   name: 'months',
+  //   label: 'Выберите месяц',
+  //   fieldType: EnumFieldType.SELECT,
+  //   optionsList: MOCK_SELECT_OPTIONS
+  // },
   {
     name: 'description',
     label: 'Описание к блоку',
     fieldType: EnumFieldType.TEXTAREA
+  },
+  {
+    name: 'birthday',
+    label: 'Дата рождения',
+    fieldType: EnumFieldType.CALENDAR,
+    mode: 'single'
   }
 ]

@@ -1,4 +1,4 @@
-import { type ReactElement, type ReactNode } from 'react'
+import * as React from 'react'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import type { TAccordionHeaderClasses, TAccordionRootClasses } from './model/types'
 import { AccordionHeader } from './ui/AccordionHeader'
@@ -9,8 +9,8 @@ import { cn } from '$/shared/utils'
  * Пример defaultValue={['Заголовок аккордеона 1', 'Заголовок аккордеона 2']}
  */
 export interface IAccordionProps {
-  children: ReactNode
-  label: string | ReactElement
+  children: React.ReactNode
+  label: string | React.ReactElement
   classes?: Partial<TAccordionHeaderClasses> & Partial<TAccordionRootClasses>
   defaultOpen?: string[]
 }

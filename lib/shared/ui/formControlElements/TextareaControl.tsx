@@ -9,7 +9,7 @@ type TTextareaClasses = Partial<TAdditionalInputClassesWithAttachment> & {
   scrollArea: string
 }
 
-export interface TextareaControlProps<T extends FieldValues> extends TControlledInputProps<T>, TTextareaCommonProps {
+export interface ITextareaControlProps<T extends FieldValues> extends TControlledInputProps<T>, TTextareaCommonProps {
   classes?: Partial<TTextareaClasses>
 }
 
@@ -21,10 +21,11 @@ export const TextareaControl = <T extends FieldValues>({
   classes,
   badge,
   icon,
+  swapPosition,
   disabled,
   placeholder,
   ...props
-}: TextareaControlProps<T>) => {
+}: ITextareaControlProps<T>) => {
   const inputId = useId()
   return (
     <Controller
@@ -47,7 +48,14 @@ export const TextareaControl = <T extends FieldValues>({
               >
                 {label}
               </label>
-              <FieldAttachment badge={badge} icon={icon} error={!!error?.message} classes={classes} isTextarea />
+              <FieldAttachment
+                badge={badge}
+                icon={icon}
+                error={!!error?.message}
+                classes={classes}
+                isTextarea
+                swapPosition={swapPosition}
+              />
             </div>
 
             <div className={cn('w-full flex items-start px-4 py-2', classes?.scrollArea)}>

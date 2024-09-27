@@ -79,18 +79,12 @@ const tailwindConfig: Config = {
             backgroundPosition: '100% 100%'
           }
         }
-        // skeleton: {
-        //   '100%': {
-        //     backgroundPositionX: '-200%'
-        //   }
-        // }
       },
       animation: {
         slideDown: 'slideDown 0.3s cubic-bezier(0.87, 0, 0.13, 1)',
         slideUp: 'slideUp 0.3s cubic-bezier(0.87, 0, 0.13, 1)',
         'scale-in': 'scale-in 0.3s ease-in-out',
         'progress-loader': 'progress-loader 250s linear infinite'
-        // skeleton: 'skeleton 1.3s linear infinite'
       }
     }
   },

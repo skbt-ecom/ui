@@ -1,5 +1,6 @@
 import type { FieldValues } from 'react-hook-form'
 import type {
+  ICalendarControlProps,
   ICheckboxControlProps,
   IDadataInputControlProps,
   InputControlMaskProps,
@@ -7,7 +8,7 @@ import type {
   IRadioControlProps,
   ISelectControlProps,
   ISwitchControlProps,
-  TextareaControlProps
+  ITextareaControlProps
 } from '$/shared/ui/formControlElements'
 
 export enum EnumFieldType {
@@ -18,7 +19,8 @@ export enum EnumFieldType {
   RADIO = 'radio',
   SWITCH = 'switch',
   SELECT = 'select',
-  TEXTAREA = 'textarea'
+  TEXTAREA = 'textarea',
+  CALENDAR = 'calendar'
 }
 
 type TControlledInput<T extends FieldValues> = Omit<InputControlProps<T>, 'control'> & { fieldType: EnumFieldType.INPUT }
@@ -41,8 +43,12 @@ type TControlledInputSelect<T extends FieldValues> = Omit<ISelectControlProps<T>
   fieldType: EnumFieldType.SELECT
 }
 
-type TControlledInputTextarea<T extends FieldValues> = Omit<TextareaControlProps<T>, 'control'> & {
+type TControlledInputTextarea<T extends FieldValues> = Omit<ITextareaControlProps<T>, 'control'> & {
   fieldType: EnumFieldType.TEXTAREA
+}
+
+type TControlledInputCalendar<T extends FieldValues> = Omit<ICalendarControlProps<T>, 'control'> & {
+  fieldType: EnumFieldType.CALENDAR
 }
 export type TStorybookFieldConfig<T extends FieldValues> =
   | TControlledInputMask<T>
@@ -53,3 +59,4 @@ export type TStorybookFieldConfig<T extends FieldValues> =
   | TControlledInputSwitch<T>
   | TControlledInputSelect<T>
   | TControlledInputTextarea<T>
+  | TControlledInputCalendar<T>

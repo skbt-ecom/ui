@@ -29,6 +29,7 @@ export const DadataInputControl = <T extends FieldValues>({
   dadataBaseUrl = 'cache',
   badge,
   icon,
+  swapPosition,
   ...props
 }: IDadataInputControlProps<T>) => {
   const { setQuery, suggestionsOptions } = useDadata(dadataType, dadataBaseUrl)
@@ -74,7 +75,13 @@ export const DadataInputControl = <T extends FieldValues>({
                       {suggestionsOptions[0]?.value}
                     </span>
                   )} */}
-                  <FieldAttachment badge={badge} icon={icon} error={!!error?.message} classes={classes} />
+                  <FieldAttachment
+                    badge={badge}
+                    icon={icon}
+                    error={!!error?.message}
+                    classes={classes}
+                    swapPosition={swapPosition}
+                  />
                 </>
               </FieldWrapper>
               <MessageView
