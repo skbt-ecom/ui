@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 import { Controller, type FieldValues } from 'react-hook-form'
 import type { TAdditionalInputClassesWithAttachment, TControlledInputProps, TInputCommonProps } from './model'
