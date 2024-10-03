@@ -1,4 +1,6 @@
-import { useId } from 'react'
+'use client'
+
+import * as React from 'react'
 import { Controller, type FieldValues } from 'react-hook-form'
 import { PatternFormat } from 'react-number-format'
 import type { TAdditionalInputClassesWithAttachment, TControlledInputProps, TInputCommonProps } from './model'
@@ -30,7 +32,7 @@ export const InputControlMask = <T extends FieldValues>({
   swapPosition,
   ...props
 }: InputControlMaskProps<T>) => {
-  const inputId = useId()
+  const inputId = React.useId()
   return (
     <Controller
       control={control}

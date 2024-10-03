@@ -1,4 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+'use client'
+
+import * as React from 'react'
 
 export const debounce = <Params extends unknown[]>(
   callback: (...args: Params) => void,
@@ -14,18 +16,18 @@ export const debounce = <Params extends unknown[]>(
 
 export const useDebounceCallback = <Params extends unknown[], Return>(callback: (...args: Params) => Return, delay: number) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const debounced = useMemo(() => debounce(callback, delay), [delay])
+  const debounced = React.useMemo(() => debounce(callback, delay), [delay])
 
   return debounced
 }
 
 export const useDebounceValue = <Value>(value: Value, delay: number) => {
-  const previousValueRef = useRef(value)
-  const [debouncedValue, setDebounceValue] = useState(value)
+  const previousValueRef = React.useRef(value)
+  const [debouncedValue, setDebounceValue] = React.useState(value)
 
   const debouncedSetState = useDebounceCallback(setDebounceValue, delay)
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (previousValueRef.current === value) return
     debouncedSetState(value)
     previousValueRef.current = value

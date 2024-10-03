@@ -1,9 +1,11 @@
-import type { ReactElement } from 'react'
+'use client'
+
+import * as React from 'react'
 import type { TFieldWrapperClasses } from '../model'
 import { cn } from '$/shared/utils'
 
 interface IFieldWrapperProps<V> {
-  children: ReactElement
+  children: React.ReactElement
   label: string
   fieldId: string
   value: V

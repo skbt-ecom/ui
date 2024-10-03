@@ -1,3 +1,5 @@
+'use client'
+
 import { Controller, type FieldValues } from 'react-hook-form'
 import { Indicator, Item, Root } from '@radix-ui/react-radio-group'
 import { cva, type VariantProps } from 'class-variance-authority'

@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import * as React from 'react'
 import { format } from 'date-fns'
-import { type TCalendarMode } from '../../CalendarControl'
+import { type TCalendarMode } from '../../Calendar'
 
 export type TControlledDate = {
   day: number
@@ -16,7 +16,7 @@ type TDateSetter = {
 }
 
 export const useDatePicker = () => {
-  const [controlledDate, setControlledDate] = useState<TControlledDate>({
+  const [controlledDate, setControlledDate] = React.useState<TControlledDate>({
     day: new Date().getDate(),
     month: new Date().getMonth(),
     year: new Date().getFullYear()

@@ -4,8 +4,8 @@ import { Controller, type FieldValues, useFormContext } from 'react-hook-form'
 import { PatternFormat } from 'react-number-format'
 import { ru } from 'date-fns/locale'
 import { AnimatePresence, motion } from 'framer-motion'
-import type { TAdditionalInputClassesWithAttachment, TControlledInputProps } from '../model'
-import { FieldAttachment, FieldContainer, FieldWrapper, MessageView } from '../ui'
+import { type TAdditionalInputClassesWithAttachment, type TControlledInputProps } from '../formControlElements/model'
+import { FieldAttachment, FieldContainer, FieldWrapper, MessageView } from '../formControlElements/ui'
 import { calendarAnimation } from './model/animation'
 import { dayPickerClasses } from './model/classes'
 import { useCalendarDropdowns, useDatePicker } from './model/hooks'
@@ -27,7 +27,7 @@ function isSingleMode(props: TCalendarCommonProps): props is PropsSingle {
   return props.mode === 'single'
 }
 
-export type ICalendarControlProps<T extends FieldValues> = TControlledInputProps<T> &
+export type ICalendarProps<T extends FieldValues> = TControlledInputProps<T> &
   TCalendarCommonProps &
   DayPickerProps & {
     maskFormat?: string
@@ -38,7 +38,7 @@ export type ICalendarControlProps<T extends FieldValues> = TControlledInputProps
     onClickIcon?: (...args: unknown[]) => unknown
   }
 
-export const CalendarControl = <T extends FieldValues>(props: ICalendarControlProps<T>) => {
+export const Calendar = <T extends FieldValues>(props: ICalendarProps<T>) => {
   const {
     control,
     label,

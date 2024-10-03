@@ -1,4 +1,6 @@
-import { useId } from 'react'
+'use client'
+
+import * as React from 'react'
 import { Controller, type FieldValues } from 'react-hook-form'
 import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions } from '@headlessui/react'
 import type { TAdditionalInputClassesWithAttachment, TControlledInputProps, TInputCommonProps } from '../model'
@@ -33,7 +35,7 @@ export const DadataInputControl = <T extends FieldValues>({
   ...props
 }: IDadataInputControlProps<T>) => {
   const { setQuery, suggestionsOptions } = useDadata(dadataType, dadataBaseUrl)
-  const inputId = useId()
+  const inputId = React.useId()
   // TODO: Пофиксить при нажатие на enter очищается инпут, если нет опшенов
 
   return (

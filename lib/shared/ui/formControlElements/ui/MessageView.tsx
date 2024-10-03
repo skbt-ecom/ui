@@ -1,3 +1,5 @@
+'use client'
+
 import type { FieldError } from 'react-hook-form'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '$/shared/utils'

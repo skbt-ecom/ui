@@ -1,4 +1,6 @@
-import { type ReactElement } from 'react'
+'use client'
+
+import * as React from 'react'
 import type { TooltipContentProps } from '@radix-ui/react-tooltip'
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
 import { cn } from '$/shared/utils'
@@ -18,8 +20,8 @@ export interface IHintContentProps extends TooltipContentProps {
 }
 
 export interface IHintProps extends IHintContentProps {
-  triggerElement: ReactElement
-  children: ReactElement | string
+  triggerElement: React.ReactElement
+  children: React.ReactElement | string
   classes?: Partial<TAdditionalClasses>
 }
 

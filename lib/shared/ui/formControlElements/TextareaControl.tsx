@@ -1,4 +1,6 @@
-import { useId } from 'react'
+'use client'
+
+import * as React from 'react'
 import { Controller, type FieldValues } from 'react-hook-form'
 import type { TAdditionalInputClassesWithAttachment, TControlledInputProps, TTextareaCommonProps } from './model'
 import { FieldAttachment, FieldContainer, MessageView } from './ui'
@@ -26,7 +28,7 @@ export const TextareaControl = <T extends FieldValues>({
   placeholder,
   ...props
 }: ITextareaControlProps<T>) => {
-  const inputId = useId()
+  const inputId = React.useId()
   return (
     <Controller
       control={control}

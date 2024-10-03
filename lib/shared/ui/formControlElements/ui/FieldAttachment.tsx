@@ -1,3 +1,6 @@
+'use client'
+
+import * as React from 'react'
 import { Badge } from '../../Badge'
 import { Icon } from '../../icon/Icon'
 import type { TFieldAttachmentClasses } from '../model/classes-types'

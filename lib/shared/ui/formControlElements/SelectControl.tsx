@@ -1,3 +1,5 @@
+'use client'
+
 import { Controller, type FieldValues } from 'react-hook-form'
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
 import { Icon } from '../icon'

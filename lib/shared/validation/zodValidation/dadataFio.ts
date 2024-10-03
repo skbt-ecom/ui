@@ -14,7 +14,7 @@ const formattedFio = (value: string) => {
   }
 }
 
-export const zodDadataFio = z
+export const zodDadataFioValidate = z
   .string({ invalid_type_error: 'Обязательно к заполнению', required_error: 'Обязательно к заполнению' })
   .superRefine((value, ctx) => {
     if (!RgxUnicode.test(value)) {

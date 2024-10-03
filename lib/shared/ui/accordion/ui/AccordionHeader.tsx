@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 import { Header, Trigger } from '@radix-ui/react-accordion'
 import { Icon } from '../../icon/Icon'

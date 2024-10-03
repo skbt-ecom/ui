@@ -1,4 +1,4 @@
-export { CalendarControl, type ICalendarControlProps } from './CalendarControl'
+export { Calendar, type ICalendarProps } from './Calendar'
 // import { useCallback, useId, useRef } from 'react'
 // import { DayPicker, type DayPickerProps, type NavProps, type PropsMulti, type PropsSingle } from 'react-day-picker'
 // import { Controller, type FieldValues, useFormContext } from 'react-hook-form'

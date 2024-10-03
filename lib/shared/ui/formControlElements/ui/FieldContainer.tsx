@@ -1,4 +1,6 @@
-import type { ReactNode } from 'react'
+'use client'
+
+import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import type { TFieldContainerClasses } from '../model/classes-types'
 import { cn } from '$/shared/utils'
@@ -26,7 +28,7 @@ export type TFieldContainerConfig = VariantProps<typeof fieldContainerConfig>
 
 interface IFieldContainerProps extends TFieldContainerConfig {
   classes?: Partial<TFieldContainerClasses>
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export const FieldContainer = ({ size, intent, classes, children }: IFieldContainerProps) => {
