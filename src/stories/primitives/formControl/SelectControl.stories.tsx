@@ -1,7 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { MOCK_SELECT_OPTIONS, mockDefaultValues, mockSchema, StorybookFormProvider } from '@/storybookHelpers'
-import { SelectControl } from '$/shared/ui'
-import { type ISelectOption } from '$/shared/ui'
+import { type ISelectOption, SelectControl } from '$/shared/ui'
 
 const meta = {
   title: 'CONTROLLED FORM UI/SelectControl',

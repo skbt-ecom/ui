@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { mockDefaultValues, mockSchema, StorybookFormProvider } from '@/storybookHelpers'
-import { Icon } from '$/index'
+import { Icon } from '$/shared/ui'
 import { Calendar } from '$/shared/ui/calendar'
 
 const meta = {

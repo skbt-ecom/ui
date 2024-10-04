@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { mockDefaultValues, mockSchema, StorybookFormProvider } from '@/storybookHelpers'
-import { CalendarControl, Icon } from '$/index'
+import { CalendarControl, Icon } from '$/shared/ui'
 
 const meta = {
   title: 'CONTROLLED FORM UI/CalendarControl',
