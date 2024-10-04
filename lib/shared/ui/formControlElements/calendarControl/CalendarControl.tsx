@@ -44,8 +44,8 @@ export const CalendarControl = <T extends FieldValues>({
   ...props
 }: ICalendarControlProps<T>) => {
   const inputId = React.useId()
-  const { watch, setValue } = useFormContext()
-  const calendarValue = watch(props.name)
+  const methods = useFormContext()
+  const calendarValue = methods.watch(props.name)
 
   const calendarWrapperRef = React.useRef<HTMLDivElement | null>(null)
   const {
@@ -141,7 +141,7 @@ export const CalendarControl = <T extends FieldValues>({
                     onBlur={(event) => {
                       onBlurInput(event.target.value, onChange)
                       if (!event.target.value) {
-                        setValue(props.name as string, '')
+                        methods.setValue(props.name as string, '')
                       }
                     }}
                   />
