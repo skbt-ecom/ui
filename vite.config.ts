@@ -35,6 +35,7 @@ export default defineConfig({
     }
   },
   build: {
+    sourcemap: true,
     copyPublicDir: true,
     // lib: {
     //   entry: resolve(__dirname, './lib/index.ts'),
@@ -43,7 +44,7 @@ export default defineConfig({
     //   fileName: (format) => `ui.${format}.js`
     // },
     lib: {
-      entry: [resolve(__dirname, './lib/server.ts'), resolve(__dirname, './lib/client.ts')],
+      entry: [resolve(__dirname, './lib/hybrid.ts'), resolve(__dirname, './lib/client.ts')],
       formats: ['es'],
       fileName: (_, name) => {
         return `${name}.js`
@@ -51,6 +52,13 @@ export default defineConfig({
     },
     rollupOptions: {
       external: Object.keys(dependencies),
+      onwarn(warning, defaultHandler) {
+        if (warning.code === 'SOURCEMAP_ERROR') {
+          return
+        }
+
+        defaultHandler(warning)
+      },
       output: {
         globals: {
           react: 'React',

@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react'
 import { SPRITES_META, type SpritesMap } from './sprite.gen'
 import { cn } from '$/shared/utils'
