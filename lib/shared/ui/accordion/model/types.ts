@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type * as React from 'react'
 
 export type TAccordionHeaderClasses = {
   trigger: string
@@ -16,5 +16,5 @@ export type TAccordionRootClasses = {
 
 export interface IAccordionItem {
   label: string
-  content: ReactNode
+  content: React.ReactNode
 }

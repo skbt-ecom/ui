@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { mockDefaultValues, mockSchema, StorybookFormProvider } from '@/storybookHelpers'
-import { Icon, InputSliderControl } from '$/shared/ui'
+import { InputSliderControl } from '$/shared/ui'
 
 const meta = {
   title: 'CONTROLLED FORM UI/InputSliderControl',
@@ -53,7 +53,7 @@ export const WithIconSlider: Story = {
   args: {
     name: 'term',
     label: 'Город',
-    icon: <Icon name='general/edit' className='text-icon-blue-grey-600 size-[19px] focus:text-icon-blue-grey-800' />,
+    // icon: <Icon name='general/edit' className='text-icon-blue-grey-600 size-[19px] focus:text-icon-blue-grey-800' />,
     size: 'md',
     min: 1,
     max: 12,

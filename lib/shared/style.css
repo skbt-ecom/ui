@@ -43,6 +43,10 @@
     background-size: 200% 100%;
     animation: 1.5s shine linear infinite;
   }
+
+  .rdp-vhidden {
+    @apply hidden;
+  }
 }
 
 * {

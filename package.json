@@ -1,18 +1,18 @@
 {
   "name": "@scbt-ecom/ui",
-  "version": "0.0.20",
+  "version": "0.0.35",
   "type": "module",
   "exports": {
-    ".": {
-      "import": "./dist/ui.es.js",
-      "require": "./dist/ui.umd.cjs",
-      "types": "./dist/index.d.ts"
+    "./dist/client/styles.css": "./dist/client/styles.css",
+    "./client": {
+      "import": "./dist/client.js",
+      "require": "./dist/client.js"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./hybrid": {
+      "import": "./dist/hybrid.js",
+      "require": "./dist/hybrid.js"
+    }
   },
-  "main": "./dist/ui.umd.cjs",
-  "module": "./dist/ui.es.js",
-  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -36,7 +36,9 @@
     "react-dom": "^18.3.1"
   },
   "dependencies": {
-    "@storybook/builder-vite": "^8.2.6"
+    "@storybook/builder-vite": "^8.2.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
@@ -76,6 +78,7 @@
     "chromatic": "^11.7.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^18.0.0",
@@ -94,10 +97,12 @@
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-unused-imports": "^3.2.0",
+    "framer-motion": "^11.5.6",
     "husky": "^9.1.4",
     "jsdom": "^24.1.1",
     "postcss": "^8.4.40",
     "react": "^18.3.1",
+    "react-day-picker": "^9.1.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.2",
     "react-hot-toast": "^2.4.1",

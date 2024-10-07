@@ -1,4 +1,6 @@
-import { useId } from 'react'
+'use client'
+
+import * as React from 'react'
 import { Controller, type FieldValues } from 'react-hook-form'
 import * as SwitchPrimitive from '@radix-ui/react-switch'
 import { type TControlledInputPrimitiveProps } from './model'
@@ -27,7 +29,7 @@ export const SwitchControl = <T extends FieldValues>({
   label,
   ...props
 }: ISwitchControlProps<T>) => {
-  const inputId = useId()
+  const inputId = React.useId()
   return (
     <Controller
       name={props.name}

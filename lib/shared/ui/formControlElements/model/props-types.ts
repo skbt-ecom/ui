@@ -1,9 +1,9 @@
-import type { ComponentProps, ReactElement } from 'react'
+import type * as React from 'react'
 import type { Control, FieldValues, Path } from 'react-hook-form'
 import type { TFieldContainerConfig } from '../ui/FieldContainer'
 
-export type TInputCommonProps = Omit<ComponentProps<'input'>, 'name' | 'placeholder' | 'size' | 'type' | 'defaultValue'>
-export type TTextareaCommonProps = Omit<ComponentProps<'textarea'>, 'name' | 'size' | 'type' | 'defaultValue'>
+export type TInputCommonProps = Omit<React.ComponentProps<'input'>, 'name' | 'placeholder' | 'size' | 'type' | 'defaultValue'>
+export type TTextareaCommonProps = Omit<React.ComponentProps<'textarea'>, 'name' | 'size' | 'type' | 'defaultValue'>
 
 type TFieldControlledProps<T extends FieldValues> = {
   name: Path<T>
@@ -15,7 +15,8 @@ type TFieldControlledProps<T extends FieldValues> = {
 export type TFieldContainerSize = 'sm' | 'md' | 'lg' | 'full'
 export type TFieldAttachment = {
   badge?: string
-  icon?: ReactElement
+  icon?: React.ReactElement
+  swapPosition?: boolean
 }
 
 // # Required props on controlled INPUTS - [maskInput, baseInput, dadata]

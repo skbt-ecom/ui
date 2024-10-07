@@ -15,7 +15,6 @@ export default defineConfig({
       root: 'static',
       group: true,
       output: './public/sprites',
-      // fileName: '{name}.{hash:8}.svg',
       resetColors: {
         exclude: [/^brandLogos/],
         replaceUnknown: 'currentColor'
@@ -36,15 +35,30 @@ export default defineConfig({
     }
   },
   build: {
+    sourcemap: true,
     copyPublicDir: true,
+    // lib: {
+    //   entry: resolve(__dirname, './lib/index.ts'),
+    //   name: 'ui',
+    //   formats: ['es', 'umd'],
+    //   fileName: (format) => `ui.${format}.js`
+    // },
     lib: {
-      entry: resolve(__dirname, './lib/index.ts'),
-      name: 'ui',
-      formats: ['es', 'umd'],
-      fileName: (format) => `ui.${format}.js`
+      entry: [resolve(__dirname, './lib/hybrid.ts'), resolve(__dirname, './lib/client.ts')],
+      formats: ['es'],
+      fileName: (_, name) => {
+        return `${name}.js`
+      }
     },
     rollupOptions: {
       external: Object.keys(dependencies),
+      onwarn(warning, defaultHandler) {
+        if (warning.code === 'SOURCEMAP_ERROR') {
+          return
+        }
+
+        defaultHandler(warning)
+      },
       output: {
         globals: {
           react: 'React',

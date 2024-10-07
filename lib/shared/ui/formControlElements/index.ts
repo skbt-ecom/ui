@@ -7,4 +7,5 @@ export { RadioControl, type IRadioControlProps, type IRadioGroupOption } from '.
 export { SwitchControl, type ISwitchControlProps } from './SwitchControl'
 export { SelectControl, type ISelectControlProps, type ISelectOption } from './SelectControl'
 export { InputSliderControl, type InputSliderControlProps } from './InputSliderControl'
-export { TextareaControl, type TextareaControlProps } from './TextareaControl'
+export { TextareaControl, type ITextareaControlProps } from './TextareaControl'
+export { CalendarControl, type ICalendarControlProps } from './calendarControl'

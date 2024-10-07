@@ -1,3 +1,6 @@
+'use client'
+
+import * as React from 'react'
 import { Badge } from '../../Badge'
 import { Icon } from '../../icon/Icon'
 import type { TFieldAttachmentClasses } from '../model/classes-types'
@@ -8,10 +11,30 @@ interface IFieldAttachmentProps extends TFieldAttachment {
   classes?: Partial<TFieldAttachmentClasses>
   error?: boolean
   isTextarea?: boolean
+  swapPosition?: boolean
+  onClickIcon?: (...args: unknown[]) => unknown
+  onKeyDownIcon?: (event: React.KeyboardEvent) => unknown
   isSlider?: boolean
 }
 
-export const FieldAttachment = ({ badge, isSlider, icon, error, isTextarea = false, classes }: IFieldAttachmentProps) => {
+export const FieldAttachment = ({
+  badge,
+  isSlider,
+  icon,
+  error,
+  isTextarea = false,
+  classes,
+  swapPosition,
+  onClickIcon,
+  onKeyDownIcon
+}: IFieldAttachmentProps) => {
+  const interactiveIconAttr = (onClickIcon || onKeyDownIcon) && {
+    role: 'button',
+    tabIndex: 0,
+    onClick: onClickIcon,
+    onKeyDown: onKeyDownIcon
+  }
+
   return (
     <>
       {error ? (
@@ -19,9 +42,17 @@ export const FieldAttachment = ({ badge, isSlider, icon, error, isTextarea = fal
       ) : (
         <>
           {(badge || icon) && (
-            <span className={cn('flex items-center gap-4 mr-4', { 'm-0': isTextarea }, classes?.attachmentWrapper)}>
+            <div
+              className={cn(
+                'flex items-center gap-4 mr-4',
+                { 'm-0': isTextarea },
+                { 'flex-row-reverse': swapPosition },
+                classes?.attachmentWrapper
+              )}
+            >
               {icon && (
                 <span
+                  {...interactiveIconAttr}
                   className={cn(
                     'size-6 flex justify-center items-center',
                     { 'size-5': isTextarea },
@@ -33,7 +64,7 @@ export const FieldAttachment = ({ badge, isSlider, icon, error, isTextarea = fal
                 </span>
               )}
               {badge && <Badge className={cn('bg-color-positive', classes?.badge)}>{badge}</Badge>}
-            </span>
+            </div>
           )}
         </>
       )}
