@@ -18,7 +18,9 @@ export const mockSchema = z.object({
   sex: z.string().min(2, VALIDATION_MESSAGES.REQUIRED),
   percent: z.literal<boolean>(true, { errorMap: () => ({ message: VALIDATION_MESSAGES.REQUIRED }) }),
   months: z.string().or(z.array(z.string())),
-  description: z.string().min(3, `${VALIDATION_MESSAGES.MIN_LENGTH} 3`)
+  creditSum: z.number().optional(),
+  description: z.string().min(3, `${VALIDATION_MESSAGES.MIN_LENGTH} 3`),
+  credit: z.number().or(z.string())
 })
 
 export type TMockSchema = z.infer<typeof mockSchema>
@@ -30,7 +32,9 @@ export const mockDefaultValues: TMockSchema = {
   sex: '',
   percent: true,
   months: '',
-  description: ''
+  description: '',
+  creditSum: undefined,
+  credit: 100_000
 }
 
 export const mockFields: TStorybookFieldConfig<TMockSchema>[] = [
@@ -60,5 +64,13 @@ export const mockFields: TStorybookFieldConfig<TMockSchema>[] = [
     name: 'description',
     label: 'Описание к блоку',
     fieldType: EnumFieldType.TEXTAREA
+  },
+  {
+    name: 'credit',
+    label: 'Сумма кредита',
+    fieldType: EnumFieldType.CREDIT,
+    max: 300_000,
+    min: 40_000,
+    variant: 'credit'
   }
 ]

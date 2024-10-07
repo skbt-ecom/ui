@@ -8,9 +8,10 @@ interface IFieldAttachmentProps extends TFieldAttachment {
   classes?: Partial<TFieldAttachmentClasses>
   error?: boolean
   isTextarea?: boolean
+  isSlider?: boolean
 }
 
-export const FieldAttachment = ({ badge, icon, error, isTextarea = false, classes }: IFieldAttachmentProps) => {
+export const FieldAttachment = ({ badge, isSlider, icon, error, isTextarea = false, classes }: IFieldAttachmentProps) => {
   return (
     <>
       {error ? (
@@ -20,7 +21,14 @@ export const FieldAttachment = ({ badge, icon, error, isTextarea = false, classe
           {(badge || icon) && (
             <span className={cn('flex items-center gap-4 mr-4', { 'm-0': isTextarea }, classes?.attachmentWrapper)}>
               {icon && (
-                <span className={cn('size-6 flex justify-center items-center', { 'size-5': isTextarea }, classes?.icon)}>
+                <span
+                  className={cn(
+                    'size-6 flex justify-center items-center',
+                    { 'size-5': isTextarea },
+                    { 'group-focus-within:[&_svg]:text-icon-blue-grey-800': isSlider },
+                    classes?.icon
+                  )}
+                >
                   {icon}
                 </span>
               )}

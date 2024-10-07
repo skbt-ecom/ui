@@ -7,6 +7,7 @@ import {
   DadataInputControl,
   InputControl,
   InputControlMask,
+  InputSliderControl,
   RadioControl,
   SelectControl,
   SwitchControl,
@@ -43,6 +44,8 @@ const renderFields = <T extends FieldValues>(fieldConfig: TStorybookFieldConfig<
       return <SelectControl name={name} label={label} control={control} optionsList={optionsList} />
     case EnumFieldType.TEXTAREA:
       return <TextareaControl name={name} label={label} control={control} />
+    case EnumFieldType.CREDIT:
+      return <InputSliderControl min={40000} max={5000000} variant='credit' name={name} label={label} control={control} />
     default:
       return null
   }
