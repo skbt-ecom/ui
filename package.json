@@ -1,9 +1,9 @@
 {
   "name": "@scbt-ecom/ui",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "type": "module",
   "exports": {
-    "./dist/style.css": "./dist/style.css",
+    "./dist/client/styles.css": "./dist/client/styles.css",
     "./client": {
       "import": "./dist/client.js",
       "require": "./dist/client.js"
