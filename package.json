@@ -1,16 +1,16 @@
 {
   "name": "@scbt-ecom/ui",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "type": "module",
   "exports": {
     "./client": {
-      "import": "./dist/esm/client.js",
-      "require": "./dist/cjs/client.js",
+      "import": "./dist/client.js",
+      "require": "./dist/client.js",
       "types": "./dist/types/client.d.ts"
     },
     "./server": {
-      "import": "./dist/esm/server.js",
-      "require": "./dist/cjs/server.js",
+      "import": "./dist/server.js",
+      "require": "./dist/server.js",
       "types": "./dist/types/server.d.ts"
     }
   },
