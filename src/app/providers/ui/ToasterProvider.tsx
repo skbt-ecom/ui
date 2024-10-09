@@ -3,7 +3,7 @@ import toast, { Toaster, useToasterStore } from 'react-hot-toast'
 
 export const ToasterProvider = () => {
   const { toasts } = useToasterStore()
-  const TOAST_LIMIT = 5
+  const TOAST_LIMIT = 2
 
   useEffect(() => {
     toasts
@@ -14,7 +14,7 @@ export const ToasterProvider = () => {
 
   return (
     <Toaster
-      position='top-right'
+      position='top-center'
       toastOptions={{
         duration: 5000
       }}

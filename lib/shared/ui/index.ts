@@ -15,6 +15,8 @@ export { Hint, type IHintProps } from './Hint'
 export { Popover } from './popover'
 export { ProgressBar, type IProgressBarProps } from './ProgressBar'
 export { TabsSwitcher, type ITabsSwitcherProps, type ITabRenderContent } from './TabsSwitcher'
+export { Modal } from './modal'
+export { Notification } from './notification'
 
 // # TYPOGRAPHY
 export { Heading, type IHeadingProps } from './Heading'

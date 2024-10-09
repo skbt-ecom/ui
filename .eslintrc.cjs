@@ -14,7 +14,15 @@ module.exports = {
     'airbnb-typescript',
     'plugin:@typescript-eslint/recommended'
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts', 'vitest.config.mjs', 'tailwind.config.ts', 'postcss.config.mjs', 'storybook-static'],
+  ignorePatterns: [
+    'dist',
+    '.eslintrc.cjs',
+    'vite.config.ts',
+    'vitest.config.mjs',
+    'tailwind.config.ts',
+    'postcss.config.mjs',
+    'storybook-static'
+  ],
   parser: '@typescript-eslint/parser',
   overrides: [
     {
@@ -69,6 +77,9 @@ module.exports = {
     'arrow-body-style': 'off',
     'react/destructuring-assignment': 'off',
     'operator-linebreak': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'react/jsx-curly-newline': 'off',
     'jsx-a11y/control-has-associated-label': 'off',
     'import/no-extraneous-dependencies': 'off',
     'react/require-default-props': 'off',

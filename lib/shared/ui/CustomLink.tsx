@@ -4,7 +4,7 @@ import { cn } from '../utils'
 import { Icon, type TAllowedIcons } from './icon/Icon'
 
 const customLinkConfig = cva(
-  'group desk-body-regular-l underline underline-offset-4 outline-none p-[2px] rounded-sm border border-solid border-transparent',
+  'group  underline underline-offset-4 outline-none p-[2px] rounded-sm border border-solid border-transparent',
   {
     variants: {
       intent: {
@@ -18,12 +18,17 @@ const customLinkConfig = cva(
       disabled: {
         true: '!text-color-primary-disabled pointer-events-none !border-transparent',
         false: ''
+      },
+      size: {
+        sm: 'desk-body-regular-m',
+        md: 'desk-body-regular-l'
       }
     },
     defaultVariants: {
       intent: 'blue',
       withIcon: true,
-      disabled: false
+      disabled: false,
+      size: 'sm'
     }
   }
 )
@@ -48,21 +53,22 @@ const linkArrowConfig = cva('size-6', {
 type TCustomLinkConfig = VariantProps<typeof customLinkConfig>
 
 export interface ICustomLinkProps extends TCustomLinkConfig, ComponentProps<'a'> {
-  Component: 'a'
+  Component?: 'a'
   icon?: TAllowedIcons
 }
 
 export const CustomLink = ({
-  Component,
+  Component = 'a',
   intent,
   children,
   withIcon,
   disabled,
+  size,
   icon = 'arrows/arrowLink',
   ...props
 }: ICustomLinkProps) => {
   return (
-    <Component className={cn(customLinkConfig({ intent, withIcon, disabled }))} {...props}>
+    <Component className={cn(customLinkConfig({ intent, withIcon, disabled, size }))} {...props}>
       {children}
       {withIcon && <Icon name={icon} className={cn(linkArrowConfig({ intent, disabled }))} />}
     </Component>
