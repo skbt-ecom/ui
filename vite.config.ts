@@ -54,7 +54,6 @@ export default defineConfig({
         if (warning.code === 'SOURCEMAP_ERROR') {
           return
         }
-
         defaultHandler(warning)
       },
       output: {

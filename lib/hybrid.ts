@@ -20,3 +20,4 @@ export * from './shared/utils'
 export * from './shared/validation'
 // Constants
 export * from './shared/constants'
+export * from './configs'

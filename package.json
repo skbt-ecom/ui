@@ -4,11 +4,11 @@
   "type": "module",
   "exports": {
     "./style.css": "./dist/style.css",
-    "./client.js": {
+    "./client": {
       "import": "./dist/client.js",
       "require": "./dist/client.js"
     },
-    "./hybrid.js": {
+    "./hybrid": {
       "import": "./dist/hybrid.js",
       "require": "./dist/hybrid.js"
     }
