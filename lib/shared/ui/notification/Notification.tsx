@@ -15,11 +15,11 @@ const renderToast = (props: INotificationProps) => {
   switch (props.intent) {
     case 'info':
       return toast.custom((toastOptions: Toast) => <CustomToast {...toastOptions} {...props} />, {
-        duration: props.duration ?? 501000000
+        duration: props.duration ?? 5000
       })
     case 'error':
       return toast.custom((toastOptions: Toast) => <CustomToast {...toastOptions} {...props} />, {
-        duration: props.duration ?? 1100000000
+        duration: props.duration ?? 10000
       })
     default:
       return null

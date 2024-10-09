@@ -46,9 +46,7 @@ export default defineConfig({
     lib: {
       entry: [resolve(__dirname, './lib/hybrid.ts'), resolve(__dirname, './lib/client.ts')],
       formats: ['es'],
-      fileName: (_, name) => {
-        return `${name}.js`
-      }
+      fileName: (_, name) => `${name}.js`
     },
     rollupOptions: {
       external: Object.keys(dependencies),
