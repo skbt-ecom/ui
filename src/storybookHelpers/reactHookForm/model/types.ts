@@ -2,6 +2,7 @@ import type { FieldValues } from 'react-hook-form'
 import type {
   ICheckboxControlProps,
   IDadataInputControlProps,
+  IInputControlUploaderProps,
   InputControlMaskProps,
   InputControlProps,
   IRadioControlProps,
@@ -18,7 +19,8 @@ export enum EnumFieldType {
   RADIO = 'radio',
   SWITCH = 'switch',
   SELECT = 'select',
-  TEXTAREA = 'textarea'
+  TEXTAREA = 'textarea',
+  UPLOADER = 'uploader'
 }
 
 type TControlledInput<T extends FieldValues> = Omit<InputControlProps<T>, 'control'> & { fieldType: EnumFieldType.INPUT }
@@ -44,6 +46,11 @@ type TControlledInputSelect<T extends FieldValues> = Omit<ISelectControlProps<T>
 type TControlledInputTextarea<T extends FieldValues> = Omit<TextareaControlProps<T>, 'control'> & {
   fieldType: EnumFieldType.TEXTAREA
 }
+
+type TControlledInputUploader<T extends FieldValues> = Omit<IInputControlUploaderProps<T>, 'control'> & {
+  fieldType: EnumFieldType.UPLOADER
+}
+
 export type TStorybookFieldConfig<T extends FieldValues> =
   | TControlledInputMask<T>
   | TControlledInput<T>
@@ -53,3 +60,4 @@ export type TStorybookFieldConfig<T extends FieldValues> =
   | TControlledInputSwitch<T>
   | TControlledInputSelect<T>
   | TControlledInputTextarea<T>
+  | TControlledInputUploader<T>

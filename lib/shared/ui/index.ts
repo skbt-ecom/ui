@@ -50,5 +50,7 @@ export {
   type ISelectControlProps,
   type ISelectOption,
   TextareaControl,
-  type TextareaControlProps
+  type TextareaControlProps,
+  type IInputControlUploaderProps,
+  InputControlUploader
 } from './formControlElements'

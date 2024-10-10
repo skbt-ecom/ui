@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { MOCK_RADIO_GROUP, MOCK_SELECT_OPTIONS } from './mockData'
 import { EnumFieldType, type TStorybookFieldConfig } from './types'
-import { VALIDATION_MESSAGES } from '$/shared/validation'
+import { VALIDATION_MESSAGES } from '$/index'
 
 export const mockToastMessage = (values: string) => (
   <div className='flex flex-col'>
@@ -18,7 +18,11 @@ export const mockSchema = z.object({
   sex: z.string().min(2, VALIDATION_MESSAGES.REQUIRED),
   percent: z.literal<boolean>(true, { errorMap: () => ({ message: VALIDATION_MESSAGES.REQUIRED }) }),
   months: z.string().or(z.array(z.string())),
-  description: z.string().min(3, `${VALIDATION_MESSAGES.MIN_LENGTH} 3`)
+  description: z.string().min(3, `${VALIDATION_MESSAGES.MIN_LENGTH} 3`),
+  files: z
+    .array(z.instanceof(File))
+    .min(1, { message: 'Поле обязательно для заполнения' })
+    .max(3, { message: 'Можно отправить не больше трех файлов. Чтобы добавить файлы удалите выбранные' })
 })
 
 export type TMockSchema = z.infer<typeof mockSchema>
@@ -30,7 +34,8 @@ export const mockDefaultValues: TMockSchema = {
   sex: '',
   percent: true,
   months: '',
-  description: ''
+  description: '',
+  files: []
 }
 
 export const mockFields: TStorybookFieldConfig<TMockSchema>[] = [
@@ -60,5 +65,20 @@ export const mockFields: TStorybookFieldConfig<TMockSchema>[] = [
     name: 'description',
     label: 'Описание к блоку',
     fieldType: EnumFieldType.TEXTAREA
+  },
+  {
+    name: 'files',
+    label: 'Файлы',
+    fieldType: EnumFieldType.UPLOADER,
+    dropzoneOptions: {
+      maxFiles: 5,
+      maxSize: 1024 * 1024 * 4,
+      multiple: true,
+      accept: {
+        'image/jpeg': [],
+        'image/png': [],
+        'application/pdf': []
+      }
+    }
   }
 ]

@@ -7,6 +7,7 @@ import {
   DadataInputControl,
   InputControl,
   InputControlMask,
+  InputControlUploader,
   RadioControl,
   SelectControl,
   SwitchControl,
@@ -43,6 +44,8 @@ const renderFields = <T extends FieldValues>(fieldConfig: TStorybookFieldConfig<
       return <SelectControl name={name} label={label} control={control} optionsList={optionsList} />
     case EnumFieldType.TEXTAREA:
       return <TextareaControl name={name} label={label} control={control} />
+    case EnumFieldType.UPLOADER:
+      return <InputControlUploader name={name} label={label} control={control} dropzoneOptions={fieldConfig.dropzoneOptions} />
     default:
       return null
   }
@@ -62,7 +65,7 @@ export const StorybookFieldsMapper = <T extends FieldValues>({
   }
 
   return (
-    <div className='flex flex-col gap-3 w-[600px]'>
+    <div className='flex w-[600px] flex-col gap-3'>
       {fields?.map((field) => <div key={field.name}>{renderFields(field, control)}</div>)}
       <div className='flex items-center gap-6'>
         {btnSubmit && <Button type='submit'>{btnSubmit}</Button>}

@@ -1,0 +1,1 @@
+export { defaultDropzoneOptions } from './helpers'

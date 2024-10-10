@@ -14,13 +14,13 @@ export const FieldAttachment = ({ badge, icon, error, isTextarea = false, classe
   return (
     <>
       {error ? (
-        <Icon name='info/warningCircle' className={cn('text-icon-secondary-default size-6 mr-4', { 'm-0 size-5': isTextarea })} />
+        <Icon name='info/warningCircle' className={cn('mr-4 size-6 text-icon-secondary-default', { 'm-0 size-5': isTextarea })} />
       ) : (
         <>
           {(badge || icon) && (
-            <span className={cn('flex items-center gap-4 mr-4', { 'm-0': isTextarea }, classes?.attachmentWrapper)}>
+            <span className={cn('mr-4 flex items-center gap-4', { 'm-0': isTextarea }, classes?.attachmentWrapper)}>
               {icon && (
-                <span className={cn('size-6 flex justify-center items-center', { 'size-5': isTextarea }, classes?.icon)}>
+                <span className={cn('flex size-6 items-center justify-center', { 'size-5': isTextarea }, classes?.icon)}>
                   {icon}
                 </span>
               )}

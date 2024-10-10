@@ -44,8 +44,8 @@ const renderSelectedValue = ({ multiple, controlledValue, label, isClearIntent, 
   const labelElement = (
     <div
       className={cn(
-        'text-color-blue-grey-600 desk-body-regular-l transition-colors',
-        { 'group-data-[hover]:!text-color-primary-hover ': isClearIntent },
+        'desk-body-regular-l text-color-blue-grey-600 transition-colors',
+        { 'group-data-[hover]:!text-color-primary-hover': isClearIntent },
         { '!text-color-disabled': disabled },
         classes?.label
       )}
@@ -64,9 +64,9 @@ const renderSelectedValue = ({ multiple, controlledValue, label, isClearIntent, 
   if (multiple) {
     if (Array.isArray(controlledValue) && controlledValue.length > 0) {
       return (
-        <div className='flex items-center gap-2 flex-wrap'>
+        <div className='flex flex-wrap items-center gap-2'>
           {controlledValue.map((value) => (
-            <div className={cn('text-color-dark w-max bg-color-blue-grey-300 rounded-sm py-1 px-2', classes?.value)}>{value}</div>
+            <div className={cn('w-max rounded-sm bg-color-blue-grey-300 px-2 py-1 text-color-dark', classes?.value)}>{value}</div>
           ))}
         </div>
       )
@@ -75,7 +75,7 @@ const renderSelectedValue = ({ multiple, controlledValue, label, isClearIntent, 
   }
 
   if (controlledValue) {
-    return <div className={cn('text-color-dark flex-1', classes?.value)}>{controlledValue}</div>
+    return <div className={cn('flex-1 text-color-dark', classes?.value)}>{controlledValue}</div>
   }
   return labelElement
 }
@@ -111,13 +111,13 @@ export const SelectControl = <T extends FieldValues>({
             >
               <ListboxButton
                 className={cn(
-                  'h-[56px] outline outline-1 outline-transparent bg-color-blue-grey-100 p-4 rounded-sm flex items-center justify-between data-[hover]:bg-color-blue-grey-200 data-[active]:outline-blue-grey-800 focus:outline-blue-grey-800 group text-left transition-all',
+                  'group flex h-[56px] items-center justify-between rounded-sm bg-color-blue-grey-100 p-4 text-left outline outline-1 outline-transparent transition-all focus:outline-blue-grey-800 data-[hover]:bg-color-blue-grey-200 data-[active]:outline-blue-grey-800',
                   {
-                    'bg-color-transparent data-[hover]:bg-color-transparent h-full px-2 py-1 data-[active]:outline-primary-focus focus:outline-primary-focus':
+                    'h-full bg-color-transparent px-2 py-1 focus:outline-primary-focus data-[hover]:bg-color-transparent data-[active]:outline-primary-focus':
                       isClearIntent
                   },
                   {
-                    '!bg-color-blue-grey-100 pointer-events-none ': disabled
+                    'pointer-events-none !bg-color-blue-grey-100': disabled
                   },
                   {
                     '!outline-secondary-default': !!error?.message
@@ -130,7 +130,7 @@ export const SelectControl = <T extends FieldValues>({
                 <Icon
                   name='arrows/arrowRight'
                   className={cn(
-                    'size-6 rotate-90  text-icon-blue-grey-600 group-data-[open]:-rotate-90 transition-all',
+                    'size-6 rotate-90 text-icon-blue-grey-600 transition-all group-data-[open]:-rotate-90',
                     { 'text-icon-blue-grey-700 group-data-[hover]:text-icon-primary-hover': isClearIntent },
                     { 'text-icon-disabled': disabled },
                     { 'text-icon-secondary-default': !!error?.message },
@@ -146,7 +146,7 @@ export const SelectControl = <T extends FieldValues>({
               />
               <ListboxOptions
                 className={cn(
-                  'bg-color-white items-start justify-start shadow-sm w-select-trigger outline-transparent scrollHidden p-2 data-[closed]:opacity-0 transition-opacity duration-200',
+                  'scrollHidden w-select-trigger items-start justify-start bg-color-white p-2 shadow-sm outline-transparent transition-opacity duration-200 data-[closed]:opacity-0',
                   classes?.options
                 )}
                 transition
@@ -154,23 +154,23 @@ export const SelectControl = <T extends FieldValues>({
                   gap: 8
                 }}
               >
-                <div className={cn('p-2 customScrollbar-y overflow-x-hidden !max-h-[246px]', classes?.scrollArea)}>
+                <div className={cn('customScrollbar-y !max-h-[246px] overflow-x-hidden p-2', classes?.scrollArea)}>
                   {optionsList?.map(({ optionValue, id, isDisabled }) => (
                     <ListboxOption
                       key={id}
                       value={optionValue}
                       disabled={isDisabled}
                       className={cn(
-                        'desk-body-regular-l text-color-dark p-2 rounded-sm cursor-pointer transition-all hover:bg-color-primary-tr-hover hover:text-color-primary-hover data-[focus]:text-color-primary-hover data-[focus]:bg-color-primary-tr-hover data-[disabled]:pointer-events-none data-[disabled]:text-color-disabled',
+                        'desk-body-regular-l cursor-pointer rounded-sm p-2 text-color-dark transition-all hover:bg-color-primary-tr-hover hover:text-color-primary-hover data-[disabled]:pointer-events-none data-[focus]:bg-color-primary-tr-hover data-[disabled]:text-color-disabled data-[focus]:text-color-primary-hover',
                         classes?.option
                       )}
                     >
                       {({ selected }) => (
-                        <div className={cn('flex justify-between items-center gap-2')}>
+                        <div className={cn('flex items-center justify-between gap-2')}>
                           {optionValue}
                           <Icon
                             name='general/check'
-                            className={cn('size-5  text-icon-primary-default', { invisible: !selected })}
+                            className={cn('size-5 text-icon-primary-default', { invisible: !selected })}
                           />
                         </div>
                       )}
