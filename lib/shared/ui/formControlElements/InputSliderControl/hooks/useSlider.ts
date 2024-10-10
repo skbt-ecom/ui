@@ -15,14 +15,11 @@ export const useSlider = () => {
     }
   }
 
-  const handleChange = (onChange: (...event: unknown[]) => void, val?: number, onInputChange?: (...event: unknown[]) => void) => {
+  const handleChange = (onChange: (...event: unknown[]) => void, val?: number) => {
     if (val === undefined) {
       return
     }
     onChange(val)
-    if (onInputChange) {
-      onInputChange(val)
-    }
   }
 
   return { getSuffixText, handleBlur, handleChange }
