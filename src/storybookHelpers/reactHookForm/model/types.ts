@@ -5,6 +5,7 @@ import type {
   IDadataInputControlProps,
   InputControlMaskProps,
   InputControlProps,
+  InputSliderControlProps,
   IRadioControlProps,
   ISelectControlProps,
   ISwitchControlProps,
@@ -20,7 +21,8 @@ export enum EnumFieldType {
   SWITCH = 'switch',
   SELECT = 'select',
   TEXTAREA = 'textarea',
-  CALENDAR = 'calendar'
+  CALENDAR = 'calendar',
+  CREDIT = 'credit'
 }
 
 type TControlledInput<T extends FieldValues> = Omit<InputControlProps<T>, 'control'> & { fieldType: EnumFieldType.INPUT }
@@ -43,6 +45,10 @@ type TControlledInputSelect<T extends FieldValues> = Omit<ISelectControlProps<T>
   fieldType: EnumFieldType.SELECT
 }
 
+type TControlledInputSlider<T extends FieldValues> = Omit<InputSliderControlProps<T>, 'control'> & {
+  fieldType: EnumFieldType.CREDIT
+}
+
 type TControlledInputTextarea<T extends FieldValues> = Omit<ITextareaControlProps<T>, 'control'> & {
   fieldType: EnumFieldType.TEXTAREA
 }
@@ -58,5 +64,6 @@ export type TStorybookFieldConfig<T extends FieldValues> =
   | TControlledInputRadio<T>
   | TControlledInputSwitch<T>
   | TControlledInputSelect<T>
+  | TControlledInputSlider<T>
   | TControlledInputTextarea<T>
   | TControlledInputCalendar<T>
