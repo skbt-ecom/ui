@@ -22,7 +22,7 @@ export enum EnumFieldType {
   SELECT = 'select',
   TEXTAREA = 'textarea',
   CALENDAR = 'calendar',
-  CREDIT = 'credit'
+  SLIDER = 'slider'
 }
 
 type TControlledInput<T extends FieldValues> = Omit<InputControlProps<T>, 'control'> & { fieldType: EnumFieldType.INPUT }
@@ -46,7 +46,7 @@ type TControlledInputSelect<T extends FieldValues> = Omit<ISelectControlProps<T>
 }
 
 type TControlledInputSlider<T extends FieldValues> = Omit<InputSliderControlProps<T>, 'control'> & {
-  fieldType: EnumFieldType.CREDIT
+  fieldType: EnumFieldType.SLIDER
 }
 
 type TControlledInputTextarea<T extends FieldValues> = Omit<ITextareaControlProps<T>, 'control'> & {

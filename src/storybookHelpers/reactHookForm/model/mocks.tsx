@@ -20,7 +20,7 @@ export const mockSchema = z.object({
   months: z.string().or(z.array(z.string())),
   description: z.string().min(3, `${VALIDATION_MESSAGES.MIN_LENGTH} 3`),
   birthday: zodCalendarValidate,
-  credit: z.number().or(z.string())
+  slider: z.number().or(z.string())
 })
 
 export type TMockSchema = z.infer<typeof mockSchema>
@@ -34,7 +34,7 @@ export const mockDefaultValues: TMockSchema = {
   months: '',
   description: '',
   birthday: '',
-  credit: 100_000
+  slider: 100_000
 }
 
 export const mockFields: TStorybookFieldConfig<TMockSchema>[] = [
@@ -71,9 +71,9 @@ export const mockFields: TStorybookFieldConfig<TMockSchema>[] = [
     fieldType: EnumFieldType.CALENDAR
   },
   {
-    name: 'credit',
+    name: 'slider',
     label: 'Сумма кредита',
-    fieldType: EnumFieldType.CREDIT,
+    fieldType: EnumFieldType.SLIDER,
     max: 300_000,
     min: 40_000,
     variant: 'credit'

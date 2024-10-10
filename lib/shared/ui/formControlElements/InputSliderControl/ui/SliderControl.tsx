@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import * as SliderPrimitive from '@radix-ui/react-slider'
 import { formatNumber, getMinMaxTextSlider } from '../helpers'
 import { type TInputSliderProps } from '../model/types'

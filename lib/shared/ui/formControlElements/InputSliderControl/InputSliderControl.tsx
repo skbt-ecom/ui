@@ -1,12 +1,13 @@
-import { useId, useRef } from 'react'
+import * as React from 'react'
 import { Controller, type FieldValues } from 'react-hook-form'
 import { NumericFormat } from 'react-number-format'
 import type { TAdditionalInputClassesWithAttachment, TControlledInputProps } from '../model'
 import { FieldAttachment, FieldContainer, FieldWrapper, MessageView } from '../ui'
-import { getInputSliderSuffix, getStepByVariant } from './helpers'
+import { getStepByVariant } from './helpers'
+import { useSlider } from './hooks/useSlider'
 import { type TInputSliderProps } from './model/types'
 import { SliderControl } from './ui'
-import { cn } from '$/hybrid'
+import { cn } from '$/shared/utils'
 
 export interface InputSliderControlProps<T extends FieldValues>
   extends Omit<TControlledInputProps<T>, 'max' | 'min' | 'step'>,
@@ -29,41 +30,22 @@ export const InputSliderControl = <T extends FieldValues>({
   variant,
   ...props
 }: InputSliderControlProps<T>) => {
-  const inputId = useId()
-  const ref = useRef<HTMLInputElement>(null)
+  const inputId = React.useId()
+  const ref = React.useRef<HTMLInputElement>(null)
+
+  const handleIconClick = () => {
+    if (ref.current) {
+      ref?.current?.focus()
+    }
+  }
+
+  const { handleBlur, handleChange, getSuffixText } = useSlider()
 
   return (
     <Controller
       control={control}
       name={props.name}
       render={({ field: { onChange, value }, fieldState: { error } }) => {
-        const suffixText = getInputSliderSuffix(variant, value)
-
-        const handleIconClick = () => {
-          if (ref.current) {
-            ref?.current?.focus()
-          }
-        }
-
-        const handleBlur = () => {
-          if (value > max) {
-            onChange(max)
-          }
-          if (value < min) {
-            onChange(min)
-          }
-        }
-
-        const handleChange = (val: number | undefined) => {
-          if (val === undefined) {
-            return
-          }
-          onChange(val)
-          if (onInputChange) {
-            onInputChange(val)
-          }
-        }
-
         return (
           <FieldContainer size={size} classes={classes}>
             <FieldWrapper
@@ -82,12 +64,19 @@ export const InputSliderControl = <T extends FieldValues>({
                     classes?.input
                   )}
                   id={inputId}
-                  onBlur={handleBlur}
+                  onBlur={() => {
+                    handleBlur(value, min, max, onChange)
+                  }}
                   value={value}
                   disabled={disabled}
-                  suffix={` ${suffixText}`}
+                  suffix={` ${getSuffixText(value, variant)}`}
                   thousandsGroupStyle='thousand'
-                  onValueChange={({ floatValue }) => handleChange(floatValue)}
+                  onValueChange={({ floatValue }) => {
+                    handleChange(onChange, floatValue)
+                    if (onInputChange) {
+                      onInputChange(floatValue)
+                    }
+                  }}
                   thousandSeparator={' '}
                   allowNegative={false}
                   getInputRef={ref}
@@ -103,7 +92,15 @@ export const InputSliderControl = <T extends FieldValues>({
                 />
 
                 <div aria-label='edit' onKeyDown={handleIconClick} role='button' tabIndex={0} onClick={handleIconClick}>
-                  <FieldAttachment isSlider badge={badge} icon={icon} error={!!error?.message} classes={classes} />
+                  <FieldAttachment
+                    onClickIcon={handleIconClick}
+                    onKeyDownIcon={handleIconClick}
+                    isSlider
+                    badge={badge}
+                    icon={icon}
+                    error={!!error?.message}
+                    classes={classes}
+                  />
                 </div>
               </>
             </FieldWrapper>

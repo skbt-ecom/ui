@@ -16,13 +16,11 @@ export const Info: Story = {
     return (
       <div className='flex justify-center items-center h-screen w-screen'>
         <Button
-          onClick={
-            () =>
-              Notification({
-                intent: 'info',
-                text: 'Документы отправлены'
-              })
-            // eslint-disable-next-line react/jsx-curly-newline
+          onClick={() =>
+            Notification({
+              intent: 'info',
+              text: 'Документы отправлены'
+            })
           }
         >
           Отправить
@@ -37,13 +35,11 @@ export const Error: Story = {
     return (
       <div className='flex justify-center items-center h-screen w-screen'>
         <Button
-          onClick={
-            () =>
-              Notification({
-                intent: 'error',
-                text: 'Не удалось сохранить страницу. Проверьте интернет соединение'
-              })
-            // eslint-disable-next-line react/jsx-curly-newline
+          onClick={() =>
+            Notification({
+              intent: 'error',
+              text: 'Не удалось сохранить страницу. Проверьте интернет соединение'
+            })
           }
         >
           Отправить
@@ -58,25 +54,23 @@ export const InfoWithLink: Story = {
     return (
       <div className='flex justify-center items-center h-screen w-screen'>
         <Button
-          onClick={
-            () =>
-              Notification({
-                intent: 'info',
-                text: 'Документы отправлены',
-                customIcon: <Icon name='general/check' className='size-5 text-icon-white' />,
-                content: (
-                  <CustomLink
-                    withIcon
-                    target='_blank'
-                    rel='noreferrer'
-                    intent='white'
-                    href='https://www.figma.com/design/4i9LqYBbtItQUpviA45cMw/SCBT-Design-System?node-id=3530-1129&node-type=frame&t=XT3FQKKIzTob4WrF-0'
-                  >
-                    Подробнее
-                  </CustomLink>
-                )
-              })
-            // eslint-disable-next-line react/jsx-curly-newline
+          onClick={() =>
+            Notification({
+              intent: 'info',
+              text: 'Документы отправлены',
+              customIcon: <Icon name='general/check' className='size-5 text-icon-white' />,
+              content: (
+                <CustomLink
+                  withIcon
+                  target='_blank'
+                  rel='noreferrer'
+                  intent='white'
+                  href='https://www.figma.com/design/4i9LqYBbtItQUpviA45cMw/SCBT-Design-System?node-id=3530-1129&node-type=frame&t=XT3FQKKIzTob4WrF-0'
+                >
+                  Подробнее
+                </CustomLink>
+              )
+            })
           }
         >
           Отправить
@@ -91,15 +85,13 @@ export const WithIcon: Story = {
     return (
       <div className='flex justify-center items-center h-screen w-screen'>
         <Button
-          onClick={
-            () =>
-              Notification({
-                intent: 'info',
-                text: 'Документы отправлены',
-                customIcon: <Icon name='general/check' className='size-5 text-icon-white' />,
-                closure: false
-              })
-            // eslint-disable-next-line react/jsx-curly-newline
+          onClick={() =>
+            Notification({
+              intent: 'info',
+              text: 'Документы отправлены',
+              customIcon: <Icon name='general/check' className='size-5 text-icon-white' />,
+              closure: false
+            })
           }
         >
           Отправить
