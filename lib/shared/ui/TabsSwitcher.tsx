@@ -1,4 +1,6 @@
-import { type ReactElement } from 'react'
+'use client'
+
+import * as React from 'react'
 import * as TabPrimitive from '@radix-ui/react-tabs'
 import { cn } from '../utils'
 import { Accordion } from './accordion'
@@ -17,7 +19,7 @@ interface ITabsClasses {
 
 interface ITabContent {
   id: string
-  body: ReactElement | string
+  body: React.ReactElement | string
   accordion?: {
     title: string
   }

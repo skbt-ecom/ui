@@ -2,7 +2,7 @@ import { type DropzoneOptions } from 'react-dropzone'
 import { Controller, type FieldValues } from 'react-hook-form'
 import { type TControlledInputProps } from '../model'
 import { defaultDropzoneOptions } from './model'
-import { type TClassesUploader } from './types'
+import { type TClassesUploader } from './model/types'
 import { Uploader } from './ui'
 
 export interface IInputControlUploaderProps<T extends FieldValues> extends TControlledInputProps<T> {

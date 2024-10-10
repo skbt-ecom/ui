@@ -1,4 +1,4 @@
-import { type ReactElement } from 'react'
+import * as React from 'react'
 import { Heading } from '$/shared/ui'
 import { cn } from '$/shared/utils'
 
@@ -10,7 +10,7 @@ interface IAdvantageClasses {
 }
 export interface IAdvantage {
   title: string
-  description: string | ReactElement
+  description: string | React.ReactElement
 }
 
 export interface IAdvantagesProps {

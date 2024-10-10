@@ -1,4 +1,6 @@
-import { useId } from 'react'
+'use client'
+
+import * as React from 'react'
 import { Controller, type FieldValues } from 'react-hook-form'
 import type { TAdditionalInputClassesWithAttachment, TControlledInputProps, TInputCommonProps } from './model'
 import { FieldAttachment, FieldContainer, FieldWrapper, MessageView } from './ui'
@@ -16,10 +18,11 @@ export const InputControl = <T extends FieldValues>({
   classes,
   badge,
   icon,
+  swapPosition,
   disabled,
   ...props
 }: InputControlProps<T>) => {
-  const inputId = useId()
+  const inputId = React.useId()
   return (
     <Controller
       control={control}
@@ -48,7 +51,7 @@ export const InputControl = <T extends FieldValues>({
                 disabled={disabled}
                 {...props}
               />
-              <FieldAttachment badge={badge} icon={icon} error={!!error?.message} classes={classes} />
+              <FieldAttachment badge={badge} icon={icon} error={!!error?.message} classes={classes} swapPosition={swapPosition} />
             </>
           </FieldWrapper>
 

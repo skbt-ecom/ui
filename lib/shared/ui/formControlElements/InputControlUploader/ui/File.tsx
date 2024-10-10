@@ -1,4 +1,4 @@
-import { type TClassesUploader } from '../types'
+import { type TClassesUploader } from '../model/types'
 import { Hint } from '$/shared/ui/Hint'
 import { Icon } from '$/shared/ui/icon'
 import { Loader } from '$/shared/ui/Loader'

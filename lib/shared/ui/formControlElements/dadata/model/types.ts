@@ -1,12 +1,6 @@
 export type TDadataType = 'address' | 'fio' | 'country' | 'auto' | 'party'
 export type TDadataBaseUrl = 'cache' | 'constants'
 
-// export interface IDadataFIO {
-//   surname: string
-//   name: string
-//   patronymic?: string
-// }
-
 export type TDadataOption = {
   value: string
   additionalText?: string

@@ -1,1 +1,1 @@
-export { defaultDropzoneOptions } from './helpers'
+export { defaultDropzoneOptions, FilesErrorCode } from './helpers'

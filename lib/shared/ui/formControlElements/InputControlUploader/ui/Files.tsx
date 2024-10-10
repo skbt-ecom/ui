@@ -1,5 +1,5 @@
 import { type HTMLAttributes } from 'react'
-import { type TClassesUploader } from '../types'
+import { type TClassesUploader } from '../model/types'
 import { File } from './File'
 import { cn } from '$/shared/utils'
 

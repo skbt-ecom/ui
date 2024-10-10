@@ -15,6 +15,8 @@ export { Hint, type IHintProps } from './Hint'
 export { Popover } from './popover'
 export { ProgressBar, type IProgressBarProps } from './ProgressBar'
 export { TabsSwitcher, type ITabsSwitcherProps, type ITabRenderContent } from './TabsSwitcher'
+export { Modal } from './modal'
+export { Notification } from './notification'
 
 // # TYPOGRAPHY
 export { Heading, type IHeadingProps } from './Heading'
@@ -36,6 +38,8 @@ export {
   type InputControlProps,
   InputControlMask,
   type InputControlMaskProps,
+  InputSliderControl,
+  type InputSliderControlProps,
   FormControl,
   DadataInputControl,
   type IDadataInputControlProps,
@@ -50,7 +54,9 @@ export {
   type ISelectControlProps,
   type ISelectOption,
   TextareaControl,
-  type TextareaControlProps,
+  type ITextareaControlProps,
   type IInputControlUploaderProps,
-  InputControlUploader
+  InputControlUploader,
+  CalendarControl,
+  type ICalendarControlProps
 } from './formControlElements'

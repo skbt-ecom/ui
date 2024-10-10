@@ -19,11 +19,4 @@ export type TClassesUploaderFiles = {
   fileButtonDelete: string
 }
 
-export const FilesErrorCode = {
-  FileInvalidType: 'file-invalid-type',
-  FileTooLarge: 'file-too-large',
-  FileTooSmall: 'file-too-small',
-  TooManyFiles: 'too-many-files'
-} as const
-
 export type TClassesUploader = TClassesUploaderFiles & TClassesUploaderMain

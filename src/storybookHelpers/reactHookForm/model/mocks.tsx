@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { MOCK_RADIO_GROUP, MOCK_SELECT_OPTIONS } from './mockData'
 import { EnumFieldType, type TStorybookFieldConfig } from './types'
-import { VALIDATION_MESSAGES } from '$/index'
+import { VALIDATION_MESSAGES, zodCalendarValidate } from '$/shared/validation'
 
 export const mockToastMessage = (values: string) => (
   <div className='flex flex-col'>
@@ -19,6 +19,8 @@ export const mockSchema = z.object({
   percent: z.literal<boolean>(true, { errorMap: () => ({ message: VALIDATION_MESSAGES.REQUIRED }) }),
   months: z.string().or(z.array(z.string())),
   description: z.string().min(3, `${VALIDATION_MESSAGES.MIN_LENGTH} 3`),
+  birthday: zodCalendarValidate,
+  creditSum: z.number().or(z.string()),
   files: z
     .array(z.instanceof(File))
     .min(1, { message: 'Поле обязательно для заполнения' })
@@ -35,6 +37,8 @@ export const mockDefaultValues: TMockSchema = {
   percent: true,
   months: '',
   description: '',
+  birthday: '',
+  creditSum: 100_000,
   files: []
 }
 
@@ -65,6 +69,19 @@ export const mockFields: TStorybookFieldConfig<TMockSchema>[] = [
     name: 'description',
     label: 'Описание к блоку',
     fieldType: EnumFieldType.TEXTAREA
+  },
+  {
+    name: 'birthday',
+    label: 'Дата рождения',
+    fieldType: EnumFieldType.CALENDAR
+  },
+  {
+    name: 'creditSum',
+    label: 'Сумма кредита',
+    fieldType: EnumFieldType.SLIDER,
+    max: 300_000,
+    min: 40_000,
+    variant: 'credit'
   },
   {
     name: 'files',

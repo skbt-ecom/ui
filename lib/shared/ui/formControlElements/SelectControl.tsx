@@ -1,3 +1,5 @@
+'use client'
+
 import { Controller, type FieldValues } from 'react-hook-form'
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
 import { Icon } from '../icon'
@@ -114,12 +116,8 @@ export const SelectControl = <T extends FieldValues>({
                   'group flex h-[56px] items-center justify-between rounded-sm bg-color-blue-grey-100 p-4 text-left outline outline-1 outline-transparent transition-all focus:outline-blue-grey-800 data-[hover]:bg-color-blue-grey-200 data-[active]:outline-blue-grey-800',
                   {
                     'h-full bg-color-transparent px-2 py-1 focus:outline-primary-focus data-[hover]:bg-color-transparent data-[active]:outline-primary-focus':
-                      isClearIntent
-                  },
-                  {
-                    'pointer-events-none !bg-color-blue-grey-100': disabled
-                  },
-                  {
+                      isClearIntent,
+                    'pointer-events-none !bg-color-blue-grey-100': disabled,
                     '!outline-secondary-default': !!error?.message
                   },
                   classes?.trigger

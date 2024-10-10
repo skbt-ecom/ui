@@ -1,14 +1,16 @@
 import type { FieldValues } from 'react-hook-form'
+import { type ICalendarControlProps } from '$/shared/ui'
 import type {
   ICheckboxControlProps,
   IDadataInputControlProps,
   IInputControlUploaderProps,
   InputControlMaskProps,
   InputControlProps,
+  InputSliderControlProps,
   IRadioControlProps,
   ISelectControlProps,
   ISwitchControlProps,
-  TextareaControlProps
+  ITextareaControlProps
 } from '$/shared/ui/formControlElements'
 
 export enum EnumFieldType {
@@ -20,6 +22,8 @@ export enum EnumFieldType {
   SWITCH = 'switch',
   SELECT = 'select',
   TEXTAREA = 'textarea',
+  CALENDAR = 'calendar',
+  SLIDER = 'slider',
   UPLOADER = 'uploader'
 }
 
@@ -43,8 +47,16 @@ type TControlledInputSelect<T extends FieldValues> = Omit<ISelectControlProps<T>
   fieldType: EnumFieldType.SELECT
 }
 
-type TControlledInputTextarea<T extends FieldValues> = Omit<TextareaControlProps<T>, 'control'> & {
+type TControlledInputSlider<T extends FieldValues> = Omit<InputSliderControlProps<T>, 'control'> & {
+  fieldType: EnumFieldType.SLIDER
+}
+
+type TControlledInputTextarea<T extends FieldValues> = Omit<ITextareaControlProps<T>, 'control'> & {
   fieldType: EnumFieldType.TEXTAREA
+}
+
+type TControlledInputCalendar<T extends FieldValues> = Omit<ICalendarControlProps<T>, 'control'> & {
+  fieldType: EnumFieldType.CALENDAR
 }
 
 type TControlledInputUploader<T extends FieldValues> = Omit<IInputControlUploaderProps<T>, 'control'> & {
@@ -59,5 +71,7 @@ export type TStorybookFieldConfig<T extends FieldValues> =
   | TControlledInputRadio<T>
   | TControlledInputSwitch<T>
   | TControlledInputSelect<T>
+  | TControlledInputSlider<T>
   | TControlledInputTextarea<T>
+  | TControlledInputCalendar<T>
   | TControlledInputUploader<T>

@@ -3,11 +3,13 @@ import type { Schema, TypeOf } from 'zod'
 import { EnumFieldType, type TStorybookFieldConfig } from '../model/types'
 import {
   Button,
+  CalendarControl,
   CheckboxControl,
   DadataInputControl,
   InputControl,
   InputControlMask,
   InputControlUploader,
+  InputSliderControl,
   RadioControl,
   SelectControl,
   SwitchControl,
@@ -22,30 +24,30 @@ type TStorybookFieldsMapperProps<T extends FieldValues> = {
 }
 
 const renderFields = <T extends FieldValues>(fieldConfig: TStorybookFieldConfig<T>, control: Control<FieldValues>) => {
-  const { name, label, fieldType } = fieldConfig
+  const { fieldType } = fieldConfig
   switch (fieldType) {
     case EnumFieldType.INPUT:
-      return <InputControl name={name} label={label} control={control} badge='+25%' />
+      return <InputControl control={control} {...fieldConfig} />
     case EnumFieldType.MASK:
-      const { format, mask } = fieldConfig
-      return <InputControlMask name={name} label={label} format={format} control={control} mask={mask} />
+      return <InputControlMask control={control} {...fieldConfig} />
     case EnumFieldType.DADATA:
-      return <DadataInputControl name={name} label={label} control={control} badge='+25%' />
+      return <DadataInputControl control={control} {...fieldConfig} />
     case EnumFieldType.CHECKBOX:
-      const { defaultChecked } = fieldConfig
-      return <CheckboxControl name={name} label={label} control={control} defaultChecked={defaultChecked} />
+      return <CheckboxControl control={control} {...fieldConfig} />
     case EnumFieldType.RADIO:
-      const { radioItemsGroup } = fieldConfig
-      return <RadioControl name={name} label={label} control={control} radioItemsGroup={radioItemsGroup} />
+      return <RadioControl control={control} {...fieldConfig} />
     case EnumFieldType.SWITCH:
-      return <SwitchControl name={name} label={label} control={control} />
+      return <SwitchControl control={control} {...fieldConfig} />
     case EnumFieldType.SELECT:
-      const { optionsList } = fieldConfig
-      return <SelectControl name={name} label={label} control={control} optionsList={optionsList} />
+      return <SelectControl control={control} {...fieldConfig} />
     case EnumFieldType.TEXTAREA:
-      return <TextareaControl name={name} label={label} control={control} />
+      return <TextareaControl control={control} {...fieldConfig} />
+    case EnumFieldType.CALENDAR:
+      return <CalendarControl control={control} {...fieldConfig} />
+    case EnumFieldType.SLIDER:
+      return <InputSliderControl control={control} {...fieldConfig} />
     case EnumFieldType.UPLOADER:
-      return <InputControlUploader name={name} label={label} control={control} dropzoneOptions={fieldConfig.dropzoneOptions} />
+      return <InputControlUploader control={control} {...fieldConfig} />
     default:
       return null
   }

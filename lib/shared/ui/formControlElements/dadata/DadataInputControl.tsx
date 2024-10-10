@@ -1,4 +1,6 @@
-import { useId } from 'react'
+'use client'
+
+import * as React from 'react'
 import { Controller, type FieldValues } from 'react-hook-form'
 import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions } from '@headlessui/react'
 import type { TAdditionalInputClassesWithAttachment, TControlledInputProps, TInputCommonProps } from '../model'
@@ -29,10 +31,11 @@ export const DadataInputControl = <T extends FieldValues>({
   dadataBaseUrl = 'cache',
   badge,
   icon,
+  swapPosition,
   ...props
 }: IDadataInputControlProps<T>) => {
   const { setQuery, suggestionsOptions } = useDadata(dadataType, dadataBaseUrl)
-  const inputId = useId()
+  const inputId = React.useId()
   // TODO: Пофиксить при нажатие на enter очищается инпут, если нет опшенов
 
   return (
@@ -74,7 +77,13 @@ export const DadataInputControl = <T extends FieldValues>({
                       {suggestionsOptions[0]?.value}
                     </span>
                   )} */}
-                  <FieldAttachment badge={badge} icon={icon} error={!!error?.message} classes={classes} />
+                  <FieldAttachment
+                    badge={badge}
+                    icon={icon}
+                    error={!!error?.message}
+                    classes={classes}
+                    swapPosition={swapPosition}
+                  />
                 </>
               </FieldWrapper>
               <MessageView

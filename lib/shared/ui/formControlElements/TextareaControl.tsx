@@ -1,4 +1,6 @@
-import { useId } from 'react'
+'use client'
+
+import * as React from 'react'
 import { Controller, type FieldValues } from 'react-hook-form'
 import type { TAdditionalInputClassesWithAttachment, TControlledInputProps, TTextareaCommonProps } from './model'
 import { FieldAttachment, FieldContainer, MessageView } from './ui'
@@ -9,7 +11,7 @@ type TTextareaClasses = Partial<TAdditionalInputClassesWithAttachment> & {
   scrollArea: string
 }
 
-export interface TextareaControlProps<T extends FieldValues> extends TControlledInputProps<T>, TTextareaCommonProps {
+export interface ITextareaControlProps<T extends FieldValues> extends TControlledInputProps<T>, TTextareaCommonProps {
   classes?: Partial<TTextareaClasses>
 }
 
@@ -21,11 +23,12 @@ export const TextareaControl = <T extends FieldValues>({
   classes,
   badge,
   icon,
+  swapPosition,
   disabled,
   placeholder,
   ...props
-}: TextareaControlProps<T>) => {
-  const inputId = useId()
+}: ITextareaControlProps<T>) => {
+  const inputId = React.useId()
   return (
     <Controller
       control={control}
@@ -47,7 +50,14 @@ export const TextareaControl = <T extends FieldValues>({
               >
                 {label}
               </label>
-              <FieldAttachment badge={badge} icon={icon} error={!!error?.message} classes={classes} isTextarea />
+              <FieldAttachment
+                badge={badge}
+                icon={icon}
+                error={!!error?.message}
+                classes={classes}
+                isTextarea
+                swapPosition={swapPosition}
+              />
             </div>
 
             <div className={cn('flex w-full items-start px-4 py-2', classes?.scrollArea)}>

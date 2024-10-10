@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { type DropzoneOptions, type FileRejection, useDropzone } from 'react-dropzone'
 import toast from 'react-hot-toast'
-import { FilesErrorCode } from '../../types'
+import { FilesErrorCode } from '../helpers'
 
 export type TUseUploader = {
   controlledFiles: File[]

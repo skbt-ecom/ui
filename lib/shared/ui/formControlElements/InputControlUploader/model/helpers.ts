@@ -9,3 +9,10 @@ export const defaultDropzoneOptions: DropzoneOptions = {
     'application/pdf': []
   }
 }
+
+export const FilesErrorCode = {
+  FileInvalidType: 'file-invalid-type',
+  FileTooLarge: 'file-too-large',
+  FileTooSmall: 'file-too-small',
+  TooManyFiles: 'too-many-files'
+} as const
