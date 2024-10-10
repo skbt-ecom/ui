@@ -19,7 +19,8 @@ export const mockSchema = z.object({
   percent: z.literal<boolean>(true, { errorMap: () => ({ message: VALIDATION_MESSAGES.REQUIRED }) }),
   months: z.string().or(z.array(z.string())),
   description: z.string().min(3, `${VALIDATION_MESSAGES.MIN_LENGTH} 3`),
-  birthday: zodCalendarValidate
+  birthday: zodCalendarValidate,
+  slider: z.number().or(z.string())
 })
 
 export type TMockSchema = z.infer<typeof mockSchema>
@@ -32,7 +33,8 @@ export const mockDefaultValues: TMockSchema = {
   percent: true,
   months: '',
   description: '',
-  birthday: ''
+  birthday: '',
+  slider: 100_000
 }
 
 export const mockFields: TStorybookFieldConfig<TMockSchema>[] = [
@@ -67,5 +69,13 @@ export const mockFields: TStorybookFieldConfig<TMockSchema>[] = [
     name: 'birthday',
     label: 'Дата рождения',
     fieldType: EnumFieldType.CALENDAR
+  },
+  {
+    name: 'slider',
+    label: 'Сумма кредита',
+    fieldType: EnumFieldType.SLIDER,
+    max: 300_000,
+    min: 40_000,
+    variant: 'credit'
   }
 ]

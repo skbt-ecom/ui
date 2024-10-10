@@ -38,6 +38,8 @@ export {
   type InputControlProps,
   InputControlMask,
   type InputControlMaskProps,
+  InputSliderControl,
+  type InputSliderControlProps,
   FormControl,
   DadataInputControl,
   type IDadataInputControlProps,

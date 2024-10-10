@@ -14,10 +14,12 @@ interface IFieldAttachmentProps extends TFieldAttachment {
   swapPosition?: boolean
   onClickIcon?: (...args: unknown[]) => unknown
   onKeyDownIcon?: (event: React.KeyboardEvent) => unknown
+  isSlider?: boolean
 }
 
 export const FieldAttachment = ({
   badge,
+  isSlider,
   icon,
   error,
   isTextarea = false,
@@ -51,7 +53,12 @@ export const FieldAttachment = ({
               {icon && (
                 <span
                   {...interactiveIconAttr}
-                  className={cn('size-6 flex justify-center items-center', { 'size-5': isTextarea }, classes?.icon)}
+                  className={cn(
+                    'size-6 flex justify-center items-center',
+                    { 'size-5': isTextarea },
+                    { 'group-focus-within:[&_svg]:text-icon-blue-grey-800': isSlider },
+                    classes?.icon
+                  )}
                 >
                   {icon}
                 </span>
